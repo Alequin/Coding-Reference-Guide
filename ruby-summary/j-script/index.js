@@ -2,23 +2,27 @@ alert("working");
 const MIN_TEXT_SIZE = 25;
 const MAX_TEXT_SIZE = 45;
 
-const MIN_WIDTH = 1;
+const MIN_WIDTH = 320;
 const MAX_WIDTH = 650;
 const WIDTH_RANGE = MAX_WIDTH - MIN_WIDTH;
 
-const MIN_FONT_COEFFICIENT = 9;
-const MAX_FONT_COEFFICIENT = 14.4;
-const COEFFICENT_RANGE = MAX_FONT_COEFFICIENT - MIN_FONT_COEFFICIENT;
+const MAIN_HEADER_MIN_FONT_COEFFICIENT = 12.8;
+const MAIN_HEADER_MAX_FONT_COEFFICIENT = 14.4;
+const MAIN_HEADER_COEFFICENT_RANGE = MAIN_HEADER_MAX_FONT_COEFFICIENT - MAIN_HEADER_MIN_FONT_COEFFICIENT;
+
+const SECTION_HEADER_MIN_FONT_COEFFICIENT = 16;
+const SECTION_HEADER_MAX_FONT_COEFFICIENT = 26;
+const SECTION_HEADER_COEFFICENT_RANGE = SECTION_HEADER_MAX_FONT_COEFFICIENT - SECTION_HEADER_MIN_FONT_COEFFICIENT;
 
 currentTextSize = 0;
 
 /**
-* Returns true if the current window width is within the range in which
-* font sizes should be edited
+* find at what percentage the screen size is at withing the range
+* of the min and max values
 */
-function isWidthInEditRange(){
+function getScreenWidthPercent(){
   windowWidth = $(window).width();
-  return windowWidth > MIN_WIDTH && windowWidth < MAX_WIDTH
+  return ( (windowWidth - MIN_WIDTH) / WIDTH_RANGE );
 }
 
 /**
@@ -27,13 +31,14 @@ function isWidthInEditRange(){
 function manageHeaderFontSize(){
   mainHeader = $("#main-header");
   windowWidth = $(window).width();
-  if(isWidthInEditRange()){
-    // find at what percentage the screen size is at withing the range
-    // of the max and min values
-    percent = ( (windowWidth - MIN_WIDTH) / WIDTH_RANGE );
+
+  if(windowWidth > MAX_WIDTH){
+      mainHeader.css("font-size","45px");
+  }else
+  if(windowWidth > MIN_WIDTH){
     // calculate, using the percentage, the value required to divide
     // the current screen size by to find a decent font size
-    coefficentToUse = (COEFFICENT_RANGE * percent) + MIN_FONT_COEFFICIENT;
+    coefficentToUse = (MAIN_HEADER_COEFFICENT_RANGE * getScreenWidthPercent()) + MAIN_HEADER_MIN_FONT_COEFFICIENT;
 
     // find the font size
     fontSize = windowWidth / coefficentToUse;
@@ -42,12 +47,33 @@ function manageHeaderFontSize(){
   }
 }
 
+function manageSectionHeaderFontSize(){
+  sectionHeaders = $(".section-header");
+  windowWidth = $(window).width();
+
+  if(windowWidth > MAX_WIDTH){
+      sectionHeaders.css("font-size","25px");
+  }else
+  if(windowWidth > MIN_WIDTH){
+    // calculate, using the percentage, the value required to divide
+    // the current screen size by to find a decent font size
+    coefficentToUse = (SECTION_HEADER_COEFFICENT_RANGE * getScreenWidthPercent()) + SECTION_HEADER_MIN_FONT_COEFFICIENT;
+
+    // find the font size
+    fontSize = windowWidth / coefficentToUse;
+
+    sectionHeaders.css("font-size",fontSize.toString() + "px");
+  }
+}
+
 $(document).ready(function(){
 
   mainWindow = $(window);
   manageHeaderFontSize();
+  manageSectionHeaderFontSize();
 
   mainWindow.resize(function(){
     manageHeaderFontSize();
+    manageSectionHeaderFontSize()
   });
 });

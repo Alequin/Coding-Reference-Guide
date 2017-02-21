@@ -1,6 +1,7 @@
 html, body{
   margin: 0;
   padding: 0;
+  min-width: 320px;
 }
 
 #main-header{
@@ -31,7 +32,7 @@ html, body{
 }
 
 .section-header{
-  font-size: 5vw;
+  font-size: 20px;
   margin-top: 10px;
 }
 
