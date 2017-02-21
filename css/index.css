@@ -1,0 +1,14 @@
+#primary-container{
+  width: 450px;
+  margin-top: 10px;
+  padding: 0;
+  border: 1px dotted black;
+}
+
+.summary-box{
+  width: 128px; height: 128px;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 50px;
+  float: left;
+}
