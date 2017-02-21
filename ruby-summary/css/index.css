@@ -4,8 +4,11 @@ html, body{
 }
 
 #main-header{
-  text-align: center;
   font-size: 5.5vh;
+}
+
+#main-header, .section-header{
+    text-align: center;
 }
 
 #main-header, .section, .divider{
@@ -16,7 +19,6 @@ html, body{
 }
 
 .section{
-  height: 100px;
   max-width: 500px;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -27,4 +29,17 @@ html, body{
     height: 2px;
     max-width: 500px;
     background: black;
+}
+
+.section-header{
+  font-size: 3.5vh;
+  margin-top: 10px;
+}
+
+.section-content{
+  position: relative;
+  width: 95%; height: 100;
+  margin: auto;
+  margin-bottom: 10px;
+  border: 1px dotted black;
 }
