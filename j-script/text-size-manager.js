@@ -44,6 +44,8 @@ function manageHeaderFontSize(){
     fontSize = windowWidth / coefficentToUse;
 
     mainHeader.css("font-size",fontSize.toString() + "px");
+  }else{
+      mainHeader.css("font-size","25px");
   }
 }
 
@@ -63,6 +65,8 @@ function manageSectionHeaderFontSize(){
     fontSize = windowWidth / coefficentToUse;
 
     sectionHeaders.css("font-size",fontSize.toString() + "px");
+  }else{
+      sectionHeaders.css("font-size","20px");
   }
 }
 

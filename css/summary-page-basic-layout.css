@@ -4,7 +4,19 @@ html, body{
   min-width: 320px;
 }
 
+#primary-container{
+  position: absolute;
+  min-width: 320px;
+  max-width: 500px;
+  margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  left: 0;
+  right: 0;
+}
+
 #main-header{
+  margin: 0;
 }
 
 #main-header, .section-header{
@@ -13,8 +25,6 @@ html, body{
 
 #main-header, .section, .divider{
   position: relative;
-  width: 90%;
-  margin: auto;
   margin-top: 15px;
 }
 
@@ -22,7 +32,6 @@ html, body{
   max-width: 500px;
   margin-top: 15px;
   margin-bottom: 15px;
-  border: 1px dotted black;
 }
 
 .divider{
@@ -41,5 +50,8 @@ html, body{
   width: 95%; height: 100;
   margin: auto;
   margin-bottom: 10px;
-  border: 1px dotted black;
+}
+
+.section-text-normal{
+  font-size: 15px;
 }
