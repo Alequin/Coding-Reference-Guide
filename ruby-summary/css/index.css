@@ -1,0 +1,28 @@
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
+#main-header{
+  text-align: center;
+}
+
+#main-header, .section, .divider{
+  position: relative;
+  width: 90%;
+  margin: auto;
+}
+
+.section{
+  height: 100px;
+  max-width: 500px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: 1px dotted black;
+}
+
+.divider{
+    height: 2px;
+    max-width: 500px;
+    background: black;
+}
