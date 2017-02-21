@@ -4,11 +4,11 @@ html, body{
 }
 
 #main-header{
-  font-size: 5.5vh;
 }
 
 #main-header, .section-header{
     text-align: center;
+    font-size: 40px;
 }
 
 #main-header, .section, .divider{
@@ -32,7 +32,7 @@ html, body{
 }
 
 .section-header{
-  font-size: 3.5vh;
+  font-size: 5vw;
   margin-top: 10px;
 }
 
