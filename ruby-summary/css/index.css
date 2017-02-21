@@ -5,12 +5,14 @@ html, body{
 
 #main-header{
   text-align: center;
+  font-size: 5.5vh;
 }
 
 #main-header, .section, .divider{
   position: relative;
   width: 90%;
   margin: auto;
+  margin-top: 15px;
 }
 
 .section{
