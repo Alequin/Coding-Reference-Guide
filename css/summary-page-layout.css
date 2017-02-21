@@ -11,6 +11,34 @@
   margin-top: 15px;
 }
 
+#contents-container{
+  display: none;
+}
+
+a, a:visited{
+  text-decoration: none;
+  text-decoration: underline;
+  color: black;
+}
+
+#contents-table a{
+    text-decoration: none;
+}
+#contents-table a:hover{
+  color: blue;
+}
+
+#contents-table{
+  width: 100%;
+}
+
+.contents-data{
+  margin: 0;
+  padding: 0;
+  width: 33.3%;
+  text-align: center;
+}
+
 .section{
   max-width: 500px;
   margin-top: 15px;
@@ -37,4 +65,5 @@
 
 .section-text-normal{
   font-size: 15px;
+  line-height: 20px;
 }
