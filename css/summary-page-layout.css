@@ -41,14 +41,14 @@ a, a:visited{
 }
 
 .section{
-  max-width: 500px;
+  max-width: 100%;
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
 .divider{
     height: 2px;
-    max-width: 500px;
+    max-width: 100%;
     background: black;
 }
 
@@ -59,9 +59,12 @@ a, a:visited{
 
 .section-content{
   position: relative;
-  width: 95%; height: 100;
+  width: 95%;
   margin: auto;
   margin-bottom: 10px;
+}
+
+.section-content ul{
 }
 
 .section-text-normal{

@@ -14,34 +14,139 @@
 
     <h1 id="main-header">Helpful Ruby</h1>
 
-    <a href="#"><p>&#60&#60Return</p></a>
+    <a href="../index.html"><p>&#60&#60Return</p></a>
 
     <p id="contents-title">Show Contents</p>
     <div id="contents-container">
       <table id="contents-table">
         <tr>
           <td>
-            <a href="#output-to-console">Output to Console</a>
+            <a href="#output-to-console">ph</a>
           </td>
           <td>
-            <a href="#section-title">Unique Operator</a>
+            <a href="#multi-line-strings">Multi-line-Strings</a>
           </td>
-          <td class="contents-data">
-            <a href="#section-title">Loop with .times</a>
+          <td>
+            <a href="#constants">Constants / final variables</a>
           </td>
         </tr>
         <tr>
           <td>
+            <a href="#iterators">Iterators</a>
+          </td>
+          <td>
+            <a href="#unique-operator">Unique Operator</a>
+          </td>
+          <td>
             <a href="#output-to-console">Output to Console</a>
           </td>
-          <td>
-            <a href="#section-title">Unique Operator</a>
-          </td>
-          <td>
-            <a href="#section-title">Loop with .times</a>
-          </td>
         </tr>
+
       </table>
+    </div>
+
+    <div class="divider"></div>
+
+    <div id="" class="section">
+
+      <h2 id="section-title" class="section-header">Section Title</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">This is text</p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div id="" class="section">
+
+      <h2 id="multi-line-strings" class="section-header">Multi-line Strings</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">This is text</p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div id="" class="section">
+
+      <h2 id="constants" class="section-header">Constants / Final Variables</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          To define a constant in Ruby create the variable with a capital as the first character
+          <br><br>
+          <strong>Dogs = 50</strong>
+          <br><br>
+          Any attemps to change the variable Dogs will result in a warning
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div id="" class="section">
+
+      <h2 id="iterators" class="section-header">Iterators</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          <strong>
+          5.times do |number| puts "#{number}: Hello\n" end<br>
+          5.times { |number| puts "#{number}: Hello" }
+          </strong>
+          <br><br>
+          The method times runs the code in the provided block the specifed number of times.
+          The example will iterate through numbers 0 - 4 and run the code in the given block
+          <br><br>
+          <strong>
+            1.upto(5) do |number| puts "#{number}: Hello" end<br>
+            1.upto(5) { |number| puts "#{number}: Hello" } <br>
+            10.downto(5) do |number| puts "#{number}: Hello" end<br>
+            10.downto(5) { |number| puts "#{number}: Hello" }
+          </strong>
+          <br><br>
+          The methods upto and downto iterate through the given numbers inclusivly and run the code
+          in the given block on each loop
+          <br><br>
+          <strong>
+            0.step(50, 5) do |number| puts "#{number}: Hello\n" end<br>
+            0.step(50, 5) { |number| puts "#{number}: Hello\n" }<br>
+            3.step(50, 5) { |number| puts "#{number}: Hello\n" }
+          </strong>
+          <br><br>
+          The method step will iterate through the given numbers inclusivly, in steps equals to the second parameter, and run the code
+          in the given block on each loop. In the third example the final number will be 48 as the next value is greater than 50
+          <br><br>
+          <strong>
+            (1..5).each do |number| puts "#{number}: Hello\n" end<br>
+            (1..5).each { |number| puts "#{number}: Hello\n" }
+          </strong>
+          <br><br>
+          Using a range the method each can be used to inclusivly iterate over the given numbers while running the code in the given block
+          on each loop
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div id="" class="section">
+
+      <h2 id="unique-operator" class="section-header">Unique Operator</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          <strong>x <=> y</strong>: Returns 0 if x and y are equal, returns -1 if y
+          is greater and 1 if x is greater
+        </p>
+      </div>
+
     </div>
 
     <div class="divider"></div>
@@ -61,52 +166,9 @@
 
     <div class="divider"></div>
 
-    <div id="" class="section">
-
-      <h2 class="section-header">Unique Operator</h2>
-
-      <div class="section-content">
-        <p class="section-text-normal">
-          <strong>x <=> y</strong>: Returns 0 if x and y are equal, returns -1 if y
-          is greater and 1 if x is greater
-        </p>
-      </div>
-
-      <div class="divider"></div>
-    </div>
-
-    <div id="" class="section">
-
-      <h2 id=".times" class="section-header">Loop with .times</h2>
-
-      <div class="section-content">
-        <p class="section-text-normal">
-          <strong>5.times do puts "Hello" end
-          <br>or<br>
-          5.times {puts "Hello"}</strong>
-          <br><br>
-          The method .times runs the code in the provided block the specifed number of times.
-          It can be called by integer values.
-        </p>
-      </div>
-
-      <div class="divider"></div>
-    </div>
-
-    <div id="" class="section">
-
-      <h2 id="section-title" class="section-header">Section Title</h2>
-
-      <div class="section-content">
-        <p class="section-text-normal">This is text</p>
-      </div>
-
-      <div class="divider"></div>
-    </div>
+    <a href="../index.html"><p>&#60&#60Return</p></a>
 
   </div>
-
-
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" rel="javascript"></script>
   <script src="../j-script/text-size-manager.js" rel="javascript"></script>
