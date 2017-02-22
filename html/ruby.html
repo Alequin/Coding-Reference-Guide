@@ -25,16 +25,15 @@
             <a href="#">ph</a>
           </td>
           <td>
-            <a href="#">ph</a>
+            <a href="#substitutions-in-strings">Substitutions in Strings</a>
           </td>
           <td>
-            <a href="#">ph</a>
+            <a href="#interpolation">Interpolation</a>
           </td>
         </tr>
-      <table id="contents-table">
         <tr>
           <td>
-            <a href="#string-numerical-values">string-numerical-values</a>
+            <a href="#string-numerical-values">String Numerical Values</a>
           </td>
           <td>
             <a href="#multi-line-strings">Multi-line-Strings</a>
@@ -62,13 +61,66 @@
 
     <div id="" class="section">
 
-      <h2 id="section-title" class="section-header">Section Title</h2>
+      <h2 id="" class="section-header"></h2>
 
       <div class="section-content">
-        <p class="section-text-normal">This is text</p>
+        <p class="section-text-normal">
+
+        </p>
       </div>
 
     </div>
+
+    <div class="divider"></div>
+
+    <div id="" class="section">
+
+      <h2 id="substitutions-in-stringsSubstitutions in Strings" class="section-header">Substitutions in Strings</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          <strong>
+            puts "bacon and eggs".sub("bacon", "sausage")<br>
+            #=> sausage and eggs
+            <br><br>
+            puts "this is a test".gsub("t", "")<br>
+            #=> his is a es
+          </strong>
+          <br><br>
+          sub finds the first string which matches its first parameters and substitutes it for
+          the seconds parameter.<br>
+          gsub finds all instances of the first parameter and subs all of them for the seconds
+          parameter
+          <br><br>
+          This first parameter of these methods can be regular expressions
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div id="" class="section">
+
+      <h2 id="interpolation" class="section-header">Interpolation</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          <strong>
+            s = "interpolation"<br>
+            "This is #{x}"<br>
+            #=> This is interpolation
+            <br><br>
+            i = 5<br>
+            j = 10<br>
+            puts "#{i} + #{10} = #{i + j}"<br>
+            #=> 5 + 10 = 15
+          </strong>
+          <br><br>
+          Interpolations is the insertion of the result from an expression directly into a string literal.
+          Double quotes ( "" instead of '' ) must be used in order for interpolation to work correctly
+        </p>
+      </div>
 
     <div class="divider"></div>
 
