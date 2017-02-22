@@ -22,7 +22,7 @@
       <table id="contents-table">
         <tr>
           <td>
-            <a href="#">ph</a>
+            <a href="#regexr-in-ruby">RegExr in Ruby</a>
           </td>
           <td>
             <a href="#substitutions-in-strings">Substitutions in Strings</a>
@@ -61,11 +61,35 @@
 
     <div id="" class="section">
 
-      <h2 id="" class="section-header"></h2>
+      <h2 id="regexr-in-ruby" class="section-header">RegExr in Ruby</h2>
 
       <div class="section-content">
         <p class="section-text-normal">
-
+          There are a few methods that can be used by strings with regexr as parameters. Some
+          of these include:
+          <br>
+          <strong>
+            sub<br>
+            gsub<br>
+            scan
+          </strong>
+          <br><br>
+          (For information on the first two methods view the section <a href="#substitutions-in-strings">Substitutions in Strings</a>)
+          <br><br>
+          Forward slashes are used at the start and end of a regular expression and can be given as parameters in all three methods shown.
+          <br><br>
+          The scan method takes one parameter and iterates through the given string, looping for each match it finds.
+          <br><br>
+          <strong>
+            "this is a test".scan(/\w\w/) do |letter| puts letter end<br>
+            or<br>
+            "this is a test".scan(/\w\w/) {|letter| puts letter}<br>
+            #=>th<br>
+            is<br>
+            is<br>
+            te<br>
+            st<br>
+          </strong>
         </p>
       </div>
 
@@ -75,7 +99,7 @@
 
     <div id="" class="section">
 
-      <h2 id="substitutions-in-stringsSubstitutions in Strings" class="section-header">Substitutions in Strings</h2>
+      <h2 id="substitutions-in-strings" class="section-header">Substitutions in Strings</h2>
 
       <div class="section-content">
         <p class="section-text-normal">
@@ -92,7 +116,7 @@
           gsub finds all instances of the first parameter and subs all of them for the seconds
           parameter
           <br><br>
-          This first parameter of these methods can be regular expressions
+          The first parameter of these methods can be regular expressions
         </p>
       </div>
 
@@ -255,6 +279,20 @@
           <br><br>
           Using a range the method each can be used to inclusively iterate over the given numbers while running the code in the given block
           on each loop
+          <br><br>
+          <strong>
+            "this is a test".scan(/\w\w/) do |letter| puts letter end<br>
+            or<br>
+            "this is a test".scan(/\w\w/) {|letter| puts letter}<br>
+            #=>th<br>
+            is<br>
+            is<br>
+            te<br>
+            st
+          </strong>
+          <br><br>
+          The method scan can be used on string values. It will loop for each match (compared against the parameter) within the string it finds.
+          The given parameter can either be a string or a RegExr (<a href="#regexr-in-ruby">click here for more on RegExr</a>)
         </p>
       </div>
 
