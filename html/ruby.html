@@ -76,11 +76,13 @@
 
       <div class="section-content">
         <p class="section-text-normal">
-          Arrays can be instantiated either empty or with values
+          Arrays can be instantiated either empty or with values. Each variable in
+          an array can hold any type of data
           <br><br>
           <strong>
             x = []<br>
-            y = [1,2,3,4,5]
+            y = [1,2,3,4,5]<br>
+            z = [1, "two", 3, "four", 5]
           </strong>
           <br><br>
           New values can be pushed onto the end of the array in two ways.<br>
@@ -97,11 +99,47 @@
           <br><br>
           <strong>
             y = [1,2,3,4,5]<br>
-            y.pop
-            puts y
+            y.pop<br>
+            puts y<br>
             #=> [1,2,3,4]
           </strong>
           <br><br>
+          The method join combines all the values of the array into a single string.
+          The characters you wish to be between each variable can be given as a parameter
+          <br><br>
+          <strong>
+            y = [1,2,3,4,5]<br><br>
+            y.join<br>
+            puts y<br>
+            #=> "1234"<br>
+            or<br>
+            y.join(", ")<br>
+            puts y<br>
+            #=> "1, 2, 3, 4"<br>
+          </strong>
+          <br><br>
+          Arrays can added together, which simply connects the two together
+          <br><br>
+          <strong>
+            x = ["a","b","c"]<br>
+            y = [1,2,3,4,5]<br>
+            puts x + y<br>
+            #=> ["a","b","c",1,2,3,4,5]<br>
+          </strong>x
+          <br><br>
+          Arrays can also be subtracted. The result of this is the removal of any values from the first array
+          that occur in both array
+          <br><br>
+          <strong>
+            x = [1,2,3,4,5]<br>
+            y = [3,4,5]
+            <br><br>
+            puts x - y<br>
+            #=> [1,2]
+            <br><br>
+            puts y - x<br>
+            #=> []
+          </strong>
         </p>
       </div>
 
@@ -334,7 +372,6 @@
           <br><br>
           <strong>
             "this is a test".scan(/\w\w/) do |letter| puts letter end<br>
-            or<br>
             "this is a test".scan(/\w\w/) {|letter| puts letter}<br>
             #=>th<br>
             is<br>
@@ -345,6 +382,18 @@
           <br><br>
           The method scan can be used on string values. It will loop for each match (compared against the parameter) within the string it finds.
           The given parameter can either be a string or a RegExr (<a href="#regexr-in-ruby">click here for more on RegExr</a>)
+          <br><br>
+          <strong>
+            [1,2,3,4].collect {|number| number + 1 }<br>
+            #=> [2,3,4,5]
+            <br><br>
+            ["cat","mouse","dog"].collect {|string| string * 2 }<br>
+            #=> ["catcat","mousemouse","dogdog"]
+          </strong>
+          <br><br>
+          The collect method is used on arrays. It returns a new array containing all the same variables but after
+          they have been altered by the given code black. The method map is used in the same way as collect and produces
+          the same results
         </p>
       </div>
 
