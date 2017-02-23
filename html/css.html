@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Ruby Summary</title>
+  <title>CSS Summary</title>
   <meta charset="utf-8">
   <link href="../css/basic-layout.css" type="text/css" rel="stylesheet"/>
   <link href="../css/summary-page-layout.css" type="text/css" rel="stylesheet"/>
@@ -28,7 +28,7 @@
             <a href="#">ph</a>
           </td>
           <td>
-            <a href="#">ph</a>
+            <a href="#important-priority">!important priority</a>
           </td>
       </table>
     </div>
@@ -37,11 +37,26 @@
 
     <div id="" class="section">
 
-      <h2 id="" class="section-header"></h2>
+      <h2 id="important-priority" class="section-header">!important priority</h2>
 
       <div class="section-content">
         <p class="section-text-normal">
-
+          <strong>
+            color: red !important;
+          </strong>
+          <br><br>
+          Using the !important rule will cause the involved attribute to be considered
+          as the highest priority and applied. While this can be useful is some cases it
+          may lead to issues
+          <br><br>
+          Abuse of the !important rule may lead to confusion when others attempt to alter
+          your CSS in the future and are unable to. This might result in others removing
+          the rule, which could cause issues and additional work, or may cause future
+          developers to abuse the same rule in order to apply their own code.<br>
+          (Source and additional information:
+          <a href="https://css-tricks.com/when-using-important-is-the-right-choice/">
+            CSS tricks - When Using !important is The Right Choice
+          </a>)
         </p>
       </div>
 

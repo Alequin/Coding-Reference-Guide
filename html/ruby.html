@@ -85,6 +85,29 @@
             z = [1, "two", 3, "four", 5]
           </strong>
           <br><br>
+          Array variables can be accessed in a number of ways as shown below
+          <br><br>
+          <strong>
+            y = [1,2,3,4,5]<br>
+            puts y[0]<br>
+            puts y[4]<br>
+            puts y[-1]<br>
+            puts y[-5]<br>
+            #=> 1<br>
+            5<br>
+            5<br>
+            1
+          </strong>
+          <br><br>
+          Attempting to access an array element that does not exist will not throw a
+          warning / exception but will only return nil
+          <br><br>
+          <strong>
+            y = [1,2,3,4,5]<br>
+            puts y[5]<br>
+            #=> nil
+          </strong>
+          <br><br>
           New values can be pushed onto the end of the array in two ways.<br>
           This will increase the
           array length by 1
@@ -95,13 +118,34 @@
           </strong>
           <br><br>
           The method pop is used to remove the the last element.<br>
-          This will reduce the array length by 1
+          This will reduce the array length by 1. The removed value will be returned
           <br><br>
           <strong>
             y = [1,2,3,4,5]<br>
-            y.pop<br>
+            puts y.pop<br>
             puts y<br>
-            #=> [1,2,3,4]
+            #=> 5<br>
+            [1,2,3,4]
+          </strong>
+          <br><br>
+          The method empty? will return a boolean value. True if the array holds no
+          values.<br>
+          The method length will return the number of values held by the array
+          <br><br>
+          <strong>
+            y = []<br>
+            puts y.empty?<br>
+            puts y.length<br>
+            #=> true<br>
+            0
+          </strong>
+          <br><br>
+          The method include? returns true if the given parameter is held within the array
+          <br><br>
+          <strong>
+            y = [1,2,3]<br>
+            puts y.include?(2)<br>
+            #=> true
           </strong>
           <br><br>
           The method join combines all the values of the array into a single string.
@@ -115,7 +159,7 @@
             or<br>
             y.join(", ")<br>
             puts y<br>
-            #=> "1, 2, 3, 4"<br>
+            #=> "1, 2, 3, 4"
           </strong>
           <br><br>
           Arrays can added together, which simply connects the two together
@@ -139,6 +183,21 @@
             <br><br>
             puts y - x<br>
             #=> []
+          </strong>
+          <br><br>
+          The methods first and last can be used for easy access to the start and end of arrays.
+          The methods accept one parameter that signifies how many variable to return
+          <br><br>
+          <strong>
+            x = [1,2,3,4,5]<br>
+            puts x.first<br>
+            puts x.first(2)<br>
+            puts x.last<br>
+            puts x.last(2)<br>
+            #=> [1]<br>
+            [1,2]<br>
+            [5]<br>
+            [4,5]<br>
           </strong>
         </p>
       </div>
@@ -354,21 +413,28 @@
           in the given block on each loop
           <br><br>
           <strong>
-            0.step(50, 5) do |number| puts "#{number}: Hello\n" end<br>
-            0.step(50, 5) { |number| puts "#{number}: Hello\n" }<br>
-            3.step(50, 5) { |number| puts "#{number}: Hello\n" }
+            0.step(50, 5) do |number| puts "#{number}: Hello" end<br>
+            0.step(50, 5) { |number| puts "#{number}: Hello" }<br>
+            3.step(50, 5) { |number| puts "#{number}: Hello" }
           </strong>
           <br><br>
           The method step will iterate through the given numbers inclusively, in steps equals to the second parameter, and run the code
           in the given block on each loop. In the third example the final number will be 48 as the next value is greater than 50
           <br><br>
           <strong>
-            (1..5).each do |number| puts "#{number}: Hello\n" end<br>
-            (1..5).each { |number| puts "#{number}: Hello\n" }
+            (1..5).each do |number| puts "#{number}: Hello" end<br>
+            (1..5).each { |number| puts "#{number}: Hello" }
           </strong>
           <br><br>
           Using a range the method each can be used to inclusively iterate over the given numbers while running the code in the given block
           on each loop
+          <br><br>
+          <strong>
+            [1,2,3,4,5].each do |number| puts "#{number}: Hello" end<br>
+            ["cat","dog","mouse"].each { |word| puts "word" }
+          </strong>
+          <br><br>
+          The method each can also be used on arrays to iterate over each variable contained
           <br><br>
           <strong>
             "this is a test".scan(/\w\w/) do |letter| puts letter end<br>
