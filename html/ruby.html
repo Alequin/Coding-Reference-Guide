@@ -119,6 +119,7 @@
       </div>
 
     </div>
+
     <div class="divider"></div>
 
     <div id="" class="section">
@@ -583,6 +584,8 @@
 
     <div class="divider"></div>
 
+    <div class="divider"></div>
+
     <div id="" class="section">
 
       <h2 id="string-numerical-values" class="section-header">String numerical values</h2>
@@ -760,6 +763,18 @@
           The collect method is used on arrays. It returns a new array containing all the same variables but after
           they have been altered by the given code black. The method map is used in the same way as collect and produces
           the same results
+          <br><br>
+          <strong>
+            (1..5).each { |number|<br>
+              &#160if(number == 2)<br>
+              &#160&#160&#160next<br>
+              &#160end<br>
+              &#160&#160puts number<br>
+            }
+          </strong>
+          <br><br>
+          The next key word can be used in loops and iterators to skip the remaining code and start
+          the next loop / iteration
           <br><br>
           (Sources:
           <br>
