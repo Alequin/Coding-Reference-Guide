@@ -22,6 +22,17 @@
       <table id="contents-table">
         <tr>
           <td>
+            <a href="#"></a>
+          </td>
+          <td>
+            <a href="#symbols">Symbols</a>
+          </td>
+          <td>
+            <a href="#custom-code-blocks">Custom Methods That Using Code blocks</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
             <a href="#flow-control-summary">Flow-Control: summary</a>
           </td>
           <td>
@@ -72,11 +83,89 @@
 
     <div id="" class="section">
 
-      <h2 id="" class="section-header"></h2>
+      <h2 id="symbols" class="section-header">Symbols</h2>
 
       <div class="section-content">
         <p class="section-text-normal">
+          Symbols are abstract references represented by a short string that follows a colon.
+          They act as constants and can be referneced using variables.
+          <br><br>
+          <strong>
+            :cat :dog :mouse :bear
+            <br><br>
+            x = :cat
+          </strong>
+          <br><br>
+          Symbols can be very useful when tring to save time and memory space. Using symbols within
+          a loop rather than a string literal stops the creation of multiple unneeded strings and
+          comparisons between symbols takes less time than between strings.
+          <br><br>
+          However symbols are never garbage collected and so the memory is never released. Due to this
+          symbols should never be created if they are to be used infrequently.
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          <br>
+            <a href="http://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/">
+              The Ruby Symbol is a Memory Leak
+            </a>
+            <br>
+            <a href="http://marcricblog.blogspot.co.uk/2010/02/ruby-symbols-ultimate-guide.html">
+              Ruby Symbols Ultimate Guide
+            </a>
+          )
+        </p>
+      </div>
 
+    </div>
+    <div class="divider"></div>
+
+    <div id="" class="section">
+
+      <h2 id="custom-code-blocks" class="section-header">Custom Methods That Using Code blocks</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          When making a method it is possible to instruct the method to accept and make
+          use of code blocks by including one as a parameter. The parameter that signifies
+          the code block must be the last parameter entered and start with a & symbol.<br>
+          Note: All occurrences of { } and "do end" are interchangeable
+          <br><br>
+          <strong>
+            def my_method(&code_block)<br>
+            &#160&#160 [1,2,3,4,5].each{|num| code_block.call(num)}<br>
+            end
+            <br><br>
+            my_method() {|val| puts val}
+            <br><br>
+            #=> 1<br>
+            2<br>
+            3<br>
+            4<br>
+            5
+            <br><br>
+            def my_method(array, &code_block)<br>
+            &#160&#160 array.each do |num|<br>
+            &#160&#160&#160&#160 code_block.call(num)<br>
+            &#160&#160end<br>
+            end
+            <br><br>
+            my_method([1,2,3,4,5]) do |val|<br>
+            &#160&#160puts val<br>
+            end
+            <br><br>
+            #=> 1<br>
+            2<br>
+            3<br>
+            4<br>
+            5<br>
+          </strong>
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          )
         </p>
       </div>
 
@@ -162,6 +251,10 @@
             <br>
           </strong>
           <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          )
         </p>
       </div>
 
@@ -177,9 +270,10 @@
         <p class="section-text-normal">
           Hashes are similar to array in that they hold multiple objects. The
           difference is that each object is assigned a key rather than an ordered
-          position.
+          position. Keys can be any object though strings and symbols are commonly used
           <br><br>
           <strong>
+            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse",}
             x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse",}
           </strong>
           <br><br>
@@ -231,6 +325,10 @@
             x.delete_if {|key, value| value == "cat"}
           </strong>
           <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          )
         </p>
       </div>
 
@@ -365,8 +463,13 @@
             #=> [1]<br>
             [1,2]<br>
             [5]<br>
-            [4,5]<br>
+            [4,5]
           </strong>
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          )
         </p>
       </div>
 
@@ -404,9 +507,13 @@
             is<br>
             is<br>
             te<br>
-            st<br>
+            st
           </strong>
-
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          )
         </p>
       </div>
 
@@ -434,7 +541,13 @@
           parameter
           <br><br>
           The first parameter of these methods can be regular expressions
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          )
         </p>
+
       </div>
 
     </div>
@@ -460,6 +573,11 @@
           <br><br>
           Interpolations is the insertion of the result from an expression directly into a string literal.
           Double quotes ( "" instead of '' ) must be used in order for interpolation to work correctly
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          )
         </p>
       </div>
 
@@ -490,7 +608,11 @@
               (source: stackoverflow: Trying to understand the Ruby .chr and .ord methods)
             </a>
           </strong>
-
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          )
         </p>
       </div>
 
@@ -531,6 +653,11 @@
           Using characters as a delimiter is possible as shown in this example. This is called a here document.
           (Note: had issues with indentation using this method. It seems as if it does not work unless
           no indentation is used on the end delimiter. Other methods are more user friendly)
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          )
         </p>
       </div>
 
@@ -549,6 +676,11 @@
           <strong>Dogs = 50</strong>
           <br><br>
           Any attempts to change the variable Dogs will result in a warning
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          )
         </p>
       </div>
 
@@ -628,6 +760,11 @@
           The collect method is used on arrays. It returns a new array containing all the same variables but after
           they have been altered by the given code black. The method map is used in the same way as collect and produces
           the same results
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          )
         </p>
       </div>
 
@@ -643,6 +780,11 @@
         <p class="section-text-normal">
           <strong>x <=> y</strong>: Returns 0 if x and y are equal, returns -1 if y
           is greater and 1 if x is greater
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          )
         </p>
       </div>
 
@@ -658,6 +800,11 @@
         <p class="section-text-normal">
           <strong>print</strong>: print a string to the console<br>
           <strong>puts</strong>: print a string to the console with a new line after
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          )
         </p>
       </div>
 
