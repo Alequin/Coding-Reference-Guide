@@ -22,7 +22,7 @@
       <table id="contents-table">
         <tr>
           <td>
-            <a href="#"></a>
+            <a href="#flow-control-summary">Flow-Control: summary</a>
           </td>
           <td>
             <a href="#hashes">Hashes</a>
@@ -77,6 +77,91 @@
       <div class="section-content">
         <p class="section-text-normal">
 
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div id="" class="section">
+
+      <h2 id="flow-control-summary" class="section-header">Flow-Control: summary</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          Note: all parenthesis used in this sections are not required for code to work, just personal preference
+          <br><br>
+          <u>If, else and unless</u>
+          <br><br>
+          <strong>
+            if(true)<br>
+            &#160&#160run code if true<br>
+            else<br>
+            &#160&#160run code if false<br>
+            end<br>
+            <br>
+            unless(false)<br>
+            &#160&#160run code if false<br>
+            else<br>
+            &#160&#160run code if true<br>
+            end<br>
+            <br>
+            x = 5<br>
+            if(x > 5)<br>
+              &#160&#160run code if x is greater than 5<br>
+            elsif(x < 5)<br>
+              &#160&#160run code is x is less than 5<br>
+            else<br>
+              &#160&#160run code for all other cases<br>
+            end
+          </strong>
+          <br><br>
+          <u>Ternary Operator</u>
+          <br><br>
+          <strong>
+            x = true ? "one" : "two"<br>
+            puts x<br>
+            #=> "one"
+            <br><br>
+            x = false ? "one" : "two"<br>
+            puts x<br>
+            #=> "two"
+          </strong>
+          <br><br>
+          <u>Case</u>
+          <br><br>
+          <strong>
+            x = 6<br>
+            case x<br>
+            &#160&#160when 2<br>
+            &#160&#160&#160&#160run code when x == 2<br>
+            &#160&#160when 4<br>
+            &#160&#160&#160&#160run code when x == 4<br>
+            &#160&#160when 6<br>
+            &#160&#160&#160&#160run code when x == 6<br>
+            &#160&#160else<br>
+            &#160&#160&#160&#160run code for all other cases<br>
+            end
+          </strong>
+          <br><br>
+          <u>While and Until</u>
+          <br><br>
+          <strong>
+            x = 0<br>
+            while(x < 100)<br>
+            &#160&#160repeat code while x is less than 100<br>
+            &#160&#160x += 1<br>
+            end
+            <br><br>
+            x = 0<br>
+            until(x > 100)<br>
+            &#160&#160repeat code until x is greater than 100<br>
+            &#160&#160x += 1<br>
+            end
+            <br>
+          </strong>
+          <br><br>
         </p>
       </div>
 
