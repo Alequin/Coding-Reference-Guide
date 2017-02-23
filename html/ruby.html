@@ -25,7 +25,7 @@
             <a href="#"></a>
           </td>
           <td>
-            <a href="#"></a>
+            <a href="#hashes">Hashes</a>
           </td>
           <td>
             <a href="#arrays">Arrays</a>
@@ -66,6 +66,89 @@
         </tr>
 
       </table>
+    </div>
+
+    <div class="divider"></div>
+
+    <div id="" class="section">
+
+      <h2 id="" class="section-header"></h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div id="" class="section">
+
+      <h2 id="hashes" class="section-header">Hashes</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          Hashes are similar to array in that they hold multiple objects. The
+          difference is that each object is assigned a key rather than an ordered
+          position.
+          <br><br>
+          <strong>
+            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse",}
+          </strong>
+          <br><br>
+          New objects can be added by providing a new key
+          <br><br>
+          <strong>
+            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse",}<br>
+            x["pet 4"] = "lion"
+          </strong>
+          <br><br>
+          Each object is accessed and edited using it's own key
+          <br><br>
+          <strong>
+            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
+            puts x["pet 1"]<br>
+            x["pet 1"] = "tiger"<br>
+            puts x["pet 1"]<br>
+            #=> cat<br>
+            tiger
+          </strong>
+          <br><br>
+          A Hashes length is found by using the methos size
+          <br><br>
+          <strong>
+            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
+            puts x.size<br>
+            #=> 3
+          </strong>
+          <br><br>
+          Hashes are iterated over using the each method. As of ruby 1.9 the iteration
+          order will match the order in which values were added to the hash
+          <br><br>
+          <strong>
+            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
+            x.each {|key, value| puts "#{key}: #{value}"}
+          </strong>
+          <br><br>
+          Objects stored in hashes can be deleted with the method delete
+          <br><br>
+          <strong>
+            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
+            x.delete("pet 1")
+          </strong>
+          <br><br>
+          delete_if also deletes objects but only if the provided block equates to true
+          <br><br>
+          <strong>
+            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
+            x.delete_if {|key, value| value == "cat"}
+          </strong>
+          <br><br>
+        </p>
+      </div>
+
     </div>
 
     <div class="divider"></div>
