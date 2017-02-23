@@ -1,0 +1,12 @@
+div {
+  height: 90px;
+  line-height: 90px;
+
+  text-align: center;
+  border: 2px dashed #f69c55;
+}
+<div>
+  Hello World!
+</div>
+
+http://stackoverflow.com/questions/8865458/how-to-vertically-center-text-with-css

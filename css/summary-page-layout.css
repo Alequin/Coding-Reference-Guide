@@ -11,15 +11,44 @@
   margin-top: 15px;
 }
 
+#contents-container{
+  display: none;
+}
+
+a, a:visited{
+  text-decoration: none;
+  text-decoration: underline;
+  color: black;
+}
+
+#contents-table a{
+    text-decoration: none;
+}
+#contents-table a:hover{
+  color: blue;
+}
+
+#contents-table{
+  width: 100%;
+}
+
+#contents-table td{
+  padding: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 33.3%;
+  text-align: center;
+}
+
 .section{
-  max-width: 500px;
+  max-width: 100%;
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
 .divider{
     height: 2px;
-    max-width: 500px;
+    max-width: 100%;
     background: black;
 }
 
@@ -30,11 +59,12 @@
 
 .section-content{
   position: relative;
-  width: 95%; height: 100;
+  width: 95%;
   margin: auto;
   margin-bottom: 10px;
 }
 
 .section-text-normal{
-  font-size: 15px;
+  font-size: 18px;
+  line-height: 25px;
 }

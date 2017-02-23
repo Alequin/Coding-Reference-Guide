@@ -24,4 +24,9 @@
   padding: 0;
   top: 33px;
   font-size: 20px;
+  color: black;
+}
+
+#regexr-title{
+  top: 22px;
 }
