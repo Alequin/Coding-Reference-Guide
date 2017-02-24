@@ -223,7 +223,7 @@
       <div class="section-content">
         <p class="section-text-normal">
           Symbols are abstract references represented by a short string that follows a colon.
-          They act as constants and can be referneced using variables.
+          They act as constants and can be referenced using variables.
           <br><br>
           <strong>
             :cat :dog :mouse :bear
@@ -231,7 +231,15 @@
             x = :cat
           </strong>
           <br><br>
-          Symbols can be very useful when tring to save time and memory space. Using symbols within
+          Strings can be converted into symbols while a program is running by calling the method
+          to_sym or intern on any string
+          <br><br>
+          <strong>
+            :cat.to_sym<br>
+            :cat.intern<br>
+          </strong>
+          <br><br>
+          Symbols can be very useful when trying to save time and memory space. Using symbols within
           a loop rather than a string literal stops the creation of multiple unneeded strings and
           comparisons between symbols takes less time than between strings.
           <br><br>
@@ -248,6 +256,10 @@
             <br>
             <a href="http://marcricblog.blogspot.co.uk/2010/02/ruby-symbols-ultimate-guide.html">
               Ruby Symbols Ultimate Guide
+            </a>
+            <br>
+            <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-Qn7Qw/1/4?curriculum_id=5059f8619189a5000201fbcb">
+              Codecademy: Hashes and Symbols
             </a>
           )
         </p>
@@ -418,7 +430,7 @@
           </strong>
           <br><br>
           Attempting to access a key that does not exist will return nil. Unless when the
-          hash was initilised you provided a parameter. In this case the given parameter would
+          hash was initialised you provided a parameter. In this case the given parameter would
           be returned.
           <br><br>
           <strong>
@@ -528,7 +540,7 @@
             x.push("value")
           </strong>
           <br><br>
-          The method pop is used to remove the the last element.<br>
+          The method pop is used to remove the last element.<br>
           This will reduce the array length by 1. The removed value will be returned
           <br><br>
           <strong>
@@ -927,7 +939,7 @@
           }
           </strong>
           <br><br>
-          Loop is the most basic form of loop and ends when the break if statment is true
+          Loop is the most basic form of loop and ends when the break if statement is true
           <br><br>
           <strong>
             x = 0<br>
