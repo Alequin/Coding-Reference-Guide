@@ -345,7 +345,7 @@
           <strong>
             def my_method(array)<br>
             &#160&#160 array.each do |num|<br>
-            &#160&#160&#160&#160 yield num<br>
+            &#160&#160&#160&#160 yield(num)<br>
             &#160&#160end<br>
             end
             <br><br>
@@ -537,15 +537,10 @@
             x.delete_if {|key, value| value == "cat"}
           </strong>
           <br><br>
-          Hashes can be iterated over using the select, each_key and each_value methods.
+          Hashes can be iterated over using the each_key and each_value methods.
           <br><br>
           <strong>
             x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}
-            <br><br>
-            x.select { |number, type| puts "#{number}: #{type}"}<br>
-            #>= pet 1: cat<br>
-            pet 2: dog<br>
-            pet 3: mouse
             <br><br>
             x.each_key { |key| puts "#{key}}<br>
             #>= pet 1<br>
@@ -564,7 +559,7 @@
           <br>
           Book: Beginning Ruby: From Novice to Professional<br>
           <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-Qn7Qw/2/4?curriculum_id=5059f8619189a5000201fbcb">
-            Hashes and Symbols
+            codeacademy: Hashes and Symbols
           </a>
           )
         </p>
@@ -1051,9 +1046,27 @@
           <br><br>
           The for loop runs the given number of times inclusively
           <br><br>
+          <strong>
+            [1,2,3,4,5,6,7,8].select { |num| num % 2 == 0}<br>
+            #=> [2,4,6,8]
+            <br><br>
+            [1,2,3,4,5,6,7,8].select { |num| <br>
+              &#160&#160num % 2 == 0<br>
+              &#160&#160num % 3 == 0<br>
+            }<br>
+            #=> [3,6]
+          </strong>
+          <br><br>
+          The select method allows you to set a condition and returns an array containing only values that
+          meet that criteria. If the block contains multiple lines of code the final line will act as the
+          condition.
+          <br><br>
           (Sources:
           <br>
-          Book: Beginning Ruby: From Novice to Professional
+          Book: Beginning Ruby: From Novice to Professional<br>
+          <a href="http://www.eriktrautman.com/posts/ruby-explained-map-select-and-other-enumerable-methods">
+            Ruby Explained: Map, Select, and Other Enumerable Methods
+          </a>
           )
         </p>
       </div>
