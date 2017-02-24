@@ -39,7 +39,7 @@
             <a href="#symbols">Symbols</a>
           </td>
           <td>
-            <a href="#custom-code-blocks">Custom Methods That Using Code blocks</a>
+            <a href="#custom-code-blocks">Custom Methods That Use Code blocks</a>
           </td>
         </tr>
         <tr>
@@ -299,14 +299,15 @@
 
     <div id="" class="section">
 
-      <h2 id="custom-code-blocks" class="section-header">Custom Methods That Using Code blocks</h2>
+      <h2 id="custom-code-blocks" class="section-header">Custom Methods That Use Code blocks</h2>
 
       <div class="section-content">
         <p class="section-text-normal">
           When making a method it is possible to instruct the method to accept and make
           use of code blocks by including one as a parameter. The parameter that signifies
           the code block must be the last parameter entered and start with a & symbol.<br>
-          Note: All occurrences of { } and "do end" are interchangeable
+          (Note: All occurrences of { } and "do end" are interchangeable. Also &code_block can
+          be replaced by any legal name eg. &bacon)
           <br><br>
           <strong>
             def my_method(&code_block)<br>
@@ -335,12 +336,36 @@
             2<br>
             3<br>
             4<br>
+            5
+          </strong>
+          <br><br>
+          The yield key term can be used in place of &code_block which and does not require
+          a given parameter
+          <br><br>
+          <strong>
+            def my_method(array)<br>
+            &#160&#160 array.each do |num|<br>
+            &#160&#160&#160&#160 yield num<br>
+            &#160&#160end<br>
+            end
+            <br><br>
+            my_method([1,2,3,4,5]) do |val|<br>
+            &#160&#160puts val<br>
+            end
+            <br><br>
+            #=> 1<br>
+            2<br>
+            3<br>
+            4<br>
             5<br>
           </strong>
           <br><br>
           (Sources:
           <br>
-          Book: Beginning Ruby: From Novice to Professional
+          Book: Beginning Ruby: From Novice to Professional<br>
+          <a href="https://www.codecademy.com/courses/ruby-beginner-en-L3ZCI/0/1?curriculum_id=5059f8619189a5000201fbcb">
+            codeacademy: Blocks, Procs, and Lambdas
+          </a>
           )
         </p>
       </div>
