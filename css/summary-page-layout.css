@@ -68,3 +68,8 @@ a, a:visited{
   font-size: 18px;
   line-height: 25px;
 }
+
+h3{
+  margin: 0;
+  padding: 0;
+}

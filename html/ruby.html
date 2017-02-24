@@ -565,11 +565,6 @@
         </p>
       </div>
 
-      <div class="divider"></div>
-      <a href="../index.html"><p>&#60&#60Return</p></a>
-
-    </div>
-
     <div class="divider"></div>
 
     <div id="" class="section">
@@ -931,95 +926,41 @@
       <h2 id="iterators" class="section-header">Loops and Iterators</h2>
 
       <div class="section-content">
+
+        <u><h3>next</h3></u>
         <p class="section-text-normal">
-          bacon
-          <strong>
-          5.times do |number| puts "#{number}: Hello\n" end<br>
-          5.times { |number| puts "#{number}: Hello" }
-          </strong>
-          <br><br>
-          The method times runs the code in the provided block the specified number of times.
-          The example will iterate through numbers 0 - 4 and run the code in the given block
-          <br><br>
-          <strong>
-            1.upto(5) do |number| puts "#{number}: Hello" end<br>
-            1.upto(5) { |number| puts "#{number}: Hello" } <br>
-            10.downto(5) do |number| puts "#{number}: Hello" end<br>
-            10.downto(5) { |number| puts "#{number}: Hello" }
-          </strong>
-          <br><br>
-          The methods upto and downto iterate through the given numbers inclusively and run the code
-          in the given block on each loop
-          <br><br>
-          <strong>
-            0.step(50, 5) do |number| puts "#{number}: Hello" end<br>
-            0.step(50, 5) { |number| puts "#{number}: Hello" }<br>
-            3.step(50, 5) { |number| puts "#{number}: Hello" }
-          </strong>
-          <br><br>
-          The method step will iterate through the given numbers inclusively, in steps equals to the second parameter, and run the code
-          in the given block on each loop. In the third example the final number will be 48 as the next value is greater than 50
-          <br><br>
-          <strong>
-            (1..5).each do |number| puts "#{number}: Hello" end<br>
-            (1..5).each { |number| puts "#{number}: Hello" }
-          </strong>
-          <br><br>
-          Using a range the method each can be used to inclusively iterate over the given numbers while running the code in the given block
-          on each loop
-          <br><br>
-          <strong>
-            [1,2,3,4,5].each do |number| puts "#{number}: Hello" end<br>
-            ["cat","dog","mouse"].each { |word| puts "word" }
-          </strong>
-          <br><br>
-          The method each can also be used on arrays to iterate over each variable contained
-          <br><br>
-          <strong>
-            "this is a test".scan(/\w\w/) do |letter| puts letter end<br>
-            "this is a test".scan(/\w\w/) {|letter| puts letter}<br>
-            #=>th<br>
-            is<br>
-            is<br>
-            te<br>
-            st
-          </strong>
-          <br><br>
-          The method scan can be used on string values. It will loop for each match (compared against the parameter) within the string it finds.
-          The given parameter can either be a string or a RegExr (<a href="#regexr-in-ruby">click here for more on RegExr</a>)
-          <br><br>
-          <strong>
-            [1,2,3,4].collect {|number| number + 1 }<br>
-            #=> [2,3,4,5]
-            <br><br>
-            ["cat","mouse","dog"].collect {|string| string * 2 }<br>
-            #=> ["catcat","mousemouse","dogdog"]
-          </strong>
-          <br><br>
-          The collect method is used on arrays. It returns a new array containing all the same variables but after
-          they have been altered by the given code black. The method map is used in the same way as collect and produces
-          the same results
-          <br><br>
-          <strong>
-            (1..5).each { |number|<br>
-              &#160if(number == 2)<br>
-              &#160&#160&#160next<br>
-              &#160end<br>
-              &#160&#160puts number<br>
-            }
-          </strong>
-          <br><br>
           The next key word can be used in loops and iterators to skip the remaining code and start
           the next loop / iteration
+          <br><br>
+          <strong>
+            x = 0<br>
+            loop {<br>
+            &#160&#160x += 1<br>
+            &#160&#160if(x == 2)<br>
+            &#160&#160&#160&#160next<br>
+            &#160&#160end<br>
+            &#160&#160break if x >= 5<br>
+          }
+          </strong>
+        </p>
 
+        <u><h3>loop</h3></u>
+        <p class="section-text-normal">
+          Loop is the a basic loop and ends when the "break if" statement is true
+          <br><br>
+          <strong>
             x = 0<br>
             loop {<br>
             &#160&#160x += 1<br>
             &#160&#160break if x >= 5<br>
           }
           </strong>
-          <br><br>
-          Loop is the most basic form of loop and ends when the break if statement is true
+        </p>
+
+        <u><h3>while / until loops</h3></u>
+        <p class="section-text-normal">
+          The while loop runs while its given condition is true. The until loop runs until the
+          given condition is true.
           <br><br>
           <strong>
             x = 0<br>
@@ -1033,19 +974,127 @@
             &#160&#160repeat code until x is greater than 100<br>
             &#160&#160x += 1<br>
             end
-            <br>
           </strong>
-          <br><br>
-          The while loop runs while its given condition is true. The until loop runs until the
-          given condition is true
+        </p>
+
+        <u><h3>for loop</h3></u>
+        <p class="section-text-normal">
+          The for loop runs the given number of times inclusively.
           <br><br>
           <strong>
             for i in 0..100<br>
             &#160&#160puts "#{i}: hello"<br>
             end
           </strong>
+        </p>
+
+        <u><h3>times</h3></u>
+        <p class="section-text-normal">
+          The method times runs the code in the provided block the specified number of times.
+          The example will iterate through numbers 0 - 4 and run the code in the given block.
           <br><br>
-          The for loop runs the given number of times inclusively
+          <strong>
+          5.times do |number| puts "#{number}: Hello\n" end<br>
+          5.times { |number| puts "#{number}: Hello" }
+          </strong>
+          <br><br>
+          This method is used by objects holding integer values
+        </p>
+
+        <u><h3>upto / downto</h3></u>
+        <p class="section-text-normal">
+          The methods upto and downto iterate through the given numbers inclusively and run the code
+          in the given block on each loop.
+          <br><br>
+          <strong>
+            1.upto(5) do |number| puts "#{number}: Hello" end<br>
+            1.upto(5) { |number| puts "#{number}: Hello" } <br>
+            10.downto(5) do |number| puts "#{number}: Hello" end<br>
+            10.downto(5) { |number| puts "#{number}: Hello" }
+          </strong>
+          <br><br>
+          This method is used by objects holding integer values
+        </p>
+
+
+        <u><h3>step</h3></u>
+        <p class="section-text-normal">
+          The method step will iterate through the given numbers inclusively, in steps equals to the second parameter, and run the code
+          in the given block on each loop. In the third example the final number will be 48 as the next value is greater than 50.
+          <br><br>
+          <strong>
+            0.step(50, 5) {|number| puts "#{number}: Hello" }<br>
+            0.step(50, 0.5) { |number| puts "#{number}: Hello" }<br>
+            3.step(50, 5) { |number| puts "#{number}: Hello" }
+          </strong>
+          <br><br>
+          This method is used by objects holding integer or float values.
+        </p>
+
+        <u><h3>each</h3></u>
+        <p class="section-text-normal">
+          The method each will loop through each object held in the given collection
+          <br><br>
+          <strong>
+            (1..5).each do |number| puts "#{number}: Hello" end<br>
+            (1..5).each { |number| puts "#{number}: Hello" }
+          </strong>
+          <br><br>
+          Method is used by collections (array, hash, set, range).
+        </p>
+
+        <u><h3>each_with_index</h3></u>
+        <p class="section-text-normal">
+          The method each_with_index is the equivelent of each but provides the index as well. The index
+          must be the second block variable.
+          <br><br>
+          <strong>
+            (1..5).each_with_index { |number, index| puts "#{index}: #{number}" }
+          </strong>
+          <br><br>
+          Method is used by collections (array, hash, set, range).
+        </p>
+
+        <u><h3>scan</h3></u>
+        <p class="section-text-normal">
+          The method scan can be used on string values. It will loop for each match (compared against the parameter) within the string it finds.
+          The given parameter can either be a string or a RegExr (<a href="#regexr-in-ruby">click here for more on RegExr</a>).
+          <br><br>
+          <strong>
+            "this is a test".scan(/\w\w/) {|letter| puts letter}<br>
+            #=>th<br>
+            is<br>
+            is<br>
+            te<br>
+            st
+          </strong>
+          <br><br>
+          Method is used by strings.
+        </p>
+
+        <u><h3>collect / map</h3></u>
+        <p class="section-text-normal">
+          The collect method returns a new array containing all the same variables but after
+          they have been altered by the given code block.<br>
+          The method map is used in the same way as collect and produces
+          the same results.
+          <br><br>
+          <strong>
+          [1,2,3,4].collect {|number| number + 1 }<br>
+          #=> [2,3,4,5]
+          <br><br>
+          ["cat","mouse","dog"].collect {|string| string * 2 }<br>
+          #=> ["catcat","mousemouse","dogdog"]
+          </strong>
+          <br><br>
+          These methods are used by collections (array, hash, set, range).
+        </p>
+
+        <u><h3>select</h3></u>
+        <p class="section-text-normal">
+          The select method allows you to set a condition and returns an array containing only values that
+          meet that criteria. If the block contains multiple lines of code the final line will act as the
+          condition.
           <br><br>
           <strong>
             [1,2,3,4,5,6,7,8].select { |num| num % 2 == 0}<br>
@@ -1057,11 +1106,9 @@
             }<br>
             #=> [3,6]
           </strong>
-          <br><br>
-          The select method allows you to set a condition and returns an array containing only values that
-          meet that criteria. If the block contains multiple lines of code the final line will act as the
-          condition.
-          <br><br>
+        </p>
+
+        <p class="section-text-normal">
           (Sources:
           <br>
           Book: Beginning Ruby: From Novice to Professional<br>
