@@ -234,32 +234,6 @@
             end
           </strong>
           <br><br>
-          <u>While and Until</u>
-          <br><br>
-          <strong>
-            x = 0<br>
-            while(x < 100)<br>
-            &#160&#160repeat code while x is less than 100<br>
-            &#160&#160x += 1<br>
-            end
-            <br><br>
-            x = 0<br>
-            until(x > 100)<br>
-            &#160&#160repeat code until x is greater than 100<br>
-            &#160&#160x += 1<br>
-            end
-            <br>
-          </strong>
-          <br><br>
-          <u>For loop</u>
-          <br><br>
-          <strong>
-            for i in 0..100<br>
-            &#160&#160puts "#{i}: hello"<br>
-            end
-            <br>
-          </strong>
-          <br><br>
           (Sources:
           <br>
           Book: Beginning Ruby: From Novice to Professional
@@ -707,7 +681,7 @@
 
     <div id="" class="section">
 
-      <h2 id="iterators" class="section-header">Iterators</h2>
+      <h2 id="iterators" class="section-header">Loops and Iterators</h2>
 
       <div class="section-content">
         <p class="section-text-normal">
@@ -777,6 +751,42 @@
           The collect method is used on arrays. It returns a new array containing all the same variables but after
           they have been altered by the given code black. The method map is used in the same way as collect and produces
           the same results
+          <br><br>
+          <strong>
+            x = 0<br>
+            loop {<br>
+            &#160&#160x += 1<br>
+            &#160&#160break if x >= 5<br>
+          }
+          </strong>
+          <br><br>
+          Loop is the most basic form of loop and ends when the break if statment is true
+          <br><br>
+          <strong>
+            x = 0<br>
+            while(x < 100)<br>
+            &#160&#160repeat code while x is less than 100<br>
+            &#160&#160x += 1<br>
+            end
+            <br><br>
+            x = 0<br>
+            until(x > 100)<br>
+            &#160&#160repeat code until x is greater than 100<br>
+            &#160&#160x += 1<br>
+            end
+            <br>
+          </strong>
+          <br><br>
+          The while loop runs while its given condition is true. The until loop runs until the
+          given condition is true
+          <br><br>
+          <strong>
+            for i in 0..100<br>
+            &#160&#160puts "#{i}: hello"<br>
+            end
+          </strong>
+          <br><br>
+          The for loop runs the given number of times inclusively
           <br><br>
           (Sources:
           <br>
