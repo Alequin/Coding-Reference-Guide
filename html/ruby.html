@@ -395,8 +395,8 @@
           position. Keys can be any object though strings and symbols are commonly used
           <br><br>
           <strong>
-            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse",}
-            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse",}
+            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
+            x = {:pet_1 => "cat", :pet_2  => "dog", :pet_3  => "mouse"}
           </strong>
           <br><br>
           New objects can be added by providing a new key
@@ -417,7 +417,25 @@
             tiger
           </strong>
           <br><br>
-          A Hashes length is found by using the methos size
+          Attempting to access a key that does not exist will return nil. Unless when the
+          hash was initilised you provided a parameter. In this case the given parameter would
+          be returned.
+          <br><br>
+          <strong>
+            x = {}<br>
+            puts x[:bacon]<br>
+            #=> nil
+            <br><br>
+            x = Hash.new("no value")<br>
+            puts x[:bacon]<br>
+            #=> no value
+            <br><br>
+            x = Hash.new(0)<br>
+            puts x[:bacon]<br>
+            #=> 0
+          </strong>
+          <br><br>
+          A Hashes length is found by using the method size
           <br><br>
           <strong>
             x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
