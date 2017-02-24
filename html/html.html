@@ -25,7 +25,7 @@
             <a href="#">ph</a>
           </td>
           <td>
-            <a href="#">Force Anchor Tags to Make a New Tab</a>
+            <a href="#">Make Anchor Tags open a New Tab</a>
           </td>
           <td>
             <a href="#html-entities">HTML Entities</a>
@@ -51,11 +51,36 @@
 
     <div class="section">
 
-      <h2 class="section-header"></h2>
+      <h2 class="section-header">Make Anchor Tags open a New Tab</h2>
 
       <div class="section-content">
         <p class="section-text-normal">
-
+          Using the attribute target and providing a values of _blank will cause the
+          link to open in a new tab.
+          <br><br>
+          <strong>
+            &#60 a href="www.website.com" target="_blank"&#62website&#60/a&#62
+          </strong>
+          <br><br>
+          This however will create a vulnerable in your website as the linked site gains access
+          to your page and is able to change the web address. This enables attacks to replace your
+          site on the users browser with that delivers malware or one that look exactly the same in
+          an attempt to gather personal information. This attack is known as phishing.
+          <br><br>
+          How phishing is achived: the newly open site gains limited access to your page via the
+          JavaScript window.opener object. This is a read/write object that they can manipulate.
+          Among its properties is window.opener.location, which can be changed, causing the browser
+          to go to a new URL.
+          <br><br>
+          Phishing may be avoided by including the attribute rel with a value of noopener but not all
+          browsers support this and so some users will be at risk.
+          <br><br>
+          (Sources:
+          <br>
+          <a href="https://www.thesitewizard.com/html-tutorial/open-links-in-new-window-or-tab.shtml">
+           How to Make Links Open in a New Window or Tab
+          </a>
+          )
         </p>
       </div>
 
@@ -87,7 +112,7 @@
           <br>
           <a href="https://www.w3schools.com/html/html_entities.asp">
            w3schools: HTML Entities
-          </a><br>
+          </a>
           )
         </p>
       </div>
