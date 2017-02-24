@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <title>Ruby Summary</title>
@@ -13,1207 +13,1207 @@
 
   <div id="primary-container">
 
-    <h1 id="main-header">Helpful Ruby</h1>
+        <h1 id="main-header">Helpful Ruby</h1>
 
-    <a href="../index.html"><p>&#60&#60Return</p></a>
+        <a href="../index.html"><p>&#60;&#60;Return</p></a>
 
-    <p id="contents-title">Show Contents</p>
-    <div id="contents-container">
-      <table id="contents-table">
-        <tr>
-          <td>
-            <a href="#">ph</a>
-          </td>
-          <td>
-            <a href="#method-response">Method Response</a>
-          </td>
-          <td>
-            <a href="#native-sort">Native Sort</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <a href="#variable-arguments-splat">Variable Arguments: Splat</a>
-          </td>
-          <td>
-            <a href="#symbols">Symbols</a>
-          </td>
-          <td>
-            <a href="#custom-code-blocks">Custom Methods That Use Code blocks</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <a href="#flow-control-summary">Flow-Control: summary</a>
-          </td>
-          <td>
-            <a href="#hashes">Hashes</a>
-          </td>
-          <td>
-            <a href="#arrays">Arrays</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <a href="#regexr-in-ruby">RegExr in Ruby</a>
-          </td>
-          <td>
-            <a href="#substitutions-in-strings">Substitutions in Strings</a>
-          </td>
-          <td>
-            <a href="#interpolation">Interpolation</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <a href="#string-numerical-values">String Numerical Values</a>
-          </td>
-          <td>
-            <a href="#multi-line-strings">Multi-line-Strings</a>
-          </td>
-          <td>
-            <a href="#constants">Constants / final variables</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <a href="#iterators">Iterators</a>
-          </td>
-          <td>
-            <a href="#interesting-operators">Interesting Operators</a>
-          </td>
-          <td>
-            <a href="#output-to-console">Output to Console</a>
-          </td>
-        </tr>
+        <p id="contents-title">Show Contents</p>
+        <div id="contents-container">
+          <table id="contents-table">
+            <tr>
+              <td>
+                <a href="#">ph</a>
+              </td>
+              <td>
+                <a href="#method-response">Method Response</a>
+              </td>
+              <td>
+                <a href="#native-sort">Native Sort</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#variable-arguments-splat">Variable Arguments: Splat</a>
+              </td>
+              <td>
+                <a href="#symbols">Symbols</a>
+              </td>
+              <td>
+                <a href="#custom-code-blocks">Custom Methods That Use Code blocks</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#flow-control-summary">Flow-Control: summary</a>
+              </td>
+              <td>
+                <a href="#hashes">Hashes</a>
+              </td>
+              <td>
+                <a href="#arrays">Arrays</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#regexr-in-ruby">RegExr in Ruby</a>
+              </td>
+              <td>
+                <a href="#substitutions-in-strings">Substitutions in Strings</a>
+              </td>
+              <td>
+                <a href="#interpolation">Interpolation</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#string-numerical-values">String Numerical Values</a>
+              </td>
+              <td>
+                <a href="#multi-line-strings">Multi-line-Strings</a>
+              </td>
+              <td>
+                <a href="#constants">Constants / final variables</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#iterators">Iterators</a>
+              </td>
+              <td>
+                <a href="#interesting-operators">Interesting Operators</a>
+              </td>
+              <td>
+                <a href="#output-to-console">Output to Console</a>
+              </td>
+            </tr>
 
-      </table>
+          </table>
+        </div>
+
+        <div class="divider"></div>
+
+          <div class="section">
+
+            <h2 class="section-header">Procs</h2>
+
+            <div class="section-content">
+              <p class="section-text-normal">
+                Procs are blocks that can be assigned to a variable so that blocks may
+                be used repeatedly.
+                <br><br>
+                <strong>
+                  var = Proc.new { |a| a += 1 }<br>
+                  puts "#{[1,2,3].collect(&var)}"<br>
+                  puts "#{(50..53).collect(&var)}"<br>
+                  #=> [2,3,4]<br>
+                  [51,52,53,54]
+                </strong>
+                <br><br>
+                Procs can also be called, allowing them to run at any specified time
+                <br><br>
+                <strong>
+                  var = Proc.new { puts "hello" }<br>
+                  var.call<br>
+                  #=> hello
+                </strong>
+                <br><br>
+                (Sources:
+                <br>
+                <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-L3ZCI/1/5?curriculum_id=5059f8619189a5000201fbcb">
+                  codecademy: Blocks, Procs, and Lambdas
+                </a>
+                )
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+
+          <h2 id="method-response" class="section-header">Method Response</h2>
+
+          <div class="section-content">
+            <p class="section-text-normal">
+              <strong>
+                [1,2,3].respond_to?(:push)<br>
+                #=> true
+                <br><br>
+                "hello".respond_to?(:length)<br>
+                #=> true
+                <br><br>
+                "hello".respond_to?(:each)<br>
+                #=> false
+                <br><br>
+                ["cat","dog"].respond_to?(:times)
+                #=> false
+                <br><br>
+              </strong>
+              The respond_to? method returns true if the object that calls it is able to run the method
+              given as a parameter.
+              <br><br>
+              (Sources:
+              <br>
+              <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-L3ZCI/1/5?curriculum_id=5059f8619189a5000201fbcb">
+                codecademy: The Zen of Ruby
+              </a>
+              )
+            </p>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+
+          <h2 id="native-sort" class="section-header">Native Sort</h2>
+
+          <div class="section-content">
+            <p class="section-text-normal">
+              When called the sort method will order values from low to high
+              <br><br>
+              <strong>
+                x = [2,5,3,1,6,7,4]<br>
+                y = x.sort<br>
+                puts y<br>
+                #=> [1,2,3,4,5,6,7]
+                <br><br>
+                x = [2,5,3,1,6,7,4]<br>
+                x.sort!<br>
+                puts x<br>
+                #=> [1,2,3,4,5,6,7]
+                <br><br>
+                x = ["x","c","m"]<br>
+                x.sort!<br>
+                puts x<br>
+                #=> ["c","m","x"]
+                <br><br>
+                x = ["cc","cb","caa","ca"]<br>
+                x.sort!<br>
+                puts x<br>
+                #=> ["ca","caa","cb","cc"]
+              </strong>
+              <br><br>
+              By providing the sort method with a block it is possible to control the sorted order
+              and what details about the variables are sorted
+              <br><br>
+              <strong>
+                x = [2,5,3,1,6,7,4]<br>
+                x.sort! { |left, right| right &#62;=&#60; left }<br>
+                puts x<br>
+                #=> [7,6,5,4,3,2,1]
+                <br><br>
+                x = ["giraffe", "cat", "mouse"]<br>
+                x.sort! { |left, right| left.length &#62;=&#60; right.length }<br>
+                puts x<br>
+                #=> ["cat", "mouse", "giraffe"]
+              </strong>
+              <br><br>
+              The sort algorithm used implemented by ruby is a quicksort and has been show to be fast
+              when compared to other sorting algorithms. It is a highly optimized piece of code and should be
+              used
+              <br><br>
+              (Sources:
+              <br>
+              <a href="https://www.dotnetperls.com/sort-ruby">
+                dotnetperls: sort
+              </a>
+              <br>
+              <a href="https://www.igvita.com/2009/03/26/ruby-algorithms-sorting-trie-heaps/">
+                Ruby Algorithms: Sorting, Trie & Heaps
+              </a>
+              )
+            </p>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+
+          <h2 id="variable-arguments-splat" class="section-header">Variable Arguments: Splat</h2>
+
+          <div class="section-content">
+            <p class="section-text-normal">
+              Variable arguments (or splat arguments as they are known in ruby) allow methods to accept any number
+              (zero - max array length) of objects as parameters. The variables will be grouped into an array to be
+              used by the method.
+              <br><br>
+              <strong>
+                def lots_of_params(*splat)<br>
+                &#160;&#160;splat.each { |var| "#{var}" }<br>
+                end
+              </strong>
+              <br><br>
+              Other parameters can be included along side the splat, though multiple splat arguments cannot be
+              used.
+              <br><br>
+              <strong>
+                def lots_of_params(word, *splat)<br>
+                &#160;&#160;splat.each { |var| "#{word} #{var}" }<br>
+                end<br>
+                def lots_of_params(word, *splat, word2)<br>
+                &#160;&#160;splat.each { |var| "#{word} #{var} #{word2}" }<br>
+                end
+              </strong>
+              <br><br>
+              Arrays can be given to a splat arguments but they will be placed inside another array as
+              a single variable.
+              <br><br>
+              (Sources:
+              <br>
+              <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-ET4bU/1/2?curriculum_id=5059f8619189a5000201fbcb">
+                codecademy: Methods, Blocks, /& Sorting
+              </a>
+              )
+            </p>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+
+          <h2 id="symbols" class="section-header">Symbols</h2>
+
+          <div class="section-content">
+            <p class="section-text-normal">
+              Symbols are abstract references represented by a short string that follows a colon.
+              They act as constants and can be referenced using variables.
+              <br><br>
+              <strong>
+                :cat :dog :mouse :bear
+                <br><br>
+                x = :cat
+              </strong>
+              <br><br>
+              Strings can be converted into symbols while a program is running by calling the method
+              to_sym or intern on any string
+              <br><br>
+              <strong>
+                :cat.to_sym<br>
+                :cat.intern<br>
+              </strong>
+              <br><br>
+              Symbols can be very useful when trying to save time and memory space. Using symbols within
+              a loop rather than a string literal stops the creation of multiple unneeded strings and
+              comparisons between symbols takes less time than between strings.
+              <br><br>
+              However symbols are never garbage collected and so the memory is never released. Due to this
+              symbols should never be created if they are to be used infrequently.
+              <br><br>
+              (Sources:
+              <br>
+              Book: Beginning Ruby: From Novice to Professional
+              <br>
+                <a href="http://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/">
+                  The Ruby Symbol is a Memory Leak
+                </a>
+                <br>
+                <a href="http://marcricblog.blogspot.co.uk/2010/02/ruby-symbols-ultimate-guide.html">
+                  Ruby Symbols Ultimate Guide
+                </a>
+                <br>
+                <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-Qn7Qw/1/4?curriculum_id=5059f8619189a5000201fbcb">
+                  Codecademy: Hashes and Symbols
+                </a>
+              )
+            </p>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+
+          <h2 id="custom-code-blocks" class="section-header">Custom Methods That Use Code blocks</h2>
+
+          <div class="section-content">
+            <p class="section-text-normal">
+              When making a method it is possible to instruct the method to accept and make
+              use of code blocks by including one as a parameter. The parameter that signifies
+              the code block must be the last parameter entered and start with a & symbol.<br>
+              (Note: All occurrences of { } and "do end" are interchangeable. Also &code_block can
+              be replaced by any legal name eg. &bacon)
+              <br><br>
+              <strong>
+                def my_method(&code_block)<br>
+                &#160;&#160; [1,2,3,4,5].each{|num| code_block.call(num)}<br>
+                end
+                <br><br>
+                my_method() {|val| puts val}
+                <br><br>
+                #=> 1<br>
+                2<br>
+                3<br>
+                4<br>
+                5
+                <br><br>
+                def my_method(array, &code_block)<br>
+                &#160;&#160; array.each do |num|<br>
+                &#160;&#160;&#160;&#160; code_block.call(num)<br>
+                &#160;&#160;end<br>
+                end
+                <br><br>
+                my_method([1,2,3,4,5]) do |val|<br>
+                &#160;&#160;puts val<br>
+                end
+                <br><br>
+                #=> 1<br>
+                2<br>
+                3<br>
+                4<br>
+                5
+              </strong>
+              <br><br>
+              The yield key term can be used in place of &code_block which and does not require
+              a given parameter
+              <br><br>
+              <strong>
+                def my_method(array)<br>
+                &#160;&#160; array.each do |num|<br>
+                &#160;&#160;&#160;&#160; yield(num)<br>
+                &#160;&#160;end<br>
+                end
+                <br><br>
+                my_method([1,2,3,4,5]) do |val|<br>
+                &#160;&#160;puts val<br>
+                end
+                <br><br>
+                #=> 1<br>
+                2<br>
+                3<br>
+                4<br>
+                5<br>
+              </strong>
+              <br><br>
+              (Sources:
+              <br>
+              Book: Beginning Ruby: From Novice to Professional<br>
+              <a href="https://www.codecademy.com/courses/ruby-beginner-en-L3ZCI/0/1?curriculum_id=5059f8619189a5000201fbcb">
+                codeacademy: Blocks, Procs, and Lambdas
+              </a>
+              )
+            </p>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+
+          <h2 id="flow-control-summary" class="section-header">Flow-Control: summary</h2>
+
+          <div class="section-content">
+            <p class="section-text-normal">
+              Note: all parenthesis used in this sections are not required for code to work, just personal preference
+              <br><br>
+              <u>If, else and unless</u>
+              <br><br>
+              <strong>
+                if(true)<br>
+                &#160;&#160;run code if true<br>
+                else<br>
+                &#160;&#160;run code if false<br>
+                end<br>
+                <br>
+                unless(false)<br>
+                &#160;&#160;run code if false<br>
+                else<br>
+                &#160;&#160;run code if true<br>
+                end<br>
+                <br>
+                x = 5<br>
+                if(x &#60; 5)<br>
+                  &#160;&#160;run code if x is greater than 5<br>
+                elsif(x &#62; 5)<br>
+                  &#160;&#160;run code is x is less than 5<br>
+                else<br>
+                  &#160;&#160;run code for all other cases<br>
+                end
+              </strong>
+              <br><br>
+              <u>Ternary Operator</u>
+              <br><br>
+              <strong>
+                x = true ? "one" : "two"<br>
+                puts x<br>
+                #=> "one"
+                <br><br>
+                x = false ? "one" : "two"<br>
+                puts x<br>
+                #=> "two"
+              </strong>
+              <br><br>
+              <u>Case</u>
+              <br><br>
+              <strong>
+                x = 6<br>
+                case x<br>
+                &#160;&#160;when 2<br>
+                &#160;&#160;&#160;&#160;run code when x == 2<br>
+                &#160;&#160;when 4<br>
+                &#160;&#160;&#160;&#160;run code when x == 4<br>
+                &#160;&#160;when 6<br>
+                &#160;&#160;&#160;&#160;run code when x == 6<br>
+                &#160;&#160;else<br>
+                &#160;&#160;&#160;&#160;run code for all other cases<br>
+                end
+              </strong>
+              <br><br>
+              (Sources:
+              <br>
+              Book: Beginning Ruby: From Novice to Professional
+              <a href="https://www.tutorialspoint.com/ruby/ruby_loops.htm">
+                tutorialspoint
+              </a>
+              )
+            </p>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+
+          <h2 id="hashes" class="section-header">Hashes</h2>
+
+          <div class="section-content">
+            <p class="section-text-normal">
+              Hashes are similar to array in that they hold multiple objects. The
+              difference is that each object is assigned a key rather than an ordered
+              position. Keys can be any object though strings and symbols are commonly used
+              <br><br>
+              <strong>
+                x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
+                x = {:pet_1 => "cat", :pet_2  => "dog", :pet_3  => "mouse"}
+              </strong>
+              <br><br>
+              A new method of creating hashes with symbols as keys was added in Ruby 1.9, as shown below.
+              This only works for symbols.
+              <br><br>
+              <strong>
+                x = {pet_1: "cat", pet_2: "dog", pet_3: "mouse"}
+              </strong>
+              <br><br>
+              New objects can be added by providing a new key
+              <br><br>
+              <strong>
+                x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse",}<br>
+                x["pet 4"] = "lion"
+              </strong>
+              <br><br>
+              Each object is accessed and edited using it's own key
+              <br><br>
+              <strong>
+                x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
+                puts x["pet 1"]<br>
+                x["pet 1"] = "tiger"<br>
+                puts x["pet 1"]<br>
+                #=> cat<br>
+                tiger
+              </strong>
+              <br><br>
+              Attempting to access a key that does not exist will return nil. Unless when the
+              hash was initialised you provided a parameter. In this case the given parameter would
+              be returned.
+              <br><br>
+              <strong>
+                x = {}<br>
+                puts x[:bacon]<br>
+                #=> nil
+                <br><br>
+                x = Hash.new("no value")<br>
+                puts x[:bacon]<br>
+                #=> no value
+                <br><br>
+                x = Hash.new(0)<br>
+                puts x[:bacon]<br>
+                #=> 0
+              </strong>
+              <br><br>
+              A Hashes length is found by using the method size
+              <br><br>
+              <strong>
+                x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
+                puts x.size<br>
+                #=> 3
+              </strong>
+              <br><br>
+              Hashes are iterated over using the each method. As of ruby 1.9 the iteration
+              order will match the order in which values were added to the hash.
+              <br><br>
+              <strong>
+                x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
+                x.each {|key, value| puts "#{key}: #{value}"}
+              </strong>
+              <br><br>
+              Objects stored in hashes can be deleted with the method delete.
+              <br><br>
+              <strong>
+                x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
+                x.delete("pet 1")
+              </strong>
+              <br><br>
+              delete_if also deletes objects but only if the provided block equates to true.
+              <br><br>
+              <strong>
+                x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
+                x.delete_if {|key, value| value == "cat"}
+              </strong>
+              <br><br>
+              Hashes can be iterated over using the each_key and each_value methods.
+              <br><br>
+              <strong>
+                x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}
+                <br><br>
+                x.each_key { |key| puts "#{key}}<br>
+                #>= pet 1<br>
+                pet 2<br>
+                pet 3
+                <br><br>
+                x.each_value { |value| puts "#{value}"}<br>
+                #>= cat<br>
+                dog<br>
+                mouse
+                <br><br>
+
+              </strong>
+              <br><br>
+              (Sources:
+              <br>
+              Book: Beginning Ruby: From Novice to Professional<br>
+              <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-Qn7Qw/2/4?curriculum_id=5059f8619189a5000201fbcb">
+                codeacademy: Hashes and Symbols
+              </a>
+              )
+            </p>
+          </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+
+          <h2 id="arrays" class="section-header">Arrays</h2>
+
+          <div class="section-content">
+            <p class="section-text-normal">
+              Arrays can be instantiated either empty or with values. Each variable in
+              an array can hold any type of data
+              <br><br>
+              <strong>
+                x = []<br>
+                y = [1,2,3,4,5]<br>
+                z = [1, "two", 3, "four", 5]
+              </strong>
+              <br><br>
+              Array variables can be accessed in a number of ways as shown below
+              <br><br>
+              <strong>
+                y = [1,2,3,4,5]<br>
+                puts y[0]<br>
+                puts y[4]<br>
+                puts y[-1]<br>
+                puts y[-5]<br>
+                #=> 1<br>
+                5<br>
+                5<br>
+                1
+              </strong>
+              <br><br>
+              Attempting to access an array element that does not exist will not throw a
+              warning / exception but will only return nil
+              <br><br>
+              <strong>
+                y = [1,2,3,4,5]<br>
+                puts y[5]<br>
+                #=> nil
+              </strong>
+              <br><br>
+              New values can be pushed onto the end of the array in two ways.<br>
+              This will increase the
+              array length by 1
+              <br><br>
+              <strong>
+                x &#62;&#62; "value"<br>
+                x.push("value")
+              </strong>
+              <br><br>
+              The method pop is used to remove the last element.<br>
+              This will reduce the array length by 1. The removed value will be returned
+              <br><br>
+              <strong>
+                y = [1,2,3,4,5]<br>
+                puts y.pop<br>
+                puts y<br>
+                #=> 5<br>
+                [1,2,3,4]
+              </strong>
+              <br><br>
+              The method empty? will return a boolean value. True if the array holds no
+              values.<br>
+              The method length will return the number of values held by the array
+              <br><br>
+              <strong>
+                y = []<br>
+                puts y.empty?<br>
+                puts y.length<br>
+                #=> true<br>
+                0
+              </strong>
+              <br><br>
+              The method include? returns true if the given parameter is held within the array
+              <br><br>
+              <strong>
+                y = [1,2,3]<br>
+                puts y.include?(2)<br>
+                #=> true
+              </strong>
+              <br><br>
+              The method join combines all the values of the array into a single string.
+              The characters you wish to be between each variable can be given as a parameter
+              <br><br>
+              <strong>
+                y = [1,2,3,4,5]<br><br>
+                y.join<br>
+                puts y<br>
+                #=> "1234"<br>
+                or<br>
+                y.join(", ")<br>
+                puts y<br>
+                #=> "1, 2, 3, 4"
+              </strong>
+              <br><br>
+              Arrays can added together, which simply connects the two together
+              <br><br>
+              <strong>
+                x = ["a","b","c"]<br>
+                y = [1,2,3,4,5]<br>
+                puts x + y<br>
+                #=> ["a","b","c",1,2,3,4,5]<br>
+              </strong>x
+              <br><br>
+              Arrays can also be subtracted. The result of this is the removal of any values from the first array
+              that occur in both array
+              <br><br>
+              <strong>
+                x = [1,2,3,4,5]<br>
+                y = [3,4,5]
+                <br><br>
+                puts x - y<br>
+                #=> [1,2]
+                <br><br>
+                puts y - x<br>
+                #=> []
+              </strong>
+              <br><br>
+              The methods first and last can be used for easy access to the start and end of arrays.
+              The methods accept one parameter that signifies how many variable to return
+              <br><br>
+              <strong>
+                x = [1,2,3,4,5]<br>
+                puts x.first<br>
+                puts x.first(2)<br>
+                puts x.last<br>
+                puts x.last(2)<br>
+                #=> [1]<br>
+                [1,2]<br>
+                [5]<br>
+                [4,5]
+              </strong>
+              <br><br>
+              (Sources:
+              <br>
+              Book: Beginning Ruby: From Novice to Professional
+              )
+            </p>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+
+          <h2 id="regexr-in-ruby" class="section-header">RegExr in Ruby</h2>
+
+          <div class="section-content">
+            <p class="section-text-normal">
+              There are a few methods that can be used by strings with regexr as parameters. Some
+              of these include:
+              <br>
+              <strong>
+                sub<br>
+                gsub<br>
+                scan
+              </strong>
+              <br><br>
+              (For information on the first two methods view the section <a href="#substitutions-in-strings">Substitutions in Strings</a>)<br>
+              (For more detail into regular expressions see <a href="regexr.html">Helpful regular expressions</a>)
+              <br><br>
+              Forward slashes are used at the start and end of a regular expression and can be given as parameters in all three methods shown.
+              <br><br>
+              The scan method takes one parameter and iterates through the given string, looping for each match it finds.
+              <br><br>
+              <strong>
+                "this is a test".scan(/\w\w/) do |letter| puts letter end<br>
+                or<br>
+                "this is a test".scan(/\w\w/) {|letter| puts letter}<br>
+                #=>th<br>
+                is<br>
+                is<br>
+                te<br>
+                st
+              </strong>
+              <br><br>
+              (Sources:
+              <br>
+              Book: Beginning Ruby: From Novice to Professional
+              )
+            </p>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+
+          <h2 id="substitutions-in-strings" class="section-header">Substitutions in Strings</h2>
+
+          <div class="section-content">
+            <p class="section-text-normal">
+              <strong>
+                puts "bacon and eggs".sub("bacon", "sausage")<br>
+                #=> sausage and eggs
+                <br><br>
+                puts "this is a test".gsub("t", "")<br>
+                #=> his is a es
+              </strong>
+              <br><br>
+              sub finds the first string which matches its first parameters and substitutes it for
+              the seconds parameter.<br>
+              gsub finds all instances of the first parameter and subs all of them for the seconds
+              parameter
+              <br><br>
+              The first parameter of these methods can be regular expressions
+              <br><br>
+              (Sources:
+              <br>
+              Book: Beginning Ruby: From Novice to Professional
+              )
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+
+          <h2 id="interpolation" class="section-header">Interpolation</h2>
+
+          <div class="section-content">
+            <p class="section-text-normal">
+              <strong>
+                s = "interpolation"<br>
+                "This is #{x}"<br>
+                #=> This is interpolation
+                <br><br>
+                i = 5<br>
+                j = 10<br>
+                puts "#{i} + #{10} = #{i + j}"<br>
+                #=> 5 + 10 = 15
+              </strong>
+              <br><br>
+              Interpolations is the insertion of the result from an expression directly into a string literal.
+              Double quotes ( "" instead of '' ) must be used in order for interpolation to work correctly
+              <br><br>
+              (Sources:
+              <br>
+              Book: Beginning Ruby: From Novice to Professional
+              )
+            </p>
+          </div>
+
+        <div class="divider"></div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+
+          <h2 id="string-numerical-values" class="section-header">String numerical values</h2>
+
+          <div class="section-content">
+            <p class="section-text-normal">
+              <strong>
+                "x".ord()<br>
+                120.chr()
+              </strong>
+              <br><br>
+              The method ord will return the ASCII value of the given sting. If the string has multiple
+              characters the returned value will be of the first character in the string
+              <br><br>
+              The method chr with return the character which is represented by the given number.
+              This method can also accept a parameter so that different encodings might be used
+              <br><br>
+              <strong>
+                120.char(Encoding::UTF_8)<br>
+                Encoding.name_list<br>
+                #=> ["ASCII-8BIT", "UTF-8", "US-ASCII", "UTF-16BE", "UTF-16LE", "UTF-32BE", "UTF-32LE", "UTF-16", "UTF-32", ...]<br>
+                <a href="http://stackoverflow.com/questions/37820888/trying-to-understand-the-ruby-chr-and-ord-methods">
+                  (source: stackoverflow: Trying to understand the Ruby .chr and .ord methods)
+                </a>
+              </strong>
+              <br><br>
+              (Sources:
+              <br>
+              Book: Beginning Ruby: From Novice to Professional
+              )
+            </p>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+
+          <h2 id="multi-line-strings" class="section-header">Multi-line Strings</h2>
+
+          <div class="section-content">
+            <p class="section-text-normal">
+              <strong>
+                puts "This is text \nthat outputs on \nmultiple lines"
+              </strong>
+              <br><br>
+              Using the new line character allows the creation of mulit line strings
+              <br><br>
+              <strong>
+                puts %q{This is text<br>
+                  that outputs on<br>
+                  multiple lines}
+              </strong>
+              <br><br>
+              This example multiple lines enables the creation of multi-line strings which do not require
+              additional characters and simply mimics the layout as it is written in the code.
+              The curly brackets may be replaced with any two delimiters (eg. ( ) &#60; &#62; ! !).
+              <br><br>
+              <strong>
+                puts &#60;&#60;MY_STRING<br>
+                  This is text<br>
+                  that outputs on<br>
+                  multiple lines<br>
+                  MY_STRING
+              </strong>
+              <br><br>
+              Using characters as a delimiter is possible as shown in this example. This is called a here document.
+              (Note: had issues with indentation using this method. It seems as if it does not work unless
+              no indentation is used on the end delimiter. Other methods are more user friendly)
+              <br><br>
+              (Sources:
+              <br>
+              Book: Beginning Ruby: From Novice to Professional
+              )
+            </p>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+
+          <h2 id="constants" class="section-header">Constants / Final Variables</h2>
+
+          <div class="section-content">
+            <p class="section-text-normal">
+              To define a constant in Ruby create the variable with a capital as the first character
+              <br><br>
+              <strong>Dogs = 50</strong>
+              <br><br>
+              Any attempts to change the variable Dogs will result in a warning
+              <br><br>
+              (Sources:
+              <br>
+              Book: Beginning Ruby: From Novice to Professional
+              )
+            </p>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+
+          <h2 id="iterators" class="section-header">Loops and Iterators</h2>
+
+          <div class="section-content">
+
+            <h3><u>next</u></h3>
+            <p class="section-text-normal">
+              The next key word can be used in loops and iterators to skip the remaining code and start
+              the next loop / iteration
+              <br><br>
+              <strong>
+                x = 0<br>
+                loop {<br>
+                &#160;&#160;x += 1<br>
+                &#160;&#160;if(x == 2)<br>
+                &#160;&#160;&#160;&#160;next<br>
+                &#160;&#160;end<br>
+                &#160;&#160;break if x >= 5<br>
+              }
+              </strong>
+            </p>
+
+            <h3><u>loop</u></h3>
+            <p class="section-text-normal">
+              Loop is the a basic loop and ends when the "break if" statement is true
+              <br><br>
+              <strong>
+                x = 0<br>
+                loop {<br>
+                &#160;&#160;x += 1<br>
+                &#160;&#160;break if x >= 5<br>
+              }
+              </strong>
+            </p>
+
+            <h3><u>while / until loops</u></h3>
+            <p class="section-text-normal">
+              The while loop runs while its given condition is true. The until loop runs until the
+              given condition is true.
+              <br><br>
+              <strong>
+                x = 0<br>
+                while(x &#62; 100)<br>
+                &#160;&#160;repeat code while x is less than 100<br>
+                &#160;&#160;x += 1<br>
+                end
+                <br><br>
+                x = 0<br>
+                until(x &#60; 100)<br>
+                &#160;&#160;repeat code until x is greater than 100<br>
+                &#160;&#160;x += 1<br>
+                end
+              </strong>
+            </p>
+
+            <h3><u>for loop</u></h3>
+            <p class="section-text-normal">
+              The for loop runs the given number of times inclusively.
+              <br><br>
+              <strong>
+                for i in 0..100<br>
+                &#160;&#160;puts "#{i}: hello"<br>
+                end
+              </strong>
+            </p>
+
+            <h3><u>times</u></h3>
+            <p class="section-text-normal">
+              The method times runs the code in the provided block the specified number of times.
+              The example will iterate through numbers 0 - 4 and run the code in the given block.
+              <br><br>
+              <strong>
+              5.times do |number| puts "#{number}: Hello\n" end<br>
+              5.times { |number| puts "#{number}: Hello" }
+              </strong>
+              <br><br>
+              This method is used by objects holding integer values
+            </p>
+
+            <h3><u>upto / downto</u></h3>
+            <p class="section-text-normal">
+              The methods upto and downto iterate through the given numbers inclusively and run the code
+              in the given block on each loop.
+              <br><br>
+              <strong>
+                1.upto(5) do |number| puts "#{number}: Hello" end<br>
+                1.upto(5) { |number| puts "#{number}: Hello" } <br>
+                10.downto(5) do |number| puts "#{number}: Hello" end<br>
+                10.downto(5) { |number| puts "#{number}: Hello" }
+              </strong>
+              <br><br>
+              This method is used by objects holding integer values
+            </p>
+
+
+            <h3><u>step</u></h3>
+            <p class="section-text-normal">
+              The method step will iterate through the given numbers inclusively, in steps equals to the second parameter, and run the code
+              in the given block on each loop. In the third example the final number will be 48 as the next value is greater than 50.
+              <br><br>
+              <strong>
+                0.step(50, 5) {|number| puts "#{number}: Hello" }<br>
+                0.step(50, 0.5) { |number| puts "#{number}: Hello" }<br>
+                3.step(50, 5) { |number| puts "#{number}: Hello" }
+              </strong>
+              <br><br>
+              This method is used by objects holding integer or float values.
+            </p>
+
+            <h3><u>each</u></h3>
+            <p class="section-text-normal">
+              The method each will loop through each object held in the given collection
+              <br><br>
+              <strong>
+                (1..5).each do |number| puts "#{number}: Hello" end<br>
+                (1..5).each { |number| puts "#{number}: Hello" }
+              </strong>
+              <br><br>
+              Method is used by collections (array, hash, set, range).
+            </p>
+
+            <h3><u>each_with_index</u></h3>
+            <p class="section-text-normal">
+              The method each_with_index is the equivalent of each but provides the index as well. The index
+              must be the second block variable.
+              <br><br>
+              <strong>
+                (1..5).each_with_index { |number, index| puts "#{index}: #{number}" }
+              </strong>
+              <br><br>
+              Method is used by collections (array, hash, set, range).
+            </p>
+
+            <h3><u>scan</u></h3>
+            <p class="section-text-normal">
+              The method scan can be used on string values. It will loop for each match (compared against the parameter) within the string it finds.
+              The given parameter can either be a string or a RegExr (<a href="#regexr-in-ruby">click here for more on RegExr</a>).
+              <br><br>
+              <strong>
+                "this is a test".scan(/\w\w/) {|letter| puts letter}<br>
+                #=>th<br>
+                is<br>
+                is<br>
+                te<br>
+                st
+              </strong>
+              <br><br>
+              Method is used by strings.
+            </p>
+
+            <h3><u>collect / map</u></h3>
+            <p class="section-text-normal">
+              The collect method returns a new array containing all the same variables but after
+              they have been altered by the given code block.<br>
+              The method map is used in the same way as collect and produces
+              the same results.
+              <br><br>
+              <strong>
+              [1,2,3,4].collect {|number| number + 1 }<br>
+              #=> [2,3,4,5]
+              <br><br>
+              ["cat","mouse","dog"].collect {|string| string * 2 }<br>
+              #=> ["catcat","mousemouse","dogdog"]
+              </strong>
+              <br><br>
+              These methods are used by collections (array, hash, set, range).
+            </p>
+
+            <h3><u>select</u></h3>
+            <p class="section-text-normal">
+              The select method allows you to set a condition and returns an array containing only values that
+              meet that criteria. If the block contains multiple lines of code the final line will act as the
+              condition.
+              <br><br>
+              <strong>
+                [1,2,3,4,5,6,7,8].select { |num| num % 2 == 0}<br>
+                #=> [2,4,6,8]
+                <br><br>
+                [1,2,3,4,5,6,7,8].select { |num| <br>
+                  &#160;&#160;num % 2 == 0<br>
+                  &#160;&#160;num % 3 == 0<br>
+                }<br>
+                #=> [3,6]
+              </strong>
+            </p>
+
+            <p class="section-text-normal">
+              (Sources:
+              <br>
+              Book: Beginning Ruby: From Novice to Professional<br>
+              <a href="http://www.eriktrautman.com/posts/ruby-explained-map-select-and-other-enumerable-methods">
+                Ruby Explained: Map, Select, and Other Enumerable Methods
+              </a>
+              )
+            </p>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+
+          <h2 id="interesting-operators" class="section-header">Interesting Operators</h2>
+
+          <div class="section-content">
+            <p class="section-text-normal">
+              <strong>x &#62;=&#60; y</strong>: Returns 0 if x and y are equal, returns -1 if y
+              is greater and 1 if x is greater.
+              <br><br>
+              <strong>x ||= "cats"</strong>: Assigns an object to the variable only if the variable currently
+              holds a nil value.
+              <br><br>
+              (Sources:
+              <br>
+              Book: Beginning Ruby: From Novice to Professional<br>
+              <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-1o8Mb/1/1?curriculum_id=5059f8619189a5000201fbcb">
+                The Zen of Ruby
+              </a>
+              )
+            </p>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+
+          <h2 id="output-to-console" class="section-header">Output to Console </h2>
+
+          <div class="section-content">
+            <p class="section-text-normal">
+              <strong>print</strong>:
+              print a string to the console<br>
+              <strong>puts</strong>:
+              print a string to the console with a new line after<br>
+              <strong>p</strong>:
+              (Same as calling "string".inspect) Prints to screen in the same way as puts and returns the given value.
+              Any strings printed with this method will be surrounded by quotation
+              marks and any escape characters will be prefixed with a backslash<br>
+              <br><br>
+              (Sources:
+              <br>
+              Book: Beginning Ruby: From Novice to Professional
+              )
+            </p>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <a href="../index.html"><p>&#60;&#60;Return</p></a>
+
     </div>
-
-    <div class="divider"></div>
-
-    <div id="" class="section">
-
-      <h2 id="" class="section-header">Procs</h2>
-
-      <div class="section-content">
-        <p class="section-text-normal">
-          Procs are blocks that can be assigned to a variable so that blocks may
-          be used repeatedly.
-          <br><br>
-          <strong>
-            var = Proc.new { |a| a += 1 }<br>
-            puts "#{[1,2,3].collect(&var)}"<br>
-            puts "#{(50..53).collect(&var)}"<br>
-            #=> [2,3,4]<br>
-            [51,52,53,54]
-          </strong>
-          <br><br>
-          Procs can also be called, allowing them to run at any specified time
-          <br><br>
-          <strong>
-            var = Proc.new { puts "hello" }<br>
-            var.call<br>
-            #=> hello
-          </strong>
-          <br><br>
-          (Sources:
-          <br>
-          <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-L3ZCI/1/5?curriculum_id=5059f8619189a5000201fbcb">
-            codecademy: Blocks, Procs, and Lambdas
-          </a>
-          )
-        </p>
-      </div>
-
-    </div>
-    <div class="divider"></div>
-
-    <div id="" class="section">
-
-      <h2 id="method-response" class="section-header">Method Response</h2>
-
-      <div class="section-content">
-        <p class="section-text-normal">
-          <strong>
-            [1,2,3].respond_to?(:push)<br>
-            #=> true
-            <br><br>
-            "hello".respond_to?(:length)<br>
-            #=> true
-            <br><br>
-            "hello".respond_to?(:each)<br>
-            #=> false
-            <br><br>
-            ["cat","dog"].respond_to?(:times)
-            #=> false
-            <br><br>
-          </strong>
-          The respond_to? method returns true if the object that calls it is able to run the method
-          given as a parameter.
-          <br><br>
-          (Sources:
-          <br>
-          <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-L3ZCI/1/5?curriculum_id=5059f8619189a5000201fbcb">
-            codecademy: The Zen of Ruby
-          </a>
-          )
-        </p>
-      </div>
-
-    </div>
-
-    <div class="divider"></div>
-
-    <div id="" class="section">
-
-      <h2 id="native-sort" class="section-header">Native Sort</h2>
-
-      <div class="section-content">
-        <p class="section-text-normal">
-          When called the sort method will order values from low to high
-          <br><br>
-          <strong>
-            x = [2,5,3,1,6,7,4]<br>
-            y = x.sort<br>
-            puts y<br>
-            #=> [1,2,3,4,5,6,7]
-            <br><br>
-            x = [2,5,3,1,6,7,4]<br>
-            x.sort!<br>
-            puts x<br>
-            #=> [1,2,3,4,5,6,7]
-            <br><br>
-            x = ["x","c","m"]<br>
-            x.sort!<br>
-            puts x<br>
-            #=> ["c","m","x"]
-            <br><br>
-            x = ["cc","cb","caa","ca"]<br>
-            x.sort!<br>
-            puts x<br>
-            #=> ["ca","caa","cb","cc"]
-          </strong>
-          <br><br>
-          By providing the sort method with a block it is possible to control the sorted order
-          and what details about the variables are sorted
-          <br><br>
-          <strong>
-            x = [2,5,3,1,6,7,4]<br>
-            x.sort! { |left, right| right <=> left }<br>
-            puts x<br>
-            #=> [7,6,5,4,3,2,1]
-            <br><br>
-            x = ["giraffe", "cat", "mouse"]<br>
-            x.sort! { |left, right| left.length <=> right.length }<br>
-            puts x<br>
-            #=> ["cat", "mouse", "giraffe"]
-          </strong>
-          <br><br>
-          The sort algorithm used implemented by ruby is a quicksort and has been show to be fast
-          when compared to other sorting algorithms. It is a highly optimized piece of code and should be
-          used
-          <br><br>
-          (Sources:
-          <br>
-          <a href="https://www.dotnetperls.com/sort-ruby">
-            dotnetperls: sort
-          </a>
-          <br>
-          <a href="https://www.igvita.com/2009/03/26/ruby-algorithms-sorting-trie-heaps/">
-            Ruby Algorithms: Sorting, Trie & Heaps
-          </a>
-          )
-        </p>
-      </div>
-
-    </div>
-
-    <div class="divider"></div>
-
-    <div id="" class="section">
-
-      <h2 id="variable-arguments-splat" class="section-header">Variable Arguments: Splat</h2>
-
-      <div class="section-content">
-        <p class="section-text-normal">
-          Variable arguments (or splat arguments as they are known in ruby) allow methods to accept any number
-          (zero - max array length) of objects as parameters. The variables will be grouped into an array to be
-          used by the method.
-          <br><br>
-          <strong>
-            def lots_of_params(*splat)<br>
-            &#160&#160splat.each { |var| "#{var}" }<br>
-            end
-          </strong>
-          <br><br>
-          Other parameters can be included along side the splat, though multiple splat arguments cannot be
-          used.
-          <br><br>
-          <strong>
-            def lots_of_params(word, *splat)<br>
-            &#160&#160splat.each { |var| "#{word} #{var}" }<br>
-            end<br>
-            def lots_of_params(word, *splat, word2)<br>
-            &#160&#160splat.each { |var| "#{word} #{var} #{word2}" }<br>
-            end
-          </strong>
-          <br><br>
-          Arrays can be given to a splat arguments but they will be placed inside another array as
-          a single variable.
-          <br><br>
-          (Sources:
-          <br>
-          <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-ET4bU/1/2?curriculum_id=5059f8619189a5000201fbcb">
-            codecademy: Methods, Blocks, /& Sorting
-          </a>
-          )
-        </p>
-      </div>
-
-    </div>
-
-    <div class="divider"></div>
-
-    <div id="" class="section">
-
-      <h2 id="symbols" class="section-header">Symbols</h2>
-
-      <div class="section-content">
-        <p class="section-text-normal">
-          Symbols are abstract references represented by a short string that follows a colon.
-          They act as constants and can be referenced using variables.
-          <br><br>
-          <strong>
-            :cat :dog :mouse :bear
-            <br><br>
-            x = :cat
-          </strong>
-          <br><br>
-          Strings can be converted into symbols while a program is running by calling the method
-          to_sym or intern on any string
-          <br><br>
-          <strong>
-            :cat.to_sym<br>
-            :cat.intern<br>
-          </strong>
-          <br><br>
-          Symbols can be very useful when trying to save time and memory space. Using symbols within
-          a loop rather than a string literal stops the creation of multiple unneeded strings and
-          comparisons between symbols takes less time than between strings.
-          <br><br>
-          However symbols are never garbage collected and so the memory is never released. Due to this
-          symbols should never be created if they are to be used infrequently.
-          <br><br>
-          (Sources:
-          <br>
-          Book: Beginning Ruby: From Novice to Professional
-          <br>
-            <a href="http://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/">
-              The Ruby Symbol is a Memory Leak
-            </a>
-            <br>
-            <a href="http://marcricblog.blogspot.co.uk/2010/02/ruby-symbols-ultimate-guide.html">
-              Ruby Symbols Ultimate Guide
-            </a>
-            <br>
-            <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-Qn7Qw/1/4?curriculum_id=5059f8619189a5000201fbcb">
-              Codecademy: Hashes and Symbols
-            </a>
-          )
-        </p>
-      </div>
-
-    </div>
-
-    <div class="divider"></div>
-
-    <div id="" class="section">
-
-      <h2 id="custom-code-blocks" class="section-header">Custom Methods That Use Code blocks</h2>
-
-      <div class="section-content">
-        <p class="section-text-normal">
-          When making a method it is possible to instruct the method to accept and make
-          use of code blocks by including one as a parameter. The parameter that signifies
-          the code block must be the last parameter entered and start with a & symbol.<br>
-          (Note: All occurrences of { } and "do end" are interchangeable. Also &code_block can
-          be replaced by any legal name eg. &bacon)
-          <br><br>
-          <strong>
-            def my_method(&code_block)<br>
-            &#160&#160 [1,2,3,4,5].each{|num| code_block.call(num)}<br>
-            end
-            <br><br>
-            my_method() {|val| puts val}
-            <br><br>
-            #=> 1<br>
-            2<br>
-            3<br>
-            4<br>
-            5
-            <br><br>
-            def my_method(array, &code_block)<br>
-            &#160&#160 array.each do |num|<br>
-            &#160&#160&#160&#160 code_block.call(num)<br>
-            &#160&#160end<br>
-            end
-            <br><br>
-            my_method([1,2,3,4,5]) do |val|<br>
-            &#160&#160puts val<br>
-            end
-            <br><br>
-            #=> 1<br>
-            2<br>
-            3<br>
-            4<br>
-            5
-          </strong>
-          <br><br>
-          The yield key term can be used in place of &code_block which and does not require
-          a given parameter
-          <br><br>
-          <strong>
-            def my_method(array)<br>
-            &#160&#160 array.each do |num|<br>
-            &#160&#160&#160&#160 yield(num)<br>
-            &#160&#160end<br>
-            end
-            <br><br>
-            my_method([1,2,3,4,5]) do |val|<br>
-            &#160&#160puts val<br>
-            end
-            <br><br>
-            #=> 1<br>
-            2<br>
-            3<br>
-            4<br>
-            5<br>
-          </strong>
-          <br><br>
-          (Sources:
-          <br>
-          Book: Beginning Ruby: From Novice to Professional<br>
-          <a href="https://www.codecademy.com/courses/ruby-beginner-en-L3ZCI/0/1?curriculum_id=5059f8619189a5000201fbcb">
-            codeacademy: Blocks, Procs, and Lambdas
-          </a>
-          )
-        </p>
-      </div>
-
-    </div>
-
-    <div class="divider"></div>
-
-    <div id="" class="section">
-
-      <h2 id="flow-control-summary" class="section-header">Flow-Control: summary</h2>
-
-      <div class="section-content">
-        <p class="section-text-normal">
-          Note: all parenthesis used in this sections are not required for code to work, just personal preference
-          <br><br>
-          <u>If, else and unless</u>
-          <br><br>
-          <strong>
-            if(true)<br>
-            &#160&#160run code if true<br>
-            else<br>
-            &#160&#160run code if false<br>
-            end<br>
-            <br>
-            unless(false)<br>
-            &#160&#160run code if false<br>
-            else<br>
-            &#160&#160run code if true<br>
-            end<br>
-            <br>
-            x = 5<br>
-            if(x > 5)<br>
-              &#160&#160run code if x is greater than 5<br>
-            elsif(x < 5)<br>
-              &#160&#160run code is x is less than 5<br>
-            else<br>
-              &#160&#160run code for all other cases<br>
-            end
-          </strong>
-          <br><br>
-          <u>Ternary Operator</u>
-          <br><br>
-          <strong>
-            x = true ? "one" : "two"<br>
-            puts x<br>
-            #=> "one"
-            <br><br>
-            x = false ? "one" : "two"<br>
-            puts x<br>
-            #=> "two"
-          </strong>
-          <br><br>
-          <u>Case</u>
-          <br><br>
-          <strong>
-            x = 6<br>
-            case x<br>
-            &#160&#160when 2<br>
-            &#160&#160&#160&#160run code when x == 2<br>
-            &#160&#160when 4<br>
-            &#160&#160&#160&#160run code when x == 4<br>
-            &#160&#160when 6<br>
-            &#160&#160&#160&#160run code when x == 6<br>
-            &#160&#160else<br>
-            &#160&#160&#160&#160run code for all other cases<br>
-            end
-          </strong>
-          <br><br>
-          (Sources:
-          <br>
-          Book: Beginning Ruby: From Novice to Professional
-          <a href="https://www.tutorialspoint.com/ruby/ruby_loops.htm">
-            tutorialspoint
-          </a>
-          )
-        </p>
-      </div>
-
-    </div>
-
-    <div class="divider"></div>
-
-    <div id="" class="section">
-
-      <h2 id="hashes" class="section-header">Hashes</h2>
-
-      <div class="section-content">
-        <p class="section-text-normal">
-          Hashes are similar to array in that they hold multiple objects. The
-          difference is that each object is assigned a key rather than an ordered
-          position. Keys can be any object though strings and symbols are commonly used
-          <br><br>
-          <strong>
-            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
-            x = {:pet_1 => "cat", :pet_2  => "dog", :pet_3  => "mouse"}
-          </strong>
-          <br><br>
-          A new method of creating hashes with symbols as keys was added in Ruby 1.9, as shown below.
-          This only works for symbols.
-          <br><br>
-          <strong>
-            x = {pet_1: "cat", pet_2: "dog", pet_3: "mouse"}
-          </strong>
-          <br><br>
-          New objects can be added by providing a new key
-          <br><br>
-          <strong>
-            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse",}<br>
-            x["pet 4"] = "lion"
-          </strong>
-          <br><br>
-          Each object is accessed and edited using it's own key
-          <br><br>
-          <strong>
-            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
-            puts x["pet 1"]<br>
-            x["pet 1"] = "tiger"<br>
-            puts x["pet 1"]<br>
-            #=> cat<br>
-            tiger
-          </strong>
-          <br><br>
-          Attempting to access a key that does not exist will return nil. Unless when the
-          hash was initialised you provided a parameter. In this case the given parameter would
-          be returned.
-          <br><br>
-          <strong>
-            x = {}<br>
-            puts x[:bacon]<br>
-            #=> nil
-            <br><br>
-            x = Hash.new("no value")<br>
-            puts x[:bacon]<br>
-            #=> no value
-            <br><br>
-            x = Hash.new(0)<br>
-            puts x[:bacon]<br>
-            #=> 0
-          </strong>
-          <br><br>
-          A Hashes length is found by using the method size
-          <br><br>
-          <strong>
-            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
-            puts x.size<br>
-            #=> 3
-          </strong>
-          <br><br>
-          Hashes are iterated over using the each method. As of ruby 1.9 the iteration
-          order will match the order in which values were added to the hash.
-          <br><br>
-          <strong>
-            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
-            x.each {|key, value| puts "#{key}: #{value}"}
-          </strong>
-          <br><br>
-          Objects stored in hashes can be deleted with the method delete.
-          <br><br>
-          <strong>
-            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
-            x.delete("pet 1")
-          </strong>
-          <br><br>
-          delete_if also deletes objects but only if the provided block equates to true.
-          <br><br>
-          <strong>
-            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
-            x.delete_if {|key, value| value == "cat"}
-          </strong>
-          <br><br>
-          Hashes can be iterated over using the each_key and each_value methods.
-          <br><br>
-          <strong>
-            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}
-            <br><br>
-            x.each_key { |key| puts "#{key}}<br>
-            #>= pet 1<br>
-            pet 2<br>
-            pet 3
-            <br><br>
-            x.each_value { |value| puts "#{value}"}<br>
-            #>= cat<br>
-            dog<br>
-            mouse
-            <br><br>
-
-          </strong>
-          <br><br>
-          (Sources:
-          <br>
-          Book: Beginning Ruby: From Novice to Professional<br>
-          <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-Qn7Qw/2/4?curriculum_id=5059f8619189a5000201fbcb">
-            codeacademy: Hashes and Symbols
-          </a>
-          )
-        </p>
-      </div>
-
-    <div class="divider"></div>
-
-    <div id="" class="section">
-
-      <h2 id="arrays" class="section-header">Arrays</h2>
-
-      <div class="section-content">
-        <p class="section-text-normal">
-          Arrays can be instantiated either empty or with values. Each variable in
-          an array can hold any type of data
-          <br><br>
-          <strong>
-            x = []<br>
-            y = [1,2,3,4,5]<br>
-            z = [1, "two", 3, "four", 5]
-          </strong>
-          <br><br>
-          Array variables can be accessed in a number of ways as shown below
-          <br><br>
-          <strong>
-            y = [1,2,3,4,5]<br>
-            puts y[0]<br>
-            puts y[4]<br>
-            puts y[-1]<br>
-            puts y[-5]<br>
-            #=> 1<br>
-            5<br>
-            5<br>
-            1
-          </strong>
-          <br><br>
-          Attempting to access an array element that does not exist will not throw a
-          warning / exception but will only return nil
-          <br><br>
-          <strong>
-            y = [1,2,3,4,5]<br>
-            puts y[5]<br>
-            #=> nil
-          </strong>
-          <br><br>
-          New values can be pushed onto the end of the array in two ways.<br>
-          This will increase the
-          array length by 1
-          <br><br>
-          <strong>
-            x << "value"<br>
-            x.push("value")
-          </strong>
-          <br><br>
-          The method pop is used to remove the last element.<br>
-          This will reduce the array length by 1. The removed value will be returned
-          <br><br>
-          <strong>
-            y = [1,2,3,4,5]<br>
-            puts y.pop<br>
-            puts y<br>
-            #=> 5<br>
-            [1,2,3,4]
-          </strong>
-          <br><br>
-          The method empty? will return a boolean value. True if the array holds no
-          values.<br>
-          The method length will return the number of values held by the array
-          <br><br>
-          <strong>
-            y = []<br>
-            puts y.empty?<br>
-            puts y.length<br>
-            #=> true<br>
-            0
-          </strong>
-          <br><br>
-          The method include? returns true if the given parameter is held within the array
-          <br><br>
-          <strong>
-            y = [1,2,3]<br>
-            puts y.include?(2)<br>
-            #=> true
-          </strong>
-          <br><br>
-          The method join combines all the values of the array into a single string.
-          The characters you wish to be between each variable can be given as a parameter
-          <br><br>
-          <strong>
-            y = [1,2,3,4,5]<br><br>
-            y.join<br>
-            puts y<br>
-            #=> "1234"<br>
-            or<br>
-            y.join(", ")<br>
-            puts y<br>
-            #=> "1, 2, 3, 4"
-          </strong>
-          <br><br>
-          Arrays can added together, which simply connects the two together
-          <br><br>
-          <strong>
-            x = ["a","b","c"]<br>
-            y = [1,2,3,4,5]<br>
-            puts x + y<br>
-            #=> ["a","b","c",1,2,3,4,5]<br>
-          </strong>x
-          <br><br>
-          Arrays can also be subtracted. The result of this is the removal of any values from the first array
-          that occur in both array
-          <br><br>
-          <strong>
-            x = [1,2,3,4,5]<br>
-            y = [3,4,5]
-            <br><br>
-            puts x - y<br>
-            #=> [1,2]
-            <br><br>
-            puts y - x<br>
-            #=> []
-          </strong>
-          <br><br>
-          The methods first and last can be used for easy access to the start and end of arrays.
-          The methods accept one parameter that signifies how many variable to return
-          <br><br>
-          <strong>
-            x = [1,2,3,4,5]<br>
-            puts x.first<br>
-            puts x.first(2)<br>
-            puts x.last<br>
-            puts x.last(2)<br>
-            #=> [1]<br>
-            [1,2]<br>
-            [5]<br>
-            [4,5]
-          </strong>
-          <br><br>
-          (Sources:
-          <br>
-          Book: Beginning Ruby: From Novice to Professional
-          )
-        </p>
-      </div>
-
-    </div>
-
-    <div class="divider"></div>
-
-    <div id="" class="section">
-
-      <h2 id="regexr-in-ruby" class="section-header">RegExr in Ruby</h2>
-
-      <div class="section-content">
-        <p class="section-text-normal">
-          There are a few methods that can be used by strings with regexr as parameters. Some
-          of these include:
-          <br>
-          <strong>
-            sub<br>
-            gsub<br>
-            scan
-          </strong>
-          <br><br>
-          (For information on the first two methods view the section <a href="#substitutions-in-strings">Substitutions in Strings</a>)<br>
-          (For more detail into regular expressions see <a href="regexr.html">Helpful regular expressions</a>)
-          <br><br>
-          Forward slashes are used at the start and end of a regular expression and can be given as parameters in all three methods shown.
-          <br><br>
-          The scan method takes one parameter and iterates through the given string, looping for each match it finds.
-          <br><br>
-          <strong>
-            "this is a test".scan(/\w\w/) do |letter| puts letter end<br>
-            or<br>
-            "this is a test".scan(/\w\w/) {|letter| puts letter}<br>
-            #=>th<br>
-            is<br>
-            is<br>
-            te<br>
-            st
-          </strong>
-          <br><br>
-          (Sources:
-          <br>
-          Book: Beginning Ruby: From Novice to Professional
-          )
-        </p>
-      </div>
-
-    </div>
-
-    <div class="divider"></div>
-
-    <div id="" class="section">
-
-      <h2 id="substitutions-in-strings" class="section-header">Substitutions in Strings</h2>
-
-      <div class="section-content">
-        <p class="section-text-normal">
-          <strong>
-            puts "bacon and eggs".sub("bacon", "sausage")<br>
-            #=> sausage and eggs
-            <br><br>
-            puts "this is a test".gsub("t", "")<br>
-            #=> his is a es
-          </strong>
-          <br><br>
-          sub finds the first string which matches its first parameters and substitutes it for
-          the seconds parameter.<br>
-          gsub finds all instances of the first parameter and subs all of them for the seconds
-          parameter
-          <br><br>
-          The first parameter of these methods can be regular expressions
-          <br><br>
-          (Sources:
-          <br>
-          Book: Beginning Ruby: From Novice to Professional
-          )
-        </p>
-
-      </div>
-
-    </div>
-
-    <div class="divider"></div>
-
-    <div id="" class="section">
-
-      <h2 id="interpolation" class="section-header">Interpolation</h2>
-
-      <div class="section-content">
-        <p class="section-text-normal">
-          <strong>
-            s = "interpolation"<br>
-            "This is #{x}"<br>
-            #=> This is interpolation
-            <br><br>
-            i = 5<br>
-            j = 10<br>
-            puts "#{i} + #{10} = #{i + j}"<br>
-            #=> 5 + 10 = 15
-          </strong>
-          <br><br>
-          Interpolations is the insertion of the result from an expression directly into a string literal.
-          Double quotes ( "" instead of '' ) must be used in order for interpolation to work correctly
-          <br><br>
-          (Sources:
-          <br>
-          Book: Beginning Ruby: From Novice to Professional
-          )
-        </p>
-      </div>
-
-    <div class="divider"></div>
-
-    <div class="divider"></div>
-
-    <div id="" class="section">
-
-      <h2 id="string-numerical-values" class="section-header">String numerical values</h2>
-
-      <div class="section-content">
-        <p class="section-text-normal">
-          <strong>
-            "x".ord()<br>
-            120.chr()
-          </strong>
-          <br><br>
-          The method ord will return the ASCII value of the given sting. If the string has multiple
-          characters the returned value will be of the first character in the string
-          <br><br>
-          The method chr with return the character which is represented by the given number.
-          This method can also accept a parameter so that different encodings might be used
-          <br><br>
-          <strong>
-            120.char(Encoding::UTF_8)<br>
-            Encoding.name_list<br>
-            #=> ["ASCII-8BIT", "UTF-8", "US-ASCII", "UTF-16BE", "UTF-16LE", "UTF-32BE", "UTF-32LE", "UTF-16", "UTF-32", ...]<br>
-            <a href="http://stackoverflow.com/questions/37820888/trying-to-understand-the-ruby-chr-and-ord-methods">
-              (source: stackoverflow: Trying to understand the Ruby .chr and .ord methods)
-            </a>
-          </strong>
-          <br><br>
-          (Sources:
-          <br>
-          Book: Beginning Ruby: From Novice to Professional
-          )
-        </p>
-      </div>
-
-    </div>
-
-    <div class="divider"></div>
-
-    <div id="" class="section">
-
-      <h2 id="multi-line-strings" class="section-header">Multi-line Strings</h2>
-
-      <div class="section-content">
-        <p class="section-text-normal">
-          <strong>
-            puts "This is text \nthat outputs on \nmultiple lines"
-          </strong>
-          <br><br>
-          Using the new line character allows the creation of mulit line strings
-          <br><br>
-          <strong>
-            puts %q{This is text<br>
-              that outputs on<br>
-              multiple lines}
-          </strong>
-          <br><br>
-          This example multiple lines enables the creation of multi-line strings which do not require
-          additional characters and simply mimics the layout as it is written in the code.
-          The curly brackets may be replaced with any two delimiters (eg. ( ) &#60 &#62 ! !).
-          <br><br>
-          <strong>
-            puts &#60&#60MY_STRING<br>
-              This is text<br>
-              that outputs on<br>
-              multiple lines<br>
-              MY_STRING
-          </strong>
-          <br><br>
-          Using characters as a delimiter is possible as shown in this example. This is called a here document.
-          (Note: had issues with indentation using this method. It seems as if it does not work unless
-          no indentation is used on the end delimiter. Other methods are more user friendly)
-          <br><br>
-          (Sources:
-          <br>
-          Book: Beginning Ruby: From Novice to Professional
-          )
-        </p>
-      </div>
-
-    </div>
-
-    <div class="divider"></div>
-
-    <div id="" class="section">
-
-      <h2 id="constants" class="section-header">Constants / Final Variables</h2>
-
-      <div class="section-content">
-        <p class="section-text-normal">
-          To define a constant in Ruby create the variable with a capital as the first character
-          <br><br>
-          <strong>Dogs = 50</strong>
-          <br><br>
-          Any attempts to change the variable Dogs will result in a warning
-          <br><br>
-          (Sources:
-          <br>
-          Book: Beginning Ruby: From Novice to Professional
-          )
-        </p>
-      </div>
-
-    </div>
-
-    <div class="divider"></div>
-
-    <div id="" class="section">
-
-      <h2 id="iterators" class="section-header">Loops and Iterators</h2>
-
-      <div class="section-content">
-
-        <u><h3>next</h3></u>
-        <p class="section-text-normal">
-          The next key word can be used in loops and iterators to skip the remaining code and start
-          the next loop / iteration
-          <br><br>
-          <strong>
-            x = 0<br>
-            loop {<br>
-            &#160&#160x += 1<br>
-            &#160&#160if(x == 2)<br>
-            &#160&#160&#160&#160next<br>
-            &#160&#160end<br>
-            &#160&#160break if x >= 5<br>
-          }
-          </strong>
-        </p>
-
-        <u><h3>loop</h3></u>
-        <p class="section-text-normal">
-          Loop is the a basic loop and ends when the "break if" statement is true
-          <br><br>
-          <strong>
-            x = 0<br>
-            loop {<br>
-            &#160&#160x += 1<br>
-            &#160&#160break if x >= 5<br>
-          }
-          </strong>
-        </p>
-
-        <u><h3>while / until loops</h3></u>
-        <p class="section-text-normal">
-          The while loop runs while its given condition is true. The until loop runs until the
-          given condition is true.
-          <br><br>
-          <strong>
-            x = 0<br>
-            while(x < 100)<br>
-            &#160&#160repeat code while x is less than 100<br>
-            &#160&#160x += 1<br>
-            end
-            <br><br>
-            x = 0<br>
-            until(x > 100)<br>
-            &#160&#160repeat code until x is greater than 100<br>
-            &#160&#160x += 1<br>
-            end
-          </strong>
-        </p>
-
-        <u><h3>for loop</h3></u>
-        <p class="section-text-normal">
-          The for loop runs the given number of times inclusively.
-          <br><br>
-          <strong>
-            for i in 0..100<br>
-            &#160&#160puts "#{i}: hello"<br>
-            end
-          </strong>
-        </p>
-
-        <u><h3>times</h3></u>
-        <p class="section-text-normal">
-          The method times runs the code in the provided block the specified number of times.
-          The example will iterate through numbers 0 - 4 and run the code in the given block.
-          <br><br>
-          <strong>
-          5.times do |number| puts "#{number}: Hello\n" end<br>
-          5.times { |number| puts "#{number}: Hello" }
-          </strong>
-          <br><br>
-          This method is used by objects holding integer values
-        </p>
-
-        <u><h3>upto / downto</h3></u>
-        <p class="section-text-normal">
-          The methods upto and downto iterate through the given numbers inclusively and run the code
-          in the given block on each loop.
-          <br><br>
-          <strong>
-            1.upto(5) do |number| puts "#{number}: Hello" end<br>
-            1.upto(5) { |number| puts "#{number}: Hello" } <br>
-            10.downto(5) do |number| puts "#{number}: Hello" end<br>
-            10.downto(5) { |number| puts "#{number}: Hello" }
-          </strong>
-          <br><br>
-          This method is used by objects holding integer values
-        </p>
-
-
-        <u><h3>step</h3></u>
-        <p class="section-text-normal">
-          The method step will iterate through the given numbers inclusively, in steps equals to the second parameter, and run the code
-          in the given block on each loop. In the third example the final number will be 48 as the next value is greater than 50.
-          <br><br>
-          <strong>
-            0.step(50, 5) {|number| puts "#{number}: Hello" }<br>
-            0.step(50, 0.5) { |number| puts "#{number}: Hello" }<br>
-            3.step(50, 5) { |number| puts "#{number}: Hello" }
-          </strong>
-          <br><br>
-          This method is used by objects holding integer or float values.
-        </p>
-
-        <u><h3>each</h3></u>
-        <p class="section-text-normal">
-          The method each will loop through each object held in the given collection
-          <br><br>
-          <strong>
-            (1..5).each do |number| puts "#{number}: Hello" end<br>
-            (1..5).each { |number| puts "#{number}: Hello" }
-          </strong>
-          <br><br>
-          Method is used by collections (array, hash, set, range).
-        </p>
-
-        <u><h3>each_with_index</h3></u>
-        <p class="section-text-normal">
-          The method each_with_index is the equivalent of each but provides the index as well. The index
-          must be the second block variable.
-          <br><br>
-          <strong>
-            (1..5).each_with_index { |number, index| puts "#{index}: #{number}" }
-          </strong>
-          <br><br>
-          Method is used by collections (array, hash, set, range).
-        </p>
-
-        <u><h3>scan</h3></u>
-        <p class="section-text-normal">
-          The method scan can be used on string values. It will loop for each match (compared against the parameter) within the string it finds.
-          The given parameter can either be a string or a RegExr (<a href="#regexr-in-ruby">click here for more on RegExr</a>).
-          <br><br>
-          <strong>
-            "this is a test".scan(/\w\w/) {|letter| puts letter}<br>
-            #=>th<br>
-            is<br>
-            is<br>
-            te<br>
-            st
-          </strong>
-          <br><br>
-          Method is used by strings.
-        </p>
-
-        <u><h3>collect / map</h3></u>
-        <p class="section-text-normal">
-          The collect method returns a new array containing all the same variables but after
-          they have been altered by the given code block.<br>
-          The method map is used in the same way as collect and produces
-          the same results.
-          <br><br>
-          <strong>
-          [1,2,3,4].collect {|number| number + 1 }<br>
-          #=> [2,3,4,5]
-          <br><br>
-          ["cat","mouse","dog"].collect {|string| string * 2 }<br>
-          #=> ["catcat","mousemouse","dogdog"]
-          </strong>
-          <br><br>
-          These methods are used by collections (array, hash, set, range).
-        </p>
-
-        <u><h3>select</h3></u>
-        <p class="section-text-normal">
-          The select method allows you to set a condition and returns an array containing only values that
-          meet that criteria. If the block contains multiple lines of code the final line will act as the
-          condition.
-          <br><br>
-          <strong>
-            [1,2,3,4,5,6,7,8].select { |num| num % 2 == 0}<br>
-            #=> [2,4,6,8]
-            <br><br>
-            [1,2,3,4,5,6,7,8].select { |num| <br>
-              &#160&#160num % 2 == 0<br>
-              &#160&#160num % 3 == 0<br>
-            }<br>
-            #=> [3,6]
-          </strong>
-        </p>
-
-        <p class="section-text-normal">
-          (Sources:
-          <br>
-          Book: Beginning Ruby: From Novice to Professional<br>
-          <a href="http://www.eriktrautman.com/posts/ruby-explained-map-select-and-other-enumerable-methods">
-            Ruby Explained: Map, Select, and Other Enumerable Methods
-          </a>
-          )
-        </p>
-      </div>
-
-    </div>
-
-    <div class="divider"></div>
-
-    <div id="" class="section">
-
-      <h2 id="interesting-operators" class="section-header">Interesting Operators</h2>
-
-      <div class="section-content">
-        <p class="section-text-normal">
-          <strong>x <=> y</strong>: Returns 0 if x and y are equal, returns -1 if y
-          is greater and 1 if x is greater.
-          <br><br>
-          <strong>x ||= "cats"</strong>: Assigns an object to the variable only if the variable currently
-          holds a nil value.
-          <br><br>
-          (Sources:
-          <br>
-          Book: Beginning Ruby: From Novice to Professional<br>
-          <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-1o8Mb/1/1?curriculum_id=5059f8619189a5000201fbcb">
-            The Zen of Ruby
-          </a>
-          )
-        </p>
-      </div>
-
-    </div>
-
-    <div class="divider"></div>
-
-    <div id="" class="section">
-
-      <h2 id="output-to-console" class="section-header">Output to Console </h2>
-
-      <div class="section-content">
-        <p class="section-text-normal">
-          <strong>print</strong>:
-          print a string to the console<br>
-          <strong>puts</strong>:
-          print a string to the console with a new line after<br>
-          <strong>p</strong>:
-          (Same as calling "string".inspect) Prints to screen in the same way as puts and returns the given value.
-          Any strings printed with this method will be surrounded by quotation
-          marks and any escape characters will be prefixed with a backslash<br>
-          <br><br>
-          (Sources:
-          <br>
-          Book: Beginning Ruby: From Novice to Professional
-          )
-        </p>
-      </div>
-
-    </div>
-
-    <div class="divider"></div>
-
-    <a href="../index.html"><p>&#60&#60Return</p></a>
-
   </div>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" rel="javascript"></script>
   <script src="../j-script/text-size-manager.js" rel="javascript"></script>
   <script src="../j-script/show-contents.js" rel="javascript"></script>
-
 </body>
 
 </html>
