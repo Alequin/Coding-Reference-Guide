@@ -25,7 +25,7 @@
             <a href="#">ph</a>
           </td>
           <td>
-            <a href="#">ph</a>
+            <a href="#method-response">Method Response</a>
           </td>
           <td>
             <a href="#native-sort">Native Sort</a>
@@ -99,6 +99,34 @@
       <div class="section-content">
         <p class="section-text-normal">
 
+        </p>
+      </div>
+
+    </div>
+    <div class="divider"></div>
+
+    <div id="" class="section">
+
+      <h2 id="method-response" class="section-header">Method Response</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          <strong>
+            [1,2,3].respond_to?(:push)<br>
+            #=> true
+            <br><br>
+            "hello".respond_to?(:length)<br>
+            #=> true
+            <br><br>
+            "hello".respond_to?(:each)<br>
+            #=> false
+            <br><br>
+            ["cat","dog"].respond_to?(:times)
+            #=> false
+            <br><br>
+          </strong>
+          The respond_to? method returns true if the object that calles it is able to run the method
+          given as a parameter.
         </p>
       </div>
 
