@@ -411,6 +411,13 @@
             x = {:pet_1 => "cat", :pet_2  => "dog", :pet_3  => "mouse"}
           </strong>
           <br><br>
+          A new method of creating hashes with symbols as keys was added in Ruby 1.9, as shown below.
+          This only works for symbols.
+          <br><br>
+          <strong>
+            x = {pet_1: "cat", pet_2: "dog", pet_3: "mouse"}
+          </strong>
+          <br><br>
           New objects can be added by providing a new key
           <br><br>
           <strong>
@@ -456,39 +463,63 @@
           </strong>
           <br><br>
           Hashes are iterated over using the each method. As of ruby 1.9 the iteration
-          order will match the order in which values were added to the hash
+          order will match the order in which values were added to the hash.
           <br><br>
           <strong>
             x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
             x.each {|key, value| puts "#{key}: #{value}"}
           </strong>
           <br><br>
-          Objects stored in hashes can be deleted with the method delete
+          Objects stored in hashes can be deleted with the method delete.
           <br><br>
           <strong>
             x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
             x.delete("pet 1")
           </strong>
           <br><br>
-          delete_if also deletes objects but only if the provided block equates to true
+          delete_if also deletes objects but only if the provided block equates to true.
           <br><br>
           <strong>
             x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
             x.delete_if {|key, value| value == "cat"}
           </strong>
           <br><br>
+          Hashes can be iterated over using the select, each_key and each_value methods.
+          <br><br>
+          <strong>
+            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}
+            <br><br>
+            x.select { |number, type| puts "#{number}: #{type}"}<br>
+            #>= pet 1: cat<br>
+            pet 2: dog<br>
+            pet 3: mouse
+            <br><br>
+            x.each_key { |key| puts "#{key}}<br>
+            #>= pet 1<br>
+            pet 2<br>
+            pet 3
+            <br><br>
+            x.each_value { |value| puts "#{value}"}<br>
+            #>= cat<br>
+            dog<br>
+            mouse
+            <br><br>
+
+          </strong>
+          <br><br>
           (Sources:
           <br>
-          Book: Beginning Ruby: From Novice to Professional
+          Book: Beginning Ruby: From Novice to Professional<br>
+          <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-Qn7Qw/2/4?curriculum_id=5059f8619189a5000201fbcb">
+            Hashes and Symbols
+          </a>
           )
         </p>
       </div>
 
-<<<<<<< HEAD
       <div class="divider"></div>
       <a href="../index.html"><p>&#60&#60Return</p></a>
-=======
->>>>>>> 3d301cdee8c110ad84f28231ccef99ca2b215211
+
     </div>
 
     <div class="divider"></div>
