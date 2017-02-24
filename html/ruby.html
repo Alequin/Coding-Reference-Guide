@@ -112,7 +112,59 @@
 
       <div class="section-content">
         <p class="section-text-normal">
-
+          When called the sort method will order values from low to high
+          <br><br>
+          <strong>
+            x = [2,5,3,1,6,7,4]<br>
+            y = x.sort<br>
+            puts y<br>
+            #=> [1,2,3,4,5,6,7]
+            <br><br>
+            x = [2,5,3,1,6,7,4]<br>
+            x.sort!<br>
+            puts x<br>
+            #=> [1,2,3,4,5,6,7]
+            <br><br>
+            x = ["x","c","m"]<br>
+            x.sort!<br>
+            puts x<br>
+            #=> ["c","m","x"]
+            <br><br>
+            x = ["cc","cb","caa","ca"]<br>
+            x.sort!<br>
+            puts x<br>
+            #=> ["ca","caa","cb","cc"]
+          </strong>
+          <br><br>
+          By providing the sort method with a block it is possible to control the sorted order
+          and what details about the variables are sorted
+          <br><br>
+          <strong>
+            x = [2,5,3,1,6,7,4]<br>
+            x.sort! { |left, right| right <=> left }<br>
+            puts x<br>
+            #=> [7,6,5,4,3,2,1]
+            <br><br>
+            x = ["giraffe", "cat", "mouse"]<br>
+            x.sort! { |left, right| left.length <=> right.length }<br>
+            puts x<br>
+            #=> ["cat", "mouse", "giraffe"]
+          </strong>
+          <br><br>
+          The sort algorithm used implemented by ruby is a quicksort and has been show to be fast
+          when compared to other sorting algorithms. It is a highly optimized piece of code and should be
+          used
+          <br><br>
+          (Sources:
+          <br>
+          <a href="https://www.dotnetperls.com/sort-ruby">
+            dotnetperls: sort
+          </a>
+          <br>
+          <a href="https://www.igvita.com/2009/03/26/ruby-algorithms-sorting-trie-heaps/">
+            Ruby Algorithms: Sorting, Trie & Heaps
+          </a>
+          )
         </p>
       </div>
 
