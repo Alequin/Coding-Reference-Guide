@@ -22,7 +22,7 @@
       <table id="contents-table">
         <tr>
           <td>
-            <a href="#"></a>
+            <a href="#variable-arguments-splat">Variable Arguments: Splat</a>
           </td>
           <td>
             <a href="#symbols">Symbols</a>
@@ -77,6 +77,50 @@
         </tr>
 
       </table>
+    </div>
+
+    <div class="divider"></div>
+
+    <div id="" class="section">
+
+      <h2 id="variable-arguments-splat" class="section-header">Variable Arguments: Splat</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          Variable arguments (or splat arguments as they are known in ruby) allow methods to accept any number
+          (zero - max array length) of objects as parameters. The variables will be grouped into an array to be
+          used by the method.
+          <br><br>
+          <strong>
+            def lots_of_params(*splat)<br>
+            &#160&#160splat.each { |var| "#{var}" }<br>
+            end
+          </strong>
+          <br><br>
+          Other parameters can be included along side the splat, though multiple splat arguments cannot be
+          used.
+          <br><br>
+          <strong>
+            def lots_of_params(word, *splat)<br>
+            &#160&#160splat.each { |var| "#{word} #{var}" }<br>
+            end<br>
+            def lots_of_params(word, *splat, word2)<br>
+            &#160&#160splat.each { |var| "#{word} #{var} #{word2}" }<br>
+            end
+          </strong>
+          <br><br>
+          Arrays can be given to a splat arguments but they will be placed inside another array as
+          a single variable.
+          <br><br>
+          (Sources:
+          <br>
+          <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-ET4bU/1/2?curriculum_id=5059f8619189a5000201fbcb">
+            codecademy: Methods, Blocks, /& Sorting
+          </a>
+          )
+        </p>
+      </div>
+
     </div>
 
     <div class="divider"></div>
@@ -235,26 +279,12 @@
             end
           </strong>
           <br><br>
-          <u>While and Until</u>
-          <br><br>
-          <strong>
-            x = 0<br>
-            while(x < 100)<br>
-            &#160&#160repeat code while x is less than 100<br>
-            &#160&#160x += 1<br>
-            end
-            <br><br>
-            x = 0<br>
-            until(x > 100)<br>
-            &#160&#160repeat code until x is greater than 100<br>
-            &#160&#160x += 1<br>
-            end
-            <br>
-          </strong>
-          <br><br>
           (Sources:
           <br>
           Book: Beginning Ruby: From Novice to Professional
+          <a href="https://www.tutorialspoint.com/ruby/ruby_loops.htm">
+            tutorialspoint
+          </a>
           )
         </p>
       </div>
@@ -333,6 +363,11 @@
         </p>
       </div>
 
+<<<<<<< HEAD
+      <div class="divider"></div>
+      <a href="../index.html"><p>&#60&#60Return</p></a>
+=======
+>>>>>>> 3d301cdee8c110ad84f28231ccef99ca2b215211
     </div>
 
     <div class="divider"></div>
@@ -693,7 +728,7 @@
 
     <div id="" class="section">
 
-      <h2 id="iterators" class="section-header">Iterators</h2>
+      <h2 id="iterators" class="section-header">Loops and Iterators</h2>
 
       <div class="section-content">
         <p class="section-text-normal">
@@ -775,6 +810,41 @@
           <br><br>
           The next key word can be used in loops and iterators to skip the remaining code and start
           the next loop / iteration
+
+            x = 0<br>
+            loop {<br>
+            &#160&#160x += 1<br>
+            &#160&#160break if x >= 5<br>
+          }
+          </strong>
+          <br><br>
+          Loop is the most basic form of loop and ends when the break if statment is true
+          <br><br>
+          <strong>
+            x = 0<br>
+            while(x < 100)<br>
+            &#160&#160repeat code while x is less than 100<br>
+            &#160&#160x += 1<br>
+            end
+            <br><br>
+            x = 0<br>
+            until(x > 100)<br>
+            &#160&#160repeat code until x is greater than 100<br>
+            &#160&#160x += 1<br>
+            end
+            <br>
+          </strong>
+          <br><br>
+          The while loop runs while its given condition is true. The until loop runs until the
+          given condition is true
+          <br><br>
+          <strong>
+            for i in 0..100<br>
+            &#160&#160puts "#{i}: hello"<br>
+            end
+          </strong>
+          <br><br>
+          The for loop runs the given number of times inclusively
           <br><br>
           (Sources:
           <br>
@@ -813,8 +883,14 @@
 
       <div class="section-content">
         <p class="section-text-normal">
-          <strong>print</strong>: print a string to the console<br>
-          <strong>puts</strong>: print a string to the console with a new line after
+          <strong>print</strong>:
+          print a string to the console<br>
+          <strong>puts</strong>:
+          print a string to the console with a new line after<br>
+          <strong>p</strong>:
+          (Same as calling "string".inspect) Prints to screen in the same way as puts and returns the given value.
+          Any strings printed with this method will be surrounded by quotation
+          marks and any escape characters will be prefixed with a backslash<br>
           <br><br>
           (Sources:
           <br>
