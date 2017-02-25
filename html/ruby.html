@@ -92,7 +92,7 @@
 
         <div class="divider"></div>
 
-          <div class="section">
+        <div class="section">
 
             <h2 class="section-header">Procs</h2>
 
@@ -103,13 +103,13 @@
                 <br><br>
                 <strong>
                   var = Proc.new { |a| a += 1 }<br>
-                  puts "#{[1,2,3].collect(&var)}"<br>
-                  puts "#{(50..53).collect(&var)}"<br>
+                  p [1,2,3].collect(&var)<br>
+                  p (50..53).collect(&var)<br>
                   #=> [2,3,4]<br>
-                  [51,52,53,54]
+                  # [51,52,53,54]
                 </strong>
                 <br><br>
-                Procs can also be called, allowing them to run at any specified time
+                Procs can also be called, allowing them to run at any specified time.
                 <br><br>
                 <strong>
                   var = Proc.new { puts "hello" }<br>
@@ -136,16 +136,16 @@
           <div class="section-content">
             <p class="section-text-normal">
               <strong>
-                [1,2,3].respond_to?(:push)<br>
+                puts [1,2,3].respond_to?(:push)<br>
                 #=> true
                 <br><br>
-                "hello".respond_to?(:length)<br>
+                puts "hello".respond_to?(:length)<br>
                 #=> true
                 <br><br>
-                "hello".respond_to?(:each)<br>
+                puts "hello".respond_to?(:each)<br>
                 #=> false
                 <br><br>
-                ["cat","dog"].respond_to?(:times)
+                puts ["cat","dog"].respond_to?(:times)
                 #=> false
                 <br><br>
               </strong>
@@ -171,48 +171,48 @@
 
           <div class="section-content">
             <p class="section-text-normal">
-              When called the sort method will order values from low to high
+              When called the sort method will order values from low to high.
               <br><br>
               <strong>
                 x = [2,5,3,1,6,7,4]<br>
                 y = x.sort<br>
-                puts y<br>
+                p y<br>
                 #=> [1,2,3,4,5,6,7]
                 <br><br>
                 x = [2,5,3,1,6,7,4]<br>
                 x.sort!<br>
-                puts x<br>
+                p x<br>
                 #=> [1,2,3,4,5,6,7]
                 <br><br>
                 x = ["x","c","m"]<br>
                 x.sort!<br>
-                puts x<br>
+                p x<br>
                 #=> ["c","m","x"]
                 <br><br>
                 x = ["cc","cb","caa","ca"]<br>
                 x.sort!<br>
-                puts x<br>
+                p x<br>
                 #=> ["ca","caa","cb","cc"]
               </strong>
               <br><br>
               By providing the sort method with a block it is possible to control the sorted order
-              and what details about the variables are sorted
+              and what details about the variables are sorted.
               <br><br>
               <strong>
                 x = [2,5,3,1,6,7,4]<br>
-                x.sort! { |left, right| right &#62;=&#60; left }<br>
-                puts x<br>
+                x.sort! { |left, right| right &#60;=&#62; left }<br>
+                p x<br>
                 #=> [7,6,5,4,3,2,1]
                 <br><br>
                 x = ["giraffe", "cat", "mouse"]<br>
-                x.sort! { |left, right| left.length &#62;=&#60; right.length }<br>
-                puts x<br>
+                x.sort! { |left, right| left.length &#60;=&#62; right.length }<br>
+                p x<br>
                 #=> ["cat", "mouse", "giraffe"]
               </strong>
               <br><br>
               The sort algorithm used implemented by ruby is a quicksort and has been show to be fast
               when compared to other sorting algorithms. It is a highly optimized piece of code and should be
-              used
+              used.
               <br><br>
               (Sources:
               <br>
@@ -243,7 +243,7 @@
               <br><br>
               <strong>
                 def lots_of_params(*splat)<br>
-                &#160;&#160;splat.each { |var| "#{var}" }<br>
+                &#160;&#160;splat.each { |var| puts "#{var}" }<br>
                 end
               </strong>
               <br><br>
@@ -252,15 +252,13 @@
               <br><br>
               <strong>
                 def lots_of_params(word, *splat)<br>
-                &#160;&#160;splat.each { |var| "#{word} #{var}" }<br>
-                end<br>
+                &#160;&#160;splat.each { |var| puts "#{word} #{var}" }<br>
+                end
+                <br><br>
                 def lots_of_params(word, *splat, word2)<br>
-                &#160;&#160;splat.each { |var| "#{word} #{var} #{word2}" }<br>
+                &#160;&#160;splat.each { |var| puts "#{word} #{var} #{word2}" }<br>
                 end
               </strong>
-              <br><br>
-              Arrays can be given to a splat arguments but they will be placed inside another array as
-              a single variable.
               <br><br>
               (Sources:
               <br>
@@ -291,16 +289,16 @@
               </strong>
               <br><br>
               Strings can be converted into symbols while a program is running by calling the method
-              to_sym or intern on any string
+              to_sym or intern on any string.
               <br><br>
               <strong>
-                :cat.to_sym<br>
-                :cat.intern<br>
+                "cat".to_sym<br>
+                "cat".intern
               </strong>
               <br><br>
-              Symbols can be very useful when trying to save time and memory space. Using symbols within
-              a loop rather than a string literal stops the creation of multiple unneeded strings and
-              comparisons between symbols takes less time than between strings.
+              Symbols can be useful way to save time and memory space. Using symbols within
+              a loop rather than a string literal stops the creation of multiple unneeded strings and when
+              comparisons are been made symbols takes less time than strings.
               <br><br>
               However symbols are never garbage collected and so the memory is never released. Due to this
               symbols should never be created if they are to be used infrequently.
@@ -345,13 +343,9 @@
                 &#160;&#160; [1,2,3,4,5].each{|num| code_block.call(num)}<br>
                 end
                 <br><br>
-                my_method() {|val| puts val}
+                my_method() {|val| print "#{val} "}
                 <br><br>
-                #=> 1<br>
-                2<br>
-                3<br>
-                4<br>
-                5
+                #=> 1 2 3 4 5
                 <br><br>
                 def my_method(array, &code_block)<br>
                 &#160;&#160; array.each do |num|<br>
@@ -360,18 +354,14 @@
                 end
                 <br><br>
                 my_method([1,2,3,4,5]) do |val|<br>
-                &#160;&#160;puts val<br>
+                &#160;&#160;print "#{val} "<br>
                 end
                 <br><br>
-                #=> 1<br>
-                2<br>
-                3<br>
-                4<br>
-                5
+                #=> 1 2 3 4 5
               </strong>
               <br><br>
-              The yield key term can be used in place of &code_block which and does not require
-              a given parameter
+              The yield key term can be used in place of &#38code_block which and does not require
+              a given parameter.
               <br><br>
               <strong>
                 def my_method(array)<br>
@@ -381,14 +371,10 @@
                 end
                 <br><br>
                 my_method([1,2,3,4,5]) do |val|<br>
-                &#160;&#160;puts val<br>
+                &#160;&#160;print "#{val} "<br>
                 end
                 <br><br>
-                #=> 1<br>
-                2<br>
-                3<br>
-                4<br>
-                5<br>
+                #=> 1 2 3 4 5
               </strong>
               <br><br>
               (Sources:
@@ -411,7 +397,7 @@
 
           <div class="section-content">
             <p class="section-text-normal">
-              Note: all parenthesis used in this sections are not required for code to work, just personal preference
+              Note: all parenthesis used in this sections are not required for code to work, just personal preference.
               <br><br>
               <u>If, else and unless</u>
               <br><br>
@@ -429,9 +415,9 @@
                 end<br>
                 <br>
                 x = 5<br>
-                if(x &#60; 5)<br>
+                if(x &#62; 5)<br>
                   &#160;&#160;run code if x is greater than 5<br>
-                elsif(x &#62; 5)<br>
+                elsif(x &#60; 5)<br>
                   &#160;&#160;run code is x is less than 5<br>
                 else<br>
                   &#160;&#160;run code for all other cases<br>
@@ -443,11 +429,11 @@
               <strong>
                 x = true ? "one" : "two"<br>
                 puts x<br>
-                #=> "one"
+                #=> one
                 <br><br>
                 x = false ? "one" : "two"<br>
                 puts x<br>
-                #=> "two"
+                #=> two
               </strong>
               <br><br>
               <u>Case</u>
@@ -488,7 +474,7 @@
             <p class="section-text-normal">
               Hashes are similar to array in that they hold multiple objects. The
               difference is that each object is assigned a key rather than an ordered
-              position. Keys can be any object though strings and symbols are commonly used
+              position. Keys can be any object though strings and symbols are commonly used.
               <br><br>
               <strong>
                 x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
@@ -502,14 +488,14 @@
                 x = {pet_1: "cat", pet_2: "dog", pet_3: "mouse"}
               </strong>
               <br><br>
-              New objects can be added by providing a new key
+              New objects can be added by providing a new key.
               <br><br>
               <strong>
                 x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse",}<br>
                 x["pet 4"] = "lion"
               </strong>
               <br><br>
-              Each object is accessed and edited using it's own key
+              Each object is accessed and edited using it's own key.
               <br><br>
               <strong>
                 x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
@@ -517,7 +503,7 @@
                 x["pet 1"] = "tiger"<br>
                 puts x["pet 1"]<br>
                 #=> cat<br>
-                tiger
+                # tiger
               </strong>
               <br><br>
               Attempting to access a key that does not exist will return nil. Unless when the
@@ -538,12 +524,12 @@
                 #=> 0
               </strong>
               <br><br>
-              A Hashes length is found by using the method size
+              A Hashes length is found by using the methods length or size.
               <br><br>
               <strong>
                 x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
-                puts x.size<br>
-                #=> 3
+                puts "#{x.length} #{x.size}"<br>
+                #=> 3  3
               </strong>
               <br><br>
               Hashes are iterated over using the each method. As of ruby 1.9 the iteration
@@ -843,7 +829,7 @@
             </p>
           </div>
         </div>
-        
+
         <div class="divider"></div>
 
         <div class="divider"></div>
@@ -1187,14 +1173,23 @@
 
           <div class="section-content">
             <p class="section-text-normal">
-              <strong>print</strong>:
-              print a string to the console<br>
-              <strong>puts</strong>:
-              print a string to the console with a new line after<br>
-              <strong>p</strong>:
-              (Same as calling "string".inspect) Prints to screen in the same way as puts and returns the given value.
-              Any strings printed with this method will be surrounded by quotation
-              marks and any escape characters will be prefixed with a backslash<br>
+              <strong>print</strong>: print a string to the console.
+              <br><br>
+              <strong>puts</strong>: print a string to the console with a new line after.
+              <br><br>
+              <strong>p</strong>: (Same as calling "string".inspect) Prints to screen in the same way as puts and returns the given value
+              but values will be printed as they are in code.
+              <strong>
+                <br><br>
+                p "hello"<br>
+                #=> "hello"
+                <br><br>
+                p [1,2,3]<br>
+                #=> [1,2,3]
+                <br><br>
+                p ["a", "b", "c"]<br>
+                #=> ["a", "b", "c"]
+              </strong>
               <br><br>
               (Sources:
               <br>
