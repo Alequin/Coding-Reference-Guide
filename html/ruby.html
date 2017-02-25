@@ -22,7 +22,7 @@
           <table id="contents-table">
             <tr>
               <td>
-                <a href="#">ph</a>
+                <a href="#procs-lambda">Procs &#38; Lambdas</a>
               </td>
               <td>
                 <a href="#method-response">Method Response</a>
@@ -94,12 +94,11 @@
 
         <div class="section">
 
-            <h2 class="section-header">Procs</h2>
+            <h2 id="procs-lambda" class="section-header">Procs &#38; Lambdas</h2>
 
             <div class="section-content">
               <p class="section-text-normal">
-                Procs are blocks that can be assigned to a variable so that blocks may
-                be used repeatedly.
+                Procs are blocks in the form of a reusable object.
                 <br><br>
                 <strong>
                   var = Proc.new { |a| a += 1 }<br>
@@ -107,15 +106,93 @@
                   p (50..53).collect(&var)<br>
                   #=> [2,3,4]<br>
                   # [51,52,53,54]
+                  <br><br>
+                  def block_test(&code_block)<br>
+                  &#160;&#160;[1,2,3].select(&code_block)<br>
+                  end<br>
+                  var = Proc.new { |num| num == 2 }<br>
+                  block_test(&var)<br>
+                  #=> [2]
+                  <br><br>
+                  def block_test(&code_block)<br>
+                  &#160;&#160;[1,2,3].select() { |a| code_block.call(a) } <br>
+                  end<br>
+                  var = Proc.new { |num| num == 2 }<br>
+                  block_test(&var)<br>
+                  #=> [2]
                 </strong>
                 <br><br>
-                Procs can also be called, allowing them to run at any specified time.
+                Lambdas are very similar to procs in that they hold blocks. They do have
+                a slightly different syntax.
                 <br><br>
                 <strong>
-                  var = Proc.new { puts "hello" }<br>
-                  var.call<br>
-                  #=> hello
+                  var = lambda { |a| a += 1 }<br>
+                  p [1,2,3].collect(&var)<br>
+                  p (50..53).collect(&var)<br>
+                  #=> [2,3,4]<br>
+                  # [51,52,53,54]
+                  <br><br>
+                  var = lambda { |num| num == 2 }<br>
+                  def block_test(&code_block)<br>
+                  &#160;&#160;[1,2,3].select(&code_block)<br>
+                  end<br>
+                  block_test(&var)<br>
+                  #=> [2]
+                  <br><br>
+                  var = lambda { |num| num == 2 }<br>
+                  def block_test(&code_block)<br>
+                  &#160;&#160;[1,2,3].select() { |a| code_block.call(a) } <br>
+                  end<br>
+                  block_test(&var)<br>
+                  #=> [2]
                 </strong>
+                <br><br>
+                Procs and lambdas do have some distict differences however. For example
+                when a Proc block calls return this acts as the methods call the return. The
+                value is returned and the method stops processing. Return calls in Lambdas
+                allow the method to continue processes after running.
+                <br><br>
+                <strong>
+                  def test_proc<br>
+                  &#160;&#160;var = Proc.new {return "return from proc"}<br>
+                  &#160;&#160;var.call<br>
+                  &#160;&#160;return "return from method"<br>
+                  end<br>
+                  puts test_proc<br>
+                  #=> "return from proc"
+                  <br><br>
+                  def test_lambda<br>
+                  &#160;&#160;var = lambda {return "return from lambda"}<br>
+                  &#160;&#160;var.call<br>
+                  &#160;&#160;return "return from method"<br>
+                  end<br>
+                  puts test_lambda<br>
+                  #=> "return from method"
+                </strong>
+                <br><br>
+                Note: The previous fact about procs only seems to be true if the proc is
+                created within the method that calls it as an error is called in other cases.
+                This is not true for lambdas however.
+                <br><br>
+                <strong>
+                  var = Proc.new {return "return from proc"}<br>
+                  def test_proc(&block)<br>
+                  &#160;&#160;block.call<br>
+                  &#160;&#160;return "return from method"<br>
+                  end<br>
+                  puts test_proc(&var)<br>
+                  #=> error: unexpected return
+                  <br><br>
+                  var = lambda {return "return from lambda"}<br>
+                  def test_proc(&block)<br>
+                  &#160;&#160;block.call<br>
+                  &#160;&#160;return "return from method"<br>
+                  end<br>
+                  puts test_proc(&var)<br>
+                  #=> "return from method"
+                </strong>
+                <br><br>
+                Another 
                 <br><br>
                 (Sources:
                 <br>
