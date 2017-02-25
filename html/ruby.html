@@ -732,7 +732,7 @@
             <p class="section-text-normal">
               There are a few methods that can be used by strings with regexr as parameters. Some
               of these include:
-              <br>
+              <br><br>
               <strong>
                 sub<br>
                 gsub<br>
@@ -747,14 +747,8 @@
               The scan method takes one parameter and iterates through the given string, looping for each match it finds.
               <br><br>
               <strong>
-                "this is a test".scan(/\w\w/) do |letter| puts letter end<br>
-                or<br>
-                "this is a test".scan(/\w\w/) {|letter| puts letter}<br>
-                #=>th<br>
-                is<br>
-                is<br>
-                te<br>
-                st
+                "this is a test".scan(/\w\w/) {|letter| print "#{letter} "}<br>
+                #=>th is is te st
               </strong>
               <br><br>
               (Sources:
@@ -808,13 +802,13 @@
           <div class="section-content">
             <p class="section-text-normal">
               <strong>
-                s = "interpolation"<br>
-                "This is #{x}"<br>
+                x = "interpolation"<br>
+                puts "This is #{x}"<br>
                 #=> This is interpolation
                 <br><br>
                 i = 5<br>
                 j = 10<br>
-                puts "#{i} + #{10} = #{i + j}"<br>
+                puts "#{i} + #{j} = #{i + j}"<br>
                 #=> 5 + 10 = 15
               </strong>
               <br><br>
@@ -831,8 +825,6 @@
 
         <div class="divider"></div>
 
-        <div class="divider"></div>
-
         <div class="section">
 
           <h2 id="string-numerical-values" class="section-header">String numerical values</h2>
@@ -845,23 +837,23 @@
               </strong>
               <br><br>
               The method ord will return the ASCII value of the given sting. If the string has multiple
-              characters the returned value will be of the first character in the string
+              characters the returned value will be of the first character in the string.
               <br><br>
-              The method chr with return the character which is represented by the given number.
-              This method can also accept a parameter so that different encodings might be used
+              The method chr will return the character which is represented by the given number.
+              This method can also accept a parameter so that different encodings might be used.
               <br><br>
               <strong>
                 120.char(Encoding::UTF_8)<br>
                 Encoding.name_list<br>
-                #=> ["ASCII-8BIT", "UTF-8", "US-ASCII", "UTF-16BE", "UTF-16LE", "UTF-32BE", "UTF-32LE", "UTF-16", "UTF-32", ...]<br>
-                <a href="http://stackoverflow.com/questions/37820888/trying-to-understand-the-ruby-chr-and-ord-methods">
-                  (source: stackoverflow: Trying to understand the Ruby .chr and .ord methods)
-                </a>
+                #=> ["ASCII-8BIT", "UTF-8", "US-ASCII", "UTF-16BE", "UTF-16LE", "UTF-32BE", "UTF-32LE", "UTF-16", "UTF-32", ...]
               </strong>
               <br><br>
               (Sources:
               <br>
-              Book: Beginning Ruby: From Novice to Professional
+              Book: Beginning Ruby: From Novice to Professional<br>
+              <a href="http://stackoverflow.com/questions/37820888/trying-to-understand-the-ruby-chr-and-ord-methods">
+                stackoverflow: Trying to understand the Ruby .chr and .ord methods)
+              </a>
               )
             </p>
           </div>
@@ -902,7 +894,7 @@
               <br><br>
               Using characters as a delimiter is possible as shown in this example. This is called a here document.
               (Note: had issues with indentation using this method. It seems as if it does not work unless
-              no indentation is used on the end delimiter. Other methods are more user friendly)
+              no indentation is used on the end delimiter. Other methods produce more readable code)
               <br><br>
               (Sources:
               <br>
@@ -944,10 +936,24 @@
 
           <div class="section-content">
 
-            <h3><u>next</u></h3>
+            <h3><u>loop</u></h3>
+            <p class="section-text-normal">
+              Loop is the a basic loop and ends when the "break if" statement is true.
+              <br><br>
+              <strong>
+                x = 0<br>
+                loop {<br>
+                &#160;&#160;x += 1<br>
+                &#160;&#160;break if x >= 5<br>
+              }
+              </strong>
+            </p>
+
+            <h3><u>next &#38; break if</u></h3>
             <p class="section-text-normal">
               The next key word can be used in loops and iterators to skip the remaining code and start
-              the next loop / iteration
+              the next loop / iteration. The break if key word can be used to set a condition, which if met
+              ends to loop / iteration.
               <br><br>
               <strong>
                 x = 0<br>
@@ -956,20 +962,7 @@
                 &#160;&#160;if(x == 2)<br>
                 &#160;&#160;&#160;&#160;next<br>
                 &#160;&#160;end<br>
-                &#160;&#160;break if x >= 5<br>
-              }
-              </strong>
-            </p>
-
-            <h3><u>loop</u></h3>
-            <p class="section-text-normal">
-              Loop is the a basic loop and ends when the "break if" statement is true
-              <br><br>
-              <strong>
-                x = 0<br>
-                loop {<br>
-                &#160;&#160;x += 1<br>
-                &#160;&#160;break if x >= 5<br>
+                &#160;&#160;break if x &#62= 5<br>
               }
               </strong>
             </p>
@@ -981,14 +974,14 @@
               <br><br>
               <strong>
                 x = 0<br>
-                while(x &#62; 100)<br>
-                &#160;&#160;repeat code while x is less than 100<br>
+                while(x &#60; 100)<br>
+                &#160;&#160;#repeat code while x is less than 100<br>
                 &#160;&#160;x += 1<br>
                 end
                 <br><br>
                 x = 0<br>
-                until(x &#60; 100)<br>
-                &#160;&#160;repeat code until x is greater than 100<br>
+                until(x &#62; 100)<br>
+                &#160;&#160;#repeat code until x is greater than 100<br>
                 &#160;&#160;x += 1<br>
                 end
               </strong>
@@ -1078,12 +1071,8 @@
               The given parameter can either be a string or a RegExr (<a href="#regexr-in-ruby">click here for more on RegExr</a>).
               <br><br>
               <strong>
-                "this is a test".scan(/\w\w/) {|letter| puts letter}<br>
-                #=>th<br>
-                is<br>
-                is<br>
-                te<br>
-                st
+                "this is a test".scan(/\w\w/) {|letter| print "#{letter} "}<br>
+                #=>th is is te st
               </strong>
               <br><br>
               Method is used by strings.
@@ -1097,10 +1086,10 @@
               the same results.
               <br><br>
               <strong>
-              [1,2,3,4].collect {|number| number + 1 }<br>
+              p [1,2,3,4].collect {|number| number + 1 }<br>
               #=> [2,3,4,5]
               <br><br>
-              ["cat","mouse","dog"].collect {|string| string * 2 }<br>
+              p ["cat","mouse","dog"].collect {|string| string * 2 }<br>
               #=> ["catcat","mousemouse","dogdog"]
               </strong>
               <br><br>
@@ -1114,10 +1103,10 @@
               condition.
               <br><br>
               <strong>
-                [1,2,3,4,5,6,7,8].select { |num| num % 2 == 0}<br>
+                p [1,2,3,4,5,6,7,8].select { |num| num % 2 == 0}<br>
                 #=> [2,4,6,8]
                 <br><br>
-                [1,2,3,4,5,6,7,8].select { |num| <br>
+                p [1,2,3,4,5,6,7,8].select { |num| <br>
                   &#160;&#160;num % 2 == 0<br>
                   &#160;&#160;num % 3 == 0<br>
                 }<br>
@@ -1146,10 +1135,10 @@
 
           <div class="section-content">
             <p class="section-text-normal">
-              <strong>x &#62;=&#60; y</strong>: Returns 0 if x and y are equal, returns -1 if y
+              <strong>x &#60;=&#62; y</strong>: Returns 0 if x and y are equal, returns -1 if y
               is greater and 1 if x is greater.
               <br><br>
-              <strong>x ||= "cats"</strong>: Assigns an object to the variable only if the variable currently
+              <strong>x ||= "cats"</strong>: Assigns hnus an object to the variable only if the variable currently
               holds a nil value.
               <br><br>
               (Sources:
