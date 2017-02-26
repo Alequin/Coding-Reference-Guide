@@ -77,7 +77,7 @@
             </tr>
             <tr>
               <td>
-                <a href="#iterators">Iterators</a>
+                <a href="#iterators">Loops &#38; Iterators</a>
               </td>
               <td>
                 <a href="#interesting-operators">Interesting Operators</a>
@@ -510,6 +510,9 @@
                 else<br>
                   &#160;&#160;run code for all other cases<br>
                 end
+                <br><br>
+                x = 5 if true<br>
+                x = 5 unless false
               </strong>
               <br><br>
               <u>Ternary Operator</u>
@@ -1024,6 +1027,14 @@
 
           <div class="section-content">
 
+
+              <p class="section-text-normal">
+                A number of the methods here belong to the Enumerable module. A full list of the
+                iterative methods offered by this module can be found here.
+                <a href = "../examples/enumerable.pdf">pdf file</a>
+                <a href = "http://ruby-doc.org/core-2.4.0/Enumerable.html">web site</a>
+              </p>
+
             <h3><u>loop</u></h3>
             <p class="section-text-normal">
               Loop is the a basic loop and ends when the "break if" statement is true.
@@ -1114,7 +1125,6 @@
               This method is used by objects holding integer values
             </p>
 
-
             <h3><u>step</u></h3>
             <p class="section-text-normal">
               The method step will iterate through the given numbers inclusively, in steps equals to the second parameter, and run the code
@@ -1151,19 +1161,6 @@
               </strong>
               <br><br>
               Method is used by collections (array, hash, set, range).
-            </p>
-
-            <h3><u>scan</u></h3>
-            <p class="section-text-normal">
-              The method scan can be used on string values. It will loop for each match (compared against the parameter) within the string it finds.
-              The given parameter can either be a string or a RegExr (<a href="#regexr-in-ruby">click here for more on RegExr</a>).
-              <br><br>
-              <strong>
-                "this is a test".scan(/\w\w/) {|letter| print "#{letter} "}<br>
-                #=>th is is te st
-              </strong>
-              <br><br>
-              Method is used by strings.
             </p>
 
             <h3><u>collect / map</u></h3>
