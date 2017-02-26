@@ -107,18 +107,18 @@
                   #=> [2,3,4]<br>
                   # [51,52,53,54]
                   <br><br>
+                  var = Proc.new { |num| num == 2 }<br>
                   def block_test(&code_block)<br>
                   &#160;&#160;[1,2,3].select(&code_block)<br>
                   end<br>
-                  var = Proc.new { |num| num == 2 }<br>
-                  block_test(&var)<br>
+                  p block_test(&var)<br>
                   #=> [2]
                   <br><br>
+                  var = Proc.new { |num| num == 2 }<br>
                   def block_test(&code_block)<br>
                   &#160;&#160;[1,2,3].select() { |a| code_block.call(a) } <br>
                   end<br>
-                  var = Proc.new { |num| num == 2 }<br>
-                  block_test(&var)<br>
+                  p block_test(&var)<br>
                   #=> [2]
                 </strong>
                 <br><br>
@@ -136,21 +136,22 @@
                   def block_test(&code_block)<br>
                   &#160;&#160;[1,2,3].select(&code_block)<br>
                   end<br>
-                  block_test(&var)<br>
+                  p block_test(&var)<br>
                   #=> [2]
                   <br><br>
                   var = lambda { |num| num == 2 }<br>
                   def block_test(&code_block)<br>
                   &#160;&#160;[1,2,3].select() { |a| code_block.call(a) } <br>
                   end<br>
-                  block_test(&var)<br>
+                  p block_test(&var)<br>
                   #=> [2]
                 </strong>
                 <br><br>
                 Procs and lambdas do have some distict differences however. For example
-                when a Proc block calls return this acts as the methods call the return. The
+                when a Proc block calls return this acts as the methods call to return. The
                 value is returned and the method stops processing. Return calls in Lambdas
-                allow the method to continue processes after running.
+                allow the method to continue processes after running. This is only true when
+                return is explicitly called. As the third example below shows
                 <br><br>
                 <strong>
                   def test_proc<br>
@@ -168,6 +169,16 @@
                   end<br>
                   puts test_lambda<br>
                   #=> "return from method"
+                  <br><br>
+                  def test_proc<br>
+                  &#160;&#160;var = Proc.new {"return from proc"}<br>
+                  &#160;&#160;x = var.call<br>
+                  &#160;&#160;puts x<br>
+                  &#160;&#160;"return from method"<br>
+                  end<br>
+                  puts test_proc<br>
+                  #=> "return from proc"<br>
+                  # "return from method"
                 </strong>
                 <br><br>
                 Note: The previous fact about procs only seems to be true if the proc is
@@ -191,8 +202,6 @@
                   puts test_proc(&var)<br>
                   #=> "return from method"
                 </strong>
-                <br><br>
-                Another 
                 <br><br>
                 (Sources:
                 <br>
@@ -453,6 +462,8 @@
                 <br><br>
                 #=> 1 2 3 4 5
               </strong>
+              <br><br>
+              <a href="../examples/enumerable.rb">More examples of use of blocks in code</a>
               <br><br>
               (Sources:
               <br>
