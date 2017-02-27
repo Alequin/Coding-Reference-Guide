@@ -253,20 +253,215 @@
               Classes are an important feature relating to object oriented
               programming as they act as they act as inital blueprints for all
               objects, defining their base state and values. The basic syntax of
-              a class in Ruby is shown below.
+              a class in Ruby is shown below. The first letter of a class name
+              should always be capitalised.
               <br><br>
               <strong>
                 class MyClass<br>
                 end
               </strong>
               <br><br>
-              The first letter of a class name should always be a capital, after
-              this ruby naming conventions recommends the use of camal case.
+              Methods are defined using the key word def.
+              <br><br>
+              <strong>
+                class MyClass
+                <br><br>
+                &#160;&#160;def print_hello<br>
+                &#160;&#160;&#160;&#160;puts "Hello"<br>
+                &#160;&#160;end
+                <br><br>
+                end
+                <br><br>
+                x = MyClass.new<br>
+                x.print_hello<br>
+                #=> Hello
+              </strong>
+              <br><br>
+              Methods can either be instance methods (as seen in the previous
+              example) or class methods. Instance methods are only avalible
+              after an instance of the class has been made. Class methods are
+              avalible without an instance of the class and are defined and
+              called by stating the class name and then the method name
+              (MyClass.my_method).
+              <br><br>
+              <strong>
+                class MyClass
+                <br><br>
+                &#160;&#160;def MyClass.print_hello<br>
+                &#160;&#160;&#160;&#160;puts "Hello 1"<br>
+                &#160;&#160;end
+                <br><br>
+                end
+                <br><br>
+                MyClass.print_hello<br>
+                #=> Hello 1
+              </strong>
+              <br><br>
+              Classes can have variables associated with them. There are three
+              different types of variables that can be made. Instance, class and
+              global. These variables can be created inside or outside of methods
+              within the class.
+              <br><br>
+              <strong>
+                Instance: @instance_variable<br>
+                Class: @@class_variable<br>
+                Global: $global_variable
+              </strong>
+              <br><br>
+              Instance variables are unique to each instance of the class.
+              Each time the class is instantiated a new set of variables are
+              created for that object. They are defined by using the @ symbol
+              prior to the variable name. Once defined they are available to all
+              methods.
+              <br><br>
+              <strong>
+                class MyClass
+                <br><br>
+                &#160;&#160;def set_printer(text)<br>
+                &#160;&#160;&#160;&#160;@text = text<br>
+                &#160;&#160;end
+                <br><br>
+                &#160;&#160;def print_text<br>
+                &#160;&#160;&#160;&#160;puts @text<br>
+                &#160;&#160;end
+                <br><br>
+                end
+                <br><br>
+                x = MyClass.new<br>
+                x.set_printer("Hello 2")<br>
+                x.print_text
+                <br><br>
+                y = MyClass.new<br>
+                y.set_printer("Hello 3")<br>
+                y.print_text
+                <br><br>
+                #=> Hello 2<br>
+                # Hello 3
+              </strong>
+              <br><br>
+              Class variables belong to the class. They are defined using @@ and
+              once defined any object created by the class has access to the
+              same variable. Only one is every created regardless of how many
+              times a new object is created.
+              <br><br>
+              <strong>
+              class MyClass
+              <br><br>
+                @@times_printed_text = 0
+                <br><br>
+                &#160;&#160;def set_printer(text)<br>
+                &#160;&#160;&#160;&#160;@text = text<br>
+                &#160;&#160;end
+                <br><br>
+                &#160;&#160;def print_text<br>
+                &#160;&#160;&#160;&#160;puts @text<br>
+                &#160;&#160;&#160;&#160;@@times_printed_text += 1<br>
+                &#160;&#160;end
+                <br><br>
+                &#160;&#160;def print_times<br>
+                &#160;&#160;&#160;&#160;puts @@times_printed_text<br>
+                &#160;&#160;end
+                <br><br>
+              end
+              <br><br>
+              x = MyClass.new<br>
+              y = MyClass.new<br>
+              x.set_printer("Hello 4")<br>
+              y.set_printer("Hello 5")
+              <br><br>
+              x.print_text<br>
+              x.print_times<br>
+              y.print_text<br>
+              y.print_times
+              <br><br>
+              #=> Hello 4<br>
+              # 1<br>
+              # Hello 5<br>
+              # 2
+              </strong>
+              <br><br>
+              Global variables are avaliable outside the class without the need
+              for an instantiate object.
+              <br><br>
+              <strong>
+                class MyClass<br>
+                &#160;&#160;$global = "hello 6"<br>
+                end
+                <br><br>
+                puts $global
+                <br>
+                #=> Hello 6
+              </strong>
+              <br><br>
+              It is possible to set the value of variables on object instantiation.
+              If a method initialize is defined within a class it will be called
+              each time a new object is created, allowing variable states to be
+              set on object creation .
+              <br><br>
+              <strong>
+                class MyClass
+                <br><br>
+                &#160;&#160;def initialize(text)<br>
+                &#160;&#160;&#160;&#160;@text = text<br>
+                &#160;&#160;end
+                <br><br>
+                &#160;&#160;def print_text<br>
+                &#160;&#160;&#160;&#160;puts @text<br>
+                &#160;&#160;end
+                <br><br>
+                end
+                <br><br>
+                x = MyClass.new("Hello 7")<br>
+                x.print_text
+                <br><br>
+                y = MyClass.new("Hello 8")<br>
+                y.print_text
+                <br><br>
+                #=> Hello 7<br>
+                # Hello 8
+              </strong>
+              <br><br>
+              While the previous examples have used methods to get and set
+              variables this is not the way it should be done. Ruby provides
+              three helpful methods (att_reader, attr_writer and att_accessor)
+              to auto generate getter and setter methods.
+              <br><br>
+              The following example only shows attr_accessor but attr_reader
+              (which generates a getter method) and attr_writer (which generates
+              a setter method) work in the same way but only provide access to
+              either a getter or a setter.
+              <br><br>
+              <strong>
+                class MyClass
+                <br><br>
+                attr_accessor :text
+                <br><br>
+                &#160;&#160;def initialize(text)<br>
+                &#160;&#160;&#160;&#160;@text = text<br>
+                &#160;&#160;end
+                <br><br>
+                end
+                <br><br>
+                x = MyClass.new("Hello 7")<br>
+                puts x.text <br>
+                x.text = "Hello 8"<br>
+                puts x.text<br>
+                #=> Hello 7<br>
+                # Hello 8
+              </strong>
               <br><br>
               (Sources:
               <br>
               <a href="https://github.com/bbatsov/ruby-style-guide#naming">
                 The Ruby Style Guide
+              </a>
+              <br>
+              <a href="https://www.codecademy.com/learn/ruby">
+                codecademy: Object-Oriented Programming, Part I / Object-Oriented Programming, Part II
+              </a>
+              <br>
+              <a href="http://www.stackoverflow.com/questions/4370960/what-is-attr-accessor-in-ruby">
+                stack overflow: What is attr_accessor in Ruby?
               </a>
               )
             </p>
