@@ -22,6 +22,17 @@
           <table id="contents-table">
             <tr>
               <td>
+                <a href="#">ph</a>
+              </td>
+              <td>
+                <a href="#">ph</a>
+              </td>
+              <td>
+                <a href="#modules">Modules</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
                 <a href="#procs-lambda">Procs &#38; Lambdas</a>
               </td>
               <td>
@@ -94,6 +105,93 @@
 
         <div class="section">
 
+          <h2 class="section-header">Modules</h2>
+
+          <div class="section-content">
+            <p class="section-text-normal">
+              Modules are collections of methods and constants. Methods can
+              either be instance methods or module methods. Module methods are
+              defined and called by naming the module and then the method
+              (module_name.method_name()). Instance methods are defined
+              using only the method name and called by the by an instance
+              of a class the related module is included in.
+              <br><br>
+              <strong>
+                module BasicMath
+                <br><br>
+                &#160;&#160;def BasicMath.add(val1, val2)<br>
+                &#160;&#160;&#160;&#160;return val1 + val2<br>
+                &#160;&#160;end
+                <br><br>
+                &#160;&#160;def subtract(other_val)<br>
+                &#160;&#160;&#160;&#160;return self - other_val<br>
+                &#160;&#160;end
+                <br><br>
+                end
+              </strong>
+              <br><br>
+              Using this module we can call the module method...
+              <br><br>
+              <strong>
+                puts BasicMath.add(3,6)<br>
+                #=> 9
+              </strong>
+              <br><br>
+              or include the module in a class and use an instance of that class
+              to call the instance method (this is the mixin facility).
+              <br><br>
+              <strong>
+                class Fixnum<br>
+                &#160;&#160;include BasicMath<br>
+                end
+                <br><br>
+                puts 5.subtract(4)
+                #=> 1
+              </strong>
+              <br><br>
+              Using module methods allows for the definition of methods with the
+              same name (using multiple modules) without causing issues.
+              <br><br>
+              <strong>
+                module Mod1
+                <br><br>
+                &#160;&#160;def Mod1.name<br>
+                &#160;&#160;&#160;&#160;return "mod1 here"<br>
+                &#160;&#160;end
+                <br><br>
+                end
+                <br><br>
+                module Mod2
+                <br><br>
+                &#160;&#160;def Mod2.name<br>
+                &#160;&#160;&#160;&#160;return "mod2 also here"<br>
+                &#160;&#160;end
+                <br><br>
+                end
+                <br><br>
+                puts Mod1.name<br>
+                puts Mod2.name<br>
+                #=> mod1 here<br>
+                # mod2 also here
+              </strong>
+              <br><br>
+              need more detail on module variables
+              <br><br>
+              (Sources:
+              <br>
+              <a href="http://ruby-doc.com/docs/ProgrammingRuby/html/tut_modules.html">
+                ruby-doc: Modules
+              </a>
+              )
+            </p>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+
             <h2 id="procs-lambda" class="section-header">Procs &#38; Lambdas</h2>
 
             <div class="section-content">
@@ -147,7 +245,7 @@
                   #=> [2]
                 </strong>
                 <br><br>
-                Procs and lambdas do have some distict differences however. For example
+                Procs and lambdas do have some distinct differences however. For example
                 when a Proc block calls return this acts as the methods call to return. The
                 value is returned and the method stops processing. Return calls in Lambdas
                 allow the method to continue processes after running. This is only true when
@@ -296,7 +394,7 @@
                 #=> ["cat", "mouse", "giraffe"]
               </strong>
               <br><br>
-              The sort algorithm used implemented by ruby is a quicksort and has been show to be fast
+              The sort algorithm implemented by ruby is a quicksort and has been shown to be fast
               when compared to other sorting algorithms. It is a highly optimized piece of code and should be
               used.
               <br><br>
