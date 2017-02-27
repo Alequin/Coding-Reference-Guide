@@ -130,7 +130,7 @@
                 end
               </strong>
               <br><br>
-              Using this module we can call the module method...
+              Using this module we can call the module method from the module...
               <br><br>
               <strong>
                 puts BasicMath.add(3,6)<br>
@@ -149,8 +149,60 @@
                 #=> 1
               </strong>
               <br><br>
+              Another option is to use the extend key word in place of the include
+              key word. This gives the class access to the instance methods rather
+              than only instances of that class having access.
+              <br><br>
+              <strong>
+                module PrintMod
+                <br><br>
+                &#160;&#160;def print_hello<br>
+                &#160;&#160;&#160;&#160;puts "hello"<br>
+                &#160;&#160;end
+                <br><br>
+                end
+                <br><br>
+                class IncludeClass<br>
+                &#160;&#160;include PrintMod<br>
+                end
+                <br><br>
+                class ExtendClass<br>
+                &#160;&#160;extend PrintMod<br>
+                end
+                <br><br>
+                IncludeClass.new.print_hello<br>
+                ExtendClass.print_hello
+                <br><br>
+                #=> hello<br>
+                # hello
+              </strong>
+              <br><br>
+              Extend may also be used on already initialised objects to provide
+              that instance alone access to the modules methods. (using the
+              keyword include in the place of extends in this example would
+              produced an undefined method error)
+              <br><br>
+              <strong>
+                module PrintMod
+                <br><br>
+                &#160;&#160;def print_hello<br>
+                &#160;&#160;&#160;&#160;puts "hello"<br>
+                &#160;&#160;end
+                <br><br>
+                end
+                <br><br>
+                class PostExtendClass; end
+                <br><br>
+                test = PostExtendClass.new<br>
+                test.extend(PrintMod)<br>
+                test.print_hello
+                <br><br>
+                #=> hello
+                <br><br>
+              </strong>
               Using module methods allows for the definition of methods with the
-              same name (using multiple modules) without causing issues.
+              same name (using multiple modules) without causing issues. This is
+              known as namespacing.
               <br><br>
               <strong>
                 module Mod1
@@ -164,7 +216,7 @@
                 module Mod2
                 <br><br>
                 &#160;&#160;def Mod2.name<br>
-                &#160;&#160;&#160;&#160;return "mod2 also here"<br>
+                &#160;&#160;&#160;&#160;return "mod2 here"<br>
                 &#160;&#160;end
                 <br><br>
                 end
@@ -172,15 +224,17 @@
                 puts Mod1.name<br>
                 puts Mod2.name<br>
                 #=> mod1 here<br>
-                # mod2 also here
+                # mod2 here
               </strong>
-              <br><br>
-              need more detail on module variables
               <br><br>
               (Sources:
               <br>
               <a href="http://ruby-doc.com/docs/ProgrammingRuby/html/tut_modules.html">
                 ruby-doc: Modules
+              </a>
+              <br>
+              <a href="http://stackoverflow.com/questions/156362/what-is-the-difference-between-include-and-extend-in-ruby">
+                stackoverflow: What is the difference between include and extend in Ruby?
               </a>
               )
             </p>
