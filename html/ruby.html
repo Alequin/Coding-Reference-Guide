@@ -261,7 +261,12 @@
                 end
               </strong>
               <br><br>
-              Methods are defined using the key word def.
+              Methods are defined using the key word def. Methods can either be
+              instance methods (as seen in the previous example) or class methods.
+              Instance methods are only avalible after an instance of the class
+              has been made. Class methods are avalible without an instance of
+              the class and are defined and called by stating the class name and
+              then the method name (MyClass.my_method).
               <br><br>
               <strong>
                 class MyClass
@@ -270,37 +275,23 @@
                 &#160;&#160;&#160;&#160;puts "Hello"<br>
                 &#160;&#160;end
                 <br><br>
-                end
-                <br><br>
-                x = MyClass.new<br>
-                x.print_hello<br>
-                #=> Hello
-              </strong>
-              <br><br>
-              Methods can either be instance methods (as seen in the previous
-              example) or class methods. Instance methods are only avalible
-              after an instance of the class has been made. Class methods are
-              avalible without an instance of the class and are defined and
-              called by stating the class name and then the method name
-              (MyClass.my_method).
-              <br><br>
-              <strong>
-                class MyClass
-                <br><br>
-                &#160;&#160;def MyClass.print_hello<br>
+                &#160;&#160;def MyClass.print_hello1<br>
                 &#160;&#160;&#160;&#160;puts "Hello 1"<br>
                 &#160;&#160;end
                 <br><br>
                 end
                 <br><br>
-                MyClass.print_hello<br>
-                #=> Hello 1
+                x = MyClass.new<br>
+                x.print_hello<br>
+                x.print_hello1<br>
+                #=> Hello<br>
+                #Hello 1
               </strong>
               <br><br>
-              Classes can have variables associated with them. There are three
-              different types of variables that can be made. Instance, class and
-              global. These variables can be created inside or outside of methods
-              within the class.
+              Classes can have three different types of variables associated
+              with them, instance, class and global. These variables can be
+              created inside or outside of methods within the class and are
+              created using the following syntax.
               <br><br>
               <strong>
                 Instance: @instance_variable<br>
@@ -381,7 +372,7 @@
               </strong>
               <br><br>
               Global variables are avaliable outside the class without the need
-              for an instantiate object.
+              for an instantiated object.
               <br><br>
               <strong>
                 class MyClass<br>
@@ -393,10 +384,9 @@
                 #=> Hello 6
               </strong>
               <br><br>
-              It is possible to set the value of variables on object instantiation.
-              If a method initialize is defined within a class it will be called
-              each time a new object is created, allowing variable states to be
-              set on object creation .
+              Variables state can be set on object instantiation by using the
+              method initialize. If this method is defined within a class it will
+              be called each time a new object is created.
               <br><br>
               <strong>
                 class MyClass
@@ -421,15 +411,15 @@
                 # Hello 8
               </strong>
               <br><br>
-              While the previous examples have used methods to get and set
+              While the previous examples have used custom methods to get and set
               variables this is not the way it should be done. Ruby provides
               three helpful methods (att_reader, attr_writer and att_accessor)
               to auto generate getter and setter methods.
               <br><br>
               The following example only shows attr_accessor but attr_reader
               (which generates a getter method) and attr_writer (which generates
-              a setter method) work in the same way but only provide access to
-              either a getter or a setter.
+              a setter method) work in the same way exept for the fact that they
+              only provide access to either a getter or a setter.
               <br><br>
               <strong>
                 class MyClass
@@ -442,12 +432,14 @@
                 <br><br>
                 end
                 <br><br>
-                x = MyClass.new("Hello 7")<br>
+                x = MyClass.new("Hello 9")<br>
                 puts x.text <br>
-                x.text = "Hello 8"<br>
+                # setter method<br>
+                x.text = "Hello 10"<br>
+                # getter method<br>
                 puts x.text<br>
-                #=> Hello 7<br>
-                # Hello 8
+                #=> Hello 9<br>
+                # Hello 10
               </strong>
               <br><br>
               (Sources:
