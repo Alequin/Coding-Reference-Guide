@@ -22,10 +22,10 @@
           <table id="contents-table">
             <tr>
               <td>
-                <a href="#">ph</a>
+                <a href="#modules">Modules</a>
               </td>
               <td>
-                <a href="#modules">Modules</a>
+                <a href="#inheritance">Inheritance</a>
               </td>
               <td>
               <a href="#classes">Classes</a>
@@ -237,6 +237,20 @@
                 stackoverflow: What is the difference between include and extend in Ruby?
               </a>
               )
+            </p>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+
+          <h2 id="inheritance" class="section-header">Inheritance</h2>
+
+          <div class="section-content">
+            <p class="section-text-normal">
+
             </p>
           </div>
 
@@ -856,7 +870,12 @@
 
           <div class="section-content">
             <p class="section-text-normal">
-              Note: all parenthesis used in this sections are not required for code to work, just personal preference.
+              For details on loops view <a href="#iterators">Loops & Iterators</a> and for
+              details on code blocks view <a href="#custom-code-blocks">Custom Methods That Use Code
+              blocks</a> and <a href="#custom-code-blocks">Procs & Lambdas</a>
+              <br><br>
+              Note: all parenthesis used in this sections are not required for
+              code to work, just personal preference.
               <br><br>
               <u>If, else and unless</u>
               <br><br>
@@ -1408,7 +1427,8 @@
 
             <h3><u>loop</u></h3>
             <p class="section-text-normal">
-              Loop is the a basic loop and ends when the "break if" statement is true.
+              Loop is the a basic loop and ends when the "break if" statement is
+              true.
               <br><br>
               <strong>
                 x = 0<br>
@@ -1419,10 +1439,13 @@
               </strong>
             </p>
 
-            <h3><u>next &#38; break if</u></h3>
+            <h3><u>next, redo &#38; break if</u></h3>
             <p class="section-text-normal">
-              The next key word can be used in loops and iterators to skip the remaining code and start
-              the next loop / iteration. The break if key word can be used to set a condition, which if met
+              The next key word can be used in loops and iterators to skip the
+              remaining code and start the next loop / iteration.<br>
+              The redo keyword is used in the same way as next but rather than
+              continuing onto the next loop / iteration it restarts the previous.<br>
+              The break if key word can be used to set a condition, which if met
               ends to loop / iteration.
               <br><br>
               <strong>
@@ -1432,8 +1455,13 @@
                 &#160;&#160;if(x == 2)<br>
                 &#160;&#160;&#160;&#160;next<br>
                 &#160;&#160;end<br>
+                &#160;&#160;if(x == 4)<br>
+                &#160;&#160;&#160;&#160;redo<br>
+                &#160;&#160;end<br>
+                &#160;&#160;print "#{x} "<br>
                 &#160;&#160;break if x &#62= 5<br>
-              }
+              }<br>
+              #>= 1 3 5
               </strong>
             </p>
 
