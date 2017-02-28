@@ -1,15 +1,40 @@
+#header-container{
+  position: fixed;
+  max-width: 800px;
+  background: white;
+  margin: auto;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
 #main-header{
   margin: 0;
+  padding-top: 20px;
+}
+
+#header-container a{
+  text-decoration: none;
+}
+
+#header-container td{
+  padding-left: 10px;
+  padding-right: 10px
 }
 
 #main-header, .section-header{
-    text-align: center;
+  text-align: center;
 }
 
-#main-header, .section, .divider{
+.section, .divider{
   position: relative;
   margin-top: 15px;
 }
+
+.header-divider{
+  margin: 0;
+}
+
 
 #contents-container{
   display: none;
@@ -46,7 +71,7 @@ a, a:visited{
   margin-bottom: 15px;
 }
 
-.divider{
+.header-divider, .divider{
     max-width: 100%;
     border-top: 2px dotted grey;
 }
