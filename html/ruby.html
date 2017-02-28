@@ -22,6 +22,17 @@
           <table id="contents-table">
             <tr>
               <td>
+                <a href="#">ph</a>
+              </td>
+              <td>
+                <a href="#">ph</a>
+              </td>
+              <td>
+                <a href="#comparable-module">Comparable Module</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
                 <a href="#modules">Modules</a>
               </td>
               <td>
@@ -99,6 +110,50 @@
             </tr>
 
           </table>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+
+          <h2 id="comparable-module" class="section-header">Comparable Module</h2>
+
+          <div class="section-content">
+            <p class="section-text-normal">
+              The comparable module can be used add comparison operators to your
+              code.
+              <br><br>
+              <strong>
+                class Vehicle<br>
+                &#160;&#160;include Comparable
+                <br><br>
+                &#160;&#160;attr_reader :wheels
+                <br><br>
+                &#160;&#160;def initialize(wheels)<br>
+                &#160;&#160;&#160;&#160;@wheels = wheels<br>
+                &#160;&#160;end
+                <br><br>
+                &#160;&#160;def <=>(to_compare)<br>
+                &#160;&#160;&#160;&#160;@wheels <=> to_compare.wheels<br>
+                &#160;&#160;end
+                <br><br>
+                end
+                <br><br>
+                bike = Vehicle.new(2)<br>
+                car = Vehicle.new(4)<br>
+                puts bike < car<br>
+                puts car > bike<br>
+                puts bike == car<br>
+                #>= true<br>
+                # true<br>
+                # false
+              </strong>
+              <br><br>
+              (Sources:<br>
+              Book: Beginning Ruby: From Novice to Professional)
+            </p>
+          </div>
+
         </div>
 
         <div class="divider"></div>

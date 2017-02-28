@@ -47,9 +47,8 @@ a, a:visited{
 }
 
 .divider{
-    height: 2px;
     max-width: 100%;
-    background: black;
+    border-top: 2px dotted grey;
 }
 
 .section-header{
