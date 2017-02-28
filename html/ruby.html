@@ -120,7 +120,8 @@
 
         <div class="section">
 
-          <h2 id="comparable-module" class="section-header">Comparable Module</h2>
+          <span id="comparable-module" class="title-anchor"></span>
+          <h2 class="section-header">Comparable Module</h2>
 
           <div class="section-content">
             <p class="section-text-normal">
@@ -306,7 +307,8 @@
 
         <div class="section">
 
-          <h2 id="inheritance" class="section-header">Inheritance</h2>
+          <span id="inheritance" class="title-anchor"></span>
+          <h2 class="section-header">Inheritance</h2>
 
           <div class="section-content">
             <p class="section-text-normal">
@@ -539,7 +541,8 @@
 
         <div class="section">
 
-          <h2 id="classes" class="section-header">Classes</h2>
+          <span id="classes" class="title-anchor"></span>
+          <h2 class="section-header">Classes</h2>
 
           <div class="section-content">
             <p class="section-text-normal">
@@ -825,232 +828,236 @@
 
         <div class="section">
 
-            <h2 id="procs-lambda" class="section-header">Procs &#38; Lambdas</h2>
-
-            <div class="section-content">
-              <p class="section-text-normal">
-                Procs are blocks in the form of a reusable object.
-                <br><br>
-                <strong>
-                  var = Proc.new { |a| a += 1 }<br>
-                  p [1,2,3].collect(&var)<br>
-                  p (50..53).collect(&var)<br>
-                  #=> [2,3,4]<br>
-                  # [51,52,53,54]
-                  <br><br>
-                  var = Proc.new { |num| num == 2 }<br>
-                  def block_test(&code_block)<br>
-                  &#160;&#160;[1,2,3].select(&code_block)<br>
-                  end<br>
-                  p block_test(&var)<br>
-                  #=> [2]
-                  <br><br>
-                  var = Proc.new { |num| num == 2 }<br>
-                  def block_test(&code_block)<br>
-                  &#160;&#160;[1,2,3].select() { |a| code_block.call(a) } <br>
-                  end<br>
-                  p block_test(&var)<br>
-                  #=> [2]
-                </strong>
-                <br><br>
-                Lambdas are very similar to procs in that they hold blocks. They do have
-                a slightly different syntax.
-                <br><br>
-                <strong>
-                  var = lambda { |a| a += 1 }<br>
-                  p [1,2,3].collect(&var)<br>
-                  p (50..53).collect(&var)<br>
-                  #=> [2,3,4]<br>
-                  # [51,52,53,54]
-                  <br><br>
-                  var = lambda { |num| num == 2 }<br>
-                  def block_test(&code_block)<br>
-                  &#160;&#160;[1,2,3].select(&code_block)<br>
-                  end<br>
-                  p block_test(&var)<br>
-                  #=> [2]
-                  <br><br>
-                  var = lambda { |num| num == 2 }<br>
-                  def block_test(&code_block)<br>
-                  &#160;&#160;[1,2,3].select() { |a| code_block.call(a) } <br>
-                  end<br>
-                  p block_test(&var)<br>
-                  #=> [2]
-                </strong>
-                <br><br>
-                Procs and lambdas do have some distinct differences however. For example
-                when a Proc block calls return this acts as the methods call to return. The
-                value is returned and the method stops processing. Return calls in Lambdas
-                allow the method to continue processes after running. This is only true when
-                return is explicitly called. As the third example below shows
-                <br><br>
-                <strong>
-                  def test_proc<br>
-                  &#160;&#160;var = Proc.new {return "return from proc"}<br>
-                  &#160;&#160;var.call<br>
-                  &#160;&#160;return "return from method"<br>
-                  end<br>
-                  puts test_proc<br>
-                  #=> "return from proc"
-                  <br><br>
-                  def test_lambda<br>
-                  &#160;&#160;var = lambda {return "return from lambda"}<br>
-                  &#160;&#160;var.call<br>
-                  &#160;&#160;return "return from method"<br>
-                  end<br>
-                  puts test_lambda<br>
-                  #=> "return from method"
-                  <br><br>
-                  def test_proc<br>
-                  &#160;&#160;var = Proc.new {"return from proc"}<br>
-                  &#160;&#160;x = var.call<br>
-                  &#160;&#160;puts x<br>
-                  &#160;&#160;"return from method"<br>
-                  end<br>
-                  puts test_proc<br>
-                  #=> "return from proc"<br>
-                  # "return from method"
-                </strong>
-                <br><br>
-                Note: The previous fact about procs only seems to be true if the proc is
-                created within the method that calls it as an error is called in other cases.
-                This is not true for lambdas however.
-                <br><br>
-                <strong>
-                  var = Proc.new {return "return from proc"}<br>
-                  def test_proc(&block)<br>
-                  &#160;&#160;block.call<br>
-                  &#160;&#160;return "return from method"<br>
-                  end<br>
-                  puts test_proc(&var)<br>
-                  #=> error: unexpected return
-                  <br><br>
-                  var = lambda {return "return from lambda"}<br>
-                  def test_proc(&block)<br>
-                  &#160;&#160;block.call<br>
-                  &#160;&#160;return "return from method"<br>
-                  end<br>
-                  puts test_proc(&var)<br>
-                  #=> "return from method"
-                </strong>
-                <br><br>
-                (Sources:
-                <br>
-                <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-L3ZCI/1/5?curriculum_id=5059f8619189a5000201fbcb">
-                  codecademy: Blocks, Procs, and Lambdas
-                </a>
-                )
-              </p>
-            </div>
-          </div>
-
-        <div class="divider"></div>
-
-        <div class="section">
-
-          <h2 id="method-response" class="section-header">Method Response</h2>
+          <span id="procs-lambda" class="title-anchor"></span>
+          <h2 class="section-header">Procs &#38; Lambdas</h2>
 
           <div class="section-content">
             <p class="section-text-normal">
+              Procs are blocks in the form of a reusable object.
+              <br><br>
               <strong>
-                puts [1,2,3].respond_to?(:push)<br>
-                #=> true
+                var = Proc.new { |a| a += 1 }<br>
+                p [1,2,3].collect(&var)<br>
+                p (50..53).collect(&var)<br>
+                #=> [2,3,4]<br>
+                # [51,52,53,54]
                 <br><br>
-                puts "hello".respond_to?(:length)<br>
-                #=> true
+                var = Proc.new { |num| num == 2 }<br>
+                def block_test(&code_block)<br>
+                &#160;&#160;[1,2,3].select(&code_block)<br>
+                end<br>
+                p block_test(&var)<br>
+                #=> [2]
                 <br><br>
-                puts "hello".respond_to?(:each)<br>
-                #=> false
-                <br><br>
-                puts ["cat","dog"].respond_to?(:times)
-                #=> false
-                <br><br>
+                var = Proc.new { |num| num == 2 }<br>
+                def block_test(&code_block)<br>
+                &#160;&#160;[1,2,3].select() { |a| code_block.call(a) } <br>
+                end<br>
+                p block_test(&var)<br>
+                #=> [2]
               </strong>
-              The respond_to? method returns true if the object that calls it is able to run the method
-              given as a parameter.
+              <br><br>
+              Lambdas are very similar to procs in that they hold blocks. They do have
+              a slightly different syntax.
+              <br><br>
+              <strong>
+                var = lambda { |a| a += 1 }<br>
+                p [1,2,3].collect(&var)<br>
+                p (50..53).collect(&var)<br>
+                #=> [2,3,4]<br>
+                # [51,52,53,54]
+                <br><br>
+                var = lambda { |num| num == 2 }<br>
+                def block_test(&code_block)<br>
+                &#160;&#160;[1,2,3].select(&code_block)<br>
+                end<br>
+                p block_test(&var)<br>
+                #=> [2]
+                <br><br>
+                var = lambda { |num| num == 2 }<br>
+                def block_test(&code_block)<br>
+                &#160;&#160;[1,2,3].select() { |a| code_block.call(a) } <br>
+                end<br>
+                p block_test(&var)<br>
+                #=> [2]
+              </strong>
+              <br><br>
+              Procs and lambdas do have some distinct differences however. For example
+              when a Proc block calls return this acts as the methods call to return. The
+              value is returned and the method stops processing. Return calls in Lambdas
+              allow the method to continue processes after running. This is only true when
+              return is explicitly called. As the third example below shows
+              <br><br>
+              <strong>
+                def test_proc<br>
+                &#160;&#160;var = Proc.new {return "return from proc"}<br>
+                &#160;&#160;var.call<br>
+                &#160;&#160;return "return from method"<br>
+                end<br>
+                puts test_proc<br>
+                #=> "return from proc"
+                <br><br>
+                def test_lambda<br>
+                &#160;&#160;var = lambda {return "return from lambda"}<br>
+                &#160;&#160;var.call<br>
+                &#160;&#160;return "return from method"<br>
+                end<br>
+                puts test_lambda<br>
+                #=> "return from method"
+                <br><br>
+                def test_proc<br>
+                &#160;&#160;var = Proc.new {"return from proc"}<br>
+                &#160;&#160;x = var.call<br>
+                &#160;&#160;puts x<br>
+                &#160;&#160;"return from method"<br>
+                end<br>
+                puts test_proc<br>
+                #=> "return from proc"<br>
+                # "return from method"
+              </strong>
+              <br><br>
+              Note: The previous fact about procs only seems to be true if the proc is
+              created within the method that calls it as an error is called in other cases.
+              This is not true for lambdas however.
+              <br><br>
+              <strong>
+                var = Proc.new {return "return from proc"}<br>
+                def test_proc(&block)<br>
+                &#160;&#160;block.call<br>
+                &#160;&#160;return "return from method"<br>
+                end<br>
+                puts test_proc(&var)<br>
+                #=> error: unexpected return
+                <br><br>
+                var = lambda {return "return from lambda"}<br>
+                def test_proc(&block)<br>
+                &#160;&#160;block.call<br>
+                &#160;&#160;return "return from method"<br>
+                end<br>
+                puts test_proc(&var)<br>
+                #=> "return from method"
+              </strong>
               <br><br>
               (Sources:
               <br>
               <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-L3ZCI/1/5?curriculum_id=5059f8619189a5000201fbcb">
-                codecademy: The Zen of Ruby
+                codecademy: Blocks, Procs, and Lambdas
               </a>
               )
             </p>
           </div>
-
         </div>
 
-        <div class="divider"></div>
+      <div class="divider"></div>
+
+      <div class="section">
+
+        <span id="method-response" class="title-anchor"></span>
+        <h2 class="section-header">Method Response</h2>
+
+        <div class="section-content">
+          <p class="section-text-normal">
+            <strong>
+              puts [1,2,3].respond_to?(:push)<br>
+              #=> true
+              <br><br>
+              puts "hello".respond_to?(:length)<br>
+              #=> true
+              <br><br>
+              puts "hello".respond_to?(:each)<br>
+              #=> false
+              <br><br>
+              puts ["cat","dog"].respond_to?(:times)
+              #=> false
+              <br><br>
+            </strong>
+            The respond_to? method returns true if the object that calls it is able to run the method
+            given as a parameter.
+            <br><br>
+            (Sources:
+            <br>
+            <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-L3ZCI/1/5?curriculum_id=5059f8619189a5000201fbcb">
+              codecademy: The Zen of Ruby
+            </a>
+            )
+          </p>
+        </div>
+
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section">
+
+        <span id="native-sort" class="title-anchor"></span>
+        <h2 class="section-header">Native Sort</h2>
+
+        <div class="section-content">
+          <p class="section-text-normal">
+            When called the sort method will order values from low to high.
+            <br><br>
+            <strong>
+              x = [2,5,3,1,6,7,4]<br>
+              y = x.sort<br>
+              p y<br>
+              #=> [1,2,3,4,5,6,7]
+              <br><br>
+              x = [2,5,3,1,6,7,4]<br>
+              x.sort!<br>
+              p x<br>
+              #=> [1,2,3,4,5,6,7]
+              <br><br>
+              x = ["x","c","m"]<br>
+              x.sort!<br>
+              p x<br>
+              #=> ["c","m","x"]
+              <br><br>
+              x = ["cc","cb","caa","ca"]<br>
+              x.sort!<br>
+              p x<br>
+              #=> ["ca","caa","cb","cc"]
+            </strong>
+            <br><br>
+            By providing the sort method with a block it is possible to control the sorted order
+            and what details about the variables are sorted.
+            <br><br>
+            <strong>
+              x = [2,5,3,1,6,7,4]<br>
+              x.sort! { |left, right| right &#60;=&#62; left }<br>
+              p x<br>
+              #=> [7,6,5,4,3,2,1]
+              <br><br>
+              x = ["giraffe", "cat", "mouse"]<br>
+              x.sort! { |left, right| left.length &#60;=&#62; right.length }<br>
+              p x<br>
+              #=> ["cat", "mouse", "giraffe"]
+            </strong>
+            <br><br>
+            The sort algorithm implemented by ruby is a quicksort and has been shown to be fast
+            when compared to other sorting algorithms. It is a highly optimized piece of code and should be
+            used.
+            <br><br>
+            (Sources:
+            <br>
+            <a href="https://www.dotnetperls.com/sort-ruby">
+              dotnetperls: sort
+            </a>
+            <br>
+            <a href="https://www.igvita.com/2009/03/26/ruby-algorithms-sorting-trie-heaps/">
+              Ruby Algorithms: Sorting, Trie & Heaps
+            </a>
+            )
+          </p>
+        </div>
+
+      </div>
+
+      <div class="divider"></div>
 
         <div class="section">
 
-          <h2 id="native-sort" class="section-header">Native Sort</h2>
-
-          <div class="section-content">
-            <p class="section-text-normal">
-              When called the sort method will order values from low to high.
-              <br><br>
-              <strong>
-                x = [2,5,3,1,6,7,4]<br>
-                y = x.sort<br>
-                p y<br>
-                #=> [1,2,3,4,5,6,7]
-                <br><br>
-                x = [2,5,3,1,6,7,4]<br>
-                x.sort!<br>
-                p x<br>
-                #=> [1,2,3,4,5,6,7]
-                <br><br>
-                x = ["x","c","m"]<br>
-                x.sort!<br>
-                p x<br>
-                #=> ["c","m","x"]
-                <br><br>
-                x = ["cc","cb","caa","ca"]<br>
-                x.sort!<br>
-                p x<br>
-                #=> ["ca","caa","cb","cc"]
-              </strong>
-              <br><br>
-              By providing the sort method with a block it is possible to control the sorted order
-              and what details about the variables are sorted.
-              <br><br>
-              <strong>
-                x = [2,5,3,1,6,7,4]<br>
-                x.sort! { |left, right| right &#60;=&#62; left }<br>
-                p x<br>
-                #=> [7,6,5,4,3,2,1]
-                <br><br>
-                x = ["giraffe", "cat", "mouse"]<br>
-                x.sort! { |left, right| left.length &#60;=&#62; right.length }<br>
-                p x<br>
-                #=> ["cat", "mouse", "giraffe"]
-              </strong>
-              <br><br>
-              The sort algorithm implemented by ruby is a quicksort and has been shown to be fast
-              when compared to other sorting algorithms. It is a highly optimized piece of code and should be
-              used.
-              <br><br>
-              (Sources:
-              <br>
-              <a href="https://www.dotnetperls.com/sort-ruby">
-                dotnetperls: sort
-              </a>
-              <br>
-              <a href="https://www.igvita.com/2009/03/26/ruby-algorithms-sorting-trie-heaps/">
-                Ruby Algorithms: Sorting, Trie & Heaps
-              </a>
-              )
-            </p>
-          </div>
-
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="section">
-
-          <h2 id="variable-arguments-splat" class="section-header">Variable Arguments: Splat</h2>
+          <span id="variable-arguments-splat" class="title-anchor"></span>
+          <h2 class="section-header">Variable Arguments: Splat</h2>
 
           <div class="section-content">
             <p class="section-text-normal">
@@ -1092,7 +1099,8 @@
 
         <div class="section">
 
-          <h2 id="symbols" class="section-header">Symbols</h2>
+          <span id="symbols" class="title-anchor"></span>
+          <h2 class="section-header">Symbols</h2>
 
           <div class="section-content">
             <p class="section-text-normal">
@@ -1145,7 +1153,8 @@
 
         <div class="section">
 
-          <h2 id="custom-code-blocks" class="section-header">Custom Methods That Use Code blocks</h2>
+          <span id="custom-code-blocks" class="title-anchor"></span>
+          <h2 class="section-header">Custom Methods That Use Code blocks</h2>
 
           <div class="section-content">
             <p class="section-text-normal">
@@ -1212,7 +1221,8 @@
 
         <div class="section">
 
-          <h2 id="flow-control-summary" class="section-header">Flow-Control: summary</h2>
+          <span id="flow-control-summary" class="title-anchor"></span>
+          <h2 class="section-header">Flow-Control: summary</h2>
 
           <div class="section-content">
             <p class="section-text-normal">
@@ -1295,7 +1305,8 @@
 
         <div class="section">
 
-          <h2 id="hashes" class="section-header">Hashes</h2>
+          <span id="hashes" class="title-anchor"></span>
+          <h2 class="section-header">Hashes</h2>
 
           <div class="section-content">
             <p class="section-text-normal">
@@ -1407,7 +1418,8 @@
 
         <div class="section">
 
-          <h2 id="arrays" class="section-header">Arrays</h2>
+          <span id="arrays" class="title-anchor"></span>
+          <h2 class="section-header">Arrays</h2>
 
           <div class="section-content">
             <p class="section-text-normal">
@@ -1553,7 +1565,8 @@
 
         <div class="section">
 
-          <h2 id="regexr-in-ruby" class="section-header">RegExr in Ruby</h2>
+          <span id="regexr-in-ruby" class="title-anchor"></span>
+          <h2 class="section-header">RegExr in Ruby</h2>
 
           <div class="section-content">
             <p class="section-text-normal">
@@ -1591,6 +1604,7 @@
 
         <div class="section">
 
+          <span id="substitutions-in-strings" class="title-anchor"></span>
           <h2 id="substitutions-in-strings" class="section-header">Substitutions in Strings</h2>
 
           <div class="section-content">
@@ -1624,7 +1638,8 @@
 
         <div class="section">
 
-          <h2 id="interpolation" class="section-header">Interpolation</h2>
+          <span id="interpolation" class="title-anchor"></span>
+          <h2 class="section-header">Interpolation</h2>
 
           <div class="section-content">
             <p class="section-text-normal">
@@ -1654,7 +1669,8 @@
 
         <div class="section">
 
-          <h2 id="string-numerical-values" class="section-header">String numerical values</h2>
+          <span id="string-numerical-values" class="title-anchor"></span>
+          <h2 class="section-header">String numerical values</h2>
 
           <div class="section-content">
             <p class="section-text-normal">
@@ -1691,7 +1707,8 @@
 
         <div class="section">
 
-          <h2 id="multi-line-strings" class="section-header">Multi-line Strings</h2>
+          <span id="multi-line-strings" class="title-anchor"></span>
+          <h2 class="section-header">Multi-line Strings</h2>
 
           <div class="section-content">
             <p class="section-text-normal">
@@ -1736,7 +1753,8 @@
 
         <div class="section">
 
-          <h2 id="constants" class="section-header">Constants / Final Variables</h2>
+          <span id="constants" class="title-anchor"></span>
+          <h2 class="section-header">Constants / Final Variables</h2>
 
           <div class="section-content">
             <p class="section-text-normal">
@@ -1759,7 +1777,8 @@
 
         <div class="section">
 
-          <h2 id="iterators" class="section-header">Loops and Iterators</h2>
+          <span id="iterators" class="title-anchor"></span>
+          <h2  class="section-header">Loops and Iterators</h2>
 
           <div class="section-content">
 
@@ -1968,7 +1987,8 @@
 
         <div class="section">
 
-          <h2 id="interesting-operators" class="section-header">Interesting Operators</h2>
+          <span id="interesting-operators" class="title-anchor"></span>
+          <h2 class="section-header">Interesting Operators</h2>
 
           <div class="section-content">
             <p class="section-text-normal">
@@ -1994,7 +2014,8 @@
 
         <div class="section">
 
-          <h2 id="output-to-console" class="section-header">Output to Console </h2>
+          <span id="output-to-console" class="title-anchor"></span>
+          <h2 class="section-header">Output to Console </h2>
 
           <div class="section-content">
             <p class="section-text-normal">
