@@ -17,6 +17,12 @@
   text-decoration: none;
 }
 
+#header-space{
+  margin: 0;
+  padding: 0;
+  height: 133px;
+}
+
 #header-container td{
   padding-left: 10px;
   padding-right: 10px
@@ -33,6 +39,14 @@
 
 .header-divider{
   margin: 0;
+}
+
+.title-anchor{
+  position: relative;
+  height: 0px;
+  margin: 0;
+  padding: 0;
+  bottom: 133px;
 }
 
 
