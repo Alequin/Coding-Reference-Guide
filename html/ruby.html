@@ -416,6 +416,53 @@
                 # woof
               </strong>
               <br><br>
+              Classes have different levels of access for methods, public,
+              private and protected. Protected methods
+              are inherited by child classes the same way public methods are
+              but they are not usable by instances of that class. They may only
+              be called from within the class.<br>
+              For details on public and private methods and different ways to
+              assign levels of access view the <a href="#classes">Classes section</a>)
+              <br><br>
+              <strong>
+                class Mammal
+                <br><br>
+                &#160;&#160;attr_reader :name, :hair_length
+                <br><br>
+                &#160;&#160;def initialize(name)<br>
+                &#160;&#160;&#160;&#160;@name = name<br>
+                &#160;&#160;&#160;&#160;@hair_length = 0<br>
+                &#160;&#160;end
+                <br><br>
+                &#160;&#160;def breath<br>
+                &#160;&#160;&#160;&#160;return "inhale"<br>
+                &#160;&#160;end
+                <br><br>
+                protected
+                <br><br>
+                &#160;&#160;def grow_hair(amount_to_add)<br>
+                &#160;&#160;&#160;&#160;@hair_length += amount_to_add<br>
+                &#160;&#160;end<br>
+                end
+                <br><br>
+                class Dog < Mammal
+                <br><br>
+                &#160;&#160;attr_reader :number_of_legs
+                <br><br>
+                &#160;&#160;def initialize(name)<br>
+                &#160;&#160;&#160;&#160;super(name)<br>
+                &#160;&#160;&#160;&#160;@number_of_legs = 4<br>
+                &#160;&#160;&#160;&#160;grow_hair(20)<br>
+                &#160;&#160;end<br>
+                end
+                <br><br>
+                x = Dog.new("Spike")<br>
+                puts x.hair_length<br>
+                x.grow_hair<br>
+                #=> 20<br>
+                # (NoMethodError)
+              </strong>
+              <br><br>
               (Sources:
               Book: Beginning Ruby: From Novice to Professional
               <br>
@@ -474,10 +521,77 @@
                 #Hello 1
               </strong>
               <br><br>
+              Classes can have both public and private methods. This idea is known
+              as encapsulation and is used to ensure only the required methods
+              are accesible from an object. Private methods can only be used from
+              within the class.<br>
+              For details on protected methods view the
+              <a href="#inheritance">Inheritance section</a>
+              <br><br>
+              <strong>
+                class MyClass
+                <br><br>
+                &#160;&#160;def print_hello<br>
+                &#160;&#160;&#160;&#160;puts "#{get_hello} #{get_number}"<br>
+                &#160;&#160;end
+                <br><br>
+                &#160;&#160;private
+                <br><br>
+                &#160;&#160;def get_hello<br>
+                &#160;&#160;&#160;&#160;return "Hello"<br>
+                &#160;&#160;end
+                <br><br>
+                &#160;&#160;def get_number<br>
+                &#160;&#160;&#160;&#160;return 2<br>
+                &#160;&#160;end
+                <br><br>
+                end
+                <br><br>
+                x = MyClass.new<br>
+                x.print_hello<br>
+                puts x.get_hello<br>
+                #=> Hello 2<br>
+                # (NoMethodError)
+              </strong>
+              <br><br>
+              The word private is a method and can be used in multiple ways. Public
+              is also a useable method and can be used in the same way as private,
+              though all methods not specifically named as private are public.
+              <br><br>
+              <strong>
+                class MyClass
+                <br><br>
+                &#160;&#160;def print_hello<br>
+                &#160;&#160;&#160;&#160;puts "#{get_hello} #{get_number}"<br>
+                &#160;&#160;end
+                <br><br>
+                &#160;&#160;def get_hello<br>
+                &#160;&#160;&#160;&#160;return "Hello"<br>
+                &#160;&#160;end
+                <br><br>
+                &#160;&#160;def get_number<br>
+                &#160;&#160;&#160;&#160;return 2<br>
+                &#160;&#160;end
+                <br><br>
+                &#160;&#160;public :print_hello<br>
+                &#160;&#160;private :get_hello, :get_number
+                <br><br>
+                end
+                <br><br>
+                x = MyClass.new<br>
+                x.print_hello<br>
+                puts x.get_hello<br>
+                #=> Hello 2<br>
+                # (NoMethodError)
+              </strong>
+              <br><br>
               Classes can have three different types of variables associated
               with them, instance, class and global. These variables can be
               created inside or outside of methods within the class and are
-              created using the following syntax.
+              created using the following syntax. <br>
+              (Variables without any of these
+              prefixes are known as local variables and are only accessible from
+              within the method that creates them)
               <br><br>
               <strong>
                 Instance: @instance_variable<br>
@@ -505,15 +619,15 @@
                 end
                 <br><br>
                 x = MyClass.new<br>
-                x.set_printer("Hello 2")<br>
+                x.set_printer("Hello 3")<br>
                 x.print_text
                 <br><br>
                 y = MyClass.new<br>
-                y.set_printer("Hello 3")<br>
+                y.set_printer("Hello 4")<br>
                 y.print_text
                 <br><br>
-                #=> Hello 2<br>
-                # Hello 3
+                #=> Hello 3<br>
+                # Hello 4
               </strong>
               <br><br>
               Class variables belong to the class. They are defined using @@ and
@@ -543,17 +657,17 @@
               <br><br>
               x = MyClass.new<br>
               y = MyClass.new<br>
-              x.set_printer("Hello 4")<br>
-              y.set_printer("Hello 5")
+              x.set_printer("Hello 5)<br>
+              y.set_printer("Hello 6")
               <br><br>
               x.print_text<br>
               x.print_times<br>
               y.print_text<br>
               y.print_times
               <br><br>
-              #=> Hello 4<br>
+              #=> Hello 5<br>
               # 1<br>
-              # Hello 5<br>
+              # Hello 6<br>
               # 2
               </strong>
               <br><br>
@@ -562,12 +676,12 @@
               <br><br>
               <strong>
                 class MyClass<br>
-                &#160;&#160;$global = "hello 6"<br>
+                &#160;&#160;$global = "hello 7"<br>
                 end
                 <br><br>
                 puts $global
                 <br>
-                #=> Hello 6
+                #=> Hello 7
               </strong>
               <br><br>
               Variables state can be set on object instantiation by using the
@@ -587,25 +701,24 @@
                 <br><br>
                 end
                 <br><br>
-                x = MyClass.new("Hello 7")<br>
+                x = MyClass.new("Hello 8")<br>
                 x.print_text
                 <br><br>
-                y = MyClass.new("Hello 8")<br>
+                y = MyClass.new("Hello 9")<br>
                 y.print_text
                 <br><br>
-                #=> Hello 7<br>
-                # Hello 8
+                #=> Hello 8<br>
+                # Hello 9
               </strong>
               <br><br>
-              While the previous examples have used custom methods to get and set
-              variables this is not the way it should be done. Ruby provides
-              three helpful methods (att_reader, attr_writer and att_accessor)
-              to auto generate getter and setter methods.
+              The previous examples have used custom methods to get and set
+              variables but Ruby provides three helpful methods (att_reader,
+              attr_writer and att_accessor) to auto generate getter and setter methods.
               <br><br>
               The following example only shows attr_accessor but attr_reader
               (which generates a getter method) and attr_writer (which generates
-              a setter method) work in the same way exept for the fact that they
-              only provide access to either a getter or a setter.
+              a setter method) work in the same way except for the fact that
+              attr_accessor provides access to both a getter and a setter.
               <br><br>
               <strong>
                 class MyClass
@@ -618,17 +731,18 @@
                 <br><br>
                 end
                 <br><br>
-                x = MyClass.new("Hello 9")<br>
+                x = MyClass.new("Hello 10")<br>
                 puts x.text <br>
                 # setter method<br>
-                x.text = "Hello 10"<br>
+                x.text = "Hello 11"<br>
                 # getter method<br>
                 puts x.text<br>
-                #=> Hello 9<br>
-                # Hello 10
+                #=> Hello 10<br>
+                # Hello 11
               </strong>
               <br><br>
               (Sources:
+              Book: Beginning Ruby: From Novice to Professional
               <br>
               <a href="https://github.com/bbatsov/ruby-style-guide#naming">
                 The Ruby Style Guide
