@@ -255,37 +255,174 @@
               programmers to maintain DRY code. Classes that
               inherit from others should follow the is-a principle.
               <br><br>
-              Dog is-a Animal
+              Dog is-a Mammal
               <br><br>
-              Class Dog could inherit from class Animal as a dog is an animal
-              but an animal is not a dog and so could not inherit from dog.
+              Class Dog could inherit from class Mammal as a dog is a mammal
+              but a mammal is not a dog and so could not inherit from dog.
               <br><br>
-              In this case the Animal class is a super class (or parent)
+              In this case the Mammal class is a super class (or parent)
               of the Dog class and the Dog class is a subclass (or child) of
-              the Animal Class.
+              the Mammal Class.
+                <br><br>
               <strong>
+                class Mammal
                 <br><br>
-                class Animal<br>
-                  &#160;&#160;def breath<br>
-                  &#160;&#160;&#160;&#160;puts "inhale"<br>
-                  &#160;&#160;end<br>
+                &#160;&#160;attr_reader :name
+                <br><br>
+                &#160;&#160;def initialize(name)<br>
+                &#160;&#160;&#160;&#160;@name = name<br>
+                &#160;&#160;end
+                <br><br>
+                &#160;&#160;def breath<br>
+                &#160;&#160;&#160;&#160;return "inhale"<br>
+                &#160;&#160;end<br>
                 end
                 <br><br>
-                class Dog < Animal<br>
+                class Dog < Mammal<br>
                   &#160;&#160;def bark<br>
-                  &#160;&#160;&#160;&#160;puts "woof"<br>
+                  &#160;&#160;&#160;&#160;return "woof"<br>
                   &#160;&#160;end<br>
                 end
                 <br><br>
-                x = Dog.new<br>
-                x.breath<br>
-                x.bark<br>
-                #=> inhale<br>
+                x = Dog.new("Spike")<br>
+                puts x.name<br>
+                puts x.breath<br>
+                puts x.bark<br>
+                #=> Spike<br>
+                # inhale<br>
                 # woof
               </strong>
               <br><br>
               The previous example shows the syntax of inheritance and the use
-              of the method defined by the superclass.
+              of methods defined by the superclass. The methods of the parent
+              class are always inherited by the child class but the child class
+              is able to override these methods if different functionality is
+              desired. This is done by defining a method in the child class
+              using the same method name as is used in the super class.
+              <br><br>
+              <strong>
+                class Mammal
+                <br><br>
+                &#160;&#160;attr_reader :name
+                <br><br>
+                &#160;&#160;def initialize(name)<br>
+                &#160;&#160;&#160;&#160;@name = name<br>
+                &#160;&#160;end
+                <br><br>
+                &#160;&#160;def breath<br>
+                &#160;&#160;&#160;&#160;return "inhale"<br>
+                &#160;&#160;end<br>
+                end
+                <br><br>
+                class Dog < Mammal<br>
+                &#160;&#160;def bark<br>
+                &#160;&#160;&#160;&#160;return "woof"<br>
+                &#160;&#160;end<br>
+                end
+                <br><br>
+                class Chihuahua < Dog<br>
+                &#160;&#160;def bark<br>
+                &#160;&#160;&#160;&#160;return "yap yap"<br>
+                &#160;&#160;end<br>
+                end
+                <br><br>
+                x = Chihuahua.new("Spike")<br>
+                puts x.name<br>
+                puts x.breath<br>
+                puts x.bark<br>
+                #=> Spike<br>
+                # inhale<br>
+                # yap yap
+              </strong>
+              <br><br>
+              If a method has been overriden but the functionality from the super
+              classe is still required the key word super can be used
+              to call the method from the superclass.
+              <br><br>
+              <strong>
+                class Mammal
+                <br><br>
+                &#160;&#160;attr_reader :name
+                <br><br>
+                &#160;&#160;def initialize(name)<br>
+                &#160;&#160;&#160;&#160;@name = name<br>
+                &#160;&#160;end
+                <br><br>
+                &#160;&#160;def breath<br>
+                &#160;&#160;&#160;&#160;return "inhale"<br>
+                &#160;&#160;end<br>
+                end
+                <br><br>
+                class Dog < Mammal<br>
+                  &#160;&#160;def bark<br>
+                  &#160;&#160;&#160;&#160;return "woof"<br>
+                  &#160;&#160;end<br>
+                end
+                <br><br>
+                class GreatDane < Dog<br>
+                  &#160;&#160;def bark<br>
+                  &#160;&#160;&#160;&#160;return "#{super.upcase}!!"<br>
+                  &#160;&#160;end<br>
+                end
+                <br><br>
+                x = GreatDane.new("Spike")<br>
+                puts x.name<br>
+                puts x.breath<br>
+                puts x.bark<br>
+                #=> Spike<br>
+                # inhale<br>
+                # WOOF!!
+              </strong>
+              <br><br>
+              The method initialize can also be overriden and make use of the
+              super key word.
+              <br><br>
+              <strong>
+                class Mammal
+                <br><br>
+                &#160;&#160;attr_reader :name
+                <br><br>
+                &#160;&#160;def initialize(name)<br>
+                &#160;&#160;&#160;&#160;@name = name<br>
+                &#160;&#160;end
+                <br><br>
+                &#160;&#160;def breath<br>
+                &#160;&#160;&#160;&#160;return "inhale"<br>
+                &#160;&#160;end<br>
+                end
+                <br><br>
+                class Dog < Mammal
+                <br><br>
+                &#160;&#160;attr_reader :number_of_legs
+                <br><br>
+                &#160;&#160;def initialize(name)<br>
+                &#160;&#160;&#160;&#160;super(name)<br>
+                &#160;&#160;&#160;&#160;@number_of_legs = 4<br>
+                &#160;&#160;end
+                <br><br>
+                  &#160;&#160;def bark<br>
+                  &#160;&#160;&#160;&#160;return "woof"<br>
+                  &#160;&#160;end<br>
+                end
+                <br><br>
+                x = Dog.new("Spike")<br>
+                puts x.name<br>
+                puts x.number_of_legs<br>
+                puts x.breath<br>
+                puts x.bark<br>
+                #=> Spike<br>
+                # 4<br>
+                # inhale<br>
+                # woof
+              </strong>
+              <br><br>
+              (Sources:
+              Book: Beginning Ruby: From Novice to Professional
+              <br>
+              <a href="https://www.codecademy.com/learn/ruby">
+                codecademy: Object-Oriented Programming, Part I / Object-Oriented Programming, Part II
+              </a>
+              )
             </p>
           </div>
 
