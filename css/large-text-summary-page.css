@@ -14,3 +14,8 @@
   font-size: 40px;
   line-height: 40px;
 }
+
+.header-divider, .divider{
+    max-width: 100%;
+    border-top: 5px dotted grey;
+}

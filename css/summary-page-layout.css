@@ -90,11 +90,6 @@ a, a:visited{
   margin-bottom: 15px;
 }
 
-.header-divider, .divider{
-    max-width: 100%;
-    border-top: 2px dotted grey;
-}
-
 .section-header{
   margin-top: 10px;
 }
