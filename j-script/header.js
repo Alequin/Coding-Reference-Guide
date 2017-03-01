@@ -18,7 +18,7 @@ function setHeaderSpaceHeight(headerHeight){
 }
 
 function setTitleAnchorPosition(headerHeight){
-  $(".title-anchor").css("bottom", headerHeight.toString() + "px");
+  $(".title-anchor").css("bottom", (headerHeight * 1.25).toString() + "px") ;
 }
 
 function positionElementsRelativeToHeader(){

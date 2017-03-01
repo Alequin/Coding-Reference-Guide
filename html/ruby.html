@@ -117,2053 +117,2053 @@
 
   <div id="primary-container">
 
-        <div class="divider"></div>
+    <div class="divider"></div>
 
-        <div class="section">
+    <div class="section">
 
-          <span id="comparable-module" class="title-anchor"></span>
-          <h2 class="section-header">Comparable Module</h2>
+      <div id="comparable-module" class="title-anchor"></div>
+      <h2 class="section-header">Comparable Module</h2>
 
-          <div class="section-content">
-            <p class="section-text-normal">
-              The comparable module can be used add comparison operators to your
-              code.
-              <br><br>
-              <strong>
-                class Vehicle<br>
-                &#160;&#160;include Comparable
-                <br><br>
-                &#160;&#160;attr_reader :wheels
-                <br><br>
-                &#160;&#160;def initialize(wheels)<br>
-                &#160;&#160;&#160;&#160;@wheels = wheels<br>
-                &#160;&#160;end
-                <br><br>
-                &#160;&#160;def <=>(to_compare)<br>
-                &#160;&#160;&#160;&#160;@wheels <=> to_compare.wheels<br>
-                &#160;&#160;end
-                <br><br>
-                end
-                <br><br>
-                bike = Vehicle.new(2)<br>
-                car = Vehicle.new(4)<br>
-                puts bike < car<br>
-                puts car > bike<br>
-                puts bike == car<br>
-                #>= true<br>
-                # true<br>
-                # false
-              </strong>
-              <br><br>
-              (Sources:<br>
-              Book: Beginning Ruby: From Novice to Professional)
-            </p>
-          </div>
-
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="section">
-
-          <span id="structs" class="title-anchor"></span>
-          <h2 class="section-header">Structs: Quick Classes</h2>
-
-          <div class="section-content">
-            <p class="section-text-normal">
-              Struct is a class that quickly creates very simple classes and
-              defines variables associated with that class. The struct will also
-              apply att_accessor to all variables defined.<br>
-              Note: variables associated with structs do not have to be constants.
-              <br><br>
-              <strong>
-                Person = Struct.new(:name, :age)<br>
-                lucy = Person.new("Lucy", 23)<br>
-                alan = Person.new("Alan", 37)
-                <br><br>
-                puts "#{lucy.name} - age #{lucy.age}"<br>
-                puts "#{alan.name} - age #{alan.age}"
-                <br><br>
-                lucy.name = "Lucy Smith"<br>
-                puts lucy.name
-                <br><br>
-                #=> Lucy - age 23<br>
-                # Alan - age 37<br>
-                # Lucy Smith
-              </strong>
-              <br><br>
-              Struct can also define methods if a code block is provided.
-              <br><br>
-              <strong>
-                Person = Struct.new(:name, :age) do<br>
-                &#160;&#160;def print_details<br>
-                &#160;&#160;&#160;&#160;puts "#{name}, #{age}"<br>
-                &#160;&#160;end<br>
-                end
-                <br><br>
-                lucy = Person.new("Lucy", 23)<br>
-                alan = Person.new("Alan", 37)
-                <br><br>
-                lucy.print_details<br>
-                alan.print_details
-                <br><br>
-                #=> Lucy - age 23<br>
-                # Alan - age 37
-              </strong>
-              <br><br>
-              When calling a constructor from a class made by a struct not all
-              variables have to be defined. The variables which are not given a
-              parameter on construction are set to nil and attr_accessor still
-              generates methods releated to them.
-              <br><br>
-              <strong>
-                Person = Struct.new(:name, :age)<br>
-                lucy = Person.new("Lucy")
-                <br><br>
-                puts "#{lucy.name} - age #{lucy.age}"
-                <br><br>
-                lucy.age = 23<br>
-                puts lucy.age
-                <br><br>
-                #=> Lucy - age<br>
-                # 23
-              </strong>
-              <br><br>
-              Classes created using structs can be superclasses, allowing thier
-              variables to be inherited by the subclass.
-              <br><br>
-              <strong>
-                Person = Struct.new(:name, :age)
-                <br><br>
-                class Alan < Person<br>
-                end
-                <br><br>
-                baby_alan = Alan.new("Alan", 0.1)<br>
-                puts "#{baby_alan.name} - age #{baby_alan.age}"
-                <br><br>
-                #=> Alan - age 0.1
-                <br><br>
-                Short method:<br>
-                class Alan < Struct.new(:name, :age)<br>
-                end
-              </strong>
-              <br><br>
-              As well as structs there are open structs. These work like structs
-              but variables can be added after initialization of the open struct.<br>
-              Note: Open stucts cannot act as superclasses.
-              <br><br>
-              <strong>
-                # Require must be called to access open structs<br>
-                require 'ostruct'
-                <br><br>
-                Person = OpenStruct.new<br>
-                Person.name = "Sandra"<br>
-                Person.age = "20"<br>
-                Person.height = "160 cm"
-                <br><br>
-                puts "#{Person.name}, #{Person.age}, #{Person.height}"<br>
-                #=> Sandra, 20, 160 cm
-              </strong>
-              <br><br>
-              (Sources:<br>
-              Book: Beginning Ruby: From Novice to Professional<br>
-              <a href="http://blog.steveklabnik.com/posts/2012-09-01-random-ruby-tricks--struct-new">
-              Random Ruby Tricks: Struct.new</a><br>
-              <a href="http://blog.logicalbricks.com/node/235">
-              Struct and OpenStruct in Ruby</a>)
-            </p>
-          </div>
-
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="section">
-
-          <span id="modules" class="title-anchor"></span>
-          <h2 class="section-header">Modules</h2>
-
-          <div class="section-content">
-            <p class="section-text-normal">
-              Modules are collections of methods and constants. Methods can
-              either be instance methods or module methods. Module methods are
-              defined and called by naming the module and then the method
-              (module_name.method_name()). Instance methods are defined
-              using only the method name and called by the by an instance
-              of a class the related module is included in.
-              <br><br>
-              <strong>
-                module BasicMath
-                <br><br>
-                &#160;&#160;def BasicMath.add(val1, val2)<br>
-                &#160;&#160;&#160;&#160;return val1 + val2<br>
-                &#160;&#160;end
-                <br><br>
-                &#160;&#160;def subtract(other_val)<br>
-                &#160;&#160;&#160;&#160;return self - other_val<br>
-                &#160;&#160;end
-                <br><br>
-                end
-              </strong>
-              <br><br>
-              Using this module we can call the module method from the module...
-              <br><br>
-              <strong>
-                puts BasicMath.add(3,6)<br>
-                #=> 9
-              </strong>
-              <br><br>
-              or include the module in a class and use an instance of that class
-              to call the instance method (this is the mixin facility).
-              <br><br>
-              <strong>
-                class Fixnum<br>
-                &#160;&#160;include BasicMath<br>
-                end
-                <br><br>
-                puts 5.subtract(4)
-                #=> 1
-              </strong>
-              <br><br>
-              Another option is to use the extend key word in place of the include
-              key word. This gives the class access to the instance methods rather
-              than only instances of that class having access.
-              <br><br>
-              <strong>
-                module PrintMod
-                <br><br>
-                &#160;&#160;def print_hello<br>
-                &#160;&#160;&#160;&#160;puts "hello"<br>
-                &#160;&#160;end
-                <br><br>
-                end
-                <br><br>
-                class IncludeClass<br>
-                &#160;&#160;include PrintMod<br>
-                end
-                <br><br>
-                class ExtendClass<br>
-                &#160;&#160;extend PrintMod<br>
-                end
-                <br><br>
-                IncludeClass.new.print_hello<br>
-                ExtendClass.print_hello
-                <br><br>
-                #=> hello<br>
-                # hello
-              </strong>
-              <br><br>
-              Extend may also be used on already initialised objects to provide
-              that instance alone access to the modules methods. (using the
-              keyword include in the place of extends in this example would
-              produced an undefined method error)
-              <br><br>
-              <strong>
-                module PrintMod
-                <br><br>
-                &#160;&#160;def print_hello<br>
-                &#160;&#160;&#160;&#160;puts "hello"<br>
-                &#160;&#160;end
-                <br><br>
-                end
-                <br><br>
-                class PostExtendClass; end
-                <br><br>
-                test = PostExtendClass.new<br>
-                test.extend(PrintMod)<br>
-                test.print_hello
-                <br><br>
-                #=> hello
-                <br><br>
-              </strong>
-              Using module methods allows for the definition of methods with the
-              same name (using multiple modules) without causing issues. This is
-              known as namespacing.
-              <br><br>
-              <strong>
-                module Mod1
-                <br><br>
-                &#160;&#160;def Mod1.name<br>
-                &#160;&#160;&#160;&#160;return "mod1 here"<br>
-                &#160;&#160;end
-                <br><br>
-                end
-                <br><br>
-                module Mod2
-                <br><br>
-                &#160;&#160;def Mod2.name<br>
-                &#160;&#160;&#160;&#160;return "mod2 here"<br>
-                &#160;&#160;end
-                <br><br>
-                end
-                <br><br>
-                puts Mod1.name<br>
-                puts Mod2.name<br>
-                #=> mod1 here<br>
-                # mod2 here
-              </strong>
-              <br><br>
-              (Sources:
-              <br>
-              <a href="http://ruby-doc.com/docs/ProgrammingRuby/html/tut_modules.html">
-                ruby-doc: Modules
-              </a>
-              <br>
-              <a href="http://stackoverflow.com/questions/156362/what-is-the-difference-between-include-and-extend-in-ruby">
-                stackoverflow: What is the difference between include and extend in Ruby?
-              </a>
-              )
-            </p>
-          </div>
-
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="section">
-
-          <span id="inheritance" class="title-anchor"></span>
-          <h2 class="section-header">Inheritance</h2>
-
-          <div class="section-content">
-            <p class="section-text-normal">
-              Inheritance is an object oriented idea in which classes can
-              inherit variables and methods from other classes. This aids
-              programmers to maintain DRY code. Classes that
-              inherit from others should follow the is-a principle.
-              <br><br>
-              Dog is-a Mammal
-              <br><br>
-              Class Dog could inherit from class Mammal as a dog is a mammal
-              but a mammal is not a dog and so could not inherit from dog.
-              <br><br>
-              In this case the Mammal class is a super class (or parent)
-              of the Dog class and the Dog class is a subclass (or child) of
-              the Mammal Class.
-                <br><br>
-              <strong>
-                class Mammal
-                <br><br>
-                &#160;&#160;attr_reader :name
-                <br><br>
-                &#160;&#160;def initialize(name)<br>
-                &#160;&#160;&#160;&#160;@name = name<br>
-                &#160;&#160;end
-                <br><br>
-                &#160;&#160;def breath<br>
-                &#160;&#160;&#160;&#160;return "inhale"<br>
-                &#160;&#160;end<br>
-                end
-                <br><br>
-                class Dog < Mammal<br>
-                  &#160;&#160;def bark<br>
-                  &#160;&#160;&#160;&#160;return "woof"<br>
-                  &#160;&#160;end<br>
-                end
-                <br><br>
-                x = Dog.new("Spike")<br>
-                puts x.name<br>
-                puts x.breath<br>
-                puts x.bark<br>
-                #=> Spike<br>
-                # inhale<br>
-                # woof
-              </strong>
-              <br><br>
-              The previous example shows the syntax of inheritance and the use
-              of methods defined by the superclass. The methods of the parent
-              class are always inherited by the child class but the child class
-              is able to override these methods if different functionality is
-              desired. This is done by defining a method in the child class
-              using the same method name as is used in the super class.
-              <br><br>
-              <strong>
-                class Mammal
-                <br><br>
-                &#160;&#160;attr_reader :name
-                <br><br>
-                &#160;&#160;def initialize(name)<br>
-                &#160;&#160;&#160;&#160;@name = name<br>
-                &#160;&#160;end
-                <br><br>
-                &#160;&#160;def breath<br>
-                &#160;&#160;&#160;&#160;return "inhale"<br>
-                &#160;&#160;end<br>
-                end
-                <br><br>
-                class Dog < Mammal<br>
-                &#160;&#160;def bark<br>
-                &#160;&#160;&#160;&#160;return "woof"<br>
-                &#160;&#160;end<br>
-                end
-                <br><br>
-                class Chihuahua < Dog<br>
-                &#160;&#160;def bark<br>
-                &#160;&#160;&#160;&#160;return "yap yap"<br>
-                &#160;&#160;end<br>
-                end
-                <br><br>
-                x = Chihuahua.new("Spike")<br>
-                puts x.name<br>
-                puts x.breath<br>
-                puts x.bark<br>
-                #=> Spike<br>
-                # inhale<br>
-                # yap yap
-              </strong>
-              <br><br>
-              If a method has been overriden but the functionality from the super
-              classe is still required the key word super can be used
-              to call the method from the superclass.
-              <br><br>
-              <strong>
-                class Mammal
-                <br><br>
-                &#160;&#160;attr_reader :name
-                <br><br>
-                &#160;&#160;def initialize(name)<br>
-                &#160;&#160;&#160;&#160;@name = name<br>
-                &#160;&#160;end
-                <br><br>
-                &#160;&#160;def breath<br>
-                &#160;&#160;&#160;&#160;return "inhale"<br>
-                &#160;&#160;end<br>
-                end
-                <br><br>
-                class Dog < Mammal<br>
-                  &#160;&#160;def bark<br>
-                  &#160;&#160;&#160;&#160;return "woof"<br>
-                  &#160;&#160;end<br>
-                end
-                <br><br>
-                class GreatDane < Dog<br>
-                  &#160;&#160;def bark<br>
-                  &#160;&#160;&#160;&#160;return "#{super.upcase}!!"<br>
-                  &#160;&#160;end<br>
-                end
-                <br><br>
-                x = GreatDane.new("Spike")<br>
-                puts x.name<br>
-                puts x.breath<br>
-                puts x.bark<br>
-                #=> Spike<br>
-                # inhale<br>
-                # WOOF!!
-              </strong>
-              <br><br>
-              The method initialize can also be overriden and make use of the
-              super key word.
-              <br><br>
-              <strong>
-                class Mammal
-                <br><br>
-                &#160;&#160;attr_reader :name
-                <br><br>
-                &#160;&#160;def initialize(name)<br>
-                &#160;&#160;&#160;&#160;@name = name<br>
-                &#160;&#160;end
-                <br><br>
-                &#160;&#160;def breath<br>
-                &#160;&#160;&#160;&#160;return "inhale"<br>
-                &#160;&#160;end<br>
-                end
-                <br><br>
-                class Dog < Mammal
-                <br><br>
-                &#160;&#160;attr_reader :number_of_legs
-                <br><br>
-                &#160;&#160;def initialize(name)<br>
-                &#160;&#160;&#160;&#160;super(name)<br>
-                &#160;&#160;&#160;&#160;@number_of_legs = 4<br>
-                &#160;&#160;end
-                <br><br>
-                  &#160;&#160;def bark<br>
-                  &#160;&#160;&#160;&#160;return "woof"<br>
-                  &#160;&#160;end<br>
-                end
-                <br><br>
-                x = Dog.new("Spike")<br>
-                puts x.name<br>
-                puts x.number_of_legs<br>
-                puts x.breath<br>
-                puts x.bark<br>
-                #=> Spike<br>
-                # 4<br>
-                # inhale<br>
-                # woof
-              </strong>
-              <br><br>
-              Classes have different levels of access for methods, public,
-              private and protected. Protected methods
-              are inherited by child classes the same way public methods are
-              but they are not usable by instances of that class. They may only
-              be called from within the class.<br>
-              For details on public and private methods and different ways to
-              assign levels of access view the <a href="#classes">Classes section</a>)
-              <br><br>
-              <strong>
-                class Mammal
-                <br><br>
-                &#160;&#160;attr_reader :name, :hair_length
-                <br><br>
-                &#160;&#160;def initialize(name)<br>
-                &#160;&#160;&#160;&#160;@name = name<br>
-                &#160;&#160;&#160;&#160;@hair_length = 0<br>
-                &#160;&#160;end
-                <br><br>
-                &#160;&#160;def breath<br>
-                &#160;&#160;&#160;&#160;return "inhale"<br>
-                &#160;&#160;end
-                <br><br>
-                protected
-                <br><br>
-                &#160;&#160;def grow_hair(amount_to_add)<br>
-                &#160;&#160;&#160;&#160;@hair_length += amount_to_add<br>
-                &#160;&#160;end<br>
-                end
-                <br><br>
-                class Dog < Mammal
-                <br><br>
-                &#160;&#160;attr_reader :number_of_legs
-                <br><br>
-                &#160;&#160;def initialize(name)<br>
-                &#160;&#160;&#160;&#160;super(name)<br>
-                &#160;&#160;&#160;&#160;@number_of_legs = 4<br>
-                &#160;&#160;&#160;&#160;grow_hair(20)<br>
-                &#160;&#160;end<br>
-                end
-                <br><br>
-                x = Dog.new("Spike")<br>
-                puts x.hair_length<br>
-                x.grow_hair<br>
-                #=> 20<br>
-                # (NoMethodError)
-              </strong>
-              <br><br>
-              (Sources:
-              Book: Beginning Ruby: From Novice to Professional
-              <br>
-              <a href="https://www.codecademy.com/learn/ruby">
-                codecademy: Object-Oriented Programming, Part I / Object-Oriented Programming, Part II
-              </a>
-              )
-            </p>
-          </div>
-
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="section">
-
-          <span id="classes" class="title-anchor"></span>
-          <h2 class="section-header">Classes</h2>
-
-          <div class="section-content">
-            <p class="section-text-normal">
-              Classes are an important feature relating to object oriented
-              programming as they act as they act as inital blueprints for all
-              objects, defining their base state and values. The basic syntax of
-              a class in Ruby is shown below. The first letter of a class name
-              should always be capitalised.
-              <br><br>
-              <strong>
-                class MyClass<br>
-                end
-              </strong>
-              <br><br>
-              Methods are defined using the key word def. Methods can either be
-              instance methods (as seen in the previous example) or class methods.
-              Instance methods are only avalible after an instance of the class
-              has been made. Class methods are avalible without an instance of
-              the class and are defined and called by stating the class name and
-              then the method name (MyClass.my_method).
-              <br><br>
-              <strong>
-                class MyClass
-                <br><br>
-                &#160;&#160;def print_hello<br>
-                &#160;&#160;&#160;&#160;puts "Hello"<br>
-                &#160;&#160;end
-                <br><br>
-                &#160;&#160;def MyClass.print_hello1<br>
-                &#160;&#160;&#160;&#160;puts "Hello 1"<br>
-                &#160;&#160;end
-                <br><br>
-                end
-                <br><br>
-                x = MyClass.new<br>
-                x.print_hello<br>
-                x.print_hello1<br>
-                #=> Hello<br>
-                #Hello 1
-              </strong>
-              <br><br>
-              Classes can have both public and private methods. This idea is known
-              as encapsulation and is used to ensure only the required methods
-              are accesible from an object. Private methods can only be used from
-              within the class.<br>
-              For details on protected methods view the
-              <a href="#inheritance">Inheritance section</a>
-              <br><br>
-              <strong>
-                class MyClass
-                <br><br>
-                &#160;&#160;def print_hello<br>
-                &#160;&#160;&#160;&#160;puts "#{get_hello} #{get_number}"<br>
-                &#160;&#160;end
-                <br><br>
-                &#160;&#160;private
-                <br><br>
-                &#160;&#160;def get_hello<br>
-                &#160;&#160;&#160;&#160;return "Hello"<br>
-                &#160;&#160;end
-                <br><br>
-                &#160;&#160;def get_number<br>
-                &#160;&#160;&#160;&#160;return 2<br>
-                &#160;&#160;end
-                <br><br>
-                end
-                <br><br>
-                x = MyClass.new<br>
-                x.print_hello<br>
-                puts x.get_hello<br>
-                #=> Hello 2<br>
-                # (NoMethodError)
-              </strong>
-              <br><br>
-              The word private is a method and can be used in multiple ways. Public
-              is also a useable method and can be used in the same way as private,
-              though all methods not specifically named as private are public.
-              <br><br>
-              <strong>
-                class MyClass
-                <br><br>
-                &#160;&#160;def print_hello<br>
-                &#160;&#160;&#160;&#160;puts "#{get_hello} #{get_number}"<br>
-                &#160;&#160;end
-                <br><br>
-                &#160;&#160;def get_hello<br>
-                &#160;&#160;&#160;&#160;return "Hello"<br>
-                &#160;&#160;end
-                <br><br>
-                &#160;&#160;def get_number<br>
-                &#160;&#160;&#160;&#160;return 2<br>
-                &#160;&#160;end
-                <br><br>
-                &#160;&#160;public :print_hello<br>
-                &#160;&#160;private :get_hello, :get_number
-                <br><br>
-                end
-                <br><br>
-                x = MyClass.new<br>
-                x.print_hello<br>
-                puts x.get_hello<br>
-                #=> Hello 2<br>
-                # (NoMethodError)
-              </strong>
-              <br><br>
-              Classes can have three different types of variables associated
-              with them, instance, class and global. These variables can be
-              created inside or outside of methods within the class and are
-              created using the following syntax. <br>
-              (Variables without any of these
-              prefixes are known as local variables and are only accessible from
-              within the method that creates them)
-              <br><br>
-              <strong>
-                Instance: @instance_variable<br>
-                Class: @@class_variable<br>
-                Global: $global_variable
-              </strong>
-              <br><br>
-              Instance variables are unique to each instance of the class.
-              Each time the class is instantiated a new set of variables are
-              created for that object. They are defined by using the @ symbol
-              prior to the variable name. Once defined they are available to all
-              methods.
-              <br><br>
-              <strong>
-                class MyClass
-                <br><br>
-                &#160;&#160;def set_printer(text)<br>
-                &#160;&#160;&#160;&#160;@text = text<br>
-                &#160;&#160;end
-                <br><br>
-                &#160;&#160;def print_text<br>
-                &#160;&#160;&#160;&#160;puts @text<br>
-                &#160;&#160;end
-                <br><br>
-                end
-                <br><br>
-                x = MyClass.new<br>
-                x.set_printer("Hello 3")<br>
-                x.print_text
-                <br><br>
-                y = MyClass.new<br>
-                y.set_printer("Hello 4")<br>
-                y.print_text
-                <br><br>
-                #=> Hello 3<br>
-                # Hello 4
-              </strong>
-              <br><br>
-              Class variables belong to the class. They are defined using @@ and
-              once defined any object created by the class has access to the
-              same variable. Only one is every created regardless of how many
-              times a new object is created.
-              <br><br>
-              <strong>
-              class MyClass
-              <br><br>
-                @@times_printed_text = 0
-                <br><br>
-                &#160;&#160;def set_printer(text)<br>
-                &#160;&#160;&#160;&#160;@text = text<br>
-                &#160;&#160;end
-                <br><br>
-                &#160;&#160;def print_text<br>
-                &#160;&#160;&#160;&#160;puts @text<br>
-                &#160;&#160;&#160;&#160;@@times_printed_text += 1<br>
-                &#160;&#160;end
-                <br><br>
-                &#160;&#160;def print_times<br>
-                &#160;&#160;&#160;&#160;puts @@times_printed_text<br>
-                &#160;&#160;end
-                <br><br>
-              end
-              <br><br>
-              x = MyClass.new<br>
-              y = MyClass.new<br>
-              x.set_printer("Hello 5)<br>
-              y.set_printer("Hello 6")
-              <br><br>
-              x.print_text<br>
-              x.print_times<br>
-              y.print_text<br>
-              y.print_times
-              <br><br>
-              #=> Hello 5<br>
-              # 1<br>
-              # Hello 6<br>
-              # 2
-              </strong>
-              <br><br>
-              Global variables are avaliable outside the class without the need
-              for an instantiated object.
-              <br><br>
-              <strong>
-                class MyClass<br>
-                &#160;&#160;$global = "hello 7"<br>
-                end
-                <br><br>
-                puts $global
-                <br>
-                #=> Hello 7
-              </strong>
-              <br><br>
-              Variables state can be set on object instantiation by using the
-              method initialize. If this method is defined within a class it will
-              be called each time a new object is created.
-              <br><br>
-              <strong>
-                class MyClass
-                <br><br>
-                &#160;&#160;def initialize(text)<br>
-                &#160;&#160;&#160;&#160;@text = text<br>
-                &#160;&#160;end
-                <br><br>
-                &#160;&#160;def print_text<br>
-                &#160;&#160;&#160;&#160;puts @text<br>
-                &#160;&#160;end
-                <br><br>
-                end
-                <br><br>
-                x = MyClass.new("Hello 8")<br>
-                x.print_text
-                <br><br>
-                y = MyClass.new("Hello 9")<br>
-                y.print_text
-                <br><br>
-                #=> Hello 8<br>
-                # Hello 9
-              </strong>
-              <br><br>
-              The previous examples have used custom methods to get and set
-              variables but Ruby provides three helpful methods (att_reader,
-              attr_writer and att_accessor) to auto generate getter and setter methods.
-              <br><br>
-              The following example only shows attr_accessor but attr_reader
-              (which generates a getter method) and attr_writer (which generates
-              a setter method) work in the same way except for the fact that
-              attr_accessor provides access to both a getter and a setter.
-              <br><br>
-              <strong>
-                class MyClass
-                <br><br>
-                attr_accessor :text
-                <br><br>
-                &#160;&#160;def initialize(text)<br>
-                &#160;&#160;&#160;&#160;@text = text<br>
-                &#160;&#160;end
-                <br><br>
-                end
-                <br><br>
-                x = MyClass.new("Hello 10")<br>
-                puts x.text <br>
-                # setter method<br>
-                x.text = "Hello 11"<br>
-                # getter method<br>
-                puts x.text<br>
-                #=> Hello 10<br>
-                # Hello 11
-              </strong>
-              <br><br>
-              (Sources:
-              Book: Beginning Ruby: From Novice to Professional
-              <br>
-              <a href="https://github.com/bbatsov/ruby-style-guide#naming">
-                The Ruby Style Guide
-              </a>
-              <br>
-              <a href="https://www.codecademy.com/learn/ruby">
-                codecademy: Object-Oriented Programming, Part I / Object-Oriented Programming, Part II
-              </a>
-              <br>
-              <a href="http://www.stackoverflow.com/questions/4370960/what-is-attr-accessor-in-ruby">
-                stack overflow: What is attr_accessor in Ruby?
-              </a>
-              )
-            </p>
-          </div>
-
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="section">
-
-          <span id="procs-lambda" class="title-anchor"></span>
-          <h2 class="section-header">Procs &#38; Lambdas</h2>
-
-          <div class="section-content">
-            <p class="section-text-normal">
-              Procs are blocks in the form of a reusable object.
-              <br><br>
-              <strong>
-                var = Proc.new { |a| a += 1 }<br>
-                p [1,2,3].collect(&var)<br>
-                p (50..53).collect(&var)<br>
-                #=> [2,3,4]<br>
-                # [51,52,53,54]
-                <br><br>
-                var = Proc.new { |num| num == 2 }<br>
-                def block_test(&code_block)<br>
-                &#160;&#160;[1,2,3].select(&code_block)<br>
-                end<br>
-                p block_test(&var)<br>
-                #=> [2]
-                <br><br>
-                var = Proc.new { |num| num == 2 }<br>
-                def block_test(&code_block)<br>
-                &#160;&#160;[1,2,3].select() { |a| code_block.call(a) } <br>
-                end<br>
-                p block_test(&var)<br>
-                #=> [2]
-              </strong>
-              <br><br>
-              Lambdas are very similar to procs in that they hold blocks. They do have
-              a slightly different syntax.
-              <br><br>
-              <strong>
-                var = lambda { |a| a += 1 }<br>
-                p [1,2,3].collect(&var)<br>
-                p (50..53).collect(&var)<br>
-                #=> [2,3,4]<br>
-                # [51,52,53,54]
-                <br><br>
-                var = lambda { |num| num == 2 }<br>
-                def block_test(&code_block)<br>
-                &#160;&#160;[1,2,3].select(&code_block)<br>
-                end<br>
-                p block_test(&var)<br>
-                #=> [2]
-                <br><br>
-                var = lambda { |num| num == 2 }<br>
-                def block_test(&code_block)<br>
-                &#160;&#160;[1,2,3].select() { |a| code_block.call(a) } <br>
-                end<br>
-                p block_test(&var)<br>
-                #=> [2]
-              </strong>
-              <br><br>
-              Procs and lambdas do have some distinct differences however. For example
-              when a Proc block calls return this acts as the methods call to return. The
-              value is returned and the method stops processing. Return calls in Lambdas
-              allow the method to continue processes after running. This is only true when
-              return is explicitly called. As the third example below shows
-              <br><br>
-              <strong>
-                def test_proc<br>
-                &#160;&#160;var = Proc.new {return "return from proc"}<br>
-                &#160;&#160;var.call<br>
-                &#160;&#160;return "return from method"<br>
-                end<br>
-                puts test_proc<br>
-                #=> "return from proc"
-                <br><br>
-                def test_lambda<br>
-                &#160;&#160;var = lambda {return "return from lambda"}<br>
-                &#160;&#160;var.call<br>
-                &#160;&#160;return "return from method"<br>
-                end<br>
-                puts test_lambda<br>
-                #=> "return from method"
-                <br><br>
-                def test_proc<br>
-                &#160;&#160;var = Proc.new {"return from proc"}<br>
-                &#160;&#160;x = var.call<br>
-                &#160;&#160;puts x<br>
-                &#160;&#160;"return from method"<br>
-                end<br>
-                puts test_proc<br>
-                #=> "return from proc"<br>
-                # "return from method"
-              </strong>
-              <br><br>
-              Note: The previous fact about procs only seems to be true if the proc is
-              created within the method that calls it as an error is called in other cases.
-              This is not true for lambdas however.
-              <br><br>
-              <strong>
-                var = Proc.new {return "return from proc"}<br>
-                def test_proc(&block)<br>
-                &#160;&#160;block.call<br>
-                &#160;&#160;return "return from method"<br>
-                end<br>
-                puts test_proc(&var)<br>
-                #=> error: unexpected return
-                <br><br>
-                var = lambda {return "return from lambda"}<br>
-                def test_proc(&block)<br>
-                &#160;&#160;block.call<br>
-                &#160;&#160;return "return from method"<br>
-                end<br>
-                puts test_proc(&var)<br>
-                #=> "return from method"
-              </strong>
-              <br><br>
-              (Sources:
-              <br>
-              <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-L3ZCI/1/5?curriculum_id=5059f8619189a5000201fbcb">
-                codecademy: Blocks, Procs, and Lambdas
-              </a>
-              )
-            </p>
-          </div>
-        </div>
-
-      <div class="divider"></div>
-
-      <div class="section">
-
-        <span id="method-response" class="title-anchor"></span>
-        <h2 class="section-header">Method Response</h2>
-
-        <div class="section-content">
-          <p class="section-text-normal">
-            <strong>
-              puts [1,2,3].respond_to?(:push)<br>
-              #=> true
-              <br><br>
-              puts "hello".respond_to?(:length)<br>
-              #=> true
-              <br><br>
-              puts "hello".respond_to?(:each)<br>
-              #=> false
-              <br><br>
-              puts ["cat","dog"].respond_to?(:times)
-              #=> false
-              <br><br>
-            </strong>
-            The respond_to? method returns true if the object that calls it is able to run the method
-            given as a parameter.
+      <div class="section-content">
+        <p class="section-text-normal">
+          The comparable module can be used add comparison operators to your
+          code.
+          <br><br>
+          <strong>
+            class Vehicle<br>
+            &#160;&#160;include Comparable
             <br><br>
-            (Sources:
-            <br>
-            <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-L3ZCI/1/5?curriculum_id=5059f8619189a5000201fbcb">
-              codecademy: The Zen of Ruby
-            </a>
-            )
-          </p>
-        </div>
-
+            &#160;&#160;attr_reader :wheels
+            <br><br>
+            &#160;&#160;def initialize(wheels)<br>
+            &#160;&#160;&#160;&#160;@wheels = wheels<br>
+            &#160;&#160;end
+            <br><br>
+            &#160;&#160;def <=>(to_compare)<br>
+            &#160;&#160;&#160;&#160;@wheels <=> to_compare.wheels<br>
+            &#160;&#160;end
+            <br><br>
+            end
+            <br><br>
+            bike = Vehicle.new(2)<br>
+            car = Vehicle.new(4)<br>
+            puts bike < car<br>
+            puts car > bike<br>
+            puts bike == car<br>
+            #>= true<br>
+            # true<br>
+            # false
+          </strong>
+          <br><br>
+          (Sources:<br>
+          Book: Beginning Ruby: From Novice to Professional)
+        </p>
       </div>
-
-      <div class="divider"></div>
-
-      <div class="section">
-
-        <span id="native-sort" class="title-anchor"></span>
-        <h2 class="section-header">Native Sort</h2>
-
-        <div class="section-content">
-          <p class="section-text-normal">
-            When called the sort method will order values from low to high.
-            <br><br>
-            <strong>
-              x = [2,5,3,1,6,7,4]<br>
-              y = x.sort<br>
-              p y<br>
-              #=> [1,2,3,4,5,6,7]
-              <br><br>
-              x = [2,5,3,1,6,7,4]<br>
-              x.sort!<br>
-              p x<br>
-              #=> [1,2,3,4,5,6,7]
-              <br><br>
-              x = ["x","c","m"]<br>
-              x.sort!<br>
-              p x<br>
-              #=> ["c","m","x"]
-              <br><br>
-              x = ["cc","cb","caa","ca"]<br>
-              x.sort!<br>
-              p x<br>
-              #=> ["ca","caa","cb","cc"]
-            </strong>
-            <br><br>
-            By providing the sort method with a block it is possible to control the sorted order
-            and what details about the variables are sorted.
-            <br><br>
-            <strong>
-              x = [2,5,3,1,6,7,4]<br>
-              x.sort! { |left, right| right &#60;=&#62; left }<br>
-              p x<br>
-              #=> [7,6,5,4,3,2,1]
-              <br><br>
-              x = ["giraffe", "cat", "mouse"]<br>
-              x.sort! { |left, right| left.length &#60;=&#62; right.length }<br>
-              p x<br>
-              #=> ["cat", "mouse", "giraffe"]
-            </strong>
-            <br><br>
-            The sort algorithm implemented by ruby is a quicksort and has been shown to be fast
-            when compared to other sorting algorithms. It is a highly optimized piece of code and should be
-            used.
-            <br><br>
-            (Sources:
-            <br>
-            <a href="https://www.dotnetperls.com/sort-ruby">
-              dotnetperls: sort
-            </a>
-            <br>
-            <a href="https://www.igvita.com/2009/03/26/ruby-algorithms-sorting-trie-heaps/">
-              Ruby Algorithms: Sorting, Trie & Heaps
-            </a>
-            )
-          </p>
-        </div>
-
-      </div>
-
-      <div class="divider"></div>
-
-        <div class="section">
-
-          <span id="variable-arguments-splat" class="title-anchor"></span>
-          <h2 class="section-header">Variable Arguments: Splat</h2>
-
-          <div class="section-content">
-            <p class="section-text-normal">
-              Variable arguments (or splat arguments as they are known in ruby) allow methods to accept any number
-              (zero - max array length) of objects as parameters. The variables will be grouped into an array to be
-              used by the method.
-              <br><br>
-              <strong>
-                def lots_of_params(*splat)<br>
-                &#160;&#160;splat.each { |var| puts "#{var}" }<br>
-                end
-              </strong>
-              <br><br>
-              Other parameters can be included along side the splat, though multiple splat arguments cannot be
-              used.
-              <br><br>
-              <strong>
-                def lots_of_params(word, *splat)<br>
-                &#160;&#160;splat.each { |var| puts "#{word} #{var}" }<br>
-                end
-                <br><br>
-                def lots_of_params(word, *splat, word2)<br>
-                &#160;&#160;splat.each { |var| puts "#{word} #{var} #{word2}" }<br>
-                end
-              </strong>
-              <br><br>
-              (Sources:
-              <br>
-              <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-ET4bU/1/2?curriculum_id=5059f8619189a5000201fbcb">
-                codecademy: Methods, Blocks, /& Sorting
-              </a>
-              )
-            </p>
-          </div>
-
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="section">
-
-          <span id="symbols" class="title-anchor"></span>
-          <h2 class="section-header">Symbols</h2>
-
-          <div class="section-content">
-            <p class="section-text-normal">
-              Symbols are abstract references represented by a short string that follows a colon.
-              They act as constants and can be referenced using variables.
-              <br><br>
-              <strong>
-                :cat :dog :mouse :bear
-                <br><br>
-                x = :cat
-              </strong>
-              <br><br>
-              Strings can be converted into symbols while a program is running by calling the method
-              to_sym or intern on any string.
-              <br><br>
-              <strong>
-                "cat".to_sym<br>
-                "cat".intern
-              </strong>
-              <br><br>
-              Symbols can be useful way to save time and memory space. Using symbols within
-              a loop rather than a string literal stops the creation of multiple unneeded strings and when
-              comparisons are been made symbols takes less time than strings.
-              <br><br>
-              However symbols are never garbage collected and so the memory is never released. Due to this
-              symbols should never be created if they are to be used infrequently.
-              <br><br>
-              (Sources:
-              <br>
-              Book: Beginning Ruby: From Novice to Professional
-              <br>
-                <a href="http://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/">
-                  The Ruby Symbol is a Memory Leak
-                </a>
-                <br>
-                <a href="http://marcricblog.blogspot.co.uk/2010/02/ruby-symbols-ultimate-guide.html">
-                  Ruby Symbols Ultimate Guide
-                </a>
-                <br>
-                <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-Qn7Qw/1/4?curriculum_id=5059f8619189a5000201fbcb">
-                  Codecademy: Hashes and Symbols
-                </a>
-              )
-            </p>
-          </div>
-
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="section">
-
-          <span id="custom-code-blocks" class="title-anchor"></span>
-          <h2 class="section-header">Custom Methods That Use Code blocks</h2>
-
-          <div class="section-content">
-            <p class="section-text-normal">
-              When making a method it is possible to instruct the method to accept and make
-              use of code blocks by including one as a parameter. The parameter that signifies
-              the code block must be the last parameter entered and start with a & symbol.<br>
-              (Note: All occurrences of { } and "do end" are interchangeable. Also &code_block can
-              be replaced by any legal name eg. &bacon)
-              <br><br>
-              <strong>
-                def my_method(&code_block)<br>
-                &#160;&#160; [1,2,3,4,5].each{|num| code_block.call(num)}<br>
-                end
-                <br><br>
-                my_method() {|val| print "#{val} "}
-                <br><br>
-                #=> 1 2 3 4 5
-                <br><br>
-                def my_method(array, &code_block)<br>
-                &#160;&#160; array.each do |num|<br>
-                &#160;&#160;&#160;&#160; code_block.call(num)<br>
-                &#160;&#160;end<br>
-                end
-                <br><br>
-                my_method([1,2,3,4,5]) do |val|<br>
-                &#160;&#160;print "#{val} "<br>
-                end
-                <br><br>
-                #=> 1 2 3 4 5
-              </strong>
-              <br><br>
-              The yield key term can be used in place of &#38code_block which and does not require
-              a given parameter.
-              <br><br>
-              <strong>
-                def my_method(array)<br>
-                &#160;&#160; array.each do |num|<br>
-                &#160;&#160;&#160;&#160; yield(num)<br>
-                &#160;&#160;end<br>
-                end
-                <br><br>
-                my_method([1,2,3,4,5]) do |val|<br>
-                &#160;&#160;print "#{val} "<br>
-                end
-                <br><br>
-                #=> 1 2 3 4 5
-              </strong>
-              <br><br>
-              <a href="../examples/enumerable.rb">More examples of use of blocks in code</a>
-              <br><br>
-              (Sources:
-              <br>
-              Book: Beginning Ruby: From Novice to Professional<br>
-              <a href="https://www.codecademy.com/courses/ruby-beginner-en-L3ZCI/0/1?curriculum_id=5059f8619189a5000201fbcb">
-                codeacademy: Blocks, Procs, and Lambdas
-              </a>
-              )
-            </p>
-          </div>
-
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="section">
-
-          <span id="flow-control-summary" class="title-anchor"></span>
-          <h2 class="section-header">Flow-Control: summary</h2>
-
-          <div class="section-content">
-            <p class="section-text-normal">
-              For details on loops view <a href="#iterators">Loops & Iterators</a> and for
-              details on code blocks view <a href="#custom-code-blocks">Custom Methods That Use Code
-              blocks</a> and <a href="#custom-code-blocks">Procs & Lambdas</a>
-              <br><br>
-              Note: all parenthesis used in this sections are not required for
-              code to work, just personal preference.
-              <br><br>
-              <u>If, else and unless</u>
-              <br><br>
-              <strong>
-                if(true)<br>
-                &#160;&#160;run code if true<br>
-                else<br>
-                &#160;&#160;run code if false<br>
-                end<br>
-                <br>
-                unless(false)<br>
-                &#160;&#160;run code if false<br>
-                else<br>
-                &#160;&#160;run code if true<br>
-                end<br>
-                <br>
-                x = 5<br>
-                if(x &#62; 5)<br>
-                  &#160;&#160;run code if x is greater than 5<br>
-                elsif(x &#60; 5)<br>
-                  &#160;&#160;run code is x is less than 5<br>
-                else<br>
-                  &#160;&#160;run code for all other cases<br>
-                end
-                <br><br>
-                x = 5 if true<br>
-                x = 5 unless false
-              </strong>
-              <br><br>
-              <u>Ternary Operator</u>
-              <br><br>
-              <strong>
-                x = true ? "one" : "two"<br>
-                puts x<br>
-                #=> one
-                <br><br>
-                x = false ? "one" : "two"<br>
-                puts x<br>
-                #=> two
-              </strong>
-              <br><br>
-              <u>Case</u>
-              <br><br>
-              <strong>
-                x = 6<br>
-                case x<br>
-                &#160;&#160;when 2<br>
-                &#160;&#160;&#160;&#160;run code when x == 2<br>
-                &#160;&#160;when 4<br>
-                &#160;&#160;&#160;&#160;run code when x == 4<br>
-                &#160;&#160;when 6<br>
-                &#160;&#160;&#160;&#160;run code when x == 6<br>
-                &#160;&#160;else<br>
-                &#160;&#160;&#160;&#160;run code for all other cases<br>
-                end
-              </strong>
-              <br><br>
-              (Sources:
-              <br>
-              Book: Beginning Ruby: From Novice to Professional
-              <a href="https://www.tutorialspoint.com/ruby/ruby_loops.htm">
-                tutorialspoint
-              </a>
-              )
-            </p>
-          </div>
-
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="section">
-
-          <span id="hashes" class="title-anchor"></span>
-          <h2 class="section-header">Hashes</h2>
-
-          <div class="section-content">
-            <p class="section-text-normal">
-              Hashes are similar to array in that they hold multiple objects. The
-              difference is that each object is assigned a key rather than an ordered
-              position. Keys can be any object though strings and symbols are commonly used.
-              <br><br>
-              <strong>
-                x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
-                x = {:pet_1 => "cat", :pet_2  => "dog", :pet_3  => "mouse"}
-              </strong>
-              <br><br>
-              A new method of creating hashes with symbols as keys was added in Ruby 1.9, as shown below.
-              This only works for symbols.
-              <br><br>
-              <strong>
-                x = {pet_1: "cat", pet_2: "dog", pet_3: "mouse"}
-              </strong>
-              <br><br>
-              New objects can be added by providing a new key.
-              <br><br>
-              <strong>
-                x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse",}<br>
-                x["pet 4"] = "lion"
-              </strong>
-              <br><br>
-              Each object is accessed and edited using it's own key.
-              <br><br>
-              <strong>
-                x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
-                puts x["pet 1"]<br>
-                x["pet 1"] = "tiger"<br>
-                puts x["pet 1"]<br>
-                #=> cat<br>
-                # tiger
-              </strong>
-              <br><br>
-              Attempting to access a key that does not exist will return nil. Unless when the
-              hash was initialised you provided a parameter. In this case the given parameter would
-              be returned.
-              <br><br>
-              <strong>
-                x = {}<br>
-                p x[:bacon]<br>
-                #=> nil
-                <br><br>
-                x = Hash.new("no value")<br>
-                puts x[:bacon]<br>
-                #=> no value
-                <br><br>
-                x = Hash.new(0)<br>
-                puts x[:bacon]<br>
-                #=> 0
-              </strong>
-              <br><br>
-              A Hashes length is found by using the methods length or size.
-              <br><br>
-              <strong>
-                x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
-                puts "#{x.length} #{x.size}"<br>
-                #=> 3  3
-              </strong>
-              <br><br>
-              Hashes are iterated over using the each method. As of ruby 1.9 the iteration
-              order will match the order in which values were added to the hash.
-              <br><br>
-              <strong>
-                x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
-                x.each {|key, value| puts "#{key}: #{value}"}
-              </strong>
-              <br><br>
-              Objects stored in hashes can be deleted with the method delete.
-              <br><br>
-              <strong>
-                x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
-                x.delete("pet 1")
-              </strong>
-              <br><br>
-              delete_if also deletes objects but only if the provided block equates to true.
-              <br><br>
-              <strong>
-                x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
-                x.delete_if {|key, value| value == "cat"}
-              </strong>
-              <br><br>
-              Hashes can be iterated over using the each_key and each_value methods.
-              <br><br>
-              <strong>
-                x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}
-                <br><br>
-                x.each_key { |key| print "#{key} "}<br>
-                #>= pet 1 pet 2 pet 3
-                <br><br>
-                x.each_value { |value| print "#{value} "}<br>
-                #>= cat dog mouse
-              </strong>
-              <br><br>
-              (Sources:
-              <br>
-              Book: Beginning Ruby: From Novice to Professional<br>
-              <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-Qn7Qw/2/4?curriculum_id=5059f8619189a5000201fbcb">
-                codeacademy: Hashes and Symbols
-              </a>
-              )
-            </p>
-          </div>
-
-        <div class="divider"></div>
-
-        <div class="section">
-
-          <span id="arrays" class="title-anchor"></span>
-          <h2 class="section-header">Arrays</h2>
-
-          <div class="section-content">
-            <p class="section-text-normal">
-              Arrays can be instantiated either empty or with values. Each variable in
-              an array can hold any type of object.
-              <br><br>
-              <strong>
-                x = []<br>
-                y = [1,2,3,4,5]<br>
-                z = [1, "two", 3, "four", 5]
-              </strong>
-              <br><br>
-              Array variables can be accessed in a number of ways as shown below.
-              <br><br>
-              <strong>
-                y = [1,2,3,4,5]<br>
-                puts y[0]<br>
-                puts y[4]<br>
-                puts y[-1]<br>
-                puts y[-5]<br>
-                #=> 1<br>
-                # 5<br>
-                # 5<br>
-                # 1
-              </strong>
-              <br><br>
-              Attempting to access an array element that does not exist will not throw a
-              warning / exception but will only return nil.
-              <br><br>
-              <strong>
-                y = [1,2,3,4,5]<br>
-                p y[5]<br>
-                #=> nil
-              </strong>
-              <br><br>
-              New values can be pushed onto the end of the array in two ways.<br>
-              This will increase the array length by 1.
-              <br><br>
-              <strong>
-                x = []<br>
-                x &#60;&#60; "value"<br>
-                x.push("value")<br>
-                p x<br>
-                #=> ["value", "value"]
-              </strong>
-              <br><br>
-              The method pop is used to remove the last element.<br>
-              This will reduce the array length by 1. The removed value will be returned.
-              <br><br>
-              <strong>
-                y = [1,2,3,4,5]<br>
-                puts y.pop<br>
-                p y<br>
-                #=> 5<br>
-                # [1,2,3,4]
-              </strong>
-              <br><br>
-              The method empty? will return a boolean value. True if the array holds no
-              values.<br>
-              The methods length and size will return the number of values held by the array.
-              <br><br>
-              <strong>
-                y = []<br>
-                puts y.empty?<br>
-                puts "#{y.length} #{y.size}"<br>
-                #=> true<br>
-                # 0 0
-              </strong>
-              <br><br>
-              The method include? returns true if the given parameter is held within the array.
-              <br><br>
-              <strong>
-                y = [1,2,3]<br>
-                puts y.include?(2)<br>
-                #=> true
-              <br><br>
-                y = ["cat", "dog", "mouse"]<br>
-                puts y.include?("dog")<br>
-                #=> true
-              </strong>
-              <br><br>
-              The method join combines all the values of the array into a single string.
-              The characters you wish to be between each variable can be given as a parameter.
-              <br><br>
-              <strong>
-                x = [1,2,3,4,5]<br>
-                y = x.join<br>
-                z = x.join(", ")<br>
-                puts y<br>
-                puts z<br>
-                #=> "1234"<br>
-                # "1, 2, 3, 4"
-              </strong>
-              <br><br>
-              Arrays can added together, which simply connects the two together.
-              <br><br>
-              <strong>
-                x = ["a","b","c"]<br>
-                y = [1,2,3,4,5]<br>
-                p x + y<br>
-                #=> ["a","b","c",1,2,3,4,5]
-              </strong>
-              <br><br>
-              Arrays can also be subtracted. The result of this is the removal of any values from the first array
-              that occur in both array.
-              <br><br>
-              <strong>
-                x = [1,2,3,4,5]<br>
-                y = [3,4,5]
-                <br><br>
-                p x - y<br>
-                #=> [1,2]
-                <br><br>
-                p y - x<br>
-                #=> []
-              </strong>
-              <br><br>
-              The methods first and last can be used for easy access to the start and end of arrays.
-              The methods accept one parameter that signifies how many variable to return.
-              <br><br>
-              <strong>
-                x = [1,2,3,4,5]<br>
-                p x.first<br>
-                p x.first(2)<br>
-                p x.last<br>
-                p x.last(2)<br>
-                #=> [1]<br>
-                # [1,2]<br>
-                # [5]<br>
-                # [4,5]
-              </strong>
-              <br><br>
-              (Sources:
-              <br>
-              Book: Beginning Ruby: From Novice to Professional
-              )
-            </p>
-          </div>
-
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="section">
-
-          <span id="regexr-in-ruby" class="title-anchor"></span>
-          <h2 class="section-header">RegExr in Ruby</h2>
-
-          <div class="section-content">
-            <p class="section-text-normal">
-              There are a few methods that can be used by strings with regexr as parameters. Some
-              of these include:
-              <br><br>
-              <strong>
-                sub<br>
-                gsub<br>
-                scan
-              </strong>
-              <br><br>
-              (For information on the first two methods view the section <a href="#substitutions-in-strings">Substitutions in Strings</a>)<br>
-              (For more detail into regular expressions see <a href="regexr.html">Helpful regular expressions</a>)
-              <br><br>
-              Forward slashes are used at the start and end of a regular expression and can be given as parameters in all three methods shown.
-              <br><br>
-              The scan method takes one parameter and iterates through the given string, looping for each match it finds.
-              <br><br>
-              <strong>
-                "this is a test".scan(/\w\w/) {|letter| print "#{letter} "}<br>
-                #=>th is is te st
-              </strong>
-              <br><br>
-              (Sources:
-              <br>
-              Book: Beginning Ruby: From Novice to Professional
-              )
-            </p>
-          </div>
-
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="section">
-
-          <span id="substitutions-in-strings" class="title-anchor"></span>
-          <h2 id="substitutions-in-strings" class="section-header">Substitutions in Strings</h2>
-
-          <div class="section-content">
-            <p class="section-text-normal">
-              <strong>
-                puts "bacon and eggs".sub("bacon", "sausage")<br>
-                #=> sausage and eggs
-                <br><br>
-                puts "this is a test".gsub("t", "")<br>
-                #=> his is a es
-              </strong>
-              <br><br>
-              sub finds the first string which matches its first parameters and substitutes it for
-              the seconds parameter.<br>
-              gsub finds all instances of the first parameter and subs all of them for the seconds
-              parameter
-              <br><br>
-              The first parameter of these methods can be regular expressions
-              <br><br>
-              (Sources:
-              <br>
-              Book: Beginning Ruby: From Novice to Professional
-              )
-            </p>
-
-          </div>
-
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="section">
-
-          <span id="interpolation" class="title-anchor"></span>
-          <h2 class="section-header">Interpolation</h2>
-
-          <div class="section-content">
-            <p class="section-text-normal">
-              <strong>
-                x = "interpolation"<br>
-                puts "This is #{x}"<br>
-                #=> This is interpolation
-                <br><br>
-                i = 5<br>
-                j = 10<br>
-                puts "#{i} + #{j} = #{i + j}"<br>
-                #=> 5 + 10 = 15
-              </strong>
-              <br><br>
-              Interpolations is the insertion of the result from an expression directly into a string literal.
-              Double quotes ( "" instead of '' ) must be used in order for interpolation to work correctly
-              <br><br>
-              (Sources:
-              <br>
-              Book: Beginning Ruby: From Novice to Professional
-              )
-            </p>
-          </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="section">
-
-          <span id="string-numerical-values" class="title-anchor"></span>
-          <h2 class="section-header">String numerical values</h2>
-
-          <div class="section-content">
-            <p class="section-text-normal">
-              <strong>
-                "x".ord()<br>
-                120.chr()
-              </strong>
-              <br><br>
-              The method ord will return the ASCII value of the given sting. If the string has multiple
-              characters the returned value will be of the first character in the string.
-              <br><br>
-              The method chr will return the character which is represented by the given number.
-              This method can also accept a parameter so that different encodings might be used.
-              <br><br>
-              <strong>
-                120.char(Encoding::UTF_8)<br>
-                Encoding.name_list<br>
-                #=> ["ASCII-8BIT", "UTF-8", "US-ASCII", "UTF-16BE", "UTF-16LE", "UTF-32BE", "UTF-32LE", "UTF-16", "UTF-32", ...]
-              </strong>
-              <br><br>
-              (Sources:
-              <br>
-              Book: Beginning Ruby: From Novice to Professional<br>
-              <a href="http://stackoverflow.com/questions/37820888/trying-to-understand-the-ruby-chr-and-ord-methods">
-                stackoverflow: Trying to understand the Ruby .chr and .ord methods)
-              </a>
-              )
-            </p>
-          </div>
-
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="section">
-
-          <span id="multi-line-strings" class="title-anchor"></span>
-          <h2 class="section-header">Multi-line Strings</h2>
-
-          <div class="section-content">
-            <p class="section-text-normal">
-              <strong>
-                puts "This is text \nthat outputs on \nmultiple lines"
-              </strong>
-              <br><br>
-              Using the new line character allows the creation of mulit line strings
-              <br><br>
-              <strong>
-                puts %q{This is text<br>
-                  that outputs on<br>
-                  multiple lines}
-              </strong>
-              <br><br>
-              This example multiple lines enables the creation of multi-line strings which do not require
-              additional characters and simply mimics the layout as it is written in the code.
-              The curly brackets may be replaced with any two delimiters (eg. ( ) &#60; &#62; ! !).
-              <br><br>
-              <strong>
-                puts &#60;&#60;MY_STRING<br>
-                  This is text<br>
-                  that outputs on<br>
-                  multiple lines<br>
-                  MY_STRING
-              </strong>
-              <br><br>
-              Using characters as a delimiter is possible as shown in this example. This is called a here document.
-              (Note: had issues with indentation using this method. It seems as if it does not work unless
-              no indentation is used on the end delimiter. Other methods produce more readable code)
-              <br><br>
-              (Sources:
-              <br>
-              Book: Beginning Ruby: From Novice to Professional
-              )
-            </p>
-          </div>
-
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="section">
-
-          <span id="constants" class="title-anchor"></span>
-          <h2 class="section-header">Constants / Final Variables</h2>
-
-          <div class="section-content">
-            <p class="section-text-normal">
-              To define a constant in Ruby create the variable with a capital as the first character
-              <br><br>
-              <strong>Dogs = 50</strong>
-              <br><br>
-              Any attempts to change the variable Dogs will result in a warning
-              <br><br>
-              (Sources:
-              <br>
-              Book: Beginning Ruby: From Novice to Professional
-              )
-            </p>
-          </div>
-
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="section">
-
-          <span id="iterators" class="title-anchor"></span>
-          <h2  class="section-header">Loops and Iterators</h2>
-
-          <div class="section-content">
-
-
-              <p class="section-text-normal">
-                A number of the methods here belong to the Enumerable module. A full list of the
-                iterative methods offered by this module can be found here.
-                <a href = "../examples/enumerable.pdf">pdf file</a>
-                <a href = "http://ruby-doc.org/core-2.4.0/Enumerable.html">web site</a>
-              </p>
-
-            <h3><u>loop</u></h3>
-            <p class="section-text-normal">
-              Loop is the a basic loop and ends when a keyword used to stop
-               loops is called (break / break if).
-              true.
-              <br><br>
-              <strong>
-                x = 0<br>
-                loop {<br>
-                &#160;&#160;x += 1<br>
-                &#160;&#160;break<br>
-              }
-              <br><br>
-                x = 0<br>
-                loop {<br>
-                &#160;&#160;x += 1<br>
-                &#160;&#160;break if x >= 5<br>
-              }
-              </strong>
-            </p>
-
-            <h3><u>next, redo &#38; break if</u></h3>
-            <p class="section-text-normal">
-              The next key word can be used in loops and iterators to skip the
-              remaining code and start the next loop / iteration.<br>
-              The redo keyword is used in the same way as next but rather than
-              continuing onto the next loop / iteration it restarts the previous.<br>
-              The break if key word can be used to set a condition, which if met
-              ends to loop / iteration.
-              <br><br>
-              <strong>
-                x = 0<br>
-                loop {<br>
-                &#160;&#160;x += 1<br>
-                &#160;&#160;if(x == 2)<br>
-                &#160;&#160;&#160;&#160;next<br>
-                &#160;&#160;end<br>
-                &#160;&#160;if(x == 4)<br>
-                &#160;&#160;&#160;&#160;redo<br>
-                &#160;&#160;end<br>
-                &#160;&#160;print "#{x} "<br>
-                &#160;&#160;break if x &#62= 5<br>
-              }<br>
-              #>= 1 3 5
-              </strong>
-            </p>
-
-            <h3><u>while / until loops</u></h3>
-            <p class="section-text-normal">
-              The while loop runs while its given condition is true. The until loop runs until the
-              given condition is true.
-              <br><br>
-              <strong>
-                x = 0<br>
-                while(x &#60; 100)<br>
-                &#160;&#160;#repeat code while x is less than 100<br>
-                &#160;&#160;x += 1<br>
-                end
-                <br><br>
-                x = 0<br>
-                until(x &#62; 100)<br>
-                &#160;&#160;#repeat code until x is greater than 100<br>
-                &#160;&#160;x += 1<br>
-                end
-              </strong>
-            </p>
-
-            <h3><u>for loop</u></h3>
-            <p class="section-text-normal">
-              The for loop runs the given number of times inclusively.
-              <br><br>
-              <strong>
-                for i in 0..100<br>
-                &#160;&#160;puts "#{i}: hello"<br>
-                end
-              </strong>
-            </p>
-
-            <h3><u>times</u></h3>
-            <p class="section-text-normal">
-              The method times runs the code in the provided block the specified number of times.
-              The example will iterate through numbers 0 - 4 and run the code in the given block.
-              <br><br>
-              <strong>
-              5.times do |number| puts "#{number}: Hello\n" end<br>
-              5.times { |number| puts "#{number}: Hello" }
-              </strong>
-              <br><br>
-              This method is used by objects holding integer values
-            </p>
-
-            <h3><u>upto / downto</u></h3>
-            <p class="section-text-normal">
-              The methods upto and downto iterate through the given numbers inclusively and run the code
-              in the given block on each loop.
-              <br><br>
-              <strong>
-                1.upto(5) do |number| puts "#{number}: Hello" end<br>
-                1.upto(5) { |number| puts "#{number}: Hello" } <br>
-                10.downto(5) do |number| puts "#{number}: Hello" end<br>
-                10.downto(5) { |number| puts "#{number}: Hello" }
-              </strong>
-              <br><br>
-              This method is used by objects holding integer values
-            </p>
-
-            <h3><u>step</u></h3>
-            <p class="section-text-normal">
-              The method step will iterate through the given numbers inclusively, in steps equals to the second parameter, and run the code
-              in the given block on each loop. In the third example the final number will be 48 as the next value is greater than 50.
-              <br><br>
-              <strong>
-                0.step(50, 5) {|number| puts "#{number}: Hello" }<br>
-                0.step(50, 0.5) { |number| puts "#{number}: Hello" }<br>
-                3.step(50, 5) { |number| puts "#{number}: Hello" }
-              </strong>
-              <br><br>
-              This method is used by objects holding integer or float values.
-            </p>
-
-            <h3><u>each</u></h3>
-            <p class="section-text-normal">
-              The method each will loop through each object held in the given collection
-              <br><br>
-              <strong>
-                (1..5).each do |number| puts "#{number}: Hello" end<br>
-                (1..5).each { |number| puts "#{number}: Hello" }
-              </strong>
-              <br><br>
-              Method is used by collections (array, hash, set, range).
-            </p>
-
-            <h3><u>each_with_index</u></h3>
-            <p class="section-text-normal">
-              The method each_with_index is the equivalent of each but provides the index as well. The index
-              must be the second block variable.
-              <br><br>
-              <strong>
-                (1..5).each_with_index { |number, index| puts "#{index}: #{number}" }
-              </strong>
-              <br><br>
-              Method is used by collections (array, hash, set, range).
-            </p>
-
-            <h3><u>collect / map</u></h3>
-            <p class="section-text-normal">
-              The collect method returns a new array containing all the same variables but after
-              they have been altered by the given code block.<br>
-              The method map is used in the same way as collect and produces
-              the same results.
-              <br><br>
-              <strong>
-              p [1,2,3,4].collect {|number| number + 1 }<br>
-              #=> [2,3,4,5]
-              <br><br>
-              p ["cat","mouse","dog"].collect {|string| string * 2 }<br>
-              #=> ["catcat","mousemouse","dogdog"]
-              </strong>
-              <br><br>
-              These methods are used by collections (array, hash, set, range).
-            </p>
-
-            <h3><u>select</u></h3>
-            <p class="section-text-normal">
-              The select method allows you to set a condition and returns an array containing only values that
-              meet that criteria. If the block contains multiple lines of code the final line will act as the
-              condition.
-              <br><br>
-              <strong>
-                p [1,2,3,4,5,6,7,8].select { |num| num % 2 == 0}<br>
-                #=> [2,4,6,8]
-                <br><br>
-                p [1,2,3,4,5,6,7,8].select { |num| <br>
-                  &#160;&#160;num % 2 == 0<br>
-                  &#160;&#160;num % 3 == 0<br>
-                }<br>
-                #=> [3,6]
-              </strong>
-            </p>
-
-            <p class="section-text-normal">
-              (Sources:
-              <br>
-              Book: Beginning Ruby: From Novice to Professional<br>
-              <a href="http://www.eriktrautman.com/posts/ruby-explained-map-select-and-other-enumerable-methods">
-                Ruby Explained: Map, Select, and Other Enumerable Methods
-              </a>
-              )
-            </p>
-          </div>
-
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="section">
-
-          <span id="interesting-operators" class="title-anchor"></span>
-          <h2 class="section-header">Interesting Operators</h2>
-
-          <div class="section-content">
-            <p class="section-text-normal">
-              <strong>x &#60;=&#62; y</strong>: Returns 0 if x and y are equal, returns -1 if y
-              is greater and 1 if x is greater.
-              <br><br>
-              <strong>x ||= "cats"</strong>: Assigns hnus an object to the variable only if the variable currently
-              holds a nil value.
-              <br><br>
-              (Sources:
-              <br>
-              Book: Beginning Ruby: From Novice to Professional<br>
-              <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-1o8Mb/1/1?curriculum_id=5059f8619189a5000201fbcb">
-                The Zen of Ruby
-              </a>
-              )
-            </p>
-          </div>
-
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="section">
-
-          <span id="output-to-console" class="title-anchor"></span>
-          <h2 class="section-header">Output to Console </h2>
-
-          <div class="section-content">
-            <p class="section-text-normal">
-              <strong>print</strong>: print a string to the console.
-              <br><br>
-              <strong>puts</strong>: print a string to the console with a new line after.
-              <br><br>
-              <strong>p</strong>: (Same as calling "string".inspect) Prints to screen in the same way as puts and returns the given value
-              but values will be printed as they are in code.
-              <strong>
-                <br><br>
-                p "hello"<br>
-                #=> "hello"
-                <br><br>
-                p [1,2,3]<br>
-                #=> [1,2,3]
-                <br><br>
-                p ["a", "b", "c"]<br>
-                #=> ["a", "b", "c"]
-              </strong>
-              <br><br>
-              (Sources:
-              <br>
-              Book: Beginning Ruby: From Novice to Professional
-              )
-            </p>
-          </div>
-
-        </div>
-
-        <div class="divider"></div>
 
     </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="structs" class="title-anchor"></div>
+      <h2 class="section-header">Structs: Quick Classes</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          Struct is a class that quickly creates very simple classes and
+          defines variables associated with that class. The struct will also
+          apply att_accessor to all variables defined.<br>
+          Note: variables associated with structs do not have to be constants.
+          <br><br>
+          <strong>
+            Person = Struct.new(:name, :age)<br>
+            lucy = Person.new("Lucy", 23)<br>
+            alan = Person.new("Alan", 37)
+            <br><br>
+            puts "#{lucy.name} - age #{lucy.age}"<br>
+            puts "#{alan.name} - age #{alan.age}"
+            <br><br>
+            lucy.name = "Lucy Smith"<br>
+            puts lucy.name
+            <br><br>
+            #=> Lucy - age 23<br>
+            # Alan - age 37<br>
+            # Lucy Smith
+          </strong>
+          <br><br>
+          Struct can also define methods if a code block is provided.
+          <br><br>
+          <strong>
+            Person = Struct.new(:name, :age) do<br>
+            &#160;&#160;def print_details<br>
+            &#160;&#160;&#160;&#160;puts "#{name}, #{age}"<br>
+            &#160;&#160;end<br>
+            end
+            <br><br>
+            lucy = Person.new("Lucy", 23)<br>
+            alan = Person.new("Alan", 37)
+            <br><br>
+            lucy.print_details<br>
+            alan.print_details
+            <br><br>
+            #=> Lucy - age 23<br>
+            # Alan - age 37
+          </strong>
+          <br><br>
+          When calling a constructor from a class made by a struct not all
+          variables have to be defined. The variables which are not given a
+          parameter on construction are set to nil and attr_accessor still
+          generates methods releated to them.
+          <br><br>
+          <strong>
+            Person = Struct.new(:name, :age)<br>
+            lucy = Person.new("Lucy")
+            <br><br>
+            puts "#{lucy.name} - age #{lucy.age}"
+            <br><br>
+            lucy.age = 23<br>
+            puts lucy.age
+            <br><br>
+            #=> Lucy - age<br>
+            # 23
+          </strong>
+          <br><br>
+          Classes created using structs can be superclasses, allowing thier
+          variables to be inherited by the subclass.
+          <br><br>
+          <strong>
+            Person = Struct.new(:name, :age)
+            <br><br>
+            class Alan < Person<br>
+            end
+            <br><br>
+            baby_alan = Alan.new("Alan", 0.1)<br>
+            puts "#{baby_alan.name} - age #{baby_alan.age}"
+            <br><br>
+            #=> Alan - age 0.1
+            <br><br>
+            Short method:<br>
+            class Alan < Struct.new(:name, :age)<br>
+            end
+          </strong>
+          <br><br>
+          As well as structs there are open structs. These work like structs
+          but variables can be added after initialization of the open struct.<br>
+          Note: Open stucts cannot act as superclasses.
+          <br><br>
+          <strong>
+            # Require must be called to access open structs<br>
+            require 'ostruct'
+            <br><br>
+            Person = OpenStruct.new<br>
+            Person.name = "Sandra"<br>
+            Person.age = "20"<br>
+            Person.height = "160 cm"
+            <br><br>
+            puts "#{Person.name}, #{Person.age}, #{Person.height}"<br>
+            #=> Sandra, 20, 160 cm
+          </strong>
+          <br><br>
+          (Sources:<br>
+          Book: Beginning Ruby: From Novice to Professional<br>
+          <a href="http://blog.steveklabnik.com/posts/2012-09-01-random-ruby-tricks--struct-new">
+          Random Ruby Tricks: Struct.new</a><br>
+          <a href="http://blog.logicalbricks.com/node/235">
+          Struct and OpenStruct in Ruby</a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="modules" class="title-anchor"></div>
+      <h2 class="section-header">Modules</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          Modules are collections of methods and constants. Methods can
+          either be instance methods or module methods. Module methods are
+          defined and called by naming the module and then the method
+          (module_name.method_name()). Instance methods are defined
+          using only the method name and called by the by an instance
+          of a class the related module is included in.
+          <br><br>
+          <strong>
+            module BasicMath
+            <br><br>
+            &#160;&#160;def BasicMath.add(val1, val2)<br>
+            &#160;&#160;&#160;&#160;return val1 + val2<br>
+            &#160;&#160;end
+            <br><br>
+            &#160;&#160;def subtract(other_val)<br>
+            &#160;&#160;&#160;&#160;return self - other_val<br>
+            &#160;&#160;end
+            <br><br>
+            end
+          </strong>
+          <br><br>
+          Using this module we can call the module method from the module...
+          <br><br>
+          <strong>
+            puts BasicMath.add(3,6)<br>
+            #=> 9
+          </strong>
+          <br><br>
+          or include the module in a class and use an instance of that class
+          to call the instance method (this is the mixin facility).
+          <br><br>
+          <strong>
+            class Fixnum<br>
+            &#160;&#160;include BasicMath<br>
+            end
+            <br><br>
+            puts 5.subtract(4)
+            #=> 1
+          </strong>
+          <br><br>
+          Another option is to use the extend key word in place of the include
+          key word. This gives the class access to the instance methods rather
+          than only instances of that class having access.
+          <br><br>
+          <strong>
+            module PrintMod
+            <br><br>
+            &#160;&#160;def print_hello<br>
+            &#160;&#160;&#160;&#160;puts "hello"<br>
+            &#160;&#160;end
+            <br><br>
+            end
+            <br><br>
+            class IncludeClass<br>
+            &#160;&#160;include PrintMod<br>
+            end
+            <br><br>
+            class ExtendClass<br>
+            &#160;&#160;extend PrintMod<br>
+            end
+            <br><br>
+            IncludeClass.new.print_hello<br>
+            ExtendClass.print_hello
+            <br><br>
+            #=> hello<br>
+            # hello
+          </strong>
+          <br><br>
+          Extend may also be used on already initialised objects to provide
+          that instance alone access to the modules methods. (using the
+          keyword include in the place of extends in this example would
+          produced an undefined method error)
+          <br><br>
+          <strong>
+            module PrintMod
+            <br><br>
+            &#160;&#160;def print_hello<br>
+            &#160;&#160;&#160;&#160;puts "hello"<br>
+            &#160;&#160;end
+            <br><br>
+            end
+            <br><br>
+            class PostExtendClass; end
+            <br><br>
+            test = PostExtendClass.new<br>
+            test.extend(PrintMod)<br>
+            test.print_hello
+            <br><br>
+            #=> hello
+            <br><br>
+          </strong>
+          Using module methods allows for the definition of methods with the
+          same name (using multiple modules) without causing issues. This is
+          known as namespacing.
+          <br><br>
+          <strong>
+            module Mod1
+            <br><br>
+            &#160;&#160;def Mod1.name<br>
+            &#160;&#160;&#160;&#160;return "mod1 here"<br>
+            &#160;&#160;end
+            <br><br>
+            end
+            <br><br>
+            module Mod2
+            <br><br>
+            &#160;&#160;def Mod2.name<br>
+            &#160;&#160;&#160;&#160;return "mod2 here"<br>
+            &#160;&#160;end
+            <br><br>
+            end
+            <br><br>
+            puts Mod1.name<br>
+            puts Mod2.name<br>
+            #=> mod1 here<br>
+            # mod2 here
+          </strong>
+          <br><br>
+          (Sources:
+          <br>
+          <a href="http://ruby-doc.com/docs/ProgrammingRuby/html/tut_modules.html">
+            ruby-doc: Modules
+          </a>
+          <br>
+          <a href="http://stackoverflow.com/questions/156362/what-is-the-difference-between-include-and-extend-in-ruby">
+            stackoverflow: What is the difference between include and extend in Ruby?
+          </a>
+          )
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="inheritance" class="title-anchor"></div>
+      <h2 class="section-header">Inheritance</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          Inheritance is an object oriented idea in which classes can
+          inherit variables and methods from other classes. This aids
+          programmers to maintain DRY code. Classes that
+          inherit from others should follow the is-a principle.
+          <br><br>
+          Dog is-a Mammal
+          <br><br>
+          Class Dog could inherit from class Mammal as a dog is a mammal
+          but a mammal is not a dog and so could not inherit from dog.
+          <br><br>
+          In this case the Mammal class is a super class (or parent)
+          of the Dog class and the Dog class is a subclass (or child) of
+          the Mammal Class.
+            <br><br>
+          <strong>
+            class Mammal
+            <br><br>
+            &#160;&#160;attr_reader :name
+            <br><br>
+            &#160;&#160;def initialize(name)<br>
+            &#160;&#160;&#160;&#160;@name = name<br>
+            &#160;&#160;end
+            <br><br>
+            &#160;&#160;def breath<br>
+            &#160;&#160;&#160;&#160;return "inhale"<br>
+            &#160;&#160;end<br>
+            end
+            <br><br>
+            class Dog < Mammal<br>
+              &#160;&#160;def bark<br>
+              &#160;&#160;&#160;&#160;return "woof"<br>
+              &#160;&#160;end<br>
+            end
+            <br><br>
+            x = Dog.new("Spike")<br>
+            puts x.name<br>
+            puts x.breath<br>
+            puts x.bark<br>
+            #=> Spike<br>
+            # inhale<br>
+            # woof
+          </strong>
+          <br><br>
+          The previous example shows the syntax of inheritance and the use
+          of methods defined by the superclass. The methods of the parent
+          class are always inherited by the child class but the child class
+          is able to override these methods if different functionality is
+          desired. This is done by defining a method in the child class
+          using the same method name as is used in the super class.
+          <br><br>
+          <strong>
+            class Mammal
+            <br><br>
+            &#160;&#160;attr_reader :name
+            <br><br>
+            &#160;&#160;def initialize(name)<br>
+            &#160;&#160;&#160;&#160;@name = name<br>
+            &#160;&#160;end
+            <br><br>
+            &#160;&#160;def breath<br>
+            &#160;&#160;&#160;&#160;return "inhale"<br>
+            &#160;&#160;end<br>
+            end
+            <br><br>
+            class Dog < Mammal<br>
+            &#160;&#160;def bark<br>
+            &#160;&#160;&#160;&#160;return "woof"<br>
+            &#160;&#160;end<br>
+            end
+            <br><br>
+            class Chihuahua < Dog<br>
+            &#160;&#160;def bark<br>
+            &#160;&#160;&#160;&#160;return "yap yap"<br>
+            &#160;&#160;end<br>
+            end
+            <br><br>
+            x = Chihuahua.new("Spike")<br>
+            puts x.name<br>
+            puts x.breath<br>
+            puts x.bark<br>
+            #=> Spike<br>
+            # inhale<br>
+            # yap yap
+          </strong>
+          <br><br>
+          If a method has been overriden but the functionality from the super
+          classe is still required the key word super can be used
+          to call the method from the superclass.
+          <br><br>
+          <strong>
+            class Mammal
+            <br><br>
+            &#160;&#160;attr_reader :name
+            <br><br>
+            &#160;&#160;def initialize(name)<br>
+            &#160;&#160;&#160;&#160;@name = name<br>
+            &#160;&#160;end
+            <br><br>
+            &#160;&#160;def breath<br>
+            &#160;&#160;&#160;&#160;return "inhale"<br>
+            &#160;&#160;end<br>
+            end
+            <br><br>
+            class Dog < Mammal<br>
+              &#160;&#160;def bark<br>
+              &#160;&#160;&#160;&#160;return "woof"<br>
+              &#160;&#160;end<br>
+            end
+            <br><br>
+            class GreatDane < Dog<br>
+              &#160;&#160;def bark<br>
+              &#160;&#160;&#160;&#160;return "#{super.upcase}!!"<br>
+              &#160;&#160;end<br>
+            end
+            <br><br>
+            x = GreatDane.new("Spike")<br>
+            puts x.name<br>
+            puts x.breath<br>
+            puts x.bark<br>
+            #=> Spike<br>
+            # inhale<br>
+            # WOOF!!
+          </strong>
+          <br><br>
+          The method initialize can also be overriden and make use of the
+          super key word.
+          <br><br>
+          <strong>
+            class Mammal
+            <br><br>
+            &#160;&#160;attr_reader :name
+            <br><br>
+            &#160;&#160;def initialize(name)<br>
+            &#160;&#160;&#160;&#160;@name = name<br>
+            &#160;&#160;end
+            <br><br>
+            &#160;&#160;def breath<br>
+            &#160;&#160;&#160;&#160;return "inhale"<br>
+            &#160;&#160;end<br>
+            end
+            <br><br>
+            class Dog < Mammal
+            <br><br>
+            &#160;&#160;attr_reader :number_of_legs
+            <br><br>
+            &#160;&#160;def initialize(name)<br>
+            &#160;&#160;&#160;&#160;super(name)<br>
+            &#160;&#160;&#160;&#160;@number_of_legs = 4<br>
+            &#160;&#160;end
+            <br><br>
+              &#160;&#160;def bark<br>
+              &#160;&#160;&#160;&#160;return "woof"<br>
+              &#160;&#160;end<br>
+            end
+            <br><br>
+            x = Dog.new("Spike")<br>
+            puts x.name<br>
+            puts x.number_of_legs<br>
+            puts x.breath<br>
+            puts x.bark<br>
+            #=> Spike<br>
+            # 4<br>
+            # inhale<br>
+            # woof
+          </strong>
+          <br><br>
+          Classes have different levels of access for methods, public,
+          private and protected. Protected methods
+          are inherited by child classes the same way public methods are
+          but they are not usable by instances of that class. They may only
+          be called from within the class.<br>
+          For details on public and private methods and different ways to
+          assign levels of access view the <a href="#classes">Classes section</a>)
+          <br><br>
+          <strong>
+            class Mammal
+            <br><br>
+            &#160;&#160;attr_reader :name, :hair_length
+            <br><br>
+            &#160;&#160;def initialize(name)<br>
+            &#160;&#160;&#160;&#160;@name = name<br>
+            &#160;&#160;&#160;&#160;@hair_length = 0<br>
+            &#160;&#160;end
+            <br><br>
+            &#160;&#160;def breath<br>
+            &#160;&#160;&#160;&#160;return "inhale"<br>
+            &#160;&#160;end
+            <br><br>
+            protected
+            <br><br>
+            &#160;&#160;def grow_hair(amount_to_add)<br>
+            &#160;&#160;&#160;&#160;@hair_length += amount_to_add<br>
+            &#160;&#160;end<br>
+            end
+            <br><br>
+            class Dog < Mammal
+            <br><br>
+            &#160;&#160;attr_reader :number_of_legs
+            <br><br>
+            &#160;&#160;def initialize(name)<br>
+            &#160;&#160;&#160;&#160;super(name)<br>
+            &#160;&#160;&#160;&#160;@number_of_legs = 4<br>
+            &#160;&#160;&#160;&#160;grow_hair(20)<br>
+            &#160;&#160;end<br>
+            end
+            <br><br>
+            x = Dog.new("Spike")<br>
+            puts x.hair_length<br>
+            x.grow_hair<br>
+            #=> 20<br>
+            # (NoMethodError)
+          </strong>
+          <br><br>
+          (Sources:
+          Book: Beginning Ruby: From Novice to Professional
+          <br>
+          <a href="https://www.codecademy.com/learn/ruby">
+            codecademy: Object-Oriented Programming, Part I / Object-Oriented Programming, Part II
+          </a>
+          )
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="classes" class="title-anchor"></div>
+      <h2 class="section-header">Classes</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          Classes are an important feature relating to object oriented
+          programming as they act as they act as inital blueprints for all
+          objects, defining their base state and values. The basic syntax of
+          a class in Ruby is shown below. The first letter of a class name
+          should always be capitalised.
+          <br><br>
+          <strong>
+            class MyClass<br>
+            end
+          </strong>
+          <br><br>
+          Methods are defined using the key word def. Methods can either be
+          instance methods (as seen in the previous example) or class methods.
+          Instance methods are only avalible after an instance of the class
+          has been made. Class methods are avalible without an instance of
+          the class and are defined and called by stating the class name and
+          then the method name (MyClass.my_method).
+          <br><br>
+          <strong>
+            class MyClass
+            <br><br>
+            &#160;&#160;def print_hello<br>
+            &#160;&#160;&#160;&#160;puts "Hello"<br>
+            &#160;&#160;end
+            <br><br>
+            &#160;&#160;def MyClass.print_hello1<br>
+            &#160;&#160;&#160;&#160;puts "Hello 1"<br>
+            &#160;&#160;end
+            <br><br>
+            end
+            <br><br>
+            x = MyClass.new<br>
+            x.print_hello<br>
+            x.print_hello1<br>
+            #=> Hello<br>
+            #Hello 1
+          </strong>
+          <br><br>
+          Classes can have both public and private methods. This idea is known
+          as encapsulation and is used to ensure only the required methods
+          are accesible from an object. Private methods can only be used from
+          within the class.<br>
+          For details on protected methods view the
+          <a href="#inheritance">Inheritance section</a>
+          <br><br>
+          <strong>
+            class MyClass
+            <br><br>
+            &#160;&#160;def print_hello<br>
+            &#160;&#160;&#160;&#160;puts "#{get_hello} #{get_number}"<br>
+            &#160;&#160;end
+            <br><br>
+            &#160;&#160;private
+            <br><br>
+            &#160;&#160;def get_hello<br>
+            &#160;&#160;&#160;&#160;return "Hello"<br>
+            &#160;&#160;end
+            <br><br>
+            &#160;&#160;def get_number<br>
+            &#160;&#160;&#160;&#160;return 2<br>
+            &#160;&#160;end
+            <br><br>
+            end
+            <br><br>
+            x = MyClass.new<br>
+            x.print_hello<br>
+            puts x.get_hello<br>
+            #=> Hello 2<br>
+            # (NoMethodError)
+          </strong>
+          <br><br>
+          The word private is a method and can be used in multiple ways. Public
+          is also a useable method and can be used in the same way as private,
+          though all methods not specifically named as private are public.
+          <br><br>
+          <strong>
+            class MyClass
+            <br><br>
+            &#160;&#160;def print_hello<br>
+            &#160;&#160;&#160;&#160;puts "#{get_hello} #{get_number}"<br>
+            &#160;&#160;end
+            <br><br>
+            &#160;&#160;def get_hello<br>
+            &#160;&#160;&#160;&#160;return "Hello"<br>
+            &#160;&#160;end
+            <br><br>
+            &#160;&#160;def get_number<br>
+            &#160;&#160;&#160;&#160;return 2<br>
+            &#160;&#160;end
+            <br><br>
+            &#160;&#160;public :print_hello<br>
+            &#160;&#160;private :get_hello, :get_number
+            <br><br>
+            end
+            <br><br>
+            x = MyClass.new<br>
+            x.print_hello<br>
+            puts x.get_hello<br>
+            #=> Hello 2<br>
+            # (NoMethodError)
+          </strong>
+          <br><br>
+          Classes can have three different types of variables associated
+          with them, instance, class and global. These variables can be
+          created inside or outside of methods within the class and are
+          created using the following syntax. <br>
+          (Variables without any of these
+          prefixes are known as local variables and are only accessible from
+          within the method that creates them)
+          <br><br>
+          <strong>
+            Instance: @instance_variable<br>
+            Class: @@class_variable<br>
+            Global: $global_variable
+          </strong>
+          <br><br>
+          Instance variables are unique to each instance of the class.
+          Each time the class is instantiated a new set of variables are
+          created for that object. They are defined by using the @ symbol
+          prior to the variable name. Once defined they are available to all
+          methods.
+          <br><br>
+          <strong>
+            class MyClass
+            <br><br>
+            &#160;&#160;def set_printer(text)<br>
+            &#160;&#160;&#160;&#160;@text = text<br>
+            &#160;&#160;end
+            <br><br>
+            &#160;&#160;def print_text<br>
+            &#160;&#160;&#160;&#160;puts @text<br>
+            &#160;&#160;end
+            <br><br>
+            end
+            <br><br>
+            x = MyClass.new<br>
+            x.set_printer("Hello 3")<br>
+            x.print_text
+            <br><br>
+            y = MyClass.new<br>
+            y.set_printer("Hello 4")<br>
+            y.print_text
+            <br><br>
+            #=> Hello 3<br>
+            # Hello 4
+          </strong>
+          <br><br>
+          Class variables belong to the class. They are defined using @@ and
+          once defined any object created by the class has access to the
+          same variable. Only one is every created regardless of how many
+          times a new object is created.
+          <br><br>
+          <strong>
+          class MyClass
+          <br><br>
+            @@times_printed_text = 0
+            <br><br>
+            &#160;&#160;def set_printer(text)<br>
+            &#160;&#160;&#160;&#160;@text = text<br>
+            &#160;&#160;end
+            <br><br>
+            &#160;&#160;def print_text<br>
+            &#160;&#160;&#160;&#160;puts @text<br>
+            &#160;&#160;&#160;&#160;@@times_printed_text += 1<br>
+            &#160;&#160;end
+            <br><br>
+            &#160;&#160;def print_times<br>
+            &#160;&#160;&#160;&#160;puts @@times_printed_text<br>
+            &#160;&#160;end
+            <br><br>
+          end
+          <br><br>
+          x = MyClass.new<br>
+          y = MyClass.new<br>
+          x.set_printer("Hello 5)<br>
+          y.set_printer("Hello 6")
+          <br><br>
+          x.print_text<br>
+          x.print_times<br>
+          y.print_text<br>
+          y.print_times
+          <br><br>
+          #=> Hello 5<br>
+          # 1<br>
+          # Hello 6<br>
+          # 2
+          </strong>
+          <br><br>
+          Global variables are avaliable outside the class without the need
+          for an instantiated object.
+          <br><br>
+          <strong>
+            class MyClass<br>
+            &#160;&#160;$global = "hello 7"<br>
+            end
+            <br><br>
+            puts $global
+            <br>
+            #=> Hello 7
+          </strong>
+          <br><br>
+          Variables state can be set on object instantiation by using the
+          method initialize. If this method is defined within a class it will
+          be called each time a new object is created.
+          <br><br>
+          <strong>
+            class MyClass
+            <br><br>
+            &#160;&#160;def initialize(text)<br>
+            &#160;&#160;&#160;&#160;@text = text<br>
+            &#160;&#160;end
+            <br><br>
+            &#160;&#160;def print_text<br>
+            &#160;&#160;&#160;&#160;puts @text<br>
+            &#160;&#160;end
+            <br><br>
+            end
+            <br><br>
+            x = MyClass.new("Hello 8")<br>
+            x.print_text
+            <br><br>
+            y = MyClass.new("Hello 9")<br>
+            y.print_text
+            <br><br>
+            #=> Hello 8<br>
+            # Hello 9
+          </strong>
+          <br><br>
+          The previous examples have used custom methods to get and set
+          variables but Ruby provides three helpful methods (att_reader,
+          attr_writer and att_accessor) to auto generate getter and setter methods.
+          <br><br>
+          The following example only shows attr_accessor but attr_reader
+          (which generates a getter method) and attr_writer (which generates
+          a setter method) work in the same way except for the fact that
+          attr_accessor provides access to both a getter and a setter.
+          <br><br>
+          <strong>
+            class MyClass
+            <br><br>
+            attr_accessor :text
+            <br><br>
+            &#160;&#160;def initialize(text)<br>
+            &#160;&#160;&#160;&#160;@text = text<br>
+            &#160;&#160;end
+            <br><br>
+            end
+            <br><br>
+            x = MyClass.new("Hello 10")<br>
+            puts x.text <br>
+            # setter method<br>
+            x.text = "Hello 11"<br>
+            # getter method<br>
+            puts x.text<br>
+            #=> Hello 10<br>
+            # Hello 11
+          </strong>
+          <br><br>
+          (Sources:
+          Book: Beginning Ruby: From Novice to Professional
+          <br>
+          <a href="https://github.com/bbatsov/ruby-style-guide#naming">
+            The Ruby Style Guide
+          </a>
+          <br>
+          <a href="https://www.codecademy.com/learn/ruby">
+            codecademy: Object-Oriented Programming, Part I / Object-Oriented Programming, Part II
+          </a>
+          <br>
+          <a href="http://www.stackoverflow.com/questions/4370960/what-is-attr-accessor-in-ruby">
+            stack overflow: What is attr_accessor in Ruby?
+          </a>
+          )
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="procs-lambda" class="title-anchor"></div>
+      <h2 class="section-header">Procs &#38; Lambdas</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          Procs are blocks in the form of a reusable object.
+          <br><br>
+          <strong>
+            var = Proc.new { |a| a += 1 }<br>
+            p [1,2,3].collect(&var)<br>
+            p (50..53).collect(&var)<br>
+            #=> [2,3,4]<br>
+            # [51,52,53,54]
+            <br><br>
+            var = Proc.new { |num| num == 2 }<br>
+            def block_test(&code_block)<br>
+            &#160;&#160;[1,2,3].select(&code_block)<br>
+            end<br>
+            p block_test(&var)<br>
+            #=> [2]
+            <br><br>
+            var = Proc.new { |num| num == 2 }<br>
+            def block_test(&code_block)<br>
+            &#160;&#160;[1,2,3].select() { |a| code_block.call(a) } <br>
+            end<br>
+            p block_test(&var)<br>
+            #=> [2]
+          </strong>
+          <br><br>
+          Lambdas are very similar to procs in that they hold blocks. They do have
+          a slightly different syntax.
+          <br><br>
+          <strong>
+            var = lambda { |a| a += 1 }<br>
+            p [1,2,3].collect(&var)<br>
+            p (50..53).collect(&var)<br>
+            #=> [2,3,4]<br>
+            # [51,52,53,54]
+            <br><br>
+            var = lambda { |num| num == 2 }<br>
+            def block_test(&code_block)<br>
+            &#160;&#160;[1,2,3].select(&code_block)<br>
+            end<br>
+            p block_test(&var)<br>
+            #=> [2]
+            <br><br>
+            var = lambda { |num| num == 2 }<br>
+            def block_test(&code_block)<br>
+            &#160;&#160;[1,2,3].select() { |a| code_block.call(a) } <br>
+            end<br>
+            p block_test(&var)<br>
+            #=> [2]
+          </strong>
+          <br><br>
+          Procs and lambdas do have some distinct differences however. For example
+          when a Proc block calls return this acts as the methods call to return. The
+          value is returned and the method stops processing. Return calls in Lambdas
+          allow the method to continue processes after running. This is only true when
+          return is explicitly called. As the third example below shows
+          <br><br>
+          <strong>
+            def test_proc<br>
+            &#160;&#160;var = Proc.new {return "return from proc"}<br>
+            &#160;&#160;var.call<br>
+            &#160;&#160;return "return from method"<br>
+            end<br>
+            puts test_proc<br>
+            #=> "return from proc"
+            <br><br>
+            def test_lambda<br>
+            &#160;&#160;var = lambda {return "return from lambda"}<br>
+            &#160;&#160;var.call<br>
+            &#160;&#160;return "return from method"<br>
+            end<br>
+            puts test_lambda<br>
+            #=> "return from method"
+            <br><br>
+            def test_proc<br>
+            &#160;&#160;var = Proc.new {"return from proc"}<br>
+            &#160;&#160;x = var.call<br>
+            &#160;&#160;puts x<br>
+            &#160;&#160;"return from method"<br>
+            end<br>
+            puts test_proc<br>
+            #=> "return from proc"<br>
+            # "return from method"
+          </strong>
+          <br><br>
+          Note: The previous fact about procs only seems to be true if the proc is
+          created within the method that calls it as an error is called in other cases.
+          This is not true for lambdas however.
+          <br><br>
+          <strong>
+            var = Proc.new {return "return from proc"}<br>
+            def test_proc(&block)<br>
+            &#160;&#160;block.call<br>
+            &#160;&#160;return "return from method"<br>
+            end<br>
+            puts test_proc(&var)<br>
+            #=> error: unexpected return
+            <br><br>
+            var = lambda {return "return from lambda"}<br>
+            def test_proc(&block)<br>
+            &#160;&#160;block.call<br>
+            &#160;&#160;return "return from method"<br>
+            end<br>
+            puts test_proc(&var)<br>
+            #=> "return from method"
+          </strong>
+          <br><br>
+          (Sources:
+          <br>
+          <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-L3ZCI/1/5?curriculum_id=5059f8619189a5000201fbcb">
+            codecademy: Blocks, Procs, and Lambdas
+          </a>
+          )
+        </p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="method-response" class="title-anchor"></div>
+      <h2 class="section-header">Method Response</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          <strong>
+            puts [1,2,3].respond_to?(:push)<br>
+            #=> true
+            <br><br>
+            puts "hello".respond_to?(:length)<br>
+            #=> true
+            <br><br>
+            puts "hello".respond_to?(:each)<br>
+            #=> false
+            <br><br>
+            puts ["cat","dog"].respond_to?(:times)
+            #=> false
+            <br><br>
+          </strong>
+          The respond_to? method returns true if the object that calls it is able to run the method
+          given as a parameter.
+          <br><br>
+          (Sources:
+          <br>
+          <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-L3ZCI/1/5?curriculum_id=5059f8619189a5000201fbcb">
+            codecademy: The Zen of Ruby
+          </a>
+          )
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="native-sort" class="title-anchor"></div>
+      <h2 class="section-header">Native Sort</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          When called the sort method will order values from low to high.
+          <br><br>
+          <strong>
+            x = [2,5,3,1,6,7,4]<br>
+            y = x.sort<br>
+            p y<br>
+            #=> [1,2,3,4,5,6,7]
+            <br><br>
+            x = [2,5,3,1,6,7,4]<br>
+            x.sort!<br>
+            p x<br>
+            #=> [1,2,3,4,5,6,7]
+            <br><br>
+            x = ["x","c","m"]<br>
+            x.sort!<br>
+            p x<br>
+            #=> ["c","m","x"]
+            <br><br>
+            x = ["cc","cb","caa","ca"]<br>
+            x.sort!<br>
+            p x<br>
+            #=> ["ca","caa","cb","cc"]
+          </strong>
+          <br><br>
+          By providing the sort method with a block it is possible to control the sorted order
+          and what details about the variables are sorted.
+          <br><br>
+          <strong>
+            x = [2,5,3,1,6,7,4]<br>
+            x.sort! { |left, right| right &#60;=&#62; left }<br>
+            p x<br>
+            #=> [7,6,5,4,3,2,1]
+            <br><br>
+            x = ["giraffe", "cat", "mouse"]<br>
+            x.sort! { |left, right| left.length &#60;=&#62; right.length }<br>
+            p x<br>
+            #=> ["cat", "mouse", "giraffe"]
+          </strong>
+          <br><br>
+          The sort algorithm implemented by ruby is a quicksort and has been shown to be fast
+          when compared to other sorting algorithms. It is a highly optimized piece of code and should be
+          used.
+          <br><br>
+          (Sources:
+          <br>
+          <a href="https://www.dotnetperls.com/sort-ruby">
+            dotnetperls: sort
+          </a>
+          <br>
+          <a href="https://www.igvita.com/2009/03/26/ruby-algorithms-sorting-trie-heaps/">
+            Ruby Algorithms: Sorting, Trie & Heaps
+          </a>
+          )
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="variable-arguments-splat" class="title-anchor"></div>
+      <h2 class="section-header">Variable Arguments: Splat</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          Variable arguments (or splat arguments as they are known in ruby) allow methods to accept any number
+          (zero - max array length) of objects as parameters. The variables will be grouped into an array to be
+          used by the method.
+          <br><br>
+          <strong>
+            def lots_of_params(*splat)<br>
+            &#160;&#160;splat.each { |var| puts "#{var}" }<br>
+            end
+          </strong>
+          <br><br>
+          Other parameters can be included along side the splat, though multiple splat arguments cannot be
+          used.
+          <br><br>
+          <strong>
+            def lots_of_params(word, *splat)<br>
+            &#160;&#160;splat.each { |var| puts "#{word} #{var}" }<br>
+            end
+            <br><br>
+            def lots_of_params(word, *splat, word2)<br>
+            &#160;&#160;splat.each { |var| puts "#{word} #{var} #{word2}" }<br>
+            end
+          </strong>
+          <br><br>
+          (Sources:
+          <br>
+          <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-ET4bU/1/2?curriculum_id=5059f8619189a5000201fbcb">
+            codecademy: Methods, Blocks, /& Sorting
+          </a>
+          )
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="symbols" class="title-anchor"></div>
+      <h2 class="section-header">Symbols</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          Symbols are abstract references represented by a short string that follows a colon.
+          They act as constants and can be referenced using variables.
+          <br><br>
+          <strong>
+            :cat :dog :mouse :bear
+            <br><br>
+            x = :cat
+          </strong>
+          <br><br>
+          Strings can be converted into symbols while a program is running by calling the method
+          to_sym or intern on any string.
+          <br><br>
+          <strong>
+            "cat".to_sym<br>
+            "cat".intern
+          </strong>
+          <br><br>
+          Symbols can be useful way to save time and memory space. Using symbols within
+          a loop rather than a string literal stops the creation of multiple unneeded strings and when
+          comparisons are been made symbols takes less time than strings.
+          <br><br>
+          However symbols are never garbage collected and so the memory is never released. Due to this
+          symbols should never be created if they are to be used infrequently.
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          <br>
+            <a href="http://alwayscoding.ca/momentos/2010/12/04/the-ruby-symbol-is-a-memory-leak/">
+              The Ruby Symbol is a Memory Leak
+            </a>
+            <br>
+            <a href="http://marcricblog.blogspot.co.uk/2010/02/ruby-symbols-ultimate-guide.html">
+              Ruby Symbols Ultimate Guide
+            </a>
+            <br>
+            <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-Qn7Qw/1/4?curriculum_id=5059f8619189a5000201fbcb">
+              Codecademy: Hashes and Symbols
+            </a>
+          )
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="custom-code-blocks" class="title-anchor"></div>
+      <h2 class="section-header">Custom Methods That Use Code blocks</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          When making a method it is possible to instruct the method to accept and make
+          use of code blocks by including one as a parameter. The parameter that signifies
+          the code block must be the last parameter entered and start with a & symbol.<br>
+          (Note: All occurrences of { } and "do end" are interchangeable. Also &code_block can
+          be replaced by any legal name eg. &bacon)
+          <br><br>
+          <strong>
+            def my_method(&code_block)<br>
+            &#160;&#160; [1,2,3,4,5].each{|num| code_block.call(num)}<br>
+            end
+            <br><br>
+            my_method() {|val| print "#{val} "}
+            <br><br>
+            #=> 1 2 3 4 5
+            <br><br>
+            def my_method(array, &code_block)<br>
+            &#160;&#160; array.each do |num|<br>
+            &#160;&#160;&#160;&#160; code_block.call(num)<br>
+            &#160;&#160;end<br>
+            end
+            <br><br>
+            my_method([1,2,3,4,5]) do |val|<br>
+            &#160;&#160;print "#{val} "<br>
+            end
+            <br><br>
+            #=> 1 2 3 4 5
+          </strong>
+          <br><br>
+          The yield key term can be used in place of &#38code_block which and does not require
+          a given parameter.
+          <br><br>
+          <strong>
+            def my_method(array)<br>
+            &#160;&#160; array.each do |num|<br>
+            &#160;&#160;&#160;&#160; yield(num)<br>
+            &#160;&#160;end<br>
+            end
+            <br><br>
+            my_method([1,2,3,4,5]) do |val|<br>
+            &#160;&#160;print "#{val} "<br>
+            end
+            <br><br>
+            #=> 1 2 3 4 5
+          </strong>
+          <br><br>
+          <a href="../examples/enumerable.rb">More examples of use of blocks in code</a>
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional<br>
+          <a href="https://www.codecademy.com/courses/ruby-beginner-en-L3ZCI/0/1?curriculum_id=5059f8619189a5000201fbcb">
+            codeacademy: Blocks, Procs, and Lambdas
+          </a>
+          )
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="flow-control-summary" class="title-anchor"></div>
+      <h2 class="section-header">Flow-Control: summary</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          For details on loops view <a href="#iterators">Loops & Iterators</a> and for
+          details on code blocks view <a href="#custom-code-blocks">Custom Methods That Use Code
+          blocks</a> and <a href="#custom-code-blocks">Procs & Lambdas</a>
+          <br><br>
+          Note: all parenthesis used in this sections are not required for
+          code to work, just personal preference.
+          <br><br>
+          <u>If, else and unless</u>
+          <br><br>
+          <strong>
+            if(true)<br>
+            &#160;&#160;run code if true<br>
+            else<br>
+            &#160;&#160;run code if false<br>
+            end<br>
+            <br>
+            unless(false)<br>
+            &#160;&#160;run code if false<br>
+            else<br>
+            &#160;&#160;run code if true<br>
+            end<br>
+            <br>
+            x = 5<br>
+            if(x &#62; 5)<br>
+              &#160;&#160;run code if x is greater than 5<br>
+            elsif(x &#60; 5)<br>
+              &#160;&#160;run code is x is less than 5<br>
+            else<br>
+              &#160;&#160;run code for all other cases<br>
+            end
+            <br><br>
+            x = 5 if true<br>
+            x = 5 unless false
+          </strong>
+          <br><br>
+          <u>Ternary Operator</u>
+          <br><br>
+          <strong>
+            x = true ? "one" : "two"<br>
+            puts x<br>
+            #=> one
+            <br><br>
+            x = false ? "one" : "two"<br>
+            puts x<br>
+            #=> two
+          </strong>
+          <br><br>
+          <u>Case</u>
+          <br><br>
+          <strong>
+            x = 6<br>
+            case x<br>
+            &#160;&#160;when 2<br>
+            &#160;&#160;&#160;&#160;run code when x == 2<br>
+            &#160;&#160;when 4<br>
+            &#160;&#160;&#160;&#160;run code when x == 4<br>
+            &#160;&#160;when 6<br>
+            &#160;&#160;&#160;&#160;run code when x == 6<br>
+            &#160;&#160;else<br>
+            &#160;&#160;&#160;&#160;run code for all other cases<br>
+            end
+          </strong>
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          <a href="https://www.tutorialspoint.com/ruby/ruby_loops.htm">
+            tutorialspoint
+          </a>
+          )
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="hashes" class="title-anchor"></div>
+      <h2 class="section-header">Hashes</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          Hashes are similar to array in that they hold multiple objects. The
+          difference is that each object is assigned a key rather than an ordered
+          position. Keys can be any object though strings and symbols are commonly used.
+          <br><br>
+          <strong>
+            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
+            x = {:pet_1 => "cat", :pet_2  => "dog", :pet_3  => "mouse"}
+          </strong>
+          <br><br>
+          A new method of creating hashes with symbols as keys was added in Ruby 1.9, as shown below.
+          This only works for symbols.
+          <br><br>
+          <strong>
+            x = {pet_1: "cat", pet_2: "dog", pet_3: "mouse"}
+          </strong>
+          <br><br>
+          New objects can be added by providing a new key.
+          <br><br>
+          <strong>
+            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse",}<br>
+            x["pet 4"] = "lion"
+          </strong>
+          <br><br>
+          Each object is accessed and edited using it's own key.
+          <br><br>
+          <strong>
+            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
+            puts x["pet 1"]<br>
+            x["pet 1"] = "tiger"<br>
+            puts x["pet 1"]<br>
+            #=> cat<br>
+            # tiger
+          </strong>
+          <br><br>
+          Attempting to access a key that does not exist will return nil. Unless when the
+          hash was initialised you provided a parameter. In this case the given parameter would
+          be returned.
+          <br><br>
+          <strong>
+            x = {}<br>
+            p x[:bacon]<br>
+            #=> nil
+            <br><br>
+            x = Hash.new("no value")<br>
+            puts x[:bacon]<br>
+            #=> no value
+            <br><br>
+            x = Hash.new(0)<br>
+            puts x[:bacon]<br>
+            #=> 0
+          </strong>
+          <br><br>
+          A Hashes length is found by using the methods length or size.
+          <br><br>
+          <strong>
+            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
+            puts "#{x.length} #{x.size}"<br>
+            #=> 3  3
+          </strong>
+          <br><br>
+          Hashes are iterated over using the each method. As of ruby 1.9 the iteration
+          order will match the order in which values were added to the hash.
+          <br><br>
+          <strong>
+            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
+            x.each {|key, value| puts "#{key}: #{value}"}
+          </strong>
+          <br><br>
+          Objects stored in hashes can be deleted with the method delete.
+          <br><br>
+          <strong>
+            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
+            x.delete("pet 1")
+          </strong>
+          <br><br>
+          delete_if also deletes objects but only if the provided block equates to true.
+          <br><br>
+          <strong>
+            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
+            x.delete_if {|key, value| value == "cat"}
+          </strong>
+          <br><br>
+          Hashes can be iterated over using the each_key and each_value methods.
+          <br><br>
+          <strong>
+            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}
+            <br><br>
+            x.each_key { |key| print "#{key} "}<br>
+            #>= pet 1 pet 2 pet 3
+            <br><br>
+            x.each_value { |value| print "#{value} "}<br>
+            #>= cat dog mouse
+          </strong>
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional<br>
+          <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-Qn7Qw/2/4?curriculum_id=5059f8619189a5000201fbcb">
+            codeacademy: Hashes and Symbols
+          </a>
+          )
+        </p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="arrays" class="title-anchor"></div>
+      <h2 class="section-header">Arrays</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          Arrays can be instantiated either empty or with values. Each variable in
+          an array can hold any type of object.
+          <br><br>
+          <strong>
+            x = []<br>
+            y = [1,2,3,4,5]<br>
+            z = [1, "two", 3, "four", 5]
+          </strong>
+          <br><br>
+          Array variables can be accessed in a number of ways as shown below.
+          <br><br>
+          <strong>
+            y = [1,2,3,4,5]<br>
+            puts y[0]<br>
+            puts y[4]<br>
+            puts y[-1]<br>
+            puts y[-5]<br>
+            #=> 1<br>
+            # 5<br>
+            # 5<br>
+            # 1
+          </strong>
+          <br><br>
+          Attempting to access an array element that does not exist will not throw a
+          warning / exception but will only return nil.
+          <br><br>
+          <strong>
+            y = [1,2,3,4,5]<br>
+            p y[5]<br>
+            #=> nil
+          </strong>
+          <br><br>
+          New values can be pushed onto the end of the array in two ways.<br>
+          This will increase the array length by 1.
+          <br><br>
+          <strong>
+            x = []<br>
+            x &#60;&#60; "value"<br>
+            x.push("value")<br>
+            p x<br>
+            #=> ["value", "value"]
+          </strong>
+          <br><br>
+          The method pop is used to remove the last element.<br>
+          This will reduce the array length by 1. The removed value will be returned.
+          <br><br>
+          <strong>
+            y = [1,2,3,4,5]<br>
+            puts y.pop<br>
+            p y<br>
+            #=> 5<br>
+            # [1,2,3,4]
+          </strong>
+          <br><br>
+          The method empty? will return a boolean value. True if the array holds no
+          values.<br>
+          The methods length and size will return the number of values held by the array.
+          <br><br>
+          <strong>
+            y = []<br>
+            puts y.empty?<br>
+            puts "#{y.length} #{y.size}"<br>
+            #=> true<br>
+            # 0 0
+          </strong>
+          <br><br>
+          The method include? returns true if the given parameter is held within the array.
+          <br><br>
+          <strong>
+            y = [1,2,3]<br>
+            puts y.include?(2)<br>
+            #=> true
+          <br><br>
+            y = ["cat", "dog", "mouse"]<br>
+            puts y.include?("dog")<br>
+            #=> true
+          </strong>
+          <br><br>
+          The method join combines all the values of the array into a single string.
+          The characters you wish to be between each variable can be given as a parameter.
+          <br><br>
+          <strong>
+            x = [1,2,3,4,5]<br>
+            y = x.join<br>
+            z = x.join(", ")<br>
+            puts y<br>
+            puts z<br>
+            #=> "1234"<br>
+            # "1, 2, 3, 4"
+          </strong>
+          <br><br>
+          Arrays can added together, which simply connects the two together.
+          <br><br>
+          <strong>
+            x = ["a","b","c"]<br>
+            y = [1,2,3,4,5]<br>
+            p x + y<br>
+            #=> ["a","b","c",1,2,3,4,5]
+          </strong>
+          <br><br>
+          Arrays can also be subtracted. The result of this is the removal of any values from the first array
+          that occur in both array.
+          <br><br>
+          <strong>
+            x = [1,2,3,4,5]<br>
+            y = [3,4,5]
+            <br><br>
+            p x - y<br>
+            #=> [1,2]
+            <br><br>
+            p y - x<br>
+            #=> []
+          </strong>
+          <br><br>
+          The methods first and last can be used for easy access to the start and end of arrays.
+          The methods accept one parameter that signifies how many variable to return.
+          <br><br>
+          <strong>
+            x = [1,2,3,4,5]<br>
+            p x.first<br>
+            p x.first(2)<br>
+            p x.last<br>
+            p x.last(2)<br>
+            #=> [1]<br>
+            # [1,2]<br>
+            # [5]<br>
+            # [4,5]
+          </strong>
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          )
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="regexr-in-ruby" class="title-anchor"></div>
+      <h2 class="section-header">RegExr in Ruby</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          There are a few methods that can be used by strings with regexr as parameters. Some
+          of these include:
+          <br><br>
+          <strong>
+            sub<br>
+            gsub<br>
+            scan
+          </strong>
+          <br><br>
+          (For information on the first two methods view the section <a href="#substitutions-in-strings">Substitutions in Strings</a>)<br>
+          (For more detail into regular expressions see <a href="regexr.html">Helpful regular expressions</a>)
+          <br><br>
+          Forward slashes are used at the start and end of a regular expression and can be given as parameters in all three methods shown.
+          <br><br>
+          The scan method takes one parameter and iterates through the given string, looping for each match it finds.
+          <br><br>
+          <strong>
+            "this is a test".scan(/\w\w/) {|letter| print "#{letter} "}<br>
+            #=>th is is te st
+          </strong>
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          )
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="substitutions-in-strings" class="title-anchor"></div>
+      <h2 id="substitutions-in-strings" class="section-header">Substitutions in Strings</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          <strong>
+            puts "bacon and eggs".sub("bacon", "sausage")<br>
+            #=> sausage and eggs
+            <br><br>
+            puts "this is a test".gsub("t", "")<br>
+            #=> his is a es
+          </strong>
+          <br><br>
+          sub finds the first string which matches its first parameters and substitutes it for
+          the seconds parameter.<br>
+          gsub finds all instances of the first parameter and subs all of them for the seconds
+          parameter
+          <br><br>
+          The first parameter of these methods can be regular expressions
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          )
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="interpolation" class="title-anchor"></div>
+      <h2 class="section-header">Interpolation</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          <strong>
+            x = "interpolation"<br>
+            puts "This is #{x}"<br>
+            #=> This is interpolation
+            <br><br>
+            i = 5<br>
+            j = 10<br>
+            puts "#{i} + #{j} = #{i + j}"<br>
+            #=> 5 + 10 = 15
+          </strong>
+          <br><br>
+          Interpolations is the insertion of the result from an expression directly into a string literal.
+          Double quotes ( "" instead of '' ) must be used in order for interpolation to work correctly
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          )
+        </p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="string-numerical-values" class="title-anchor"></div>
+      <h2 class="section-header">String numerical values</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          <strong>
+            "x".ord()<br>
+            120.chr()
+          </strong>
+          <br><br>
+          The method ord will return the ASCII value of the given sting. If the string has multiple
+          characters the returned value will be of the first character in the string.
+          <br><br>
+          The method chr will return the character which is represented by the given number.
+          This method can also accept a parameter so that different encodings might be used.
+          <br><br>
+          <strong>
+            120.char(Encoding::UTF_8)<br>
+            Encoding.name_list<br>
+            #=> ["ASCII-8BIT", "UTF-8", "US-ASCII", "UTF-16BE", "UTF-16LE", "UTF-32BE", "UTF-32LE", "UTF-16", "UTF-32", ...]
+          </strong>
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional<br>
+          <a href="http://stackoverflow.com/questions/37820888/trying-to-understand-the-ruby-chr-and-ord-methods">
+            stackoverflow: Trying to understand the Ruby .chr and .ord methods)
+          </a>
+          )
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="multi-line-strings" class="title-anchor"></div>
+      <h2 class="section-header">Multi-line Strings</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          <strong>
+            puts "This is text \nthat outputs on \nmultiple lines"
+          </strong>
+          <br><br>
+          Using the new line character allows the creation of mulit line strings
+          <br><br>
+          <strong>
+            puts %q{This is text<br>
+              that outputs on<br>
+              multiple lines}
+          </strong>
+          <br><br>
+          This example multiple lines enables the creation of multi-line strings which do not require
+          additional characters and simply mimics the layout as it is written in the code.
+          The curly brackets may be replaced with any two delimiters (eg. ( ) &#60; &#62; ! !).
+          <br><br>
+          <strong>
+            puts &#60;&#60;MY_STRING<br>
+              This is text<br>
+              that outputs on<br>
+              multiple lines<br>
+              MY_STRING
+          </strong>
+          <br><br>
+          Using characters as a delimiter is possible as shown in this example. This is called a here document.
+          (Note: had issues with indentation using this method. It seems as if it does not work unless
+          no indentation is used on the end delimiter. Other methods produce more readable code)
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          )
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="constants" class="title-anchor"></div>
+      <h2 class="section-header">Constants / Final Variables</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          To define a constant in Ruby create the variable with a capital as the first character
+          <br><br>
+          <strong>Dogs = 50</strong>
+          <br><br>
+          Any attempts to change the variable Dogs will result in a warning
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          )
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="iterators" class="title-anchor"></div>
+      <h2  class="section-header">Loops and Iterators</h2>
+
+      <div class="section-content">
+
+
+          <p class="section-text-normal">
+            A number of the methods here belong to the Enumerable module. A full list of the
+            iterative methods offered by this module can be found here.
+            <a href = "../examples/enumerable.pdf">pdf file</a>
+            <a href = "http://ruby-doc.org/core-2.4.0/Enumerable.html">web site</a>
+          </p>
+
+        <h3><u>loop</u></h3>
+        <p class="section-text-normal">
+          Loop is the a basic loop and ends when a keyword used to stop
+           loops is called (break / break if).
+          true.
+          <br><br>
+          <strong>
+            x = 0<br>
+            loop {<br>
+            &#160;&#160;x += 1<br>
+            &#160;&#160;break<br>
+          }
+          <br><br>
+            x = 0<br>
+            loop {<br>
+            &#160;&#160;x += 1<br>
+            &#160;&#160;break if x >= 5<br>
+          }
+          </strong>
+        </p>
+
+        <h3><u>next, redo &#38; break if</u></h3>
+        <p class="section-text-normal">
+          The next key word can be used in loops and iterators to skip the
+          remaining code and start the next loop / iteration.<br>
+          The redo keyword is used in the same way as next but rather than
+          continuing onto the next loop / iteration it restarts the previous.<br>
+          The break if key word can be used to set a condition, which if met
+          ends to loop / iteration.
+          <br><br>
+          <strong>
+            x = 0<br>
+            loop {<br>
+            &#160;&#160;x += 1<br>
+            &#160;&#160;if(x == 2)<br>
+            &#160;&#160;&#160;&#160;next<br>
+            &#160;&#160;end<br>
+            &#160;&#160;if(x == 4)<br>
+            &#160;&#160;&#160;&#160;redo<br>
+            &#160;&#160;end<br>
+            &#160;&#160;print "#{x} "<br>
+            &#160;&#160;break if x &#62= 5<br>
+          }<br>
+          #>= 1 3 5
+          </strong>
+        </p>
+
+        <h3><u>while / until loops</u></h3>
+        <p class="section-text-normal">
+          The while loop runs while its given condition is true. The until loop runs until the
+          given condition is true.
+          <br><br>
+          <strong>
+            x = 0<br>
+            while(x &#60; 100)<br>
+            &#160;&#160;#repeat code while x is less than 100<br>
+            &#160;&#160;x += 1<br>
+            end
+            <br><br>
+            x = 0<br>
+            until(x &#62; 100)<br>
+            &#160;&#160;#repeat code until x is greater than 100<br>
+            &#160;&#160;x += 1<br>
+            end
+          </strong>
+        </p>
+
+        <h3><u>for loop</u></h3>
+        <p class="section-text-normal">
+          The for loop runs the given number of times inclusively.
+          <br><br>
+          <strong>
+            for i in 0..100<br>
+            &#160;&#160;puts "#{i}: hello"<br>
+            end
+          </strong>
+        </p>
+
+        <h3><u>times</u></h3>
+        <p class="section-text-normal">
+          The method times runs the code in the provided block the specified number of times.
+          The example will iterate through numbers 0 - 4 and run the code in the given block.
+          <br><br>
+          <strong>
+          5.times do |number| puts "#{number}: Hello\n" end<br>
+          5.times { |number| puts "#{number}: Hello" }
+          </strong>
+          <br><br>
+          This method is used by objects holding integer values
+        </p>
+
+        <h3><u>upto / downto</u></h3>
+        <p class="section-text-normal">
+          The methods upto and downto iterate through the given numbers inclusively and run the code
+          in the given block on each loop.
+          <br><br>
+          <strong>
+            1.upto(5) do |number| puts "#{number}: Hello" end<br>
+            1.upto(5) { |number| puts "#{number}: Hello" } <br>
+            10.downto(5) do |number| puts "#{number}: Hello" end<br>
+            10.downto(5) { |number| puts "#{number}: Hello" }
+          </strong>
+          <br><br>
+          This method is used by objects holding integer values
+        </p>
+
+        <h3><u>step</u></h3>
+        <p class="section-text-normal">
+          The method step will iterate through the given numbers inclusively, in steps equals to the second parameter, and run the code
+          in the given block on each loop. In the third example the final number will be 48 as the next value is greater than 50.
+          <br><br>
+          <strong>
+            0.step(50, 5) {|number| puts "#{number}: Hello" }<br>
+            0.step(50, 0.5) { |number| puts "#{number}: Hello" }<br>
+            3.step(50, 5) { |number| puts "#{number}: Hello" }
+          </strong>
+          <br><br>
+          This method is used by objects holding integer or float values.
+        </p>
+
+        <h3><u>each</u></h3>
+        <p class="section-text-normal">
+          The method each will loop through each object held in the given collection
+          <br><br>
+          <strong>
+            (1..5).each do |number| puts "#{number}: Hello" end<br>
+            (1..5).each { |number| puts "#{number}: Hello" }
+          </strong>
+          <br><br>
+          Method is used by collections (array, hash, set, range).
+        </p>
+
+        <h3><u>each_with_index</u></h3>
+        <p class="section-text-normal">
+          The method each_with_index is the equivalent of each but provides the index as well. The index
+          must be the second block variable.
+          <br><br>
+          <strong>
+            (1..5).each_with_index { |number, index| puts "#{index}: #{number}" }
+          </strong>
+          <br><br>
+          Method is used by collections (array, hash, set, range).
+        </p>
+
+        <h3><u>collect / map</u></h3>
+        <p class="section-text-normal">
+          The collect method returns a new array containing all the same variables but after
+          they have been altered by the given code block.<br>
+          The method map is used in the same way as collect and produces
+          the same results.
+          <br><br>
+          <strong>
+          p [1,2,3,4].collect {|number| number + 1 }<br>
+          #=> [2,3,4,5]
+          <br><br>
+          p ["cat","mouse","dog"].collect {|string| string * 2 }<br>
+          #=> ["catcat","mousemouse","dogdog"]
+          </strong>
+          <br><br>
+          These methods are used by collections (array, hash, set, range).
+        </p>
+
+        <h3><u>select</u></h3>
+        <p class="section-text-normal">
+          The select method allows you to set a condition and returns an array containing only values that
+          meet that criteria. If the block contains multiple lines of code the final line will act as the
+          condition.
+          <br><br>
+          <strong>
+            p [1,2,3,4,5,6,7,8].select { |num| num % 2 == 0}<br>
+            #=> [2,4,6,8]
+            <br><br>
+            p [1,2,3,4,5,6,7,8].select { |num| <br>
+              &#160;&#160;num % 2 == 0<br>
+              &#160;&#160;num % 3 == 0<br>
+            }<br>
+            #=> [3,6]
+          </strong>
+        </p>
+
+        <p class="section-text-normal">
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional<br>
+          <a href="http://www.eriktrautman.com/posts/ruby-explained-map-select-and-other-enumerable-methods">
+            Ruby Explained: Map, Select, and Other Enumerable Methods
+          </a>
+          )
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="interesting-operators" class="title-anchor"></div>
+      <h2 class="section-header">Interesting Operators</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          <strong>x &#60;=&#62; y</strong>: Returns 0 if x and y are equal, returns -1 if y
+          is greater and 1 if x is greater.
+          <br><br>
+          <strong>x ||= "cats"</strong>: Assigns hnus an object to the variable only if the variable currently
+          holds a nil value.
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional<br>
+          <a href="https://www.codecademy.com/en/courses/ruby-beginner-en-1o8Mb/1/1?curriculum_id=5059f8619189a5000201fbcb">
+            The Zen of Ruby
+          </a>
+          )
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="output-to-console" class="title-anchor"></div>
+      <h2 class="section-header">Output to Console </h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          <strong>print</strong>: print a string to the console.
+          <br><br>
+          <strong>puts</strong>: print a string to the console with a new line after.
+          <br><br>
+          <strong>p</strong>: (Same as calling "string".inspect) Prints to screen in the same way as puts and returns the given value
+          but values will be printed as they are in code.
+          <strong>
+            <br><br>
+            p "hello"<br>
+            #=> "hello"
+            <br><br>
+            p [1,2,3]<br>
+            #=> [1,2,3]
+            <br><br>
+            p ["a", "b", "c"]<br>
+            #=> ["a", "b", "c"]
+          </strong>
+          <br><br>
+          (Sources:
+          <br>
+          Book: Beginning Ruby: From Novice to Professional
+          )
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" rel="javascript"></script>
