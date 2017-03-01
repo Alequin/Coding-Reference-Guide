@@ -1,23 +1,4 @@
-
-#primary-container{
-  position: absolute;
-  margin: auto;
-  left: 0;
-  right: 0;
-}
-
-#header-container{
-  position: fixed;
-  background: white;
-  margin: auto;
-  left: 0;
-  right: 0;
-  z-index: 1;
-}
-
 #main-header{
-  margin: 0;
-  padding-top: 20px;
   font-size: 55px;
 }
 
@@ -25,100 +6,11 @@
   font-size: 25px;
 }
 
-#header-container a{
-  text-decoration: none;
-}
-
-#header-space{
-  margin: 0;
-  padding: 0;
-}
-
-#header-container td{
-  padding-left: 10px;
-  padding-right: 10px
-}
-
-#main-header, .section-header{
-  text-align: center;
-}
-
-.section, .divider{
-  position: relative;
-  margin-top: 15px;
-}
-
-.header-divider{
-  margin: 0;
-}
-
-.title-anchor{
-  position: relative;
-  height: 0px;
-  margin: 0;
-  padding: 0;
-  bottom: 133px;
-}
-
-
-#contents-container{
-  display: none;
-}
-
-a, a:visited{
-  text-decoration: none;
-  text-decoration: underline;
-  color: black;
-}
-
-#contents-table a{
-    text-decoration: none;
-}
-#contents-table a:hover{
-  color: blue;
-}
-
-#contents-table{
-  width: 100%;
-}
-
-#contents-table td{
-  padding: 0;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  width: 33.3%;
-  text-align: center;
-}
-
-.section{
-  max-width: 100%;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.header-divider, .divider{
-    max-width: 100%;
-    border-top: 2px dotted grey;
-}
-
 .section-header{
   font-size: 40px;
-  margin-top: 10px;
-}
-
-.section-content{
-  position: relative;
-  width: 95%;
-  margin: auto;
-  margin-bottom: 10px;
 }
 
 .section-text-normal{
   font-size: 30px;
   line-height: 35px;
-}
-
-h3{
-  margin: 0;
-  padding: 0;
 }
