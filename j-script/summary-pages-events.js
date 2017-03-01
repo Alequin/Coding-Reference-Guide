@@ -13,7 +13,7 @@ $(document).ready(function(){
 
   $('#layout-switcher').click(function(){
     toggleCSS();
-    timeDelay = 50;
+    timeDelay = 80;
     setTimeout(function () {
       positionElementsRelativeToHeader();
     }, timeDelay);
