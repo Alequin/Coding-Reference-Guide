@@ -1,7 +1,6 @@
+
 #primary-container{
   position: absolute;
-  min-width: 320px;
-  max-width: 800px;
   margin: auto;
   left: 0;
   right: 0;
@@ -9,7 +8,6 @@
 
 #header-container{
   position: fixed;
-  max-width: 800px;
   background: white;
   margin: auto;
   left: 0;
@@ -20,6 +18,11 @@
 #main-header{
   margin: 0;
   padding-top: 20px;
+  font-size: 55px;
+}
+
+#header-container td{
+  font-size: 25px;
 }
 
 #header-container a{
@@ -99,7 +102,7 @@ a, a:visited{
 }
 
 .section-header{
-  font-size: 20px;
+  font-size: 40px;
   margin-top: 10px;
 }
 
@@ -111,8 +114,8 @@ a, a:visited{
 }
 
 .section-text-normal{
-  font-size: 18px;
-  line-height: 25px;
+  font-size: 30px;
+  line-height: 35px;
 }
 
 h3{

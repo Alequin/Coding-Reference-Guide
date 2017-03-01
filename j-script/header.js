@@ -7,6 +7,9 @@ headerMenu = [
       '<td>',
         '<p id="contents-title">Show Contents</p>',
       '</td>',
+      '<td>',
+        '<p id="layout-switcher">Change Layout</p>',
+      '</td>',
     '</tr>',
   '</table>'].join("\n");
 
@@ -27,7 +30,4 @@ function positionElementsRelativeToHeader(){
 $(document).ready(function(){
   $("#main-header").after(headerMenu);
   positionElementsRelativeToHeader();
-  $(window).resize(function(){
-    positionElementsRelativeToHeader();
-  });
 });

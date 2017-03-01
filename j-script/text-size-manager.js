@@ -1,4 +1,4 @@
-//alert("working");
+
 const MIN_TEXT_SIZE = 25;
 const MAX_TEXT_SIZE = 45;
 

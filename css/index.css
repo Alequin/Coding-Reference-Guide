@@ -1,4 +1,8 @@
 #primary-container{
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
   width: 450px;
   margin-top: 10px;
   padding: 0;
