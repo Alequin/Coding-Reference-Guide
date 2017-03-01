@@ -23,6 +23,9 @@ function setTitleAnchorPosition(headerHeight){
 
 function positionElementsRelativeToHeader(){
   headerHeight = $("#header-container").height();
+  if(isContentsVisible){
+    headerHeight -= $("#contents-table").height();
+  }
   setHeaderSpaceHeight(headerHeight);
   setTitleAnchorPosition(headerHeight);
 }

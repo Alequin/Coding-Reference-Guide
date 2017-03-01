@@ -14,10 +14,6 @@ $(document).ready(function(){
   $('#layout-switcher').click(function(){
     toggleCSS();
     timeDelay = 50;
-    if(isContentsVisible){
-      toggleContentsVisibility();
-      timeDelay = 200;
-    }
     setTimeout(function () {
       positionElementsRelativeToHeader();
     }, timeDelay);
