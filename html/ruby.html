@@ -23,10 +23,10 @@
             <a href="#">ph</a>
           </td>
           <td>
-            <a href="#">ph</a>
+            <a href="#comparable-module">Comparable Module</a>
           </td>
           <td>
-            <a href="#comparable-module">Comparable Module</a>
+            <a href="#structs">Structs: Quick Classes</a>
           </td>
         </tr>
         <tr>
@@ -156,6 +156,120 @@
               <br><br>
               (Sources:<br>
               Book: Beginning Ruby: From Novice to Professional)
+            </p>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+
+          <span id="structs" class="title-anchor"></span>
+          <h2 class="section-header">Structs: Quick Classes</h2>
+
+          <div class="section-content">
+            <p class="section-text-normal">
+              Struct is a class that quickly creates very simple classes and
+              defines variables associated with that class. The struct will also
+              apply att_accessor to all variables defined.<br>
+              Note: variables associated with structs do not have to be constants.
+              <br><br>
+              <strong>
+                Person = Struct.new(:name, :age)<br>
+                lucy = Person.new("Lucy", 23)<br>
+                alan = Person.new("Alan", 37)
+                <br><br>
+                puts "#{lucy.name} - age #{lucy.age}"<br>
+                puts "#{alan.name} - age #{alan.age}"
+                <br><br>
+                lucy.name = "Lucy Smith"<br>
+                puts lucy.name
+                <br><br>
+                #=> Lucy - age 23<br>
+                # Alan - age 37<br>
+                # Lucy Smith
+              </strong>
+              <br><br>
+              Struct can also define methods if a code block is provided.
+              <br><br>
+              <strong>
+                Person = Struct.new(:name, :age) do<br>
+                &#160;&#160;def print_details<br>
+                &#160;&#160;&#160;&#160;puts "#{name}, #{age}"<br>
+                &#160;&#160;end<br>
+                end
+                <br><br>
+                lucy = Person.new("Lucy", 23)<br>
+                alan = Person.new("Alan", 37)
+                <br><br>
+                lucy.print_details<br>
+                alan.print_details
+                <br><br>
+                #=> Lucy - age 23<br>
+                # Alan - age 37
+              </strong>
+              <br><br>
+              When calling a constructor from a class made by a struct not all
+              variables have to be defined. The variables which are not given a
+              parameter on construction are set to nil and attr_accessor still
+              generates methods releated to them.
+              <br><br>
+              <strong>
+                Person = Struct.new(:name, :age)<br>
+                lucy = Person.new("Lucy")
+                <br><br>
+                puts "#{lucy.name} - age #{lucy.age}"
+                <br><br>
+                lucy.age = 23<br>
+                puts lucy.age
+                <br><br>
+                #=> Lucy - age<br>
+                # 23
+              </strong>
+              <br><br>
+              Classes created using structs can be superclasses, allowing thier
+              variables to be inherited by the subclass.
+              <br><br>
+              <strong>
+                Person = Struct.new(:name, :age)
+                <br><br>
+                class Alan < Person<br>
+                end
+                <br><br>
+                baby_alan = Alan.new("Alan", 0.1)<br>
+                puts "#{baby_alan.name} - age #{baby_alan.age}"
+                <br><br>
+                #=> Alan - age 0.1
+                <br><br>
+                Short method:<br>
+                class Alan < Struct.new(:name, :age)<br>
+                end
+              </strong>
+              <br><br>
+              As well as structs there are open structs. These work like structs
+              but variables can be added after initialization of the open struct.<br>
+              Note: Open stucts cannot act as superclasses.
+              <br><br>
+              <strong>
+                # Require must be called to access open structs<br>
+                require 'ostruct'
+                <br><br>
+                Person = OpenStruct.new<br>
+                Person.name = "Sandra"<br>
+                Person.age = "20"<br>
+                Person.height = "160 cm"
+                <br><br>
+                puts "#{Person.name}, #{Person.age}, #{Person.height}"<br>
+                #=> Sandra, 20, 160 cm
+              </strong>
+              <br><br>
+              (Sources:<br>
+              Book: Beginning Ruby: From Novice to Professional<br>
+              <a href="http://blog.steveklabnik.com/posts/2012-09-01-random-ruby-tricks--struct-new">
+              Random Ruby Tricks: Struct.new</a><br>
+              <a href="http://blog.logicalbricks.com/node/235">
+              Struct and OpenStruct in Ruby</a>)
             </p>
           </div>
 
