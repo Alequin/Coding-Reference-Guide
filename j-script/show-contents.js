@@ -17,15 +17,3 @@ function toggleContentsVisibility(){
     setContentsTitleText();
     $("#contents-container").slideToggle("fast");
 }
-
-$(document).ready(function(){
-
-  $("#contents-title").click(function(){
-    toggleContentsVisibility();
-  });
-
-  $("#contents-container a").click(function(){
-    toggleContentsVisibility();
-  });
-
-});

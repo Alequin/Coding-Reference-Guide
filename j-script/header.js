@@ -26,8 +26,3 @@ function positionElementsRelativeToHeader(){
   setHeaderSpaceHeight(headerHeight);
   setTitleAnchorPosition(headerHeight);
 }
-
-$(document).ready(function(){
-  $("#main-header").after(headerMenu);
-  positionElementsRelativeToHeader();
-});
