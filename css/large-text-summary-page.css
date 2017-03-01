@@ -10,6 +10,11 @@
   font-size: 25px;
 }
 
+#contents-container td{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 .section-header{
   font-size: 55px;
 }

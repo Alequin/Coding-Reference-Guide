@@ -75,6 +75,7 @@ a, a:visited{
 
 #contents-table{
   width: 100%;
+  overflow-y: scroll;
 }
 
 #contents-table td{
@@ -83,6 +84,10 @@ a, a:visited{
   padding-bottom: 5px;
   width: 33.3%;
   text-align: center;
+}
+
+#contents-container{
+  overflow-y: auto;
 }
 
 .section{

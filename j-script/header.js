@@ -15,5 +15,6 @@ headerMenu = [
 
 function positionElementsRelativeToHeader(headerHeight){
     $("#header-space").css("height", headerHeight.toString() + "px");
-    $(".title-anchor").css("bottom", (headerHeight * 1.25).toString() + "px") ;
+    $(".title-anchor").css("bottom", (headerHeight * 1.25).toString() + "px");
+    $("#contents-container").css("height", ( $(window).height() - headerHeight ).toString() + "px");
 }
