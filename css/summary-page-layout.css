@@ -56,6 +56,8 @@
 
 #contents-container{
   display: none;
+  z-index: 1;
+  background: white;
 }
 
 a, a:visited{

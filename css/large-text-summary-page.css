@@ -2,6 +2,10 @@
   font-size: 75px;
 }
 
+#header-container{
+  height: 200px;
+}
+
 #header-container td{
   font-size: 25px;
 }
