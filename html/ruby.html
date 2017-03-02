@@ -21,7 +21,7 @@
       <table id="contents-table">
         <tr>
           <td>
-            <a href="#">ph</a>
+            <a href="#file-inclusion">File Inclusion</a>
           </td>
           <td>
             <a href="#comparable-module">Comparable Module</a>
@@ -115,6 +115,192 @@
   <div id="header-space"></div>
 
   <div id="primary-container">
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="file-inclusion" class="title-anchor"></div>
+      <h2 class="section-header">File Inclusion</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          In order to pass code between different script files three methods
+          are avaliable.
+          <br><br>
+          <strong>
+            require_relative<br>
+            load<br>
+            require
+          </strong>
+          <br><br>
+          Require relative is used to access the code of files within the same
+          directory.
+          <br><br>
+          <strong>
+            File location: ../my_pc/more_ruby.rb<br>
+            <br>
+            def print<br>
+            &#160;&#160;puts "Hello"<br>
+            end
+            <br><br>
+            File location: ../my_pc/ruby.rb
+            <br><br>
+            require_relative 'more_ruby'<br>
+            print<br>
+            #=> Hello
+          </strong>
+          <br><br>
+          Load workes in a very similar way to require relative. The script file
+          it names must be located in the same directory however load can be
+          called on the same file multiple times whereas require_relative can
+          only call the same file once. The second time would have no effect.
+          Also the file type suffix must be given when using load.
+          <br><br>
+          <strong>
+            File location: ../my_pc/more_ruby.rb<br>
+            <br>
+            puts "Hello"
+            <br><br>
+            File location: ../my_pc/ruby.rb
+            <br><br>
+            puts "First require_relative"<br>
+            require_relative 'more_ruby'<br>
+            require_relative 'more_ruby'<br>
+            require_relative 'more_ruby'
+            <br><br>
+            puts "Now for load"<br>
+            load 'more_ruby.rb'<br>
+            load 'more_ruby.rb'<br>
+            load 'more_ruby.rb'
+            <br><br>
+            #=> First require_relative<br>
+            # Hello<br>
+            # Now for load<br>
+            # Hello<br>
+            # Hello<br>
+            # Hello
+          </strong>
+          <br><br>
+          Require relative and load both work from the current directory and can
+          by guided from that location to other files.
+          <br><br>
+          <strong>
+            File location: ../more_ruby.rb<br>
+            <br>
+            puts "Hello"
+            <br><br>
+            File location: ../my_pc/user/documents/even_more_ruby.rb<br>
+            <br>
+            puts "Hello again"
+            <br><br>
+            File location: ../my_pc/ruby.rb
+            <br><br>
+            require_relative '../more_ruby'<br>
+            load '../more_ruby.rb'<br>
+            require_relative 'user/documents/even_more_ruby'<br>
+            load 'user/documents/even_more_ruby.rb'
+            <br><br>
+            #=> Hello<br>
+            # Hello<br>
+            # Hello<br>
+            # Hello
+          </strong>
+          <br><br>
+          The method requrire does not work from the current directory
+          (unless instructed to) and instead searches through a number of
+          previously defined file locations in which Ruby stores its own files
+          and standard libraries.
+          <br><br>
+          The following is how to instruct require to search the current directory.
+          <br><br>
+          <strong>
+            File location: ../my_pc/more_ruby.rb<br>
+            <br>
+            def print<br>
+            &#160;&#160;puts "Hello"<br>
+            end
+            <br><br>
+            File location: ../my_pc/ruby.rb
+            <br><br>
+            require './more_ruby'<br>
+            print<br>
+            #=> Hello
+          </strong>
+          <br><br>
+          The default directories that are searched by the method require can be
+          seen by viewing the special variable $: ($LOAD_PATH also works). This
+          holds an array and can be viewed.
+          <br><br>
+          <strong>
+            # Outputs may vary<br>
+            $:.each { |a| puts a }
+            <br><br>
+            #=> /home/your_pc/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib<br>
+            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/site_ruby/2.3.0<br>
+            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/site_ruby/2.3.0/x86_64-linux<br>
+            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/site_ruby<br>
+            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/vendor_ruby/2.3.0<br>
+            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/vendor_ruby/2.3.0/x86_64-linux<br>
+            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/vendor_ruby<br>
+            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0<br>
+            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/x86_64-linux
+          </strong>
+          <br><br>
+          Using the push or unshift methods new file locations can be added
+          to this array in order to give require method access to custom
+          directories.
+          <br><br>
+          <strong>
+            # Outputs may vary<br>
+            File location: ../my_pc/more_ruby.rb<br>
+            <br>
+            def print<br>
+            &#160;&#160;puts "Hello"<br>
+            end
+            <br><br>
+            File location: ../my_pc/ruby.rb<br>
+
+            $LOAD_PATH.unshift('../my_pc')<br>
+            $LOAD_PATH.each { |a| puts a }
+            <br><br>
+            #=> ../my_pc<br>
+            # /home/your_pc/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib<br>
+            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/site_ruby/2.3.0<br>
+            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/site_ruby/2.3.0/x86_64-linux<br>
+            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/site_ruby<br>
+            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/vendor_ruby/2.3.0<br>
+            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/vendor_ruby/2.3.0/x86_64-linux<br>
+            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/vendor_ruby<br>
+            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0<br>
+            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/x86_64-linux
+            <br><br>
+            Note: In this example the symbol ../ is used to in place of a real
+            file list but in order for this to work a full directory path should
+            be given to the variable $LOAD_PATH.
+          </strong>
+          <br><br>
+          File inclusion can be nested. If the file that is been included already
+          includes another file both files will be included in the inital file
+          <br><br>
+          <strong>
+            File location: ../my_pc/layer1.rb<br>
+            puts "Hello"<br>
+            File location: ../my_pc/layer2.rb<br>
+            require_relative 'layer1'<br>
+            File location: ../my_pc/layer3.rb<br>
+            require_relative 'layer2'<br>
+            File location: ../my_pc/ruby.rb<br>
+            require_relative 'layer3'<br>
+            #=> Hello
+          </strong>
+          <br><br>
+          (Sources:<br>
+          Book: Beginning Ruby: From Novice to Professional)
+        </p>
+      </div>
+
+    </div>
 
     <div class="divider"></div>
 
@@ -1561,8 +1747,8 @@
             # 1
           </strong>
           <br><br>
-          Attempting to access an array element that does not exist will not throw a
-          warning / exception but will only return nil.
+          Attempting to access an array element that does not exist will not
+          throw a warning / exception but will only return nil.
           <br><br>
           <strong>
             y = [1,2,3,4,5]<br>
@@ -1581,8 +1767,19 @@
             #=> ["value", "value"]
           </strong>
           <br><br>
+          It is possible to add values to the start of the array using the
+          upshift method.
+          <br><br>
+          <strong>
+            x = [2,3,4,5]<br>
+            x.unshift(1)<br>
+            p x<br>
+            #=> [1,2,3,4,5]
+          </strong>
+          <br><br>
           The method pop is used to remove the last element.<br>
-          This will reduce the array length by 1. The removed value will be returned.
+          This will reduce the array length by 1. The removed value will be
+          returned.
           <br><br>
           <strong>
             y = [1,2,3,4,5]<br>
@@ -1592,9 +1789,10 @@
             # [1,2,3,4]
           </strong>
           <br><br>
-          The method empty? will return a boolean value. True if the array holds no
-          values.<br>
-          The methods length and size will return the number of values held by the array.
+          The method empty? will return a boolean value. True if the array holds
+          no values.<br>
+          The methods length and size will return the number of values held by
+          the array.
           <br><br>
           <strong>
             y = []<br>
