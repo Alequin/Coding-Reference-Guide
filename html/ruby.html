@@ -262,18 +262,11 @@
             File location: ../my_pc/ruby.rb<br>
 
             $LOAD_PATH.unshift('../my_pc')<br>
-            $LOAD_PATH.each { |a| puts a }
+            require 'more_ruby'
             <br><br>
             #=> ../my_pc<br>
-            # /home/your_pc/.rvm/gems/ruby-2.3.3@global/gems/did_you_mean-1.0.0/lib<br>
-            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/site_ruby/2.3.0<br>
-            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/site_ruby/2.3.0/x86_64-linux<br>
-            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/site_ruby<br>
-            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/vendor_ruby/2.3.0<br>
-            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/vendor_ruby/2.3.0/x86_64-linux<br>
-            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/vendor_ruby<br>
-            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0<br>
-            # /home/your_pc/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/x86_64-linux
+            # ..other files ommited.. <br>
+            # Hello
             <br><br>
             Note: In this example the symbol ../ is used to in place of a real
             file list but in order for this to work a full directory path should
