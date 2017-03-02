@@ -21,6 +21,17 @@
       <table id="contents-table">
         <tr>
           <td>
+            <a href="#">ph</a>
+          </td>
+          <td>
+            <a href="#">ph</a>
+          </td>
+          <td>
+            <a href="#exception-handling">Exception Handling</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
             <a href="#file-inclusion">File Inclusion</a>
           </td>
           <td>
@@ -115,6 +126,200 @@
   <div id="header-space"></div>
 
   <div id="primary-container">
+
+
+
+<div class="divider"></div>
+
+    <div class="section">
+
+      <div id="exception-handling" class="title-anchor"></div>
+      <h2 class="section-header">Exception Handling</h2>
+      <div class="section-content">
+        <p class="section-text-normal">
+          Exceptions are raised (as it is known in Ruby) when the code causes an
+          error and cannot be processed. This will cause the program to quit
+          unless the exception is handled. To handle exception begin and rescue are
+          used to create a code block around the code that may produce an error.
+          <br><br>
+          <strong>
+            begin<br>
+            &#160;&#160;puts 10/0 #raises a ZeroDivisionError<br>
+            &#160;&#160;puts "Math complete"<br>
+            rescue<br>
+            &#160;&#160;puts "You cannot divide by zero"<br>
+            end<br>
+            #=> You cannot divide by zero
+          </strong>
+          <br><br>
+          The key word else can be included after rescue, which will run if no
+          errors occured.
+          <br><br>
+          <strong>
+            begin<br>
+            &#160;&#160;a = 10/1<br>
+            &#160;&#160;puts "Math complete"<br>
+            rescue<br>
+            &#160;&#160;puts "You cannot divide by zero"<br>
+            else<br>
+            &#160;&#160;puts "Woohoo!"<br>
+            end<br>
+            #=> Math complete<br>
+            # Woohoo!
+          </strong>
+          <br><br>
+          The key word ensure can be included after else. This will always be
+          run regardless of whether an error occured.
+          <br><br>
+          <strong>
+            error = false<br>
+            begin<br>
+            &#160;&#160;a = 10/0<br>
+            &#160;&#160;puts "Math complete"<br>
+            rescue<br>
+            &#160;&#160;error = true<br>
+            else<br>
+            &#160;&#160;puts "Woohoo!"<br>
+            ensure<br>
+            &#160;&#160;puts error ? "An error occured" : "No error occured"<br>
+            end<br>
+            #=> An error occured
+          </strong>
+          <br><br>
+          The key word retry can be used in the rescue block to restart the code
+          block from begin.
+          <br><br>
+          <strong>
+            a = 10<br>
+            b = 0<br>
+            begin<br>
+            &#160;&#160;c = a / b<br>
+            &#160;&#160;puts "Math complete"<br>
+            rescue<br>
+            &#160;&#160;puts "You cannot divide by zero"<br>
+            &#160;&#160;b = 1<br>
+            &#160;&#160;retry<br>
+            end<br>
+            #=> You cannot divide by zero<br>
+            # Math complete
+          </strong>
+          <br><br>
+          Below is an example of it all working together.
+          <br><br>
+          <strong>
+            a = 10<br>
+            b = 0<br>
+            error = false<br>
+            begin<br>
+            &#160;&#160;c = a / b<br>
+            &#160;&#160;puts "Math complete"<br>
+            rescue<br>
+            &#160;&#160;puts "You cannot divide by zero"<br>
+            &#160;&#160;error = true<br>
+            &#160;&#160;b = 1<br>
+            &#160;&#160;retry<br>
+            else<br>
+            &#160;&#160;puts "Woohoo!"<br>
+            ensure<br>
+            &#160;&#160;puts error ? "An error occured" : "No error occured"<br>
+            end<br>
+            #=> You cannot divide by zero<br>
+            # Math complete<br>
+            # Woohoo!<br>
+            # An error occured
+          </strong>
+          <br><br>
+          It is possible to provide multiple rescue blocks and provide each with
+          a specific exception. This enables different code to be executed based
+          on the exception raised.
+          <br><br>
+          <strong>
+            begin<br>
+            &#160;&#160;a = 10<br>
+            &#160;&#160;b = "20"<br>
+            &#160;&#160;puts a + b<br>
+            rescue ZeroDivisionError<br>
+            &#160;&#160;puts "You cannot divide by zero"<br>
+            rescue TypeError<br>
+            &#160;&#160;puts "You cannot add a #{a.class} and a #{b.class}"<br>
+            end<br>
+            #=> You cannot add a Fixnum and a String
+          </strong>
+          <br><br>
+          It is also possible to get the exception as a variable from rescue and
+          manage code by making use of it.
+          <br><br>
+          <strong>
+            begin<br>
+            &#160;&#160;a = 10<br>
+            &#160;&#160;b = "20"<br>
+            &#160;&#160;puts a + b<br>
+            rescue => e<br>
+            &#160;&#160;case (e.class).to_s<br>
+            &#160;&#160;when "ZeroDivisionError"<br>
+            &#160;&#160;&#160;&#160;puts "You cannot divide by zero"<br>
+            &#160;&#160;when "TypeError"<br>
+            &#160;&#160;&#160;&#160;puts "You cannot add a #{a.class} and a #{b.class}"<br>
+            &#160;&#160;else<br>
+            &#160;&#160;&#160;&#160;puts "#{(e.class).to_s} raised"<br>
+            &#160;&#160;end<br>
+            end<br>
+            #=> You cannot add a Fixnum and a String
+          </strong>
+          <br><br>
+            While writing code there may be a number of situation you consider
+            erroneous but do not actually raise an exception. In these cases it
+            is possible to define when an exception should be raised.
+          <br><br>
+          <strong>
+            def feed_dog(amount)<br>
+            &#160;&#160;if(amount < 0)<br>
+            &#160;&#160;&#160;&#160;raise ArgumentError, "A positive value is needed"<br>
+            &#160;&#160;end<br>
+            &#160;&#160;puts "The dog is happy but wants more"<br>
+            end
+            <br><br>
+            feed_dog(2)<br>
+            feed_dog(-1)<br>
+            #=> The dog is happy but wants more<br>
+            # A positive value is needed (ArgumentError)
+          </strong>
+          <br><br>
+            There are a number of pre-defined exception provided by ruby. It is
+            also possible to make custom exceptions by extending any of the
+            pre-defined ones.
+          <br><br>
+          <strong>
+            class AngryDogError < ArgumentError<br>
+            end
+            <br><br>
+            def feed_dog(amount)<br>
+            &#160;&#160;if(amount < 0)<br>
+            &#160;&#160;&#160;&#160;raise AngryDogError, "A positive value is needed"<br>
+            &#160;&#160;end<br>
+            &#160;&#160;puts "The dog is happy but wants more"<br>
+            end
+            <br><br>
+            feed_dog(-1)<br>
+            #=> A positive value is needed (AngryDogError)
+          </strong>
+          <br><br>
+          Below is a list of the Exceptions in ruby and their inheritance
+          hierachy taken from the Programming Ruby book.
+        </p>
+
+        <img src="../examples/exception_list.jpg" alt="Ruby exceptions from the Programming Ruby book." />
+
+        <p class="section-text-normal">
+          (Sources:<br>
+          Book: Beginning Ruby: From Novice to Professional)<br>
+          <a href="http://rubylearning.com/satishtalim/ruby_exceptions.html">
+            RubyLearning.com: Ruby Exceptions
+          </a>
+        </p>
+      </div>
+
+    </div>
 
     <div class="divider"></div>
 
