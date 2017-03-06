@@ -1,0 +1,8 @@
+.section ul{
+  list-style-type: none;
+}
+
+.section li{
+  padding-top: 7px;
+  padding-bottom: 7px;
+}

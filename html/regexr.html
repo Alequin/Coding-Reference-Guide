@@ -2,19 +2,19 @@
 <html>
 
 <head>
-  <title>... Summary</title>
+  <title>RegExr Summary</title>
   <meta charset="utf-8">
   <link href="../css/basic-layout.css" type="text/css" rel="stylesheet"/>
   <link href="../css/summary-page-layout.css" type="text/css" rel="stylesheet"/>
   <link id="summary-page-layout" href="../css/normal-text-summary-page.css" type="text/css" rel="stylesheet"/>
-  <link href="../css/ruby.css" type="text/css" rel="stylesheet"/>
+  <link href="../css/unordered-list-no-bullet-points.css" type="text/css" rel="stylesheet"/>
 </head>
 
 <body>
 
   <div id="header-container">
 
-        <h1 id="main-header">Helpful ...</h1>
+        <h1 id="main-header">Helpful Regular Expressions</h1>
 
         <div id="contents-container">
           <div class="header-divider divider"></div>
@@ -27,7 +27,7 @@
                 <a href="#">ph</a>
               </td>
               <td>
-                <a href="#">ph</a>
+                <a href="#basic-patterns">Basic Patterns</a>
               </td>
             </tr>
           </table>
@@ -43,13 +43,132 @@
 
     <div class="section">
 
-      <div class="title-anchor"></div>
-      <h2 class="section-header"></h2>
+      <div id="basic-patterns" class="title-anchor"></div>
+      <h2 class="section-header">Basic Patterns</h2>
 
       <div class="section-content">
-        <p class="section-text-normal">
+        <ul class="section-text-normal" >
+
+          <li>
+            Match any digit: <strong>\d</strong>
+          </li>
+
+          <li>
+            Match any non digit: <strong>\D</strong>
+          </li>
+
+          <li>
+            Match any character / wildcard: <strong>\.</strong>
+          </li>
+
+          <li>
+            Match any alphanumeric character: <strong>\w</strong>
+          </li>
+
+          <li>
+            Match any non-alphanumeric character: <strong>\W</strong>
+          </li>
+
+          <li>
+            Match any white space: <strong>\s</strong>
+          </li>
+
+          <li>
+            Match any non white space: <strong>\S</strong>
+          </li>
+
+          <li>
+            Match if one or more is present:<br>
+            <ul>
+              <li>
+                One or more digits: <strong>\d+</strong>
+              </li>
+              <li>
+                One or more white space: <strong>\s+</strong>
+              </li>
+            </ul>
+          </li>
+          <li>
+            Match if zero or more is present:<br>
+            <ul>
+              <li>
+                Zero or more digits: <strong>\d*</strong>
+              </li>
+              <li>
+                Zero or more white space: <strong>\s*</strong>
+              </li>
+            </ul>
+          </li>
+          </li>
+          <li>
+            Match if zero or one is present (optional character):<br>
+            <ul>
+              <li>
+                Zero or one digit: <strong>\d?</strong>
+              </li>
+              <li>
+                Zero or one white space: <strong>\s?</strong>
+              </li>
+            </ul>
+          </li>
+          <li>
+            Match a range:<br>
+            <ul>
+              <li>
+                Match characters between a-z: <strong>[a-z]</strong>
+              </li>
+              <li>
+                Match characters between a-z and A-Z: <strong>[A-Za-z]</strong>
+              </li>
+            </ul>
+          </li>
+          <li>
+            Match specific characters:<br>
+            <ul>
+              <li>
+                Match either an a,b or c: <strong>[abc]</strong>
+              </li>
+              <li>
+                Match either 3,5 or 7: <strong>[357]</strong>
+              </li>
+            </ul>
+          </li>
+          <li>
+            Match everything but specific characters:<br>
+            <ul>
+              <li>
+                Match everything other than an a,b or c: <strong>[^abc]</strong>
+              </li>
+              <li>
+                Match everything other than 3,5 or 7: <strong>[^357]</strong>
+              </li>
+            </ul>
+          </li>
+          <li>
+            Match text that starts with:<br>
+            <ul>
+              <li>
+                Match text that starts with an a,b or c: <strong>^[abc]</strong>
+              </li>
+              <li>
+                Match text that starts with 3,5 or 7: <strong>^[357]</strong>
+              </li>
+            </ul>
+          </li>
+          <li>
+            Match text that ends with:<br>
+            <ul>
+              <li>
+                Match text that ends with an a,b or c: <strong>[abc]$</strong>
+              </li>
+              <li>
+                Match text that ends with 3,5 or 7: <strong>[357]$</strong>
+              </li>
+            </ul>
+          </li>
           (Sources:<br>
-          <a href="">
+          <a href="https://regexone.com/lesson/introduction_abcs">
+            regexone: interactive tutorials
           </a>)
         </p>
       </div>
