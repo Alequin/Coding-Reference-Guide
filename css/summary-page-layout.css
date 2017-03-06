@@ -67,7 +67,7 @@ a, a:visited{
 }
 
 #contents-table a{
-    text-decoration: none;
+  text-decoration: none;
 }
 #contents-table a:hover{
   color: blue;
