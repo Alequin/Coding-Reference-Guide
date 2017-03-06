@@ -20,6 +20,17 @@
           <table id="contents-table">
             <tr>
               <td>
+                <a href="#">ph</a>
+              </td>
+              <td>
+                <a href="#">ph</a>
+              </td>
+              <td>
+                <a href="#language-in-css">Language in css</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
                 <a href="#zindex">Z-Index</a>
               </td>
               <td>
@@ -37,6 +48,101 @@
   <div id="header-space"></div>
 
   <div id="primary-container">
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="language-in-css" class="title-anchor"></div>
+      <h2 class="section-header">Language in css</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          The value of the language attribute can be used by css to set
+          styles based around the current language. Providing styles for multiple
+          languages ensures text will always be ascetically pleasing regardless
+          of language.
+          <br><br>
+          There are three main methods of controling style in css based on
+          language.
+          <br><br>
+          <strong>
+            :lang() pseudo-class selector<br>
+            [lang |= ""] selector that matches the beginning of the value of
+            a language attribute<br>
+            [lang = ""] selector that exactly matches the value of a language
+            attribute
+          </strong>
+          <br><br>
+          <em>
+            The word related is used a number of times in the following examples.
+            This is to define exactly what is meant by related.
+            <br><br>
+            en is related to en, en-es, en-es-gct<br>
+            es is not related to en, en-es, en-es-gct<br>
+            en-es is related to en-es, en-es-gct<br>
+            en-es is not related to en
+          </em>
+          <br><br>
+          The first example effects all related elements, whether the lang attribute
+          was inherited or specifically stated.
+          <br><br>
+          <strong>
+            p:lang(en){color: red;}
+            <br><br>
+            &#60;html lang="en"&#62;&#60;br&#62;<br>
+            ...<br>
+            &#60;p&#62;test 1&#60;/p&#62;<br>
+            &#60;p lang="en"&#62;test 2&#60;/p&#62;<br>
+            &#60;p lang="en-es"&#62;test 3&#60;/p&#62;<br>
+            &#60;p lang="en-es-gct"&#62;test 4&#60;/p&#62;
+            <br><br>
+            <a href="../examples/language-selectors/language-pseudo-selector.html">View results</a><br>
+            <a href="../examples/language-selectors/language-pseudo-selector.txt">View raw document</a>
+          </strong>
+          <br><br>
+          The second example effects all related elements, but only when lang
+          is specifically stated in the elements tag.
+          <br><br>
+          <strong>
+            p[lang|="en"]{color: red;}
+            <br><br>
+            &#60;html lang="en"&#62;&#60;br&#62;<br>
+            ...<br>
+            &#60;p&#62;test 1&#60;/p&#62;<br>
+            &#60;p lang="en"&#62;test 2&#60;/p&#62;<br>
+            &#60;p lang="en-es"&#62;test 3&#60;/p&#62;<br>
+            &#60;p lang="en-es-gct"&#62;test 4&#60;/p&#62;
+            <br><br>
+            <a href="../examples/language-selectors/language-related-selector.html">View results</a><br>
+            <a href="../examples/language-selectors/language-related-selector.txt">View raw document</a>
+          </strong>
+          <br><br>
+          The third example effects all elements with a lang attribute that
+          specifically matches.
+          <br><br>
+          <strong>
+            p[lang="en-es"]{color: red;}
+            <br><br>
+            &#60;html lang="en"&#62;&#60;br&#62;<br>
+            ...<br>
+            &#60;p&#62;test 1&#60;/p&#62;<br>
+            &#60;p lang="en"&#62;test 2&#60;/p&#62;<br>
+            &#60;p lang="en-es"&#62;test 3&#60;/p&#62;<br>
+            &#60;p lang="en-es-gct"&#62;test 4&#60;/p&#62;
+            <br><br>
+            <a href="../examples/language-selectors/language-match-selector.html">View results</a><br>
+            <a href="../examples/language-selectors/language-match-selector.txt">View raw document</a>
+          </strong>
+          <br><br>
+          (Sources:<br>
+          <a href="https://www.w3.org/International/questions/qa-css-lang#lang-bar">
+            w3.org: Styling using language attributes
+          </a>)
+        </p>
+      </div>
+
+    </div>
 
     <div class="divider"></div>
 
