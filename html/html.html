@@ -47,25 +47,38 @@
 
       <div class="section-content">
         <p class="section-text-normal">
-          Using the attribute target and providing a values of _blank will cause the
-          link to open in a new tab.
+          Using the attribute target and providing a values of _blank will
+          cause the link to open in a new tab.
           <br><br>
           <strong>
-            &#60; a href="www.website.com" target="_blank"&#62;website&#60;/a&#62;
+            &#60;a href="www.website.com" target="_blank"&#62;website&#60;/a&#62;
           </strong>
           <br><br>
-          This however will create a vulnerable in your website as the linked site gains access
-          to your page and is able to change the web address. This enables attacks to replace your
-          site on the users browser with that delivers malware or one that look exactly the same in
-          an attempt to gather personal information. This attack is known as phishing.
+          This however will create a vulnerable in your website as the linked
+          site gains access to your page and is able to change the web address.
+          This enables attacks to replace your site on the users browser with
+          that delivers malware or one that look exactly the same in an attempt
+          to gather personal information. This attack is known as phishing.
           <br><br>
-          How phishing is achieved: the newly open site gains limited access to your page via the
-          JavaScript window.opener object. This is a read/write object that they can manipulate.
-          Among its properties is window.opener.location, which can be changed, causing the browser
-          to go to a new URL.
+          How phishing is achieved: the newly open site gains limited access to
+          your page via the JavaScript window.opener object. This is a
+          read/write object that can be manipulate. Among its properties is
+          window.opener.location, which can be changed, causing the browser
+          to go to a new URL.<br>
+          <em>
+            (Paragraph taken from<a href="https://www.thesitewizard.com/html-tutorial/open-links-in-new-window-or-tab.shtml">
+            thesitewizard.com</a>)
+          </em>
           <br><br>
-          Phishing may be avoided by including the attribute rel with a value of noopener but not all
-          browsers support this and so some users will be at risk.
+          Phishing may be avoided by including the attribute rel with a value
+          of noopener or noreferrer but not all browsers support this and so
+          some users will be at risk.
+          <br><br>
+          <strong>
+            &#60;a href="www.example.com" rel="noopener noreferrer" target="_blank"&#62;<br>
+            &#160;&#160;example.com<br>
+            &#60;/a&#62;
+          </strong>
           <br><br>
           (Sources:
           <br>
@@ -87,16 +100,19 @@
 
       <div class="section-content">
         <p class="section-text-normal">
-          In order to type reserved html characters entities are used. Entities normally have two
-          identifiers (a name and a number) each of which can be used, though the number version
-          is more likely to be supported by more browsers.<br>
-          <em>(Note: all "-" characters are used so that the numbers can be shown to you and are not part of the
-          entities)</em>
+          In order to use reserved html characters entities are used. Entities
+          normally have two identifiers (a name and a number) either of which
+          can be used, though the number version is more likely to be supported
+          by more browsers.<br>
+          <em>
+            (Note: all "-" characters are used to avoid actually typing the
+            entity. They are not part of the entities)
+          </em>
           <br><br>
           <strong>
-            &-#60 / &-lt ==  &#60;<br>
-            &-#62 / &-gt  ==  &#62;<br>
-            &-#38 / &-amp ==  &#38;
+            &#38;-#60; / &#38;-lt ==  &#60;<br>
+            &#38;-#62; / &#38;-gt  ==  &#62;<br>
+            &#38;-#38; / &#38;-amp ==  &#38;
           </strong>
           <br><br>
           <a href="../examples/list-of-HTML-entities.pdf" target="_blank">A list of html entities taken from freeformatter.com/html-entities.html</a>
