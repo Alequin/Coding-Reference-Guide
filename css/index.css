@@ -10,6 +10,8 @@
 
 .summary-box{
   width: 126px; height: 126px;
+  line-height: 126px;
+  text-align: center;
   margin: 10px;
   border-radius: 50px;
   float: left;
@@ -24,13 +26,10 @@
 
 .summary-title{
   position: relative;
-  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
   padding: 0;
-  top: 33px;
   font-size: 20px;
   color: black;
-}
-
-#regexr-title{
-  top: 22px;
 }

@@ -1,0 +1,12 @@
+#v-align-text-div {
+  height: 200px;
+  line-height: 200px;
+
+  text-align: center;
+  border: 2px dashed black;
+}
+#v-align-text-span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}

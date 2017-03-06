@@ -7,7 +7,7 @@
   <link href="../css/basic-layout.css" type="text/css" rel="stylesheet"/>
   <link href="../css/summary-page-layout.css" type="text/css" rel="stylesheet"/>
   <link id="summary-page-layout" href="../css/normal-text-summary-page.css" type="text/css" rel="stylesheet"/>
-  <link href="../css/ruby.css" type="text/css" rel="stylesheet"/>
+  <link href="../css/example-css/vertically-align-text.css" type="text/css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -23,7 +23,7 @@
                 <a href="#">ph</a>
               </td>
               <td>
-                <a href="#">ph</a>
+                <a href="#vertically-align-text">Vertically Align Text</a>
               </td>
               <td>
                 <a href="#important-priority">!important priority</a>
@@ -37,6 +37,65 @@
   <div id="header-space"></div>
 
   <div id="primary-container">
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="vertically-align-text" class="title-anchor"></div>
+      <h2 class="section-header">Vertically Align Text</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          <strong>
+            div {<br>
+            &#160;&#160;height: 200px;<br>
+            &#160;&#160;line-height: 200px;<br>
+            &#160;&#160;text-align: center;
+            <br><br>
+            &#160;&#160;border: 2px dashed black;<br>
+            }<br>
+            span {<br>
+            &#160;&#160;display: inline-block;<br>
+            &#160;&#160;vertical-align: middle;<br>
+            &#160;&#160;line-height: normal;<br>
+            }
+            <br><br>
+            &#60;div&#62;<br>
+            &#160;&#160;&#60;span&#62;<br>
+            &#160;&#160;&#160;&#160;example text<br>
+            &#160;&#160;&#60;/span&#62;<br>
+            &#60;/div&#62;
+          </strong>
+        </p>
+
+        <div id="v-align-text-div">
+          <span id="v-align-text-span">
+            HyperText Markup Language (HTML) is the standard markup language for
+            creating web pages and web applications. With Cascading Style Sheets
+            (CSS), and JavaScript, it forms a triad of cornerstone technologies
+            for the World Wide Web.
+          </span>
+        </div>
+
+        <p class="section-text-normal">
+          The span element is vertically centered by setting the div's line height
+          equal to the div's height. The span is then set to an inline-block so
+          that vertical align can be set to middle. The line height is then
+          returned to normal.<br>
+          <em>
+            The inner block does not have to be a span (though it may not work
+            with all tags) as long as the display is set to inline-block.
+          </em>
+          <br><br>
+          (Sources:<br>
+          <a href="http://stackoverflow.com/questions/8865458/how-to-vertically-center-text-with-css">
+            stackoverflow: How to vertically center text with CSS?
+          </a>
+        </p>
+      </div>
+
+    </div>
 
     <div class="divider"></div>
 
