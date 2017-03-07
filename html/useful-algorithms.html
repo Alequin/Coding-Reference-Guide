@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Algorithm Summary</title>
+  <meta charset="utf-8">
+  <link href="../css/basic-layout.css" type="text/css" rel="stylesheet"/>
+  <link href="../css/summary-page-layout.css" type="text/css" rel="stylesheet"/>
+  <link id="summary-page-layout" href="../css/normal-text-summary-page.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+
+  <div id="header-container">
+
+        <h1 id="main-header">Helpful Algorithms</h1>
+
+        <div id="contents-container">
+          <div class="header-divider divider"></div>
+          <table id="contents-table">
+            <tr>
+              <td>
+                <a href="#">ph</a>
+              </td>
+              <td>
+                <a href="#quick-sort">Quick Sort</a>
+              </td>
+              <td>
+                <a href="#merge-sort">Merge Sort</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="header-divider divider"></div>
+  </div>
+
+  <div id="header-space"></div>
+
+  <div id="primary-container">
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div class="title-anchor"></div>
+      <h2 class="section-header">Quick Sort</h2>
+
+      <div id="quick-sort" class="section-content">
+        <p class="section-text-normal">
+          (Sources:<br>
+          <a href="">
+          </a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="merge-sort" class="title-anchor"></div>
+      <h2 class="section-header">Merge Sort</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          The merge sort is a general purpose divide and conquer sorting algorithm
+          that makes use of recursion. The sort works by dividing the given
+          array of values in half multiple times untill you have a number of individual
+          arrays, each with a length equal to your base case (usually 1). <br>
+          Once the initial array has been divided the maximum number of times
+          the values contained in the individual arrays are compared and merged
+          to make increasingly larger sorted arrays. This is repeated untill
+          there are no more arrays to merge. At this point the inital array should
+          be sorted.
+        </p>
+
+        <span class="img-span"><img src="../examples/merge_sort_recursion.png" alt="merge sort diagram"></a></span>
+
+        <p class="section-text-normal">
+
+          <a href="../examples/sort-examples/MergeSort.java">
+            Merge sort in java
+          </a><br>
+          <a href="../examples/sort-examples/MergeSort.ruby">
+            Merge sort in Ruby
+          </a>
+          <br><br>
+          (Sources:<br>
+          <a href="https://en.wikipedia.org/wiki/Merge_sort#Optimizing_merge_sort">
+            Wikipedia: Merge sort
+          </a><br>
+          <a href="https://www.khanacademy.org/computing/computer-science/algorithms/merge-sort/a/overview-of-merge-sort">
+            Khan academy: Overview of merge sort
+          </a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" rel="javascript"></script>
+  <script src="../j-script/show-contents.js" rel="javascript"></script>
+  <script src="../j-script/header.js" rel="javascript"></script>
+  <script src="../j-script/summary-layout-switcher.js" rel="javascript"></script>
+  <script src="../j-script/summary-pages-events.js" rel="javascript"></script>
+
+</body>
+
+</html>

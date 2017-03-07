@@ -104,9 +104,20 @@ a, a:visited{
   width: 95%;
   margin: auto;
   margin-bottom: 10px;
+  text-align: left;
 }
 
 h3{
   margin: 0;
   padding: 0;
+}
+
+.img-span{
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+img{
+  display: inline-block;
 }
