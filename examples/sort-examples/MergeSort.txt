@@ -2,18 +2,23 @@ public class MergeSort {
 
     /**
      * Sorts an integer array using merge sort.
-     * @param array
+     * @param inputArray
      * @return
      */
-    public static int[] sort(int[] array){
+    public static int[] sort(int[] inputArray){
 
-        int[] resultArray;
-        resultArray = new int[array.length];
-        System.arraycopy(array, 0, resultArray, 0, array.length);
+        int[] resultArray = null;
+        if(inputArray == null){
+            return resultArray;
+        }
+        final int length = inputArray.length;
+
+        resultArray = new int[length];
+        System.arraycopy(inputArray, 0, resultArray, 0, length);
 
         // base cases
-        if(resultArray.length <= 2){
-            if(resultArray.length == 2 && (resultArray[0] > resultArray[1])){
+        if(length <= 2){
+            if(length == 2 && resultArray[0] > resultArray[1]){
                 // base case of two as if the array is length 2 a bubble sort
                 // is faster than creating two array holding one element and calling
                 // sort on both
@@ -26,13 +31,13 @@ public class MergeSort {
         }
 
 
-        int midPoint = array.length/2;
+        int midPoint = length/2;
 
         int[] leftArray = new int[midPoint];
-        int[] rightArray = new int[array.length - midPoint];
+        int[] rightArray = new int[length - midPoint];
 
-        System.arraycopy(array, 0, leftArray, 0, leftArray.length);
-        System.arraycopy(array, midPoint, rightArray, 0, rightArray.length);
+        System.arraycopy(inputArray, 0, leftArray, 0, leftArray.length);
+        System.arraycopy(inputArray, midPoint, rightArray, 0, rightArray.length);
 
         leftArray = sort(leftArray);
         rightArray = sort(rightArray);

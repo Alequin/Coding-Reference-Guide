@@ -1,39 +1,43 @@
 public class QuickSort {
-    
-    private static int array[];
-    private static int length;
- 
+
+    private static int[] resultArray;
+
     /**
      * Sorts an integer array using quick sort.
      * @param inputArray
-     * @return 
+     * @return
      */
     public static int[] sort(int[] inputArray) {
-         
-        if (inputArray == null || inputArray.length == 0) {
+
+        resultArray = null;
+        if(inputArray == null){
+            return resultArray;
+        }
+
+        final int length = inputArray.length;
+
+        if (length <= 1) {
             return inputArray;
         }
-        
-        length = inputArray.length;
 
-        array = new int[length];
-        System.arraycopy(inputArray, 0, array, 0, length); 
- 
+        resultArray = new int[length];
+        System.arraycopy(inputArray, 0, resultArray, 0, length);
+
         quickSort(0, length - 1);
-        
-        return array;
+
+        return resultArray;
     }
- 
+
     private static void quickSort(int lowerIndex, int higherIndex) {
-         
+
         int a = lowerIndex;
         int b = higherIndex;
-        int pivot = array[lowerIndex+(higherIndex-lowerIndex)/2];
+        int pivot = resultArray[lowerIndex+(higherIndex-lowerIndex)/2];
         while (a <= b) {
-            while (array[a] < pivot) {
+            while (resultArray[a] < pivot) {
                 a++;
             }
-            while (array[b] > pivot) {
+            while (resultArray[b] > pivot) {
                 b--;
             }
             if (a <= b) {
@@ -48,10 +52,10 @@ public class QuickSort {
         if (a < higherIndex)
             quickSort(a, higherIndex);
     }
- 
+
     private static void swapIndeces(int indexOne, int indexTwo) {
-        int temp = array[indexOne];
-        array[indexOne] = array[indexTwo];
-        array[indexTwo] = temp;
+        int temp = resultArray[indexOne];
+        resultArray[indexOne] = resultArray[indexTwo];
+        resultArray[indexTwo] = temp;
     }
 }
