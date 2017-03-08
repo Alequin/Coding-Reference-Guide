@@ -47,6 +47,26 @@
 
       <div id="quick-sort" class="section-content">
         <p class="section-text-normal">
+          The quick sort is a comparison based divide and conquer sorting
+          algorithm that makes use of recursion. The sort works by first
+          selecting a value to be the pivot. All values are compared against the
+          pivot and moved. Values less than or equal to the pivot are moved to
+          the left side, while values greater than the pivot are moved to the
+          right side. This results in two arrays and the pivot in its sorted
+          position.
+          <br><br>
+          These two arrays and all subsequently produced arrays undergo the same
+          proccess. Once all subarrays lengths are equal to the base case
+          the inital array should be sorted.
+          <br><br>
+        </p>
+          <span class="img-span">
+            <img src="../examples/quick_sort.png" alt="quick sort diagram"></a>
+            <p><a href="https://tekmarathon.com/2013/09/17/understanding-quicksort-algorithm/">
+              Image from: tek marathon - Understanding quicksort algorithm
+            </a></p>
+          </span>
+        <p class="section-text-normal">
           (Sources:<br>
           <a href="">
           </a>)
@@ -64,21 +84,30 @@
 
       <div class="section-content">
         <p class="section-text-normal">
-          The merge sort is a general purpose divide and conquer sorting algorithm
-          that makes use of recursion. The sort works by dividing the given
-          array of values in half multiple times untill you have a number of individual
-          arrays, each with a length equal to your base case (usually 1). <br>
+          The merge sort is a comparison based divide and conquer sorting
+          algorithm that makes use of recursion. The sort works by dividing the
+          given array of values in half multiple times until the remaining
+          arrays have a length equal to the base case (usually 1).
+          <br><br>
           Once the initial array has been divided the maximum number of times
-          the values contained in the individual arrays are compared and merged
-          to make increasingly larger sorted arrays. This is repeated untill
-          there are no more arrays to merge. At this point the inital array should
-          be sorted.
+          the values contained in the individual arrays are sorted and merged
+          ,which results in increasingly larger sorted arrays. This is repeated
+          until all arrays have been merged. At this point the inital array
+          should be sorted.
         </p>
 
-        <span class="img-span"><img src="../examples/merge_sort_recursion.png" alt="merge sort diagram"></a></span>
+        <span class="img-span">
+          <img src="../examples/merge_sort_recursion.png" alt="merge sort diagram"></a>
+          <p><a href="https://www.khanacademy.org/computing/computer-science/algorithms/merge-sort/a/overview-of-merge-sort">
+            Image from: Khan academy - Overview of merge sort
+          </a></p>
+        </span>
 
         <p class="section-text-normal">
 
+          The average time for this algorithm to complete is Θ(n*log(n)).<br>
+          The worst case time is also Θ(n*log(n)).
+          <br><br>
           <a href="../examples/sort-examples/MergeSort.txt">
             Merge sort in java
           </a><br>
@@ -87,6 +116,10 @@
           </a>
           <br><br>
           (Sources:<br>
+          Introduction to Algorithms (Third edition)<br>
+          <a href="http://bigocheatsheet.com/">
+            bigocheatsheet
+          </a><br>
           <a href="https://en.wikipedia.org/wiki/Merge_sort#Optimizing_merge_sort">
             Wikipedia: Merge sort
           </a><br>

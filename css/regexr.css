@@ -1,8 +1,8 @@
-.section ul{
+#basic-patterns-content ul{
   list-style-type: none;
 }
 
-.section li{
+#basic-patterns-content li{
   padding-top: 7px;
   padding-bottom: 7px;
 }
