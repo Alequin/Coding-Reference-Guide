@@ -20,7 +20,7 @@
           <table id="contents-table">
             <tr>
               <td>
-                <a href="#">ph</a>
+                <a href="#binary-search">Binary Search</a>
               </td>
               <td>
                 <a href="#quick-sort">Quick Sort</a>
@@ -37,6 +37,54 @@
   <div id="header-space"></div>
 
   <div id="primary-container">
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="binary-search" class="title-anchor"></div>
+      <h2 class="section-header">Binary Search</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          The binary search algorithm identifies the location of a value within
+          a sorted array. It works by identifying the mid-point in the array and
+          comparing the value in this position to the target value. The array is
+          then split at the midpoint. If the midpoint value is less than the
+          target value the left array is used, otherwise the right array is used.
+          This process is repeated, resulting in smaller arrays each time until
+          the target is located or the array is too small to contain the target.
+        </p>
+
+        <span class="img-span">
+          <img src="../examples/binary-search-img.png" alt="quick sort diagram"></a>
+          <p><a href="http://www.oxfordmathcenter.com/drupal7/node/31">
+            Image from: Oxford Math Center - Searching and Sorting Arrays
+          </a></p>
+        </span>
+
+        <p class="section-text-normal">
+          The average time for this algorithm to complete is Θ(log(n)).<br>
+          The worst case time is also Θ(log(n)).
+          <br><br>
+          <a href="../examples/BinarySearch.txt">
+            Binary search in Java
+          </a><br>
+          <a href="../examples/sort-examples/quick_sort.txt">
+            Binary search in Ruby
+          </a>
+          <br><br>
+          (Sources:<br>
+          <a href="https://en.wikipedia.org/wiki/Binary_search_algorithm">
+            Wikipedia: Binary search algorithm
+          </a><br>
+          <a href="https://www.topcoder.com/community/data-science/data-science-tutorials/binary-search/">
+            TopCoder: Binary Search
+          </a>)
+        </p>
+      </div>
+
+    </div>
 
     <div class="divider"></div>
 
@@ -80,7 +128,18 @@
           </a>
           <br><br>
           (Sources:<br>
-          <a href="">
+          Introduction to Algorithms (Third edition)<br>
+          <a href="http://bigocheatsheet.com/">
+            bigocheatsheet
+          </a><br>
+          <a href="https://en.wikipedia.org/wiki/Quicksort">
+            Wikipedia: Quick sort
+          </a><br>
+          <a href="https://www.khanacademy.org/computing/computer-science/algorithms/quick-sort/a/overview-of-quicksort">
+            Khan academy: Overview of quicksort
+          </a><br>
+          <a href="http://me.dt.in.th/page/Quicksort/">
+            Understanding Quicksort (with interactive demo)
           </a>)
         </p>
       </div>
@@ -116,7 +175,6 @@
         </span>
 
         <p class="section-text-normal">
-
           The average time for this algorithm to complete is Θ(n*log(n)).<br>
           The worst case time is also Θ(n*log(n)).
           <br><br>
