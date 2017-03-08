@@ -1,0 +1,52 @@
+class QuickSort
+
+  def self.sort(input_array)
+
+    @@result_array = input_array.clone
+    if(@@result_array == nil || @@result_array.size <= 1)
+      return @@result_array
+    end
+
+    QuickSort.quick_sort(0, input_array.size-1)
+
+    return @@result_array
+
+  end
+
+  private
+
+  def self.quick_sort(lower_index, higher_index)
+
+    a = lower_index
+    b = higher_index
+    pivot = @@result_array[lower_index+(higher_index-lower_index)/2]
+
+    while(a <= b)
+      while(@@result_array[a] < pivot)
+        a+=1
+      end
+      while(@@result_array[b] > pivot)
+        b-=1
+      end
+      if(a<=b)
+        QuickSort.swap_indeces(a, b)
+        a+=1
+        b-=1
+      end
+    end
+
+    if(lower_index < b)
+      QuickSort.quick_sort(lower_index, b)
+    end
+    if(a < higher_index)
+      QuickSort.quick_sort(a, higher_index)
+    end
+
+  end
+
+  def self.swap_indeces(index1, index2)
+    temp = @@result_array[index1]
+    @@result_array[index1] = @@result_array[index2]
+    @@result_array[index2] = temp
+  end
+end
