@@ -1,34 +1,32 @@
 package Search;
 
 public class BinarySearch {
-    
+
     public static int search(int[] arrayToSearch, int target){
-        
+
         int low = 0;
         int high = arrayToSearch.length-1;
-        
+
         int midPoint = 0;
         int newMidPoint = -1;
-        
+
         while(low < high){
-            
+
             midPoint = low + (high - low)/2;
-            
+
             int currentValue = arrayToSearch[midPoint];
-           
+
             if(currentValue == target){
-                if(midPoint != 0 && arrayToSearch[midPoint-1] != target){
-                   return midPoint; 
-                }
+               return midPoint; 
             }
-           
+
             if(currentValue < target){
                 low = midPoint+1;
             }else{
                 high = midPoint-1;
             }
         }
-        
+
         return -1;
     }
 }
