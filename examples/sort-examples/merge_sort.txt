@@ -3,7 +3,7 @@ def sort(inputArray)
    resultArray = inputArray.clone
 
   if(resultArray.size <= 2)
-    if(resultArray.size == 2 && (resultArray[0] > resultArray[1]))
+    if(resultArray.size == 2 && resultArray[0] > resultArray[1])
       temp = resultArray[0]
       resultArray[0] = resultArray[1]
       resultArray[1] = temp

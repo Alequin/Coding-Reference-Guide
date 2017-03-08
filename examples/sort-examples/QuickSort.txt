@@ -1,0 +1,57 @@
+public class QuickSort {
+    
+    private static int array[];
+    private static int length;
+ 
+    /**
+     * Sorts an integer array using quick sort.
+     * @param inputArray
+     * @return 
+     */
+    public static int[] sort(int[] inputArray) {
+         
+        if (inputArray == null || inputArray.length == 0) {
+            return inputArray;
+        }
+        
+        length = inputArray.length;
+
+        array = new int[length];
+        System.arraycopy(inputArray, 0, array, 0, length); 
+ 
+        quickSort(0, length - 1);
+        
+        return array;
+    }
+ 
+    private static void quickSort(int lowerIndex, int higherIndex) {
+         
+        int a = lowerIndex;
+        int b = higherIndex;
+        int pivot = array[lowerIndex+(higherIndex-lowerIndex)/2];
+        while (a <= b) {
+            while (array[a] < pivot) {
+                a++;
+            }
+            while (array[b] > pivot) {
+                b--;
+            }
+            if (a <= b) {
+                swapIndeces(a, b);
+                //move index to next position on both sides
+                a++;
+                b--;
+            }
+        }
+        if (lowerIndex < b)
+            quickSort(lowerIndex, b);
+        if (a < higherIndex)
+            quickSort(a, higherIndex);
+    }
+ 
+    private static void swapIndeces(int indexOne, int indexTwo) {
+        int temp = array[indexOne];
+        array[indexOne] = array[indexTwo];
+        array[indexTwo] = temp;
+    }
+}
