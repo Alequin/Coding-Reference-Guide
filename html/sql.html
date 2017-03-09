@@ -20,13 +20,24 @@
           <table id="contents-table">
             <tr>
               <td>
-                <a href="#not-null">NOT NULL &#38; DEFAULTL</a>
+                <a href="#">ph</a>
+              </td>
+              <td>
+                <a href="#">ph</a>
+              </td>
+              <td>
+                <a href="#select">SELECT</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#not-null">NOT NULL &#38; DEFAULT</a>
               </td>
               <td>
                 <a href="#data-types">Data types</a>
               </td>
               <td>
-                <a href="#baic-sql">Basic SQL and the RDBMS</a>
+                <a href="#basic-sql">Basic SQL and the RDBMS</a>
               </td>
             </tr>
           </table>
@@ -37,6 +48,93 @@
   <div id="header-space"></div>
 
   <div id="primary-container">
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="select" class="title-anchor"></div>
+      <h2 class="section-header">SELECT</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          <a href="../examples/sql/select-section-table-code.txt">
+            The following examples are based on the table in this file.
+          </a>
+          <br><br>
+          The SELECT statment is used in sql to query a table and return zero
+          or more rows and columns from the specified table or tables based on
+          the given conditions. The simplest way to use the statment is with
+          the wild card statment, which returns the data contained in all rows
+          and all columns.
+          <br><br>
+          <strong>
+            SELECT * FROM people;
+          </strong>
+        </p>
+        <img src="../examples/sql/select-section-table-img.png" alt="wildcard table"/><br>
+        <p class="section-text-normal">
+          The wild card can be replaced with column names in order to specify
+          the columns that should be returned.
+          <br><br>
+          <strong>
+            SELECT first_name, last_name FROM people;
+          </strong>
+        </p>
+        <img src="../examples/sql/select-with-columns.png" alt="column select table"/><br>
+        <p class="section-text-normal">
+          Additional conditions can be used by implementing the WHERE statment,
+          which filters rows based on the given condition. The column that is
+          <br><br>
+          <strong>
+            SELECT first_name, last_name FROM people WHERE age=22;
+          </strong>
+        </p>
+        <img src="../examples/sql/where-condition.png" alt="where statment table"/><br>
+        <p class="section-text-normal">
+          Equals is not the only available comparison operator.
+          <br><br>
+          <strong>
+            &#60;: Less than<br>
+            &#62;: Greater than<br>
+            &#60;=: Less than or equal to<br>
+            &#62;=: Greater than or equal to<br>
+            &#60;&#62;: Not equal<br>
+          </strong>
+          <em>!= is also an operator for not equal to but it is not defined in
+            the ANSI 99 SQL standard and so some platforms may not support it.</em>
+        </p>
+        <p class="section-text-normal">
+          Multiple conditions can be combined using the operators AND / OR.
+          <br><br>
+          <strong>
+            SELECT first_name, last_name FROM people WHERE age=22 AND gender='f';
+          </strong>
+        </p>
+        <img src="../examples/sql/select-and.png" alt="AND where statment table"/><br>
+        <p class="section-text-normal">
+          <strong>
+            SELECT first_name, last_name FROM people WHERE age=22 OR last_name='Lenart';
+          </strong>
+        </p>
+        <img src="../examples/sql/select-or.png" alt="OR where statment table"/><br>
+        <p class="section-text-normal">
+
+          <br><br>
+          (Sources:<br>
+          <a href="http://stackoverflow.com/questions/18015422/what-is-difference-between-and-in-sql-server">
+            stackoverflow: What is difference between != and &#60;&#62; in sql server
+          </a><br>
+          <a href="http://web.cecs.pdx.edu/~len/sql1999.pdf">
+            ANSI/ISO/IEC International Standard(IS) Database Language SQL —
+            Part 2: Foundation (SQL/Foundation)
+          </a><br>
+          <a href="">
+          </a><br>
+        </p>
+      </div>
+
+    </div>
 
     <div class="divider"></div>
 
@@ -231,7 +329,7 @@
           Access the database:
           <br><br>
           <strong>
-            USE people;
+            USE my_database;
           </strong>
           <br><br>
           Create a new table in the database:
@@ -239,7 +337,9 @@
           <strong>
               CREATE TABLE people(<br>
               &#160;&#160;first_name VARCHAR(50),<br>
-              &#160;&#160;last_name VARCHAR(50)<br>
+              &#160;&#160;last_name VARCHAR(50),<br>
+              &#160;&#160;age INT,<br>
+              &#160;&#160;gender VARCHAR(1)<br>
               );
           </strong>
           <br><br>
@@ -253,14 +353,12 @@
           <em>
             In the first insert example not all column must be named, only
             the ones to be used. In the second example as the column names are
-            omitted  data must be provided for all columns in the correct order.
+            omitted data must be provided for all columns in the correct order.
           </em>
           <br><br>
           <strong>
-              INSERT INTO people (first_name, last_name) VALUES
-              ('Paul', 'Smith');
-              <br><br>
-              INSERT INTO doughnut_list VALUES('Paul', 'Smith');
+              INSERT INTO people (first_name, last_name, age, gender)
+              VALUES('Samantha', 'Herring', 25, 'f');
           </strong>
           <br><br>
           View all data in table
