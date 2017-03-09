@@ -129,8 +129,25 @@
             SELECT * FROM people WHERE first_name LIKE '%a';
           </strong>
         </p>
-        <img src="../examples/sql/like-a.png" alt="LIKE '%a' result table"/><br>
-
+        <img src="../examples/sql/like-a-post.png" alt="LIKE '%a' result table"/><br>
+        <p class="section-text-normal">
+          <strong>
+            SELECT * FROM people WHERE first_name LIKE 'M%';
+          </strong>
+        </p>
+        <img src="../examples/sql/like-m-pre.png" alt="LIKE 'M%' result table"/><br>
+        <p class="section-text-normal">
+          <strong>
+            SELECT * FROM people WHERE last_name LIKE '_leek';
+          </strong>
+        </p>
+        <img src="../examples/sql/like-leek.png" alt="LIKE '_leek' result table"/><br>
+        <p class="section-text-normal">
+          <strong>
+            SELECT * FROM people WHERE last_name LIKE 'Sho_man';
+          </strong>
+        </p>
+        <img src="../examples/sql/like-sho-man.png" alt="LIKE 'Sho_man' result table"/><br>
         <p class="section-text-normal">
           <br><br>
           (Sources:<br>
