@@ -273,7 +273,7 @@
           <br><br>
           <strong>
             def feed_dog(amount)<br>
-            &#160;&#160;if(amount < 0)<br>
+            &#160;&#160;if(amount &#60; 0)<br>
             &#160;&#160;&#160;&#160;raise ArgumentError, "A positive value is needed"<br>
             &#160;&#160;end<br>
             &#160;&#160;puts "The dog is happy but wants more"<br>
@@ -290,11 +290,11 @@
             pre-defined ones.
           <br><br>
           <strong>
-            class AngryDogError < ArgumentError<br>
+            class AngryDogError &#60; ArgumentError<br>
             end
             <br><br>
             def feed_dog(amount)<br>
-            &#160;&#160;if(amount < 0)<br>
+            &#160;&#160;if(amount &#60; 0)<br>
             &#160;&#160;&#160;&#160;raise AngryDogError, "A positive value is needed"<br>
             &#160;&#160;end<br>
             &#160;&#160;puts "The dog is happy but wants more"<br>
@@ -308,14 +308,14 @@
           hierachy.
         </p>
 
-        <span class="img-span">
+        <div class="img-span">
           <img src="../examples/exception_list.jpg" alt="Ruby exceptions from the Programming Ruby book." />
           <p>
             Image originally from: The Programming Ruby book.<br>
             <a href="https://www.khanacademy.org/computing/computer-science/algorithms/merge-sort/a/overview-of-merge-sort">
             Image taken from: RubyLearning.com: Ruby Exceptions
           </a></p>
-        </span>
+        </div>
 
         <p class="section-text-normal">
           (Sources:<br>
@@ -532,18 +532,18 @@
             &#160;&#160;&#160;&#160;@wheels = wheels<br>
             &#160;&#160;end
             <br><br>
-            &#160;&#160;def <=>(to_compare)<br>
-            &#160;&#160;&#160;&#160;@wheels <=> to_compare.wheels<br>
+            &#160;&#160;def &#60;=&#62;(to_compare)<br>
+            &#160;&#160;&#160;&#160;@wheels &#60;=&#62; to_compare.wheels<br>
             &#160;&#160;end
             <br><br>
             end
             <br><br>
             bike = Vehicle.new(2)<br>
             car = Vehicle.new(4)<br>
-            puts bike < car<br>
-            puts car > bike<br>
+            puts bike &#60; car<br>
+            puts car &#62; bike<br>
             puts bike == car<br>
-            #>= true<br>
+            #=> true<br>
             # true<br>
             # false
           </strong>
@@ -628,7 +628,7 @@
           <strong>
             Person = Struct.new(:name, :age)
             <br><br>
-            class Alan < Person<br>
+            class Alan &#60; Person<br>
             end
             <br><br>
             baby_alan = Alan.new("Alan", 0.1)<br>
@@ -637,7 +637,7 @@
             #=> Alan - age 0.1
             <br><br>
             Short method:<br>
-            class Alan < Struct.new(:name, :age)<br>
+            class Alan &#60; Struct.new(:name, :age)<br>
             end
           </strong>
           <br><br>
@@ -848,7 +848,7 @@
             &#160;&#160;end<br>
             end
             <br><br>
-            class Dog < Mammal<br>
+            class Dog &#60; Mammal<br>
               &#160;&#160;def bark<br>
               &#160;&#160;&#160;&#160;return "woof"<br>
               &#160;&#160;end<br>
@@ -884,13 +884,13 @@
             &#160;&#160;end<br>
             end
             <br><br>
-            class Dog < Mammal<br>
+            class Dog &#60; Mammal<br>
             &#160;&#160;def bark<br>
             &#160;&#160;&#160;&#160;return "woof"<br>
             &#160;&#160;end<br>
             end
             <br><br>
-            class Chihuahua < Dog<br>
+            class Chihuahua &#60; Dog<br>
             &#160;&#160;def bark<br>
             &#160;&#160;&#160;&#160;return "yap yap"<br>
             &#160;&#160;end<br>
@@ -923,13 +923,13 @@
             &#160;&#160;end<br>
             end
             <br><br>
-            class Dog < Mammal<br>
+            class Dog &#60; Mammal<br>
               &#160;&#160;def bark<br>
               &#160;&#160;&#160;&#160;return "woof"<br>
               &#160;&#160;end<br>
             end
             <br><br>
-            class GreatDane < Dog<br>
+            class GreatDane &#60; Dog<br>
               &#160;&#160;def bark<br>
               &#160;&#160;&#160;&#160;return "#{super.upcase}!!"<br>
               &#160;&#160;end<br>
@@ -961,7 +961,7 @@
             &#160;&#160;end<br>
             end
             <br><br>
-            class Dog < Mammal
+            class Dog &#60; Mammal
             <br><br>
             &#160;&#160;attr_reader :number_of_legs
             <br><br>
@@ -1015,7 +1015,7 @@
             &#160;&#160;end<br>
             end
             <br><br>
-            class Dog < Mammal
+            class Dog &#60; Mammal
             <br><br>
             &#160;&#160;attr_reader :number_of_legs
             <br><br>
@@ -1694,7 +1694,7 @@
             #=> 1 2 3 4 5
           </strong>
           <br><br>
-          The yield key term can be used in place of &#38code_block which and does not require
+          The yield key term can be used in place of &#38;code_block which and does not require
           a given parameter.
           <br><br>
           <strong>
@@ -2126,7 +2126,7 @@
     <div class="section">
 
       <div id="substitutions-in-strings" class="title-anchor"></div>
-      <h2 id="substitutions-in-strings" class="section-header">Substitutions in Strings</h2>
+      <h2 class="section-header">Substitutions in Strings</h2>
 
       <div class="section-content">
         <p class="section-text-normal">
@@ -2352,7 +2352,7 @@
             &#160;&#160;&#160;&#160;redo<br>
             &#160;&#160;end<br>
             &#160;&#160;print "#{x} "<br>
-            &#160;&#160;break if x &#62= 5<br>
+            &#160;&#160;break if x &#62;= 5<br>
           }<br>
           #>= 1 3 5
           </strong>
