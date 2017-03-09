@@ -87,8 +87,120 @@
 
       <div class="section-content">
         <p class="section-text-normal">
+          SQL data types
+        </p>
+
+        <ul class="section-text-normal">
+          <li>
+            <strong>CHAR(length) / CHARACTER(length)</strong>: Accepts a fixed
+            length character string. A value with a length less that the given
+            parameter will have blank characters added onto it. Values must be
+            surrounded by single or double quotes.
+          </li>
+
+          <li>
+            <strong>VARCHAR(length)</strong>: Accepts a variable length
+            character string. Values must be surrounded by single or double
+            quotes.
+          </li>
+
+          <li>
+            <strong>Boolean</strong>: Holds a boolean value. When inserting data
+            use TRUE or FALSE.
+          </li>
+
+          <li>
+            <strong>INT / INTEGER</strong>: Takes a 4 byte / 32 bit whole number.
+            As well as INT there is TINYINT(8 bit), SMALLINT(16 bit) and
+            BIGINT(64 bit).
+          </li>
+
+          <li>
+            <strong>
+              DEC(totalDigitCount, digitsAfterDecimal) /<br>
+              DECIMAL(totalDigitCount, digitsAfterDecimal) /<br>
+              NUMERIC(totalDigitCount, digitsAfterDecimal)
+            </strong>: Accepts whole and non whole numbers. The number to the
+            left of the decimal may have any number of digits, but it will be
+            rounded to match th value of digitsAfterDecimal. The number to the
+            right of the decimal must have a digit count equal to or less than
+            totalDigitCount - digitsAfterDecimal.
+            <br><br>
+            DEC(5, 3)<br>
+            12.345 pass<br>
+            1.23 pass<br>
+            1.2345 pass but rounded to 1.235<br>
+            123.45 fail
+          </li>
+
+          <li>
+            <strong>REAL</strong>: Holds a single precision floating point
+            number (32 bit approximation of a real number). All numbers
+            containing 6 deciaml digits or fewer can be converted to a floating
+            point value without loss of precision.
+          </li>
+
+          <li>
+            <strong>DOUBLE</strong>: Holds a double precision floating point
+            number (64 bit approximation of a real number). All numbers
+            containing 15 deciaml digits or fewer can be converted to a floating
+            point value without loss of precision.
+          </li>
+
+          <li>
+            <strong>FLOAT(precision)</strong>: Holds a floating point
+            number with a user defined precision with a max of 64.
+          </li>
+
+          <li>
+            <strong>BLOB(length) / BINARY LARGE OBJECT(length)</strong>: Stored
+            binary values up to a max size of 2GB.
+          </li>
+
+          <li>
+            <strong>DATE</strong>: Accept date values surrounded by single
+            quotes and in the format of DATE'YYYY-MM-DD' or 'YYYY-MM-DD'. Year
+            can be values between 0-9999. Month can be values between 1-12. Day
+            can be values between 1-31.
+          </li>
+
+          <li>
+            <strong>TIME</strong>: Accept time values surrounded by single
+            quotes and in the format of TIME'HH:MM:SS', 'HH:MM:SS',
+            TIME'HH:MM:SS.NN' or 'HH:MM:SS.NN' (NN == nano seconds). Hour can
+            be values between 0-23. Minute can be values between 0-59. Seconds
+            can be values between 0-61.9999. TIME can accept DATE values but
+            DATE must precede the value. The value input into the table will be
+            00:00:00.
+          </li>
+
+          <li>
+            <strong>TIMESTAMP</strong>: Accepts both date and time
+            values surrounded by single quotes and in the format of
+            TIMESTAMP'YYYY-MM-DD HH:MM:SS', 'YYYY-MM-DD HH:MM:SS',
+            TIMESTAMP'YYYY-MM-DD HH:MM:SS.NN' or 'YYYY-MM-DD HH:MM:SS.NN'
+            (NN == nano seconds). Acceptable values can be found in the DATE and
+            TIME sections.
+          </li>
+        </ul>
+
+        <p class="section-text-normal">
           (Sources:<br>
-          <a href="">
+          Head First SQL<br>
+          <a href="http://www.cs.toronto.edu/~nn/csc309-20085/guide/pointbase/docs/html/htmlfiles/dev_datatypesandconversionsFIN.html">
+            toronto.edu: SQL Data Types
+          </a><br>
+          <a href="http://stackoverflow.com/questions/10707646/sql-real-vs-float">
+            stackoverflow: SQL Real vs Float
+          </a><br>
+          <a href="http://doc.ispirer.com/sqlways/Output/SQLWays-1-099.html">
+            Ispirer SQLWays Database Migration Software
+          </a>
+          <a href="https://en.wikipedia.org/wiki/Single-precision_floating-point_format">
+            Wikipedia: Single-precision floating-point format
+          </a><br>
+          <a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">
+            Wikipedia: Double-precision floating-point format
           </a>)
         </p>
       </div>

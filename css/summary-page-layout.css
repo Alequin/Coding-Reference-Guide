@@ -95,6 +95,11 @@ a, a:visited{
   margin-bottom: 15px;
 }
 
+.section li{
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
 .section-header{
   margin-top: 10px;
 }
