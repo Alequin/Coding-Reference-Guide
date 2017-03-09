@@ -92,19 +92,6 @@
         </p>
         <img src="../examples/sql/where-condition.png" alt="where statment table"/><br>
         <p class="section-text-normal">
-          Equals is not the only available comparison operator.
-          <br><br>
-          <strong>
-            &#60;: Less than<br>
-            &#62;: Greater than<br>
-            &#60;=: Less than or equal to<br>
-            &#62;=: Greater than or equal to<br>
-            &#60;&#62;: Not equal<br>
-          </strong>
-          <em>!= is also an operator for not equal to but it is not defined in
-            the ANSI 99 SQL standard and so some platforms may not support it.</em>
-        </p>
-        <p class="section-text-normal">
           Multiple conditions can be combined using the operators AND / OR.
           <br><br>
           <strong>
@@ -119,7 +106,32 @@
         </p>
         <img src="../examples/sql/select-or.png" alt="OR where statment table"/><br>
         <p class="section-text-normal">
+          Equals is not the only available comparison operator.
+          <br><br>
+          <strong>
+            &#60;: Less than<br>
+            &#62;: Greater than<br>
+            &#60;=: Less than or equal to<br>
+            &#62;=: Greater than or equal to<br>
+            &#60;&#62;: Not equal<br>
+          </strong>
+          <em>
+            != is also an operator for not equal to but it is not defined in
+            the ANSI 99 SQL standard and so some platforms may not support it.
+          </em>
+          <br><br>
+          Another comparison operator is the LIKE keyword. When used it returns
+          results that are similar to the condition given. It is commonly used
+          alongside wild card characters such as %(acts as any number of
+          characters) or _(acts as a single unknown character).
+          <br><br>
+          <strong>
+            SELECT * FROM people WHERE first_name LIKE '%a';
+          </strong>
+        </p>
+        <img src="../examples/sql/like-a.png" alt="LIKE '%a' result table"/><br>
 
+        <p class="section-text-normal">
           <br><br>
           (Sources:<br>
           <a href="http://stackoverflow.com/questions/18015422/what-is-difference-between-and-in-sql-server">
