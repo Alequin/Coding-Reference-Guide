@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>... Summary</title>
+  <title>SQL Summary</title>
   <meta charset="utf-8">
   <link href="../css/basic-layout.css" type="text/css" rel="stylesheet"/>
   <link href="../css/summary-page-layout.css" type="text/css" rel="stylesheet"/>
@@ -13,20 +13,20 @@
 
   <div id="header-container">
 
-        <h1 id="main-header">Helpful ...</h1>
+        <h1 id="main-header">Helpful SQL</h1>
 
         <div id="contents-container">
           <div class="header-divider divider"></div>
           <table id="contents-table">
             <tr>
               <td>
-                <a href="#">ph</a>
+                <a href="#not-null">NOT NULL &#38; DEFAULTL</a>
               </td>
               <td>
-                <a href="#">ph</a>
+                <a href="#data-types">Data types</a>
               </td>
               <td>
-                <a href="#">ph</a>
+                <a href="#baic-sql">Basic SQL and the RDBMS</a>
               </td>
             </tr>
           </table>
@@ -42,14 +42,135 @@
 
     <div class="section">
 
-      <div class="title-anchor"></div>
-      <h2 class="section-header"></h2>
+      <div id="not-null" class="title-anchor"></div>
+      <h2 class="section-header">NOT NULL &#38; DEFAULT</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          NOT NULL is used while creating a table to ensure a column can never
+          hold a null value. If this is used a value must always be given to
+          the specified column when insert is called. When DESC is used on a
+          table it is possible to see (in the third column) if a column can
+          hold a null value.
+          <br><br>
+          <strong>
+            CREATE TABLE people(<br>
+            &#160;&#160;first_name VARCHAR(50) NOT NULL,<br>
+            &#160;&#160;last_name VARCHAR(50) NOT NULL<br>
+            );
+          </strong>
+          <br><br>
+          To ensure a NOT NULL column always has a value DEFAULT can also be
+          used during table creation. If a value is not given while inserting
+          data the provided default value will be used.
+          <br><br>
+          <strong>
+            CREATE TABLE people(<br>
+            &#160;&#160;first_name VARCHAR(50) NOT NULL,<br>
+            &#160;&#160;last_name VARCHAR(50) NOT NULL DEFAULT 'Smith'<br>
+            );
+          </strong>
+          <br><br>
+          (Sources:<br>
+          Head First SQL)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="data-types" class="title-anchor"></div>
+      <h2 class="section-header">Data types</h2>
 
       <div class="section-content">
         <p class="section-text-normal">
           (Sources:<br>
           <a href="">
           </a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="basic-sql" class="title-anchor"></div>
+      <h2 class="section-header">Basic SQL and the RDBMS</h2>
+
+      <div class="section-content">
+        <p class="section-text-normal">
+          Access the SQL shell (assuming sql is installed):
+          <br><br>
+          <strong>
+            mysql -u root -p
+          </strong>
+          <br><br>
+          Create a new database:
+          <br><br>
+          <strong>
+            CREATE DATABASE my_database;
+          </strong>
+          <br><br>
+          Access the database:
+          <br><br>
+          <strong>
+            USE people;
+          </strong>
+          <br><br>
+          Create a new table in the database:
+          <br><br>
+          <strong>
+              CREATE TABLE people(<br>
+              &#160;&#160;first_name VARCHAR(50),<br>
+              &#160;&#160;last_name VARCHAR(50)<br>
+              );
+          </strong>
+          <br><br>
+          View table details:
+          <br><br>
+          <strong>
+              DESC people;
+          </strong>
+          <br><br>
+          Insert data into table:<br>
+          <em>
+            In the first insert example not all column must be named, only
+            the ones to be used. In the second example as the column names are
+            omitted  data must be provided for all columns in the correct order.
+          </em>
+          <br><br>
+          <strong>
+              INSERT INTO people (first_name, last_name) VALUES
+              ('Paul', 'Smith');
+              <br><br>
+              INSERT INTO doughnut_list VALUES('Paul', 'Smith');
+          </strong>
+          <br><br>
+          View all data in table
+          <br><br>
+          <strong>
+              SELECT * FROM people;
+          </strong>
+          <br><br>
+          Delete table:
+          <br><br>
+          <strong>
+              DROP TABLE people;
+          </strong>
+          <br><br>
+          Delete database:
+          <br><br>
+          <strong>
+              DROP DATABASE my_database;
+          </strong>
+          <br><br>
+          (Sources:<br>
+          Head First SQL)
         </p>
       </div>
 
