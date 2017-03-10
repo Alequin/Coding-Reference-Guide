@@ -1,0 +1,40 @@
+CREATE TABLE people(
+  person_id INT NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  age INT,
+  gender VARCHAR(1),
+  PRIMARY KEY (person_id)
+); 
+
+INSERT INTO people 
+(first_name, last_name, age, gender) 
+VALUES
+('Paul', 'Smith', 32, 'm'),
+('Samantha', 'Herring', 22, 'f'),
+('Delia', 'Lenart', 74, 'f'),
+('Jo', 'Hurst', 46, 'm'),
+('Terry', 'Tanouye', 53, 'f'),
+('Alex', 'Cleek', 18, 'm'),
+('Audrey', 'Showman', 14, 'f'),
+('Mika', 'Stiger', 69, 'f'),
+('Markus', 'Palazzo', 22, 'm'),
+('Creola', 'Frisina', 1, 'f');
+
+SELECT * FROM people;
+
++-----------+------------+-----------+------+--------+
+| person_id | first_name | last_name | age  | gender |
++-----------+------------+-----------+------+--------+
+|         1 | Paul       | Smith     |   32 | m      |
+|         2 | Samantha   | Herring   |   22 | f      |
+|         3 | Delia      | Lenart    |   74 | f      |
+|         4 | Jo         | Hurst     |   46 | m      |
+|         5 | Terry      | Tanouye   |   53 | f      |
+|         6 | Alex       | Cleek     |   18 | m      |
+|         7 | Audrey     | Showman   |   14 | f      |
+|         8 | Mika       | Stiger    |   69 | f      |
+|         9 | Markus     | Palazzo   |   22 | m      |
+|        10 | Creola     | Frisina   |    1 | f      |
++-----------+------------+-----------+------+--------+
+

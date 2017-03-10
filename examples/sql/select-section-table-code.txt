@@ -5,7 +5,9 @@ CREATE TABLE people(
   gender CHAR(1)
 );
 
-INSERT INTO people VALUES
+INSERT INTO people 
+(first_name, last_name, age, gender) 
+VALUES
 ('Paul', 'Smith', 32, 'm'),
 ('Samantha', 'Herring', 22, 'f'),
 ('Delia', 'Lenart', 74, 'f'),

@@ -23,7 +23,7 @@
                 <a href="#">ph</a>
               </td>
               <td>
-                <a href="#">ph</a>
+                <a href="#primary-keys">Primary Keys</a>
               </td>
               <td>
                 <a href="#where-and-operators">WHERE Clause and Conditional Operators</a>
@@ -48,6 +48,44 @@
   <div id="header-space"></div>
 
   <div id="primary-container">
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="primary-keys" class="title-anchor"></div>
+      <h2 class="section-header">Primary Keys</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          Primary keys act as unique identifiers for each row in a table. The
+          column that holds the primary key can be created for that purpose
+          alone or an already existing column that will never have duplicate
+          values can act as the primary key.
+          <br><br>
+          The following show how to assign a column as the primary key and how
+          to ensure each value is unique.
+          <br><br>
+          <strong>
+            CREATE TABLE people(<br>
+            &#160;&#160;person_id INT NOT NULL AUTO_INCREMENT,<br>
+            &#160;&#160;first_name VARCHAR(50),<br>
+            &#160;&#160;last_name VARCHAR(50),<br>
+            &#160;&#160;age INT,<br>
+            &#160;&#160;gender VARCHAR(1),<br>
+            &#160;&#160;PRIMARY KEY (person_id)<br>
+            );
+          </strong>
+        </p>
+        <img src="../examples/sql/primary-key-table.png" alt="primary key table"/><br>
+        <a href="../examples/sql/primary-key-table-creation.txt">View full code to produce table.</a>
+        <p>
+          (Sources:<br>
+          Head First SQL)
+        </p>
+      </div>
+
+    </div>
 
     <div class="divider"></div>
 
