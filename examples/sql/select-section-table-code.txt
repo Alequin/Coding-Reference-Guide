@@ -5,16 +5,17 @@ CREATE TABLE people(
   gender CHAR(1)
 );
 
-INSERT INTO people VALUES('Paul', 'Smith', 32, 'm');
-INSERT INTO people VALUES('Samantha', 'Herring', 22, 'f');
-INSERT INTO people VALUES('Delia', 'Lenart', 74, 'f');
-INSERT INTO people VALUES('Jo', 'Hurst', 46, 'm');
-INSERT INTO people VALUES('Terry', 'Tanouye', 53, 'f');
-INSERT INTO people VALUES('Alex', 'Cleek', 18, 'm');
-INSERT INTO people VALUES('Audrey', 'Showman', 14, 'f');
-INSERT INTO people VALUES('Mika', 'Stiger', 69, 'f');
-INSERT INTO people VALUES('Markus', 'Palazzo', 22, 'm');
-INSERT INTO people VALUES('Creola', 'Frisina', 1, 'f');
+INSERT INTO people VALUES
+('Paul', 'Smith', 32, 'm'),
+('Samantha', 'Herring', 22, 'f'),
+('Delia', 'Lenart', 74, 'f'),
+('Jo', 'Hurst', 46, 'm'),
+('Terry', 'Tanouye', 53, 'f'),
+('Alex', 'Cleek', 18, 'm'),
+('Audrey', 'Showman', 14, 'f'),
+('Mika', 'Stiger', 69, 'f'),
+('Markus', 'Palazzo', 22, 'm'),
+('Creola', 'Frisina', 1, 'f');
 
 SELECT * FROM people;
 

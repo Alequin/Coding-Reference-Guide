@@ -56,16 +56,16 @@
       <div id="select" class="title-anchor"></div>
       <h2 class="section-header">SELECT</h2>
 
-      <div class="section-content">
-        <p class="section-text-normal">
+      <div class="section-content section-text-normal">
+        <p>
           <a href="../examples/sql/select-section-table-code.txt">
             The following examples are based on the table in this file.
           </a>
           <br><br>
-          The SELECT statment is used in sql to query a table and return zero
+          The SELECT statment is used in sql to query tables and return zero
           or more rows and columns from the specified table or tables based on
           the given conditions. The simplest way to use the statment is with
-          the wild card statment, which returns the data contained in all rows
+          the asteriks symbol(*), which returns the data contained in all rows
           and all columns.
           <br><br>
           <strong>
@@ -73,8 +73,8 @@
           </strong>
         </p>
         <img src="../examples/sql/select-section-table-img.png" alt="wildcard table"/><br>
-        <p class="section-text-normal">
-          The wild card can be replaced with column names in order to specify
+        <p>
+          The asteriks can be replaced with column names in order to specify
           the columns that should be returned.
           <br><br>
           <strong>
@@ -82,16 +82,16 @@
           </strong>
         </p>
         <img src="../examples/sql/select-with-columns.png" alt="column select table"/><br>
-        <p class="section-text-normal">
+        <p>
           Additional conditions can be used by implementing the WHERE statment,
-          which filters rows based on the given condition. The column that is
+          which filters rows based on the given condition.
           <br><br>
           <strong>
             SELECT first_name, last_name FROM people WHERE age=22;
           </strong>
         </p>
         <img src="../examples/sql/where-condition.png" alt="where statment table"/><br>
-        <p class="section-text-normal">
+        <p>
           Multiple conditions can be combined using the operators AND / OR.
           <br><br>
           <strong>
@@ -99,14 +99,15 @@
           </strong>
         </p>
         <img src="../examples/sql/select-and.png" alt="AND where statment table"/><br>
-        <p class="section-text-normal">
+        <p>
           <strong>
             SELECT first_name, last_name FROM people WHERE age=22 OR last_name='Lenart';
           </strong>
         </p>
         <img src="../examples/sql/select-or.png" alt="OR where statment table"/><br>
-        <p class="section-text-normal">
-          Equals is not the only available comparison operator.
+        <p>
+          Equals is not the only available comparison operator. Common ones
+          include:
           <br><br>
           <strong>
             &#60;: Less than<br>
@@ -130,27 +131,63 @@
           </strong>
         </p>
         <img src="../examples/sql/like-a-post.png" alt="LIKE '%a' result table"/><br>
-        <p class="section-text-normal">
+        <p>
           <strong>
             SELECT * FROM people WHERE first_name LIKE 'M%';
           </strong>
         </p>
         <img src="../examples/sql/like-m-pre.png" alt="LIKE 'M%' result table"/><br>
-        <p class="section-text-normal">
+        <p>
           <strong>
             SELECT * FROM people WHERE last_name LIKE '_leek';
           </strong>
         </p>
         <img src="../examples/sql/like-leek.png" alt="LIKE '_leek' result table"/><br>
-        <p class="section-text-normal">
+        <p>
           <strong>
             SELECT * FROM people WHERE last_name LIKE 'Sho_man';
           </strong>
         </p>
         <img src="../examples/sql/like-sho-man.png" alt="LIKE 'Sho_man' result table"/><br>
-        <p class="section-text-normal">
+        <p>
+          Another comparison operator is BETWEEN, which finds all rows within
+          a stated range.
           <br><br>
+          <strong>
+            SELECT first_name, age FROM people WHERE age BETWEEN 40 AND 90;
+          </strong>
+        </p>
+        <img src="../examples/sql/between-keyword-table.png" alt="BETWEEN result table"/><br>
+        <p>
+          The comparison operator IN can be ued in place of multiple OR
+          statments.
+          <br><br>
+          <strong>
+            SELECT first_name, last_name FROM people WHERE last_name IN
+            ('Tanouye', 'Smith', 'Frisina');
+          </strong>
+        </p>
+        <img src="../examples/sql/in-keyword-table.png" alt="IN result table"/><br>
+        <p>
+          The comparison operator NOT is used to find all rows which do not
+          match the given condition.
+          <br><br>
+          <strong>
+            SELECT first_name, age FROM people WHERE NOT age BETWEEN 40
+            AND 90;
+          </strong>
+        </p>
+        <img src="../examples/sql/not-between-table.png" alt="NOT BETWEEN result table"/><br>
+        <p>
+          <strong>
+            SELECT first_name, last_name FROM people WHERE NOT last_name IN
+            ('Tanouye', 'Smith', 'Frisina');
+          </strong>
+        </p>
+        <img src="../examples/sql/not-in-table.png" alt="NOT IN result table"/><br>
+        <p>
           (Sources:<br>
+          Head First SQL<br>
           <a href="http://stackoverflow.com/questions/18015422/what-is-difference-between-and-in-sql-server">
             stackoverflow: What is difference between != and &#60;&#62; in sql server
           </a><br>
@@ -172,8 +209,8 @@
       <div id="not-null" class="title-anchor"></div>
       <h2 class="section-header">NOT NULL &#38; DEFAULT</h2>
 
-      <div class="section-content">
-        <p class="section-text-normal">
+      <div class="section-content section-text-normal">
+        <p>
           NOT NULL is used while creating a table to ensure a column can never
           hold a null value. If this is used a value must always be given to
           the specified column when insert is called. When DESC is used on a
@@ -212,12 +249,12 @@
       <div id="data-types" class="title-anchor"></div>
       <h2 class="section-header">Data types</h2>
 
-      <div class="section-content">
-        <p class="section-text-normal">
+      <div class="section-content section-text-normal">
+        <p>
           SQL data types
         </p>
 
-        <ul class="section-text-normal">
+        <ul>
           <li>
             <strong>CHAR(length) / CHARACTER(length)</strong>: Accepts a fixed
             length character string. A value with a length less that the given
@@ -311,7 +348,7 @@
           </li>
         </ul>
 
-        <p class="section-text-normal">
+        <p>
           (Sources:<br>
           Head First SQL<br>
           <a href="http://www.cs.toronto.edu/~nn/csc309-20085/guide/pointbase/docs/html/htmlfiles/dev_datatypesandconversionsFIN.html">
@@ -341,8 +378,8 @@
       <div id="basic-sql" class="title-anchor"></div>
       <h2 class="section-header">Basic SQL and the RDBMS</h2>
 
-      <div class="section-content">
-        <p class="section-text-normal">
+      <div class="section-content section-text-normal">
+        <p>
           Access the SQL shell (assuming sql is installed):
           <br><br>
           <strong>
