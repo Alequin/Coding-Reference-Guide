@@ -26,7 +26,7 @@
                 <a href="#">ph</a>
               </td>
               <td>
-                <a href="#select">SELECT</a>
+                <a href="#where-and-operators">WHERE Clause and Conditional Operators</a>
               </td>
             </tr>
             <tr>
@@ -53,8 +53,8 @@
 
     <div class="section">
 
-      <div id="select" class="title-anchor"></div>
-      <h2 class="section-header">SELECT</h2>
+      <div id="where-and-operators" class="title-anchor"></div>
+      <h2 class="section-header">WHERE Clause and Conditional Operators</h2>
 
       <div class="section-content section-text-normal">
         <p>
@@ -62,29 +62,9 @@
             The following examples are based on the table in this file.
           </a>
           <br><br>
-          The SELECT statment is used in sql to query tables and return zero
-          or more rows and columns from the specified table or tables based on
-          the given conditions. The simplest way to use the statment is with
-          the asteriks symbol(*), which returns the data contained in all rows
-          and all columns.
-          <br><br>
-          <strong>
-            SELECT * FROM people;
-          </strong>
-        </p>
-        <img src="../examples/sql/select-section-table-img.png" alt="wildcard table"/><br>
-        <p>
-          The asteriks can be replaced with column names in order to specify
-          the columns that should be returned.
-          <br><br>
-          <strong>
-            SELECT first_name, last_name FROM people;
-          </strong>
-        </p>
-        <img src="../examples/sql/select-with-columns.png" alt="column select table"/><br>
-        <p>
-          Additional conditions can be used by implementing the WHERE statment,
-          which filters rows based on the given condition.
+          The keyword WHERE and Conditional operators in SQL are used alongside
+          SELECT, UPDATE and DELETE in order to created conditions and control
+          which rows are returned or altered.
           <br><br>
           <strong>
             SELECT first_name, last_name FROM people WHERE age=22;
@@ -106,7 +86,7 @@
         </p>
         <img src="../examples/sql/select-or.png" alt="OR where statment table"/><br>
         <p>
-          Equals is not the only available comparison operator. Common ones
+          Equals (=) is not the only available comparison operator. Common ones
           include:
           <br><br>
           <strong>
@@ -424,13 +404,33 @@
           <br><br>
           <strong>
               INSERT INTO people (first_name, last_name, age, gender)
-              VALUES('Samantha', 'Herring', 25, 'f');
+              VALUES('Samantha', 'Herring', 25, 'f');<br>
+              or<br>
+              INSERT INTO people VALUES('Samantha', 'Herring', 25, 'f');<br>
           </strong>
           <br><br>
-          View all data in table
+          Query and return data from the table.
           <br><br>
           <strong>
               SELECT * FROM people;
+          </strong>
+          <br><br>
+          Update rows.
+          <br><br>
+          <strong>
+              UPDATE people SET age = 26 WHERE last_name = 'Herring';
+          </strong>
+          <br><br>
+          Delete specific rows:
+          <br><br>
+          <strong>
+              DELETE FROM people WHERE age = 26;
+          </strong>
+          <br><br>
+          Delete all rows:
+          <br><br>
+          <strong>
+              DELETE FROM people;
           </strong>
           <br><br>
           Delete table:
