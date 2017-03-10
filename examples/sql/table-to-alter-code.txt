@@ -1,0 +1,25 @@
+CREATE TABLE peeps(
+  f_name VARCHAR(50),
+  l_name VARCHAR(50),
+  age DOUBLE,
+  gender VARCHAR(1)
+);
+
+INSERT INTO peeps
+(f_name, l_name, age, gender)
+VALUES
+('Paul', 'Smith', 32, 'm'),
+('Samantha', 'Herring', 22, 'f'),
+('Delia', 'Lenart', 74, 'f');
+
+SELECT * FROM peeps;
+
++----------+---------+------+--------+
+| f_name   | l_name  | age  | gender |
++----------+---------+------+--------+
+| Paul     | Smith   |   32 | m      |
+| Samantha | Herring |   22 | f      |
+| Delia    | Lenart  |   74 | f      |
++----------+---------+------+--------+
+
+

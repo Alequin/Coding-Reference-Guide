@@ -7,6 +7,7 @@
   <link href="../css/basic-layout.css" type="text/css" rel="stylesheet"/>
   <link href="../css/summary-page-layout.css" type="text/css" rel="stylesheet"/>
   <link id="summary-page-layout" href="../css/normal-text-summary-page.css" type="text/css" rel="stylesheet"/>
+  <link href="../css/no_bullet_point.css" type="text/css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -20,7 +21,7 @@
           <table id="contents-table">
             <tr>
               <td>
-                <a href="#">ph</a>
+                <a href="#alter">ALTER</a>
               </td>
               <td>
                 <a href="#primary-keys">Primary Keys</a>
@@ -48,6 +49,85 @@
   <div id="header-space"></div>
 
   <div id="primary-container">
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="alter" class="title-anchor"></div>
+      <h2 class="section-header">ALTER</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          The key word alter is used to make changes to all aspects of a table.<br>
+          This is the table that will be altered<br>
+        </p>
+        <img src="../examples/sql/table-to-alter.png" alt="table to be altered"/><br>
+        <a href="../examples/sql/table-to-alter-code.txt">
+          View the code to make the table.
+        </a>
+        <p>
+          Change the name of the table:
+          <br><br>
+          <strong>
+            ALTER TABLE peeps RENAME TO people;
+          </strong>
+          <br><br>
+          Add new columns onto the table:
+          <br><br>
+          <strong>
+            ALTER TABLE people ADD COLUMN phone_number VARCHAR(11);
+          </strong>
+          <br><br>
+          Add new columns onto the table and control their position:
+          <br><br>
+          <strong>
+            ALTER TABLE people ADD COLUMN person_number INT FIRST;<br>
+          </strong>
+          <em>
+            In place of FIRST the key words LAST, BEFORE and AFTER may be
+            used.
+          </em>
+          <br><br>
+          Make changes to existing columns:
+          <br><br>
+          <strong>
+            ALTER TABLE people <br>
+            CHANGE COLUMN person_number person_id INT NOT NULL AUTO_INCREMENT,<br>
+            ADD PRIMARY KEY (person_id);
+          </strong>
+          <br><br>
+           Modify existing columns:
+          <br><br>
+          <strong>
+            ALTER TABLE people MODIFY COLUMN phone_number INT(11);
+          </strong>
+          <br><br>
+            Drop column from the table:
+          <br><br>
+          <strong>
+            ALTER TABLE people DROP COLUMN phone_number;
+          </strong>
+          <br><br>
+            Commands may also be chained together:
+          <br><br>
+          <strong>
+            ALTER TABLE people <br>
+            CHANGE COLUMN f_name first_name VARCHAR(50),<br>
+            CHANGE COLUMN l_name last_name VARCHAR(50);
+          </strong>
+          <br><br>
+            The resultant table after these commands is shown below.
+        </p>
+        <img src="../examples/sql/finished-altered-table.png" alt="table to be altered"/><br>
+        <p>
+          (Sources:<br>
+          <a href="">
+          </a>)
+        </p>
+      </div>
+
+    </div>
 
     <div class="divider"></div>
 
