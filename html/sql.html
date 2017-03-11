@@ -21,6 +21,17 @@
           <table id="contents-table">
             <tr>
               <td>
+                <a href="#">ph</a>
+              </td>
+              <td>
+                <a href="#">ph</a>
+              </td>
+              <td>
+                <a href="#string-functions">String Functions</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
                 <a href="#alter">ALTER</a>
               </td>
               <td>
@@ -49,6 +60,67 @@
   <div id="header-space"></div>
 
   <div id="primary-container">
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="string-functions" class="title-anchor"></div>
+      <h2 class="section-header">String Functions</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          String function are used in sql to manipulate input and return a new
+          output. Normally the input is given as a parameter. Only a few
+          functions are shown here. For a longer list view this
+          <a href="../examples/sql/sql-string-functions.pdf">
+            pdf</a> or
+          <a href="https://www.tutorialspoint.com/sql/sql-string-functions.htm#function_insert">
+            website</a>.<br>
+          The following table will be used to provide examples.
+        </p>
+        <img src="../examples/sql/primary-key-table.png" alt="table used to show string functions"/><br>
+        <a href="../examples/sql/primary-key-table-creation.txt">View full code to produce table.</a>
+        <p>
+          LENGTH(string): used to return the length of a string;
+          <br><br>
+          <strong>
+            SELECT LENGTH(first_name) FROM people;
+          </strong>
+        </p>
+        <img src="../examples/sql/length-table.png" alt="example of LENGTH function"/>
+        <p>
+          LOCATE(stringToFind, stringToCheck): used to find the first index at
+          which stringToFind occurs in stringToCheck;
+          <br><br>
+          <strong>
+            SELECT LOCATE('r', first_name) FROM people;
+          </strong>
+        </p>
+        <img src="../examples/sql/locate-table.png" alt="example of LOCATE function"/>
+        <p>
+          SUBSTRING_INDEX(stringToAlter, stringToLocate, occuranceToUse):
+          used to return a substring of stringToAlter. The returned string
+          will contain all characters prior to the  n<sup>th</sup> occurance
+          (as specified by occuranceToUse) of stringToLocate. <br>
+          If stringToLocate is not found in stringToAlter the entire string is
+          returned (unless other conditions are also stated as in the example).
+          <br><br>
+          <strong>
+            SELECT SUBSTRING_INDEX(first_name, 'r', 1) FROM people WHERE LOCATE('r', first_name) &#62; 0;
+          </strong>
+        </p>
+        <img src="../examples/sql/sub-index-table.png" alt="example of SUBSTRING_INDEX function"/>
+        <p>
+          (Sources:<br>
+          Head First SQL<br>
+          <a href="https://www.tutorialspoint.com/sql/sql-string-functions.htm">
+            tutorialspoint: SQL - String Functions
+          </a>)
+        </p>
+      </div>
+
+    </div>
 
     <div class="divider"></div>
 
@@ -122,8 +194,7 @@
         <img src="../examples/sql/finished-altered-table.png" alt="table to be altered"/><br>
         <p>
           (Sources:<br>
-          <a href="">
-          </a>)
+          Head First sql)
         </p>
       </div>
 
