@@ -71,13 +71,16 @@
       <div class="section-content section-text-normal">
         <p>
           String function are used in sql to manipulate input and return a new
-          output. Normally the input is given as a parameter. Only a few
-          functions are shown here. For a longer list view this
+          output. Only a few are shown here to give an example of how string
+          functions are used with SELECT, UPDATE and DELETE. For a longer list
+          view this
           <a href="../examples/sql/sql-string-functions.pdf">
             pdf</a> or
           <a href="https://www.tutorialspoint.com/sql/sql-string-functions.htm#function_insert">
-            website</a>.<br>
-          The following table will be used to provide examples.
+            website</a>.
+          <br><br>
+          The following table will be used to provide examples. Any changes made
+          to the table will carry to the next example.
         </p>
         <img src="../examples/sql/primary-key-table.png" alt="table used to show string functions"/><br>
         <a href="../examples/sql/primary-key-table-creation.txt">View full code to produce table.</a>
@@ -91,7 +94,8 @@
         <img src="../examples/sql/length-table.png" alt="example of LENGTH function"/>
         <p>
           LOCATE(stringToFind, stringToCheck): used to find the first index at
-          which stringToFind occurs in stringToCheck;
+          which stringToFind occurs in stringToCheck (first char is in position
+          1 not 0).
           <br><br>
           <strong>
             SELECT LOCATE('r', first_name) FROM people;
@@ -99,8 +103,8 @@
         </p>
         <img src="../examples/sql/locate-table.png" alt="example of LOCATE function"/>
         <p>
-          SUBSTRING_INDEX(stringToAlter, stringToLocate, occuranceToUse):
-          used to return a substring of stringToAlter. The returned string
+          SUBSTRING_INDEX(stringToUse, stringToLocate, occuranceToUse):
+          used to return a substring of stringToUse. The returned string
           will contain all characters prior to the  n<sup>th</sup> occurance
           (as specified by occuranceToUse) of stringToLocate. <br>
           If stringToLocate is not found in stringToAlter the entire string is
@@ -111,6 +115,27 @@
           </strong>
         </p>
         <img src="../examples/sql/sub-index-table.png" alt="example of SUBSTRING_INDEX function"/>
+        <p>
+          UPPER(stringToUse): Make all characters upper case.
+          <br><br>
+          <strong>
+            UPDATE people SET last_name = UPPER(last_name) WHERE LENGTH(last_name) >= 6;
+          </strong>
+        </p>
+        <img src="../examples/sql/upper-table.png" alt="example of UPPER function"/>
+        <p>
+          RIGHT(stringToUse, numberOfChars): Returns a string containing the
+          right most characters. The number of characters returned depends on
+          numberOfChars.
+          <br><br>
+          REVERSE(stringToUse): Returns the given string with all characters in
+          reverse order.
+          <br><br>
+          <strong>
+            DELETE FROM people WHERE RIGHT(REVERSE(first_name), 1) = 'm';
+          </strong>
+        </p>
+        <img src="../examples/sql/reverse-right-table.png" alt="example of REVERSE function and RIGHT function"/>
         <p>
           (Sources:<br>
           Head First SQL<br>
@@ -131,8 +156,10 @@
 
       <div class="section-content section-text-normal">
         <p>
-          The key word alter is used to make changes to all aspects of a table.<br>
-          This is the table that will be altered<br>
+          The key word alter is used to make changes to all aspects of a table.
+          <br><br>
+          The following table will be used to provide examples. Any changes made
+          to the table will carry to the next example.<br>
         </p>
         <img src="../examples/sql/table-to-alter.png" alt="table to be altered"/><br>
         <a href="../examples/sql/table-to-alter-code.txt">
@@ -214,7 +241,7 @@
           alone or an already existing column that will never have duplicate
           values can act as the primary key.
           <br><br>
-          The following show how to assign a column as the primary key and how
+          The following shows how to assign a column as the primary key and how
           to ensure each value is unique.
           <br><br>
           <strong>
@@ -248,7 +275,7 @@
       <div class="section-content section-text-normal">
         <p>
           <a href="../examples/sql/select-section-table-code.txt">
-            The following examples are based on the table in this file.
+            The following table will be used to provide examples.
           </a>
           <br><br>
           The keyword WHERE and Conditional operators in SQL are used alongside
