@@ -21,7 +21,7 @@
           <table id="contents-table">
             <tr>
               <td>
-                <a href="#">ph</a>
+                <a href="#aggregate-functions">Aggregate Functions</a>
               </td>
               <td>
                 <a href="#update-case">UPDATE with CASE</a>
@@ -60,6 +60,66 @@
   <div id="header-space"></div>
 
   <div id="primary-container">
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="aggregate-functions" class="title-anchor"></div>
+      <h2 class="section-header">Aggregate Functions</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          Aggregate functions take all the values returned by a select
+          statment and combine them in different ways, depending on the function
+          used.
+          <br><br>
+          The following table will be used to provide examples.
+        </p>
+          <img src="../examples/sql/population-table.png" alt="table used to show UPDATE using CASE"/><br>
+          <a href="../examples/sql/population-table.txt">View full code to produce table.</a>
+        <p>
+          SUM(column_name): Adds all returned values.
+          <br><br>
+          <strong>
+            SELECT SUM(population_per_million) FROM populations;
+          </strong>
+        </p>
+        <img src="../examples/sql/SUM-img.png" alt="table used to show SUM function"/>
+        <p>
+          AVG(column_name): Finds the mean average of all the provided values.
+          <br><br>
+          <strong>
+            SELECT AVG(population_per_million) FROM populations;
+          </strong>
+        </p>
+        <img src="../examples/sql/AVG-img.png" alt="table used to show AVG function"/>
+        <p>
+          MIN(column_name): Finds the smallest of all the provided values.
+          <br><br>
+          <strong>
+            SELECT MIN(population_per_million) FROM populations;
+          </strong>
+        </p>
+        <img src="../examples/sql/MIN-img.png" alt="table used to show AVG function"/>
+        <p>
+          MAX(column_name): Finds the smallest of all the provided values.
+          <br><br>
+          <strong>
+            SELECT MAX(population_per_million) FROM populations;
+          </strong>
+        </p>
+        <img src="../examples/sql/MAX-img.png" alt="table used to show AVG function"/>
+        <p>
+          (Sources:<br>
+          Head First SQL
+          <a href="http://www.sqlcourse2.com/agg_functions.html">
+            sqlcourse2: Aggregate Functions
+          </a>)
+        </p>
+      </div>
+
+    </div>
 
     <div class="divider"></div>
 
@@ -664,13 +724,21 @@
               INSERT INTO people (first_name, last_name, age, gender)
               VALUES('Samantha', 'Herring', 25, 'f');<br>
               or<br>
-              INSERT INTO people VALUES('Samantha', 'Herring', 25, 'f');<br>
+              INSERT INTO people VALUES('Samantha', 'Herring', 25, 'f');
           </strong>
           <br><br>
           Query and return data from the table.
           <br><br>
           <strong>
               SELECT * FROM people;
+          </strong>
+          <br><br>
+          Set the order of the results returned.<br>
+          To reverse orders DESC must be used but ASC is the default setting
+          <br><br>
+          <strong>
+              SELECT * FROM people ORDER BY age;<br>
+              SELECT * FROM people ORDER BY gender ASC, age DESC;
           </strong>
           <br><br>
           Update rows.

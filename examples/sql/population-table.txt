@@ -1,0 +1,30 @@
+CREATE TABLE populations(
+  id INT NOT NULL AUTO_INCREMENT,
+  continent VARCHAR(13),
+  population_per_million INT,
+  hemisphere VARCHAR(4),
+  PRIMARY KEY(id)
+);
+
+INSERT INTO populations
+(continent, population_per_million, hemisphere)
+VALUES
+('Australia', 39, 'east'),
+('Africa', 1216, 'east'),
+('North America', 579, 'west'),
+('South America', 422, 'west'),
+('Europe', 738, 'east'),
+('Asia', 4436, 'east');
+
+SELECT * FROM populations;
+
++----+---------------+------------------------+------------+
+| id | continent     | population_per_million | hemisphere |
++----+---------------+------------------------+------------+
+|  1 | Australia     |                     39 | east       |
+|  2 | Africa        |                   1216 | east       |
+|  3 | North America |                    579 | west       |
+|  4 | South America |                    422 | west       |
+|  5 | Europe        |                    738 | east       |
+|  6 | Asia          |                   4436 | east       |
++----+---------------+------------------------+------------+
