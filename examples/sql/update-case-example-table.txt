@@ -1,0 +1,30 @@
+CREATE TABLE people(
+  person_id INT NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR(50),
+  age INT,
+  stage_of_life VARCHAR(5),
+  PRIMARY KEY (person_id)
+);
+
+INSERT INTO people
+(first_name, age)
+VALUES
+('Delia', 74),
+('Jo', 46),
+('Alex', 18),
+('Audrey', 14),
+('Markus', 22),
+('Creola', 1);
+
+SELECT * FROM people ;
+
++-----------+------------+------+---------------+
+| person_id | first_name | age  | stage_of_life |
++-----------+------------+------+---------------+
+|         1 | Delia      |   74 | NULL          |
+|         2 | Jo         |   46 | NULL          |
+|         3 | Alex       |   18 | NULL          |
+|         4 | Audrey     |   14 | NULL          |
+|         5 | Markus     |   22 | NULL          |
+|         6 | Creola     |    1 | NULL          |
++-----------+------------+------+---------------+

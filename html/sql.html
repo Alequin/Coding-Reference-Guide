@@ -24,7 +24,7 @@
                 <a href="#">ph</a>
               </td>
               <td>
-                <a href="#">ph</a>
+                <a href="#update-case">UPDATE with CASE</a>
               </td>
               <td>
                 <a href="#string-functions">String Functions</a>
@@ -60,6 +60,48 @@
   <div id="header-space"></div>
 
   <div id="primary-container">
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="update-case" class="title-anchor"></div>
+      <h2 class="section-header">UPDATE with CASE</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          The key word CASE can be used with UPDATE in order to update a number
+          of recorders based on different conditions.
+          <br><br>
+          The following table will be used to provide examples.
+        </p>
+        <img src="../examples/sql/update-case-initial-table.png" alt="table used to show UPDATE using CASE"/><br>
+        <a href="../examples/sql/update-case-example-table.txt">View full code to produce table.</a>
+        <p>
+          Case combines multiple update statments into one larger statment. When
+          the condition is met the row to be updated is given the corosponding
+          value. If multiple conditions equate to true the first in the list of
+          WHEN statments will be used and if no condition is met the value
+          matched with the ELSE statment is used (ELSE is optional).
+          <br><br>
+          <strong>
+            UPDATE people<br>
+            SET stage_of_life = CASE<br>
+            &#160;&#160;WHEN age BETWEEN 0 AND 1 THEN 'baby'<br>
+            &#160;&#160;WHEN age BETWEEN 2 AND 17 THEN 'child'<br>
+            &#160;&#160;WHEN age &#62;= 18 THEN 'adult'<br>
+            &#160;&#160;ELSE 'not alive'<br>
+            END;
+          </strong>
+        </p>
+        <img src="../examples/sql/update-case-result-table.png" alt="table used to show results of UPDATE using CASE"/><br>
+        <p>
+          (Sources:<br>
+          Head First SQL)
+        </p>
+      </div>
+
+    </div>
 
     <div class="divider"></div>
 
