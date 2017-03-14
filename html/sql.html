@@ -138,15 +138,32 @@
         <p>
           The first table shown is a set of people who own one car, the second
           is the possible brands of car they may own. As many people may own the
-          same brand of car rows in the brands table matche to multiple people
+          same brand of car rows in the brands table match to multiple people
           but each person can only match to the brand of car they own.
           <br><br>
           <strong>many to many</strong> is when both tables have multiple
           matching rows. In order to avoid duplicate records a junction table is
           need.
         </p>
+        <img src="../examples/sql/names-table-2.png"
+          alt="an sql table containing a list of ten names and the id of cars driven"
+        /><br>
+        <img src="../examples/sql/car-brands-table.png"
+          alt="an sql table of car brands"
+        /><br>
+        <img src="../examples/sql/mutil-people-car-brands-table.png"
+          alt="an sql table of car brands"
+        /><br>
+        <a href="../examples/sql/names-multi-car-makes-tables.txt">
+          View full code to produce tables.
+        </a>
         <p>
-          <br><br>
+          In this example each person owns one or more cars. Due to this each
+          row from the first two table can be matched multiple times. The third
+          table, which has a one to many relationship with both of the other
+          tables acts as a junction between the two to avoid duplicate records.
+        </p>
+        <p>
           (Sources:<br>
           <a href="http://www.tech-recipes.com/rx/56738/one-to-one-one-to-many-table-relationships-in-sql-server/">
             tech recipes: One-to-One, One-to-Many Table Relationships in SQL
