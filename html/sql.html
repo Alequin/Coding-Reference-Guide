@@ -83,6 +83,8 @@
 
   <div id="primary-container">
 
+    http://www.singingeels.com/Articles/Understanding_SQL_Many_to_Many_Relationships.aspx
+
     <div class="divider"></div>
 
     <div class="section">
@@ -92,8 +94,66 @@
 
       <div class="section-content section-text-normal">
         <p>
+          In order to effectivly manage data multiple tables are used and when
+          tables shares data they become related to each other. There are a
+          number of different relationships tables can have between one another.
+          These include:
+          <br><br>
+          <strong>
+            one to one (1-1)<br>
+            one to many (1-M)<br>
+            many to many (M-M)
+          </strong>
+          <br><br>
+          <strong>one to one</strong> is when two tables share data but only
+          have a single matching record.
+        </p>
+        <img src="../examples/sql/name-only-table-img.png"
+          alt="an sql table containing a list of ten names"
+        /><br>
+        <img src="../examples/sql/licence-plate-table.png"
+          alt="an sql table with a foreign key from the table people"
+        /><br>
+        <a href="../examples/sql/foreign-key-plates-table.txt">
+          View full code to produce tables.
+        </a>
+        <p>
+          The previous example shows two tables. One of people and the other of
+          licence plate codes. These tables have a one to one relationship as
+          only one person can be the registered keeper of a car.
+          <br><br>
+          <strong>one to many</strong> is when one of the two tables involved in
+          a relationship will have multiple matching records while the other
+          will only have a single matching record.
+        </p>
+        <img src="../examples/sql/people-car-brands-table.png"
+          alt="an sql table containing a list of ten names and the id of cars driven"
+        /><br>
+        <img src="../examples/sql/car-brands-table.png"
+          alt="an sql table of car brands"
+        /><br>
+        <a href="../examples/sql/names-car-makes-tables.txt">
+          View full code to produce tables.
+        </a>
+        <p>
+          The first table shown is a set of people who own one car, the second
+          is the possible brands of car they may own. As many people may own the
+          same brand of car rows in the brands table matche to multiple people
+          but each person can only match to the brand of car they own.
+          <br><br>
+          <strong>many to many</strong> is when both tables have multiple
+          matching rows. In order to avoid duplicate records a junction table is
+          need.
+        </p>
+        <p>
+          <br><br>
           (Sources:<br>
-          <a href="">
+          <a href="http://www.tech-recipes.com/rx/56738/one-to-one-one-to-many-table-relationships-in-sql-server/">
+            tech recipes: One-to-One, One-to-Many Table Relationships in SQL
+            Server
+          </a><br>
+          <a href="https://megocode3.wordpress.com/2008/01/04/understanding-a-sql-junction-table/">
+            Coding Notes: Understanding a SQL Junction Table
           </a>)
         </p>
       </div>
@@ -134,13 +194,18 @@
             CREATE TABLE licence_plate(<br>
             &#160;&#160;plate_id INT NOT NULL AUTO_INCREMENT,<br>
             &#160;&#160;code CHAR(8),<br>
-            &#160;&#160;person_id INT NOT NULL,<br>
+            &#160;&#160;person_id INT NOT NULL UNIQUE,<br>
             &#160;&#160;PRIMARY KEY(plate_id),<br>
-            &#160;&#160;CONSTRAINT people_person_id_fk<br>
-            &#160;&#160;FOREIGN KEY (person_id)<br>
-            &#160;&#160;REFERENCES people (person_id)<br>
+            &#160;&#160;CONSTRAINT people_person_id_fk FOREIGN KEY (person_id)
+            REFERENCES people (person_id)<br>
             );
           </strong>
+          <br><br>
+          <em>
+            The keyword UNIQUE was used on person_id as in this case the
+            person should not be duplicated in this column. This is not always
+            required and depends on the relationship.
+          </em>
           <br><br>
           Once the table is created we can add values based on the other table.
         </p>
@@ -151,7 +216,7 @@
           View full code to produce table.
         </a>
         <p>
-          The relationship between these two tables is known as a one-to-one.
+          The relationship between these two tables is known as a one to one.
           <a href="#table-relationships">
             View the Table Relationships sections for more.
           </a>

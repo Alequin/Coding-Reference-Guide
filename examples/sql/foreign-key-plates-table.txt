@@ -22,18 +22,16 @@ VALUES
 CREATE TABLE licence_plates(
   plate_id INT NOT NULL AUTO_INCREMENT,
   code CHAR(8),
-  person_id INT NOT NULL,
+  person_id INT NOT NULL UNIQUE,
   PRIMARY KEY(plate_id),
-  CONSTRAINT people_person_id_fk
-  FOREIGN KEY (person_id)
-  REFERENCES people (person_id)
-); 
+  CONSTRAINT people_person_id_fk FOREIGN KEY (person_id) REFERENCES people (person_id)
+);
 
 INSERT INTO licence_plates
 (code, person_id)
 VALUES
 ('eg14 hfy', '3'),
-('jw64 mwi', '7'),
+('jw64 mwi', '3'),
 ('ps03 hqn', '5'),
 ('dk09 yrh', '6'),
 ('pa57 noa', '2');
@@ -47,20 +45,3 @@ VALUES
 |        4 | dk09 yrh |         6 |
 |        5 | pa57 noa |         2 |
 +----------+----------+-----------+
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
