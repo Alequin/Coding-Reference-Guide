@@ -21,10 +21,10 @@
           <table id="contents-table">
             <tr>
               <td>
-                <a href="#">ph</a>
+                <a href="#phh">ph</a>
               </td>
               <td>
-                <a href="#">ph</a>
+                <a href="#remove-commits">Removing Commits</a>
               </td>
               <td>
                 <a href="#rename-branch">Rename Branch</a>
@@ -38,6 +38,35 @@
   <div id="header-space"></div>
 
   <div id="primary-container">
+
+    <div class="section">
+
+      <div id="remove-commits" class="title-anchor"></div>
+      <h2 class="section-header">Removing Commits</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          To remove the previous commit use the command:
+          <br><br>
+          <strong>
+            git reset --hard HEAD^
+          </strong>
+          <br><br>
+          To remove one or more commits use the command:
+          <br><br>
+          <strong>
+            git reset --hard HEAD~n<br>
+          </strong>
+          (n is the number of commits to remove)
+          <br><br>
+          (Sources:<br>
+          <a href="https://sethrobertson.github.io/GitFixUm/fixup.html#change_last">
+            sethrobertson.github.io: Removing the last commit
+          </a>)
+        </p>
+      </div>
+
+    </div>
 
     <div class="divider"></div>
 
