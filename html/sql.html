@@ -76,10 +76,44 @@
 
     <div class="section">
 
-      <div class="title-anchor"></div>
-      <h2 class="section-header"></h2>
+      <div id="limit" class="title-anchor"></div>
+      <h2 class="section-header">LIMIT</h2>
 
       <div class="section-content section-text-normal">
+        <p>
+          The keyword LIMIT is used to limit and control the number of results
+          returned and from which row to begin returning results from. LIMIT can
+          be given a single parameter or two parameters.<br><br>
+          A single parameter
+          determines how many rows, starting from and including the first, to
+          return. Two parameter provides more control. The first defines the
+          start position (the first row in the table is position 0) and the
+          seconds states how many rows, including the first, to return.
+          <br><br>
+          The following table will be used to provide examples.
+        </p>
+        <img src="../examples/sql/people-table-without-id-ordered.png"
+          alt="table used to provide examples of WHERE statment"
+        /><br>
+        <a href="../examples/sql/people-without-id-ordered-table.txt">
+          View full code to produce table.
+        </a>
+        <p>
+          <strong>
+            SELECT first_name, last_name, age FROM people ORDER BY age LIMIT 3;
+          </strong>
+        </p>
+        <img src="../examples/sql/LIMIT-no-param.png"
+          alt="table used to provide examples of LIMIT statment without parameters"
+        /><br>
+        <p>
+          <strong>
+            SELECT first_name, last_name, age FROM people ORDER BY age LIMIT 3, 3;
+          </strong>
+        </p>
+        <img src="../examples/sql/LIMIT-with-param.png"
+          alt="table used to provide examples of LIMIT statment with parameters"
+        /><br>
         <p>
           (Sources:<br>
           <a href="">
@@ -103,7 +137,9 @@
           <br><br>
           The following table will be used to provide examples.
         </p>
-          <img src="../examples/sql/population-table.png" alt="table used to show UPDATE using CASE"/><br>
+          <img src="../examples/sql/population-table.png"
+            alt="table used to show UPDATE using CASE"
+          /><br>
           <a href="../examples/sql/population-table.txt">View full code to produce table.</a>
         <p>
           <strong>
@@ -471,8 +507,8 @@
         <p>
           The following table will be used to provide examples.
         </p>
-        <img src="../examples/sql/WHERE-section-table-img.png" alt="table used to provide examples of WHERE statment"/><br>
-        <a href="../examples/sql/select-section-table-code.txt">
+        <img src="../examples/sql/people-without-id-table.png" alt="table used to provide examples of WHERE statment"/><br>
+        <a href="../examples/sql/people-without-id-table.txt">
           View full code to produce table.
         </a>
         <p>
