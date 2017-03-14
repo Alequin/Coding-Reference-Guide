@@ -1,0 +1,37 @@
+CREATE TABLE people(
+  person_id INT NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  PRIMARY KEY (person_id)
+);
+
+INSERT INTO people
+(first_name, last_name)
+VALUES
+('Paul', 'Smith'),
+('Samantha', 'Herring'),
+('Delia', 'Lenart'),
+('Jo', 'Hurst'),
+('Terry', 'Tanouye'),
+('Alex', 'Cleek'),
+('Audrey', 'Showman'),
+('Mika', 'Stiger'),
+('Markus', 'Palazzo'),
+('Creola', 'Frisina');
+
+SELECT * FROM people;
+
++-----------+------------+-----------+
+| person_id | first_name | last_name |
++-----------+------------+-----------+
+|         1 | Paul       | Smith     |
+|         2 | Samantha   | Herring   |
+|         3 | Delia      | Lenart    |
+|         4 | Jo         | Hurst     |
+|         5 | Terry      | Tanouye   |
+|         6 | Alex       | Cleek     |
+|         7 | Audrey     | Showman   |
+|         8 | Mika       | Stiger    |
+|         9 | Markus     | Palazzo   |
+|        10 | Creola     | Frisina   |
++-----------+------------+-----------+

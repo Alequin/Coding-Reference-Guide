@@ -1,0 +1,66 @@
+CREATE TABLE people(
+  person_id INT NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  PRIMARY KEY (person_id)
+);
+
+INSERT INTO people
+(first_name, last_name)
+VALUES
+('Paul', 'Smith'),
+('Samantha', 'Herring'),
+('Delia', 'Lenart'),
+('Jo', 'Hurst'),
+('Terry', 'Tanouye'),
+('Alex', 'Cleek'),
+('Audrey', 'Showman'),
+('Mika', 'Stiger'),
+('Markus', 'Palazzo'),
+('Creola', 'Frisina');
+
+CREATE TABLE licence_plates(
+  plate_id INT NOT NULL AUTO_INCREMENT,
+  code CHAR(8),
+  person_id INT NOT NULL,
+  PRIMARY KEY(plate_id),
+  CONSTRAINT people_person_id_fk
+  FOREIGN KEY (person_id)
+  REFERENCES people (person_id)
+); 
+
+INSERT INTO licence_plates
+(code, person_id)
+VALUES
+('eg14 hfy', '3'),
+('jw64 mwi', '7'),
+('ps03 hqn', '5'),
+('dk09 yrh', '6'),
+('pa57 noa', '2');
+
++----------+----------+-----------+
+| plate_id | code     | person_id |
++----------+----------+-----------+
+|        1 | eg14 hfy |         3 |
+|        2 | jw64 mwi |         7 |
+|        3 | ps03 hqn |         5 |
+|        4 | dk09 yrh |         6 |
+|        5 | pa57 noa |         2 |
++----------+----------+-----------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

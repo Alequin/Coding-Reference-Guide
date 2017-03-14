@@ -25,6 +25,17 @@
                   <a href="#">ph</a>
                 </td>
                 <td>
+                  <a href="#">ph</a>
+                </td>
+                <td>
+                  <a href="#table-relationships">Table Relationships</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#foreign-keys">Foreign Keys</a>
+                </td>
+                <td>
                   <a href="#limit">LIMIT</a>
                 </td>
                 <td>
@@ -71,6 +82,90 @@
   <div id="header-space"></div>
 
   <div id="primary-container">
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="table-relationships" class="title-anchor"></div>
+      <h2 class="section-header">Table Relationships</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          (Sources:<br>
+          <a href="">
+          </a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="foreign-keys" class="title-anchor"></div>
+      <h2 class="section-header">Foreign Keys</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          Foreign keys are a way of creating a relationship between two tables.
+          They are references to columns in other tables which contain unique
+          values (commonly primary key but not always) and are used to ensure
+          columns only contains a single value (assit in making data atomic).
+          <br><br>
+          The following table will be used to provide examples.
+        </p>
+        <img src="../examples/sql/name-only-table-img.png"
+          alt="an sql table containing a list of ten names"
+        /><br>
+        <a href="../examples/sql/names-only-table.txt">
+          View full code to produce table.
+        </a>
+        <p>
+          Foreign keys are created and assigned in a similar way to primary keys
+          during the creation of a table. The key word CONSTRAINT is used to
+          connect the tables and specify the column in the inital table which
+          the foreign key will draw from. Using this key word means the specified
+          column in the new table may only hold data found the specified column
+          of the inital table.
+          <br><br>
+          <strong>
+            CREATE TABLE licence_plate(<br>
+            &#160;&#160;plate_id INT NOT NULL AUTO_INCREMENT,<br>
+            &#160;&#160;code CHAR(8),<br>
+            &#160;&#160;person_id INT NOT NULL,<br>
+            &#160;&#160;PRIMARY KEY(plate_id),<br>
+            &#160;&#160;CONSTRAINT people_person_id_fk<br>
+            &#160;&#160;FOREIGN KEY (person_id)<br>
+            &#160;&#160;REFERENCES people (person_id)<br>
+            );
+          </strong>
+          <br><br>
+          Once the table is created we can add values based on the other table.
+        </p>
+        <img src="../examples/sql/licence-plate-table.png"
+          alt="an sql table with a foreign key from the table people"
+        /><br>
+        <a href="../examples/sql/foreign-key-plates-table.txt">
+          View full code to produce table.
+        </a>
+        <p>
+          The relationship between these two tables is known as a one-to-one.
+          <a href="#table-relationships">
+            View the Table Relationships sections for more.
+          </a>
+        </p>
+        <p>
+          (Sources:<br>
+          Head First SQL<br>
+          <a href="http://stackoverflow.com/questions/24029620/what-is-atomicity-in-dbms">
+            stackoverflow: What is atomicity in dbms
+          </a>)
+        </p>
+      </div>
+
+    </div>
 
     <div class="divider"></div>
 
@@ -487,6 +582,15 @@
         </p>
         <img src="../examples/sql/primary-key-table.png" alt="primary key table"/><br>
         <a href="../examples/sql/primary-key-table-creation.txt">View full code to produce table.</a>
+        <p>
+          The primary key can also be designated as shown below
+          <br><br>
+          <strong>
+            CREATE TABLE new_table(<br>
+            &#160;&#160;id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,<br>
+            );
+          </strong>
+        </p>
         <p>
           (Sources:<br>
           Head First SQL)
