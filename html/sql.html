@@ -103,13 +103,40 @@
         </p>
         <img src="../examples/sql/MIN-img.png" alt="table used to show AVG function"/>
         <p>
-          MAX(column_name): Finds the smallest of all the provided values.
+          MAX(column_name): Finds the largest of all the provided values.
           <br><br>
           <strong>
             SELECT MAX(population_per_million) FROM populations;
           </strong>
         </p>
         <img src="../examples/sql/MAX-img.png" alt="table used to show AVG function"/>
+        <p>
+          COUNT(column_name): counts the number of rows in a column
+          (null values do not count).
+          <br><br>
+          <strong>
+            SELECT COUNT(population_per_million) FROM populations;
+          </strong>
+        </p>
+        <img src="../examples/sql/COUNT-img.png" alt="table used to show AVG function"/>
+        <p>
+          The GROUP BY statment is used along side aggregate functions to find
+          outputs produced by certain defined groups of data rather than the
+          ouput produced by all data in a column.
+          <br><br>
+          <strong>
+            SELECT hemisphere, SUM(population_per_million) FROM populations GROUP BY
+            hemisphere;
+          </strong>
+        </p>
+        <img src="../examples/sql/group_by_sum.png" alt="table used to show AVG function"/>
+        <p>
+          <strong>
+            SELECT hemisphere, COUNT(population_per_million) FROM populations GROUP BY
+            hemisphere;
+          </strong>
+        </p>
+        <img src="../examples/sql/group-by-count.png" alt="table used to show AVG function"/>
         <p>
           (Sources:<br>
           Head First SQL
