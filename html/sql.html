@@ -20,6 +20,17 @@
           <div class="header-divider divider"></div>
           <table id="contents-table">
             <tr>
+              <tr>
+                <td>
+                  <a href="#">ph</a>
+                </td>
+                <td>
+                  <a href="#limit">LIMIT</a>
+                </td>
+                <td>
+                  <a href="#distinct">DISTINCT</a>
+                </td>
+              </tr>
               <td>
                 <a href="#aggregate-functions">Aggregate Functions</a>
               </td>
@@ -65,6 +76,60 @@
 
     <div class="section">
 
+      <div class="title-anchor"></div>
+      <h2 class="section-header"></h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          (Sources:<br>
+          <a href="">
+          </a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="distinct" class="title-anchor"></div>
+      <h2 class="section-header">DISTINCT</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          The keyword DISTINCT is used to identify unique sets of data in a
+          column.
+          <br><br>
+          The following table will be used to provide examples.
+        </p>
+          <img src="../examples/sql/population-table.png" alt="table used to show UPDATE using CASE"/><br>
+          <a href="../examples/sql/population-table.txt">View full code to produce table.</a>
+        <p>
+          <strong>
+            SELECT DISTINCT hemisphere FROM populations;
+          </strong>
+        </p>
+        <img src="../examples/sql/DISTINCT-img.png" alt="table used to show DISTINCT key word"/><br>
+        <p>
+          <strong>
+            SELECT COUNT(DISTINCT hemisphere) FROM populations;
+          </strong>
+        </p>
+        <img src="../examples/sql/DISTINCT-with-count-img.png" alt="table used to show DISTINCT key word used with COUNT"/><br>
+        <p>
+          (Sources:<br>
+          <a href="">
+          </a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="aggregate-functions" class="title-anchor"></div>
       <h2 class="section-header">Aggregate Functions</h2>
 
@@ -101,7 +166,7 @@
             SELECT MIN(population_per_million) FROM populations;
           </strong>
         </p>
-        <img src="../examples/sql/MIN-img.png" alt="table used to show AVG function"/>
+        <img src="../examples/sql/MIN-img.png" alt="table used to show MIN function"/>
         <p>
           MAX(column_name): Finds the largest of all the provided values.
           <br><br>
@@ -109,7 +174,7 @@
             SELECT MAX(population_per_million) FROM populations;
           </strong>
         </p>
-        <img src="../examples/sql/MAX-img.png" alt="table used to show AVG function"/>
+        <img src="../examples/sql/MAX-img.png" alt="table used to show MAX function"/>
         <p>
           COUNT(column_name): counts the number of rows in a column
           (null values do not count).
@@ -118,7 +183,7 @@
             SELECT COUNT(population_per_million) FROM populations;
           </strong>
         </p>
-        <img src="../examples/sql/COUNT-img.png" alt="table used to show AVG function"/>
+        <img src="../examples/sql/COUNT-img.png" alt="table used to show COUNT function"/>
         <p>
           The GROUP BY statment is used along side aggregate functions to find
           outputs produced by certain defined groups of data rather than the
@@ -129,14 +194,14 @@
             hemisphere;
           </strong>
         </p>
-        <img src="../examples/sql/group_by_sum.png" alt="table used to show AVG function"/>
+        <img src="../examples/sql/group_by_sum.png" alt="table used to show GROUP BY KEY WORD"/>
         <p>
           <strong>
             SELECT hemisphere, COUNT(population_per_million) FROM populations GROUP BY
             hemisphere;
           </strong>
         </p>
-        <img src="../examples/sql/group-by-count.png" alt="table used to show AVG function"/>
+        <img src="../examples/sql/group-by-count.png" alt="table used to show COUNT function with GROUP BY"/>
         <p>
           (Sources:<br>
           Head First SQL
@@ -402,11 +467,15 @@
       <h2 class="section-header">WHERE Clause and Conditional Operators</h2>
 
       <div class="section-content section-text-normal">
+
         <p>
-          <a href="../examples/sql/select-section-table-code.txt">
-            The following table will be used to provide examples.
-          </a>
-          <br><br>
+          The following table will be used to provide examples.
+        </p>
+        <img src="../examples/sql/WHERE-section-table-img.png" alt="table used to provide examples of WHERE statment"/><br>
+        <a href="../examples/sql/select-section-table-code.txt">
+          View full code to produce table.
+        </a>
+        <p>
           The keyword WHERE and Conditional operators in SQL are used alongside
           SELECT, UPDATE and DELETE in order to created conditions and control
           which rows are returned or altered.
