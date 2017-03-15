@@ -1,0 +1,35 @@
+CREATE TABLE people(
+  first_name VARCHAR(50),
+  middle_name VARCHAR(50),
+  last_name VARCHAR(50),
+  age INT,
+  PRIMARY KEY (first_name, middle_name, last_name)
+);
+
+INSERT INTO people
+VALUES
+('Paul', 'Connor', 'Smith', 32),
+('Samantha', 'Maddison', 'Herring', 22),
+('Delia', 'Grace', 'Lenart', 74),
+('Jo', 'Isabel', 'Hurst', 46),
+('Terry', 'Paul', 'Tanouye', 53),
+('Alex', 'Alisha', 'Cleek', 18),
+('Jo', 'Maddison', 'Lenart', 46),
+('Audrey', 'Rebecca', 'Showman', 14),
+('Paul', 'Hayden', 'Smith', 32),
+('Terry', 'Connor', 'Lenart', 74);
+
++------------+-------------+-----------+------+
+| first_name | middle_name | last_name | age  |
++------------+-------------+-----------+------+
+| Alex       | Alisha      | Cleek     |   18 |
+| Audrey     | Rebecca     | Showman   |   14 |
+| Delia      | Grace       | Lenart    |   74 |
+| Jo         | Isabel      | Hurst     |   46 |
+| Jo         | Maddison    | Lenart    |   46 |
+| Paul       | Connor      | Smith     |   32 |
+| Paul       | Hayden      | Smith     |   32 |
+| Samantha   | Maddison    | Herring   |   22 |
+| Terry      | Connor      | Lenart    |   74 |
+| Terry      | Paul        | Tanouye   |   53 |
++------------+-------------+-----------+------+

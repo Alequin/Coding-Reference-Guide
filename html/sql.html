@@ -20,41 +20,41 @@
           <div class="header-divider divider"></div>
           <table id="contents-table">
             <tr>
-              <tr>
-                <td>
-                  <a href="#">ph</a>
-                </td>
-                <td>
-                  <a href="#">ph</a>
-                </td>
-                <td>
-                  <a href="#table-relationships">Table Relationships</a>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <a href="#foreign-keys">Foreign Keys</a>
-                </td>
-                <td>
-                  <a href="#limit">LIMIT</a>
-                </td>
-                <td>
-                  <a href="#distinct">DISTINCT</a>
-                </td>
-              </tr>
+              <td>
+                <a href="#">ph</a>
+              </td>
+              <td>
+                <a href="#table-relationships">Table Relationships</a>
+              </td>
+              <td>
+                <a href="#foreign-keys">Foreign Keys</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#limit">LIMIT</a>
+              </td>
+              <td>
+                <a href="#distinct">DISTINCT</a>
+              </td>
               <td>
                 <a href="#aggregate-functions">Aggregate Functions</a>
               </td>
+            </tr>
+            <tr>
               <td>
                 <a href="#update-case">UPDATE with CASE</a>
               </td>
               <td>
                 <a href="#string-functions">String Functions</a>
               </td>
+              <td>
+                <a href="#alter">ALTER</a>
+              </td>
             </tr>
             <tr>
               <td>
-                <a href="#alter">ALTER</a>
+                <a href="#composite-keys">Composite Keys</a>
               </td>
               <td>
                 <a href="#primary-keys">Primary Keys</a>
@@ -82,8 +82,6 @@
   <div id="header-space"></div>
 
   <div id="primary-container">
-
-    http://www.singingeels.com/Articles/Understanding_SQL_Many_to_Many_Relationships.aspx
 
     <div class="divider"></div>
 
@@ -165,12 +163,16 @@
         </p>
         <p>
           (Sources:<br>
+          Head First SQL<br>
           <a href="http://www.tech-recipes.com/rx/56738/one-to-one-one-to-many-table-relationships-in-sql-server/">
             tech recipes: One-to-One, One-to-Many Table Relationships in SQL
             Server
           </a><br>
           <a href="https://megocode3.wordpress.com/2008/01/04/understanding-a-sql-junction-table/">
             Coding Notes: Understanding a SQL Junction Table
+          </a><br>
+          <a href="http://www.singingeels.com/Articles/Understanding_SQL_Many_to_Many_Relationships.aspx">
+            singingeels: Understanding SQL: Many to Many Relationships
           </a>)
         </p>
       </div>
@@ -213,8 +215,9 @@
             &#160;&#160;code CHAR(8),<br>
             &#160;&#160;person_id INT NOT NULL UNIQUE,<br>
             &#160;&#160;PRIMARY KEY(plate_id),<br>
-            &#160;&#160;CONSTRAINT people_person_id_fk FOREIGN KEY (person_id)
-            REFERENCES people (person_id)<br>
+            &#160;&#160;CONSTRAINT people_person_id_fk<br>
+            &#160;&#160;FOREIGN KEY (person_id)<br>
+            &#160;&#160;REFERENCES people (person_id)<br>
             );
           </strong>
           <br><br>
@@ -222,6 +225,13 @@
             The keyword UNIQUE was used on person_id as in this case the
             person should not be duplicated in this column. This is not always
             required and depends on the relationship.
+            <br><br>
+            CONSTRAINT people_person_id_fk FOREIGN KEY (person_id)
+            REFERENCES people (person_id) - This set of statments is one line,
+            if multiple foreign keys were needed a comma should be placed
+            at the end and a new CONSTRAINT, FOREIGN KEY and REFERENCES should
+            be defined for the next foreign key. The order should also be
+            maintained.
           </em>
           <br><br>
           Once the table is created we can add values based on the other table.
@@ -629,6 +639,55 @@
         <p>
           (Sources:<br>
           Head First sql)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="composite-keys" class="title-anchor"></div>
+      <h2 class="section-header">Composite Keys</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          A composite key is the use of two or more columns, which when combined
+          are unique in the table, to identify each row. The columns that make up
+          the composite key are together a primary key.
+          <br><br>
+          <strong>
+            CREATE TABLE people(<br>
+            &#160;&#160;first_name VARCHAR(50),<br>
+            &#160;&#160;middle_name VARCHAR(50),<br>
+            &#160;&#160;last_name VARCHAR(50),<br>
+            &#160;&#160;age INT,<br>
+            &#160;&#160;gender VARCHAR(1),<br>
+            &#160;&#160;PRIMARY KEY (first_name, middle_name, last_name)<br>
+            );
+          </strong>
+        </p>
+        <img src="../examples/sql/composite-name-table.png"
+          alt="table that make use of a composite key"
+        /><br>
+        <a href="../examples/sql/composite-name-table.txt">
+          View full code to produce table.
+        </a>
+        <p>
+          The previous table combines the columns first_name, middle_name and
+          last name into a primary key as, while each column containes duplicate
+          values a combination of the three values contained in each row is
+          unique.
+          <br><br>
+          (Sources:<br>
+          Head First SQL<br>
+          <a href="https://www.techopedia.com/definition/6572/composite-key">
+            techopedia: Composite Key
+          </a><br>
+          <a href="http://stackoverflow.com/questions/1110349/how-can-i-define-a-composite-primary-key-in-sql">
+            stackoverflow: How can I define a composite primary key in SQL?
+          </a>)
         </p>
       </div>
 
