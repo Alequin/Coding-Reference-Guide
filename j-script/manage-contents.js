@@ -33,14 +33,14 @@ function buildContentsTableString(){
     for(b=0; b<3; b++){
       newRow = newRow.replace('%s', getContentsCellText(contentsIndex++));
     }
-    tableString +=  "\n" + newRow;
+    tableString += "\n" + newRow;
   }
   return tableString + '\n</table>';
 }
 
 function getContentsCellText(index){
   if(index < CONTENTS.length){
-    return '<a href="'+CONTENTS[index].link+'">'+CONTENTS[index].title+'</a>';
+    return '<a href="#'+CONTENTS[index].link+'">'+CONTENTS[index].title+'</a>';
   }else{
     return '';
   }
