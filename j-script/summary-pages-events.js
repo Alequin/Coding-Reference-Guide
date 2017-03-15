@@ -1,10 +1,12 @@
-BASIC_LAYOUT_HEADER_HEIGHT = 120;
-LARGE_LAYOUT_HEADER_HEIGHT = 200;
-
 $(document).ready(function(){
+
+  BASIC_LAYOUT_HEADER_HEIGHT = 120;
+  LARGE_LAYOUT_HEADER_HEIGHT = 200;
 
   $("#main-header").after(headerMenu);
   positionElementsRelativeToHeader(BASIC_LAYOUT_HEADER_HEIGHT);
+
+  insertContentsItems();
 
   $("#contents-title").click(function(){
     toggleContentsVisibility();

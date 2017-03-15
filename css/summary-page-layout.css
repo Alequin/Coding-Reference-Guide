@@ -58,6 +58,7 @@
   display: none;
   z-index: 1;
   background: white;
+  overflow-y: auto;
 }
 
 a, a:visited{
@@ -83,10 +84,6 @@ a, a:visited{
   padding-bottom: 5px;
   width: 33.3%;
   text-align: center;
-}
-
-#contents-container{
-  overflow-y: auto;
 }
 
 .section{
