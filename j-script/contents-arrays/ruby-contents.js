@@ -1,6 +1,5 @@
 
 CONTENTS = [
-  new ContentsItem('', ''),
   new ContentsItem('Composite Keys', '#composite-keys'),
   new ContentsItem('Primary Keys', '#primary-keys'),
   new ContentsItem('WHERE Clause and Conditional Operators', '#where-and-operators'),

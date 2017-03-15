@@ -2,18 +2,18 @@ isContentsVisible = false;
 var TABLE_ROW = [
     '<tr>',
       '<td>',
-        null,
+        '%s',
       '</td>',
       '<td>',
-        null,
+        '%s',
       '</td>',
       '<td>',
-        null,
+        '%s',
       '</td>',
     '</tr>'];
 
 function setContentsTitleText(){
-  text = "";
+  var text = "";
   if(!isContentsVisible){
     text = "Hide Contents";
   }else{
@@ -25,31 +25,25 @@ function setContentsTitleText(){
 
 function buildContentsTableString(){
 
-  var tableString = '<table id="contents-table">';
-
+  var tableString = '<table id="contents-table">\n';
 
   var contentsIndex = 0;
   while(contentsIndex < CONTENTS.length){
-    newRow = copyArray(TABLE_ROW);
-    for(b=2; b<=8; b+=3){
-      newRow[b] = '<a href="'+CONTENTS[contentsIndex].link+'">'+CONTENTS[contentsIndex].title+'</a>';
-      contentsIndex++;
-      if(contentsIndex >= CONTENTS.length){
-        break;
-      }
+    newRow = TABLE_ROW.join('\n');
+    for(b=0; b<3; b++){
+      newRow = newRow.replace('%s', getContentsCellText(contentsIndex++));
     }
-    tableString +=  "\n" + newRow.join('\n');
+    tableString +=  "\n" + newRow;
   }
-
   return tableString + '\n</table>';
 }
 
-function copyArray(inputArray){
-  outputArray = [];
-  for(a=0; a<inputArray.length; a++){
-    outputArray.push(inputArray[a]);
+function getContentsCellText(index){
+  if(index < CONTENTS.length){
+    return '<a href="'+CONTENTS[index].link+'">'+CONTENTS[index].title+'</a>';
+  }else{
+    return '';
   }
-  return outputArray;
 }
 
 function insertContentsItems(){
