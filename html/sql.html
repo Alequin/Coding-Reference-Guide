@@ -31,6 +31,94 @@
 
     <div class="section">
 
+      <div id="as" class="title-anchor"></div>
+      <h2 class="section-header">AS and Aliases</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          The keyword AS is used to create aliases for column names while
+          writting queries.
+          <br><br>
+          The following table will be used to provide examples.
+        </p>
+          <img src="../examples/sql/people-without-id-table.png"
+            alt="table containing a list of people with columns for name, age and gender"/><br>
+          <a href="../examples/sql/people-without-id-table.txt">
+            View full code to produce table.
+          </a>
+        <p>
+          <strong>
+            SELECT first_name AS name FROM people;
+          </strong>
+        </p>
+        <img src="../examples/sql/name-table.png"
+          alt="table containing a list of peoples names"/><br>
+        <p>
+          Tables produced with aggregate functions can also be given aliases.
+          <br><br>
+          <strong>
+            SELECT AVG(age) AS average_age FROM people;
+          </strong>
+        </p>
+        <img src="../examples/sql/average-age-aliases-table.png"
+          alt="table containing a list of peoples names"/><br>
+        <p>
+          AS can create aliase name for tables as well as columns
+          <br><br>
+          <strong>
+            SELECT first_name FROM people AS peeps;
+          </strong>
+          <br><br>
+          Another use of AS enables the population of new tables columns with
+          the results of a query.
+          <br><br>
+          <strong>
+            CREATE TABLE names(<br>
+              &#160;&#160;name_id INT NOT NULL AUTO_INCREMENT,<br>
+              &#160;&#160;first_name VARCHAR(50),<br>
+              &#160;&#160;last_name VARCHAR(50),<br>
+              &#160;&#160;PRIMARY KEY(name_id)<br>
+            ) AS <br>
+            SELECT first_name, last_name FROM people;
+          </strong>
+        </p>
+        <img src="../examples/sql/names-from-as-table.png"
+          alt="table containing a list of peoples names"/><br>
+        <p>
+        <p>
+          If the column names in the created table do not match with the column
+          names in the query new columns to match the query names will be
+          created. Column names in the query can be given aliases though. If an
+          aliases name matches a column name in the new table the data will be
+          placed in the matching column.
+          <br><br>
+          <strong>
+            CREATE TABLE names(<br>
+              &#160;&#160;name_id INT NOT NULL AUTO_INCREMENT,<br>
+              &#160;&#160;f_name VARCHAR(50),<br>
+              &#160;&#160;l_name VARCHAR(50),<br>
+              &#160;&#160;PRIMARY KEY(name_id)<br>
+            ) AS <br>
+            SELECT first_name AS f_name, last_name AS l_name FROM people;
+          </strong>
+        </p>
+        <img src="../examples/sql/name-from-as-aliase-table.png"
+          alt="table containing a list of peoples names"/><br>
+        <p>
+          (Sources:<br>
+          Head First SQL<br>
+          <a href="http://www.1keydata.com/sql/sql-as.html">
+            1KeyData: SQL AS
+          </a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="normal-form" class="title-anchor"></div>
       <h2 class="section-header">Normal Form</h2>
 
