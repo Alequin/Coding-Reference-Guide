@@ -1,5 +1,6 @@
 
 CONTENTS = [
+  new ContentsItem('Normal Form', 'normal-form'),
   new ContentsItem('Table Relationships', 'table-relationships'),
   new ContentsItem('Foreign Keys', 'foreign-keys'),
   new ContentsItem('LIMIT', 'limit'),

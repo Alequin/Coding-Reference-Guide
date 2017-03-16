@@ -31,6 +31,61 @@
 
     <div class="section">
 
+      <div id="normal-form" class="title-anchor"></div>
+      <h2 class="section-header">Normal Form</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          Databases and tables are said to be normal when the adhere to a
+          number predefined design choices. These are aimed at reducing the
+          possibility of common issues such as duplicate data and anomalous
+          data, which in turn increases the speed of queries and makes data
+          easier to work with.
+          <br><br>
+          <strong>First Normal Form (1NF)</strong>: is achieved when each column
+          in a table only has a single value (data is atomic) and each row has
+          an assoiated primary key (single or composite).
+          <br><br>
+          <strong>Second Normal Form (2NF)</strong>: is when a table is in 2NF
+           and also does not have any partial functional dependencies.
+          <br><br>
+          A partial functional dependencies is when a column that is not part
+          of the primary key is dependant on some, but not all, of the columns
+          that make up the primary key. partial functional dependencies can only
+          exist in tables with composite keys. A table with a single column as a
+          primary key is automatically in 2NF, as long as it conforms to 1NF.
+          <br><br>
+          <strong>Third Normal Form (3NF)</strong>: occurs when a table is in
+          2NF and also has no transitive dependencies.
+          <br><br>
+          A transitive dependencies is when a column that does not make up the
+          primary key is dependant on another column that does not make up the
+          primary key.
+          <br><br>
+          In order to achive normal table must be broken down and one-one,
+          one-many and many-many relationships should be created between them.
+          For examples and more detail view:
+          <a href="../examples/sql/normal-form-explanation.pdf">
+          PDF
+          </a> |
+          <a href="http://www.studytonight.com/dbms/database-normalization.php">
+            Website
+          </a>
+          <br><br>
+          (Sources:<br>
+          Head First SQL<br>
+          <a href="http://www.studytonight.com/dbms/database-normalization.php">
+            Studytonight: Normalization of Database
+          </a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="table-relationships" class="title-anchor"></div>
       <h2 class="section-header">Table Relationships</h2>
 
@@ -135,7 +190,7 @@
           Foreign keys are a way of creating a relationship between two tables.
           They are references to columns in other tables which contain unique
           values (commonly primary key but not always) and are used to ensure
-          columns only contains a single value (assit in making data atomic).
+          columns only contains a single value (thereby making data atomic).
           <br><br>
           The following table will be used to provide examples.
         </p>

@@ -1,0 +1,24 @@
+CREATE TABLE animals(
+  name VARCHAR(50),
+  species VARCHAR(50),
+  food VARCHAR(50),
+  PRIMARY KEY (name, species)
+);
+
+INSERT INTO animals
+VALUES
+('doodle', 'lion', 'zebra, giraffe, impala'),
+('alpine', 'panda', 'bamboo, rodent'),
+('mirage', 'platypus', 'shrimp, worms'),
+('twig', 'horse', 'herbs, berries');
+
+SELECT * FROM animals;
+
++--------+----------+------------------------+
+| name   | species  | food                   |
++--------+----------+------------------------+
+| alpine | panda    | bamboo, rodent         |
+| doodle | lion     | zebra, giraffe, impala |
+| mirage | platypus | shrimp, worms          |
+| twig   | horse    | herbs, berries         |
++--------+----------+------------------------+
