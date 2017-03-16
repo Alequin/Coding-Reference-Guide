@@ -31,6 +31,87 @@
 
     <div class="section">
 
+      <div id="inner-join" class="title-anchor"></div>
+      <h2 class="section-header">INNER JOIN</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          Inner joins connects two tabes that have comparable columns.
+          <br><br>
+          The following table will be used to provide examples.
+        </p>
+        <img src="../examples/sql/people-car-brands-table.png"
+          alt="an sql table containing a list of ten names and the id of cars driven"
+        /><br>
+        <img src="../examples/sql/car-brands-table.png"
+          alt="an sql table of car brands"
+        /><br>
+        <a href="../examples/sql/names-car-makes-tables.txt">
+          View full code to produce tables.
+        </a>
+        <p>
+          The following query is an equijoin, which uses the = operator to match
+          the primary key of one table to the foreign key of another.
+          <br><br>
+          <strong>
+            SELECT people.first_name, people.last_name, car_brands.car_brand<br>
+            FROM people INNER JOIN car_brands<br>
+            ON people.car_brand_id = car_brands.brand_id;
+          </strong>
+        </p>
+        <img src="../examples/sql/inner-join-car-brands.png"
+          alt="an sql table containing a list of ten names and the brand of cars each person drives"
+        />
+        <p>
+        <p>
+          The non-equijoin (as show below), which uses the &#60;&#62; operator
+          to find all instances where the primary key of one table does not match
+          the foreign key of another.
+          <br><br>
+          <strong>
+            SELECT people.first_name, people.last_name, car_brands.car_brand<br>
+            FROM people INNER JOIN car_brands<br>
+            ON people.car_brand_id &#60;&#62; car_brands.brand_id<br>
+            ORDER BY people.first_name<br>
+            LIMIT 10;
+          </strong>
+          <br><br>
+          <em>
+            This table has been limited to ten rows due to the size of the
+            resultant table, but the result is apparent.
+          </em>
+        </p>
+        <img src="../examples/sql/car-brand-non-equijoin.png"
+          alt="an sql table containing a list of ten names and the brand of cars each person drives"
+        />
+        <p>
+        <p>
+          The natural join works in the same ways as the equijoin but with
+          simpler syntax. It only works however when the row in each table that
+          are to be compared have the same name.
+          <br><br>
+          <strong>
+            SELECT people.first_name, people.last_name, car_brands.car_brand<br>
+            FROM people NATURAL JOIN car_brands<br>
+            brand_id;
+          </strong>
+          <br><br>
+          <em>
+            The privious assumes car_brand_id in the table people is named
+            brand_id and would only work if this was the case.
+          </em>
+          <br><br>
+          (Sources:<br>
+          Head First SQL
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="as" class="title-anchor"></div>
       <h2 class="section-header">AS and Aliases</h2>
 

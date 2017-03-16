@@ -1,5 +1,6 @@
 
 CONTENTS = [
+  new ContentsItem('Inner Join', 'inner-join'),
   new ContentsItem('AS and Aliases', 'as'),
   new ContentsItem('Normal Form', 'normal-form'),
   new ContentsItem('Table Relationships', 'table-relationships'),
