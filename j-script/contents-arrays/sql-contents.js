@@ -6,7 +6,7 @@ CONTENTS = [
   new ContentsItem('Table Relationships', 'table-relationships'),
   new ContentsItem('Foreign Keys', 'foreign-keys'),
   new ContentsItem('LIMIT', 'limit'),
-  new ContentsItem('DISTINCT', 'distinct'),
+  new ContentsItem('DISTINCT: return unique values', 'distinct'),
   new ContentsItem('Aggregate Functions', 'aggregate-functions'),
   new ContentsItem('UPDATE with CASE', 'update-case'),
   new ContentsItem('String Functions', 'string-functions'),

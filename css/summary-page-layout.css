@@ -33,6 +33,11 @@
   padding-right: 10px
 }
 
+#contents-title{
+  display: inline-block;
+  text-align: center;
+}
+
 #main-header, .section-header{
   text-align: center;
 }
