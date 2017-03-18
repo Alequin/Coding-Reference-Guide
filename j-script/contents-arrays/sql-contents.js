@@ -1,5 +1,7 @@
 
 CONTENTS = [
+  new ContentsItem('Subquery', 'subquery'),
+  new ContentsItem('Outer Join', 'outer-join'),
   new ContentsItem('Inner Join', 'inner-join'),
   new ContentsItem('AS and Aliases', 'as'),
   new ContentsItem('Normal Form', 'normal-form'),

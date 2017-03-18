@@ -31,6 +31,164 @@
 
     <div class="section">
 
+      <div id="subquery" class="title-anchor"></div>
+      <h2 class="section-header">Subquery</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          A subquery is a query nested within another sql statment and allows
+          its user to perform actions with the results of the subquery as a
+          comparator or source of data.
+          <br><br>
+          The following table will be used to provide examples.
+        </p>
+        <img src="../examples/sql/people-car-brands-table.png"
+          alt="an sql table containing a list of ten names and the id of cars driven"
+        /><br>
+        <img src="../examples/sql/car-brands-table.png"
+          alt="an sql table of car brands"
+        /><br>
+        <a href="../examples/sql/names-car-makes-tables.txt">
+          View full code to produce tables.
+        </a>
+        <p>
+          The following query joins the two tables
+          <br><br>
+          <strong>
+            SELECT people.first_name, people.last_name, car_brands.car_brand<br>
+            FROM people INNER JOIN car_brands<br>
+            ON car_brand_id = brand_id<br>
+            WHERE people.car_brand_id = (<br>
+                  &#160;&#160;&#160;&#160;SELECT car_brands.brand_id<br>
+                  &#160;&#160;&#160;&#160;FROM car_brands<br>
+                  &#160;&#160;&#160;&#160;WHERE car_brand = 'mini'<br>
+                  &#160;&#160;&#160;&#160;);
+          </strong>
+        </p>
+        <img src="../examples/sql/mini-drivers-table.png"
+          alt="an sql table containing a list of ten names and the id of cars driven"
+        /><br>
+        <p>
+          Subqueries can also be used as columns
+          <br><br>
+          <strong>
+            select people.first_name, people.last_name,<br>
+            (SELECT car_brands.car_brand<br>
+            FROM car_brands<br>
+            WHERE people.car_brand_id = car_brands.brand_id) AS brand<br>
+            FROM people;
+          </strong>
+        </p>
+        <img src="../examples/sql/car-brands-owners.png"
+          alt="an sql table containing a list of ten names and the cars driven"
+        />
+        <p>
+          Subqueries can be used alongside other key words such as INSERT and
+          DELETE.
+          <br><br>
+          <strong>
+            INSERT INTO animal_populations (animal_id, population, endangered)<br>
+            VALUES<br>
+            ((SELECT animal_id<br>
+            FROM animals<br>
+            WHERE species = "rat"),<br>
+            1500000, false),<br>
+            ((SELECT animal_id<br>
+            FROM animals<br>
+            WHERE species = "jaguar"),<br>
+            15000, true);
+          </strong>
+          <br><br>
+          <a href="../examples/sql/animal-pop-table.txt">
+            View full statment based around previous example.
+          </a>
+          <br><br>
+          (Sources:<br>
+          Head First SQL)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="outer-join" class="title-anchor"></div>
+      <h2 class="section-header">Outer Join</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          Outer joins take all the values of one table and match them to another
+          table based on a given condition. They are similar to inner joins
+          but they will return all values of one table even if there is no match
+          (instead null will be returned).
+          <br><br>
+          Outer joins can either be a left outer join or a right outer join.
+          Lefts use all the values of the table named prior to the statment
+          "LEFT OUTER JOIN" and right use all the values after the statment
+          "RIGHT OUTER JOIN"
+          <br><br>
+          The following table will be used to provide examples.
+        </p>
+        <img src="../examples/sql/names-car-brands-with-missing-brands.png"
+          alt="an sql table containing a list of ten names and the id of cars driven"
+        /><br>
+        <img src="../examples/sql/car-brands-table.png"
+          alt="an sql table of car brands"
+        /><br>
+        <a href="../examples/sql/names-car-makes-with-nulls-tables.txt">
+          View full code to produce tables.
+        </a>
+        <p>
+          <strong>
+            SELECT ppl.first_name, ppl.last_name, car.car_brand<br>
+            FROM people ppl LEFT OUTER JOIN car_brands car<br>
+            ON ppl.car_brand_id = car.brand_id;
+          </strong>
+          <br><br>
+          <img src="../examples/sql/l-outer-join-car-brands.png"
+            alt="an sql table containing a list of ten names and the cars driven"
+          /><br>
+        </p>
+        <p>
+          <strong>
+            SELECT ppl.first_name, ppl.last_name, car.car_brand<br>
+            FROM people ppl RIGHT OUTER JOIN car_brands car<br>
+            ON ppl.car_brand_id = car.brand_id;
+          </strong>
+          <br><br>
+          <img src="../examples/sql/r-outer-join-car-brands.png"
+            alt="an sql table containing a list of ten names and the cars driven"
+          /><br>
+        </p>
+        <p>
+          The first example is a left outer join, which matches all the values
+          of the table prior to the join statment (<u>people ppl</u> LEFT OUTER
+          JOIN car_brands car) to all values that match the given condition in
+          the other table.
+          <br><br>
+          The second example is a right outer join, which matches all the values
+          of the table after to the join statment (people ppl LEFT OUTER
+          JOIN <u>car_brands car</u>) to all values that match the given condition
+          in the other table.
+          <br><br>
+          In the second example two values from the table car_brands (renault
+          and vauxhall) do not match and values from the people table. As it is
+          the right table in a right outer join null values are returned to show
+          there were no matches.
+        </p>
+          (Sources:<br>
+          Head First SQL)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="inner-join" class="title-anchor"></div>
       <h2 class="section-header">INNER JOIN</h2>
 

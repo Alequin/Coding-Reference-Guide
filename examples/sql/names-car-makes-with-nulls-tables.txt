@@ -1,0 +1,79 @@
+CREATE TABLE car_brands(
+  brand_id INT NOT NULL AUTO_INCREMENT,
+  car_brand VARCHAR(50),
+  PRIMARY KEY(brand_id)
+);
+
+INSERT INTO car_brands
+(car_brand)
+VALUES
+('mercedes-benz'),
+('mini'),
+('hyundai'),
+('volvo'),
+('renault'),
+('vauxhall');
+
+SELECT * FROM car_brands;
+
++----------+---------------+
+| brand_id | car_brand     |
++----------+---------------+
+|        1 | mercedes-benz |
+|        2 | mini          |
+|        3 | hyundai       |
+|        4 | volvo         |
+|        5 | renault       |
+|        6 | vauxhall      |
++----------+---------------+
+
+CREATE TABLE people(
+  person_id INT NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  car_brand_id INT,
+  PRIMARY KEY (person_id),
+  CONSTRAINT car_brands_car_brand_id_fk FOREIGN KEY (car_brand_id) REFERENCES car_brands (brand_id)
+);
+
+INSERT INTO people
+(first_name, last_name, car_brand_id)
+VALUES
+('Paul', 'Smith', 3),
+('Samantha', 'Herring', 2),
+('Delia', 'Lenart', 4),
+('Jo', 'Hurst', 3),
+('Terry', 'Tanouye', 2),
+('Alex', 'Cleek', 3),
+('Audrey', 'Showman', 1),
+('Mika', 'Stiger', 1),
+('Markus', 'Palazzo', 2),
+('Creola', 'Frisina', 3);
+
+SELECT * FROM people;
+
++-----------+------------+-----------+--------------+
+| person_id | first_name | last_name | car_brand_id |
++-----------+------------+-----------+--------------+
+|         1 | Paul       | Smith     |            3 |
+|         2 | Samantha   | Herring   |            2 |
+|         3 | Delia      | Lenart    |            4 |
+|         4 | Jo         | Hurst     |            3 |
+|         5 | Terry      | Tanouye   |            2 |
+|         6 | Alex       | Cleek     |            3 |
+|         7 | Audrey     | Showman   |            1 |
+|         8 | Mika       | Stiger    |            1 |
+|         9 | Markus     | Palazzo   |            2 |
+|        10 | Creola     | Frisina   |            3 |
++-----------+------------+-----------+--------------+
+ZZzZ
+SELECT ppl.first_name, ppl.last_name, car.car_brand
+FROM people ppl INNER JOIN car_brands car
+ON ppl.car_brand_id = car.brand_id;
+
+
+
+
+
+
+

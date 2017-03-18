@@ -1,0 +1,32 @@
+CREATE TABLE animals(
+  animal_id INT NOT NULL AUTO_INCREMENT,
+  species VARCHAR(50),
+  PRIMARY KEY (animal_id)
+);
+
+CREATE TABLE animal_populations(
+  population_id INT NOT NULL AUTO_INCREMENT,
+  animal_id INT,
+  population INT,
+  endangered BOOLEAN,
+  PRIMARY KEY (population_id),
+  CONSTRAINT animal_animal_id_fk
+  FOREIGN KEY (animal_id)
+  REFERENCES animals (animal_id)
+);
+
+INSERT INTO animals (species)
+values
+("rat"),
+("jaguar"),
+("vaquita"),
+("crane"),
+("bonobo");
+
+INSERT INTO animal_populations (animal_id, population, endangered)
+VALUES
+((SELECT animal_id FROM animals WHERE species = "rat"), 1500000, false),
+((SELECT animal_id FROM animals WHERE species = "jaguar"), 15000, true),
+((SELECT animal_id FROM animals WHERE species = "vaquita"), 30, true),
+((SELECT animal_id FROM animals WHERE species = "crane"), 6000000, false),
+((SELECT animal_id FROM animals WHERE species = "bonobo"), 50000, false);
