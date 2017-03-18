@@ -31,6 +31,46 @@
 
     <div class="section">
 
+      <div id="self-join" class="title-anchor"></div>
+      <h2 class="section-header">Self Referencing Join</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          Self referencing join work in the same way as inner joins, only the
+          primary key and foreign key used to connect the data both exists in
+          one table.
+          <br><br>
+          The following table will be used to provide examples.
+        </p>
+        <img src="../examples/sql/rock_paper_scissors.png"
+          alt="an sql table of the winning move in rock, paper, scissors"
+        /><br>
+        <a href="../examples/sql/rock_paper_scissors.txt">
+          View full code to produce this table.
+        </a>
+        <p>
+          <strong>
+            SELECT t1.move, t2.move AS counter<br>
+            FROM rock_paper_scissors AS t1 INNER JOIN<br>
+            rock_paper_scissors AS t2<br>
+            ON t1.move_id = t2.counter_move_id;
+          </strong>
+        </p>
+          <img src="../examples/sql/rock_paper_scissors_join.png"
+            alt="an sql table of the winning move in rock, paper, scissors"
+          /><br>
+          <p>
+          (Sources:<br>
+          Head First SQL)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="subquery" class="title-anchor"></div>
       <h2 class="section-header">Subquery</h2>
 

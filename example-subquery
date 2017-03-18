@@ -29,18 +29,3 @@ WHERE ppl.car_brand_id IN (
     FROM car_brands
     WHERE ppl.car_brand_id = car_brands.brand_id
 );
-
-CREATE TABLE trees(
-  tree_id INT NOT NULL AUTO_INCREMENT,
-  species VARCHAR(50),
-  PRIMARY KEY (tree_id)
-);
-
-CREATE TABLE tree_populations(
-  population_id INT NOT NULL AUTO_INCREMENT,
-  tree_id INT
-  population VARCHAR(50),
-  endangered BOOLEAN,
-  PRIMARY KEY (population_id),
-  CONSTRAINT trees_tree_id_fk FOREIGN KEY (tree_id) REFERENCES trees (tree_id)
-);

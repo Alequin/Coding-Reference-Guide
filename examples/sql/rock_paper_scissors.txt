@@ -1,0 +1,26 @@
+CREATE TABLE rock_paper_scissors(
+  move_id INT NOT NULL AUTO_INCREMENT,
+  move VARCHAR(9),
+  counter_move_id INT,
+  PRIMARY KEY(move_id)
+);
+
+INSERT INTO rock_paper_scissors (move, counter_move_id)
+VALUES
+('rock', 3),
+('scissors', 1),
+('paper', 2);
+
+ALTER TABLE rock_paper_scissors
+ADD FOREIGN KEY (counter_move_id)
+REFERENCES rock_paper_scissors (move_id);
+
+SELECT * FROM rock_paper_scissors;
+
++---------+----------+-----------------+
+| move_id | move     | counter_move_id |
++---------+----------+-----------------+
+|       1 | rock     |               3 |
+|       2 | scissors |               1 |
+|       3 | paper    |               2 |
++---------+----------+-----------------+

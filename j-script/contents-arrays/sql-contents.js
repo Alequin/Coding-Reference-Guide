@@ -1,5 +1,6 @@
 
 CONTENTS = [
+  new ContentsItem('Self Referencing Join', 'self-join'),
   new ContentsItem('Subquery', 'subquery'),
   new ContentsItem('Outer Join', 'outer-join'),
   new ContentsItem('Inner Join', 'inner-join'),
