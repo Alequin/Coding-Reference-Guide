@@ -31,6 +31,96 @@
 
     <div class="section">
 
+      <div id="intersect-expect" class="title-anchor"></div>
+      <h2 class="section-header">INTERSECT &#38; EXCEPT</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+
+          <strong>Please note</strong>:
+          <em>
+            These two statements are not supported by MySql but the same results
+            can be achived by using IN, as will be shown below
+          </em>
+          INTERSECT and EXCEPT work in a similar way to UNION as they connect
+          two queries, though each has its difference.
+          <br><br>
+          <strong>INTERECT</strong>: combines the results of two tables but only
+          returns values that are included in both tables.
+          <br><br>
+          <strong>EXCEPT</strong>: combines the results of two tables but only
+          returns values that exist in the first table only. Any values existing
+          in both sets of data will not be returned.
+          <br><br>
+          The following tables will be used to provide examples.
+        </p>
+        <img src="../examples/sql/trees_plot_1.png"
+          alt="an sql table of trees on a plot of land"
+        /><br>
+        <img src="../examples/sql/trees_plot_2.png"
+          alt="an sql table of trees on a different plot of land"
+        /><br>
+        <a href="../examples/sql/two-tree-tables.txt">
+          View full code to produce these table.
+        </a>
+        <p>
+          <strong>
+            SELECT species FROM land_plot_1_trees<br>
+            INTERSECT<br>
+            SELECT species FROM land_plot_2_trees;
+          </strong>
+          <br><br>
+          or in mysql
+          <br><br>
+          <strong>
+            SELECT species<br>
+            FROM land_plot_1_trees<br>
+            WHERE species IN (SELECT species FROM land_plot_2_trees);
+          </strong>
+        </p>
+        <img src="../examples/sql/trees-intersect.png"
+          alt="an sql table of trees on two plots of land"
+        />
+        <p>
+          <strong>
+            SELECT species FROM land_plot_1_trees<br>
+            EXCEPT<br>
+            SELECT species FROM land_plot_2_trees;
+          </strong>
+          <br><br>
+          or in mysql
+          <br><br>
+          <strong>
+            SELECT species<br>
+            FROM land_plot_1_trees<br>
+            WHERE species NOT IN (SELECT species FROM land_plot_2_trees);
+          </strong>
+        </p>
+        <img src="../examples/sql/trees-except.png"
+          alt="an sql table of trees on two plots of land"
+        />
+        <p>
+          <em>
+            INTERSECT and EXCEPT were tested in SQLite. The only difference in the results
+            was the order in which EXCEPT returned values, which was alder, holly, juniper.<br>
+            SQLite tests done with
+            <a href="https://www.codecademy.com/en/courses/learn-sql/lessons/manipulation/exercises/create">
+              codecademy.
+            </a>
+          </em>
+          <br><br>
+          (Sources:<br>
+          <a href="">
+          </a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="union" class="title-anchor"></div>
       <h2 class="section-header">UNION</h2>
 

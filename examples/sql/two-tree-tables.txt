@@ -53,61 +53,10 @@ SELECT * FROM land_plot_2_trees;
 |       6 | maple   |
 +---------+---------+
 
+SELECT species
+FROM land_plot_1_trees
+WHERE species IN (SELECT species FROM land_plot_2_trees);
+
 SELECT species FROM land_plot_1_trees
-UNION
+INTERSECT
 SELECT species FROM land_plot_2_trees;
-
-+---------+
-| species |
-+---------+
-| juniper |
-| holly   |
-| alder   |
-| elm     |
-| maple   |
-| pine    |
-| oak     |
-| dogwood |
-| spindle |
-+---------+
-
-SELECT species FROM land_plot_1_trees
-UNION
-SELECT species FROM land_plot_2_trees
-ORDER BY species;
-
-+---------+
-| species |
-+---------+
-| alder   |
-| dogwood |
-| elm     |
-| holly   |
-| juniper |
-| maple   |
-| oak     |
-| pine    |
-| spindle |
-+---------+
-
-SELECT species FROM land_plot_1_trees
-UNION ALL
-SELECT species FROM land_plot_2_trees
-ORDER BY species;
-
-+---------+
-| species |
-+---------+
-| alder   |
-| dogwood |
-| elm     |
-| elm     |
-| holly   |
-| juniper |
-| maple   |
-| maple   |
-| oak     |
-| pine    |
-| pine    |
-| spindle |
-+---------+
