@@ -1,0 +1,113 @@
+CREATE TABLE land_plot_1_trees(
+    tree_id INT NOT NULL AUTO_INCREMENT,
+    species VARCHAR(50),
+    PRIMARY KEY (tree_id)
+);
+
+CREATE TABLE land_plot_2_trees(
+    tree_id INT NOT NULL AUTO_INCREMENT,
+    species VARCHAR(50),
+    PRIMARY KEY (tree_id)
+);
+
+INSERT INTO land_plot_1_trees (species)
+VALUES
+('juniper'),
+('holly'),
+('alder'),
+('elm'),
+('maple'),
+('pine');
+
+INSERT INTO land_plot_2_trees (species)
+VALUES
+('oak'),
+('elm'),
+('dogwood'),
+('pine'),
+('spindle'),
+('maple');
+
+SELECT * FROM land_plot_1_trees;
+SELECT * FROM land_plot_2_trees;
+
++---------+---------+
+| tree_id | species |
++---------+---------+
+|       1 | juniper |
+|       2 | holly   |
+|       3 | alder   |
+|       4 | elm     |
+|       5 | maple   |
+|       6 | pine    |
++---------+---------+
+
++---------+---------+
+| tree_id | species |
++---------+---------+
+|       1 | oak     |
+|       2 | elm     |
+|       3 | dogwood |
+|       4 | pine    |
+|       5 | spindle |
+|       6 | maple   |
++---------+---------+
+
+SELECT species FROM land_plot_1_trees
+UNION
+SELECT species FROM land_plot_2_trees;
+
++---------+
+| species |
++---------+
+| juniper |
+| holly   |
+| alder   |
+| elm     |
+| maple   |
+| pine    |
+| oak     |
+| dogwood |
+| spindle |
++---------+
+
+SELECT species FROM land_plot_1_trees
+UNION
+SELECT species FROM land_plot_2_trees
+ORDER BY species;
+
++---------+
+| species |
++---------+
+| alder   |
+| dogwood |
+| elm     |
+| holly   |
+| juniper |
+| maple   |
+| oak     |
+| pine    |
+| spindle |
++---------+
+
+SELECT species FROM land_plot_1_trees
+UNION ALL
+SELECT species FROM land_plot_2_trees
+ORDER BY species;
+
++---------+
+| species |
++---------+
+| alder   |
+| dogwood |
+| elm     |
+| elm     |
+| holly   |
+| juniper |
+| maple   |
+| maple   |
+| oak     |
+| pine    |
+| pine    |
+| spindle |
++---------+

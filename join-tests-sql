@@ -1,8 +1,0 @@
-SELECT people.first_name, people.last_name, car_brands.car_brand
-FROM people INNER JOIN car_brands
-ON people.car_brand_id = car_brands.brand_id;
-
-SELECT people.first_name, people.last_name, car_brands.car_brand
-FROM people INNER JOIN car_brands
-ON people.car_brand_id <> car_brands.brand_id
-ORDER BY people.first_name;

@@ -31,6 +31,77 @@
 
     <div class="section">
 
+      <div id="union" class="title-anchor"></div>
+      <h2 class="section-header">UNION</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          The keyword UNION combines the result of multiple queries and
+          returns a single table.
+          <br><br>
+          The following tables will be used to provide examples.
+        </p>
+        <img src="../examples/sql/trees_plot_1.png"
+          alt="an sql table of trees on a plot of land"
+        /><br>
+        <img src="../examples/sql/trees_plot_2.png"
+          alt="an sql table of trees on a different plot of land"
+        /><br>
+        <a href="../examples/sql/two-tree-tables.txt">
+          View full code to produce these table.
+        </a>
+        <p>
+          <strong>
+            SELECT species FROM land_plot_1_trees<br>
+            UNION<br>
+            SELECT species FROM land_plot_2_trees;
+          </strong>
+          <br><br>
+          UNION combines the results into a single table and removes all
+          duplicates.
+        </p>
+        <img src="../examples/sql/union-trees-table.png"
+          alt="an sql table of trees on two plots of land"
+        />
+        <p>
+          <strong>
+            SELECT species FROM land_plot_1_trees<br>
+            UNION<br>
+            SELECT species FROM land_plot_2_trees<br>
+            ORDER BY species;
+          </strong>
+          <br><br>
+          If the results should be ordered the statement must be made
+          after both queries.
+        </p>
+        <img src="../examples/sql/union-trees-table-ordered.png"
+          alt="an sql table of trees on two plots of land and ordered"
+        />
+        <p>
+          <strong>
+            SELECT species FROM land_plot_1_trees<br>
+            UNION ALL<br>
+            SELECT species FROM land_plot_2_trees<br>
+            ORDER BY species;
+          </strong>
+          <br><br>
+          UNION ALL stops the removal of duplicates.
+        </p>
+        <img src="../examples/sql/union-all-trees.png"
+          alt="an sql table of all trees on two plots of land"
+        />
+        <p>
+          (Sources:<br>
+          Head First SQL)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="self-join" class="title-anchor"></div>
       <h2 class="section-header">Self Referencing Join</h2>
 
