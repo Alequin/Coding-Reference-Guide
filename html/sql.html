@@ -31,17 +31,80 @@
 
     <div class="section">
 
+      <div id="views" class="title-anchor"></div>
+      <h2 class="section-header">VIEWS</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          VIEWS allow the storage of queries so that they can be reused multiple
+          times with ease. They are considered virtual tables as they may be
+          used in the same way tables but only exist when the view is in use.
+          <br><br>
+          The following tables will be used to provide examples.
+        </p>
+        <img src="../examples/sql/trees_plot_1.png"
+          alt="an sql table of trees on a plot of land"
+        /><br>
+        <img src="../examples/sql/trees_plot_2.png"
+          alt="an sql table of trees on a different plot of land"
+        /><br>
+        <a href="../examples/sql/two-tree-tables.txt">
+          View full code to produce these table.
+        </a>
+        <p>
+          <strong>
+            CREATE VIEW all_trees AS<br>
+            SELECT species FROM land_plot_1_trees<br>
+            UNION<br>
+            SELECT species FROM land_plot_2_trees;
+          </strong>
+          <br><br>
+          The method used to create views is shown above. Once created the query, which
+          is written after the keyword AS can be used as a subquery simply by
+          naming the view.
+          <br><br>
+          <strong>
+            SELECT * FROM all_trees;
+          </strong>
+        </p>
+        <img src="../examples/sql/union-trees-table.png"
+          alt="an sql table of trees on two plots of land"
+        />
+        <p>
+          <strong>
+            SELECT species FROM all_trees<br>
+            WHERE species LIKE "%r" OR species LIKE "%e"<br>
+            ORDER BY species DESC;
+          </strong>
+        </p>
+        <img src="../examples/sql/trees-ending-with-e-and-r.png"
+          alt="an sql table of trees with the last letter e &#38; r"
+        />
+        <p>
+          <br><br>
+          (Sources:<br>
+          Head First SQL)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="intersect-expect" class="title-anchor"></div>
       <h2 class="section-header">INTERSECT &#38; EXCEPT</h2>
 
       <div class="section-content section-text-normal">
         <p>
 
-          <strong>Please note</strong>:
+          <strong>Note</strong>:
           <em>
             These two statements are not supported by MySql but the same results
             can be achived by using IN, as will be shown below
           </em>
+          <br><br>
           INTERSECT and EXCEPT work in a similar way to UNION as they connect
           two queries, though each has its difference.
           <br><br>
@@ -110,8 +173,7 @@
           </em>
           <br><br>
           (Sources:<br>
-          <a href="">
-          </a>)
+          Head First SQL)
         </p>
       </div>
 

@@ -52,11 +52,3 @@ SELECT * FROM land_plot_2_trees;
 |       5 | spindle |
 |       6 | maple   |
 +---------+---------+
-
-SELECT species
-FROM land_plot_1_trees
-WHERE species IN (SELECT species FROM land_plot_2_trees);
-
-SELECT species FROM land_plot_1_trees
-INTERSECT
-SELECT species FROM land_plot_2_trees;

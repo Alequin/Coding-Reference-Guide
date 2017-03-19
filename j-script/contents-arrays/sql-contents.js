@@ -1,5 +1,6 @@
 
 CONTENTS = [
+  new ContentsItem('VIEWS', 'views'),
   new ContentsItem('INTERSECT & EXCEPT', 'intersect-expect'),
   new ContentsItem('UNION', 'union'),
   new ContentsItem('Self Referencing Join', 'self-join'),
