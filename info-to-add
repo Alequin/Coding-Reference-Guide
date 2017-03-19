@@ -18,12 +18,27 @@ git log -2 --oneline
   http://bigocheatsheet.com/
 --------------------------------------------------------------------------------
 sql triggers
+--------------------------------------------------------------------------------run command line from ruby
+system("realpath .")
+system("date")
+
+source: http://stackoverflow.com/questions/3159945/running-command-line-commands-within-ruby-script
 --------------------------------------------------------------------------------
+change desktop background in ubunto 16.04
+gsettings set org.gnome.desktop.background picture-uri "file:///home/alequin/Pictures/Wallpapers/FWd9F5e.jpg"
+
+source: http://danilodellaquila.com/en/blog/how-to-automatically-change-your-desktop-background-wallpaper
 --------------------------------------------------------------------------------
+remove substring with regexr "string".scan(/s\w/) #=> st
 --------------------------------------------------------------------------------
+constant variable cannot be defined within methods in ruby
+https://www.tutorialspoint.com/ruby/ruby_variables.htm
 --------------------------------------------------------------------------------
+add delete_at method into ruby array section
 --------------------------------------------------------------------------------
---------------------------------------------------------------------------------
+useful regexr patterns 
+	only digits in entire string
+		^-?\d+$ (remove -? to only select positive values)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

@@ -81,6 +81,34 @@
           alt="an sql table of trees with the last letter e &#38; r"
         />
         <p>
+          VIEWS can also be used to INSERT, UPDATE and DELETE values from the
+          table associated with the view. However, this only works if the
+          statment is only able to influence a single table.
+          <br><br>
+          <strong>
+            INSERT INTO all_trees (species) VALUES ("bacon tree");<br>
+            #=> ERROR 1471 (HY000): The target table all_trees of the INSERT
+            is not insertable-into
+          </strong>
+          <br><br>
+          The column species belongs to both table and so it is not clear which
+          should be inserted into (more examples of what can and cannot be done
+          with multi table view and these statments are shown at the end).
+          <br><br>
+          Using a view that only involves one table ensures INSERT, UPDATE and
+          DELETE will works and allow the use of the key phrase
+          <strong>WITH CHECK OPTION</strong>, which allow conditions to be place
+          on INSERT, UPDATE and DELETE statments.
+          <br><br>
+          <strong>
+            INSERT INTO all_trees (species) VALUES ("bacon tree");<br>
+            #=> ERROR 1471 (HY000): The target table all_trees of the INSERT
+            is not insertable-into
+          </strong>
+          Once a view is finished with it can be deleted.
+          <strong>
+            DROP VIEW all_trees;
+          </strong>
           <br><br>
           (Sources:<br>
           Head First SQL)

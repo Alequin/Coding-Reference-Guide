@@ -66,10 +66,7 @@ SELECT * FROM people;
 |         9 | Markus     | Palazzo   |            2 |
 |        10 | Creola     | Frisina   |            3 |
 +-----------+------------+-----------+--------------+
-ZZzZ
-SELECT ppl.first_name, ppl.last_name, car.car_brand
-FROM people ppl INNER JOIN car_brands car
-ON ppl.car_brand_id = car.brand_id;
+
 
 
 
