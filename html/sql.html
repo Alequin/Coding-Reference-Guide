@@ -31,6 +31,119 @@
 
     <div class="section">
 
+      <div id="transactions" class="title-anchor"></div>
+      <h2 class="section-header">Transactions</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          A transactions is a set of sql statments which result in a single unit
+          of work. Transaction should follow the principals laid out by the
+          acronym ACID.
+        </p>
+        <ul>
+          <li>
+            <strong>Atomicity</strong>: All operations must be completed. If, for
+            any reason, a statment cannot run all actions must be aborted and
+            the database rolled back to its state prior to the transaction.
+          </li>
+          <li>
+            <strong>Consistency</strong>: Once a tranaction is complete the
+            state of the database must remain consistent. All data written or
+            removed must not violate any predefined rules.
+          </li>
+          <li>
+            <strong>Isolation</strong>: This is the ability of two or more
+            transaction (that alter similar data) to run concurrently. High
+            levels of isolation only allow a single transaction to run. All
+            others must wait till the first is done. The lower the level of
+            isolation the greater the ability for multiple transaction to access
+            and manipulate similar sets of data at the same time.
+
+          </li>
+          <li>
+            <strong>Durability</strong>: A transaction is durable once it has
+            complete and all data has been successfully been commited / become a
+            permanent part of the system.
+          </li>
+        </ul>
+        <p>
+          The following tables will be used to provide examples.
+        </p>
+        <img src="../examples/sql/trees_plot_1.png"
+          alt="an sql table of trees on a plot of land"
+        /><br>
+        <img src="../examples/sql/trees_plot_2.png"
+          alt="an sql table of trees on a different plot of land"
+        /><br>
+        <a href="../examples/sql/two-tree-tables.txt">
+          View full code to produce these table.
+        </a>
+        <p>
+          Three key statments are used to make tranactions, these are
+          <strong>START TRANSACTION</strong>,
+          <strong>ROLLBACK</strong> and
+          <strong>COMMIT</strong>.
+          <br><br>
+          START TRANSACTION begins the transaction. Once all statments are
+          complete the transaction is ended with either ROLLBACK or COMMIT.
+          If issues have arrisen then ROLLBACK should be used to reverse all
+          actions. If everything executed as expected the changes should be
+          saved with COMMIT.
+          <br><br>
+          <strong>
+            START TRANSACTION;<br>
+            INSERT INTO land_plot_1_trees (species)
+            VALUES ("ash");<br>
+            SELECT * FROM land_plot_1_trees;
+          </strong>
+        </p>
+        <img src="../examples/sql/trees-plot-1-with-ash.png"
+          alt="an sql table of trees on a plot of land, including an ash tree "
+        />
+        <p>
+          <strong>
+            ROLLBACK;<br>
+            SELECT * FROM land_plot_1_trees;
+          </strong>
+        </p>
+        <img src="../examples/sql/trees_plot_1.png"
+          alt="an sql table of trees on a plot of land"
+        />
+        <p>
+          If COMMIT was called rather than ROLLBACK "ash" would have been saved.
+          <br><br>
+          <strong>
+            START TRANSACTION;<br>
+            INSERT INTO land_plot_1_trees (species)
+            VALUES ("ash");<br>
+            COMMIT;<br>
+            SELECT * FROM land_plot_1_trees;
+          </strong>
+        </p>
+        <img src="../examples/sql/trees-plot-1-with-ash.png"
+          alt="an sql table of trees on a plot of land, including an ash tree "
+        />
+        <p>
+          (Sources:<br>
+          Head First SQL<br>
+          <a href="https://www.tutorialspoint.com/sql/sql-transactions.htm">
+            tutorialspoint: SQL - Transactions
+          </a><br>
+          <a href="https://en.wikipedia.org/wiki/Consistency_(database_systems)">
+            Wikipedia: Consistency (database systems)
+          </a><br>
+          <a href="https://en.wikipedia.org/wiki/Isolation_(database_systems)">
+            Wikipedia: Isolation (database systems)
+          </a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="views" class="title-anchor"></div>
       <h2 class="section-header">VIEWS</h2>
 
