@@ -91,27 +91,58 @@
             is not insertable-into
           </strong>
           <br><br>
-          The column species belongs to both table and so it is not clear which
-          should be inserted into (more examples of what can and cannot be done
-          with multi table view and these statments are shown at the end).
+          The column species belongs to both tables, which makes it unclear as
+          to which table should recive the data. To ensure no errors are raised
+          while using INSERT, UPDATE and DELETE with a VIEW use a query that
+          only involves one table and including all not null columns that are
+          not provided with a default value.
           <br><br>
-          Using a view that only involves one table ensures INSERT, UPDATE and
-          DELETE will works and allow the use of the key phrase
-          <strong>WITH CHECK OPTION</strong>, which allow conditions to be place
-          on INSERT, UPDATE and DELETE statments.
+          VIEWS that are used with INSERT, UPDATE and DELETE can include the key
+          phrase <strong>WITH CHECK OPTION</strong>. This will cause any
+          conditions place on the query to be adhered to while using INSERT,
+          UPDATE or DELETE.
           <br><br>
           <strong>
-            INSERT INTO all_trees (species) VALUES ("bacon tree");<br>
-            #=> ERROR 1471 (HY000): The target table all_trees of the INSERT
-            is not insertable-into
+            CREATE VIEW a_trees AS<br>
+            SELECT species FROM land_plot_1_trees<br>
+            WHERE species LIKE "a%"<br>
+            WITH CHECK OPTION;
           </strong>
-          Once a view is finished with it can be deleted.
+          <br><br>
           <strong>
-            DROP VIEW all_trees;
+            INSERT INTO a_trees (species)<br>
+            VALUES ("ash");<br>
+            #=> Query OK, 1 row affected (0.01 sec)
+            <br><br>
+            INSERT INTO a_trees (species)<br>
+            VALUES ("bacon tree");<br>
+            #=>ERROR 1369 (HY000): CHECK OPTION failed 'db.a_trees'
+            <br><br>
+            DELETE FROM a_trees WHERE species = "pine";<br>
+            #=>Query OK, <u>0 rows affected</u> (0.00 sec)
+            <br><br>
+            DELETE FROM a_trees WHERE species = "ash;<br>
+            #=>Query OK, <u>1 row affected</u> (0.00 sec)
+          </strong>
+          <br><br>
+          Once a view is finished with it can be deleted.
+          <br><br>
+          <strong>
+            DROP VIEW all_trees;<br>
+            DROP VIEW a_trees;
           </strong>
           <br><br>
           (Sources:<br>
-          Head First SQL)
+          Head First SQL<br>
+          <a href="http://stackoverflow.com/questions/7281054/sql-updatable-view-with-joined-tables">
+            stackoverflow: SQL Updatable View with joined tables
+          </a><br>
+          <a href="https://dev.mysql.com/doc/refman/5.6/en/view-check-option.html">
+            MySQL documentation: 20.5.4 The View WITH CHECK OPTION Clause
+          </a><br>
+          <a href="https://dev.mysql.com/doc/refman/5.6/en/view-check-option.html">
+            MySQL documentation: 20.5.4 The View WITH CHECK OPTION Clause
+          </a>)
         </p>
       </div>
 
