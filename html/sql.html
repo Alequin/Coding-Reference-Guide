@@ -31,6 +31,145 @@
 
     <div class="section">
 
+      <div id="new-user" class="title-anchor"></div>
+      <h2 class="section-header">New Users</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          MySQL databases can have multiple users, each with varing levels of
+          access and permissions. The primary user has full access to all
+          database and the ability to create new users and assign user
+          permissions.
+          <br><br>
+          To create a user the following is used.
+          <br><br>
+          <strong>
+            CREATE USER &#60;user-name&#62;<br>
+            IDENTIFIED BY '&#60;password&#62;';
+            <br><br>
+            CREATE USER another_user<br>
+            IDENTIFIED BY 'monkey';
+          </strong>
+          <br><br>
+          Once created the user can log in from the console using their
+          username.
+          <br><br>
+          <strong>
+            mysql -u another_user -p;
+          </strong>
+          <br><br>
+          The primary user can view all current users with the following
+          statment.
+          <br><br>
+          <strong>
+            SELECT User,Host FROM mysql.user;
+          </strong>
+        </p>
+        <img src="../examples/sql/user-table.png"
+          alt="an sql table of users"
+        />
+        <p>
+          Using the keyword GRANT permissions can be assigned to new users. The
+          database which contains the table should be in use when GRANT is used.
+          <br><br>
+          <strong>
+            GRANT SELECT ON &#60;table-name&#62;<br>
+            TO another_user;
+            <br><br>
+            GRANT SELECT ON &#60;table-name&#62;(&#60;column-name&#62;)<br>
+            TO another_user;
+            <br><br>
+            GRANT DROP ON &#60;table-name&#62;<br>
+            TO another_user;
+            <br><br>
+            GRANT UPDATE, INSERT, DELETE ON &#60;table-name&#62;<br>
+            TO another_user, another_user_1, another_user_2;
+            <br><br>
+            GRANT ALL ON &#60;table-name&#62;<br>
+            TO another_user<br>
+            WITH GRANT OPTION;
+            <br><br>
+            GRANT ALL ON &#60;database-name&#62;.*<br>
+            TO another_user;
+          </strong>
+          <br><br>
+          To view the permissions avalible to a user use:<br>
+          <strong>SHOW GRANTS FOR another_user;</strong>
+          <br><br>
+          GRANT provides a good range of control when setting permissons and enables
+          multiple users permissons to be set at once. WITH GRANT OPTIONS gives
+          users the ability to grant other users pemissions, though they can
+          only grant permissions they have access to.
+          <br><br>
+          In the final example the user is given access to all statments across
+          all tables in the given database.
+          <br><br>
+          REVOKE is the keyword used to remove users pemissions and is used in
+          a similar way to GRANT.
+          <br><br>
+          <strong>
+            REVOKE SELECT ON &#60;table-name&#62;<br>
+            FROM another_user;
+            <br><br>
+            REVOKE SELECT ON &#60;table-name&#62;(&#60;column-name&#62;)<br>
+            FROM another_user;
+            <br><br>
+            REVOKE DROP ON &#60;table-name&#62;<br>
+            FROM another_user;
+            <br><br>
+            REVOKE GRANT OPTION ON &#60;table-name&#62;<br>
+            FROM another_user;
+            <br><br>
+            REVOKE SELECT, UPDATE, GRANT OPTION ON &#60;table-name&#62;<br>
+            FROM another_user;
+          </strong>
+          <br><br>
+          REVOKE has a similar range of control as GRANT has.
+          <br><br>
+          <em>
+            When revoking the grant option I saw other methods. All but the
+            one shown seemed to produce a syntax error (valid tables and user
+            names where used).
+            <br><br>
+            REVOKE GRANT OPTION ON SELECT ON Table FROM another_user;<br>
+            #=> ERROR 1064 (42000): You have an error in your SQL syntax; check
+            the manual that corresponds to your MySQL server version for the
+            right syntax to use near 'SELECT ON car_brands FROM au' at line 1
+            <br><br>
+            REVOKE GRANT OPTION FOR SELECT ON table FROM another_user;<br>
+            #=> ERROR 1064 (42000): You have an error in your SQL syntax; check
+            the manual that corresponds to your MySQL server version for the
+            right syntax to use near 'FOR SELECT ON table FROM another_user' at
+            line 1
+          </em>
+          <br><br>
+
+          <br><br>
+          To delete a user use the following.
+          <br><br>
+          <strong>
+            DROP USER &#60;user-name&#62;
+          </strong>
+          <br><br>
+          (Sources:<br>
+          <a href="http://stackoverflow.com/questions/5690260/mysql-logging-in-as-different-user">
+            stackoverflow: mysql logging in as different user
+          </a><br>
+          <a href="https://www.liquidweb.com/kb/create-a-mysql-user-on-linux-via-command-line/">
+            liquidweb: Create a MySQL User on Linux via Command Line
+          </a><br>
+          <a href="http://www.mysqltutorial.org/mysql-revoke.aspx">
+            MySQLTutorial: Revoking Privileges From Users Using MySQL REVOKE
+          </a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="transactions" class="title-anchor"></div>
       <h2 class="section-header">Transactions</h2>
 

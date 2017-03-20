@@ -1,5 +1,6 @@
 
 CONTENTS = [
+  new ContentsItem('New User', 'new-user'),
   new ContentsItem('Transactions', 'transactions'),
   new ContentsItem('VIEWS', 'views'),
   new ContentsItem('INTERSECT & EXCEPT', 'intersect-expect'),
