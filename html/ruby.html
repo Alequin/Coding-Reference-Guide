@@ -27,9 +27,53 @@
 
   <div id="primary-container">
 
+    <div class="divider"></div>
 
+    <div class="section">
 
-<div class="divider"></div>
+      <div id="pipe-chars-and-files" class="title-anchor"></div>
+      <h2 class="section-header">Pipe Characters and Ruby scripts</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          As well as outputting to console print, puts and p can be used to
+          output text to txt files. This is done by changing the console
+          command given when starting a script file. This will result in the
+          creation / replacement of a named text file which contains all string
+          values given as parameters to console output methods.
+          <br><br>
+          <strong>
+            $ ruby ruby-file.rb &#62; io-text-file.txt
+          </strong>
+          <br><br>
+          This will produce, or replace if it already exists, the text file
+          output-text-file.txt and fill each line with any values that would
+          normally be output to console. The once the script stops running. The
+          file is produced once the code begins but the contents are not input
+          until the code ends.
+          <br><br>
+          The opposite may also be done and text files may be used in the place
+          of user input.
+          <br><br>
+          <strong>
+            $ ruby ruby-file.rb &#60; output-text-file.txt
+          </strong>
+          <br><br>
+          This will make any methods that normally ask for user input to accept
+          a single line from a text file and use that as input. Each use of an
+          input requesting method will result in a new line from the text file
+          being used.
+          <br><br>
+          (Sources:<br>
+          <a href="https://www.thoughtco.com/using-the-command-line-2908368">
+            ThoughtCo: Running and Executing rb Files 
+          </a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
 
     <div class="section">
 
@@ -1897,6 +1941,17 @@
             # [1,2,3,4]
           </strong>
           <br><br>
+          Values at any position can be deleted from an array using the method
+          delete_at(index). This will also return the deleted value.
+          <br><br>
+          <strong>
+            y = [1,2,3,4,5]<br>
+            p y.delete_at(2)<br>
+            p y<br>
+            #=> 3<br>
+            # [1,2,4,5]
+          </strong>
+          <br><br>
           The method empty? will return a boolean value. True if the array holds
           no values.<br>
           The methods length and size will return the number of values held by
@@ -2010,6 +2065,14 @@
           <strong>
             "this is a test".scan(/\w\w/) {|letter| print "#{letter} "}<br>
             #=>th is is te st
+          </strong>
+          <br><br>
+          If scan is used without a code block it can be used to return a
+          substring from a string.
+          <br><br>
+          <strong>
+            puts "String".scan(/r\w/)<br>
+            #=> ri
           </strong>
           <br><br>
           (Sources:
@@ -2185,9 +2248,17 @@
           <br><br>
           Any attempts to change the variable Dogs will result in a warning
           <br><br>
+          Constant may only be defined outside of a method. They can be defined
+          within a class or module (only the class / module will have
+          access to the value) or they can be defined outside of classes and
+          modules, which would make their scope global.
+          <br><br>
           (Sources:
           <br>
-           Beginning Ruby: From Novice to Professional
+           Beginning Ruby: From Novice to Professional<br>
+           <a href="https://www.tutorialspoint.com/ruby/ruby_variables.htm">
+             tutorialspoint: Ruby Variables, Constants and Literals
+           </a>
           )
         </p>
       </div>
