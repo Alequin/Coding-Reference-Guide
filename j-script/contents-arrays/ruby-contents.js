@@ -1,5 +1,6 @@
 
 CONTENTS = [
+  new ContentsItem('Run Conole Command With Ruby', 'ruby-console-commands'),
   new ContentsItem('Pipe Characters and Ruby scripts', 'pipe-chars-and-files'),
   new ContentsItem('Exception Handling', 'exception-handling'),
   new ContentsItem('File Inclusion', 'file-inclusion'),
