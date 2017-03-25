@@ -36,8 +36,99 @@
 
       <div class="section-content section-text-normal">
         <p>
+          <strong>
+            <u>%x(command)</u>
+            <br><br>
+            p %x(echo hello)
+            <br><br>
+            #=> "hello\n"
+          </strong>
+          <br><br>
+          Returns stdout and redirects stderr to calling terminal. Delimeters
+          can be any character.
+          <br><br>
+          <strong>
+            <u>system("command")</u>
+            <br><br>
+            p system("echo hello")
+            <br><br>
+            #=> hello #echo command result
+            # true
+          </strong>
+          <br><br>
+          Returns true if the command was found and run successfully. Redirects
+          stderr to calling terminal.
+          <br><br>
+          <strong>
+            <u>spawn("command")</u>
+            <br><br>
+            p spawn("echo hello")
+            <br><br>
+            #=> 5875 #number will vary
+          </strong>
+          <br><br>
+          Returns pid
+          <a href="https://en.wikipedia.org/wiki/Process_identifier">
+            (Process identifier)
+          </a> of the command. Redirects stderr
+          to calling terminal.
+          <br><br>
+          <strong>
+            <u>IO.popen("command")</u>
+            <br><br>
+            io = IO.popen("echo hello && echo hello again")
+            p io.readlines
+            <br><br>
+            #=> ["hello\n", "hello again\n"]
+          </strong>
+          <br><br>
+          IO.popen returns an IO opject and runs the given commands as a
+          subprocess, with the stdout connected the IO object. Each command stores
+          a returned line (if it has a return value), which may be accessed via
+          the methods readline (return each value one at a time) or readlines
+          (return all values as an array). Each call the either of these
+          methods will remove the returned values from been accessed in the same
+          way. The PID can be found using the method pid. Redirects stderr to
+          calling terminal.
+          <br><br>
+          <strong>
+            <u>Open3.popen3("command")</u>
+            <br><br>
+            require 'open3'
+            <br><br>
+            stdin, stdout, stderr = Open3.popen3("echo hello &#38;&#38; ruby not-real.rb")<br>
+            p stdout.readlines<br>
+            p stderr.readlines
+            <br><br>
+            #=> ["hello\n"]<br>
+            ["ruby: No such file or directory -- not-real.rb (LoadError)\n"]
+          </strong>
+          <br><br>
+          Open3 returns an object which allows access to both returned values
+          of stdout and stderr (stderr is not redirected to calling terminal).
+          readline and readlines methods are used to access values (same as
+          IO.open). Open3 also allows for other obects such as popen2 or capture
+          3. For full details view
+          <a href="https://docs.ruby-lang.org/en/2.0.0/Open3.html">
+            ruby docs: module Open3.
+          </a>
+          <br><br>
+
           (Sources:<br>
-          <a href="">
+          <a href="http://stackoverflow.com/questions/3159945/running-command-line-commands-within-ruby-script">
+            stackoverflow: Running command line commands within Ruby script
+          </a><br>
+          <a href="https://gist.github.com/JosephPecoraro/4069">
+            GitHub: JosephPecoraro
+          </a><br>
+          <a href="https://ruby-doc.org/core-2.4.1/Kernel.html#method-i-exec">
+            Ruby documentation: Kernal
+          </a><br>
+          <a href="https://docs.ruby-lang.org/en/2.0.0/Open3.html">
+            Ruby documentation: module Open3
+          </a><br>
+          <a href="http://mentalized.net/journal/2010/03/08/5-ways-to-run-commands-from-ruby/">
+            mentalized: 5 ways to run commands from Ruby
           </a>)
         </p>
       </div>

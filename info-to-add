@@ -23,6 +23,7 @@ system("realpath .")
 system("date")
 
 source: http://stackoverflow.com/questions/3159945/running-command-line-commands-within-ruby-script
+http://robdodson.me/writing-a-command-line-tool-in-ruby/
 --------------------------------------------------------------------------------
 change desktop background in ubunto 16.04
 gsettings set org.gnome.desktop.background picture-uri "file:///home/alequin/Pictures/Wallpapers/FWd9F5e.jpg"
@@ -35,10 +36,13 @@ useful regexr patterns
 --------------------------------------------------------------------------------
 review revoking and key words cascade and restrict in mysql
 --------------------------------------------------------------------------------
-pipe characters for ruby and text file outputs
-https://www.thoughtco.com/using-the-command-line-2908368
+stdin, stdout, stderr
 --------------------------------------------------------------------------------
+make ruby command line tool
+http://robdodson.me/writing-a-command-line-tool-in-ruby/
 --------------------------------------------------------------------------------
+ruby ARVG
+https://www.codecademy.com/articles/ruby-command-line-argv
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
