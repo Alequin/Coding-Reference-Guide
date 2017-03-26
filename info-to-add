@@ -46,6 +46,13 @@ https://www.codecademy.com/articles/ruby-command-line-argv
 --------------------------------------------------------------------------------
 android cursor, cursor adapters and uses
 --------------------------------------------------------------------------------
+I think the issue is the difference between an operation on a class and an 
+operation involving a class. If you have an operation on a class, you change the 
+internals of the class and "aNumber.plus(7)" would be correct. If you have an 
+operation involving a class, you do not change the internals of the class and 
+the method should not be a member of the class, i.e. something like 
+"Add(aNumber, 7)". -- WayneMack
+http://wiki.c2.com/?SystemOfNames
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
