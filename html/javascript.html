@@ -18,7 +18,7 @@
 
     <div id="contents-container">
       <div class="header-divider divider"></div>
-      
+
     </div>
     <div class="header-divider divider"></div>
   </div>
@@ -26,6 +26,82 @@
   <div id="header-space"></div>
 
   <div id="primary-container">
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="implied-global-variables" class="title-anchor"></div>
+      <h2 class="section-header">When To Use var (Implied Global Variables)</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          The keyword var should always be used when declaring a variable. If it
+          is omitted (and the variable has not been declared anywhere else)
+          javascript will search through each level of scope until a declaration
+          is found. If it does not locate one the variable is given a global
+          scope.
+          <br><br>
+          <u>Example 1</u>
+          <br><br>
+          <strong>
+            function varTest(){<br>
+            &#160;&#160;x = "global variable"<br>
+            }<br>
+            varTest();<br>
+            console.log(x);<br>
+            //=> global variable
+          </strong>
+          <br><br>
+          <u>Example 2</u>
+          <br><br>
+          <strong>
+            function varTest(){<br>
+            &#160;&#160;var x = "local to method"<br>
+            }<br>
+            varTest();<br>
+            console.log(x);<br>
+            //=> Uncaught ReferenceError: x is not defined
+            at test-jscript.js:7
+          </strong>
+          <br><br>
+          Also take care when chaining variable declarations as this will result
+          in the accidental creation of implied global variables.
+          <br><br>
+          <strong>
+            function varTest(){<br>
+            &#160;&#160;var x = y = "local and global"<br>
+            }<br>
+            varTest();<br>
+            console.log(y);<br>
+            console.log(x);<br>
+            //=> local and global<br>
+            //Uncaught ReferenceError: x is not defined
+            at test-jscript.js:7
+          </strong>
+          <br><br>
+          In most cases var should be included with the inital use of a variable
+          to avoid the accidental creation of global variables. It should be
+          noted however that variable may be <a href="hoisting">hoisted</a>,
+          which means they are declared using var later in the code. It is
+          usually best to declare variables prior to their use.
+          <br><br>
+          (Sources:<br>
+          <a href="https://medium.com/@daser/implied-globals-everywhere-84a0dbccd52a">
+            Mozilla Developer Network: Var
+          </a><br>
+          <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/var">
+            Medium: Implied globals everywhere
+          </a><br>
+          <a href="http://www.programmerinterview.com/index.php/javascript/javascript-how-var-works/">
+            ProgrammerInterview: When should you use the “var” keyword in Javascript? How does the “var” keyword work?
+          </a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
 
   </div>
 
