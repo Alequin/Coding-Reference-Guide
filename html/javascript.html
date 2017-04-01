@@ -31,6 +31,194 @@
 
     <div class="section">
 
+      <div class="title-anchor"></div>
+      <h2 class="section-header"></h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          (Sources:<br>
+          <a href="">
+          </a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div class="title-anchor"></div>
+      <h2 class="section-header"></h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          (Sources:<br>
+          <a href="">
+          </a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div class="title-anchor"></div>
+      <h2 class="section-header"></h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          (Sources:<br>
+          <a href="">
+          </a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div class="title-anchor"></div>
+      <h2 class="section-header"></h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          (Sources:<br>
+          <a href="">
+          </a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="window" class="title-anchor"></div>
+      <h2 class="section-header">BOM - Window</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          The window object represents the window in the browser. A javascript
+          object is created automatically by the browser. All objects,
+          functions and variables with a global scope become members of the
+          window object.
+          <br><br>
+          For example:
+          <br><br>
+          <strong>
+            var bacon = "bacon"<br>
+            function print(item){<br>
+            &#160;&#160;console.log("I like " + item);<br>
+            }<br>
+            console.log(window.print(window.bacon));
+            <br><br>
+            //=> I like bacon
+          </strong>
+          <br><br>
+          The methods and variables related to the window object may be called
+          using "window.print()" however the prefix window is not required.
+          Calling "print()" would produce the same results unless the window you
+          wish to influence is not the current one.
+          <br><br>
+          The window object provides access to a number of useful variables and
+          methods to enable the managment of a browser window. These include:
+        </p>
+        <ul>
+          <li>
+            <strong>
+              innerWidth and innerHeight
+            </strong>: These return the width and height of the window, which
+            equates to the browser size minus the toolbars and scroll bars.
+          </li>
+          <li>
+            <strong>
+            open() / open("url")
+          </strong>: This method opens a new tab. If it is given no parameters
+          it will open a blank web page. If a url is given it will open the site
+          at the given location in a new window (pop up blockers may hinder this
+          process). The method also returns the new widow object, which may
+          be stored in a variable.
+        </li>
+          <li>
+            <strong>
+              close()
+            </strong>: This closes the current window. In Firefox and Chrome (and
+            most likely other browsers) this method will only on windows the
+            calling file opened.
+          </li>
+          <li>
+            <strong>
+              setTimeout(function, delay-in-miliseconds)
+            </strong>: This will run the code in the given fuction after the
+            given number of miliseconds have passed.
+          </li>
+        </ul>
+        <p>
+          For a full overview of the window object view
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window">
+            Mozilla Developer Network: Window
+          </a>
+        </p>
+          (Sources:<br>
+          <a href="https://www.w3schools.com/js/js_window.asp">
+          w3schools: JavaScript Window - The Browser Object Model</a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="bom" class="title-anchor"></div>
+      <h2 class="section-header">Browser Object Model</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          The Browser Object Model consists of all the objects exposed by a web
+          browser which define how a everything should be displayed. These
+          objects can be accessed using javascript in order to interact with
+          the browser. While there is no standard implementation for the BOM (
+          meaning browser vendors are free to implement the BOM in any way) most
+          modern browsers have implemented a large number of similar methods
+          and properties for javascript.
+          <br><br>
+          BOM objects include.
+        </p>
+        <ul>
+          <li>Window</li>
+          <li>Document</li>
+          <li>History</li>
+          <li>Screen</li>
+          <li>Navigator</li>
+          <li>Location</li>
+        </ul>
+        <p>
+          Window is the parent to all the other objects
+          <br><br>
+          (Sources:<br>
+          <a href="http://www.javatpoint.com/browser-object-model">
+          Javatpoint: Browser Object Model</a><br>
+          <a href="https://en.wikipedia.org/wiki/Browser_Object_Model">
+          Wikipedia: Browser Object Model</a><br>
+          <a href="http://stackoverflow.com/questions/4416317/what-is-the-dom-and-bom-in-javascript">
+          Stackoverflow: What is the DOM and BOM in JavaScript?</a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="creating-object" class="title-anchor"></div>
       <h2 class="section-header">Creating Objects</h2>
 
@@ -97,11 +285,9 @@
           </p>
         </ul>
         <p>
-
-
           (Sources:<br>
-          <a href="">
-          </a>)
+          <a href="http://www.javatpoint.com/javascript-objects">
+          Javatpoint: JavaScript Objects</a>)
         </p>
       </div>
 

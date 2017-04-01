@@ -1,12 +1,8 @@
 
-function Person(name, age, height){
-  this.name = name;
-  this.age = age;
-  this.height = height;
-}
+//var newWindow = open("https://www.w3schools.com/js/js_window.asp");
+alert("hello");
+y = confirm("hello?");
+x = prompt("hello!");
 
-x = new Person("Paul", 32, "180cm");
-
-console.log(x.name);
-console.log(x.age);
-console.log(x.height);
+alert(y);
+alert(x);
