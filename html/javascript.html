@@ -31,6 +31,86 @@
 
     <div class="section">
 
+      <div id="creating-object" class="title-anchor"></div>
+      <h2 class="section-header">Creating Objects</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          There are three ways to create objects in javascript.
+        </p>
+        <ul>
+          <li><u>Using an object literal</u></li>
+          <p>
+            <strong>
+              x = {<br>
+                name:"Paul",<br>
+                age:32,<br>
+                height:"180cm"<br>
+              };
+              <br><br>
+              console.log(x.name);<br>
+              console.log(x.age);<br>
+              console.log(x.height);
+              <br><br>
+              //=>Paul<br>
+              //32<br>
+              //180cm
+            </strong>
+          </p>
+          <li><u>By creating an instance of Object</u></li>
+          <p>
+            <strong>
+              x = new Object();
+              <br><br>
+              x.name = "Paul";<br>
+              x.age = 32;<br>
+              x.height = "180cm";
+              <br><br>
+              console.log(x.name);<br>
+              console.log(x.age);<br>
+              console.log(x.height);
+              <br><br>
+              //=>Paul<br>
+              //32<br>
+              //180cm
+            </strong>
+          </p>
+          <li><u>By using an object constructor</u></li>
+          <p>
+            <strong>
+              function Person(name, age, height){<br>
+                this.name = name;<br>
+                this.age = age;<br>
+                this.height = height;<br>
+              }
+              <br><br>
+              x = new Person("Paul", 32, "180cm");
+              <br><br>
+              console.log(x.name);<br>
+              console.log(x.age);<br>
+              console.log(x.height);
+              <br><br>
+              //=>Paul<br>
+              //32<br>
+              //180cm
+            </strong>
+          </p>
+        </ul>
+        <p>
+
+
+          (Sources:<br>
+          <a href="">
+          </a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="implied-global-variables" class="title-anchor"></div>
       <h2 class="section-header">When To Use var (Implied Global Variables)</h2>
 
@@ -82,7 +162,7 @@
           <br><br>
           In most cases var should be included with the inital use of a variable
           to avoid the accidental creation of global variables. It should be
-          noted however that variable may be <a href="hoisting">hoisted</a>,
+          noted however that variable may be hoisted,
           which means they are declared using var later in the code. It is
           usually best to declare variables prior to their use.
           <br><br>
