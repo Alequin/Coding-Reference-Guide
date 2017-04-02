@@ -7,7 +7,6 @@
   <link href="../css/basic-layout.css" type="text/css" rel="stylesheet"/>
   <link href="../css/summary-page-layout.css" type="text/css" rel="stylesheet"/>
   <link id="summary-page-layout" href="../css/normal-text-summary-page.css" type="text/css" rel="stylesheet"/>
-  <link href="../css/ruby.css" type="text/css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -65,13 +64,24 @@
 
     <div class="section">
 
-      <div class="title-anchor"></div>
-      <h2 class="section-header"></h2>
+      <div id="screen" class="title-anchor"></div>
+      <h2 class="section-header">BOM - Screen</h2>
 
       <div class="section-content section-text-normal">
         <p>
+          The Screen object provides information about the screen the browser is
+          been displayed on.
+          <br><br>
+
           (Sources:<br>
-          <a href="">
+          <a href="https://www.w3schools.com/js/js_window_screen.asp">
+            W3schools: JavaScript Window Screen
+          </a><br>
+          <a href="http://www.javatpoint.com/javascript-screen">
+            Javatpoint: JavaScript Screen Object
+          </a><br>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/screen">
+            Mozilla Developer Network: Screen
           </a>)
         </p>
       </div>
@@ -104,10 +114,56 @@
           <br><br>
           The following shows a number of uses of the document object.
         </p>
+        <ul>
+          <li>
+            <strong>
+              document.getElementById("element-id")
+            </strong>: Returns a reference to an Element object, which can be
+            used to manipulate the element in the documents with the given id.
+          </li>
+          <li>
+            <strong>
+              document.getElementsByTagName("tag")
+            </strong>: Returns a reference to a HTMLCollection object containing
+            all elements which use the given tag. Individual Element objects can
+            be accessed using the method item(index), where zero is the first
+            index.
+          </li>
+          <li>
+            <strong>
+              document.getElementByClassName("class")
+            </strong>: Returns a reference to a HTMLCollection object. Individual
+            Element objects can be accessed using the method item(index), where
+            zero is the first index.
+          </li>
+          <ul>
+            An example of a HTMLCollection in use is shown below ().
+            <br><br>
+            <strong>
+              $(document).ready(function(){<br>
+              &#160;&#160;$("#woof-button").click(function(){<br>
+              &#160;&#160;&#160;&#160;var x = document.getElementsByTagName("p");
+              <br><br>
+              &#160;&#160;&#160;&#160;for(j=0; j<(x).length; j++){<br>
+              &#160;&#160;&#160;&#160;&#160;&#160;x.item(j).innerHTML = "Woof!"<br>
+              &#160;&#160;&#160;&#160;}<br>
+              &#160;&#160;});<br>
+              });
+            </strong>
+            <br><br>
+            <span id="woof-button">
+              Click to run the code (you may wish to reload the page after)
+            </span>
+          </ul>
+        </ul>
+        <p>
           (Sources:<br>
           <br><br>
           <a href="https://www.w3.org/DOM/#what">
             W3C Architecture domain: Document Object Model (DOM)
+          </a><br>
+          <a href="https://www.w3schools.com/js/js_htmldom_document.asp">
+            W3schools: JavaScript HTML DOM Document
           </a><br>
           <a href="https://www.tutorialspoint.com/javascript/javascript_html_dom.htm">
             tutorialspoint: JavaScript - Document Object Model or DOM
@@ -115,6 +171,9 @@
           <a href="http://www.javatpoint.com/document-object-model">
             Javatpoint: Document Object Model
           </a><br>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById">
+            Mozilla Developer Network: Document
+          </a>)
         </p>
       </div>
 
@@ -419,6 +478,7 @@
   <script src="../j-script/header.js" rel="javascript"></script>
   <script src="../j-script/summary-layout-switcher.js" rel="javascript"></script>
   <script src="../j-script/summary-pages-events.js" rel="javascript"></script>
+  <script src="../j-script/example-java-script/all-p-say-woof.js" rel="javascript"></script>
 
 </body>
 
