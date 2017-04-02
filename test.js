@@ -1,1 +1,1 @@
-alert(Math.floor(Math.random()*5));
+console.log("string".charAt(2));

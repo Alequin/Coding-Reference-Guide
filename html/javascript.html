@@ -30,6 +30,147 @@
 
     <div class="section">
 
+      <div id="string-methods" class="title-anchor"></div>
+      <h2 class="section-header">Useful String Methods</h2>
+
+      <div class="section-content section-text-normal">
+        <ul>
+          <li>
+            <strong>
+              "string".indexOf(String) / "string".search(String or regexr)
+            </strong>: These two methods locate the given parameter in the
+            calling sting object and return the first index at which it occurs.
+            While both methods accept a string as a parameter the search method
+            may also use a regular expression.
+            <br><br>
+            <ul>
+              <strong>
+                console.log("string".indexOf("ring"));<br>
+                console.log("string".search("ring"));<br>
+                console.log("string".search(/r\w+/i));
+                <br><br>
+                //=>2<br>
+                //2<br>
+                //2
+              </strong>
+            </ul>
+          </li>
+          <li>
+            <strong>
+              "string".substring(startIndex, endIndex) /<br>
+              "string".slice(startIndex, endIndex) / <br>
+              "string".substr(startIndex, length)
+            </strong>:
+            <br><br>
+            These methods are used to extract part of a string from
+            within the calling string and return the result.
+            <br><br>
+            The method substring accepts one or two positive integer values. If
+            one is given the return string will contain the char at the given
+            position and all chars after. If two are given the string will
+            contain the char at the position of the first parameter and all
+            chars up to (but not including) the second parameter.
+            <br><br>
+            <ul>
+              <strong>
+                console.log("string".substring(2));<br>
+                console.log("string".substring(2, 4));
+                <br><br>
+                //=>ring<br>
+                //ri
+              </strong>
+            </ul>
+            <br>
+            The method slice works in exactly the same way as substring. The
+            only difference is that the parameters can be negative. A negative
+            value work back from the last char in the string, as the numbers
+            become smaller the selected char will be closer to the start of the
+            string.
+            <br><br>
+            <ul>
+              <strong>
+                console.log("string".slice(2));<br>
+                console.log("string".slice(2, 4));<br>
+                console.log("string".slice(2, -1));
+                <br><br>
+                //=>ring<br>
+                //ri<br>
+                //rin
+              </strong>
+            </ul>
+            <br>
+            The method substr accepts one or two parameters. It works the same
+            way substring works except that if two parameters are given the second
+            defines the length of the returned string.
+            <br><br>
+            <ul>
+              <strong>
+                console.log("string".substr(2));<br>
+                console.log("string".substr(2, 2));
+                <br><br>
+                //=>ring<br>
+                //ri<br>
+              </strong>
+            </ul>
+          </li>
+          <li>
+            <strong>
+              "string".replace(stringToLocate, stringToInsert) /<br>
+              "string".replace(regexrPattern, stringToInsert)
+            </strong>: <br>
+            The method replace locates the first parameter in the
+            calling string, removes it and inserts the second parameter into
+            the string where the first was removed from. The resultant string is
+            returned. The first parameter can be a string or a regular
+            expression.
+          </li>
+          <br>
+          <ul>
+            <strong>
+              console.log("string".replace("tr", "ing"));<br>
+              console.log("string".replace(/tr/, "ing"));<br>
+              //=>singing<br>
+              //singing
+            </strong>
+          </ul>
+          <br>
+          <li>
+            <strong>
+              "string".charAt(index)
+            </strong>: <br>
+            The method charAt returns the char at the given index. This method
+            should be used rather than accessing a string as an array as this
+            does not work in all browsers.
+          </li>
+          <ul>
+            <strong>
+              console.log("string".charAt(2));<br>
+              //=>r
+            </strong>
+          </ul>
+        </ul>
+        <p>
+          Other methods that are avalible to strings can be found at
+          <a href="https://www.w3schools.com/jsref/jsref_obj_string.asp">
+            w3schools: JavaScript String Reference
+          </a>
+          <br><br>
+          (Sources:<br>
+          <a href="https://www.w3schools.com/js/js_string_methods.asp">
+            w3schools: JavaScript String Methods
+          </a><br>
+          <a href="https://www.w3schools.com/js/js_regexp.asp">
+            w3schools: JavaScript Regular Expressions
+          </a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="html-events" class="title-anchor"></div>
       <h2 class="section-header">HTML Events</h2>
 
