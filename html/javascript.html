@@ -82,14 +82,39 @@
 
     <div class="section">
 
-      <div class="title-anchor"></div>
-      <h2 class="section-header"></h2>
+      <div id="document" class="title-anchor"></div>
+      <h2 class="section-header">BOM - Document(DOM)</h2>
 
       <div class="section-content section-text-normal">
         <p>
+          The document object model (DOM) is an application programming interface
+          that allows scripts to dynamically modify documents. The document
+          object is created in javascript when a page loads. The member methods
+          and variables of the object provide access to the documents elements.
+          this object is a child of the <a href="#window">window object</a>.
+          <br><br>
+          There are a few DOM's in existence, each of which is used
+          in different ways.
+          <br><br>
+          The W3C DOM is the most common and is supported by almost all modern
+          browsers. The Legacy DOM is an old model and is supported by all
+          browser, though it only provides limited access to the HTML document.
+          The IE4 DOM was used by version 4 of internet explorer. Later versions
+          of this browser use the W3C DOM.
+          <br><br>
+          The following shows a number of uses of the document object.
+        </p>
           (Sources:<br>
-          <a href="">
-          </a>)
+          <br><br>
+          <a href="https://www.w3.org/DOM/#what">
+            W3C Architecture domain: Document Object Model (DOM)
+          </a><br>
+          <a href="https://www.tutorialspoint.com/javascript/javascript_html_dom.htm">
+            tutorialspoint: JavaScript - Document Object Model or DOM
+          </a><br>
+          <a href="http://www.javatpoint.com/document-object-model">
+            Javatpoint: Document Object Model
+          </a><br>
         </p>
       </div>
 
@@ -123,8 +148,8 @@
           <br><br>
           The methods and variables related to the window object may be called
           using "window.print()" however the prefix window is not required.
-          Calling "print()" would produce the same results unless the window you
-          wish to influence is not the current one.
+          Calling "print()" would produce the same results (unless the window you
+          wish to influence is not the current one).
           <br><br>
           The window object provides access to a number of useful variables and
           methods to enable the managment of a browser window. These include:
@@ -138,10 +163,16 @@
           </li>
           <li>
             <strong>
+              outerWidth and outerHeight
+            </strong>: These return the width and height of the entire browser,
+            including the toolbars and scroll bars.
+          </li>
+          <li>
+            <strong>
             open() / open("url")
           </strong>: This method opens a new tab. If it is given no parameters
           it will open a blank web page. If a url is given it will open the site
-          at the given location in a new window (pop up blockers may hinder this
+          at that location in a new window (pop up blockers may hinder this
           process). The method also returns the new widow object, which may
           be stored in a variable.
         </li>
@@ -149,14 +180,14 @@
             <strong>
               close()
             </strong>: This closes the current window. In Firefox and Chrome (and
-            most likely other browsers) this method will only on windows the
-            calling file opened.
+            most likely other browsers) this method will only work when called
+            from the javascript file that initally opened the target window.
           </li>
           <li>
             <strong>
               setTimeout(function, delay-in-miliseconds)
-            </strong>: This will run the code in the given fuction after the
-            given number of miliseconds have passed.
+            </strong>: This will run the code in provided by the fuction after
+            the given number of miliseconds have passed.
           </li>
         </ul>
         <p>
@@ -167,7 +198,14 @@
         </p>
           (Sources:<br>
           <a href="https://www.w3schools.com/js/js_window.asp">
-          w3schools: JavaScript Window - The Browser Object Model</a>)
+            w3schools: JavaScript Window - The Browser Object Model
+          </a><br>
+          <a href="http://www.javatpoint.com/window-object">
+            Javatpoint: Window Object
+          </a><br>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window">
+            Mozilla Developer Network: Window
+          </a>)
         </p>
       </div>
 
@@ -205,11 +243,14 @@
           <br><br>
           (Sources:<br>
           <a href="http://www.javatpoint.com/browser-object-model">
-          Javatpoint: Browser Object Model</a><br>
+            Javatpoint: Browser Object Model
+          </a><br>
           <a href="https://en.wikipedia.org/wiki/Browser_Object_Model">
-          Wikipedia: Browser Object Model</a><br>
+            Wikipedia: Browser Object Model
+          </a><br>
           <a href="http://stackoverflow.com/questions/4416317/what-is-the-dom-and-bom-in-javascript">
-          Stackoverflow: What is the DOM and BOM in JavaScript?</a>)
+            Stackoverflow: What is the DOM and BOM in JavaScript?
+          </a>)
         </p>
       </div>
 
