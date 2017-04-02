@@ -1,5 +1,6 @@
 
 CONTENTS = [
+  new ContentsItem('HTML Events', 'html-events'),
   new ContentsItem('BOM - History', 'history'),
   new ContentsItem('BOM - Location', 'location'),
   new ContentsItem('BOM - Navigator', 'navigator'),

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>javascript Summary</title>
+  <title>Javascript Summary</title>
   <meta charset="utf-8">
   <link href="../css/basic-layout.css" type="text/css" rel="stylesheet"/>
   <link href="../css/summary-page-layout.css" type="text/css" rel="stylesheet"/>
@@ -27,6 +27,48 @@
   <div id="primary-container">
 
     <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="html-events" class="title-anchor"></div>
+      <h2 class="section-header">HTML Events</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          HTML DOM events allow Javascript to register event handlers to html
+          elements. This is done by including the event type inside the tag
+          of the html element and providing Javascript, which should take place
+          when the event occurs (commonly a function). The Javascript that is to
+          be executed should be included in the html document or the file where
+          the code resides should be linked to the documents via a script tag.
+          <br><br>
+          <strong>
+            &#60;span id="on-click-event-example" onClick="setTextToRandomWord()"&#62;<br>
+            <span id="on-click-event-example" onClick="setTextToRandomWord()">
+            Click me to run the function
+            </span>
+            <br>
+            &#60;/span&#62;
+          </strong>
+          <br><br>
+          <a href="../j-script/example-java-script/on-click-event-example.js">
+            View the code for the example.
+          </a>
+          <br><br>
+          There are a large number of possible events that may be used. For a
+          list of possible events view the provided sources.
+          <br><br>
+          (Sources:<br>
+          <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">
+          w3schools: HTML DOM Events</a><br>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/Events">
+          Mozilla developer network: Event reference</a>)
+        </p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
 
     <div class="section">
 
@@ -313,7 +355,7 @@
         <p>
           The document object model (DOM) is an application programming interface
           that allows scripts to dynamically modify documents. The document
-          object is created in javascript when a page loads. The member methods
+          object is created in Javascript when a page loads. The member methods
           and variables of the object provide access to the documents elements.
           this object is a child of the <a href="#window">window object</a>.
           <br><br>
@@ -407,7 +449,7 @@
 
       <div class="section-content section-text-normal">
         <p>
-          The window object represents the window in the browser. A javascript
+          The window object represents the window in the browser. A Javascript
           object is created automatically by the browser. All objects,
           functions and variables with a global scope become members of the
           window object.
@@ -459,7 +501,7 @@
               close()
             </strong>: This closes the current window. In Firefox and Chrome (and
             most likely other browsers) this method will only work when called
-            from the javascript file that initally opened the target window.
+            from the Javascript file that initally opened the target window.
           </li>
           <li>
             <strong>
@@ -500,11 +542,11 @@
         <p>
           The Browser Object Model consists of all the objects exposed by a web
           browser which define how a everything should be displayed. These
-          objects can be accessed using javascript in order to interact with
+          objects can be accessed using Javascript in order to interact with
           the browser. While there is no standard implementation for the BOM (
           meaning browser vendors are free to implement the BOM in any way) most
           modern browsers have implemented a large number of similar methods
-          and properties for javascript.
+          and properties for Javascript.
           <br><br>
           BOM objects include.
         </p>
@@ -623,7 +665,7 @@
         <p>
           The keyword var should always be used when declaring a variable. If it
           is omitted (and the variable has not been declared anywhere else)
-          javascript will search through each level of scope until a declaration
+          Javascript will search through each level of scope until a declaration
           is found. If it does not locate one the variable is given a global
           scope.
           <br><br>
@@ -697,7 +739,9 @@
   <script src="../j-script/header.js" rel="javascript"></script>
   <script src="../j-script/summary-layout-switcher.js" rel="javascript"></script>
   <script src="../j-script/summary-pages-events.js" rel="javascript"></script>
+
   <script src="../j-script/example-java-script/all-p-say-woof.js" rel="javascript"></script>
+  <script src="../j-script/example-java-script/on-click-event-example.js" rel="javascript"></script>
 
 </body>
 

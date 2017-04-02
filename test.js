@@ -1,1 +1,1 @@
-history.go(0);
+alert(Math.floor(Math.random()*5));
