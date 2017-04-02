@@ -1,1 +1,1 @@
-alert(screen.height);
+history.go(0);

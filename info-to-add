@@ -30,9 +30,9 @@ gsettings set org.gnome.desktop.background picture-uri "file:///home/alequin/Pic
 
 source: http://danilodellaquila.com/en/blog/how-to-automatically-change-your-desktop-background-wallpaper
 --------------------------------------------------------------------------------
-useful regexr patterns 
-	only digits in entire string
-		^-?\d+$ (remove -? to only select positive values)
+useful regexr patterns
+only digits in entire string
+^-?\d+$ (remove -? to only select positive values)
 --------------------------------------------------------------------------------
 review revoking and key words cascade and restrict in mysql
 --------------------------------------------------------------------------------
@@ -46,18 +46,22 @@ https://www.codecademy.com/articles/ruby-command-line-argv
 --------------------------------------------------------------------------------
 android cursor, cursor adapters and uses
 --------------------------------------------------------------------------------
-I think the issue is the difference between an operation on a class and an 
-operation involving a class. If you have an operation on a class, you change the 
-internals of the class and "aNumber.plus(7)" would be correct. If you have an 
-operation involving a class, you do not change the internals of the class and 
-the method should not be a member of the class, i.e. something like 
+I think the issue is the difference between an operation on a class and an
+operation involving a class. If you have an operation on a class, you change the
+internals of the class and "aNumber.plus(7)" would be correct. If you have an
+operation involving a class, you do not change the internals of the class and
+the method should not be a member of the class, i.e. something like
 "Add(aNumber, 7)". -- WayneMack
 http://wiki.c2.com/?SystemOfNames
 --------------------------------------------------------------------------------
 override git branches with one another
 http://stackoverflow.com/questions/2862590/how-to-replace-master-branch-in-git-entirely-from-another-branch
 --------------------------------------------------------------------------------
+  javascript feature detection
+  (not looked at this site yet)
+  https://msdn.microsoft.com/en-us/library/hh273397(v=vs.85).aspx
 --------------------------------------------------------------------------------
+  what is cache
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

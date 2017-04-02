@@ -1,8 +1,8 @@
 
 CONTENTS = [
   new ContentsItem('BOM - History', 'history'),
-  new ContentsItem('BOM - Navigator', 'navigator'),
   new ContentsItem('BOM - Location', 'location'),
+  new ContentsItem('BOM - Navigator', 'navigator'),
   new ContentsItem('BOM - Screen', 'screen'),
   new ContentsItem('BOM - Document', 'document'),
   new ContentsItem('BOM - Window', 'window'),

@@ -30,13 +30,127 @@
 
     <div class="section">
 
-      <div class="title-anchor"></div>
-      <h2 class="section-header"></h2>
+      <div id="history" class="title-anchor"></div>
+      <h2 class="section-header">BOM - History</h2>
 
       <div class="section-content section-text-normal">
         <p>
+          The History objects is an array of URL's visited by the user.
+          <br><br>
+          The following shows a number of uses of the Navigator object.
+        </p>
+        <ul>
+          <li>
+            <strong>
+              history.go(int)
+            </strong>: This method moves to a page in the history array relative
+            to the current page. If -1 is given as a parameter the previous
+            page will be loaded whereas -2 would load the page that was 2 pages
+            prior to the current one. Positive numbers load the pages that are
+            ahead of the current one in the array. Zero will reload the current
+            page.
+          </li>
+          <li>
+            <strong>
+              history.back()
+            </strong>: Loads the previous page in the history array
+          </li>
+          <li>
+            <strong>
+              histor.forward()
+            </strong>: Loads the next page in the history array
+          </li>
+        </ul>
+        <p>
+          For a full overview of the History object view
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/History">
+            Mozilla Developer Network: History
+          </a>
+          <br><br>
           (Sources:<br>
-          <a href="">
+          <a href="https://www.w3schools.com/js/js_window_history.asp">
+            W3schools: JavaScript Window History
+          </a>)
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/History">
+            Mozilla Developer Network: History
+          </a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+
+    <div class="section">
+
+      <div id="location" class="title-anchor"></div>
+      <h2 class="section-header">BOM - Location (URL)</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          Location represents the URL of the current page and can be used to
+          access the URL or details regarding the URL. This object may be
+          accessed via the window or the document objects.
+          <br><br>
+          The following shows a number of uses of the Navigator object.
+        </p>
+        <ul>
+          <li>
+            <strong>
+              location.href
+            </strong>: Returns a string which represents the current URL.
+          </li>
+          <li>
+            <strong>
+              location.hostname
+            </strong>: Returns a string which represents the domain name of
+            the current page.
+          </li>
+          <li>
+            <strong>
+              location.pathname
+            </strong>: Returns a string which represents the file path of the
+            html document.
+          </li>
+          <li>
+            <strong>
+              location.protocol
+            </strong>: Returns a string which represents the web protocol of
+            the page.
+          </li>
+          <li>
+            <strong>
+              location.assign("URL")
+            </strong>: Loads the page at the given URL in the current window.
+
+          </li>
+          <li>
+            <strong>
+              location.replace("URL")
+            </strong>: Loads the page at the given URL in the current window.
+            The previous page will not be stored in the session history.
+          </li>
+          <li>
+            <strong>
+              location.reload(boolean)
+            </strong>: Reload the current page. If the parameter is true the
+            page will be reloaded from the server. If false the page may be
+            loaded from cache.
+          </li>
+        </ul>
+        <p>
+          For a full overview of the Location object view
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/Location">
+            Mozilla Developer Network: Location
+          </a>
+          <br><br>
+          (Sources:<br>
+          <a href="https://www.w3schools.com/js/js_window_location.asp">
+            W3schools: JavaScript Window Location
+          </a><br>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/Location">
+            Mozilla Developer Network: Location
           </a>)
         </p>
       </div>
@@ -47,13 +161,62 @@
 
     <div class="section">
 
-      <div class="title-anchor"></div>
-      <h2 class="section-header"></h2>
+      <div id="navigator" class="title-anchor"></div>
+      <h2 class="section-header">BOM - Navigator</h2>
 
       <div class="section-content section-text-normal">
         <p>
+          The Navigator object is used to find details about the brower that
+          is currently in use.
+          <br><br>
+          <em>
+            A number of varables which the Navigator object provides access to
+            are depreciated and will provide misleading information.
+            appName, appCodeName, product, appVersion userAgent and possibly
+            others should not be used.
+            <br><br>
+            If the purpose of accessing the brower name is to identify is a
+            feature is supported it appears to be advisable to use feature
+            detection as an alternative.
+          </em>
+          <br><br>
+          The following shows a number of uses of the Navigator object.
+          <ul>
+            <li>
+              <strong>
+                navigator.platform
+              </strong>: Returns a string which represents the operating system
+              that is in use. Examples of the returned string include "Win32",
+              "FreeBSD i386", "WebTV OS", "MacIntel".
+            </li>
+            <li>
+              <strong>
+                navigator.language
+              </strong>: Returns a string which represents the prefered language
+              of the user.
+            </li>
+            <li>
+              <strong>
+                navigator.onLine
+              </strong>: Returns true if the browser is online and false if it
+              is not. In Chrome and Safari if the browser is not able to connect
+              to a local area network or a router, it returns false. All
+              other conditions will return true.
+            </li>
+          </ul>
+        </p>
+        <p>
+          For a full overview of the Navigator object view
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator">
+            Mozilla Developer Network: Navigator
+          </a>
+          <br><br>
           (Sources:<br>
-          <a href="">
+          <a href="https://www.w3schools.com/js/js_window_navigator.asp">
+            W3schools: JavaScript Window Navigator
+          </a><br>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator">
+            Mozilla Developer Network: Navigator
           </a>)
         </p>
       </div>
@@ -72,13 +235,64 @@
           The Screen object provides information about the screen the browser is
           been displayed on.
           <br><br>
-
+          The following shows a number of uses of the screen object.
+        </p>
+        <ul>
+          <li>
+            <strong>
+              screen.width and screen.height
+            </strong>: Finds the full width or height of the users screen
+          </li>
+          <li>
+            <strong>
+              screen.availWidth and screen.availHeight
+            </strong>: Finds the width or height of the users screen minus
+            interface features such as taskbars.
+          </li>
+          <li>
+            <strong>
+              screen.colorDepth and screen.pixelDepth
+            </strong>: Finds the color depth of the screen. The numberical value
+            returned represents the number of bits used to create a single
+            colour. Most modern screens use 24 or 32, though 16 and 8 are
+            possible on older devices or phones.
+            <br><br>
+            <em>
+              Pixel depth and colour depth both relate to the number of colours
+              a screen is able to display and on modern screens provide equal
+              values. A difference between the two only occurs on older unix
+              machines where old X-clients allowed applications to define their
+              own colour scheme. If this option was used then screen.colorDepth
+              would return the colour depth of the applications and
+              screen.pixelDepth would return the colour depth of the screen.
+            </em>
+          </li>
+          <li>
+            <strong>
+                screen.orientation.type
+            </strong>: Returns a string value which represents the orientation
+            of the screen. The values returned are "portrait-primary",
+            "portrait-secondary", "landscape-primary" or "landscape-secondary".
+          </li>
+        </ul>
+        <p>
+          For a full overview of the screen object view
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/screen">
+            Mozilla Developer Network: Screen
+          </a>
+          <br><br>
           (Sources:<br>
           <a href="https://www.w3schools.com/js/js_window_screen.asp">
             W3schools: JavaScript Window Screen
           </a><br>
           <a href="http://www.javatpoint.com/javascript-screen">
             Javatpoint: JavaScript Screen Object
+          </a><br>
+          <a href="http://stackoverflow.com/questions/36881220/pixel-depth-vs-color-depth">
+            stackoverflow: Pixel Depth vs. Color Depth
+          </a><br>
+          <a href="http://www.quirksmode.org/dom/w3c_cssom.html">
+            quirksmode: W3C DOM Compatibility
           </a><br>
           <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/screen">
             Mozilla Developer Network: Screen
@@ -157,6 +371,11 @@
           </ul>
         </ul>
         <p>
+          For a full overview of the document object view
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/document">
+            Mozilla Developer Network: Document
+          </a>
+          <br><br>
           (Sources:<br>
           <br><br>
           <a href="https://www.w3.org/DOM/#what">
