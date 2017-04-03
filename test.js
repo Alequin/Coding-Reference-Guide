@@ -1,9 +1,3 @@
-function func(array){
-  arguments[0][1] = 200;
-}
+var body = document.body;
 
-var x = [1,2,3];
-func(x);
-console.log(x[1]);
-
-//=>4
+body.appendChild(document.getElementById("x"));

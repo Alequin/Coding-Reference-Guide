@@ -853,8 +853,7 @@
           <dt>
             Functions create an array of the parameters provided to them. The
             name of the array is arguments and is accessed in the same way as
-            any other array. Using this allows functions to accept parameters
-            even when non are defined, though this is not required.
+            any other array. Using this allows access to non defined parameters.
           </dt>
           <dd>
             <strong>
@@ -871,6 +870,65 @@
               //=>4
             </strong>
           </dd>
+          <br>
+          <dt>
+            Functions can be nested within other functions. A nested functions
+            scope extends only to the function it was created in.
+          </dt>
+          <dd>
+            <strong>
+              function func(){<br>
+              &#160;&#160;function nestedFunc(){return "Hello";}<br>
+              &#160;&#160;return nestedFunc();<br>
+              }
+              <br><br>
+              console.log(func());<br>
+              //=>Hello
+            </strong>
+          </dd>
+          <br>
+          <dt>
+            While most functions are created and called at another point in time
+            it is possible to create self calling functions, which run when they
+            are created.
+          </dt>
+          <dd>
+            <strong>
+              (function(){<br>
+              &#160;&#160;console.log("Running");<br>
+              })();<br>
+              //=>Running
+            </strong>
+          </dd>
+          <br>
+          <dt>
+            By combining the previous two ideas a Javascript closure can be
+            created. This is a function which has access to the parent scope
+            after the parent function has closed, which can be used to simulate
+            private variables.
+            <br><br>
+            In the following example var x is assigned the return value of a
+            self calling function. When the self calling function runs it
+            defines the variable count and retrurns a funtion that increments
+            count by one. The variable x holds the incrementing function, which
+            is the only access the count variable.<br>
+
+          </dt>
+          <dd>
+            <strong>
+              var x = (function(){<br>
+              &#160;&#160;var count = 0;<br>
+              &#160;&#160;return function(){return count ++;}<br>
+              })();
+              <br><br>
+              console.log(x());<br>
+              console.log(x());<br>
+              console.log(x());<br>
+              //=>1<br>
+              //2<br>
+              //3
+            </strong>
+          </dd>
         <dl>
         <p>
           (Sources:<br>
@@ -879,6 +937,9 @@
           </a><br>
           <a href="https://www.w3schools.com/js/js_function_parameters.asp">
             w3schools: JavaScript Function Parameters
+          </a><br>
+          <a href="https://www.w3schools.com/js/js_function_closures.asp">
+            w3schools: JavaScript Closures
           </a><br>
         </p>
       </div>
