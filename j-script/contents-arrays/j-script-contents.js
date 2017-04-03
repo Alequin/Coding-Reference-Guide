@@ -10,6 +10,7 @@ CONTENTS = [
   new ContentsItem('BOM - Document', 'document'),
   new ContentsItem('BOM - Window', 'window'),
   new ContentsItem('Browser Object Model', 'bom'),
+  new ContentsItem('Functions', 'functions'),
   new ContentsItem('Custom Objects', 'custom-object'),
   new ContentsItem('When To Use var (Implied Global Variables)', 'implied-global-variables'),
 ];

@@ -1,6 +1,9 @@
-var x = {};
-x.name = "Paul";
-x.age = 20;
-console.log(x); 
-delete x.age;
-console.log(x);
+function func(array){
+  arguments[0][1] = 200;
+}
+
+var x = [1,2,3];
+func(x);
+console.log(x[1]);
+
+//=>4

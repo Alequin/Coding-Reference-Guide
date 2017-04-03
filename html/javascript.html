@@ -794,6 +794,101 @@
 
     <div class="section">
 
+      <div id="functions" class="title-anchor"></div>
+      <h2 class="section-header">Functions</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          Functions are objects which excecute the code that is provided in
+          their constructor when called.
+        </p>
+        <dl>
+          <dt>
+            This is the general way a function is declared
+          </dt>
+          <dd>
+            <strong>
+              function functionName(parameters){<br>
+              &#160;&#160;code to run<br>
+              }
+            </strong>
+          </dd>
+          <br>
+          <dt>
+            Functions may be stored in variables and passed as parameters.
+          </dt>
+          <dd>
+            <strong>
+              var x = function runOtherFunction(func){<br>
+              &#160;&#160;func();<br>
+              }<br>
+              var y = function printHello(){<br>
+              &#160;&#160;console.log("Hello");<br>
+              }
+              <br><br>
+              x(y);
+              <br><br>
+              //=>Hello
+            </strong>
+          </dd>
+          <br>
+          <dt>
+            Not all parameters defined on function creation have to be used when
+            calling a function. However any parameters that are not used will
+            be set to undefined and should be handled or set to a default value
+            to avoid errors.
+          </dt>
+          <dd>
+            <strong>
+              function toLog(a,b,c,d){<br>
+              &#160;&#160;console.log(a+ " | " +b+ " | " +c+ " | " +d);<br>
+              }
+              <br><br>
+              toLog(2,2);
+              <br><br>
+              //=>2 | 2 | undefined | undefined
+            </strong>
+          </dd>
+          <br>
+          <dt>
+            Functions create an array of the parameters provided to them. The
+            name of the array is arguments and is accessed in the same way as
+            any other array. Using this allows functions to accept parameters
+            even when non are defined, though this is not required.
+          </dt>
+          <dd>
+            <strong>
+              function plus(){<br>
+              &#160;&#160;var sum = 0;<br>
+              &#160;&#160;for( j in arguments ){<br>
+              &#160;&#160;&#160;&#160;sum += arguments[j];<br>
+              &#160;&#160;}<br>
+              &#160;&#160;return sum;<br>
+              }
+              <br><br>
+              console.log(plus(2,2));
+              <br><br>
+              //=>4
+            </strong>
+          </dd>
+        <dl>
+        <p>
+          (Sources:<br>
+          <a href="https://www.w3schools.com/js/js_function_definition.asp">
+            w3schools: JavaScript Function Definitions
+          </a><br>
+          <a href="https://www.w3schools.com/js/js_function_parameters.asp">
+            w3schools: JavaScript Function Parameters
+          </a><br>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="custom-object" class="title-anchor"></div>
       <h2 class="section-header">Custom Objects</h2>
 
@@ -920,8 +1015,8 @@
           (Sources:<br>
           <a href="http://www.javatpoint.com/javascript-objects">
           Javatpoint: JavaScript Objects</a><br>
-          <a href="https://www.w3schools.com/js/js_object_methods.asp">
-          Javatpoint: JavaScript Methods</a><br>
+          <a href="https://www.w3schools.com/js/js_object_prototypes.asp">
+          Javatpoint: JavaScript Object Prototypes</a><br>
           <a href="https://www.w3schools.com/js/js_object_methods.asp">
           Javatpoint: JavaScript Object Methods</a>)
         </p>
