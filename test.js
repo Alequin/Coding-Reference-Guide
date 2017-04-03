@@ -1,3 +1,1 @@
-var body = document.body;
-
-body.appendChild(document.getElementById("x"));
+console.log("banana".replace("an", "open"));
