@@ -570,7 +570,7 @@
           The document object model (DOM) is an application programming interface
           that allows scripts to dynamically modify documents. The document
           object is created in Javascript when a page loads. The member methods
-          and variables of the object provide access to the documents elements.
+         of the object provide access to the documents elements.
           this object is a child of the <a href="#window">window object</a>.
           <br><br>
           There are a few DOM's in existence, each of which is used
@@ -680,12 +680,12 @@
             //=> I like bacon
           </strong>
           <br><br>
-          The methods and variables related to the window object may be called
+          The methods and properties related to the window object may be called
           using "window.print()" however the prefix window is not required.
           Calling "print()" would produce the same results (unless the window you
           wish to influence is not the current one).
           <br><br>
-          The window object provides access to a number of useful variables and
+          The window object provides access to a number of useful properties and
           methods to enable the managment of a browser window. These include:
         </p>
         <ul>
@@ -794,8 +794,8 @@
 
     <div class="section">
 
-      <div id="creating-object" class="title-anchor"></div>
-      <h2 class="section-header">Creating Objects</h2>
+      <div id="custom-object" class="title-anchor"></div>
+      <h2 class="section-header">Custom Objects</h2>
 
       <div class="section-content section-text-normal">
         <p>
@@ -860,6 +860,21 @@
           </p>
         </ul>
         <p>
+          Object properties can be added or deleted after an object has been
+          created.
+          <br><br>
+          <strong>
+            var x = {};<br>
+            x.name = "Paul";<br>
+            x.age = 20;<br>
+            console.log(x); <br>
+            delete x.age;<br>
+            console.log(x);
+            <br><br>
+            //=>Object {name: "Paul", age: 20}<br>
+            //Object {name: "Paul"}
+          </strong>
+          <br><br>
           Objects are able to call methods that are associated with them. The
           following shows a few methods of creating and assigning methods to
           objects.
