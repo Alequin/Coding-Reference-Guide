@@ -30,6 +30,81 @@
 
     <div class="section">
 
+      <div id="comparison-operators" class="title-anchor"></div>
+      <h2 class="section-header">Comparison Operators</h2>
+
+      <div class="section-content section-text-normal">
+
+        <dl>
+          <dt><u>Abstract Equality Operator ( == / != )</u></dt>
+          <br>
+          <dd>
+            Compares two values after performing type conversions. The two
+            operators return opposite values, where == equates to true !=
+            equates to false.
+            <br><br>
+            <strong>
+              console.log(2 == 2);<br>
+              console.log(2 == "2");<br>
+              console.log("" == 0);<br>
+              console.log(false == "0");<br>
+              console.log(false == "false");<br>
+              //=>true<br>
+              //true<br>
+              //true<br>
+              //true<br>
+              //false
+            </strong>
+            <br><br>
+            The following tables shows how the abstract comparator performs type
+            conversions.
+            <br><br>
+            <img src="../examples/javascript-abstract-comparator-table2.png"/>
+            <img src="../examples/javascript-abstract-comparator-table.png"/>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness">
+              Source of tables
+            </a>
+          </dd>
+          <br>
+          <dt><u>Strict Equality Operator ( === / !== )</u></dt>
+          <br>
+          <dd>
+            Compares two values and their types. The two operators return
+            opposite values, where === equates to true !== equates to false.
+            <br><br>
+            <strong>
+              console.log(2 === 2);<br>
+              console.log(2 === "2");<br>
+              console.log("" === 0);<br>
+              console.log(false === "0");<br>
+              console.log(false === "false");<br>
+              //=>true<br>
+              //false<br>
+              //false<br>
+              //false<br>
+              //false
+            </strong>
+          </dd>
+        </dl>
+
+        <p>
+          (Sources:<br>
+          <a href="http://stackoverflow.com/questions/359494/which-equals-operator-vs-should-be-used-in-javascript-comparisons">
+            Stackoverflow: Which equals operator (== vs ===) should be used in JavaScript
+            comparisons?</a><br>
+          <a href="https://www.w3schools.com/js/js_comparisons.asp">
+            w3schools: JavaScript Comparison and Logical Operators</a><br>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness">
+            Mozilla Developer Network: Equality comparisons and sameness</a>)
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="string-methods" class="title-anchor"></div>
       <h2 class="section-header">Useful String Methods</h2>
 
@@ -210,7 +285,6 @@
 
     <div class="divider"></div>
 
-
     <div class="section">
 
       <div id="history" class="title-anchor"></div>
@@ -263,7 +337,6 @@
     </div>
 
     <div class="divider"></div>
-
 
     <div class="section">
 

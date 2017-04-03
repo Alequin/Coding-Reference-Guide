@@ -1,5 +1,6 @@
 
 CONTENTS = [
+  new ContentsItem('Comparison Operators', 'comparison-operators'),
   new ContentsItem('Useful String Methods', 'string-methods'),
   new ContentsItem('HTML Events', 'html-events'),
   new ContentsItem('BOM - History', 'history'),
