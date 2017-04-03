@@ -327,7 +327,7 @@
           (Sources:<br>
           <a href="https://www.w3schools.com/js/js_window_history.asp">
             W3schools: JavaScript Window History
-          </a>)
+          </a><br>
           <a href="https://developer.mozilla.org/en-US/docs/Web/API/History">
             Mozilla Developer Network: History
           </a>)
@@ -805,10 +805,10 @@
           <li><u>Using an object literal</u></li>
           <p>
             <strong>
-              x = {<br>
-                name:"Paul",<br>
-                age:32,<br>
-                height:"180cm"<br>
+              var x = {<br>
+              &#160;&#160;name:"Paul",<br>
+              &#160;&#160;age:32,<br>
+              &#160;&#160;height:"180cm"<br>
               };
               <br><br>
               console.log(x.name);<br>
@@ -823,7 +823,7 @@
           <li><u>By creating an instance of Object</u></li>
           <p>
             <strong>
-              x = new Object();
+              var x = new Object();
               <br><br>
               x.name = "Paul";<br>
               x.age = 32;<br>
@@ -842,12 +842,12 @@
           <p>
             <strong>
               function Person(name, age, height){<br>
-                this.name = name;<br>
-                this.age = age;<br>
-                this.height = height;<br>
+              &#160;&#160;this.name = name;<br>
+              &#160;&#160;this.age = age;<br>
+              &#160;&#160;this.height = height;<br>
               }
               <br><br>
-              x = new Person("Paul", 32, "180cm");
+              var x = new Person("Paul", 32, "180cm");
               <br><br>
               console.log(x.name);<br>
               console.log(x.age);<br>
@@ -860,9 +860,48 @@
           </p>
         </ul>
         <p>
+          Objects are able to call methods that are associated with them. The
+          following shows a few methods of creating and assigning methods to
+          objects.
+          <br><br>
+          <strong>
+            var x = {<br>
+            &#160;&#160;name:"Paul",<br>
+            &#160;&#160;getName : function(){<br>
+            &#160;&#160;&#160;&#160;return this.name;<br>
+            &#160;&#160;}<br>
+            }
+            <br><br>
+            console.log(x.getName());
+            <br><br>
+            var y = new Object();<br>
+            y.name = "Paul"<br>
+            y.getName = function(){<br>
+            &#160;&#160;&#160;&#160;return this.name;<br>
+            }
+            <br><br>
+            console.log(y.getName());
+            <br><br>
+            function person(name){<br>
+            &#160;&#160;this.name = name;<br>
+            &#160;&#160;this.getName = function(){<br>
+            &#160;&#160;&#160;&#160;return this.name;<br>
+            &#160;&#160;}<br>
+            }
+            <br><br>
+            var z = new person("Paul");<br>
+            console.log(z.getName());
+            <br><br>
+            //=>Paul<br>
+            //Paul<br>
+            //Paul<br>
+          </strong>
+          <br><br>
           (Sources:<br>
           <a href="http://www.javatpoint.com/javascript-objects">
           Javatpoint: JavaScript Objects</a>)
+          <a href="https://www.w3schools.com/js/js_object_methods.asp">
+          Javatpoint: JavaScript Object Methods</a>)
         </p>
       </div>
 
