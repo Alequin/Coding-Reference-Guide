@@ -838,8 +838,13 @@
               //180cm
             </strong>
           </p>
-          <li><u>By using an object constructor</u></li>
+          <li><u>By using a constructor function / a prototype. </u></li>
           <p>
+            <em>
+              The constructor function is a prototype for the object that
+              will be created from it
+            </em>
+            <br><br>
             <strong>
               function Person(name, age, height){<br>
               &#160;&#160;this.name = name;<br>
@@ -897,14 +902,14 @@
             <br><br>
             console.log(y.getName());
             <br><br>
-            function person(name){<br>
+            function Person(name){<br>
             &#160;&#160;this.name = name;<br>
             &#160;&#160;this.getName = function(){<br>
             &#160;&#160;&#160;&#160;return this.name;<br>
             &#160;&#160;}<br>
             }
             <br><br>
-            var z = new person("Paul");<br>
+            var z = new Person("Paul");<br>
             console.log(z.getName());
             <br><br>
             //=>Paul<br>
@@ -914,7 +919,9 @@
           <br><br>
           (Sources:<br>
           <a href="http://www.javatpoint.com/javascript-objects">
-          Javatpoint: JavaScript Objects</a>)
+          Javatpoint: JavaScript Objects</a><br>
+          <a href="https://www.w3schools.com/js/js_object_methods.asp">
+          Javatpoint: JavaScript Methods</a><br>
           <a href="https://www.w3schools.com/js/js_object_methods.asp">
           Javatpoint: JavaScript Object Methods</a>)
         </p>
