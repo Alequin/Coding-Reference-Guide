@@ -1,6 +1,6 @@
 
 CONTENTS = [
-  new ContentsItem('Element Objects: children and childNodes Properties', 'children-properties'),
+  new ContentsItem('Element Object: children and childNodes Properties', 'children-properties'),
   new ContentsItem('Manipulate HTML Content', 'mainpulate-content'),
   new ContentsItem('Comparison Operators', 'comparison-operators'),
   new ContentsItem('Useful String Methods', 'string-methods'),

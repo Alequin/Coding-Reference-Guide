@@ -26,7 +26,65 @@
 
   <div id="primary-container">
 
-<div class="divider"></div>
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="children-properties" class="title-anchor"></div>
+      <h2 class="section-header">Element Object: children and childNodes Properties</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          The children of elements may be accesed by using the Element object.
+          The property "children" and "childNodes" both return an array of the
+          children within the calling element, they do however return
+          different contents.
+          <br><br>
+          The property "childNodes" return a list of all the children held
+          within an element. This includes text that is not within tags,
+          white space between tags and comments.
+          <br><br>
+          On the other hand "children" returns a list of only the children
+          defined by tags.
+        </p>
+        <dl>
+          <dl>
+            <strong>
+              &#60;div id="a"&#62;<br>
+              &#160;&#160;&#60;!--comment--&#62;<br>
+              &#160;&#160;text in a<br>
+              &#160;&#160;&#60;div id="b"&#62;<br>
+              &#160;&#160;&#160;&#160;text in b<br>
+              &#160;&#160;&#60;/div&#62;<br>
+              &#160;&#160;&#60;div id="c"&#62;<br>
+              &#160;&#160;&#160;&#160;text in c<br>
+              &#160;&#160;&#60;/div&#62;<br>
+              &#60;/div&#62;
+              <br><br>
+              &#60;script&#62;<br>
+              var a = document.getElementById("a");<br>
+              console.log(a.children.length);<br>
+              console.log(a.childNodes.length);<br>
+              &#60;/script&#62;
+              <br><br>
+              //=>2<br>
+              //7
+            </strong>
+          </dl>
+        </dl>
+          (Sources:<br>
+          <a href="https://www.w3schools.com/jsref/dom_obj_all.asp">
+          w3schools: The HTML DOM Element Object</a><br>
+          <a href="https://www.w3schools.com/jsref/prop_node_childnodes.asp">
+          w3schools: HTML DOM childNodes Property</a><br>
+          <a href="https://www.w3schools.com/jsref/prop_element_children.asp">
+          w3schools: HTML DOM children Property</a><br>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
 
 <div class="section">
 
