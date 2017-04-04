@@ -86,260 +86,260 @@
 
     <div class="divider"></div>
 
-<div class="section">
+    <div class="section">
 
-  <div id="mainpulate-content" class="title-anchor"></div>
-  <h2 class="section-header">Manipulate HTML Content</h2>
+      <div id="mainpulate-content" class="title-anchor"></div>
+      <h2 class="section-header">Manipulate HTML Content</h2>
 
-  <div class="section-content section-text-normal">
-    <p>
-      A HTMl document may be manipulated using Javascript. Using the Document
-      object and Element object the web page can be altered.
-    </p>
-    <dl>
-      <dt>
-        The Text within elements can be changed using the property "innerHTML".
-        The string "innerHTML" points to will by displayed on screen.
-        <br>
-      </dt>
-      <dd>
-        <br>
-        <strong>
-          var paragraph = document.getElementById("001");<br>
-          paragraph.innerHTML = "New text written here";
-        </strong>
-        <br><br>
-        <span id="001">My id is 001</span><br>
-        <span id="button-001">Click here to run the code (effects will be reset)</span>
-        <script>
-          document.getElementById("button-001").addEventListener("click", function(){
-              var paragraph = document.getElementById("001");
+      <div class="section-content section-text-normal">
+        <p>
+          A HTMl document may be manipulated using Javascript. Using the Document
+          object and Element object the web page can be altered.
+        </p>
+        <dl>
+          <dt>
+            The Text within elements can be changed using the property "innerHTML".
+            The string "innerHTML" points to will by displayed on screen.
+            <br>
+          </dt>
+          <dd>
+            <br>
+            <strong>
+              var paragraph = document.getElementById("001");<br>
               paragraph.innerHTML = "New text written here";
+            </strong>
+            <br><br>
+            <span id="001">My id is 001</span><br>
+            <span id="button-001">Click here to run the code (effects will be reset)</span>
+            <script>
+              document.getElementById("button-001").addEventListener("click", function(){
+                  var paragraph = document.getElementById("001");
+                  paragraph.innerHTML = "New text written here";
+                  setTimeout(function(){
+                    paragraph.innerHTML = "My id is 001";
+                  },1000);
+              });
+            </script>
+            <br><br>
+          </dd>
+          <dt>
+            The Document object provides access to the methods "createElement"
+            "createTextNode", which are used to build new elements. The elements
+            can be added to the site by using the method "appendChild" on the
+            desired target (in this case the body tag). The "appendChild" method
+            places the given parameter between the tags of the target element (At
+            the end of the element).
+            <br><br>
+            Elements that are added with "appendChild" appear at the very end of
+            the calling element.
+            <br><br>
+          </dt>
+          <dd>
+            <strong>
+              var span = document.getElementById("002");<br>
+              var newElement = document.createElement("p");<br>
+              var newText = document.createTextNode("Brand new text");<br>
+              newElement.appendChild(newText);<br>
+              span.appendChild(newElement);
+              <br><br>
+            </strong>
+            <span id="button-002">Click here to run the code (effects will be reset)</span>
+            <br>
+            <span id="002">My id is 002<br></span>
+            <script>
+              document.getElementById("button-002").addEventListener("click", function(){
+                var span = document.getElementById("002");
+                var newElement = document.createElement("p");
+                var newText = document.createTextNode("Brand new text");
+                newElement.appendChild(newText);
+                span.appendChild(newElement);
+                setTimeout(function(){
+                  span.removeChild(newElement);
+                },1000);
+              });
+            </script>
+          </dd>
+          <dt>
+            <br>
+            In the previous example the innerHTML property could have been used to
+            set the text value of the new paragraph element. Where innerHTML will completely
+            alter the text held by an element appending a text node to an element
+            will add to the current text.
+            <br><br>
+          </dt>
+          <dd>
+            <strong>
+              var span = document.getElementById("002");<br>
+              var newText = document.createTextNode(". My Id is also 003");<br>
+              span.appendChild(newText);
+              <br><br>
+            </strong>
+            <span id="button-003">Click here to run the code (effects will be reset)</span>
+            <br>
+            <span id="003">My id is 003</span>
+            <script>
+              document.getElementById("button-003").addEventListener("click", function(){
+                var span = document.getElementById("003");
+                var newText = document.createTextNode(". My Id is also 003");
+                span.appendChild(newText);
+                setTimeout(function(){
+                  var text = span.innerHTML;
+                  text = text.replace(/\.[\d,\w,\s]+/, "");
+                  span.innerHTML = text;
+                },1000);
+              });
+            </script>
+          </dd>
+          <dt>
+            <br>
+            Elements can also be removed from the web page using the method
+            "removeChild". The element to be removed must be provided as a parameter
+            and also be a child to the element calling the method.
+            <br><br>
+          </dt>
+          <dd>
+            <strong>
+              var span = document.getElementById("004");<br>
+              var element = document.getElementById("004-1");<br>
+              span.removeChild(element);
+              <br><br>
+            </strong>
+            <span id="button-004">Click here to run the code (effects will be reset)</span>
+            <br>
+            <span id="004">My id is 004<br>
+            &#160;&#160;<span id=004-1>My id is 004-1 and I am a child of 004</span>
+            </span>
+            <script>
+            document.getElementById("button-004").addEventListener("click", function(){
+              var span = document.getElementById("004");
+              var element = document.getElementById("004-1");
+              span.removeChild(element);
               setTimeout(function(){
-                paragraph.innerHTML = "My id is 001";
+                span.appendChild(element);
               },1000);
-          });
-        </script>
-        <br><br>
-      </dd>
-      <dt>
-        The Document object provides access to the methods "createElement"
-        "createTextNode", which are used to build new elements. The elements
-        can be added to the site by using the method "appendChild" on the
-        desired target (in this case the body tag). The "appendChild" method
-        places the given parameter between the tags of the target element (At
-        the end of the element).
-        <br><br>
-        Elements that are added with "appendChild" appear at the very end of
-        the calling element.
-        <br><br>
-      </dt>
-      <dd>
-        <strong>
-          var span = document.getElementById("002");<br>
-          var newElement = document.createElement("p");<br>
-          var newText = document.createTextNode("Brand new text");<br>
-          newElement.appendChild(newText);<br>
-          span.appendChild(newElement);
-          <br><br>
-        </strong>
-        <span id="button-002">Click here to run the code (effects will be reset)</span>
-        <br>
-        <span id="002">My id is 002<br></span>
-        <script>
-          document.getElementById("button-002").addEventListener("click", function(){
-            var span = document.getElementById("002");
-            var newElement = document.createElement("p");
-            var newText = document.createTextNode("Brand new text");
-            newElement.appendChild(newText);
-            span.appendChild(newElement);
-            setTimeout(function(){
-              span.removeChild(newElement);
-            },1000);
-          });
-        </script>
-      </dd>
-      <dt>
-        <br>
-        In the previous example the innerHTML property could have been used to
-        set the text value of the new paragraph element. Where innerHTML will completely
-        alter the text held by an element appending a text node to an element
-        will add to the current text.
-        <br><br>
-      </dt>
-      <dd>
-        <strong>
-          var span = document.getElementById("002");<br>
-          var newText = document.createTextNode(". My Id is also 003");<br>
-          span.appendChild(newText);
-          <br><br>
-        </strong>
-        <span id="button-003">Click here to run the code (effects will be reset)</span>
-        <br>
-        <span id="003">My id is 003</span>
-        <script>
-          document.getElementById("button-003").addEventListener("click", function(){
-            var span = document.getElementById("003");
-            var newText = document.createTextNode(". My Id is also 003");
-            span.appendChild(newText);
-            setTimeout(function(){
-              var text = span.innerHTML;
-              text = text.replace(/\.[\d,\w,\s]+/, "");
-              span.innerHTML = text;
-            },1000);
-          });
-        </script>
-      </dd>
-      <dt>
-        <br>
-        Elements can also be removed from the web page using the method
-        "removeChild". The element to be removed must be provided as a parameter
-        and also be a child to the element calling the method.
-        <br><br>
-      </dt>
-      <dd>
-        <strong>
-          var span = document.getElementById("004");<br>
-          var element = document.getElementById("004-1");<br>
-          span.removeChild(element);
-          <br><br>
-        </strong>
-        <span id="button-004">Click here to run the code (effects will be reset)</span>
-        <br>
-        <span id="004">My id is 004<br>
-        &#160;&#160;<span id=004-1>My id is 004-1 and I am a child of 004</span>
-        </span>
-        <script>
-        document.getElementById("button-004").addEventListener("click", function(){
-          var span = document.getElementById("004");
-          var element = document.getElementById("004-1");
-          span.removeChild(element);
-          setTimeout(function(){
-            span.appendChild(element);
-          },1000);
-        });
-        </script>
-      </dd>
-      <dt>
-        <br>
-        Elements may also be replace. The method "replaceChild" removes a
-        child of the calling element and inserts a different element. It takes
-        two parameters, the first is the element to insert and the second is
-        the element to remove.
-        <br><br>
-      </dt>
-      <dd>
-        <strong>
-          var span = document.getElementById("005");<br>
-          var child = span.children[1];<br>
-          var img = document.createElement("img");<br>
-          img.src = "../images/puppy.jpg";<br>
-          span.replaceChild(img, child);
-          <br><br>
-        </strong>
-        <em>
-          when accessing the child element of the span an index of 1 is
-          given as there is a &#60;br&#62; tag prior to the element to be
-          replaced.
-        </em>
-        <br><br>
-        <span id="button-005">Click here to run the code (effects will be reset)</span>
-        <br>
-        <span id="005">My id is 005<br>
-        &#160;&#160;<span id=005-1>My id is 005-1 and I am a child of 005</span>
-        </span>
-        <script>
-        document.getElementById("button-005").addEventListener("click", function(){
-          var span = document.getElementById("005");
-          var child = span.children[1];
-          var img = document.createElement("img");
-          img.src = "../images/puppy.jpg";
-          span.replaceChild(img, child);
-          setTimeout(function(){
-            span.replaceChild(child, img);
-          },1000);
-        });
-        </script>
-      </dd>
-      <dt>
-        <br>
-        As seen in the previous example elements attributes may also be editted.
-        Attributes are held by Element objects as properties and can be accessed
-        by using "element.attribute". The methods "setAttribute" and
-        "getAttribute" will also perform the same task. To set the attribute
-        using a method two parameters are required. Both should be strings, the
-        first represents the attribute name and the second represents the value
-        to set.
-        <br><br>
-      </dt>
-      <dd>
-        <strong>
-          var img = document.getElementById("006");<br>
-          img.src = "../images/puppy.jpg";<br>
-          or<br>
-          var img = document.getElementById("006");<br>
-          img.setAttribute("src", "../images/puppy.jpg");
-          <br><br>
-        </strong>
-        <span id="button-006">Click here to run the code (effects will be reset)</span>
-        <br>
-        <img id="006" alt="My id is 006"/>
-        <script>
-        document.getElementById("button-006").addEventListener("click", function(){
-          var img = document.getElementById("006");
-          if(Math.random() > 0.5){
-            img.src = "../images/puppy.jpg";
-          }else{
-            img.setAttribute("src", "../images/puppy.jpg");
-          }
-          setTimeout(function(){
-            img.src = "";
-          },1000);
-        });
-        </script>
-      </dd>
-      <dt>
-        <br>
-        Style can be modifed as well. Style is accessable via Element objects
-        and contains an number of edittable CSS related properties.
-        <br><br>
-      </dt>
-      <dd>
-        <strong>
-          var span = document.getElementById("007");<br>
-          span.style.color = "red";
-          <br><br>
-        </strong>
-        <span id="button-007">Click here to run the code (effects will be reset)</span>
-        <br>
-        <span id="007">My id is 007</span>
-        <script>
-        document.getElementById("button-007").addEventListener("click", function(){
-          var span = document.getElementById("007");
-          span.style.color = "red";
-          setTimeout(function(){
-            span.style.color = "black";
-          },1000);
-        });
-        </script>
-      </dd>
-    <dl>
-    <p>
-      (Sources:<br>
-      <a href="https://www.w3schools.com/jsref/met_node_appendchild.asp">
-      w3schools: HTML DOM appendChild() Method</a><br>
-      <a href="https://www.w3schools.com/js/js_htmldom_html.asp">
-      w3schools: JavaScript HTML DOM - Changing HTML</a><br>
-      <a href="https://www.w3schools.com/js/js_htmldom_document.asp">
-      w3schools: JavaScript HTML DOM Document</a><br>
-      <a href="https://www.w3schools.com/jsref/dom_obj_all.asp">
-      w3schools: The HTML DOM Element Object</a>)
-    </p>
-  </div>
+            });
+            </script>
+          </dd>
+          <dt>
+            <br>
+            Elements may also be replace. The method "replaceChild" removes a
+            child of the calling element and inserts a different element. It takes
+            two parameters, the first is the element to insert and the second is
+            the element to remove.
+            <br><br>
+          </dt>
+          <dd>
+            <strong>
+              var span = document.getElementById("005");<br>
+              var child = span.children[1];<br>
+              var img = document.createElement("img");<br>
+              img.src = "../images/puppy.jpg";<br>
+              span.replaceChild(img, child);
+              <br><br>
+            </strong>
+            <em>
+              when accessing the child element of the span an index of 1 is
+              given as there is a &#60;br&#62; tag prior to the element to be
+              replaced.
+            </em>
+            <br><br>
+            <span id="button-005">Click here to run the code (effects will be reset)</span>
+            <br>
+            <span id="005">My id is 005<br>
+            &#160;&#160;<span id=005-1>My id is 005-1 and I am a child of 005</span>
+            </span>
+            <script>
+            document.getElementById("button-005").addEventListener("click", function(){
+              var span = document.getElementById("005");
+              var child = span.children[1];
+              var img = document.createElement("img");
+              img.src = "../images/puppy.jpg";
+              span.replaceChild(img, child);
+              setTimeout(function(){
+                span.replaceChild(child, img);
+              },1000);
+            });
+            </script>
+          </dd>
+          <dt>
+            <br>
+            As seen in the previous example elements attributes may also be editted.
+            Attributes are held by Element objects as properties and can be accessed
+            by using "element.attribute". The methods "setAttribute" and
+            "getAttribute" will also perform the same task. To set the attribute
+            using a method two parameters are required. Both should be strings, the
+            first represents the attribute name and the second represents the value
+            to set.
+            <br><br>
+          </dt>
+          <dd>
+            <strong>
+              var img = document.getElementById("006");<br>
+              img.src = "../images/puppy.jpg";<br>
+              or<br>
+              var img = document.getElementById("006");<br>
+              img.setAttribute("src", "../images/puppy.jpg");
+              <br><br>
+            </strong>
+            <span id="button-006">Click here to run the code (effects will be reset)</span>
+            <br>
+            <img id="006" alt="My id is 006"/>
+            <script>
+            document.getElementById("button-006").addEventListener("click", function(){
+              var img = document.getElementById("006");
+              if(Math.random() > 0.5){
+                img.src = "../images/puppy.jpg";
+              }else{
+                img.setAttribute("src", "../images/puppy.jpg");
+              }
+              setTimeout(function(){
+                img.src = "";
+              },1000);
+            });
+            </script>
+          </dd>
+          <dt>
+            <br>
+            Style can be modifed as well. Style is accessable via Element objects
+            and contains an number of edittable CSS related properties.
+            <br><br>
+          </dt>
+          <dd>
+            <strong>
+              var span = document.getElementById("007");<br>
+              span.style.color = "red";
+              <br><br>
+            </strong>
+            <span id="button-007">Click here to run the code (effects will be reset)</span>
+            <br>
+            <span id="007">My id is 007</span>
+            <script>
+            document.getElementById("button-007").addEventListener("click", function(){
+              var span = document.getElementById("007");
+              span.style.color = "red";
+              setTimeout(function(){
+                span.style.color = "black";
+              },1000);
+            });
+            </script>
+          </dd>
+        <dl>
+        <p>
+          (Sources:<br>
+          <a href="https://www.w3schools.com/jsref/met_node_appendchild.asp">
+          w3schools: HTML DOM appendChild() Method</a><br>
+          <a href="https://www.w3schools.com/js/js_htmldom_html.asp">
+          w3schools: JavaScript HTML DOM - Changing HTML</a><br>
+          <a href="https://www.w3schools.com/js/js_htmldom_document.asp">
+          w3schools: JavaScript HTML DOM Document</a><br>
+          <a href="https://www.w3schools.com/jsref/dom_obj_all.asp">
+          w3schools: The HTML DOM Element Object</a>)
+        </p>
+      </div>
 
-</div>
+    </div>
 
-<div class="divider"></div>
+    <div class="divider"></div>
 
     <div class="section">
 
@@ -1123,8 +1123,8 @@
 
       <div class="section-content section-text-normal">
         <p>
-          Functions are objects which excecute the code that is provided in
-          their constructor when called.
+          Functions are objects which excecute the code that is provided when
+          called.
         </p>
         <dl>
           <dt>
