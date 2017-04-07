@@ -70,6 +70,23 @@ to avoid place function call inside a new function
 hexInput.addEventListener("click", function(){isRGBInputEmpty()}); <= function isRGBInputEmpty() not called
 http://stackoverflow.com/questions/16310423/addeventlistener-calls-the-function-without-me-even-asking-it-to
 --------------------------------------------------------------------------------
+html:
+before floating anything ensure it container allows for floating
+situation: floating 5 divs across the screen didnt work untill they were placed inside a 
+container div 
+<div id="background-container">
+    <div class="background-colour-slab">
+    </div>
+    <div class="background-colour-slab">
+    </div>
+    <div class="background-colour-slab">
+    </div>
+    <div class="background-colour-slab">
+    </div>
+    <div class="background-colour-slab">
+    </div>
+  </div>
+http://stackoverflow.com/questions/5803023/how-to-place-two-divs-next-to-each-other
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
