@@ -63,6 +63,12 @@ http://stackoverflow.com/questions/2862590/how-to-replace-master-branch-in-git-e
 --------------------------------------------------------------------------------
   what is cache
 --------------------------------------------------------------------------------
+For some reason when adding an event listener in javascript (in chrome at the 
+least) if the function given as a parameter is already defined it will be called.
+hexInput.addEventListener("click", isRGBInputEmpty()); <= function isRGBInputEmpty() called
+to avoid place function call inside a new function
+hexInput.addEventListener("click", function(){isRGBInputEmpty()}); <= function isRGBInputEmpty() not called
+http://stackoverflow.com/questions/16310423/addeventlistener-calls-the-function-without-me-even-asking-it-to
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
