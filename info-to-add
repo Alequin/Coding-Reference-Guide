@@ -88,7 +88,14 @@ container div
   </div>
 http://stackoverflow.com/questions/5803023/how-to-place-two-divs-next-to-each-other
 --------------------------------------------------------------------------------
+html forms and javascript interaction
+include the fact that form submit button refreshes pages
 --------------------------------------------------------------------------------
+css change cursor pointer
+element:hover{
+  cursor: pointer;
+}
+http://stackoverflow.com/questions/8809909/change-cursor-to-finger-pointer
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
