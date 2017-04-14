@@ -8,6 +8,11 @@
   max-width: 800px;
 }
 
+#contents-search-box{
+  width: 250px;
+  height: 30px;
+}
+
 #contents-title{
   min-width: 125px;
 }

@@ -15,6 +15,11 @@
   padding-bottom: 15px;
 }
 
+#contents-search-box{
+  width: 350px;
+  height: 70px;
+}
+
 #contents-title{
   min-width: 195px;
 }

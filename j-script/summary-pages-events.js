@@ -6,7 +6,7 @@ $(document).ready(function(){
   $("#main-header").after(headerMenu);
   positionElementsRelativeToHeader(BASIC_LAYOUT_HEADER_HEIGHT);
 
-  insertContentsItems();
+  insertContentsItems(getSearchTerm());
 
   $("#contents-title").click(function(){
     toggleContentsVisibility();
@@ -21,5 +21,10 @@ $(document).ready(function(){
     headerHeight = isBasicLayoutVisible ?
           BASIC_LAYOUT_HEADER_HEIGHT : LARGE_LAYOUT_HEADER_HEIGHT;
     positionElementsRelativeToHeader(headerHeight);
+  });
+
+  $('#search-button').click(function(){
+    alert(getSearchTerm());
+    insertContentsItems(getSearchTerm());
   });
 });

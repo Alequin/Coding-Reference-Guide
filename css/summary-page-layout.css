@@ -66,11 +66,18 @@
   overflow-y: auto;
 }
 
-#contents-search-box{
-  width: 200px;
-  height: 50px;
-  background: black;
+#search-and-sort-table td{
+  padding: 0;
 }
+
+#contents-search-box{
+  margin: 15px;
+  padding-left: 15px;
+  padding-right: 30px;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
 
 a, a:visited{
   text-decoration: none;
