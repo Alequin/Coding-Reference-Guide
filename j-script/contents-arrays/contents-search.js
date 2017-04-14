@@ -6,6 +6,7 @@ function getContentsItemsMatchingSearchTerm(contentsElements, searchTerm){
   var searchResults = new Array();
 
   searchResults = searchResults.concat(getArrayOfMatchesFromStart(contentsElements, searchTerm));
+  searchResults = searchResults.concat(getArrayOfMatchesFromMiddle(contentsElements, searchTerm));
 
   return searchResults;
 }
@@ -85,4 +86,19 @@ function findIndexWithMatchAtStart(contentsElements, searchTerm){
   }
 
   return -1;
+}
+
+function getArrayOfMatchesFromMiddle(contentsElements, searchTerm){
+
+  var results = new Array();
+
+  var regExrSearch = new RegExp(".*"+searchTerm);
+  var index = 0;
+  while(index < contentsElements.length-1){
+    var currentElement = contentsElements[index++];
+    if(currentElement.title.toLowerCase().search(regExrSearch) === 0){
+      results.push(currentElement);
+    }
+  }
+  return results;
 }
