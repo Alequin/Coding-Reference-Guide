@@ -11,6 +11,10 @@ function getArrayOfMatchesFromStart(contentsElements, searchTerm){
 
   var index = findFirstMatchingIndex(contentsElements, searchTerm);
 
+  if(index === -1){
+    return new Array();
+  }
+
   var matchingElements = new Array();
   var nextElement = contentsElements[index++];
   do{
@@ -24,6 +28,10 @@ function getArrayOfMatchesFromStart(contentsElements, searchTerm){
 function findFirstMatchingIndex(contentsElements, searchTerm){
 
   var matchingIndex = findIndexWithMatchAtStart(contentsElements, searchTerm);
+
+  if(matchingIndex === -1){
+    return matchingIndex;
+  }
 
   var index = matchingIndex;
   var matchingTitle = contentsElements[index].title.toLowerCase();
