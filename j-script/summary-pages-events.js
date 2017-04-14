@@ -1,4 +1,12 @@
 
+var x = [
+  new ContentsItem('abc1', 'remove-commits'),
+  new ContentsItem('abd3', 'rename-branch'),
+  new ContentsItem('acd2', 'rename-branch'),
+];
+
+matchContentsFromStart(x, "ab");
+
 $(document).ready(function(){
 
   BASIC_LAYOUT_HEADER_HEIGHT = 120;

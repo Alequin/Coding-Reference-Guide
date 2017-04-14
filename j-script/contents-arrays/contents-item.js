@@ -44,7 +44,6 @@ function ContentsItemQuickSort(){
         high--;
       }
     }
-    console.log(low +" | "+high);
     if(lowerIndex < high){
       quickSort(lowerIndex, high);
     }
