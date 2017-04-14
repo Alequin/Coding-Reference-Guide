@@ -2,7 +2,12 @@
 function getContentsItemsMatchingSearchTerm(contentsElements, searchTerm){
 
   searchTerm = searchTerm.toLowerCase();
-  return getArrayOfMatchesFromStart(contentsElements, searchTerm);
+
+  var searchResults = new Array();
+
+  searchResults = searchResults.concat(getArrayOfMatchesFromStart(contentsElements, searchTerm));
+
+  return searchResults;
 }
 
 function getArrayOfMatchesFromStart(contentsElements, searchTerm){
