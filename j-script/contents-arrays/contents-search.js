@@ -1,22 +1,22 @@
 
 function getContentsItemsMatchingSearchTerm(contentsElements, searchTerm){
 
-
+  searchTerm = searchTerm.toLowerCase();
+  return getArrayOfMatchesFromStart(contentsElements, searchTerm);
 }
 
 function getArrayOfMatchesFromStart(contentsElements, searchTerm){
 
   contentsElements = new ContentsItemQuickSort().sort(contentsElements);
-  searchTerm = searchTerm.toLowerCase();
 
   var index = findFirstMatchingIndex(contentsElements, searchTerm);
 
   var matchingElements = new Array();
-  var nextElement = contentsElements[index++].title;
+  var nextElement = contentsElements[index++];
   do{
     matchingElements.push(nextElement);
-    nextElement = contentsElements[index++].title;
-  }while(nextElement.toLowerCase().search(searchTerm) === 0);
+    nextElement = contentsElements[index++];
+  }while(nextElement.title.toLowerCase().search(searchTerm) === 0);
 
   return matchingElements;
 }

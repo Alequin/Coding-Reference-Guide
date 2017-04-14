@@ -1,12 +1,4 @@
 
-var x = [
-  new ContentsItem('abc1', 'remove-commits'),
-  new ContentsItem('abd3', 'rename-branch'),
-  new ContentsItem('acd2', 'rename-branch'),
-];
-
-getArrayOfMatchesFromStart(x, "ab");
-
 $(document).ready(function(){
 
   BASIC_LAYOUT_HEADER_HEIGHT = 120;
@@ -33,7 +25,8 @@ $(document).ready(function(){
   });
 
   $('#search-button').click(function(){
-    alert(getSearchTerm());
+    removeContentsItems();
     insertContentsItems(getSearchTerm());
   });
+
 });
