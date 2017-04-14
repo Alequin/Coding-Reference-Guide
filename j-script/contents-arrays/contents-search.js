@@ -4,10 +4,24 @@ function getContentsItemsMatchingSearchTerm(contentsElements, searchTerm){
 
 }
 
-function matchContentsFromStart(contentsElements, searchTerm){
+function getArrayOfMatchesFromStart(contentsElements, searchTerm){
 
   contentsElements = new ContentsItemQuickSort().sort(contentsElements);
   searchTerm = searchTerm.toLowerCase();
+
+  var index = findFirstMatchingIndex(contentsElements, searchTerm);
+
+  var matchingElements = new Array();
+  var nextElement = contentsElements[index++].title;
+  do{
+    matchingElements.push(nextElement);
+    nextElement = contentsElements[index++].title;
+  }while(nextElement.toLowerCase().search(searchTerm) === 0);
+
+  return matchingElements;
+}
+
+function findFirstMatchingIndex(contentsElements, searchTerm){
 
   var matchingIndex = findIndexWithMatchAtStart(contentsElements, searchTerm);
 
@@ -21,15 +35,7 @@ function matchContentsFromStart(contentsElements, searchTerm){
     matchingTitle = contentsElements[index].title.toLowerCase();
   }
   index ++;
-
-  var matchingElements = new Array();
-  var nextElement = contentsElements[index++].title;
-  do{
-    matchingElements.push(nextElement);
-    nextElement = contentsElements[index++].title;
-  }while(nextElement.toLowerCase().search(searchTerm) === 0);
-
-  return matchingElements;
+  return index;
 }
 
 function findIndexWithMatchAtStart(contentsElements, searchTerm){

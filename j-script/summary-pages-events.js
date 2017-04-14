@@ -5,7 +5,7 @@ var x = [
   new ContentsItem('acd2', 'rename-branch'),
 ];
 
-matchContentsFromStart(x, "ab");
+getArrayOfMatchesFromStart(x, "ab");
 
 $(document).ready(function(){
 
