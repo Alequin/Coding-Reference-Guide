@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 
   BASIC_LAYOUT_HEADER_HEIGHT = 120;

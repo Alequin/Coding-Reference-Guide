@@ -1,4 +1,5 @@
 isContentsVisible = false;
+
 var TABLE_ROW = [
     '<tr>',
       '<td>',
