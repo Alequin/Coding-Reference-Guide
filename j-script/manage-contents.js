@@ -4,6 +4,38 @@ const NO_ORDER = 0;
 const ALPHA_ORDER = 1;
 const REVERSE_ALPHA_ORDER = 2;
 
+
+function OrderHolder(){
+
+  var currentOrder = NO_ORDER;
+
+  this.getOrder = function(){
+    return currentOrder;
+  }
+
+  this.toggleContentsOrder = function(){
+      switch (currentOrder) {
+        case NO_ORDER:
+          setContentsOrder(ALPHA_ORDER);
+          break;
+        case ALPHA_ORDER:
+          setContentsOrder(REVERSE_ALPHA_ORDER);
+          break;
+        case REVERSE_ALPHA_ORDER:
+          setContentsOrder(NO_ORDER);
+          break;
+      }
+  }
+
+  this.setContentsOrder = function(order){
+
+    if(order !== NO_ORDER && order !== ALPHA_ORDER && order !== REVERSE_ALPHA_ORDER){
+      throw order+" is not a valid value. Must be 'NO_ORDER', 'ALPHA_ORDER' or 'REVERSE_ALPHA_ORDER'";
+    }
+    currentOrder = order;
+  }
+}
+
 var TABLE_ROW = [
     '<tr>',
       '<td>',

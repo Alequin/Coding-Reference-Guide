@@ -4,10 +4,12 @@ $(document).ready(function(){
   BASIC_LAYOUT_HEADER_HEIGHT = 120;
   LARGE_LAYOUT_HEADER_HEIGHT = 200;
 
+  var contentsOrder = new OrderHolder();
+
   $("#main-header").after(headerMenu);
   positionElementsRelativeToHeader(BASIC_LAYOUT_HEADER_HEIGHT);
 
-  var contentsToAdd = getContentsItems(getSearchTerm(), NO_ORDER);
+  var contentsToAdd = getContentsItems(getSearchTerm(), contentsOrder.getOrder());
   insertContentsItems(contentsToAdd);
 
   $("#contents-title").click(function(){
@@ -27,7 +29,7 @@ $(document).ready(function(){
 
   $('#search-button').click(function(){
     removeContentsItems();
-    var contentsToAdd = getContentsItems(getSearchTerm(), NO_ORDER);
+    var contentsToAdd = getContentsItems(getSearchTerm(), contentsOrder.getOrder());
     insertContentsItems(contentsToAdd);
   });
 
