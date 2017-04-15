@@ -7,7 +7,8 @@ $(document).ready(function(){
   $("#main-header").after(headerMenu);
   positionElementsRelativeToHeader(BASIC_LAYOUT_HEADER_HEIGHT);
 
-  insertContentsItems(getSearchTerm());
+  var contentsToAdd = getContentsItems(getSearchTerm(), NO_ORDER);
+  insertContentsItems(contentsToAdd);
 
   $("#contents-title").click(function(){
     toggleContentsVisibility();
@@ -26,7 +27,8 @@ $(document).ready(function(){
 
   $('#search-button').click(function(){
     removeContentsItems();
-    insertContentsItems(getSearchTerm());
+    var contentsToAdd = getContentsItems(getSearchTerm(), NO_ORDER);
+    insertContentsItems(contentsToAdd);
   });
 
 });

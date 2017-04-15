@@ -1,5 +1,9 @@
 isContentsVisible = false;
 
+const NO_ORDER = 0;
+const ALPHA_ORDER = 1;
+const REVERSE_ALPHA_ORDER = 2;
+
 var TABLE_ROW = [
     '<tr>',
       '<td>',
@@ -47,7 +51,7 @@ function getContentsCellText(contentsElements, index){
   }
 }
 
-function insertContentsItems(searchTerm){
+function getContentsItems(searchTerm, orderItems){
   var contentsToAdd;
   if(searchTerm === null || searchTerm.length <= 0){
     contentsToAdd = CONTENTS;
@@ -55,7 +59,26 @@ function insertContentsItems(searchTerm){
     contentsToAdd = getContentsItemsMatchingSearchTerm(CONTENTS, searchTerm);
   }
 
+  return orderContentsItems(contentsToAdd, orderItems);
+}
+
+function insertContentsItems(contentsToAdd){
   $('#search-and-sort-table').after(buildContentsTableString(contentsToAdd));
+}
+
+function orderContentsItems(contentsItems, order){
+
+  switch(order){
+
+    case NO_ORDER:
+      return contentsItems;
+    case ALPHA_ORDER:
+      return new ContentsItemQuickSort().sort(contentsItems);
+    case REVERSE_ALPHA_ORDER:
+      //reverse sorted array
+    default:
+      alert(order + "Not recognised");
+  }
 }
 
 function removeContentsItems(){
