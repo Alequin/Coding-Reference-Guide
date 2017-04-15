@@ -10,6 +10,9 @@
 
 #contents-search-box{
   width: 250px;
+}
+
+#contents-search-box #search-button #order-button{
   height: 30px;
 }
 
