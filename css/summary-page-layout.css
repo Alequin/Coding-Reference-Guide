@@ -84,6 +84,11 @@
   padding-bottom: 5px;
 }
 
+#search-button, #order-button{
+  padding-left: 10px;
+  padding-right: 10px;s
+}
+
 a, a:visited{
   text-decoration: none;
   text-decoration: underline;

@@ -12,8 +12,13 @@
   width: 250px;
 }
 
-#contents-search-box #search-button #order-button{
+#contents-search-box, #search-button, #order-button{
   height: 30px;
+}
+
+#search-button, #order-button{
+  line-height: 30px;
+  cursor: pointer;
 }
 
 #contents-title{

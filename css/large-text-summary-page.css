@@ -17,7 +17,14 @@
 
 #contents-search-box{
   width: 350px;
+}
+
+#contents-search-box, #search-button, #order-button{
   height: 70px;
+}
+
+#search-button, #order-button{
+  line-height: 70px;
 }
 
 #contents-title{
