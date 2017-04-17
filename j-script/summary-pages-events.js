@@ -1,4 +1,19 @@
 
+function setOrderButtonText(order){
+  var button = document.getElementById("order-button");
+  switch (order) {
+    case NO_ORDER:
+      button.innerHTML = "Order: No order";
+      break;
+    case ALPHA_ORDER:
+      button.innerHTML = "Order: Ascending";
+      break;
+    case REVERSE_ALPHA_ORDER:
+      button.innerHTML = "Order: Descending";
+      break;
+  }
+}
+
 $(document).ready(function(){
 
   BASIC_LAYOUT_HEADER_HEIGHT = 120;
@@ -14,6 +29,7 @@ $(document).ready(function(){
   $("#main-header").after(headerMenu);
   positionElementsRelativeToHeader(BASIC_LAYOUT_HEADER_HEIGHT);
 
+  setOrderButtonText(contentsOrder.getOrder());
   retriveAndInsertContents();
 
   $("#contents-title").click(function(){
@@ -39,6 +55,7 @@ $(document).ready(function(){
   $('#order-button').click(function(){
     clearContentsItemsFromPage();
     contentsOrder.toggleContentsOrder();
+    setOrderButtonText(contentsOrder.getOrder());
     retriveAndInsertContents();
   });
 
