@@ -18,17 +18,6 @@ git log -2 --oneline
   http://bigocheatsheet.com/
 --------------------------------------------------------------------------------
 sql triggers
---------------------------------------------------------------------------------run command line from ruby
-system("realpath .")
-system("date")
-
-source: http://stackoverflow.com/questions/3159945/running-command-line-commands-within-ruby-script
-http://robdodson.me/writing-a-command-line-tool-in-ruby/
---------------------------------------------------------------------------------
-change desktop background in ubunto 16.04
-gsettings set org.gnome.desktop.background picture-uri "file:///home/alequin/Pictures/Wallpapers/FWd9F5e.jpg"
-
-source: http://danilodellaquila.com/en/blog/how-to-automatically-change-your-desktop-background-wallpaper
 --------------------------------------------------------------------------------
 useful regexr patterns
 only digits in entire string
