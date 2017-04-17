@@ -109,7 +109,7 @@ function orderContentsItems(contentsItems, order){
     case ALPHA_ORDER:
       return (new ContentsItemQuickSort()).sort(contentsItems);
     case REVERSE_ALPHA_ORDER:
-      //reverse sorted array
+      return (new ContentsItemQuickSort()).sortDesc(contentsItems);
     default:
       alert(order + "Not recognised");
   }
