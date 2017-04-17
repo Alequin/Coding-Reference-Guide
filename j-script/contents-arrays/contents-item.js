@@ -7,19 +7,29 @@ function ContentsItemQuickSort(){
 
   var array;
 
+  const ASCENDING = "ASCENDING";
+  const DESCENDING = "DESCENDING";
+
   this.sort = function(contentsElements){
 
     array = contentsElements.slice(0);
-    if(array === null){
+    if(!isArraySortable(array)){
       return array;
     }
 
-    var length = array.length;
-    if(length <= 1){
-      return result;
+    quickSort(0, array.length-1);
+
+    return array;
+  }
+
+  this.sortDesc = function(contentsElements){
+
+    array = contentsElements.slice(0);
+    if(!isArraySortable(array)){
+      return array;
     }
 
-    quickSort(0, length-1);
+    quickSortDesc(0, array.length-1);
 
     return array;
   }
@@ -50,23 +60,6 @@ function ContentsItemQuickSort(){
     if(low < higherIndex){
       quickSort(low, higherIndex);
     }
-  }
-
-  this.sortDesc = function(contentsElements){
-
-    array = contentsElements.slice(0);
-    if(array === null){
-      return array;
-    }
-
-    var length = array.length;
-    if(length <= 1){
-      return result;
-    }
-
-    quickSortDesc(0, length-1);
-
-    return array;
   }
 
   function quickSortDesc(lowerIndex, higherIndex){
@@ -101,6 +94,9 @@ function ContentsItemQuickSort(){
     var temp = array[indexOne];
     array[indexOne] = array[indexTwo];
     array[indexTwo] = temp;
+  }
 
+  function isArraySortable(array){
+    return array !== null || array.length > 1;
   }
 }
