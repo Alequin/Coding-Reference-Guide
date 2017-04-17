@@ -13,7 +13,7 @@ function getContentsItemsMatchingSearchTerm(contentsElements, searchTerm){
 
 function getArrayOfMatchesCompareStart(contentsElements, searchTerm){
 
-  contentsElements = new ContentsItemQuickSort().sort(contentsElements);
+  contentsElements = new ContentsItemQuickSort().sortAsc(contentsElements);
 
   var index = findFirstMatchingIndex(contentsElements, searchTerm);
 
