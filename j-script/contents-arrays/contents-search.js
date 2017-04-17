@@ -22,11 +22,9 @@ function getArrayOfMatchesCompareStart(contentsElements, searchTerm){
   }
 
   var matchingElements = new Array();
-  var nextElement = contentsElements[index++];
-  do{
-    matchingElements.push(nextElement);
-    nextElement = contentsElements[index++];
-  }while(nextElement.title.toLowerCase().search(searchTerm) === 0);
+  while(index < contentsElements.length && contentsElements[index].title.toLowerCase().search(searchTerm) === 0){
+    matchingElements.push(contentsElements[index++]);
+  };
 
   return matchingElements;
 }
@@ -94,8 +92,9 @@ function getArrayOfMatchesCompareMiddle(contentsElements, searchTerm){
 
   var regExrSearch = new RegExp(".+"+searchTerm);
   var index = 0;
-  while(index < contentsElements.length-1){
+  while(index < contentsElements.length){
     var currentElement = contentsElements[index++];
+    console.log(searchTerm+" | "+currentElement.title);
     if(currentElement.title.toLowerCase().search(regExrSearch) === 0){
       results.push(currentElement);
     }
