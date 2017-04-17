@@ -26,7 +26,6 @@ function ContentsItemQuickSort(){
     if(!isArraySortable(array)){
       return array;
     }
-
     return sort(DESCENDING);
   }
 
@@ -34,11 +33,18 @@ function ContentsItemQuickSort(){
     if(!isOrderFlagValid(order)){
       throw "order parameter is not valid, must be ASCENDING or DESCENDING";
     }
+
+    if(array.length === 2){
+      return sortArrayAtLengthTwo(order);
+    }
+
     quickSort(0, array.length-1, order);
     return array;
   }
 
   function quickSort(lowerIndex, higherIndex, order){
+
+    console.log(order);
 
     if(!isOrderFlagValid(order)){
       throw "order parameter is not valid, must be ASCENDING or DESCENDING";
@@ -77,6 +83,19 @@ function ContentsItemQuickSort(){
     if(low < higherIndex){
       quickSort(low, higherIndex, order);
     }
+  }
+
+  function sortArrayAtLengthTwo(order){
+    if(order == ASCENDING){
+      if(array[0].title > array[1].title){
+        swapIndeces(0,1);
+      }
+    }else{
+      if(array[0].title < array[1].title){
+        swapIndeces(0,1);
+      }
+    }
+    return array;
   }
 
   function swapIndeces(indexOne, indexTwo){

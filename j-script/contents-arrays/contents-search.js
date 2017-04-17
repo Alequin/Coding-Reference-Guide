@@ -94,7 +94,6 @@ function getArrayOfMatchesCompareMiddle(contentsElements, searchTerm){
   var index = 0;
   while(index < contentsElements.length){
     var currentElement = contentsElements[index++];
-    console.log(searchTerm+" | "+currentElement.title);
     if(currentElement.title.toLowerCase().search(regExrSearch) === 0){
       results.push(currentElement);
     }
