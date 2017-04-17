@@ -6,11 +6,15 @@ $(document).ready(function(){
 
   var contentsOrder = new OrderHolder();
 
+  var retriveAndInsertContents = function (){
+    var contentsToAdd = getContentsItems(getSearchTerm(), contentsOrder.getOrder());
+    insertContentsItems(contentsToAdd);
+  }
+
   $("#main-header").after(headerMenu);
   positionElementsRelativeToHeader(BASIC_LAYOUT_HEADER_HEIGHT);
 
-  var contentsToAdd = getContentsItems(getSearchTerm(), contentsOrder.getOrder());
-  insertContentsItems(contentsToAdd);
+  retriveAndInsertContents();
 
   $("#contents-title").click(function(){
     toggleContentsVisibility();
@@ -28,9 +32,14 @@ $(document).ready(function(){
   });
 
   $('#search-button').click(function(){
-    removeContentsItems();
-    var contentsToAdd = getContentsItems(getSearchTerm(), contentsOrder.getOrder());
-    insertContentsItems(contentsToAdd);
+    clearContentsItemsFromPage();
+    retriveAndInsertContents();
+  });
+
+  $('#order-button').click(function(){
+    clearContentsItemsFromPage();
+    contentsOrder.toggleContentsOrder();
+    retriveAndInsertContents();
   });
 
 });

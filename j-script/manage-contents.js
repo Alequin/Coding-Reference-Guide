@@ -16,23 +16,25 @@ function OrderHolder(){
   this.toggleContentsOrder = function(){
       switch (currentOrder) {
         case NO_ORDER:
-          setContentsOrder(ALPHA_ORDER);
+          this.setContentsOrder(ALPHA_ORDER);
           break;
         case ALPHA_ORDER:
-          setContentsOrder(REVERSE_ALPHA_ORDER);
+          this.setContentsOrder(REVERSE_ALPHA_ORDER);
           break;
         case REVERSE_ALPHA_ORDER:
-          setContentsOrder(NO_ORDER);
+          this.setContentsOrder(NO_ORDER);
           break;
       }
   }
 
   this.setContentsOrder = function(order){
 
-    if(order !== NO_ORDER && order !== ALPHA_ORDER && order !== REVERSE_ALPHA_ORDER){
+    if(order === NO_ORDER || order === ALPHA_ORDER || order === REVERSE_ALPHA_ORDER){
+      currentOrder = order;
+    }else{
       throw order+" is not a valid value. Must be 'NO_ORDER', 'ALPHA_ORDER' or 'REVERSE_ALPHA_ORDER'";
     }
-    currentOrder = order;
+
   }
 }
 
@@ -105,7 +107,7 @@ function orderContentsItems(contentsItems, order){
     case NO_ORDER:
       return contentsItems;
     case ALPHA_ORDER:
-      return new ContentsItemQuickSort().sort(contentsItems);
+      return (new ContentsItemQuickSort()).sort(contentsItems);
     case REVERSE_ALPHA_ORDER:
       //reverse sorted array
     default:
@@ -113,7 +115,7 @@ function orderContentsItems(contentsItems, order){
   }
 }
 
-function removeContentsItems(){
+function clearContentsItemsFromPage(){
   var contentsContainer = document.getElementById('contents-container');
   var contentsTable = document.getElementById('contents-table');
   contentsContainer.removeChild(contentsTable);

@@ -5,13 +5,13 @@ function getContentsItemsMatchingSearchTerm(contentsElements, searchTerm){
 
   var searchResults = new Array();
 
-  searchResults = searchResults.concat(getArrayOfMatchesFromStart(contentsElements, searchTerm));
-  searchResults = searchResults.concat(getArrayOfMatchesFromMiddle(contentsElements, searchTerm));
+  searchResults = searchResults.concat(getArrayOfMatchesCompareStart(contentsElements, searchTerm));
+  searchResults = searchResults.concat(getArrayOfMatchesCompareMiddle(contentsElements, searchTerm));
 
   return searchResults;
 }
 
-function getArrayOfMatchesFromStart(contentsElements, searchTerm){
+function getArrayOfMatchesCompareStart(contentsElements, searchTerm){
 
   contentsElements = new ContentsItemQuickSort().sort(contentsElements);
 
@@ -88,11 +88,11 @@ function findIndexWithMatchAtStart(contentsElements, searchTerm){
   return -1;
 }
 
-function getArrayOfMatchesFromMiddle(contentsElements, searchTerm){
+function getArrayOfMatchesCompareMiddle(contentsElements, searchTerm){
 
   var results = new Array();
 
-  var regExrSearch = new RegExp(".*"+searchTerm);
+  var regExrSearch = new RegExp(".+"+searchTerm);
   var index = 0;
   while(index < contentsElements.length-1){
     var currentElement = contentsElements[index++];
