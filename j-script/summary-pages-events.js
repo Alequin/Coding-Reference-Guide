@@ -14,6 +14,8 @@ function setOrderButtonText(order){
   }
 }
 
+var currentSearchTerm = null;
+
 $(document).ready(function(){
 
   BASIC_LAYOUT_HEADER_HEIGHT = 120;
@@ -22,7 +24,7 @@ $(document).ready(function(){
   var contentsOrder = new OrderHolder();
 
   var retriveAndInsertContents = function (){
-    var contentsToAdd = getContentsItems(getSearchTerm(), contentsOrder.getOrder());
+    var contentsToAdd = getContentsItems(currentSearchTerm, contentsOrder.getOrder());
     insertContentsItems(contentsToAdd);
   }
 
@@ -48,6 +50,7 @@ $(document).ready(function(){
   });
 
   $('#search-button').click(function(){
+    currentSearchTerm = getSearchTerm();
     clearContentsItemsFromPage();
     retriveAndInsertContents();
   });
