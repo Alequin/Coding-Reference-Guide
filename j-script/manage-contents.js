@@ -107,7 +107,7 @@ function orderContentsItems(contentsItems, order){
     case NO_ORDER:
       return contentsItems;
     case ALPHA_ORDER:
-      return (new ContentsItemQuickSort()).sort(contentsItems);
+      return (new ContentsItemQuickSort()).sortAsc(contentsItems);
     case REVERSE_ALPHA_ORDER:
       return (new ContentsItemQuickSort()).sortDesc(contentsItems);
     default:
