@@ -20,7 +20,7 @@ CONTENTS = [
   new ContentsItem('Arrays', 'arrays'),
   new ContentsItem('RegExr in Ruby', 'regexr-in-ruby'),
   new ContentsItem('Substitutions in Strings', 'substitutions-in-strings'),
-  new ContentsItem('interpolation', 'Interpolation'),
+  new ContentsItem('Interpolation', 'interpolation'),
   new ContentsItem('String Numerical Values', 'string-numerical-values'),
   new ContentsItem('Multi-line-Strings', 'multi-line-strings'),
   new ContentsItem('Constants / final variables', 'constants'),

@@ -38,10 +38,6 @@ $(document).ready(function(){
     toggleContentsVisibility();
   });
 
-  $("#contents-container a").click(function(){
-    toggleContentsVisibility();
-  });
-
   $('#layout-switcher').click(function(){
     toggleCSS();
     headerHeight = isBasicLayoutVisible ?

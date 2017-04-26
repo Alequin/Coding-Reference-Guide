@@ -38,7 +38,7 @@ function OrderHolder(){
   }
 }
 
-var TABLE_ROW = [
+const TABLE_ROW = [
     '<tr>',
       '<td>',
         '%s',
@@ -79,7 +79,7 @@ function buildContentsTableString(contentsElements){
 
 function getContentsCellText(contentsElements, index){
   if(index < contentsElements.length){
-    return '<a href="#'+contentsElements[index].link+'">'+contentsElements[index].title+'</a>';
+    return '<a href="#'+contentsElements[index].link+'" onClick="toggleContentsVisibility()">'+contentsElements[index].title+'</a>';
   }else{
     return '';
   }
