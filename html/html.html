@@ -3,7 +3,7 @@
 
 <head>
   <title>HTML Summary</title>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <link href="../css/basic-layout.css" type="text/css" rel="stylesheet"/>
   <link href="../css/summary-page-layout.css" type="text/css" rel="stylesheet"/>
   <link id="summary-page-layout" href="../css/normal-text-summary-page.css" type="text/css" rel="stylesheet"/>
@@ -220,7 +220,7 @@
             &#60;html lang="en"&#62;<br>
             &#160;&#160;&#60;head&#62;<br>
             &#160;&#160;&#160;&#160;&#60;title&#62;Page title&#60;/title&#62;<br>
-            &#160;&#160;&#160;&#160;&#60;meta charset="utf-8"&#62;<br>
+            &#160;&#160;&#160;&#160;&#60;meta charset="utf-8"/&#62;<br>
             &#160;&#160;&#60;/head&#62;<br>
             &#160;&#160;&#60;body&#62;<br>
             &#160;&#160;&#60;/body&#62;<br>
@@ -241,9 +241,44 @@
           by browsers to emulate the functionality of old browsers</a>.
           <br><br>
           <strong>&#60;html lang="en"&#62;&#60;/html&#62;</strong>: The HMTL tag
-          is used to inform the browser that all code found between these tags
-          should be intepreted as HTML.
+          is the root element (top level) in a HTML document and is used to
+          inform the browser that all code found between these tags should be
+          interpreted as HTML. The lang attribute is not required but is
+          recommended as all other tags will inherit this
+          <a href="#language">(view section on lang)</a>
+          <br><br>
+          <strong>&#60;head&#62;&#60;/head&#62;</strong>: This tag is used to
+          provide information about the web page and instructions for the
+          webpage.
+          <br><br>
+          <strong>&#60;body&#62;&#60;/body&#62;</strong>: This is when the
+          content of a web page is located. There can only be one body tag.
+          <br><br>
+          <strong>&#60;title&#62;&#60;/title&#62;</strong>: This is the title
+          of the page.
+          <br><br>
+          <strong>&#60;meta charset="utf-8"&#62;</strong>: The meta tag defines
+          the character encoding of the web page. The attribute must contain a
+          <a href="https://www.iana.org/assignments/character-sets/character-sets.xhtml">
+            standard IANA MIME name for character encodings.
+          </a> The most recommended one is UTF8.
         </p>
+        <ul>
+          <li>
+            Authors should not use ASCII-incompatible encodings to avoid security
+            risk: browsers not supporting them may interpret harmless content as
+            HTML. This happens with at least JIS_C6226-1983, JIS_X0212-1990,
+            HZ-GB-2312, JOHAB, the ISO-2022 family, and the EBCDIC family.
+            (ASCII-incompatible encodings are those that don't map the 8-bit code
+            points 0x20 to 0x7E to the 0x0020 to 0x007E Unicode code points)
+          </li>
+          <li>
+            Authors must not use CESU-8, UTF-7, BOCU-1 and SCSU, because cross-site scripting attacks with these encodings have been demonstrated.
+          </li>
+          <li>
+            Authors should not use UTF-32 because not all HTML5 encoding algorithms can distinguish it from UTF-16.
+          </li>
+        </ul>
         <p>
           (Sources:<br>
           <a href="https://www.codecademy.com/courses/learn-html-css/lessons/structure/exercises/what-is-html?action=lesson_resume">
@@ -255,8 +290,14 @@
           <a href="http://www.cs.tut.fi/~jkorpela/quirks-mode.html">
             Tampere University of Technology: What happens in Quirks Mode?
           </a><br>
-          <a href="www.cs.tut.fi/~jkorpela/quirks-mode.html">
+          <a href="https://en.wikipedia.org/wiki/Quirks_mode">
             Wikipedia: Quirks mode
+          </a><br>
+          <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/html">
+            Mozilla Development Network: &#60;html&#62;
+          </a><br>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">
+            Mozilla Development Network: &#60;meta&#62;
           </a><br>
         </p>
       </div>
