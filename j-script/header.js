@@ -1,5 +1,5 @@
 headerMenu = [
-  '<table>',
+  '<table id="header-menu">',
     '<tr>',
       '<td>',
         '<a href="../index.html"><p>Home</p></a>',

@@ -89,15 +89,11 @@
   padding-right: 10px;s
 }
 
-a, a:visited{
+#contents-table a, #header-menu a{
   text-decoration: none;
-  text-decoration: underline;
   color: black;
 }
 
-#contents-table a{
-  text-decoration: none;
-}
 #contents-table a:hover{
   color: blue;
 }
