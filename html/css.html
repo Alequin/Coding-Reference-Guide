@@ -50,6 +50,148 @@
 
     <div class="section">
 
+      <div id="images-to-elements" class="title-anchor"></div>
+      <h2 class="section-header">Add Images to Elements</h2>
+      <style>
+      .css-background-image{
+        height: 100px;
+        background-image: url(../images/puppy.jpg);
+      }
+      </style>
+      <div class="section-content section-text-normal">
+        <p>
+          Images can be added to elements using the property "background-image"
+          and providing a link to an image in the form "url(image-link.jpg)"
+          <br><br>
+          <strong>
+            #image{<br>
+            &#160;&#160;background-image: url(../images/puppy.jpg);<br>
+            }
+          </strong>
+        </p>
+        <div id="image001" class="css-background-image"></div>
+        <p>
+          The image has been added to the element (which is a div) however it
+          is too large for the element to contain it. The property
+          "background-size" is used to control the image size. It can be given
+          multiple values.
+        </p>
+        <p>
+          The reptition of images can be controlled using the property
+          "background-repeat". This accepts a few values such as "no-repeat",
+          "repeat", "repeat-x", "repeat-y", "initial" (this set the default
+          setting) and "inherit" (this takes the setting from the parent).
+          <br><br>
+          <strong>
+            #image{<br>
+            &#160;&#160;background-image: url(../images/puppy.jpg);<br>
+            &#160;&#160;background-repeat: no-repeat;<br>
+            }
+          </strong>
+        </p>
+        <style>
+        #image001-1{
+          background-repeat: no-repeat;
+        }
+        </style>
+        <div id="image001-1" class="css-background-image"></div>
+        <p>
+          Here the value no repeat has been used.
+        </p>
+        <p>
+          <strong>
+            #image{<br>
+            &#160;&#160;background-image: url(../images/puppy.jpg);<br>
+            &#160;&#160;background-repeat: no-repeat;<br>
+            &#160;&#160;background-size: 150px;<br>
+            }
+          </strong>
+        </p>
+        <style>
+        #image002{
+          background-size: 150px;
+          background-repeat: no-repeat;
+        }
+        </style>
+        <div id="image002" class="css-background-image"></div>
+        <p>
+          Here the size has been given one value, which controls the width.
+          The hight will be selected automatically.
+        </p>
+        <p>
+          <strong>
+            #image{<br>
+            &#160;&#160;background-image: url(../images/puppy.jpg);<br>
+            &#160;&#160;background-repeat: no-repeat;<br>
+            &#160;&#160;background-size: 150px 100px;<br>
+            }
+          </strong>
+        </p>
+        <style>
+        #image003{
+          background-size: 150px 100px;
+          background-repeat: no-repeat;
+        }
+        </style>
+        <div id="image003" class="css-background-image"></div>
+        <p>
+          Here two values have been given. Width is still set to 100px but now
+          height is manually set to 50px.
+        </p>
+        <p>
+          <strong>
+            #image{<br>
+            &#160;&#160;background-image: url(../images/puppy.jpg);<br>
+            &#160;&#160;background-repeat: no-repeat;<br>
+            &#160;&#160;background-size: contain;<br>
+            }
+          </strong>
+        </p>
+        <style>
+        #image004{
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        </style>
+        <div id="image004" class="css-background-image" ></div>
+        <p>
+          In this example the word contain is provided, which causes the image
+          to always fit within the element even if there is extra space.
+        </p>
+        <p>
+          <strong>
+            #image{<br>
+            &#160;&#160;background-image: url(../images/puppy.jpg);<br>
+            &#160;&#160;background-repeat: no-repeat;<br>
+            &#160;&#160;background-size: cover;<br>
+            }
+          </strong>
+        </p>
+        <style>
+        #image005{
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+        </style>
+        <div id="image005" class="css-background-image"></div>
+        <p>
+          In this example the word cover is provided, which causes the image
+          to always cover all the space of the element even when it does not fit.
+        </p>
+        <p>
+          (Sources:<br>
+          <a href="">
+          </a>)
+        </p>
+        <p><em>Updated: 28/04/2017</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="language-in-css" class="title-anchor"></div>
       <h2 class="section-header">Language in css</h2>
 
@@ -137,6 +279,7 @@
             w3.org: Styling using language attributes
           </a>)
         </p>
+        <p><em>Updated: before 28/04/2017</em></p>
       </div>
 
     </div>
