@@ -48,6 +48,60 @@
     <div class="divider"></div>
 
     <div class="section">
+      <div id="ip-address" class="title-anchor"></div>
+      <h2 class="section-header">IP address</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          All machines (wether they are nodes or end points) have an <strong>IP address</strong>. This unique value identifies each machine on the network. While most machines use a version of <strong>IP</strong> known as <strong>IPV4</strong> the number of addresses using this system are running out. <strong>IPV4</strong> uses four 32-bit decimal integers ranging from 0 – 255. This can produce 2<sup>32</sup> possible addresses. <strong>IPV6</strong> is the most recent version which uses eight 128-bit hexadecimal integers ranging from 0 - FFFF (0 - 65535), which allows for 2<sup>128</sup> possible addresses, and while adoption of this system is being encouraged there are compatibility issues between the two. As most of the internet is based on <strong>IVP4</strong> many are employing techniques to prolong the life of <strong>IVP4</strong> rather than switching to <strong>IVP6</strong>. 
+        </p>
+
+        <p>
+          <strong>IVP4 addresses</strong>: 2<sup>32</sup> = 4,294,967,296<br>
+          <strong>IVP6 addresses</strong>: 2<sup>128</sup> = 340,282,366,920,938,463,463,374,607,431,768,211,456 <br>
+        </p>
+
+        <p>
+        <em>Note: While the large numbers above do represent the number of possible addresses using both systems this does not represent the true number of useable addresses as many are reserved. For example a valid <strong>IVP6</strong> address must start with a number containing four digits and beginning with a 2 or 3.</em>
+        </p>
+
+        <dl>
+          <dt><strong>IVP4</strong></dd>
+          <dd><strong>69.89.31.226</strong></dd>
+          <dd>
+            A single number in the address is known as an <strong>octet</strong> and each one is separated by a dot. The numbers are presented to humans in decimal format but the computer converts them into 8-bit binary numbers.
+          </dd>
+        </dl>
+
+        <dl>
+          <dt><strong>IVP6</strong></dd>
+          <dd><strong>2002:4559:1FE2:0:0:0:4559:1FE2</strong></dd>
+          <dd>
+            A single number in the address is known as an <strong>hexlet</strong> and each one is separated by a colon. The numbers are presented to humans in hexadecimal format but the computer converts them into 16-bit binary numbers. 
+            <br><br>
+            The Three zero's in this address can be removed to save character. They are replaced with two colon's to produce 2002:4559:1FE2::4559:1FE2. 
+          </dd>
+        </dl>
+
+        <p>
+          (Sources:<br>
+          <a href="https://rednectar.net/2012/05/24/just-how-many-ipv6-addresses-are-there-really/">
+            RedNectar: Just how many IPv6 addresses are there?
+          </a><br>
+          <a href="http://www.thegeekstuff.com/2012/01/ip-address-fundamentals/">
+            The Geek Stuff: What is an IP Address? IPv4 and IPv6 Address Examples
+          </a><br>
+          <a href="http://www.networkworld.com/article/2985340/ipv6/arin-finally-runs-out-of-ipv4-addresses.html">
+            Network World: ARIN Finally Runs Out of IPv4 Addresses
+          </a>)
+        </p>
+        <p><em>Updated: 03/05/2017</em></p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
 
       <div id="internet-basics" class="title-anchor"></div>
       <h2 class="section-header">Basics of The Internet</h2>
@@ -63,27 +117,27 @@
         </p>
 
         <p>
-          To ensure the correct machines are communicating with one another protocols are used to define how machines connect and transfer data. The two most important protocols are <b>TCP (transmission control protocol)</b> and I<b>P (internet protocol)</b>. They are commonly seen grouped and referred to as <b>TCP/IP</b> . Without these protocol two computers would not be able to transfer data without a direct connection and a common language shared between both computers. <b>IP addresses</b> are provided by <b>DHCP’s (dynamic host configuration protocol)</b>, which dynamically assign addresses and ensures your computer is correctly configured to work on the network. 
+          To ensure the correct machines are communicating with one another protocols are used to define how machines connect and transfer data. The two most important protocols are <strong>TCP (transmission control protocol)</strong> and I<strong>P (internet protocol)</strong>. They are commonly seen grouped and referred to as <strong>TCP/IP</strong> . Without these protocol two computers would not be able to transfer data without a direct connection and a common language shared between both computers. <strong>IP addresses</strong> are provided by <strong>DHCP’s (dynamic host configuration protocol)</strong>, which dynamically assign addresses and ensures your computer is correctly configured to work on the network. 
         </p>
 
         <p>
-          When clients make requests the <b>TCP/IP</b> protocols are used. The request is sent to your <b>ISP (internet service provider)</b>, which routes the request to other servers and eventually to a <b>DNS (domain name server)</b>. The role of the <b>DNS</b> is to use the given domain name to find the <b>IP address</b> of the target server (this is known as name resolution). If a matching <b>IP address</b> is found the connection is directed to the target server, otherwise the request is sent to another <b>DNS</b> until a match is found.
+          When clients make requests the <strong>TCP/IP</strong> protocols are used. The request is sent to your <strong>ISP (internet service provider)</strong>, which routes the request to other servers and eventually to a <strong>DNS (domain name server)</strong>. The role of the <strong>DNS</strong> is to use the given domain name to find the <strong>IP address</strong> of the target server (this is known as name resolution). If a matching <strong>IP address</strong> is found the connection is directed to the target server, otherwise the request is sent to another <strong>DNS</strong> until a match is found.
         </p> 
 
         <p>
-          <em>Note: The <b>DNS</b> can be bypassed if a valid <b>IP address</b> is provided instead of a domain name.</em>
+          <em>Note: The <strong>DNS</strong> can be bypassed if a valid <strong>IP address</strong> is provided instead of a domain name.</em>
         </p>
 
         <p>
-          When the server receives a request it responds by sending <b>packets</b> of data commonly ranging in size from 1kb – 1.5kbs though they can be 9kb (size depends on the hardware used and the IP version in use). These <b>packets</b> contain the information that is to be returned to the client. Multiple <b>packets</b> relating to the same response may take different paths in order to avoid congested routes and increase the overall transmission speed.
+          When the server receives a request it responds by sending <strong>packets</strong> of data commonly ranging in size from 1kb – 1.5kbs though they can be 9kb (size depends on the hardware used and the IP version in use). These <strong>packets</strong> contain the information that is to be returned to the client. Multiple <strong>packets</strong> relating to the same response may take different paths in order to avoid congested routes and increase the overall transmission speed.
         </p>
 
         <p>
-          <b>packets</b> use headers and footers to describe their contents and how the data they hold fits with the data from other <b>packets</b>. They will take the path of least resistance back to the client in order to avoid congested routes. Multiple <b>packets</b> relating to the same response may take different paths.
+          <strong>packets</strong> use headers and footers to describe their contents and how the data they hold fits with the data from other <strong>packets</strong>. They will take the path of least resistance back to the client in order to avoid congested routes. Multiple <strong>packets</strong> relating to the same response may take different paths.
         </p>  
 
         <p>
-          When the client has received the <b>packets</b> the instructions in the header/footer and the protocols are used to assemble them into a complete document.
+          When the client has received the <strong>packets</strong> the instructions in the header/footer and the protocols are used to assemble them into a complete document.
         </p>
 
         <p>
