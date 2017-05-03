@@ -124,6 +124,102 @@
 
     <div class="section">
 
+      <div id="status" class="title-anchor"></div>
+      <h2 class="section-header">Common Commands: status</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+        <strong>git status</strong>
+        </p>
+
+        <p>
+          This command displays files that have been altered or removed since the last commit. The first set of files are those that are staged and will be to be added or updated on the next commit. 
+        </p>
+
+        <p>
+          When called the terminal will display the name of the current working branch, the number of commits the local repository is ahead of the remote repository (if a remote repository is connected), the staged changes that will be added on the next commit, unstaged changes and finally any untracked files. 
+        </p>
+
+        <p>
+          Options that may be used with the command status include...
+        </p>
+
+        <dl>
+
+          <dt><strong>git status -s</strong></dt>
+          <dt><strong>git status --short</strong></dt>
+          <dd>This produces a quick summary of the state of all the files in the directory. The state of each file is identified using single character: M = modified, A = added, D = deleted, R = renamed, C = copied, U = updated but unmerged, ? = untracked.</dd>
+          <br>
+          <dt><strong>git status -s -b</strong></dt>
+          <dt><strong>git status -s --branch</strong></dt>
+          <dd>This provides a summary of the current branch along with the summarised file states.</dd>
+          <br>
+          <dt><strong>git status -v</strong></dt>
+          <dt><strong>git status --verbose</strong></dt>
+          <dd>Along with the normal output of the command it produces the results of the command git diff (presents details of the changes made within each file)</dd>
+
+        </dl>
+
+        <p>
+          Additional options may be used with the command status. These can be viewed on the <a href="https://git-scm.com/docs/git-status">git-status documentation</a>.
+        </p>
+
+        <p>
+          (Sources:<br>
+          <a href="https://git-scm.com/docs/git-status">
+            Git: git-status
+          </a><br>
+          <a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository">
+            Git: Git Basics - Recording Changes to the Repository
+          </a>)
+        </p>
+        <p><em>Updated: 03/05/2017</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="init" class="title-anchor"></div>
+      <h2 class="section-header">Common Commands: init</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+        <strong>git init</strong>
+        </p>
+
+        <p>
+          This command is used to create a new repository in the current working directory. A subdirectory named .git will be created in the directory, which is the basics required for a repository. No files contained in the directory will be tracked by git until they are added and committed.
+        </p>
+
+        <p>
+          This command may also be used to reinitialise a current repository.
+        </p>
+
+        <p>
+          Additional options may be used with the command init. These can be viewed on the <a href="https://www.git-scm.com/docs/git-init/1.7.0">git-init Manual Page</a>.
+        </p>
+
+        <p>
+          (Sources:<br>
+          <a href="https://www.git-scm.com/docs/git-init/1.7.0">
+            Git: git-init(1) Manual Page
+          </a><br>
+          <a href="https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository">
+            Git: Git Basics - Getting a Git Repository
+          </a>)
+        </p>
+        <p><em>Updated: 03/05/2017</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="git-summary" class="title-anchor"></div>
       <h2 class="section-header">What Is Git</h2>
 
