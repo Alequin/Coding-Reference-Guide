@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Workings of The Internet Summary</title>
+  <meta charset="utf-8">
+  <link href="../css/basic-layout.css" type="text/css" rel="stylesheet"/>
+  <link href="../css/summary-page-layout.css" type="text/css" rel="stylesheet"/>
+  <link id="summary-page-layout" href="../css/normal-text-summary-page.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+
+  <div id="header-container">
+
+        <h1 id="main-header">Workings of The Internet</h1>
+
+        <div id="contents-container">
+          <div class="header-divider divider"></div>
+          <table id="search-and-sort-table">
+            <tr>
+              <td>
+                <form name="search-form">
+                  <input id="contents-search-box" class="section-text-normal" type="text" name="search-term"/>
+                </form>
+              </td>
+              <td>
+                <p id="search-button" class="section-text-normal">
+                  <span class="vertical-align-text">Search</span>
+                </p>
+              </td>
+              <td>
+                <p id="order-button" class="section-text-normal">
+                  <span class="vertical-align-text"></span>
+                </p>
+              </td>
+            </tr>
+          </table>
+
+        </div>
+        <div class="header-divider divider"></div>
+  </div>
+
+  <div id="header-space"></div>
+
+  <div id="primary-container">
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="internet-basics" class="title-anchor"></div>
+      <h2 class="section-header">Basics of The Internet</h2>
+
+      <div class="section-content section-text-normal">
+
+        <p>
+          The internet is supported by a number of different types of hardware such as routers, servers, cell phone towers, satellites, radios, and other devices.
+        </p>
+
+        <p>
+          These elements are connections. Some are end points such as the clients machine, where requests are made, and others may be servers, which respond to client requests and return data. The other elements are nodes which direct connections between the endpoints. All these elements are connected by transmission lines such as cables or wireless signals from satellites, towers or radios.
+        </p>
+
+        <p>
+          To ensure the correct machines are communicating with one another protocols are used to define how machines connect and transfer data. The two most important protocols are <b>TCP (transmission control protocol)</b> and I<b>P (internet protocol)</b>. They are commonly seen grouped and referred to as <b>TCP/IP</b> . Without these protocol two computers would not be able to transfer data without a direct connection and a common language shared between both computers. <b>IP addresses</b> are provided by <b>DHCP’s (dynamic host configuration protocol)</b>, which dynamically assign addresses and ensures your computer is correctly configured to work on the network. 
+        </p>
+
+        <p>
+          When clients make requests the <b>TCP/IP</b> protocols are used. The request is sent to your <b>ISP (internet service provider)</b>, which routes the request to other servers and eventually to a <b>DNS (domain name server)</b>. The role of the <b>DNS</b> is to use the given domain name to find the <b>IP address</b> of the target server (this is known as name resolution). If a matching <b>IP address</b> is found the connection is directed to the target server, otherwise the request is sent to another <b>DNS</b> until a match is found.
+        </p> 
+
+        <p>
+          <em>Note: The <b>DNS</b> can be bypassed if a valid <b>IP address</b> is provided instead of a domain name.</em>
+        </p>
+
+        <p>
+          When the server receives a request it responds by sending <b>packets</b> of data commonly ranging in size from 1kb – 1.5kbs though they can be 9kb (size depends on the hardware used and the IP version in use). These <b>packets</b> contain the information that is to be returned to the client. Multiple <b>packets</b> relating to the same response may take different paths in order to avoid congested routes and increase the overall transmission speed.
+        </p>
+
+        <p>
+          <b>packets</b> use headers and footers to describe their contents and how the data they hold fits with the data from other <b>packets</b>. They will take the path of least resistance back to the client in order to avoid congested routes. Multiple <b>packets</b> relating to the same response may take different paths.
+        </p>  
+
+        <p>
+          When the client has received the <b>packets</b> the instructions in the header/footer and the protocols are used to assemble them into a complete document.
+        </p>
+
+        <p>
+          (Sources:<br>
+          <a href="http://computer.howstuffworks.com/internet/basics/internet.htm">
+          How Stuff Works: How does the Internet work?
+          </a><br>
+          <a href="http://computer.howstuffworks.com/dns.htm">
+          How Stuff Works: How Domain Name Servers Work
+          </a><br>
+          <a href="http://www.bgpexpert.com/article.php?article=151">
+          BGP expert: Maximum packet sizes on the internet
+          </a>)
+        </p>
+        <p><em>Updated: 03/05/2017</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" rel="javascript"></script>
+  <script src="../j-script/contents-arrays/contents-item.js" rel="javascript"></script>
+  <script src="../j-script/contents-arrays/internet-workings-contents.js" rel="javascript"></script>
+  <script src="../j-script/manage-contents.js" rel="javascript"></script>
+  <script src="../j-script/contents-arrays/contents-search.js" rel="javascript"></script>
+  <script src="../j-script/header.js" rel="javascript"></script>
+  <script src="../j-script/summary-layout-switcher.js" rel="javascript"></script>
+  <script src="../j-script/summary-pages-events.js" rel="javascript"></script>
+
+</body>
+
+</html>
