@@ -107,8 +107,28 @@
 
     <div class="section">
 
+      <div id="branches" class="title-anchor"></div>
+      <h2 class="section-header">Branches</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+        </p>
+        <p>
+          (Sources:<br>
+          <a href="">
+          </a>)
+        </p>
+        <p><em>Updated:</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="checkout" class="title-anchor"></div>
-      <h2 class="section-header">Commom Commands: checkout</h2>
+      <h2 class="section-header">Common Commands: checkout</h2>
 
       <div class="section-content section-text-normal">
         <p>
@@ -128,7 +148,7 @@
     <div class="section">
 
       <div id="show" class="title-anchor"></div>
-      <h2 class="section-header">Commom Commands: show</h2>
+      <h2 class="section-header">Common Commands: show</h2>
 
       <div class="section-content section-text-normal">
         <p>
@@ -172,13 +192,61 @@
 
       <div class="section-content section-text-normal">
         <p>
+          The commit command is used to recored changes to the repository.
         </p>
+
+        <dl>
+
+          <dt><strong>git commit</strong></dt>
+          <dd>
+            Calling the base command 'git commit' will store all saved changes
+            to the repository. The user is presented with a file so that a
+            message describing the commit can be written.
+          </dd>
+
+          <dt><strong>git commit -m 'commit description'</strong></dt>
+          <dt><strong>git commit --message 'commit description'</strong></dt>
+          <dd>
+            This will commit all changes to the repository but rather than
+            providing a file the commit description message it allows it to be
+            entered into the terminal directly.
+          </dd>
+
+          <dt><strong>git commit -a</strong></dt>
+          <dt><strong>git commit --all</strong></dt>
+          <dd>
+            The all options allows you to commit modifications to files without
+            staging them first (this is done for you). It will not commit
+            untracked files however.
+          </dd>
+
+          <dt><strong>git commit -p</strong></dt>
+          <dt><strong>git commit --patch</strong></dt>
+          <dd>
+            Works in a similar way to git commit --all but allows you to select
+            the specific changes in each file to commit.
+          </dd>
+
+          <dt><strong>git commit --amend</strong></dt>
+          <dd>
+            The option amend allows you to override the previous commit rather
+            than creating a new one.
+          </dd>
+
+        </dl>
+
+        <p>
+          Additional options:
+          <a href="https://git-scm.com/docs/git-commit">git-commit documentation</a>.
+        </p>
+
         <p>
           (Sources:<br>
-          <a href="">
+          <a href="https://git-scm.com/docs/git-commit">
+            Git: git-commit
           </a>)
         </p>
-        <p><em>Updated:</em></p>
+        <p><em>Updated:04/05/2017</em></p>
       </div>
 
     </div>
@@ -192,13 +260,59 @@
 
       <div class="section-content section-text-normal">
         <p>
+          This command is used to unstage changes in the repository and, if
+          certain options are used, will also revert changes to files.
         </p>
+
+        <dl>
+
+          <dt><strong>git reset</strong></dt>
+          <dt><strong>git reset file.txt</strong></dt>
+          <dt><strong>git reset file.txt file1.txt</strong></dt>
+          <dd>
+            The basic command will unstage all changes that are set to be
+            included in the next commit. Specific files can be named to be reset.
+          </dd>
+          <br>
+          <dt><strong>git reset --soft HEAD^</strong></dt>
+          <dt><strong>git reset --soft HEAD~2</strong></dt>
+          <dt><strong>git reset --soft HEAD &#60;first seven digits of SHA&#62;</strong></dt>
+          <dd>
+            If the option soft is used with reset committed changes will be
+            removed from the repository. If the symbol ^ is used changed on the
+            previous commit will be undone. If the symbol ~X is used all changes
+            from the previous X number of commits will be undone. This will not
+            alter you files and will only remove commits. The first seven digits
+            of a commits SHA may also be provided in order to target a specific
+            commit.
+          </dd>
+          <br>
+          <dt><strong>git reset --hard HEAD^</strong></dt>
+          <dt><strong>git reset --hard HEAD~2</strong></dt>
+          <dt><strong>git reset --hard &#60;first seven digits of SHA&#62;</strong></dt>
+          <dd>
+            This is the equivalent of git reset --soft only any reverted changes
+            will also effect your files.
+          </dd>
+          </dd>
+
+        </dl>
+
+        <p>
+          Additional options:
+          <a href="https://git-scm.com/docs/git-reset">git-reset documentation</a>.
+        </p>
+
         <p>
           (Sources:<br>
-          <a href="">
+          <a href="https://www.codecademy.com/courses/learn-git/lessons/git-backtracking/exercises/git-reset-1?action=lesson_resume&link_content_target=interstitial_lesson">
+            Codecademy: Learn Git
+          </a><br>
+          <a href="https://git-scm.com/docs/git-reset">
+            Git: git-reset documentation
           </a>)
         </p>
-        <p><em>Updated:</em></p>
+        <p><em>Updated: 04/05/2017</em></p>
       </div>
 
     </div>
@@ -215,7 +329,7 @@
           This command is used to stage new or modified files. When commit is
           called the staged files current states will be updated in the
           repository. Add may be called numerous times before the staged changes
-          are commited.
+          are committed.
         </p>
 
         <dl>
@@ -298,7 +412,7 @@
           <dt><strong>git add --patch</strong></dt>
 
           <dd>
-            The command -p enables you to selectivly stage changes with files
+            The command -p enables you to selectively stage changes with files
             rather than staging the entire file. This can be done on all files
             by calling the basic command (git add -p) or on specific files by
             providing a file name (git add file1.txt -p).
@@ -307,8 +421,7 @@
         </dl>
 
         <p>
-          Additional options may be used with the command status. These can be
-          viewed on the <a href="https://git-scm.com/docs/git-add">git-add
+          Additional options: <a href="https://git-scm.com/docs/git-add">git-add
           documentation</a>.
         </p>
 
@@ -374,8 +487,7 @@
         </dl>
 
         <p>
-          Additional options may be used with the command status. These can be
-          viewed on the <a href="https://git-scm.com/docs/git-status">git-status
+          Additional options: <a href="https://git-scm.com/docs/git-status">git-status
             documentation</a>.
         </p>
 
@@ -414,7 +526,7 @@
         </p>
 
         <p>
-          Additional options may be used with the command init. These can be viewed on the <a href="https://www.git-scm.com/docs/git-init/1.7.0">git-init Manual Page</a>.
+          Additional options: <a href="https://www.git-scm.com/docs/git-init/1.7.0">git-init Manual Page</a>.
         </p>
 
         <p>
