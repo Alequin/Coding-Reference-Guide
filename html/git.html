@@ -112,10 +112,121 @@
 
       <div class="section-content section-text-normal">
         <p>
-          (Sources:<br>
-          <a href="">
-          </a>)
+          This command is used to stage new or modified files. When commit is
+          called the staged files current states will be updated in the
+          repository. Add may be called numerous times before the staged changes
+          are commited.
         </p>
+
+        <dl>
+
+          <dt>
+            <strong>
+              git add file.txt<br>
+              git add folder/file.txt
+            </strong>
+          </dt>
+          <dd>
+            Add must always be followed by additional information to instruct git
+            on what files to stage. The simplest way is to provide the path to the
+            file. The full file path should be provided.
+          </dd>
+
+          <br>
+
+          <dt><strong>git add *</strong></dt>
+          <dd>Add may be used with a asterisk, which will identify all files in the
+          current directory and stage their changes. As deleted files are no
+          longer in the directory the deletion will not be staged.<br>
+            <em>
+              Note: The asterisk is not part of git but is a globbing operator
+              which returns all file names within the working directory. This can
+              be used with commands such as ls * and is supported by most shells
+            </em>
+          </dd>
+
+          <br>
+
+          <dt><strong>git add .</strong></dt>
+          <dd>
+            Using a dot character after git add works in a similar way to the
+            asterisk. The difference is it will add all files to the staging area
+            even if they are deleted or hidden files.<br>
+            <em>
+              Note: In my experience the previous paragraph is true but
+              information on the web seems to say that git add . will not stage
+              deleted files.<br>
+              <a href="https://atrystwithprogramming.wordpress.com/tag/git-add-vs-git-add/">
+                git add . vs git add *</a><br>
+              <a href="http://stackoverflow.com/questions/572549/difference-between-git-add-a-and-git-add?rq=1">
+                Difference between “git add -A” and “git add .”</a>
+            </em>
+          </dd>
+
+          <br>
+
+          <dt><strong>git add -u</strong></dt>
+          <dt><strong>git add --update</strong></dt>
+          <dd>
+            Using -u or --update with git add will stage all changed made to files
+            but will start tracking any new files.
+          </dd>
+
+          <br>
+
+          <dt><strong>git add -A</strong></dt>
+          <dt><strong>git add --all</strong></dt>
+          <dt><strong>git add --no-igonore-removal</strong></dt>
+          <dd>The command git add -A will stage all files.</dd>
+
+          <br>
+
+          <dt><strong>git add 'command' -v</strong></dt>
+          <dt><strong>git add 'command' --verbose</strong></dt>
+
+          <dd>
+            The verbose command is used to print details on the actions that are
+            taken when other commands are called. For example if the command
+            'git add -A' is called all files will be staged but the terminal will
+            not report this until git status is called. If 'git add -A -v' is
+            called the terminal will print out a summary of the results.
+          </dd>
+
+          <dt><strong>git add -p</strong></dt>
+          <dt><strong>git add --patch</strong></dt>
+
+          <dd>
+            The command -p enables you to selectivly stage changes with files
+            rather than staging the entire file. This can be done on all files
+            by calling the basic command (git add -p) or on specific files by
+            providing a file name (git add file1.txt -p).
+          </dd>
+
+        </dl>
+
+        <p>
+          Additional options may be used with the command status. These can be
+          viewed on the <a href="https://git-scm.com/docs/git-add">git-add
+          documentation</a>.
+        </p>
+
+        <p>
+          (Sources:<br>
+          <a href="https://unix.stackexchange.com/questions/62660/the-result-of-ls-ls-and-ls">
+            unix stackexchange: The result of ls * , ls ** and ls ***
+          </a><br>
+          <a href="http://stackoverflow.com/questions/26042390/git-add-asterisk-vs-git-add-period">
+            StackOverflow: git add * (asterisk) vs git add . (period)
+          </a><br>
+          <a href="https://git-scm.com/docs/git-add">
+            Git: git-add
+          </a><br>
+          <a href="https://atrystwithprogramming.wordpress.com/tag/git-add-vs-git-add/">
+            atrystwithprogramming: add . vs git add *</a><br>
+          <a href="http://stackoverflow.com/questions/572549/difference-between-git-add-a-and-git-add?rq=1">
+            StackOverflow: Difference between “git add -A” and “git add .”</a>
+        </p>
+        <p><em>Updated: 03/05/2017</em></p>
       </div>
 
     </div>
@@ -133,11 +244,11 @@
         </p>
 
         <p>
-          This command displays files that have been altered or removed since the last commit. The first set of files are those that are staged and will be to be added or updated on the next commit. 
+          This command displays files that have been altered or removed since the last commit. The first set of files are those that are staged and will be to be added or updated on the next commit.
         </p>
 
         <p>
-          When called the terminal will display the name of the current working branch, the number of commits the local repository is ahead of the remote repository (if a remote repository is connected), the staged changes that will be added on the next commit, unstaged changes and finally any untracked files. 
+          When called the terminal will display the name of the current working branch, the number of commits the local repository is ahead of the remote repository (if a remote repository is connected), the staged changes that will be added on the next commit, unstaged changes and finally any untracked files.
         </p>
 
         <p>
@@ -161,7 +272,9 @@
         </dl>
 
         <p>
-          Additional options may be used with the command status. These can be viewed on the <a href="https://git-scm.com/docs/git-status">git-status documentation</a>.
+          Additional options may be used with the command status. These can be
+          viewed on the <a href="https://git-scm.com/docs/git-status">git-status
+            documentation</a>.
         </p>
 
         <p>
@@ -229,7 +342,7 @@
           or Linux (Linus Torvalds). Version control is a method of recording
           changes to a set a files over a given period of time and allows the
           user to roll back the contents to a previous state if required. The
-          details on all changes made are stored in a  data structure known as
+          details on all changes made are stored in a data structure known as
           a repository. A repository on the users machine is known as a local
           repository. If the files are hosted by a server, which allows for
           collaboration on a project, it is known as a remote repository.
