@@ -60,9 +60,8 @@ hexInput.addEventListener("click", function(){isRGBInputEmpty()}); <= function i
 http://stackoverflow.com/questions/16310423/addeventlistener-calls-the-function-without-me-even-asking-it-to
 --------------------------------------------------------------------------------
 html:
-before floating anything ensure it container allows for floating
-situation: floating 5 divs across the screen didnt work untill they were placed inside a 
-container div 
+before floating anything ensure container allows for floating
+situation: floating 5 divs across the screen didnt work until they were placed inside a container div 
 <div id="background-container">
     <div class="background-colour-slab">
     </div>
@@ -86,5 +85,6 @@ element:hover{
 }
 http://stackoverflow.com/questions/8809909/change-cursor-to-finger-pointer
 --------------------------------------------------------------------------------
+unix globbing 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
