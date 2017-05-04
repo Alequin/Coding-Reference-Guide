@@ -127,8 +127,8 @@
 
     <div class="section">
 
-      <div id="checkout" class="title-anchor"></div>
-      <h2 class="section-header">Common Commands: checkout</h2>
+      <div id="branches" class="title-anchor"></div>
+      <h2 class="section-header">Branches</h2>
 
       <div class="section-content section-text-normal">
         <p>
@@ -139,6 +139,85 @@
           </a>)
         </p>
         <p><em>Updated:</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="config" class="title-anchor"></div>
+      <h2 class="section-header">Config</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+         The command 'git config' is used to change and specify configuration
+         settings which manage certain features of git.
+        </p>
+
+        <p>
+          The config command will alter values in one of three files, depending
+          on whether <b>system</b>, <b>global</b> or <b>local</b> was stated.
+          These three refer to three settings files which each have a different
+          priority level.
+        </p>
+
+        <p>
+          The <b>local</b> file belongs to a single repository and will only
+          influence the system while working is that directory. This file has
+          the highest priority.<br>
+          The <b>global/user</b> file defines the settings of the user that is
+          currently in control. This will override system settings but is
+          overridden by local settings.<br>
+          The <b>system</b> file defines the settings of the current machine in
+          use, which apply to all users. This will be overriden by all other
+          settings files.
+        </p>
+
+        <p><em>
+          The following examples will use global but local or system may be
+          used in it's place
+        </em></p>
+
+        <dl>
+
+          <dt><b>git config --global user.name "name"</b></dt>
+          <dt><b>git config --global user.email "e-mail"</b></dt>
+          <dd>
+            These options define user details, which are applied to all
+            commits made by the current user.
+          </dd>
+          <br>
+
+          <dt><b>git config --global core.editor</b></dt>
+          <dd>
+            This option sets the text editor that should be used when entering
+            commit messages.
+          </dd>
+          <br>
+
+        </dl>
+
+
+
+        <p>
+          (Sources:<br>
+          <a href="https://www.youtube.com/results?search_query=git+config">
+            Youtube (GitHub Training &#38; Guides): Config - GitHub &#38; Git Foundations
+          </a><br>
+          <a href="https://www.youtube.com/watch?v=_FKLfJKrx-k">
+            Youtube (MyTutorialRack): Git Tutorial for beginners : How to
+            configure a Git repository?
+          </a><br>
+          <a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration">
+            Git: Customizing Git - Git Configuration
+          </a><br>
+          <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">
+            Git: Getting Started - First-Time Git Setup
+          </a><br>
+        </p>
+        <p><em>Updated: 04/05/2017</em></p>
       </div>
 
     </div>

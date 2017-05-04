@@ -3,6 +3,7 @@ CONTENTS = [
   new ContentsItem('Removing Commits', 'remove-commits'),
   new ContentsItem('Rename Branch', 'rename-branch'),
   new ContentsItem('Branches', 'branches'),
+  new ContentsItem('Config', 'config'),
   new ContentsItem('Common Commands: checkout', 'checkout'),
   new ContentsItem('Common Commands: show', 'show'),
   new ContentsItem('Common Commands: diff', 'diff'),
