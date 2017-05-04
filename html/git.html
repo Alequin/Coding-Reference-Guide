@@ -127,26 +127,6 @@
 
     <div class="section">
 
-      <div id="branches" class="title-anchor"></div>
-      <h2 class="section-header">Branches</h2>
-
-      <div class="section-content section-text-normal">
-        <p>
-        </p>
-        <p>
-          (Sources:<br>
-          <a href="">
-          </a>)
-        </p>
-        <p><em>Updated:</em></p>
-      </div>
-
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="section">
-
       <div id="config" class="title-anchor"></div>
       <h2 class="section-header">Config</h2>
 
@@ -182,6 +162,9 @@
 
         <dl>
 
+          <dt>git config --list</dt
+          <dd>This will print a list of the settings that are in effect</dd>
+
           <dt><b>git config --global user.name "name"</b></dt>
           <dt><b>git config --global user.email "e-mail"</b></dt>
           <dd>
@@ -190,10 +173,14 @@
           </dd>
           <br>
 
-          <dt><b>git config --global core.editor</b></dt>
+          <dt><b>git config --global core.editor "editor name"</b></dt>
           <dd>
             This option sets the text editor that should be used when entering
-            commit messages.
+            commit messages.<br>
+            <em>Note: Take care with this command as using it incorrectly may
+            result in issues with the program opening. It is easy to fix but better
+            to get correct the first time.
+            <a href="../examples/git-text-editors.pdf">Click here for examples</a></em>
           </dd>
           <br>
 
