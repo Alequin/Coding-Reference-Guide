@@ -162,9 +162,9 @@
 
         <dl>
 
-          <dt>git config --list</dt
+          <dt><b>git config --list</b></dt>
           <dd>This will print a list of the settings that are in effect</dd>
-
+          <br>
           <dt><b>git config --global user.name "name"</b></dt>
           <dt><b>git config --global user.email "e-mail"</b></dt>
           <dd>
@@ -183,6 +183,34 @@
             <a href="../examples/git-text-editors.pdf">Click here for examples</a></em>
           </dd>
           <br>
+
+          <dt><b>git config --global commit.template full-file-path/message.txt</b></dt>
+          <dd>
+            This allows you to set a template for any commit you make. The text
+            provided in the file will be included in any commits you make
+            (unless the message is written in the terminal using -m). You can
+            include commented out text using the hash symbol as well.
+          </dd>
+          <br>
+
+          <dt><b>git config --global core.pager ''</b></dt>
+          <dt><b>git config --global core.pager less</b></dt>
+          <dt><b>git config --global core.pager more</b></dt>
+          <dd>
+            The pager is what is used to output information when commands such
+            as diff or log are used. Using this command allows you to alert
+            how the output is presented.<br>
+            <b>''</b> = print all information to the terminal<br>
+            <b>less</b> = print a section of information (equal to the size of the
+            terminal) and remove the information when the pager is closed (by
+            pressing 'q' or 'ctrl+z')<br>
+            <b>more</b> = print a section of information (equal to the size of the
+            terminal) and leave the information in the terminal when the pager
+            is closed (by pressing 'q' or 'ctrl+z')<br>
+          </dd>
+          <br>
+
+
 
         </dl>
 
