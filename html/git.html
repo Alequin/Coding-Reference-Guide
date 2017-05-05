@@ -125,9 +125,26 @@
             current repository. If no others have been made only the main
             branch known as master will be shown.
           </dd>
+          <br>
+          <dt><b>git branch new-branch</b></dt>
+          <dt><b>git branch new-branch -b</b></dt>
+          <dd>
+            To create a new branch call <b>git branch</b> followed by the
+            desired branch name (which should not include spaces). This will
+            create a branch that matches to current one. Using the option
+            <b>-b</b> will create the branch and move to it as well.
+          </dd>
+          <br>
+          <dt><b>git checkout new-branch</b></dt>
+          <dt><b>git checkout new-branch -f</b></dt>
+          <dd>
+            Use this command to move between branches that are being worked on.
+            If there are uncommited changes when this is called git should
+            present a warning message and not switch branches. This can be
+            ignored using the option <b>-f</b>.
+          </dd>
+          <br>
         </dl>
-
-
 
         <p>
           (Sources:<br>
