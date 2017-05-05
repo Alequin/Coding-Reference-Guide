@@ -13,4 +13,5 @@ CONTENTS = [
   new ContentsItem('Common Commands: status', 'status'),
   new ContentsItem('Common Commands: init', 'init'),
   new ContentsItem('What Is Git', 'git-summary'),
+  new ContentsItem('Useful Websites', 'websites'),
 ];
