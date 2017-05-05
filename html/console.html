@@ -55,15 +55,23 @@
       <div class="section-content section-text-normal">
         <dd>
 
+          <dt><b>pwd</b></dt>
+          <dd>
+            This command stands for <b>print working directory</b> and is used
+            to print the full path to the current directory.
+          </dd>
+          <br>
           <dt><b>ls</b></dt>
           <dt><b>ls -a</b></dt>
+          <dt><b>ls directory-name</b></dt>
           <dd>
             This command stands for <b>list</b> and is used to list the contents of
             the current working directory (except for those that start with a
             dot, which are hidden files). To truly show all files the options
-            <b>-a</b> can be applied.
+            <b>-a</b> can be applied. If ls is given the name of a valid child
+            directory it will list the contents of that child directory.
           </dd>
-
+          <br>
           <dt><b>cd dir-to-access</b></dt>
           <dt><b>cd dir-to-access/another-dir-to-access</b></dt>
           <dt><b>cd ..</b></dt>
@@ -72,11 +80,20 @@
             This command stands for <b>change directory</b> and is used to move
             between directories. The target directory must be within the current
             working directory. The name of the target should be placed after the
-            command <b>cd</b>. The use of double dots will move to the directory
-            that contains the current one. Multiple sets of dots may be used to
+            command <b>cd</b>. The use of double dots will move to the parent
+            directory of the current one. Multiple sets of dots may be used to
             move outwards multiple times.
           </dd>
-
+          <br>
+          <dt><b>mkdir new-directory</b></dt>
+          <dt><b>mkdir new-directory/new-inner-directory</b></dt>
+          <dd>
+            This command stands for <b>make directory</b> and is used to create
+            new directories. The new directory is created in the current working
+            directory. If a path is used to create a directory all but the last
+            directory (the one to be created) should already exist.
+          </dd>
+          <br>
         </dd>
         <p>
           (Sources:<br>
@@ -88,6 +105,8 @@
       </div>
 
     </div>
+
+    <div class="divider"></div>
 
     <div class="section">
 
