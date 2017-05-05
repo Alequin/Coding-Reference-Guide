@@ -49,6 +49,26 @@
 
     <div class="section">
 
+      <div id="file-contents" class="title-anchor"></div>
+      <h2 class="section-header">Print and Search File Contents</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+        </p>
+        <p>
+          (Sources:<br>
+          <a href="">
+          </a>)
+        </p>
+        <p><em>Updated:</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="basic-commands" class="title-anchor"></div>
       <h2 class="section-header">Basic Commands</h2>
 
@@ -59,6 +79,12 @@
           <dd>
             This command stands for <b>print working directory</b> and is used
             to print the full path to the current directory.
+          </dd>
+          <br>
+          <dt><b>clear</b></dt>
+          <dd>
+            This command is used to clear the terminal of all text of previous
+            commands and outputs.
           </dd>
           <br>
           <dt><b>ls</b></dt>
@@ -94,11 +120,46 @@
             directory (the one to be created) should already exist.
           </dd>
           <br>
+          <dt><b>cp file-to-copy name-of-copy</b></dt>
+          <dt><b>cp file-to-copy ../name-of-copy</b></dt>
+          <dt><b>cp file-to-copy other-dir/name-of-copy</b></dt>
+          <dd>
+            This command stands for <b>copy</b> and is used to make a copy of
+            a file. The first file given is the path to the file to be copied.
+            The second is the path to the location where a copy should be made.
+          </dd>
+          <br>
+          <dt><b>mv file-to-move new-file-name</b></dt>
+          <dt><b>mv file-to-move new-location/file-to-move</b></dt>
+          <dt><b>mv file-to-move new-location/new-file-name</b></dt>
+          <dd>
+            This command stands for <b>move</b> and is used to move files from
+            one location to another or rename files. In the first example the
+            file will simply be renamed, in the second it will be moved into
+            the new location with the same name. In the third it will be moved
+            and renamed.
+          </dd>
+          <br>
+          <dt><b>rm file-to-delete</b></dt>
+          <dd>
+            This command stands for <b>remove</b> and is used to remove / delete
+            files. This will not work on directories.
+          </dd>
+          <br>
+          <dt><b>rmdir directory-to-delete</b></dt>
+          <dd>
+            This command stands for <b>remove directory</b> and is used to
+            remove / delete directories. This will not work on files.
+          </dd>
+          <br>
         </dd>
         <p>
           (Sources:<br>
           <a href="http://www.ee.surrey.ac.uk/Teaching/Unix/unix1.html">
             Surrey Univeristy: UNIX Tutorial One
+          </a><br>
+          <a href="http://www.ee.surrey.ac.uk/Teaching/Unix/unix2.html">
+            Surrey Univeristy: UNIX Tutorial Two
           </a><br>
         </p>
         <p><em>Updated:</em></p>
