@@ -126,8 +126,8 @@
             branch known as master will be shown.
           </dd>
           <br>
-          <dt><b>git branch new-branch</b></dt>
-          <dt><b>git checkout -b new-branch </b></dt>
+          <dt><b>git branch branch-1</b></dt>
+          <dt><b>git checkout -b branch-1 </b></dt>
           <dd>
             To create a new branch call <b>git branch</b> followed by the
             desired branch name (which should not include spaces). This will
@@ -136,8 +136,8 @@
             will create a new branch and switch to it.
           </dd>
           <br>
-          <dt><b>git checkout new-branch</b></dt>
-          <dt><b>git checkout new-branch -f</b></dt>
+          <dt><b>git checkout branch-1</b></dt>
+          <dt><b>git checkout branch-1 -f</b></dt>
           <dd>
             Use this command to move between branches that are being worked on.
             If there are uncommited changes when this is called git should
@@ -145,14 +145,40 @@
             ignored using the option <b>-f</b>.
           </dd>
           <br>
-          <dt><b>git merge new-branch</b></dt>
+          <dt><b>git branch -m branch-2</b></dt>
+          <dt><b>git branch -m branch-1 branch-2</b></dt>
+          <dd>
+            The name of a branch can be changed using this option. To change
+            the name of the current branch only the new name is requried, if
+            the target branch is not selecet the oldname and new name are required
+            in that order.
+          </dd>
+          <br>
+          <dt><b>git merge branch-2</b></dt>
           <dd>
             Once additions have been made to a branch it can be merged back into
             the master. This is done by calling the command <b>merge</b> while
             the branch you wish to merge into is selected.
           </dd>
           <br>
+          <dt><b>git branch branch-2 -d</b></dt>
+          <dt><b>git branch branch-2 -D</b></dt>
+          <dd>
+            After the branch has been merged into the original it can be deleted.
+            The option <b>-d</b> will delete the branch as long as it is called
+            while on a different branch to the target. If the branch to be
+            deleted is not fully merged the option <b>-D</b> may be used for
+            force the deletion ('-d -f' should do the same as -D).
+          </dd>
+          <br>
         </dl>
+
+        <p>
+          Additional options:
+          <a href="https://git-scm.com/docs/git-branch">
+            Git: git-branch documentation
+          </a><br>
+        </p>
 
         <p>
           (Sources:<br>
