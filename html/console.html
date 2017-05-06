@@ -74,10 +74,49 @@
 
       <div class="section-content section-text-normal">
         <p>
+          An <b>alias</b> is a user created shortcut which has a console function
+          assigned to it. These shortcuts can perform any console command and
+          can combine multiple commands into a single phrase. An alias can be
+          temporary or permanent.
         </p>
+
+        <p>
+          To create temporary aliases the command <b>alias</b> is used.
+        </p>
+        <dl>
+          <dt><b>alias alias_name="ls -l"</b></dt>
+          <dd>
+            The desired short phrase should be placed after the <b>alias</b>
+            command, followed by an equals sign and the the command to be
+            assigned to the <b>alias</b>. This will only work on the terminal
+            that it was called in.
+          </dd>
+        </dl>
+
+        <p>
+          Aliases may also be placed within files.
+        </p>
+        <dl>
+          <dt><a href="../examples/example-alias.txt">file-containing-alias.txt</a></dt>
+          <dt><b>source file-containing-alias.txt</b></dt>
+          <dd>
+            If a file containing some form of the alias command is opened using
+            the <b>source</b> command the alias will be available, though this
+            is still only temporary.
+          </dd>
+        </dl>
+
+        <p>
+          To create a <b>permanent alias</b> the command must be added /
+          connected to the file that stores the environment variables. There is
+          no need to call source on this file but the terminal will need to be
+          restarted.
+        </p>
+
         <p>
           (Sources:<br>
-          <a href="">
+          <a href="http://www.techradar.com/how-to/computing/apple/terminal-101-creating-aliases-for-commands-1305638">
+            Tech radar: Terminal 101: Creating Aliases for Commands
           </a>)
         </p>
         <p><em>Updated: 06/05/2017</em></p>
