@@ -54,7 +54,41 @@
 
       <div class="section-content section-text-normal">
         <p>
+          Redirection is changing the input or output location of the terminal.
         </p>
+
+        <dl>
+          <dt>
+            The <b>symbol '&#62;'</b> is used to redirect the output of commands into
+            a file. The file does not have to exist but if it does its contents
+            will be overridden. In order to append the contents rather than
+            override use the <b>symbol '&#62;&#62;'</b>.
+          </dt>
+          <br>
+          <dd>
+            pwd &#62; file.txt<br>
+            ls &#62; file.txt<br>
+            cat file1.txt &#62; file2.txt<br>
+            cat file 1.txt file2.txt &#62;&#62; file3.txt
+          </dd>
+          <br>
+          <dt>
+            To redirect the input the <b>symbol &#60;</b> is used.<br>
+          </dt>
+          <br>
+          <dt>
+            Another character that is used in redirection is <b>pipe (|)</b>, which
+            takes the output of the first command and uses it as input for the
+            second command.
+          </dt>
+          <br>
+          <dd>
+            ls | sort<br>
+            ls | grep work-file<br>
+            cat file.txt | sort
+          </dd>
+        </dl>
+
         <p>
           (Sources:<br>
           <a href="http://www.ee.surrey.ac.uk/Teaching/Unix/unix3.html">
