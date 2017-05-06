@@ -3,3 +3,10 @@
 #Section Edited:
 #     Edit Made:
 
+Page Edited: Unix and shell commands
+Section Edited: Print and Search File Contents
+  Edit Made:
+    - Added details on more and less commands
+    - Added details on head and tail commands
+    - Added source link
+    - Added details on grep and egrep

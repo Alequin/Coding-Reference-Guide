@@ -71,6 +71,32 @@
             window. The user can then press enter to continue through the rest
             of the file. If less is used the print out of the file will be
             removed when the process is finished.
+            <br><br>
+            The less tag can also be used to search a document for a string.
+            While viewing the document if '/search-term' is types
+            (where search-term can be any string) the search term will be
+            highlighted in the text (this is case sensitive).
+          </dd>
+          <br>
+          <dt><b>head file.txt</b></dt>
+          <dt><b>tail file.txt</b></dt>
+          <dd>
+            These commands print out the first <b>(head)</b> or last
+            <b>(tail)</b> 10 lines of the file.
+          </dd>
+          <br>
+          <dt><b>grep 'search-term' file.txt</b></dt>
+          <dt><b>egrep 'reg-exp' file.txt</b></dt>
+          <dt><b>grep -n 'search-term' file.txt</b></dt>
+          <dd>
+            This command will print out all lines in the given file containing
+            the search-term, which can be a regular expression if <b>egrep</b>
+            is used. Using the option <b>-n</b> will print out the line numbers.
+            <em>
+              Note: wrapping the search term in quotes is not required for
+              single words but if spaces or a regular expression are used they
+              must be included.
+            </em>
           </dd>
           <br>
         </dl>
@@ -78,6 +104,9 @@
           (Sources:<br>
           <a href="http://www.ee.surrey.ac.uk/Teaching/Unix/unix2.html">
             Surrey Univeristy: UNIX Tutorial Two
+          </a><br>
+          <a href="https://www.computerhope.com/unix/uegrep.htm">
+            Computer Hope: Linux egrep command
           </a><br>
         </p>
         <p><em>Updated: 06/05/2017</em></p>
