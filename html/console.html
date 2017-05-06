@@ -143,10 +143,12 @@
           <dt><b>grep 'search-term' file.txt</b></dt>
           <dt><b>egrep 'reg-exp' file.txt</b></dt>
           <dt><b>grep -n 'search-term' file.txt</b></dt>
+          <dt><b>grep -i'search-term' file.txt</b></dt>
           <dd>
             This command will print out all lines in the given file containing
             the search-term, which can be a regular expression if <b>egrep</b>
             is used. Using the option <b>-n</b> will print out the line numbers.
+            Using the option <b>-i</b> will cause the search to ignore case.
             <em>
               Note: wrapping the search term in quotes is not required for
               single words but if spaces or a regular expression are used they
