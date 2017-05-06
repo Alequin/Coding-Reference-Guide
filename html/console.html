@@ -13,7 +13,7 @@
 
   <div id="header-container">
 
-        <h1 id="main-header">Helpful Unix and Shell Commands</h1>
+        <h1 id="main-header">Unix and Shell Commands</h1>
 
         <div id="contents-container">
           <div class="header-divider divider"></div>
@@ -53,8 +53,17 @@
       <h2 class="section-header">Print and Search File Contents</h2>
 
       <div class="section-content section-text-normal">
-        <p>
-        </p>
+        <dl>
+
+          <dt><b>cat file.txt</b></dt>
+          <dt><b>cat -n file.txt</b></dt>
+          <dd>
+            This command stands for <b>concatenate</b> and is used to print the
+            contents of files to the terminal. The option <b>-n</b> may be used to
+            number each line.
+          </dd>
+          <br>
+        </dl>
         <p>
           (Sources:<br>
           <a href="">
@@ -75,6 +84,33 @@
       <div class="section-content section-text-normal">
         <dd>
 
+          <dt><b>man pwd</b></dt>
+          <dt><b>man clear</b></dt>
+          <dd>
+            This command stands for <b>manual</b> and is used to show the
+            documentation on a command inside the terminal.
+          </dd>
+          <br>
+          <dt><b>.</b></dt>
+          <dt><b>..</b></dt>
+          <dd>
+            The dot character represents the current directory and can be used
+            with a number of commands. Two dots represents the parent directory.
+          </dd>
+          <dt><b>*</b></dt>
+          <dt><b>*.jpg</b></dt>
+          <dd>
+            The asterisk character is used as a wildcard and is used with
+            commands in place of a file and directory name. Alone it represents
+            all files and child directories in the current directory but it may
+            be combine with other characters to match specific files, as shown
+            in the examples.
+            <br><br>
+            The asterisk character actually represents any number of characters.
+            Alone it matches to any file name that has any characters in it
+            (which is all file names).
+          </dd>
+          <br>
           <dt><b>pwd</b></dt>
           <dd>
             This command stands for <b>print working directory</b> and is used
@@ -102,13 +138,17 @@
           <dt><b>cd dir-to-access/another-dir-to-access</b></dt>
           <dt><b>cd ..</b></dt>
           <dt><b>cd ../../..</b></dt>
+          <dt><b>cd ....</b></dt>
           <dd>
             This command stands for <b>change directory</b> and is used to move
             between directories. The target directory must be within the current
             working directory. The name of the target should be placed after the
-            command <b>cd</b>. The use of double dots will move to the parent
-            directory of the current one. Multiple sets of dots may be used to
-            move outwards multiple times.
+            command <b>cd</b>.
+            <br><br>
+            The use of double dots will move to the parent directory of the
+            current one and multiple sets of dots may be used to move outwards
+            multiple times. The last two examples are equivelent and move
+            to the parent directory three times.
           </dd>
           <br>
           <dt><b>mkdir new-directory</b></dt>
@@ -123,10 +163,14 @@
           <dt><b>cp file-to-copy name-of-copy</b></dt>
           <dt><b>cp file-to-copy ../name-of-copy</b></dt>
           <dt><b>cp file-to-copy other-dir/name-of-copy</b></dt>
+          <dt><b>cp -R directory-to-copy name-of-copy</b></dt>
           <dd>
             This command stands for <b>copy</b> and is used to make a copy of
             a file. The first file given is the path to the file to be copied.
             The second is the path to the location where a copy should be made.
+            <br><br>
+            To copy a directory the option <b>-R</b> must be used as shown in
+            the last example.
           </dd>
           <br>
           <dt><b>mv file-to-move new-file-name</b></dt>
@@ -141,15 +185,28 @@
           </dd>
           <br>
           <dt><b>rm file-to-delete</b></dt>
+          <dt><b>rm -i file-to-delete</b></dt>
+          <dt><b>rm -d file-to-delete</b></dt>
+          <dt><b>rm -R directory-to-delete</b></dt>
+          <dt><b>rm -iR directory-to-delete</b></dt>
           <dd>
             This command stands for <b>remove</b> and is used to remove / delete
-            files. This will not work on directories.
+            files. If you want to confirm the deletion the option <b>-i</b> can
+            be used. This will not work on directories unless the option <b>-R</b>
+            is used. This is also used to force the deletion of non-empty
+            directories.
+            <br><br>
+            The options i and R can be used together <b>(-iR)</b> to recusivly
+            move through the files in the target directory and decide if each
+            one should be deleted.
           </dd>
           <br>
           <dt><b>rmdir directory-to-delete</b></dt>
           <dd>
             This command stands for <b>remove directory</b> and is used to
-            remove / delete directories. This will not work on files.
+            remove / delete directories. This will not work on files and cannot
+            be used to force delete directories. To force deletion use
+            <b>rm -d name</b>.
           </dd>
           <br>
         </dd>
@@ -161,8 +218,14 @@
           <a href="http://www.ee.surrey.ac.uk/Teaching/Unix/unix2.html">
             Surrey Univeristy: UNIX Tutorial Two
           </a><br>
+          <a href="http://www.macworld.com/article/2082021/master-the-command-line-deleting-files-and-folders.html">
+            macworld: Master the command line: Deleting files and folders
+          </a><br>
+          <a href="http://www.westwind.com/reference/os-x/commandline/files-folders.html">
+            WESTWIND computing: OS X's BSD/unix command-line
+          </a><br>
         </p>
-        <p><em>Updated:</em></p>
+        <p><em>Updated: 06/05/2017</em></p>
       </div>
 
     </div>
