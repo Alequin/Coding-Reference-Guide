@@ -89,3 +89,4 @@ unix globbing
 --------------------------------------------------------------------------------
 Ruby difference between 1..10 and 1…10
 --------------------------------------------------------------------------------
+Ruby sort vs sort_by http://agelber.com/blog/ruby-sort-vs-sort-by
