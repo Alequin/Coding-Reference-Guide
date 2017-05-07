@@ -1389,23 +1389,24 @@
           variables but Ruby provides three helpful methods (att_reader,
           attr_writer and att_accessor) to auto generate getter and setter methods.
           <br><br>
-          The following example only shows attr_accessor but attr_reader
-          (which generates a getter method) and attr_writer (which generates
+          The following example only shows <b>attr_accessor</b> but <b>attr_reader</b>
+          (which generates a getter method) and <b>attr_writer</b> (which generates
           a setter method) work in the same way except for the fact that
-          attr_accessor provides access to both a getter and a setter.
+          <b>attr_accessor</b> provides access to both a getter and a setter.
           <br><br>
           <strong>
             class MyClass
             <br><br>
-            attr_accessor :text
+            attr_accessor :text, :word
             <br><br>
-            &#160;&#160;def initialize(text)<br>
+            &#160;&#160;def initialize(text, word)<br>
             &#160;&#160;&#160;&#160;@text = text<br>
+            &#160;&#160;&#160;&#160;@word = word<br>
             &#160;&#160;end
             <br><br>
             end
             <br><br>
-            x = MyClass.new("Hello 10")<br>
+            x = MyClass.new("Hello 10", "bacon")<br>
             puts x.text <br>
             # setter method<br>
             x.text = "Hello 11"<br>
