@@ -158,42 +158,67 @@
     <div class="section">
 
       <div id="pipe-chars-and-files" class="title-anchor"></div>
-      <h2 class="section-header">Pipe Characters and Ruby scripts</h2>
+      <h2 class="section-header">Redirection &#38; Pipe Characters</h2>
 
       <div class="section-content section-text-normal">
         <p>
-          As well as outputting to console print, puts and p can be used to
-          output text to txt files. This is done by changing the console
-          command given when starting a script file. This will result in the
-          creation / replacement of a named text file which contains all string
-          values given as parameters to console output methods.
-          <br><br>
-          <strong>
-            $ ruby ruby-file.rb &#62; io-text-file.txt
-          </strong>
-          <br><br>
-          This will produce, or replace if it already exists, the text file
-          output-text-file.txt and fill each line with any values that would
-          normally be output to console. The once the script stops running. The
-          file is produced once the code begins but the contents are not input
-          until the code ends.
-          <br><br>
-          The opposite may also be done and text files may be used in the place
-          of user input.
-          <br><br>
-          <strong>
-            $ ruby ruby-file.rb &#60; output-text-file.txt
-          </strong>
-          <br><br>
-          This will make any methods that normally ask for user input to accept
-          a single line from a text file and use that as input. Each use of an
-          input requesting method will result in a new line from the text file
-          being used.
-          <br><br>
-          (Sources:<br>
-          <a href="https://www.thoughtco.com/using-the-command-line-2908368">
-            ThoughtCo: Running and Executing rb Files
-          </a>)
+          Using pipe character allows for the redirection of input and output
+          from the terminal.
+        </p>
+
+          <p>
+            <b>$ ruby ruby-file.rb &#62; io-text-file.txt</b>
+          </p>
+
+          <p>
+            This will produce, or replace if it already exists, the text file
+            output-text-file.txt and fill each line with any values that would
+            normally be output to console. The once the script stops running. The
+            file is produced once the code begins but the contents are not input
+            until the code ends.
+          </p>
+
+          <p>
+            The opposite may also be done and text files may be used in the place
+            of user input.
+          </p>
+
+          <p>
+            <b>$ ruby ruby-input.rb &#60; input.txt</b><br>
+            <a href="../examples/ruby/input.txt">input.txt</a><br>
+            <a href="../examples/ruby/ruby-input.rb">ruby-input.rb</a>
+          </p>
+
+          <p>
+            This will make any methods that normally ask for user input to accept
+            a single line from a text file and use that as input. Each use of an
+            input requesting method will result in a new line from the text file
+            being used.
+          </p>
+
+          <p>
+            Another symbol which may be used is the <b>|</b> character.
+          </p>
+
+          <p>
+            <b>$ ruby ruby-output.rb | ruby ruby-input.rb</b><br>
+            <a href="../examples/ruby/ruby-output.rb">ruby-output.rb</a><br>
+            <a href="../examples/ruby/ruby-input.rb">ruby-input.rb</a><br>
+          </p>
+
+          <p>
+            This will take the output of the first command and use it as the
+            input of the other. This can be used to take the output of one
+            program and be used in another.
+          </p>
+
+          <p>
+            (Sources:<br>
+            <a href="https://www.thoughtco.com/using-the-command-line-2908368">
+              ThoughtCo: Running and Executing rb Files
+            </a>)
+          </p>
+          <p><em>Updated: 07/05/2017</em></p>
         </p>
       </div>
 
