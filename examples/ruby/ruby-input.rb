@@ -3,3 +3,6 @@ def print_input(input)
 end
 
 print_input(gets.chomp)
+print_input(gets.chomp)
+print_input(gets.chomp)
+print_input(gets.chomp)
