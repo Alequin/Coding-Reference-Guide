@@ -1,5 +1,6 @@
 
 CONTENTS = [
+  new ContentsItem('Directories and files: Dir', 'directories-files'),
   new ContentsItem('Run Conole Command With Ruby', 'ruby-console-commands'),
   new ContentsItem('Redirection &#38; Pipe Characters', 'pipe-chars-and-files'),
   new ContentsItem('Exception Handling', 'exception-handling'),
