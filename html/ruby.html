@@ -1982,6 +1982,17 @@
             #=> 3  3
           </strong>
           <br><br>
+          An array of the keys or values can be aquired using the methods 'keys'
+          and 'values'
+          <br><br>
+          <strong>
+            x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}<br>
+            puts x.keys<br>
+            puts x.values<br>
+            #=> ["pet 1", "pet 2", "pet 3"]<br>
+            #["cat", "dog", "mouse"]
+          </strong>
+          <br><br>
           Hashes are iterated over using the each method. As of ruby 1.9 the iteration
           order will match the order in which values were added to the hash.
           <br><br>
@@ -2004,7 +2015,8 @@
             x.delete_if {|key, value| value == "cat"}
           </strong>
           <br><br>
-          Hashes can be iterated over using the each_key and each_value methods.
+          Hashes can be iterated over using the each_key and each_value methods
+          as well.
           <br><br>
           <strong>
             x = {"pet 1" => "cat", "pet 2" => "dog", "pet 3" => "mouse"}
