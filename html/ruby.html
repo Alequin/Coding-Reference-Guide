@@ -2251,29 +2251,58 @@
       <div id="substitutions-in-strings" class="title-anchor"></div>
       <h2 class="section-header">Substitutions in Strings</h2>
 
-      <div class="section-content">
-        <p class="section-text-normal">
-          <strong>
-            puts "bacon and eggs".sub("bacon", "sausage")<br>
-            #=> sausage and eggs
-            <br><br>
-            puts "this is a test".gsub("t", "")<br>
-            #=> his is a es
-          </strong>
-          <br><br>
-          sub finds the first string which matches its first parameters and substitutes it for
-          the seconds parameter.<br>
-          gsub finds all instances of the first parameter and subs all of them for the seconds
-          parameter
-          <br><br>
-          The first parameter of these methods can be regular expressions
-          <br><br>
-          (Sources:
-          <br>
-           Beginning Ruby: From Novice to Professional
-          )
-        </p>
+      <div class="section-content section-text-normal">
+          <p>
+            <b>
+              puts "bacon and eggs".sub("bacon", "sausage")<br>
+              #=> sausage and eggs
+              <br><br>
+              puts "this is a test".gsub("t", "")<br>
+              #=> his is a es
+            </b>
+          </p>
+          <p>
+            sub finds the first string which matches its first parameters and substitutes it for
+            the seconds parameter.<br>
+            gsub finds all instances of the first parameter and subs all of them for the seconds
+            parameter
+          </p>
 
+          <p>The first parameter of these methods can be regular expressions</p>
+
+          <p>
+            Another method to substitute sections of strings is shown below.
+            This works the same way a sub and can accept either a string or a
+            regular expression as input.
+          </p>
+
+          <p>
+            <b>
+              x = "bacon and eggs"<br>
+              x["eggs"] = "sausage"<br>
+              puts x<br>
+              #=> bacon and sausage
+            </b>
+          </p>
+
+          <p>
+            <b>
+              x = "1 2 3 4 5"<br>
+              x[/\d/] = "bacon"<br>
+              puts x<br>
+              #=> bacon 2 3 4 5
+            </b>
+          </p>
+
+          <p>
+            (Sources:<br>
+             Beginning Ruby: From Novice to Professional<br>
+             <a href="http://tryruby.org/levels/3/challenges/2">
+               Codeschool: Challenge 2
+             </a>
+            )
+          </p>
+        <p><em>Updated: 08/05/2017</em></p>
       </div>
 
     </div>
