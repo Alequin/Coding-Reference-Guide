@@ -52,7 +52,7 @@ http://stackoverflow.com/questions/2862590/how-to-replace-master-branch-in-git-e
 --------------------------------------------------------------------------------
   what is cache
 --------------------------------------------------------------------------------
-For some reason when adding an event listener in javascript (in firefox at the 
+For some reason when adding an event listener in javascript (in firefox at the
 least) if the function given as a parameter is already defined it will be called.
 hexInput.addEventListener("click", isRGBInputEmpty()); <= function isRGBInputEmpty() called
 to avoid place function call inside a new function
@@ -61,7 +61,7 @@ http://stackoverflow.com/questions/16310423/addeventlistener-calls-the-function-
 --------------------------------------------------------------------------------
 html:
 before floating anything ensure container allows for floating
-situation: floating 5 divs across the screen didnt work until they were placed inside a container div 
+situation: floating 5 divs across the screen didnt work until they were placed inside a container div
 <div id="background-container">
     <div class="background-colour-slab">
     </div>
@@ -85,7 +85,7 @@ element:hover{
 }
 http://stackoverflow.com/questions/8809909/change-cursor-to-finger-pointer
 --------------------------------------------------------------------------------
-unix globbing 
+unix globbing
 --------------------------------------------------------------------------------
 Ruby difference between 1..10 and 1…10
 --------------------------------------------------------------------------------
@@ -95,10 +95,10 @@ Unix command open
 --------------------------------------------------------------------------------
 Unix command bash
 --------------------------------------------------------------------------------
-Sub shells and interactivity 
+Sub shells and interactivity
 http://stackoverflow.com/questions/15968053/using-alias-in-shell-script
 http://chiefsandendians.blogspot.co.uk/2010/07/linux-scripts-and-alias.html
 --------------------------------------------------------------------------------
 Make alias and add file containing aliases into environment file,
+warn about smart quotes when making aliases
 --------------------------------------------------------------------------------
-

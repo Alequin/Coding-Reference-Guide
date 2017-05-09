@@ -50,7 +50,7 @@
     <div class="section">
 
       <div id="directories-files" class="title-anchor"></div>
-      <h2 class="section-header">Directories and files: Dir</h2>
+      <h2 class="section-header">Directories and files</h2>
 
       <div class="section-content section-text-normal">
         <p>
@@ -61,18 +61,33 @@
         <dl>
 
           <dt>
-            <b>Dir.entries "/"</b>
+            <b>Dir.entries "/"</b><br>
             <b>Dir.entries "/Users/"</b>
           </dt>
           <dd>
-            The <b>entries</b> method will provide an a
+            The <b>entries</b> method will provide an array of the files
+            and directories contained at the given path (this includes hidden
+            files).
+          </dd>
+          <br>
+          <dt>
+            <b>Dir["/*"]</b><br>
+            <b>Dir["/dir/*"]</b><br>
+            <b>Dir["/dir/*.txt"]</b>
+          </dt>
+          <dd>
+            Accessing <b>Dir</b> with <b>[]</b> also returns an array of the
+            files and directories contained at the given path. This does not
+            return hidden files and requires some form of file name be provided.
+            This is used to filter the returned files as in the last example,
+            which will only return files that end in '.txt'
           </dd>
 
         </dl>
 
         <p>
           (Sources:<br>
-          <a href="https://ruby-doc.org/core-2.2.0/Dir.html#method-c-entries">
+          <a href="https://ruby-doc.org/core-2.2.0/Dir.html">
             Ruby Documentation: Dir
           </a>)
         </p>
