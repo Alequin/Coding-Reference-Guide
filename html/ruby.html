@@ -59,7 +59,6 @@
         </p>
 
         <dl>
-
           <dt>
             <b>Dir.entries "/"</b><br>
             <b>Dir.entries "/Users/"</b>
@@ -82,13 +81,56 @@
             This is used to filter the returned files as in the last example,
             which will only return files that end in '.txt'
           </dd>
+        </dl>
 
+        <p>
+          When working with files there are two classed that may be used along
+          with <b>Dir</b>. These are <b>Pathname</b> and <b>File</b> (When using
+          <b>Pathname</b> the class must be included with <b>require "pathname"
+          </b>. This is not needed for <b>File</b>)
+        </p>
+
+        <dl>
+          <dt>
+            <b>
+              require "pathname"<br>
+              file_path = "/path/file.txt"<br>
+              x = Pathname.new(file_path)<br>
+              p x.read().split("/n")<br>
+              p File.read(file_path).split("/n")<br>
+              #=>["Hello", "World"]<br>
+              #["Hello", "World"]<br>
+            </b>
+          </dt>
+          <dd>
+            The example above shows both classes reading a file. Both methods
+            are the same and actually stem from the <b>IO</b> class. The
+            returned value is a single string. The split method has been used
+            here to move each line of the text file into an array element, this
+            is not required.<br>
+            <a href="../examples/ruby/file.txt">View file.txt</a>
+          </dd>
+          <br>
+          <dt>
+            <b></b>
+          </dt>
+          <dd>
+          </dd>
         </dl>
 
         <p>
           (Sources:<br>
           <a href="https://ruby-doc.org/core-2.2.0/Dir.html">
             Ruby Documentation: Dir
+          </a>)
+          <a href="https://ruby-doc.org/core-2.2.2/IO.html#method-i-read">
+            Ruby Documentation: IO
+          </a>)
+          <a href="https://ruby-doc.org/stdlib-1.9.3/libdoc/pathname/rdoc/Pathname.html#method-i-read">
+            Ruby Documentation: Pathname
+          </a>)
+          <a href="https://ruby-doc.org/core-2.2.2/File.html">
+            Ruby Documentation: File
           </a>)
         </p>
         <p><em>Updated: 08/05/2017</em></p>
