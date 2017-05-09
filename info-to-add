@@ -90,3 +90,15 @@ unix globbing
 Ruby difference between 1..10 and 1…10
 --------------------------------------------------------------------------------
 Ruby sort vs sort_by http://agelber.com/blog/ruby-sort-vs-sort-by
+--------------------------------------------------------------------------------
+Unix command open
+--------------------------------------------------------------------------------
+Unix command bash
+--------------------------------------------------------------------------------
+Sub shells and interactivity 
+http://stackoverflow.com/questions/15968053/using-alias-in-shell-script
+http://chiefsandendians.blogspot.co.uk/2010/07/linux-scripts-and-alias.html
+--------------------------------------------------------------------------------
+Make alias and add file containing aliases into environment file,
+--------------------------------------------------------------------------------
+
