@@ -43,9 +43,6 @@ the method should not be a member of the class, i.e. something like
 "Add(aNumber, 7)". -- WayneMack
 http://wiki.c2.com/?SystemOfNames
 --------------------------------------------------------------------------------
-override git branches with one another
-http://stackoverflow.com/questions/2862590/how-to-replace-master-branch-in-git-entirely-from-another-branch
---------------------------------------------------------------------------------
   javascript feature detection
   (not looked at this site yet)
   https://msdn.microsoft.com/en-us/library/hh273397(v=vs.85).aspx
