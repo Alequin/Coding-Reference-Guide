@@ -49,6 +49,164 @@
 
     <div class="section">
 
+      <div id="File-open" class="title-anchor"></div>
+      <h2 class="section-header">File.open</h2>
+
+      <div class="section-content section-text-normal">
+
+        <p>
+          Files may be written to and read from using Ruby. The method
+          that enables this is <b>File.open</b>, which accepts a file path and
+          a mode. If the given file does not exist it will be created. The
+          mode determines what can be done to the file and the main modes
+          available include <b>r</b>, <b>w</b>, <b>a</b>, <b>r+</b>, <b>w+</b>
+          and <b>a+</b>. Files should be closed after use with the <b>close</b>
+          method.
+          </a>
+        </p>
+
+        <p>
+          <li>Any changes made to file.txt in the following examples will carry to
+          the next example.</li>
+        </p>
+
+        <dt>
+          <b>
+            <a href="../examples/ruby/IOfile.txt">View file.txt</a><br>
+            File.open('file.txt', 'r') { |f|<br>
+            &#160;&#160;2.times {puts f.gets}<br>
+            &#160;&#160;f.close<br>
+            }<br>
+            #=>Hello<br>
+            #World
+          </b>
+        </dt>
+        <dd>
+          In mode <b>r</b> the file can be read from but not edited. The
+          method <b>gets</b> will return a single string, which represents a
+          single line from the text file. Each call to the method will result
+          in the next line been read.
+        </dd>
+        <br>
+        <dt>
+          <b>
+            File.open('file.txt', 'w'){ |f|<br>
+            &#160;&#160;f.print "Hello World"<br>
+            &#160;&#160;f.puts "!!!!"<br>
+            &#160;&#160;f.close<br>
+            }<br>
+            <a href="../examples/ruby/IOfile2.txt">View file.txt</a><br>
+          </b>
+        </dt>
+        <dd>
+          In mode <b>w</b> allows files to be written to. If the file does not
+          exist it will be created but if it does it will be overridden with
+          the contents the Ruby script provides. The methods <b>puts</b> and
+          <b>print</b> may be used to write to the file and act as they do when
+          writing to the console.
+        </dd>
+        <br>
+        <dt>
+          <b>
+            File.open('file.txt', 'a'){ |f|<br>
+            &#160;&#160;f.puts "Hello"<br>
+            &#160;&#160;f.print "World"<br>
+            &#160;&#160;f.print "!!!!"<br>
+            &#160;&#160;f.close<br>
+            }<br>
+            <a href="../examples/ruby/IOfile3.txt">View file.txt</a><br>
+          </b>
+        </dt>
+        <dd>
+          In mode <b>w</b> files can be written to but not read. If the file
+          does not exist it will be created but if it does it will be
+          overridden with the contents the Ruby script provides. The methods
+          <b>puts</b> and <b>print</b> may be used to write to the file and
+          act as they do when writing to the console.
+        </dd>
+        <br>
+        <dt>
+          <b>
+            File.open('file.txt', 'r+'){ |f|<br>
+              &#160;&#160;puts f.gets<br>
+              &#160;&#160;f.print "Sunny"<br>
+              &#160;&#160;puts f.gets<br>
+              &#160;&#160;f.close<br>
+            }<br>
+            <a href="../examples/ruby/IOfile4.txt">View file.txt</a><br>
+          </b>
+        </dt>
+        <dd>
+          In mode <b>r+</b> files can be both written to and read from. It
+          works from a pointer, which starts at the top of the file.
+          <ul>
+            <li>
+              Reading the file with <b>gets</b> will move the point to the
+              next line
+            </li>
+            <li>
+              Writting to the file with <b>print</b> will move the pointer
+              along the current line by the length of the input string.
+            </li>
+            <li>
+              Writting to the file with <b>puts</b> will move the pointer
+              along the current line by the length of the input string.
+            </li>
+          </ul>
+          <em>
+            Note: If the pointer is at a line with text on it any new text
+            will overridde the old text. The amount of characters overridden
+            is the amount that is written to the file unless the method
+            <b>puts</b> is used. In this case a extra character is overridden
+            for the new line (/n). This is shown in the example file as
+            second 'Hello' is replaced by 'Sunny'.
+          </em>
+        </dd>
+        <br>
+        <dt>
+          <b>
+            File.open('file.txt', 'w+'){ |f|<br>
+              &#160;&#160;f.print "Hello World"<br>
+              &#160;&#160;f.close<br>
+            }<br>
+            <a href="../examples/ruby/IOfile5.txt">View file.txt</a><br>
+          </b>
+        </dt>
+        <dd>
+          Mode <b>w+</b> works exactly the same as <b>r+</b> except all data
+          in the file is erased when the method <b>open</b> is called.
+        </dd>
+        <br>
+        <dt>
+          <b>
+            File.open('file.txt', 'a+'){ |f|<br>
+              &#160;&#160;f.print "Hello World"<br>
+              &#160;&#160;f.close<br>
+            }<br>
+            <a href="../examples/ruby/IOfile5.txt">View file.txt</a><br>
+          </b>
+        </dt>
+        <dd>
+          Mode <b>a+</b> exactly the same as <b>r+</b> except the pointer
+          is placed at the end of the file rather than the start. Any additons
+          to the file will not override any data.
+        </dd>
+      </dl>
+        <p>
+          (Sources:<br>
+          <a href="https://blog.udemy.com/ruby-file-open/">
+            Udemy: Opening a File in Ruby with Different Modes
+          </a>)
+        </p>
+        <p><em>Updated: 10/05/2017</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="directories-files" class="title-anchor"></div>
       <h2 class="section-header">Directories and files</h2>
 
@@ -90,11 +248,6 @@
           <b>FileUtils</b>.<br>
           <em>Note: When using <b>Pathname</b> and <b>FileUtils</b> they must be included with
           <b>require "pathname" </b> and <b>require "fileutils"</b>. This is not needed for <b>File</b></em>
-        </p>
-
-        <p>
-          <li>Any changes made to file.txt in the following examples will carry to
-          the next example.</li>
         </p>
 
         <dl>
@@ -144,130 +297,11 @@
             mode determines what can be done to the file and the main modes
             available include <b>r</b>, <b>w</b>, <b>a</b>, <b>r+</b>, <b>w+</b>
             and <b>a+</b>. Files should be closed after use with the <b>close</b>
-            method.
+            method. For more details view the section
+            <a href="file:///Users/james/work-space/Programming-Reference-Guide/html/ruby.html#File-open">
+              File.open
+            </a>
           </p>
-          <dt>
-            <b>
-              <a href="../examples/ruby/IOfile.txt">View file.txt</a><br>
-              File.open('file.txt', 'r') { |f|<br>
-              &#160;&#160;2.times {puts f.gets}<br>
-              &#160;&#160;f.close<br>
-              }<br>
-              #=>Hello<br>
-              #World
-            </b>
-          </dt>
-          <dd>
-            In mode <b>r</b> the file can be read from but not edited. The
-            method <b>gets</b> will return a single string, which represents a
-            single line from the text file. Each call to the method will result
-            in the next line been read.
-          </dd>
-          <br>
-          <dt>
-            <b>
-              File.open('file.txt', 'w'){ |f|<br>
-              &#160;&#160;f.print "Hello World"<br>
-              &#160;&#160;f.puts "!!!!"<br>
-              &#160;&#160;f.close<br>
-              }<br>
-              <a href="../examples/ruby/IOfile2.txt">View file.txt</a><br>
-            </b>
-          </dt>
-          <dd>
-            In mode <b>w</b> allows files to be written to. If the file does not
-            exist it will be created but if it does it will be overridden with
-            the contents the Ruby script provides. The methods <b>puts</b> and
-            <b>print</b> may be used to write to the file and act as they do when
-            writing to the console.
-          </dd>
-          <br>
-          <dt>
-            <b>
-              File.open('file.txt', 'a'){ |f|<br>
-              &#160;&#160;f.puts "Hello"<br>
-              &#160;&#160;f.print "World"<br>
-              &#160;&#160;f.print "!!!!"<br>
-              &#160;&#160;f.close<br>
-              }<br>
-              <a href="../examples/ruby/IOfile3.txt">View file.txt</a><br>
-            </b>
-          </dt>
-          <dd>
-            In mode <b>w</b> files can be written to but not read. If the file
-            does not exist it will be created but if it does it will be
-            overridden with the contents the Ruby script provides. The methods
-            <b>puts</b> and <b>print</b> may be used to write to the file and
-            act as they do when writing to the console.
-          </dd>
-          <br>
-          <dt>
-            <b>
-              File.open('file.txt', 'r+'){ |f|<br>
-                &#160;&#160;puts f.gets<br>
-                &#160;&#160;f.print "Sunny"<br>
-                &#160;&#160;puts f.gets<br>
-                &#160;&#160;f.close<br>
-              }<br>
-              <a href="../examples/ruby/IOfile4.txt">View file.txt</a><br>
-            </b>
-          </dt>
-          <dd>
-            In mode <b>r+</b> files can be both written to and read from. It
-            works from a pointer, which starts at the top of the file.
-            <ul>
-              <li>
-                Reading the file with <b>gets</b> will move the point to the
-                next line
-              </li>
-              <li>
-                Writting to the file with <b>print</b> will move the pointer
-                along the current line by the length of the input string.
-              </li>
-              <li>
-                Writting to the file with <b>puts</b> will move the pointer
-                along the current line by the length of the input string.
-              </li>
-            </ul>
-            <em>
-              Note: If the pointer is at a line with text on it any new text
-              will overridde the old text. The amount of characters overridden
-              is the amount that is written to the file unless the method
-              <b>puts</b> is used. In this case a extra character is overridden
-              for the new line (/n). This is shown in the example file as
-              second 'Hello' is replaced by 'Sunny'.
-            </em>
-          </dd>
-          <br>
-          <dt>
-            <b>
-              File.open('file.txt', 'w+'){ |f|<br>
-                &#160;&#160;f.print "Hello World"<br>
-                &#160;&#160;f.close<br>
-              }<br>
-              <a href="../examples/ruby/IOfile5.txt">View file.txt</a><br>
-            </b>
-          </dt>
-          <dd>
-            Mode <b>w+</b> works exactly the same as <b>r+</b> except all data
-            in the file is erased when the method <b>open</b> is called.
-          </dd>
-          <br>
-          <dt>
-            <b>
-              File.open('file.txt', 'a+'){ |f|<br>
-                &#160;&#160;f.print "Hello World"<br>
-                &#160;&#160;f.close<br>
-              }<br>
-              <a href="../examples/ruby/IOfile5.txt">View file.txt</a><br>
-            </b>
-          </dt>
-          <dd>
-            Mode <b>a+</b> exactly the same as <b>r+</b> except the pointer
-            is placed at the end of the file rather than the start. Any additons
-            to the file will not override any data.
-          </dd>
-        </dl>
 
         <p>
           (Sources:<br>
