@@ -239,18 +239,7 @@
             This is used to filter the returned files as in the last example,
             which will only return files that end in '.txt'
           </dd>
-        </dl>
 
-        <p>
-          When working with files there are a number of useful sets of
-          pre-written code that may be used along with <b>Dir</b>. These include
-          the classes <b>Pathname</b> and <b>File</b> and the module
-          <b>FileUtils</b>.<br>
-          <em>Note: When using <b>Pathname</b> and <b>FileUtils</b> they must be included with
-          <b>require "pathname" </b> and <b>require "fileutils"</b>. This is not needed for <b>File</b></em>
-        </p>
-
-        <dl>
           <dt>
             <b>
               <a href="../examples/ruby/IOfile.txt">View file.txt</a><br>
@@ -290,18 +279,45 @@
             <b>FileUtils.cp('work-space/file.txt', 'work-space/copy-file.txt')</b><br>
           </dd>
           <br>
-          <p>
+          <dt>
+            <b>
+              <a href="../examples/ruby/IOfile.txt">View file.txt</a><br>
+              File.open('file.txt', 'r') { |f|<br>
+              &#160;&#160;2.times {puts f.gets}<br>
+              &#160;&#160;f.close<br>
+              }<br>
+              #=>Hello<br>
+              #World
+            </b><br>
+            <a href="file:///Users/james/work-space/Programming-Reference-Guide/html/ruby.html#File-open">
+              For more examples view the section File.open
+            </a>
+          </dt>
+          <dd>
             Files may also be written to and read from using Ruby. The method
             that enables this is <b>File.open</b>, which accepts a file path and
             a mode. If the given file does not exist it will be created. The
             mode determines what can be done to the file and the main modes
             available include <b>r</b>, <b>w</b>, <b>a</b>, <b>r+</b>, <b>w+</b>
             and <b>a+</b>. Files should be closed after use with the <b>close</b>
-            method. For more details view the section
-            <a href="file:///Users/james/work-space/Programming-Reference-Guide/html/ruby.html#File-open">
-              File.open
-            </a>
-          </p>
+            method.
+
+          </dd>
+          <br>
+          <dt>
+            <b>
+              File.foreach('file.txt') { line|<br>
+              &#160;&#160;puts line<br>
+            }<br>
+              #=>Hello<br>
+              #World
+            </b>
+          </dt>
+          <dd>
+            Files may also be read with the method <b>File.foreach</b>, which
+            will pass each line into the given block.
+          </dd>
+        </dl>
 
         <p>
           (Sources:<br>
