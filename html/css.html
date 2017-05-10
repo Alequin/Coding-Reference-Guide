@@ -50,6 +50,109 @@
 
     <div class="section">
 
+      <div id="fonts" class="title-anchor"></div>
+      <h2 class="section-header">Fonts</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          Using CSS the font of text may be altered using the property.
+          <b>font-family</b>.
+        </p>
+
+        <p>
+          <b>
+            p{<br>
+            <span id="font-example">&#160;&#160;font-family: "Times New Roman"</span><br>
+            }
+          </b>
+        </p>
+
+        <p id="font-click">
+          I am text! Click me to change the font.
+        </p>
+
+        <script>
+          var fontExample = document.getElementById("font-example");
+          var fontClick = document.getElementById("font-click");
+          var getFonts = function(){
+            var fonts = ["Georgia", "Arial", "Comic Sans MS", "Impact", "Times New Roman"];
+            var position = 0;
+            return function(){
+              var currentFont = fonts[position];
+              position ++;
+              if(position > 4){
+                position = 0;
+              }
+              return currentFont;
+            }
+          }();
+          fontClick.addEventListener("click", function(){
+            var font = getFonts();
+            fontExample.innerHTML = '&#160;&#160;font-family: "' + font + '"';
+            fontClick.style.fontFamily = font;
+          });
+        </script>
+
+        <p>
+          It is common to provide a number of font names as fallbacks. This is
+          done to maximise compatability as some browers and operating systems
+          may not support all fonts. If the first is not avalible the next will
+          be used. Also if a font name involes white space its name must be
+          wrapped in quotes.
+        </p>
+
+        <p>
+          <b>
+            font-family: "Times New Roman", Times, serif;<br>
+            font-family: Arial, Helvetica, sans-serif;
+          </b>
+        </p>
+
+        <p>
+          In order to increase the chance of the selected text style being
+          used a web safe font should be selected. These are fonts which overlap
+          across multiple systems and browers. Web safe fonts include...
+        </p>
+
+        <ul style="font-size: 2d5px;">
+          <li style="font-family: Arial;">Arial</li>
+          <li style="font-family: Arial Black;">Arial Black</li>
+          <li style="font-family: Helvetica">Helvetica</li>
+          <li style="font-family: Times New Roman">Times New Roman</li>
+          <li style="font-family: Times">Times</li>
+          <li style="font-family: Courier New">Courier New</li>
+          <li style="font-family: Courier">Courier</li>
+          <li style="font-family: Verdana">Verdana</li>
+          <li style="font-family: Georgia">Georgia</li>
+          <li style="font-family: Palatino">Palatino</li>
+          <li style="font-family: Garamond">Garamond</li>
+          <li style="font-family: Bookman">Bookman</li>
+          <li style="font-family: Comic Sans MS">Comic Sans MS</li>
+          <li style="font-family: Trebuchet MS">Trebuchet MS</li>
+          <li style="font-family: Impact">Impact</li>
+        </ul>
+
+        <p>
+          (Sources:<br>
+          <a href="https://www.w3schools.com/cssref/pr_font_font-family.asp">
+            w3schools: CSS font-family Property
+          </a><br>
+          <a href="https://www.w3schools.com/cssref/css_websafe_fonts.asp">
+            w3schools: CSS Web Safe Font Combinations
+          </a><br>
+          <a href="https://websitesetup.org/web-safe-fonts-html-css/">
+            WebsiteSetup: 15 Best Web Safe Fonts
+          </a>)
+        </p>
+        <p><em>Updated: 10/05/2017</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="images-to-elements" class="title-anchor"></div>
       <h2 class="section-header">Add Images to Elements</h2>
       <style>
