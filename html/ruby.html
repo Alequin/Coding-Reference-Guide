@@ -84,10 +84,12 @@
         </dl>
 
         <p>
-          When working with files there are two classed that may be used along
-          with <b>Dir</b>. These are <b>Pathname</b> and <b>File</b> (When using
-          <b>Pathname</b> the class must be included with <b>require "pathname"
-          </b>. This is not needed for <b>File</b>)
+          When working with files there are a number of useful sets of
+          pre-written code that may be used along with <b>Dir</b>. These include
+          the classes <b>Pathname</b> and <b>File</b> and the module
+          <b>FileUtils</b>.<br>
+          <em>Note: When using <b>Pathname</b> and <b>FileUtils</b> they must be included with
+          <b>require "pathname" </b> and <b>require "fileutils"</b>. This is not needed for <b>File</b></em>
         </p>
 
         <dl>
@@ -105,16 +107,29 @@
           <dd>
             The example above shows both classes reading a file. Both methods
             are the same and actually stem from the <b>IO</b> class. The
-            returned value is a single string. The split method has been used
-            here to move each line of the text file into an array element, this
-            is not required.<br>
+            returned value is a single string.<br>
+            <em>Note: The split method has been used here to move each line of the text
+            file into an array element, this is not required.</em><br>
             <a href="../examples/ruby/file.txt">View file.txt</a>
           </dd>
           <br>
           <dt>
-            <b></b>
+            <b>
+              require 'fileutils'<br>
+              FileUtils.cp('file.txt', 'copy-file.txt')
+            </b>
           </dt>
           <dd>
+            Files can be copied with the <b>FileUtils</b> module. The paths given
+            should work from the directory that the ruby script is been called
+            from. The output directory does not have to be the same as the
+            original files but the file name must change as a exception will be
+            thrown otherwise.
+            <br><br>
+            <b>/Users/my-pc/work-space/file.txt</b><br>
+            Using this file path if the ruby script was in the 'my-pc' folder the
+            code would be...<br>
+            <b>FileUtils.cp('work-space/file.txt', 'work-space/copy-file.txt')</b><br>
           </dd>
         </dl>
 
@@ -122,18 +137,18 @@
           (Sources:<br>
           <a href="https://ruby-doc.org/core-2.2.0/Dir.html">
             Ruby Documentation: Dir
-          </a>)
+          </a><br>
           <a href="https://ruby-doc.org/core-2.2.2/IO.html#method-i-read">
             Ruby Documentation: IO
-          </a>)
-          <a href="https://ruby-doc.org/stdlib-1.9.3/libdoc/pathname/rdoc/Pathname.html#method-i-read">
+          </a><br>
+          <a href="https://ruby-doc.org/stdlib-1.9.3/libdoc/pathname/rdoc/Pathname.html">
             Ruby Documentation: Pathname
-          </a>)
+          </a><br>
           <a href="https://ruby-doc.org/core-2.2.2/File.html">
             Ruby Documentation: File
           </a>)
         </p>
-        <p><em>Updated: 08/05/2017</em></p>
+        <p><em>Updated: 10/05/2017</em></p>
       </div>
 
     </div>
