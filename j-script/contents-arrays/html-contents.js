@@ -1,5 +1,6 @@
 
 CONTENTS = [
+  new ContentsItem('Forms', 'form'),
   new ContentsItem('Tags to Remember', 'tags-to-remember'),
   new ContentsItem('Declaring Language', 'language'),
   new ContentsItem('Make Anchor Tags open a New Tab', 'anchor-open-new-tab'),

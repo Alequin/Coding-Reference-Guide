@@ -49,6 +49,108 @@
 
     <div class="section">
 
+      <div id="form" class="title-anchor"></div>
+      <h2 class="section-header">Forms</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          HTML forms are used to collect information from a user. The input
+          from the form may be used by front end javascript scripts or back end
+          system. Forms offer elements such as text fields, checkboxes, radio
+          buttons and drop down menus.
+        </p>
+
+        <p>
+          An important attribute for tags invloved with forms is <b>name</b>.
+          <b>Name</b> is a method of identification for each section.
+        </p>
+
+        <dl>
+          <dt><b>&#60;form name="my_form"&#62;&#60;/form&#62;</b></dt>
+          <dd>The tag <b>form</b> is the outer most tag of a HTML form.</dd>
+          <br>
+          <dt>
+            <b>
+              &#60;input type="text" name="text_input" /&#62;<br>
+              &#60;input type="password" name="password_text" /&#62;
+            </b><br>
+            text_input => <input type="text" name="text_input" /><br>
+            password => <input type="password" name="text_input" />
+          </dt>
+          <dd>
+            The tag <b>input</b> can be used in a number of ways. Here the
+            <b>type</b> attribute instructs the input element to accept text.
+            If <b>tpye</b> is set to <b>password</b> all input will be hidden.
+          </dd>
+          <br>
+          <dt>
+            <b>
+              &#60;textarea name="text_area" rows="8" cols="80"&#62;&#60;/textarea&#62;
+            </b><br>
+            text_area => <textarea name="text_area" rows="5" cols="100"></textarea>
+          </dt>
+          <dd>
+            The <b>textarea</b> is for larger amount of text. The <b>rows</b>
+            attribute sets the max line height of the area. The user can change
+            the height but it can never be less than the given number of lines.
+            The <b>cols</b> attribute sets the width of the of the <b>textarea</b>.
+          </dd>
+          <br>
+          <dt>
+            <b>
+              &#60;input type="checkbox" name="chech1" value="on"&#62;check box 1&#60;/input&#62;<br>
+              &#60;input type="checkbox" name="check2" value="off"&#62;check box 2&#60;/input&#62;
+            </b><br>
+            <form name="check-box-form">
+              <input type="checkbox" name="check1" value="on"><span id="chbox1">check box 1</span></input><br>
+              <input type="checkbox" name="check2" value="1"><span id="chbox2">check box 2</span></input>
+            </form>
+          </dt>
+          <script>
+            var checkBox1 = document.forms["check-box-form"]["check1"];
+            var checkBox2 = document.forms["check-box-form"]["check2"];
+            checkBox1.addEventListener("click", function(){
+              var checkText = document.getElementById("chbox1");
+              if(checkBox1.checked){
+                checkText.innerHTML = checkBox1.value;
+              }else{
+                checkText.innerHTML = "check box 1";
+              }
+            });
+            checkBox2.addEventListener("click", function(){
+              var checkText = document.getElementById("chbox2");
+              if(checkBox2.checked){
+                checkText.innerHTML = checkBox2.value;
+              }else{
+                checkText.innerHTML = "check box 2";
+              }
+            });
+          </script>
+          <dd>
+          </dd>
+          <br>
+        </dl>
+
+
+        <p>
+
+        </p>
+
+        <p>
+          (Sources:<br>
+          <a href="">
+          </a>)
+        </p>
+        <p><em>Updated:</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div class="title-anchor"></div>
       <h2 class="section-header"></h2>
 
