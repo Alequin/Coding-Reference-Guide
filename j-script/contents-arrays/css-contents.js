@@ -1,5 +1,6 @@
 
 CONTENTS = [
+  new ContentsItem('Display Property', 'display'),
   new ContentsItem('CSS Selectors', 'selectors'),
   new ContentsItem('Fonts', 'fonts'),
   new ContentsItem('Add Images to Elements', 'images-to-elements'),

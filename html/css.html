@@ -50,6 +50,87 @@
 
     <div class="section">
 
+      <div id="display" class="title-anchor"></div>
+      <h2 class="section-header">Display Property</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          The <b>display property</b> specifies the type of box an element
+          should use and is a key method of controlling the layout of a page.
+        </p>
+
+        <p><b><u>Possible values</u></b></p>
+
+        <ul>
+          <li>
+            <b>display: block</b> - Elements set to this will use as much
+            horizontal space as possible and not allow other elements to sit
+            next to them
+          </li>
+          <li>
+            <b>display: inline</b> - Elements set to this will allow other
+            elements to sit inline with them if they are able to. These elements
+            will only take up the space they require and will not change their
+            size even when instructed to by CSS.
+          </li>
+          <li>
+            <b>display: inline-block</b> - Elements set to this will allow
+            other elements to sit inline with them if they are able to and their
+            size may be manipulated with CSS.
+          </li>
+          <li>
+            <b>display: none</b> - This will make the element disapear from the
+            page. The space it occupied will be filled by other elements.
+          </li>
+          <li>
+            <b>display: flex</b> - An elements with a display property of flex
+            becomes a block level flex container. The contents of a flex
+            container will sit next to one another. The direction of the contents
+            flow may be changed to vertical if the container has the property
+            <b>flex-direction</b> set to column.
+            <br><br>
+            The contents of a flex only require the dimention that is parallel
+            to the flow to be set. For example if <b>flex-direction</b> is set
+            to <b>row</b> (this is the default state) then the contents heights
+            will start equal to the containers height (the height may be changed).
+            The width must be set.
+            <br><br>
+            Another usefull feature of flex is the property <b>flex-grow</b>.
+            This allows the parallel dimention to be set proportionally. For
+            example if a flex container held two div's both with a
+            <b>flex-grow</b> of one they would both occupy 50% of the container.
+            If the first was set to 2 and the second to 1 the first would occupy
+            33.3% of the container while the seconds would occupy 66.6%.
+            <br><br>
+            To read more on flex view
+            <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS tricks</a>.
+          </li>
+        </ul>
+
+        <p>
+          (Sources:<br>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display?v=example">
+            Mozilla Developer Network: display
+          </a><br>
+          <a href="https://www.codecademy.com/courses/web-beginner-en-6merh/0/2?curriculum_id=50579fb998b470000202dc8b">
+            Codecademy: Taking up space
+          </a><br>
+          <a href="https://css-tricks.com/almanac/properties/d/display/">
+            CSS tricks: display
+          </a><br>
+          <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">
+            CSS tricks: A complete guide to flexbox
+          </a><br>
+        </p>
+        <p><em>Updated: 16/05/2017</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="selectors" class="title-anchor"></div>
       <h2 class="section-header">CSS Selectors</h2>
 
@@ -150,7 +231,7 @@
           </a><br>
           <a href="https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048">
             tutsplus: The 30 CSS Selectors You Must Memorize
-          </a><br>
+          </a>)
         </p>
         <p><em>Updated:16/05/2017</em></p>
       </div>
