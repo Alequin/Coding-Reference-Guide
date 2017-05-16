@@ -9,7 +9,7 @@ def binary_search(array_to_search, target)
   low = 0
   high = array_to_search.size-1
 
-  while (low < high)
+  while (low <= high)
 
     mid_point = low + (high - low)/2
 
