@@ -50,6 +50,117 @@
 
     <div class="section">
 
+      <div id="selectors" class="title-anchor"></div>
+      <h2 class="section-header">CSS Selectors</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          <b>Selectors</b> are used in css to identify which elements should be
+          influenced by the instructions written between the curly braces.
+        </p>
+
+        <p>
+          <b><u>Basic selectors</u></b>
+        </p>
+
+        <dl>
+          <dt><b>*{}</b></dt>
+          <dd>The asterick symbol will select and style all elements on a page.</dd>
+          <br>
+          <dt><b>#example{}</b></dt>
+          <dd>
+            This is an <b>id selector</b>. The example will style the element
+            with an id of 'example'.
+          </dd>
+          <br>
+          <dt><b>.example{}</b></dt>
+          <dd>
+            This is a <b>class selector</b>. The example will style all elements
+            with the class 'example'.
+          </dd>
+          <br>
+          <dt><b>div{}</b></dt>
+          <dd>
+            This is a <b>type selector</b>. The example will style all elements
+            with the tag 'div'.
+          </dd>
+          <br>
+          <dt><b>div, p, .example{}</b></dt>
+          <dd>
+            Multiple elements may be targeted at the same time if each one is
+            separated with a comma. The example will style all elements with the
+            tags 'div' and 'p' and all elements with a class of 'example'.
+          </dd>
+          <br>
+          <dt><b>div p{}</b></dt>
+          <dt><b>.container div p{}</b></dt>
+          <dd>
+            This is a <b>decendend selector</b>. It is used to select elements
+            which are nested inside other elements. The first example will select
+            all 'p' elements that are children of 'div' elements. The second
+            example targets all 'p' elements that are nested within 'div' elements
+            which are then nested within any elements with the class 'container'.
+          </dd>
+        </dl>
+
+        <p>
+          <b><u>Additional selectors</u></b>
+        </p>
+
+        <dl>
+          <dt><b>div > p{}</b></dt>
+          <dt><b>.container > p{}</b></dt>
+          <dd>
+            This is a <b>child selector</b> and will style directly nested
+            elements. In the first example all 'p' elements that are direct
+            decendents of 'div' elements will be styled.
+          </dd>
+          <br>
+          <dt><b>div + p{}</b></dt>
+          <dt><b>.container + p{}</b></dt>
+          <dd>
+            This is an <b>adjacent selector</b> and will style a single element that
+            come after another. In the first example the first 'p' elements that
+            appears after a 'div' element is closed will be styled.
+          </dd>
+          <br>
+          <dt><b>div ~ p{}</b></dt>
+          <dt><b>.container ~ p{}</b></dt>
+          <dd>
+            This is known as a <b>general sibling combinator</b> and will style
+            all elements that come after another. In the first example all 'p'
+            elements that appear after a 'div' element is closed will be styled.
+          </dd>
+          <br>
+        </dl>
+
+        <p>
+          <em>
+            Note: There are many more selectors. For more view the sources for this section
+          </em>
+        </p>
+
+        <p>
+          (Sources:<br>
+          <a href="https://www.w3.org/TR/CSS21/selector.html#pattern-matching">
+            w3.org: Selectors
+          </a><br>
+          <a href="https://www.w3schools.com/cssref/css_selectors.asp">
+            w3schools: CSS Selector Reference
+          </a><br>
+          <a href="https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048">
+            tutsplus: The 30 CSS Selectors You Must Memorize
+          </a><br>
+        </p>
+        <p><em>Updated:16/05/2017</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="fonts" class="title-anchor"></div>
       <h2 class="section-header">Fonts</h2>
 
