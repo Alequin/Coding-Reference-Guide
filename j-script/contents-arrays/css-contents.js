@@ -1,5 +1,6 @@
 
 CONTENTS = [
+  new ContentsItem('CSS Selectors', 'selectors'),
   new ContentsItem('Fonts', 'fonts'),
   new ContentsItem('Add Images to Elements', 'images-to-elements'),
   new ContentsItem('Language in css', 'language-in-css'),
