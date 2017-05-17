@@ -79,7 +79,7 @@
             size may be manipulated with CSS.
           </li>
           <li>
-            <b>display: none</b> - This will make the element disapear from the
+            <b>display: none</b> - This will make the element disappear from the
             page. The space it occupied will be filled by other elements.
           </li>
           <li>
@@ -89,14 +89,14 @@
             flow may be changed to vertical if the container has the property
             <b>flex-direction</b> set to column.
             <br><br>
-            The contents of a flex only require the dimention that is parallel
-            to the flow to be set. For example if <b>flex-direction</b> is set
-            to <b>row</b> (this is the default state) then the contents heights
-            will start equal to the containers height (the height may be changed).
-            The width must be set.
+            The contents of a flex container only require a value for the
+            dimension that is parallel to the flow. For example if
+            <b>flex-direction</b> is set to <b>row</b> (this is the default
+            state) then the contents heights will start equal to the containers
+            height (the height may be changed). The width must be set.
             <br><br>
-            Another usefull feature of flex is the property <b>flex-grow</b>.
-            This allows the parallel dimention to be set proportionally. For
+            Another useful feature of flex is the property <b>flex-grow</b>.
+            This allows the parallel dimension to be set proportionally. For
             example if a flex container held two div's both with a
             <b>flex-grow</b> of one they would both occupy 50% of the container.
             If the first was set to 2 and the second to 1 the first would occupy
@@ -146,7 +146,7 @@
 
         <dl>
           <dt><b>*{}</b></dt>
-          <dd>The asterick symbol will select and style all elements on a page.</dd>
+          <dd>The asterisk symbol will select and style all elements on a page.</dd>
           <br>
           <dt><b>#example{}</b></dt>
           <dd>
@@ -176,7 +176,7 @@
           <dt><b>div p{}</b></dt>
           <dt><b>.container div p{}</b></dt>
           <dd>
-            This is a <b>decendend selector</b>. It is used to select elements
+            This is a <b>descendent selector</b>. It is used to select elements
             which are nested inside other elements. The first example will select
             all 'p' elements that are children of 'div' elements. The second
             example targets all 'p' elements that are nested within 'div' elements
@@ -194,7 +194,7 @@
           <dd>
             This is a <b>child selector</b> and will style directly nested
             elements. In the first example all 'p' elements that are direct
-            decendents of 'div' elements will be styled.
+            descendants of 'div' elements will be styled.
           </dd>
           <br>
           <dt><b>div + p{}</b></dt>
@@ -287,9 +287,9 @@
 
         <p>
           It is common to provide a number of font names as fallbacks. This is
-          done to maximise compatability as some browers and operating systems
-          may not support all fonts. If the first is not avalible the next will
-          be used. Also if a font name involes white space its name must be
+          done to maximise compatibility as some browsers and operating systems
+          may not support all fonts. If the first is not available the next will
+          be used. Also if a font name involves white space its name must be
           wrapped in quotes.
         </p>
 
@@ -303,7 +303,7 @@
         <p>
           In order to increase the chance of the selected text style being
           used a web safe font should be selected. These are fonts which overlap
-          across multiple systems and browers. Web safe fonts include...
+          across multiple systems and browsers. Web safe fonts include...
         </p>
 
         <ul style="font-size: 2d5px;">
@@ -377,7 +377,7 @@
           multiple values.
         </p>
         <p>
-          The reptition of images can be controlled using the property
+          The repetition of images can be controlled using the property
           "background-repeat". This accepts a few values such as "no-repeat",
           "repeat", "repeat-x", "repeat-y", "initial" (this set the default
           setting) and "inherit" (this takes the setting from the parent).
@@ -392,6 +392,7 @@
         <style>
         #image001-1{
           background-repeat: no-repeat;
+          background-position: 50px 0;
         }
         </style>
         <div id="image001-1" class="css-background-image"></div>
@@ -443,6 +444,56 @@
             #image{<br>
             &#160;&#160;background-image: url(../images/puppy.jpg);<br>
             &#160;&#160;background-repeat: no-repeat;<br>
+            &#160;&#160;background-size: 150px 100px;<br>
+            &#160;&#160;background-position: 300px 100px;<br>
+            }
+          </strong>
+        </p>
+        <style>
+        #image003-1{
+          background-size: 150px 100px;
+          background-repeat: no-repeat;
+          background-position: 300px 50px;
+        }
+        </style>
+        <div id="image003-1" class="css-background-image"></div>
+        <p>
+          Here the property <b>background position</b> has been set. This
+          provides control over the images position relative to the top left
+          corner. The first number defines the horizontal movement and the
+          seconds defines vertical movement.
+        </p>
+        <p>
+          <strong>
+            #image{<br>
+            &#160;&#160;background-image: url(../images/puppy.jpg);<br>
+            &#160;&#160;background-repeat: no-repeat;<br>
+            &#160;&#160;background-size: 150px 100px;<br>
+            &#160;&#160;background-position: right bottom;<br>
+            }
+          </strong>
+        </p>
+        <style>
+        #image003-2{
+          background-size: 150px 100px;
+          background-repeat: no-repeat;
+          background-position: right bottom;
+        }
+        </style>
+        <div id="image003-2" class="css-background-image"></div>
+        <p>
+          The property <b>background position</b> is used again here. Rather
+          than providing numbers for the horizontal and vertical positions
+          however the terms <b>right</b> and <b>bottom</b> are used. This moves
+          the image to the location describe by the terms (the right bottom
+          corner). In addition to <b>right</b> and <b>bottom</b> the terms
+          <b>left</b> and <b>top</b> may be used.
+        </p>
+        <p>
+          <strong>
+            #image{<br>
+            &#160;&#160;background-image: url(../images/puppy.jpg);<br>
+            &#160;&#160;background-repeat: no-repeat;<br>
             &#160;&#160;background-size: contain;<br>
             }
           </strong>
@@ -485,7 +536,7 @@
           </a>
           )
         </p>
-        <p><em>Updated: 02/05/2017</em></p>
+        <p><em>Updated: 17/05/2017</em></p>
       </div>
 
     </div>
@@ -504,7 +555,7 @@
           languages ensures text will always be ascetically pleasing regardless
           of language.
           <br><br>
-          There are three main methods of controling style in css based on
+          There are three main methods of controlling style in css based on
           language.
           <br><br>
           <strong>
