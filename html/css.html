@@ -50,6 +50,76 @@
 
     <div class="section">
 
+      <div id="box-sizing" class="title-anchor"></div>
+      <h2 class="section-header">Box Sizing Property</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          The <b>box-sizing</b> property controls the way the box model
+          interprets sizes set for elements.
+        </p>
+        <p>
+          The default value for elements is  <b>content-box</b>, which applies
+          the full width to the content section  only. The padding and borders
+          will add additional width and height to the element.
+        </p>
+        <p>
+          The value <b>border-box</b> will cause elements to take the padding
+          and borders sizes of an element and reduce the content size so that
+          an elements full size is equal to the set size. Margin width and
+          height are not taken into account.
+        </p>
+
+        <p>
+          <b>
+            .box-size-example{<br>
+            &#160;&#160;width: 300px; height: 150px;<br>
+            &#160;&#160;padding: 25px;<br>
+            &#160;&#160;background-color: blue;<br>
+            &#160;&#160;border: 25px solid black;<br>
+            &#160;&#160;font-weight: bold;<br>
+            }
+            <br><br>
+            #bs001{<br>
+            &#160;&#160;box-sizing: border-box;<br>
+            }
+          </b>
+        </p>
+
+        <style>
+          .box-size-example{
+            width: 300px; height: 150px;
+            padding: 25px;
+            background-color: blue;
+            border: 25px solid black;
+            font-weight: bold;
+          }
+
+          #bs001{
+            box-sizing: border-box;
+          }
+
+        </style>
+
+
+        <div id="bs001" class="box-size-example">id = bs001<br>class =  box-size-example</div>
+        <div id="bs002" class="box-size-example">id = bs002<br>class =  box-size-example</div>
+
+        <p>
+          (Sources:<br>
+          <a href="https://css-tricks.com/almanac/properties/b/box-sizing/">
+            CSS Tricks: box-sizing
+          </a>)
+        </p>
+        <p><em>Updated: 17/05/2017</p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="display" class="title-anchor"></div>
       <h2 class="section-header">Display Property</h2>
 

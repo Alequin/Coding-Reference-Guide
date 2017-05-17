@@ -1,5 +1,6 @@
 
 CONTENTS = [
+  new ContentsItem('Box Sizing Property', 'box-sizing'),
   new ContentsItem('Display Property', 'display'),
   new ContentsItem('CSS Selectors', 'selectors'),
   new ContentsItem('Fonts', 'fonts'),
