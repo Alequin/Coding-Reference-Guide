@@ -1,5 +1,6 @@
 
 CONTENTS = [
+  new ContentsItem('Gradient Background Colours', 'gradient'),
   new ContentsItem('Box Sizing Property', 'box-sizing'),
   new ContentsItem('Display Property', 'display'),
   new ContentsItem('CSS Selectors', 'selectors'),
