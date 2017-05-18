@@ -117,30 +117,43 @@
           buttons and drop down menus.
         </p>
 
+        <p><u><b>Common Tags and input types</b></u></p>
+
         <p>
-          An important attribute for tags invloved with forms is <b>name</b>.
+          An important attribute for tags involved with forms is <b>name</b>.
           <b>Name</b> is a method of identification for each section.
         </p>
 
         <dl>
-          <dt><b>&#60;form name="my_form"&#62;&#60;/form&#62;</b></dt>
+          <dt><b>&#60;form name="my_form" action="URL" method="post"&#62;&#60;/form&#62;</b></dt>
           <dd>
             The tag <b>form</b> is the outer most tag of a HTML form. It is not
-            required but functionality may be lost without it.
+            required but functionality will be lost without it.<br>
+            <b>name</b> is used by javascript to access the form
+            elements and its children elements.<br>
+            <b>action</b> is used to set the URL of the program
+            which will process the forms data.<br>
+            <b>method</b> determines the way the forms data is sent
+            to the program at the given URL. The value can be set to <b>post</b> or
+            <b>get</b>.
           </dd>
           <br>
           <dt>
             <b>
               &#60;input type="text" name="text_input" /&#62;<br>
+              &#60;input type="number" name="text_input" /&#62;<br>
               &#60;input type="password" name="password_text" /&#62;
             </b><br>
             text_input => <input type="text" name="text_input" /><br>
+            number_input => <input type="number" name="text_input" /><br>
             password => <input type="password" name="text_input" />
           </dt>
           <dd>
-            The tag <b>input</b> can be used in a number of ways. Here the
-            <b>type</b> attribute instructs the input element to accept text.
-            If <b>tpye</b> is set to <b>password</b> all input will be hidden.
+            The tag <b>input</b> can be used in a number of ways. In the first
+            example <b>type</b> is set to text and will accepts and show any
+            input. In the second its set to <b>number</b> and will only accept
+            numerical input. The final example is set to type <b>password</b>,
+            which acts the same as text, only all input is hidden with dots.
           </dd>
           <br>
           <dt>
@@ -165,6 +178,7 @@
             <input type="checkbox" name="check2" checked="true">check box 2</input>
           </dt>
           <dd>
+            <br>
             The <b>checkbox</b> input is for when there are multiple options
             a user may select from.
           </dd>
@@ -178,6 +192,7 @@
             <input type="radio" name="radio" checked="true">radio 2</input>
           </dt>
           <dd>
+            <br>
             <b>Radio buttons</b> are similar to checkboxes. The only difference
             is that users may only select a single option. Radio buttons that
             are associated should be given the same value for the <b>name</b>
@@ -207,6 +222,7 @@
               </select>
           </dt>
           <dd>
+            <br>
             The <b>select</b> and <b>option</b> tags are used to create a drop
             down list of selections. The attribute <b>select</b> (which has no
             value) is used to set the initially selected value. The attribute
@@ -230,12 +246,13 @@
             </form>
           </dt>
           <dd>
+            <br>
             <b>Buttons</b> in HTML forms can be created with the <b>input</b>
             tag and may be one of four types.
             <ul>
               <li>
                 <b>submit</b>: The submit button will call the process defined
-                by the action attribute, which belongs to the the form tag. It
+                by the action attribute, which belongs to the form tag. It
                 may also re-load the page.
               </li>
               <li>
@@ -256,16 +273,59 @@
           </p>
           </dd>
         </dl>
+
+        <p><u><b>Additional Tags and input types</b></u></p>
+
+        <dl>
+          <dt>
+            <b>
+              &#60;input type="time" name="submit"/&#62;<br>
+              &#60;input type="month" name="reset" /&#62;<br>
+              &#60;input type="date" name="button" /&#62;<br>
+            </b>
+            <br>
+            <form>
+              <input type="time" name="submit"/>
+              <input type="week" name="submit"/>
+              <input type="month" name="reset" />
+              <input type="date" name="button" />
+            </form>
+          </dt>
+          <dd>
+            <br>
+            The date and time may be included in forms using the <b>input</b> element
+            with the types shown above.
+          </dd>
+          <br>
+          <dt>
+            <b>
+              &#60;input type="color" name="submit"/&#62;
+            </b>
+            <br>
+            <form>
+              <input type="color" name="submit"/>
+            </form>
+          </dt>
+          <dd>
+            <br>
+            The <b>color</b> type is a useful way to provide users with a method
+            of selecting a unique colour.
+          </dd>
+        </dl>
+
         <p>
           (Sources:<br>
           <a href="https://www.tutorialspoint.com/html/html_forms.htm">
             tutorialspoint: HTML Forms
           </a><br>
+          <a href="http://learn.shayhowe.com/html-css/building-forms/">
+            Shay Howe: Building Forms
+          </a><br>
           <a href="https://www.electrictoolbox.com/html-form-reset-input/">
              electric toolbox: Resetting an HTML form with a reset input button
           </a>)
         </p>
-        <p><em>Updated:16/05/2017</em></p>
+        <p><em>Updated:18/05/2017</em></p>
       </div>
 
     </div>
@@ -315,10 +375,10 @@
           the lang attribute and the appropriate language.
           <br><br>
           <strong>
-            &#60html lang="en"&#62
+            &#60;html lang="en"&#62;
           </strong>
           <br><br>
-          A list of avalible language tags can be found at
+          A list of available language tags can be found at
           <a href="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">
             IANA Language Subtag Registry
           </a> and
@@ -590,7 +650,7 @@
           <br><br>
           A Markup language is a computer language that
           defines the presentation of raw text by surrounding text with
-          delimiters (tags in HTML) that the computer can interperet.
+          delimiters (tags in HTML) that the computer can interpret.
           <br><br>
           Hyper Text is text on a computer which links to text elsewhere via
           links known as "hyperlinks".
