@@ -1,4 +1,4 @@
-acquired<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -906,6 +906,89 @@ acquired<!DOCTYPE html>
           (Sources:<br>
            Beginning Ruby: From Novice to Professional)
         </p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="enumerable-module" class="title-anchor"></div>
+      <h2 class="section-header">Enumerable Module: Implement</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          The <b>Enumerable Module</b> provides classes with access to methods
+          such as <b>each</b>, <b>each_with_index</b>, <b>select</b> and
+          <b>collect</b> (for a full list view
+          <a href="https://ruby-doc.org/core-2.4.1/Enumerable.html">Ruby docs: Enumerable</a>).
+        </p>
+
+        <p>
+          When included in other classes these methods become available, though
+          the method <b>each</b> must be defined within the class first in order
+          to instruct the other methods how to work with the class
+        </p>
+
+        <p>
+          <b>
+            class MyClass<br>
+            &#160;&#160;include Enumerable
+            <br><br>
+            &#160;&#160;def initialize()<br>
+            &#160;&#160;&#160;&#160;@array = ["bacon", "eggs", "ham", "sausage"]<br>
+            &#160;&#160;end
+            <br><br>
+            &#160;&#160;def each(&#38;block)<br>
+            &#160;&#160;&#160;&#160;@array.each(&block)<br>
+            &#160;&#160;end<br>
+            end
+          </b>
+        </p>
+
+        <p>
+          Now the module has been included and the method each has been defined
+          the class has access to the <b>Enumerable</b> module methods.
+        </p>
+
+        <p>
+          <b>
+            x = MyClass.new<br>
+            x.each { |val| puts val }<br>
+            #=> bacon<br>
+            # eggs<br>
+            # ham<br>
+            # sausage<br>
+          </b>
+        </p>
+
+        <p>
+          <b>
+            x = MyClass.new<br>
+            p x.collect { |val| val = val.upcase }<br>
+            #=> ["BACON", "EGGS", "HAM", "SAUSAGE"]<br>
+          </b>
+        </p>
+
+        <p>
+          <b>
+            x = MyClass.new<br>
+            p x.select { |val| val.length > 4 }<br>
+            #=> ["bacon", "sausage"]<br>
+          </b>
+        </p>
+
+        <p>
+          (Sources:<br>
+          <a href="http://stackoverflow.com/questions/7220634/how-do-i-use-the-enumerable-mixin-in-my-class">
+            Stackoverflow: How do I use the Enumerable mixin in my class?
+          </a><br>
+          <a href="https://ruby-doc.org/core-2.4.1/Enumerable.html">
+            Ruby docs: Enumerable
+          </a>)
+        </p>
+        <p><em>Updated: 18/05/17</em></p>
       </div>
 
     </div>

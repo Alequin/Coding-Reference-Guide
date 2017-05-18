@@ -6,6 +6,7 @@ CONTENTS = [
   new ContentsItem('Redirection &#38; Pipe Characters', 'pipe-chars-and-files'),
   new ContentsItem('Exception Handling', 'exception-handling'),
   new ContentsItem('File Inclusion', 'file-inclusion'),
+  new ContentsItem('Enumerable Module: Implement', 'enumerable-module'),
   new ContentsItem('Comparable Module', 'comparable-module'),
   new ContentsItem('Structs: Quick Classes', 'structs'),
   new ContentsItem('Modules', 'modules'),
