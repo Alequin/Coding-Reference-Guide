@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+acquired<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -145,17 +145,17 @@
               next line
             </li>
             <li>
-              Writting to the file with <b>print</b> will move the pointer
+              Writing to the file with <b>print</b> will move the pointer
               along the current line by the length of the input string.
             </li>
             <li>
-              Writting to the file with <b>puts</b> will move the pointer
+              Writing to the file with <b>puts</b> will move the pointer
               along the current line by the length of the input string.
             </li>
           </ul>
           <em>
             Note: If the pointer is at a line with text on it any new text
-            will overridde the old text. The amount of characters overridden
+            will override the old text. The amount of characters overridden
             is the amount that is written to the file unless the method
             <b>puts</b> is used. In this case a extra character is overridden
             for the new line (/n). This is shown in the example file as
@@ -188,7 +188,7 @@
         </dt>
         <dd>
           Mode <b>a+</b> exactly the same as <b>r+</b> except the pointer
-          is placed at the end of the file rather than the start. Any additons
+          is placed at the end of the file rather than the start. Any additions
           to the file will not override any data.
         </dd>
       </dl>
@@ -270,7 +270,7 @@
             Files can be copied with the <b>FileUtils</b> module. The paths given
             should work from the directory that the ruby script is been called
             from. The output directory does not have to be the same as the
-            original files but the file name must change as a exception will be
+            original files but the file name must change as an exception will be
             thrown otherwise.
             <br><br>
             <b>/Users/my-pc/work-space/file.txt</b><br>
@@ -359,7 +359,7 @@
             #=> "hello\n"
           </strong>
           <br><br>
-          Returns stdout and redirects stderr to calling terminal. Delimeters
+          Returns stdout and redirects stderr to calling terminal. Delimiters
           can be any character.
           <br><br>
           <strong>
@@ -397,7 +397,7 @@
             #=> ["hello\n", "hello again\n"]
           </strong>
           <br><br>
-          IO.popen returns an IO opject and runs the given commands as a
+          IO.popen returns an IO object and runs the given commands as a
           subprocess, with the stdout connected the IO object. Each command stores
           a returned line (if it has a return value), which may be accessed via
           the methods readline (return each value one at a time) or readlines
@@ -422,7 +422,7 @@
           Open3 returns an object which allows access to both returned values
           of stdout and stderr (stderr is not redirected to calling terminal).
           readline and readlines methods are used to access values (same as
-          IO.open). Open3 also allows for other obects such as popen2 or capture
+          IO.open). Open3 also allows for other objects such as popen2 or capture
           3. For full details view
           <a href="https://docs.ruby-lang.org/en/2.0.0/Open3.html">
             ruby docs: module Open3.
@@ -553,7 +553,7 @@
           </strong>
           <br><br>
           The key word else can be included after rescue, which will run if no
-          errors occured.
+          errors occurred.
           <br><br>
           <strong>
             begin<br>
@@ -569,7 +569,7 @@
           </strong>
           <br><br>
           The key word ensure can be included after else. This will always be
-          run regardless of whether an error occured.
+          run regardless of whether an error occurred.
           <br><br>
           <strong>
             error = false<br>
@@ -581,9 +581,9 @@
             else<br>
             &#160;&#160;puts "Woohoo!"<br>
             ensure<br>
-            &#160;&#160;puts error ? "An error occured" : "No error occured"<br>
+            &#160;&#160;puts error ? "An error occurred" : "No error occurred"<br>
             end<br>
-            #=> An error occured
+            #=> An error occurred
           </strong>
           <br><br>
           The key word retry can be used in the rescue block to restart the code
@@ -621,12 +621,12 @@
             else<br>
             &#160;&#160;puts "Woohoo!"<br>
             ensure<br>
-            &#160;&#160;puts error ? "An error occured" : "No error occured"<br>
+            &#160;&#160;puts error ? "An error occurred" : "No error occurred"<br>
             end<br>
             #=> You cannot divide by zero<br>
             # Math complete<br>
             # Woohoo!<br>
-            # An error occured
+            # An error occurred
           </strong>
           <br><br>
           It is possible to provide multiple rescue blocks and provide each with
@@ -705,7 +705,7 @@
           </strong>
           <br><br>
           Below is a list of the Exceptions in ruby and their inheritance
-          hierachy.
+          hierarchy.
         </p>
 
         <div class="img-span">
@@ -741,7 +741,7 @@
       <div class="section-content">
         <p class="section-text-normal">
           In order to pass code between different script files three methods
-          are avaliable.
+          are available.
           <br><br>
           <strong>
             require_relative<br>
@@ -766,7 +766,7 @@
             #=> Hello
           </strong>
           <br><br>
-          Load workes in a very similar way to require relative. The script file
+          Load works in a very similar way to require relative. The script file
           it names must be located in the same directory however load can be
           called on the same file multiple times whereas require_relative can
           only call the same file once. The second time would have no effect.
@@ -822,7 +822,7 @@
             # Hello
           </strong>
           <br><br>
-          The method requrire does not work from the current directory
+          The method require does not work from the current directory
           (unless instructed to) and instead searches through a number of
           previously defined file locations in which Ruby stores its own files
           and standard libraries.
@@ -880,7 +880,7 @@
             require 'more_ruby'
             <br><br>
             #=> ../my_pc<br>
-            # ..other files ommited.. <br>
+            # ..other files omitted.. <br>
             # Hello
             <br><br>
             Note: In this example the symbol ../ is used to in place of a real
@@ -889,7 +889,7 @@
           </strong>
           <br><br>
           File inclusion can be nested. If the file that is been included already
-          includes another file both files will be included in the inital file
+          includes another file both files will be included in the initial file
           <br><br>
           <strong>
             File location: ../my_pc/layer1.rb<br>
@@ -966,7 +966,7 @@
         <p class="section-text-normal">
           Struct is a class that quickly creates very simple classes and
           defines variables associated with that class. The struct will also
-          apply att_accessor to all variables defined.<br>
+          apply attr_accessor to all variables defined.<br>
           Note: variables associated with structs do not have to be constants.
           <br><br>
           <strong>
@@ -1007,7 +1007,7 @@
           When calling a constructor from a class made by a struct not all
           variables have to be defined. The variables which are not given a
           parameter on construction are set to nil and attr_accessor still
-          generates methods releated to them.
+          generates methods related to them.
           <br><br>
           <strong>
             Person = Struct.new(:name, :age)<br>
@@ -1022,7 +1022,7 @@
             # 23
           </strong>
           <br><br>
-          Classes created using structs can be superclasses, allowing thier
+          Classes created using structs can be superclasses, allowing their
           variables to be inherited by the subclass.
           <br><br>
           <strong>
@@ -1077,6 +1077,14 @@
       <h2 class="section-header">Modules</h2>
 
       <div class="section-content">
+
+        <p>
+          <em>
+            Note: The examples use the Fixnum class but as of ruby 2.4 Fixnum
+            and Bignum have been unified into the class Integer.
+          </em>
+        </p>
+
         <p class="section-text-normal">
           Modules are collections of methods and constants. Methods can
           either be instance methods or module methods. Module methods are
@@ -1099,7 +1107,7 @@
             end
           </strong>
           <br><br>
-          Using this module we can call the module method from the module...
+          Using this the can call the module method may be called.
           <br><br>
           <strong>
             puts BasicMath.add(3,6)<br>
@@ -1116,6 +1124,37 @@
             <br><br>
             puts 5.subtract(4)
             #=> 1
+          </strong>
+          <br><br>
+          A class that incudes a module may alter the way the included methods
+          work by providing its own code. If other methods in the module use
+          the changed method their function will also be altered. In some cases
+          Providing code a certain methods is required in order to use all methods
+          provided by the module (for example the comparable and enumerable
+          modules).<!-- TODO: add links to both sections when both are complete -->
+          <br><br>
+          <strong>
+            module BasicMath
+            <br><br>
+            &#160;&#160;def add(val1)<br>
+            &#160;&#160;&#160;&#160;return self + val<br>
+            &#160;&#160;end
+            <br><br>
+            &#160;&#160;def subtract(val)<br>
+            &#160;&#160;&#160;&#160;return self.add(-val)<br>
+            &#160;&#160;end
+            <br><br>
+            end
+            <br><br>
+            class Fixnum<br>
+            &#160;&#160;include BasicMath<br>
+            &#160;&#160;def add(val)<br>
+            &#160;&#160;&#160;&#160;return self - val<br>
+            &#160;&#160;end<br>
+            end
+            <br><br>
+            puts 5.subtract(4)<br>
+            #=> 9
           </strong>
           <br><br>
           Another option is to use the extend key word in place of the include
@@ -1207,6 +1246,7 @@
           </a>
           )
         </p>
+        <p><em>Updated: 18/05/16</em></p>
       </div>
 
     </div>
@@ -1305,8 +1345,8 @@
             # yap yap
           </strong>
           <br><br>
-          If a method has been overriden but the functionality from the super
-          classe is still required the key word super can be used
+          If a method has been overridden but the functionality from the super
+          class is still required the key word super can be used
           to call the method from the superclass.
           <br><br>
           <strong>
@@ -1344,7 +1384,7 @@
             # WOOF!!
           </strong>
           <br><br>
-          The method initialize can also be overriden and make use of the
+          The method initialize can also be overridden and make use of the
           super key word.
           <br><br>
           <strong>
@@ -1455,7 +1495,7 @@
       <div class="section-content">
         <p class="section-text-normal">
           Classes are an important feature relating to object oriented
-          programming as they act as they act as inital blueprints for all
+          programming as they act as they act as initial blueprints for all
           objects, defining their base state and values. The basic syntax of
           a class in Ruby is shown below. The first letter of a class name
           should always be capitalised.
@@ -1467,8 +1507,8 @@
           <br><br>
           Methods are defined using the key word def. Methods can either be
           instance methods (as seen in the previous example) or class methods.
-          Instance methods are only avalible after an instance of the class
-          has been made. Class methods are avalible without an instance of
+          Instance methods are only available after an instance of the class
+          has been made. Class methods are available without an instance of
           the class and are defined and called by stating the class name and
           then the method name (MyClass.my_method).
           <br><br>
@@ -1494,7 +1534,7 @@
           <br><br>
           Classes can have both public and private methods. This idea is known
           as encapsulation and is used to ensure only the required methods
-          are accesible from an object. Private methods can only be used from
+          are accessible from an object. Private methods can only be used from
           within the class.<br>
           For details on protected methods view the
           <a href="#inheritance">Inheritance section</a>
@@ -1642,7 +1682,7 @@
           # 2
           </strong>
           <br><br>
-          Global variables are avaliable outside the class without the need
+          Global variables are available outside the class without the need
           for an instantiated object.
           <br><br>
           <strong>
@@ -1683,8 +1723,8 @@
           </strong>
           <br><br>
           The previous examples have used custom methods to get and set
-          variables but Ruby provides three helpful methods (att_reader,
-          attr_writer and att_accessor) to auto generate getter and setter methods.
+          variables but Ruby provides three helpful methods (attr_reader,
+          attr_writer and attr_accessor) to auto generate getter and setter methods.
           <br><br>
           The following example only shows <b>attr_accessor</b> but <b>attr_reader</b>
           (which generates a getter method) and <b>attr_writer</b> (which generates
@@ -2279,7 +2319,7 @@
             #=> 3  3
           </strong>
           <br><br>
-          An array of the keys or values can be aquired using the methods 'keys'
+          An array of the keys or values can be acquired using the methods 'keys'
           and 'values'
           <br><br>
           <strong>
@@ -2987,7 +3027,7 @@
           <b>x ||= "cats"</b>: Assigns an object to the variable only if the variable currently
           holds a nil value.
           <br><br>
-          <b>2**3</b>: Double asterick is will return the first number to the
+          <b>2**3</b>: Double asterisk is will return the first number to the
           power of the second. The result of the example will be 8 (2*2*2).
           <br></br>
           (Sources:<br>
