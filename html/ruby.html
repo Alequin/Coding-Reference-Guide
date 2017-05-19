@@ -669,20 +669,30 @@
           <br><br>
             While writing code there may be a number of situation you consider
             erroneous but do not actually raise an exception. In these cases it
-            is possible to define when an exception should be raised.
+            is possible to define when an exception should be raised. It is not
+            required to provide an exception class. If one is not given the
+            exception will be treated as a RuntimeError.
           <br><br>
           <strong>
             def feed_dog(amount)<br>
             &#160;&#160;if(amount &#60; 0)<br>
             &#160;&#160;&#160;&#160;raise ArgumentError, "A positive value is needed"<br>
             &#160;&#160;end<br>
-            &#160;&#160;puts "The dog is happy but wants more"<br>
+            &#160;&#160;puts "The dog is happy"<br>
             end
             <br><br>
             feed_dog(2)<br>
             feed_dog(-1)<br>
-            #=> The dog is happy but wants more<br>
+            #=> The dog is happy<br>
             # A positive value is needed (ArgumentError)
+            <br><br>
+            def feed_cat(amount)<br>
+            &#160;&#160;raise "A positive value is needed" if(amount < 0) <br>
+            &#160;&#160;puts "The cat is happy"<br>
+            end
+            <br><br>
+            feed_cat(-1)<br>
+            #=> A positive value is needed (RuntimeError)
           </strong>
           <br><br>
             There are a number of pre-defined exception provided by ruby. It is
