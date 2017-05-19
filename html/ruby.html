@@ -2861,19 +2861,64 @@
       <div id="constants" class="title-anchor"></div>
       <h2 class="section-header">Constants / Final Variables</h2>
 
-      <div class="section-content">
-        <p class="section-text-normal">
-          To define a constant in Ruby create the variable with a capital as the first character
-          <br><br>
-          <strong>Dogs = 50</strong>
-          <br><br>
-          Any attempts to change the variable Dogs will result in a warning
-          <br><br>
+      <div class="section-content section-text-normal">
+
+        <p>
+          To define a constant in Ruby create the variable with a capital as the
+          first character.
+        </p>
+
+        <p><b>Dogs = 50</b></p>
+
+        <p>Any attempts to change the variable Dogs will result in a warning.</p>
+
+        <p>
           Constant may only be defined outside of a method. They can be defined
           within a class or module (only the class / module will have
           access to the value) or they can be defined outside of classes and
           modules, which would make their scope global.
-          <br><br>
+        </p>
+
+        <p>
+          <b>
+            Con = 5<br>
+            class A<br>
+            &#160;&#160;def test<br>
+            &#160;&#160;&#160;&#160;puts Con<br>
+            &#160;&#160;end<br>
+            end<br>
+            A.new.test<br>
+            #=> 5
+          </b>
+        </p>
+
+        <p>
+          The only situation in which a constants value may be changed is when
+          it is inherited from another class. The constant may be overridden.
+        </p>
+
+        <p>
+          <b>
+            class A<br>
+            &#160;&#160;Con1 = 5<br>
+            &#160;&#160;Con2 = 10<br>
+            end
+            <br><br>
+            class B < A<br>
+            &#160;&#160;Con2 = 15<br>
+            &#160;&#160;def print_con<br>
+            &#160;&#160;&#160;&#160;puts "#{Con1} #{Con2}"<br>
+            &#160;&#160;end<br>
+            end
+            <br><br>
+            x = B.new<br>
+            x.print_con
+            <br><br>
+            #=> 5 15
+          </b>
+        </p>
+
+        <p>
           (Sources:
           <br>
            Beginning Ruby: From Novice to Professional<br>
@@ -2882,6 +2927,7 @@
            </a>
           )
         </p>
+        <p><em>Updated: 19/05/2017</em></p>
       </div>
 
     </div>
