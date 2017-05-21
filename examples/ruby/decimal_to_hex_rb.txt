@@ -1,0 +1,107 @@
+def decimal_to_hexadecimal(decimal_num)
+
+  is_minus_num = decimal_num < 0
+  if(is_minus_num)
+    decimal_num = decimal_num.abs
+  end
+
+  if(decimal_num < 16)
+    return get_hex_below_16(decimal_num, is_minus_num)
+  end
+
+  hex_array = get_hex_digits(decimal_num)
+
+  return is_minus_num ?
+        "-#{join_hex_array(hex_array)}" : join_hex_array(hex_array)
+end
+
+def get_hex_below_16(decimal_num, is_minus_num)
+  if(decimal_num < 10)
+    return is_minus_num ? "-#{decimal_num.to_s}" : decimal_num.to_s
+  else
+    return get_hex_letter(decimal_num)
+  end
+end
+
+def get_hex_digits(decimal_num)
+  hex_array = Array.new
+  loop{
+    hex_digit = 0
+    if(decimal_num < 16)
+      hex_array.unshift(decimal_num)
+      break
+    else
+      hex_digit = decimal_num % 16
+    end
+    hex_array.unshift(hex_digit)
+    decimal_num = decimal_num / 16
+  }
+
+  return change_digits_to_hex_letters(hex_array)
+end
+
+def change_digits_to_hex_letters(array)
+  array.each_with_index { |val, index|
+    if(val > 10)
+      array[index] = get_hex_letter(val)
+    end
+  }
+  return array
+end
+
+def join_hex_array(array)
+  result = ""
+  array.each { |val|
+    result += val.to_s
+  }
+  return result
+end
+
+def get_hex_letter(num)
+  case num
+  when 10
+    return 'A'
+  when 11
+    return 'B'
+  when 12
+    return 'C'
+  when 13
+    return 'D'
+  when 14
+    return 'E'
+  when 15
+    return 'F'
+  else
+    raise ArgumentError, "Input Number must be between 10 and 15"
+  end
+end
+
+def decimal_to_hexadecimal_test()
+
+  raise "Test 1 fail" if decimal_to_hexadecimal(10) != 'A'
+  puts "Test 1 Pass"
+
+  raise "Test 2 fail" if decimal_to_hexadecimal(255) != "FF"
+  puts "Test 2 Pass"
+
+  raise "Test 3 fail" if decimal_to_hexadecimal(317547) != '4D86B'
+  puts "Test 3 Pass"
+
+  raise "Test 4 fail" if decimal_to_hexadecimal(5) != '5'
+  puts "Test 4 Pass"
+
+  raise "Test 5 fail" if decimal_to_hexadecimal(0) != '0'
+  puts "Test 5 Pass"
+
+  raise "Test 6 fail" if decimal_to_hexadecimal(-5) != '-5'
+  puts "Test 6 Pass"
+
+  raise "Test 7 fail" if decimal_to_hexadecimal(-317547) != '-4D86B'
+  puts "Test 7 Pass"
+
+  puts "All pass"
+
+end
+
+
+decimal_to_hexadecimal_test()
