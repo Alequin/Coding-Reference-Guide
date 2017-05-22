@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Design Patterns</title>
+  <meta charset="utf-8">
+  <link href="../css/basic-layout.css" type="text/css" rel="stylesheet"/>
+  <link href="../css/summary-page-layout.css" type="text/css" rel="stylesheet"/>
+  <link id="summary-page-layout" href="../css/normal-text-summary-page.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+
+  <div id="header-container">
+
+        <h1 id="main-header">Design Patterns</h1>
+
+        <div id="contents-container">
+          <div class="header-divider divider"></div>
+          <table id="search-and-sort-table">
+            <tr>
+              <td>
+                <form name="search-form">
+                  <input id="contents-search-box" class="section-text-normal" type="text" name="search-term"/>
+                </form>
+              </td>
+              <td>
+                <p id="search-button" class="section-text-normal">
+                  <span class="vertical-align-text">Search</span>
+                </p>
+              </td>
+              <td>
+                <p id="order-button" class="section-text-normal">
+                  <span class="vertical-align-text"></span>
+                </p>
+              </td>
+            </tr>
+          </table>
+
+        </div>
+        <div class="header-divider divider"></div>
+  </div>
+
+  <div id="header-space"></div>
+
+  <div id="primary-container">
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="observer" class="title-anchor"></div>
+      <h2 class="section-header">Observer Pattern</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          The <b>observer pattern</b> is used when a state change in a single
+          object (object X) influences multiple other object. Object X is know
+          as the <b>subject</b> and all the influenced objects are know as
+          <b>obervers</b>. Observers can be added and removed from the list of
+          objects which object X updates on its state change.
+        </p>
+
+        <p>
+          A real world example of this is newspaper subscribers. The newspaper
+          publisher is the subject and subscribers are the observers. If a
+          person is subscribed to the paper they will receive a new copy when it
+          is available. If someone wanted to start receiving updates from the
+          publisher they can subscribe, which would make them an observer.
+          Subscribers may also leave the paper. This would mean they no longer
+          receive updated copies and are no longer observers.
+        </p>
+
+        <p>
+          The following code is an example of the observer pattern in ruby.
+        </p>
+
+        <a href="../examples/ruby/observer.rb">Observer pattern in Ruby</a>
+
+        <p>
+          In this situation the subject is a playing card dealer and the
+          obervers are players at the dealers table. When a player sits at the
+          table they become an observer and receive upates about the dealers
+          game. When the players are not at the table they are not observers
+          and won't rececive any updates.
+        </p>
+
+        <p>
+          (Sources:<br>
+          <a href="">
+          </a>)
+        </p>
+        <p><em>Updated:</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" rel="javascript"></script>
+  <script src="../j-script/contents-arrays/contents-item.js" rel="javascript"></script>
+  <script src="../j-script/contents-arrays/ruby-contents.js" rel="javascript"></script>
+  <script src="../j-script/manage-contents.js" rel="javascript"></script>
+  <script src="../j-script/contents-arrays/contents-search.js" rel="javascript"></script>
+  <script src="../j-script/header.js" rel="javascript"></script>
+  <script src="../j-script/summary-layout-switcher.js" rel="javascript"></script>
+  <script src="../j-script/summary-pages-events.js" rel="javascript"></script>
+
+</body>
+
+</html>
