@@ -53,7 +53,30 @@
       <h2 class="section-header">Basic Layout and Use</h2>
 
       <div class="section-content section-text-normal">
+
         <p>
+          <b>
+            require("minitest/autorun")<br>
+            # <b>minitest/rg</b>: changes colour scheme<br>
+            require("minitest/rg")<br>
+            require_relative("file_to_test.rb")
+            <br><br>
+            class TestMyTest < Minitest::Test
+            <br><br>
+            &#160;&#160;def test_method_behavior__expected_result()<br>
+            &#160;&#160;&#160;&#160;result = method_name()<br>
+            &#160;&#160;&#160;&#160;assert_equal(expected_value, result)<br>
+            &#160;&#160;end
+            <br><br>
+            end
+          </b>
+        </p>
+
+        <p>
+          The previous example demonstrates the basic layout of a minitest file.
+          The file name should match or at least be relatable to the code to be
+          tested and should also end with the word spec, which is a convention
+          across languages.
         </p>
         <p>
           (Sources:<br>
