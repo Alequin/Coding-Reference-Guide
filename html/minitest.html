@@ -127,6 +127,10 @@
             <br><br>
             class TestMyTest < Minitest::Test
             <br><br>
+            &#160;&#160;def setup
+            &#160;&#160;&#160;&#160;@test_var = [1,2,3,4,5,6]
+            &#160;&#160;end
+            <br><br>
             &#160;&#160;def test_method_behavior__expected_result()<br>
             &#160;&#160;&#160;&#160;result = method_name()<br>
             &#160;&#160;&#160;&#160;assert_equal(expected_value, result)<br>
@@ -156,6 +160,13 @@
           All test names must start with test and may included as many
           assertions as desired. For a single test to pass all assertions
           associated with the test must pass.
+        </p>
+
+        <p>
+          The method <b>setup</b> allows for variables, which may be used in
+          multiple tests, to be created. The state the variables are set to
+          initially is how each test method will use them. Changes to their
+          state do not apply between tests.
         </p>
 
         <p>
