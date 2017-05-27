@@ -2319,16 +2319,23 @@
           <br><br>
           <strong>
             x = 6<br>
-            case x<br>
+            num = case x<br>
             &#160;&#160;when 2<br>
-            &#160;&#160;&#160;&#160;run code when x == 2<br>
+            &#160;&#160;&#160;&#160;# run code when x == 2<br>
+            &#160;&#160;&#160;&#160;5<br>
             &#160;&#160;when 4<br>
-            &#160;&#160;&#160;&#160;run code when x == 4<br>
+            &#160;&#160;&#160;&#160;# run code when x == 4<br>
+            &#160;&#160;&#160;&#160;10<br>
             &#160;&#160;when 6<br>
-            &#160;&#160;&#160;&#160;run code when x == 6<br>
+            &#160;&#160;&#160;&#160;# run code when x == 6<br>
+            &#160;&#160;&#160;&#160;15<br>
             &#160;&#160;else<br>
-            &#160;&#160;&#160;&#160;run code for all other cases<br>
+            &#160;&#160;&#160;&#160;# run code for all other cases<br>
+            &#160;&#160;&#160;&#160;20<br>
             end
+            <br><br>
+            puts num<br>
+            #=> 15
           </strong>
           <br><br>
           (Sources:
