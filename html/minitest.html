@@ -57,7 +57,6 @@
         <p>
           <b>
             require("minitest/autorun")<br>
-            # <b>minitest/rg</b>: changes colour scheme<br>
             require("minitest/rg")<br>
             require_relative("file_to_test.rb")
             <br><br>
@@ -75,9 +74,21 @@
         <p>
           The previous example demonstrates the basic layout of a minitest file.
           The file name should match or at least be relatable to the code to be
-          tested and should also end with the word spec, which is a convention
-          across languages.
+          tested and should also end with the word spec (file_name_spec.rb). The
+          test should be located in a file named spec within the project folder.
         </p>
+
+        <p>
+          Minitest is a gem and must be included with <b>require</b>. In the example
+          the word <b>autorun</b> is used as well, which results in all test will be
+          run automatically when the file is called.
+        </p>
+
+        <p>
+          <b>minitest/rg</b> is an optional addition which changes the colour
+          scheme of test output to improve readability.
+        </p>
+
         <p>
           (Sources:<br>
           <a href="">
