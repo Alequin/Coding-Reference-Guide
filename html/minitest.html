@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Minitest</title>
+  <meta charset="utf-8">
+  <link href="../css/basic-layout.css" type="text/css" rel="stylesheet"/>
+  <link href="../css/summary-page-layout.css" type="text/css" rel="stylesheet"/>
+  <link id="summary-page-layout" href="../css/normal-text-summary-page.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+
+  <div id="header-container">
+
+        <h1 id="main-header">Helpful Minitest</h1>
+
+        <div id="contents-container">
+          <div class="header-divider divider"></div>
+          <table id="search-and-sort-table">
+            <tr>
+              <td>
+                <form name="search-form">
+                  <input id="contents-search-box" class="section-text-normal" type="text" name="search-term"/>
+                </form>
+              </td>
+              <td>
+                <p id="search-button" class="section-text-normal">
+                  <span class="vertical-align-text">Search</span>
+                </p>
+              </td>
+              <td>
+                <p id="order-button" class="section-text-normal">
+                  <span class="vertical-align-text"></span>
+                </p>
+              </td>
+            </tr>
+          </table>
+
+        </div>
+        <div class="header-divider divider"></div>
+  </div>
+
+  <div id="header-space"></div>
+
+  <div id="primary-container">
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="basic-layout-and-use" class="title-anchor"></div>
+      <h2 class="section-header">Basic Layout and Use</h2>
+
+      <div class="section-content section-text-normal">
+
+        <p>
+          <b>
+            require("minitest/autorun")<br>
+            require("minitest/rg")<br>
+            require_relative("file_to_test.rb")
+            <br><br>
+            class TestMyTest < Minitest::Test
+            <br><br>
+            &#160;&#160;def test_method_behavior__expected_result()<br>
+            &#160;&#160;&#160;&#160;result = method_name()<br>
+            &#160;&#160;&#160;&#160;assert_equal(expected_value, result)<br>
+            &#160;&#160;end
+            <br><br>
+            end
+          </b>
+        </p>
+
+        <p>
+          The previous example demonstrates the basic layout of a minitest file.
+          The file name should match or at least be relatable to the code to be
+          tested and should also end with the word spec (file_name_spec.rb). The
+          test should be located in a file named spec within the project folder.
+        </p>
+
+        <p>
+          Minitest is a gem and must be included with <b>require</b>. In the example
+          the word <b>autorun</b> is used as well, which results in all test will be
+          run automatically when the file is called. <b>minitest/rg</b> is an
+          optional addition which changes the colour scheme of test output to
+          improve readability.
+        </p>
+
+        <p>
+          The tests are created within a class which inherits <b>Minitest::Test</b>.
+          All test names must start with test and may included as many
+          assertions as desired. For a single test to pass all assertions
+          associated with the test must pass.
+        </p>
+
+        <p>
+          (Sources:<br>
+          <a href="http://ruby-doc.org/stdlib-2.0.0/libdoc/minitest/rdoc/MiniTest.html">
+            Ruby Docs 2.0.0: Minitest
+          </a>)
+        </p>
+        <p><em>Updated: 27/05/2017</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="what-is-minitest" class="title-anchor"></div>
+      <h2 class="section-header">What is Minitest and Testing</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          <b>Minitest</b> is a testing framework for the programming language Ruby.
+          It provides a full suite of testing facilities which supports
+          <b>test driven development, behaviour driven development, mocking and
+          benchmarking.</b>
+        </p>
+
+        <ul>
+          <li>
+            <b>Test Driven Development</b>: TDD is the process of constantly
+            testing the functionality of code in short development life cycles.
+            When working on a new piece of code the developer will produce a few
+            basic test then write the code to make them pass. As each test
+            passes a new one should be written, followed by the code that
+            results in all tests passing. This loop of writting tests and
+            passing tests improves the code written, reduces missed bugs and
+            builds a strong foundation so that future alterations that cause
+            issues are quickly identified.
+          </li>
+
+          <ol>
+            <p><b>TDD Steps:</b></p>
+            <li>Add a Test</li>
+            <li>Run all tests and see if the new test fails</li>
+            <li>Write the code</li>
+            <li>Run tests</li>
+            <li>Refactor code</li>
+            <li>Repeat</li>
+          </ol>
+
+          <li>
+            <b>Behaviour Driven Development</b>: BDD is very similar to TDD in
+            that it follows the same principals and processes. The difference is
+            the specificity of the test implementation. BDD aims to produce
+            tests that emulates the codes final purpose and uses a format
+            similar to user stories to define the behavious that should be tested.
+          </li>
+
+          <li>
+            <b>Mocking</b>: This is producing mocks of secton of code which are
+            difficult to truly implemenet.
+          </li>
+
+          <li>
+            <b>Benchmarking</b>: This is testing the performance of code.
+          </li>
+
+        </ul>
+
+        <p>
+          (Sources:<br>
+          <a href="https://ruby-doc.org/stdlib-2.1.0/libdoc/minitest/rdoc/MiniTest.html">
+            Ruby docs: MiniTest
+          </a><br>
+          <a href="https://technologyconversations.com/2013/12/20/test-driven-development-tdd-example-walkthrough/">
+            Technology Conversations: Test Driven Development (TDD) - Example Walkthrough
+          </a><br>
+          <a href="https://en.wikipedia.org/wiki/Test-driven_development#Test-driven_development_cycle">
+            Wikipedia: Test-driven development
+          </a><br>
+          <a href="http://searchsoftwarequality.techtarget.com/definition/mock-object">
+            SearchSoftwareQuality: mock object
+          </a><br>
+          <a href="https://stackoverflow.com/questions/2665812/what-is-mocking">
+            Stackoverflow: What is Mocking?
+          </a><br>
+          <a href="https://en.wikipedia.org/wiki/Behavior-driven_development">
+            Wikipedia: Behavior-driven development
+          </a><br>
+          <a href="https://en.wikipedia.org/wiki/Benchmark_(computing)">
+            Wikipedia: Benchmark (computing)
+          </a>)
+        </p>
+        <p><em>Updated: 24/05/2017</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" rel="javascript"></script>
+  <script src="../j-script/contents-arrays/contents-item.js" rel="javascript"></script>
+  <script src="../j-script/contents-arrays/minitest-contents.js" rel="javascript"></script>
+  <script src="../j-script/manage-contents.js" rel="javascript"></script>
+  <script src="../j-script/contents-arrays/contents-search.js" rel="javascript"></script>
+  <script src="../j-script/header.js" rel="javascript"></script>
+  <script src="../j-script/summary-layout-switcher.js" rel="javascript"></script>
+  <script src="../j-script/summary-pages-events.js" rel="javascript"></script>
+
+</body>
+
+</html>
