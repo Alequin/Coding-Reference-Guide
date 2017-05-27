@@ -65,23 +65,21 @@
         <dl>
 
           <dt><b>assert(result, msg=nil)</b></dt>
-          <dl>This test will pass when the result is true</dl>
-
-          <dt><b>assert_empty(result, msg = nil)</b></dt>
-          <dl>
+          <dd>This test will pass when the result is true</dd>
+          <br>
+          <dt><b>assert_empty(result, msg=nil)</b></dt>
+          <dd>
             This test will pass when the result is an object which will respond
             to the method .empty? and the return value is true. Objects such as
             arrays or hashes.
-          </dl>
-
-          <dt><b></b></dt>
-          <dl></dl>
-
-          <dt><b></b></dt>
-          <dl></dl>
-
-          <dt><b></b></dt>
-          <dl></dl>
+          </dd>
+          <br>
+          <dt><b>assert_equal(expected, result, msg=nil)</b></dt>
+          <dd>
+            This test will compare the parameters <b>expected</b> and
+            <b>result</b> and will pass if both are equal.
+          </dd>
+          <br>
 
         </dl>
 
