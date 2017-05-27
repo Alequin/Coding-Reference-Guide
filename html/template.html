@@ -53,15 +53,45 @@
       <h2 class="section-header">Assertion Methods</h2>
 
       <div class="section-content section-text-normal">
+
         <p>
-          
+          <em>
+            Note: All assertion methods which have the parameter msg may
+            accept a string as a parameter, which will by output on a failure.
+            This is not required however.
+          </em>
         </p>
+
+        <dl>
+
+          <dt><b>assert(result, msg=nil)</b></dt>
+          <dl>This test will pass when the result is true</dl>
+
+          <dt><b>assert_empty(result, msg = nil)</b></dt>
+          <dl>
+            This test will pass when the result is an object which will respond
+            to the method .empty? and the return value is true. Objects such as
+            arrays or hashes.
+          </dl>
+
+          <dt><b></b></dt>
+          <dl></dl>
+
+          <dt><b></b></dt>
+          <dl></dl>
+
+          <dt><b></b></dt>
+          <dl></dl>
+
+        </dl>
+
         <p>
           (Sources:<br>
-          <a href="">
+          <a href="https://ruby-doc.org/stdlib-2.1.0/libdoc/minitest/rdoc/MiniTest/Assertions.html">
+            Ruby doc 2.1.0: MiniTest::Assertions
           </a>)
         </p>
-        <p><em>Updated:</em></p>
+        <p><em>Updated: 27/05/2017</em></p>
       </div>
 
     </div>
