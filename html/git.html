@@ -200,12 +200,19 @@
           </dd>
           <br>
 
-          <dt><b>git config --global commit.template full-file-path/message.txt</b></dt>
+          <dt>
+            <b>
+              git config --global commit.template<br>
+              git config --global commit.template full-file-path/message.txt<br>
+              git config --global --unset-all commit.template
+            </b>
+          </dt>
           <dd>
-            This allows you to set a template for any commit you make. The text
-            provided in the file will be included in any commits you make
-            (unless the message is written in the terminal using -m). You can
-            include commented out text using the hash symbol as well.
+            This allows you to view, set and remove a template file for commits.
+            When you make any commits the file that is opened to write the
+            commit will be the one set as the template. The template may be
+            changed numerous times using the second command and removed completely
+            with the final command.
           </dd>
           <br>
 
@@ -250,8 +257,11 @@
           <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">
             Git: Getting Started - First-Time Git Setup
           </a><br>
+          <a href="https://stackoverflow.com/questions/28582972/reset-git-template-path">
+            Stackoverflow: Reset git template path
+          </a>)
         </p>
-        <p><em>Updated: 05/05/2017</em></p>
+        <p><em>Updated: 27/05/2017</em></p>
       </div>
 
     </div>
