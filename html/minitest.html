@@ -81,20 +81,25 @@
         <p>
           Minitest is a gem and must be included with <b>require</b>. In the example
           the word <b>autorun</b> is used as well, which results in all test will be
-          run automatically when the file is called.
+          run automatically when the file is called. <b>minitest/rg</b> is an
+          optional addition which changes the colour scheme of test output to
+          improve readability.
         </p>
 
         <p>
-          <b>minitest/rg</b> is an optional addition which changes the colour
-          scheme of test output to improve readability.
+          The tests are created within a class which inherits <b>Minitest::Test</b>.
+          All test names must start with test and may included as many
+          assertions as desired. For a single test to pass all assertions
+          associated with the test must pass.
         </p>
 
         <p>
           (Sources:<br>
-          <a href="">
+          <a href="http://ruby-doc.org/stdlib-2.0.0/libdoc/minitest/rdoc/MiniTest.html">
+            Ruby Docs 2.0.0: Minitest
           </a>)
         </p>
-        <p><em>Updated:</em></p>
+        <p><em>Updated: 27/05/2017</em></p>
       </div>
 
     </div>
