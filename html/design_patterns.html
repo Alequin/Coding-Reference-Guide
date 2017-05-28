@@ -54,7 +54,46 @@
 
       <div class="section-content section-text-normal">
         <p>
+          The purpose of the Decorator pattern (or Wrapper pattern) is to attach
+          additional responsibilities and functionality to objects dynamically.
+          It is an alternative to using inheritance and subclassing. The
+          decorator patten uses composition composition.
         </p>
+
+        <p>
+          Composition is the idea of objects containing references to instances
+          of others which contain desirable functionality. The decoration
+          features which make the pattern possible (reference to desirable
+          object(s) or required methods) are normally defined in a separate
+          inheritable section of code (interfaces, mixin).
+        </p>
+
+        <p>
+          The following file is a very basic example of the decorator patterns
+          using pizza.
+        </p>
+
+        <a href="../examples/ruby/pizza_decorator/pizza_decorator.rb">
+          <p>
+            pizza-decorator.rb
+          </p>
+        </a>
+
+        <p>
+          In the given example the class <b>PizzaBase</b> is decorated by
+          <b>Sweetcorn</b> and <b>Chorizo</b>. While Sweetcorn and Chorizo could
+          have been written without inheriting from another class it ensures
+          the correct features are included. The reference to the object to be
+          decorated is created in the Toppings class <b>(@pizza)</b> and meaning
+          that all classes that inherit from Topping are able to wrap an object.
+        </p>
+
+        <p>
+          This can be seen in the final method
+          <b>get_stonebake_with_sweetcorn_chorizo</b> as the pizza base is
+          wrapped by sweetcorn, which is then wrapped by chorizo.
+        </p>
+
         <p>
           (Sources:<br>
           <a href="">
