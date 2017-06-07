@@ -49,6 +49,45 @@
 
     <div class="section">
 
+      <div id="setup" class="title-anchor"></div>
+      <h2 class="section-header">Setup Method</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          The setup method is a place to inlcude any objects that multiple tests
+          may use. The method is run prior to each test so that any chanages
+          are reset each time. This only works on instance variables and any
+          class variables should be specifically reset if it is required.
+        </p>
+
+        <p>
+          <b>
+            def setup<br>
+            &#160;&#160;Room.reset_total_rooms_counter()<br>
+            &#160;&#160;@room_1 = Room.new()<br>
+            &#160;&#160;@room_2 = Room.new()<br>
+            &#160;&#160;@room_3 = Room.new()<br>
+            end
+          </b>
+        </p>
+
+        <p>
+          In this example the class Room has a class variable which increases
+          each time a room is created. If the class method
+          reset_total_room_counter was not called the counter would continue
+          to increase with each test that was run rather than starting from
+          zero each time.
+        </p>
+
+        <p><em>Updated: 08/06/2017</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="assertions" class="title-anchor"></div>
       <h2 class="section-header">Assertion Methods</h2>
 

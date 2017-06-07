@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>... Summary</title>
+  <meta charset="utf-8">
+  <link href="../css/basic-layout.css" type="text/css" rel="stylesheet"/>
+  <link href="../css/summary-page-layout.css" type="text/css" rel="stylesheet"/>
+  <link id="summary-page-layout" href="../css/normal-text-summary-page.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+
+  <div id="header-container">
+
+        <h1 id="main-header">Helpful ...</h1>
+
+        <div id="contents-container">
+          <div class="header-divider divider"></div>
+          <table id="search-and-sort-table">
+            <tr>
+              <td>
+                <form name="search-form">
+                  <input id="contents-search-box" class="section-text-normal" type="text" name="search-term"/>
+                </form>
+              </td>
+              <td>
+                <p id="search-button" class="section-text-normal">
+                  <span class="vertical-align-text">Search</span>
+                </p>
+              </td>
+              <td>
+                <p id="order-button" class="section-text-normal">
+                  <span class="vertical-align-text"></span>
+                </p>
+              </td>
+            </tr>
+          </table>
+
+        </div>
+        <div class="header-divider divider"></div>
+  </div>
+
+  <div id="header-space"></div>
+
+  <div id="primary-container">
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="setup" class="title-anchor"></div>
+      <h2 class="section-header">Setup Method</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          The setup method is a place to inlcude any objects that multiple tests
+          may use. The method is run prior to each test so that any chanages
+          are reset each time. This only works on instance variables and any
+          class variables should be specifically reset if it is required.
+        </p>
+
+        <p>
+          <b>
+            def setup<br>
+            &#160;&#160;Room.reset_total_rooms_counter()<br>
+            &#160;&#160;@room_1 = Room.new()<br>
+            &#160;&#160;@room_2 = Room.new()<br>
+            &#160;&#160;@room_3 = Room.new()<br>
+            end
+          </b>
+        </p>
+
+        <p>
+          In this example the class Room has a class variable which increases
+          each time a room is created. If the class method
+          reset_total_room_counter was not called the counter would continue
+          to increase with each test that was run rather than starting from
+          zero each time.
+        </p>
+
+        <p><em>Updated: 08/06/2017</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" rel="javascript"></script>
+  <script src="../j-script/contents-arrays/contents-item.js" rel="javascript"></script>
+  <script src="../j-script/contents-arrays/ruby-contents.js" rel="javascript"></script>
+  <script src="../j-script/manage-contents.js" rel="javascript"></script>
+  <script src="../j-script/contents-arrays/contents-search.js" rel="javascript"></script>
+  <script src="../j-script/header.js" rel="javascript"></script>
+  <script src="../j-script/summary-layout-switcher.js" rel="javascript"></script>
+  <script src="../j-script/summary-pages-events.js" rel="javascript"></script>
+
+</body>
+
+</html>

@@ -108,7 +108,6 @@ atom shortcut of comments cmd+/
 ruby difference between enumerable methods select and find_all
 https://stackoverflow.com/questions/20999192/is-find-all-and-select-the-same-thing
 --------------------------------------------------------------------------------
-minitest. setup only resets objects. class variables are not reset
 --------------------------------------------------------------------------------
 pry: how next, step and continue works
 --------------------------------------------------------------------------------
