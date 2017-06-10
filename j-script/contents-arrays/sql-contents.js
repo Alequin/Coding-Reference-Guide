@@ -7,6 +7,7 @@ CONTENTS = [
   new ContentsItem('UNION', 'union'),
   new ContentsItem('Self Referencing Join', 'self-join'),
   new ContentsItem('Subquery', 'subquery'),
+  new ContentsItem('Inner Join With Many to Many Relationship', 'many-to-many-join'),
   new ContentsItem('Outer Join', 'outer-join'),
   new ContentsItem('Inner Join', 'inner-join'),
   new ContentsItem('AS and Aliases', 'as'),
