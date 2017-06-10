@@ -10,6 +10,7 @@ CONTENTS = [
   new ContentsItem('Comparable Module', 'comparable-module'),
   new ContentsItem('Structs: Quick Classes', 'structs'),
   new ContentsItem('Modules', 'modules'),
+  new ContentsItem('Public, Protected and Private', 'public_protected_private'),
   new ContentsItem('Inheritance', 'inheritance'),
   new ContentsItem('Classes', 'classes'),
   new ContentsItem('Procs &#38; Lambdas', 'procs-lambda'),
