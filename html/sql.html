@@ -706,6 +706,83 @@
 
     <div class="section">
 
+      <div id="many-to-many-join" class="title-anchor"></div>
+      <h2 class="section-header">Inner Join With Many to Many Relationship</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          Joins can be done between multiple tables at once. In cases where
+          three tables are used to create a many-to-many relationship multiple
+          joins enable the combination of the main two tables into one.
+        </p>
+
+        <p><em>The following tables will be used as examples.</em></p>
+
+        <p><b><u>Customers</u></b></p>
+        <img src="../examples/sql/cinema_tables/customers_table.png"/>
+        <p><b><u>Tickets</u></b></p>
+        <img src="../examples/sql/cinema_tables/tickets_table.png"/>
+        <p><b><u>Screenings</u></b></p>
+        <img src="../examples/sql/cinema_tables/screenings_table.png"/>
+        <p><b><u>Films</u></b></p>
+        <img src="../examples/sql/cinema_tables/films_table.png"/>
+        <p>
+          <a href="../examples/sql/cinema_tables/cinema_tables_code.txt">
+            View code to produce tables
+          </a>
+        </p>
+
+        <p>
+          The tables customers and screenings have a many to many relationship
+          and use the table tickets as an intermediary. Using a single join the
+          customers can be paired with the screening_id and the screenings can
+          be pair with the customer_id. If additional joins are used in one
+          statement the customers table can be paired with the screenings table
+          in order to show the screening time each customer will attend.
+        </p>
+
+        <p>
+          <b>
+            SELECT customers.name, screenings.show_time FROM customers<br>
+            INNER JOIN tickets<br>
+            ON customers.id = tickets.customer_id<br>
+            INNER JOIN screenings<br>
+            ON tickets.screening_id = screenings.id;
+          </b>
+        </p>
+
+        <img src="../examples/sql/cinema_tables/customers_screenings_join.png"/>
+
+        <p>
+          This can be done with many tables. For example the customers table may
+          be linked to the films table in order to display which films each
+          customer is going to see.
+        </p>
+
+        <p>
+          <b>
+            SELECT customers.name, films.title, screenings.show_time FROM customers<br>
+            INNER JOIN tickets<br>
+            ON customers.id = tickets.customer_id<br>
+            INNER JOIN screenings<br>
+            ON tickets.screening_id = screenings.id<br>
+            INNER JOIN films<br>
+            ON screenings.film_id = films.id<br>
+            ORDER BY customers.name;
+          </b>
+        </p>
+
+        <img src="../examples/sql/cinema_tables/customers_films_join.png"/>
+
+        <p><em>Updated: 10/06/2017</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="outer-join" class="title-anchor"></div>
       <h2 class="section-header">Outer Join</h2>
 
