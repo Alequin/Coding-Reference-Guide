@@ -1,0 +1,33 @@
+class MyClass
+
+  protected
+
+  def protected_print_1
+    puts "Im protected"
+  end
+
+  def protected_print_2
+    puts "Im also protected"
+  end
+
+  private
+
+  def private_print_1
+    puts "Im private"
+  end
+
+  def private_print_2
+    puts "Im also private"
+  end
+
+  public
+
+  def public_print_1
+    puts "Im public"
+  end
+
+  def public_print_2
+    puts "Im also public"
+  end
+
+end
