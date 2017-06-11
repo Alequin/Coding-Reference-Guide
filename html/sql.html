@@ -583,6 +583,100 @@
 
     <div class="section">
 
+      <div id="returning" class="title-anchor"></div>
+      <h2 class="section-header">RETURNING</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          <em>
+            RETURNING works with PostgreSQL but may not be
+            compatable with others database systems.
+          </em>
+        </p>
+        <p>
+          <em>
+            The following table will be used to provide examples.
+          </em>
+        </p>
+        <p>
+          <b>
+            CREATE TABLE people(<br>
+            &#160;&#160;id SERIAL2 PRIMARY KEY,<br>
+            &#160;&#160;name VARCHAR(255),<br>
+            &#160;&#160;age INT2<br>
+            );
+          </b>
+        </p>
+
+        <p>
+          The key word keyword RETURNING can be used with INSERT, UPDATE and
+          DELETE statments to return a table of the altered rows.
+        </p>
+
+        <p>
+          <b>
+            INSERT INTO people (name, age)
+            VALUES
+            ('Tommy', 40),
+            ('Mia', 32)
+            RETURNING *;
+          </b>
+        </p>
+
+        <img src="../examples/sql/returning_examples/return_from_insert.png"/>
+
+        <p>
+          <b>
+            UPDATE people SET age = 5
+            RETURNING name, age;
+          </b>
+        </p>
+
+        <img src="../examples/sql/returning_examples/return_from_update.png"/>
+
+        <p>
+          <b>
+            DELETE FROM people
+            RETURNING id, name;
+          </b>
+        </p>
+
+        <img src="../examples/sql/returning_examples/return_from_delete.png"/>
+
+        <p>
+          The returned table may also be used in statments.
+        </p>
+
+        <p>
+          <b>
+            WITH new_people AS (<br>
+            &#160;&#160;INSERT INTO people (name, age)<br>
+            &#160;&#160;VALUES<br>
+            &#160;&#160;('Tommy', 40),<br>
+            &#160;&#160;('Mia', 32)<br>
+            &#160;&#160;RETURNING *<br>
+            ) SELECT * FROM new_people WHERE age = 32;
+          </b>
+        </p>
+
+        <p>
+          (Sources:<br>
+          <a href="https://www.postgresql.org/docs/9.5/static/dml-returning.html">
+            PostgreSQL docs: Returning Data From Modified Rows
+          </a><br>
+          <a href="https://www.postgresql.org/docs/9.5/static/sql-insert.html">
+            PostgreSQL docs: INSERT
+          </a>)
+        </p>
+        <p><em>Updated: 11/06/2017</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="self-join" class="title-anchor"></div>
       <h2 class="section-header">Self Referencing Join</h2>
 

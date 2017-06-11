@@ -5,6 +5,7 @@ CONTENTS = [
   new ContentsItem('VIEWS', 'views'),
   new ContentsItem('INTERSECT & EXCEPT', 'intersect-expect'),
   new ContentsItem('UNION', 'union'),
+  new ContentsItem('RETURNING', 'returning'),
   new ContentsItem('Self Referencing Join', 'self-join'),
   new ContentsItem('Subquery', 'subquery'),
   new ContentsItem('Inner Join With Many to Many Relationship', 'many-to-many-join'),
