@@ -1348,6 +1348,159 @@
 
     <div class="section">
 
+      <div id="public_protected_private" class="title-anchor"></div>
+      <h2 class="section-header">Public, Protected and Private</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          In Ruby methods may be publicly accessible, protected or private.
+          <b>Private</b> methods are usable by the class that defines them and
+          by subclasses. They cannot be called with the self keyword however.
+          <b>Protected</b> are the same as private methods except that they can
+          be called with the self keyword. <b>Public</b> methods are usable in
+          all cases and by instances of the class or child class.
+        </p>
+
+        <p>
+          While methods can be set to public this is also their default state.
+          There are a few ways they can be made public, protected or private.
+       </p>
+
+       <a href="../examples/ruby/pub_protect_priv/pub_protect_priv_example_1.txt">
+         Example 1
+       </a><br>
+       <a href="../examples/ruby/pub_protect_priv/pub_protect_priv_example_2.txt">
+         Example 2
+       </a><br>
+       <a href="../examples/ruby/pub_protect_priv/pub_protect_priv_example_3.txt">
+         Example 3
+       </a><br>
+       <a href="../examples/ruby/pub_protect_priv/pub_protect_priv_example_4.txt">
+         Example 4
+       </a>
+
+       <p>
+         Class methods can only be public or private and are set as shown in
+         the next example file. Class methods are also public by default but can
+         be specifically set to public.
+      </p>
+
+      <a href="../examples/ruby/pub_protect_priv/pub_priv_class_method.txt">
+        Class method example
+      </a><br>
+
+        <p>
+          <b>
+            class MyClass_1
+              <br><br>
+              &#160;&#160;def print<br>
+              &#160;&#160;&#160;&#160;public_print<br>
+              &#160;&#160;&#160;&#160;protected_print<br>
+              &#160;&#160;&#160;&#160;private_print<br>
+              &#160;&#160;end
+              <br><br>
+              &#160;&#160;def public_print<br>
+              &#160;&#160;&#160;&#160;puts "Im public"<br>
+              &#160;&#160;end
+              <br><br>
+              &#160;&#160;protected<br>
+              &#160;&#160;def protected_print<br>
+              &#160;&#160;&#160;&#160;puts "Im protected"<br>
+              &#160;&#160;end
+              <br><br>
+              &#160;&#160;private<br>
+              &#160;&#160;def private_print<br>
+              &#160;&#160;&#160;&#160;puts "Im private"<br>
+              &#160;&#160;end
+              <br><br>
+            end
+            <br><br>
+            class MyClass_2 < MyClass_1<br>
+            &#160;&#160;def print<br>
+            &#160;&#160;&#160;&#160;public_print<br>
+            &#160;&#160;&#160;&#160;protected_print<br>
+            &#160;&#160;&#160;&#160;private_print<br>
+            &#160;&#160;end
+            <br><br>
+            &#160;&#160;def print_2<br>
+            &#160;&#160;&#160;&#160;public_print<br>
+            &#160;&#160;&#160;&#160;self.protected_print<br>
+            &#160;&#160;&#160;&#160;self.private_print<br>
+            &#160;&#160;end<br>
+            end
+          </b>
+        </p>
+
+        <p>
+          Using these classes it can be seen that the method print_public
+          is usable in all situations.
+        </p>
+
+        <p>
+          <b>
+            a = MyClass_1.new()<br>
+            b = MyClass_2.new()<br>
+            a.public_print<br>
+            b.public_print<br>
+            #=> Im public<br>
+            # Im public
+          </b>
+        </p>
+
+        <p>
+          The protected and private methods are usable by the print methods in
+          both classes but cause errors when used by an instance.
+        </p>
+
+        <p>
+          <b>
+            a = MyClass_1.new()<br>
+            b = MyClass_2.new()<br>
+            a.print<br>
+            b.print<br>
+            a.protected_method OR a.private_print<br>
+            #=>Im public<br>
+            # Im protected<br>
+            # Im private<br>
+            # Im public<br>
+            # Im protected<br>
+            # Im private<br>
+            # ERROR: protected method / private method (NoMethodError)
+          </b>
+        </p>
+
+        <p>
+          The private method is usable within MyClass_1 and MyClass_2 but causes
+          errors when self.private_print is called. The protected method has no
+          issues with being called with self.
+        </p>
+
+        <p>
+          <b>
+            b = MyClass_2.new()<br>
+            b.print_2<br>
+            #=>Im public<br>
+            # Im protected<br>
+            # ERROR: private method (NoMethodError)
+          </b>
+        </p>
+
+        <p>
+          (Sources:<br>
+          <a href="http://www.skorks.com/2010/04/ruby-access-control-are-private-and-protected-methods-only-a-guideline/">
+            Skorks: Ruby Access Control – Are Private And Protected Methods Only A Guideline?
+          </a><br>
+          Book: Beginning Ruby)
+        </p>
+        <p><em>Updated:11/06/17</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="inheritance" class="title-anchor"></div>
       <h2 class="section-header">Inheritance</h2>
 
