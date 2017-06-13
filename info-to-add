@@ -117,5 +117,7 @@ database soft deleting
 --------------------------------------------------------------------------------
 files in the same directory dont need to be require_relatived
 --------------------------------------------------------------------------------
+forms: when a label is correctly attached to a form clicking on the label will
+move the cursor into the form input
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
