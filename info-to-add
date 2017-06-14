@@ -120,4 +120,7 @@ files in the same directory dont need to be require_relatived
 forms: when a label is correctly attached to a form clicking on the label will
 move the cursor into the form input
 --------------------------------------------------------------------------------
+sinatra: redirect vs redirect to 
+  redirect requires a full URL 
+  redirect to converts a known path in the current app into a full URL
 --------------------------------------------------------------------------------

@@ -49,6 +49,83 @@
 
     <div class="section">
 
+      <div id="connecting" class="title-anchor"></div>
+      <h2 class="section-header">Connect To The Database</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          There are two methods that may be used to connect to a database using
+          the PG gem.
+        </p>
+
+        <p>
+          <b>
+            db = PG.connect(connection_hash)<br>
+            db = PG::Connection.open(connection_hash)
+          </b>
+        </p>
+
+        <p>
+          Either may be used as they perform the same task. The first actually
+          calls the second. The connection hash is used to initialize the
+          connection object and may accept a number of keys. Not all of them
+          are required (the most basic forms are show below).
+        </p>
+
+        <p>
+          <b>
+            db = PG.connect({dbname: "database_name"})<br>
+            db = PG.connect({dbname: "database_name", host: "localhost"})<br>
+          </b>
+        </p>
+
+        <ul>
+          <li><b>dbname</b>: database name</li>
+          <li><b>host</b>: server host name</li>
+          <li><b>hostaddr</b>: server address (overrides host)</li>
+          <li><b>post</b>: server port number</li>
+          <li><b>user</b>: login user name</li>
+          <li><b>password</b>: login password</li>
+          <li><b>connect_timeout</b>: maximum time to wait for connection to succeed</li>
+          <li><b>options</b>: backend options</li>
+          <li><b>tty</b>: ignored in newer versions of PostgreSQL</li>
+          <li><b>sslmode</b>: disable | allow | prefer | require</li>
+          <li><b>krbsrvname</b>: </li>
+          <li><b></b>: kerberos service name</li>
+          <li><b>gsslib</b>: GSS library to use for GSSAPI authentication</li>
+          <li><b>service</b>: service name to use for additional parameters</li>
+        </ul>
+
+        <p>
+          Database connections should not be left open and once a connection
+          has served its purpose it should always be closed. Connections can
+          however be expensive and so should be used effectively when open.
+        </p>
+
+        <p>
+          (Sources:<br>
+          <a href="https://deveiate.org/code/pg/PG/Connection.html">
+            deveiate: PG Connection
+          </a><br>
+          <a href="https://www.daniweb.com/programming/web-development/threads/91483/when-should-you-close-a-database-connection">
+            daniweb: When should you close a database connection?
+          </a><br>
+          <a href="https://dba.stackexchange.com/questions/16969/how-costly-is-opening-and-closing-of-a-db-connection">
+            Stackexchange: How costly is opening and closing of a DB connection?
+          </a><br>
+          <a href="http://www.rubydoc.info/gems/pg/PG/Connection">
+            Ruby docs: PG::Connection
+          </a>)
+        </p>
+        <p><em>Updated: 13/06/2017</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="what_is_pg" class="title-anchor"></div>
       <h2 class="section-header">What is PG?</h2>
 
