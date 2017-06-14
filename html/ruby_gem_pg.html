@@ -49,6 +49,94 @@
 
     <div class="section">
 
+      <div id="run_commands" class="title-anchor"></div>
+      <h2 class="section-header">Running SQL Commands</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          A few methods may be used to execute an SQL command with a connected
+          database.
+        </p>
+
+        <ol>
+          <li>
+            <b>
+              database.exec(<br>
+              &#160;&#160;"INSERT INTO my_table (name, age) VALUES ('John', 20)"<br>
+              )
+            </b>
+          </li>
+
+          <p>This method will run the given sql command.</p>
+
+          <li>
+            <b>
+              database.exec_params(<br>
+              &#160;&#160;"INSERT INTO my_table (name, age) VALUES ($1, $2)",<br>
+              &#160;&#160;["John", 20]<br>
+              )
+            </b>
+          </li>
+
+          <p>
+            This method makes use of an array to insert parameters into the sql
+            statements. The location at which the values will be inserted are
+            identified using '$1' with each number representing the array
+            position to use (where $1 is index 0 and $2 is index 1).
+          </p>
+
+          <p>
+            Only values may be inserted into the statement. Replacing table names
+            or column names with '$1' will result in errors.
+          </p>
+
+          <li>
+            <b>
+              database.prepare(<br>
+              &#160;&#160;"command name",<br>
+              &#160;&#160;"INSERT INTO my_table (name, age) VALUES ($1, $2)"<br>
+              )<br>
+              database.exec_prepared("command name", ["John", 20])
+            </b>
+          </li>
+
+          <p>
+            This method is similar to the previous one in the way it adds values
+            to the sql statement. The difference is the use of the prepare
+            statement, which guards against SQL injections and improves
+            performance.
+          </p>
+
+          <p>
+            The initial method <b>prepare</b> accepts two arguments, a name for
+            the sql command (the name may be any string) and the sql command
+            itself. Once run the <b>exec_prepared</b> method can be run as
+            shown.
+          </p>
+
+        </ol>
+
+        <p>
+          (Sources:<br>
+          <a href="https://stackoverflow.com/questions/25839259/pg-exec-params-not-replacing-parameters">
+            Stackoverflow: exec_params not replacing parameters?
+          </a><br>
+          <a href="https://deveiate.org/code/pg/PG/Connection.html">
+            deveiate: PG Connection
+          </a><br>
+          <a href="http://zetcode.com/db/postgresqlruby/">
+            Zetcode: PostgreSQL Ruby tutorial
+          </a>)
+        </p>
+        <p><em>Updated: 14/06/2017</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="connecting" class="title-anchor"></div>
       <h2 class="section-header">Connect To The Database</h2>
 
