@@ -130,6 +130,22 @@ https://stackoverflow.com/questions/267237/whats-the-best-way-to-unit-test-prote
 SQL
 distinct key word
 --------------------------------------------------------------------------------
+css alter input border colour on focus
+.create_form_container input{
+  width: 100%;
+  height: 30px;
+  font-size: 25px;
+  border: 1px solid grey;
+}
+
+.create_form_container input:focus{
+  outline: none;
+  border: 1px solid #d68c04;
+}
+https://stackoverflow.com/questions/16156594/how-to-change-border-color-of-textarea-on-focus
 --------------------------------------------------------------------------------
+border radius top right 
+https://www.w3schools.com/cssref/css3_pr_border-top-left-radius.asp
 --------------------------------------------------------------------------------
+justify content css (done in score board html/css)
 --------------------------------------------------------------------------------
