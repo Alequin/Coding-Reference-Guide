@@ -120,8 +120,8 @@ files in the same directory dont need to be require_relatived
 forms: when a label is correctly attached to a form clicking on the label will
 move the cursor into the form input
 --------------------------------------------------------------------------------
-sinatra: redirect vs redirect to 
-  redirect requires a full URL 
+sinatra: redirect vs redirect to
+  redirect requires a full URL
   redirect to converts a known path in the current app into a full URL
 --------------------------------------------------------------------------------
 run private methods
@@ -144,8 +144,19 @@ css alter input border colour on focus
 }
 https://stackoverflow.com/questions/16156594/how-to-change-border-color-of-textarea-on-focus
 --------------------------------------------------------------------------------
-border radius top right 
+border radius top right
 https://www.w3schools.com/cssref/css3_pr_border-top-left-radius.asp
 --------------------------------------------------------------------------------
 justify content css (done in score board html/css)
+--------------------------------------------------------------------------------
+uml diagrams http://creately.com/blog/diagrams/uml-diagram-types-examples/
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

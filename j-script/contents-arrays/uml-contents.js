@@ -1,4 +1,4 @@
 
 CONTENTS = [
-  new ContentsItem('Merge Sort', 'merge-sort'),
+  new ContentsItem('What is UML', 'what_is_uml'),
 ];
