@@ -152,10 +152,6 @@ justify content css (done in score board html/css)
 uml diagrams http://creately.com/blog/diagrams/uml-diagram-types-examples/
 uml notation https://www.tutorialspoint.com/uml/uml_basic_notations.htm
 uml diagrams http://pages.cs.wisc.edu/~hasti/cs302/examples/UMLdiagram.html
-uml - inherited methods
-  - only inlcude in child class diagram if the method is overridden. otherwise 
-  it can be left out.
-  - https://stackoverflow.com/questions/10947479/show-inherited-methods-etc-in-visual-paradigm
 uml class diagram helpful
   - https://creately.com/diagram-type/article/simple-guidelines-drawing-uml-class-diagrams
 --------------------------------------------------------------------------------
