@@ -173,14 +173,18 @@
         </p>
 
         <h3>Class Notation</h3>
-        <img src="../examples/uml/class_notation_overview.png" alt="An image summaraising class diagrams notation">
+        <img
+          src="../examples/uml/class_notation_overview.png"
+          alt="An image summaraising class diagrams notation">
         <hr>
         <h3>Object Notation</h3>
         <p>
           The notation for object diagrams is similar to class diagrams only
           the name is underlined.
         </p>
-        <img src="../examples/uml/object_notation_overview.png" alt="An image summaraising object diagrams notation">
+        <img
+          src="../examples/uml/object_notation_overview.png"
+          alt="An image summaraising object diagrams notation">
         <hr>
 
         <h3>Generalisation Arrow</h3>
@@ -188,9 +192,68 @@
           (interface, abstract class, superclass ect.) and a specialised element
           (a class that inherits, implements, includes ect.).
         </p>
-        <img src="../examples/uml/generalisation_arrow.png" alt="An image summaraising object diagrams notation">
+        <img
+          src="../examples/uml/generalisation_arrow.png"
+          alt="An image summaraising object diagrams notation">
         <hr>
-
+        <h3>Shared Aggregation / Aggregation</h3>
+        <p>
+          Aggregation is a binary association involving two parts, one of which
+          holds multiple instances of the other (for example in a collection).
+          It is a one way relation and can never by cyclical.
+        </p>
+        <p>
+          This is similar to composite aggregation only when the class holding the
+          collection is destroyed the individual instances of the other classes
+          are not destroyed.
+        </p>
+        <p>
+          The relationship is depicted with a line between two classes. Where
+          the line connects to the class containing the collection a blank
+          diamond is drawn.
+        </p>
+        <img
+          src="../examples/uml/triagles_segments_agg.png"
+          alt="An example of aggregation in a uml diagram">
+        <hr>
+        <h3>Composite Aggregation / Composition</h3>
+        <p>
+          Composition is also a binary association involving two parts, one of
+          which holds multiple instances of the other (for example in a collection).
+          It is a one way relation and can never by cyclical.
+        </p>
+        <p>
+          This is similar to shared aggregation only when the class holding the
+          collection is destroyed the individual instances of the other classes
+          are also destroyed.
+        </p>
+        <p>
+          The relationship is depicted with a line between two classes. Where
+          the line connects to the class containing the collection a filled
+          diamond is drawn.
+        </p>
+        <img
+          src="../examples/uml/folders_file_com_aggre.png"
+          alt="An example of composition in a uml diagram">
+        <hr>
+        <h3>Aggregation vs Composition</h3>
+        <p>
+          The main difference between aggregation and composition is
+          that in aggregation the singular class can exist independently but
+          in composition the singular class cannot exist without the class
+          holding the collections. Using the previous examples the
+          segments may be part of any triangle and will not be removed when
+          a single triangle is destroyed. On the other hand the When the
+          folder is destroyed the files that are apart of it will also be
+          destroyed.
+        </p>
+        <p>
+          The following rules may not always apply but are useful...
+        </p>
+        <ul>
+          <li>IF created inside the constructor and destroyed - Composition</li>
+          <li>IF created inside the constructor but not destroyed - Aggregation</li>
+        </ul>
         <p>
           (Sources:<br>
           <a href="https://www.tutorialspoint.com/uml/uml_basic_notations.htm">
@@ -198,9 +261,12 @@
           </a><br>
           <a href="https://msdn.microsoft.com/library/dd409437%28VS.140%29.aspx">
             Microsoft developer network: UML Class Diagrams - Reference
+          </a><br>
+          <a href="http://www.uml-diagrams.org/aggregation.html">
+            uml-diagrams.org: UML Aggregation
           </a>)
         </p>
-        <p><em>Updated:</em></p>
+        <p><em>Updated: 29/06/2017</em></p>
       </div>
 
     </div>
