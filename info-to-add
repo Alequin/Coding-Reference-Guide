@@ -156,6 +156,14 @@ uml class diagram helpful
   - https://creately.com/diagram-type/article/simple-guidelines-drawing-uml-class-diagrams
 --------------------------------------------------------------------------------
 java 
+  - abstract classes / interfaces
+  - overriding abstract methods
+    https://chortle.ccsu.edu/java5/Notes/chap52/ch52_3.html
+  - Override key term
+  - interfaces may only have abstract methods
+    https://stackoverflow.com/questions/34973731/are-all-methods-of-interface-abstract
+--------------------------------------------------------------------------------
+java 
   imporing
   packages
     -https://docs.oracle.com/javase/tutorial/java/package/usepkgs.html
@@ -164,6 +172,10 @@ junit
   assert methods 
     - http://junit.org/junit4/javadoc/4.8/org/junit/Assert.html
 --------------------------------------------------------------------------------
+java casting
+  - https://howtoprogramwithjava.com/java-cast/
+  - https://stackoverflow.com/questions/23414090/what-is-the-difference-between-up-casting-and-down-casting-with-respect-to-class
+  - http://www.cs.utexas.edu/~cannata/cs345/Class%20Notes/14%20Java%20Upcasting%20Downcasting.htm
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
