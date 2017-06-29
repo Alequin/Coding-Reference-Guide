@@ -1,0 +1,20 @@
+public class Main{
+
+  public static void main(String[] args) {
+    Human human = new Human(30);
+    Cow cow = new Cow(5);
+
+    System.out.println(human.breath());
+    System.out.println(human.speak());
+    System.out.println(cow.breath());
+    System.out.println(cow.speak());
+
+    Mammal mammal_1 = human;
+    System.out.println(mammal_1.breath());
+    System.out.println(mammal_1.speak());
+
+    Mammal mammal_2 = cow;
+    System.out.println(mammal_2.breath());
+    System.out.println(mammal_2.speak());
+  }
+}

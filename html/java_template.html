@@ -49,8 +49,158 @@
 
     <div class="section">
 
-      <div class="title-anchor"></div>
-      <h2 class="section-header"></h2>
+      <div id="abstract-class" class="title-anchor"></div>
+      <h2 class="section-header">Abstract Classes</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          An abstract class is a class that cannot have instances created from
+          itself but is instead used to extend other classes and define a base
+          level of functionality.
+        </p>
+
+        <p>
+          Abstract classes must have the work abstract in their declaration.
+        </p>
+        <p><b>public abstract class ClassName{<br>}</b></p>
+        <p>
+          Abstract classes work similar to normal classes and can have methods
+          defined. They can also define abstract methods, which are methods
+          without bodies. Child classes of abstract classes must override any
+          define abstract methods and provide their own functionality. All other
+          methods are inherited as normal and may be overriden if required.
+        </p>
+
+        <p>
+          Abstract classes may extend other abstract classes and in this case
+          the superclasses abstract methods do not need to be defined until the
+          child abstract class is extended by another non abstract class.
+        </p>
+
+        <ul>
+          <li>
+            Abstract classes and method must be inheritable (no final classes
+            or method and no private methods).
+          </li>
+          <li>
+            All abstract methods must be used by the first concrete
+            child classes.
+          </li>
+          <li>Abstract classes cannot be instatiated.</li>
+        </ul>
+
+        <h3>Code Example 1</h3>
+        <p>
+          <b>
+            //File - Mammal.java<br>
+            public abstract class Mammal{<br>
+            &#160;&#160;private int age;<br>
+            <br>
+            &#160;&#160;public Mammal(int age){<br>
+            &#160;&#160;&#160;&#160;this.age = age;<br>
+            &#160;&#160;}<br>
+            <br>
+            &#160;&#160;public abstract String speak();<br>
+            <br>
+            &#160;&#160;public String breath(){<br>
+            &#160;&#160;&#160;&#160;return "Breath in, breath out";<br>
+            &#160;&#160;}<br>
+            }<br>
+            <br>
+            //File - Human.java<br>
+            public class Human extends Mammal{<br>
+            <br>
+            &#160;&#160;public Human(int age){<br>
+            &#160;&#160;&#160;&#160;super(age);<br>
+            &#160;&#160;}<br>
+            <br>
+            &#160;&#160;public String speak(){<br>
+            &#160;&#160;&#160;&#160;return "How do you do.";<br>
+            &#160;&#160;}<br>
+            }<br>
+            <br>
+            //File - Cow.java<br>
+            public class Cow extends Mammal{<br>
+            <br>
+            &#160;&#160;public Cow(int age){<br>
+            &#160;&#160;&#160;&#160;super(age);<br>
+            &#160;&#160;}<br>
+            <br>
+            &#160;&#160;public String speak(){<br>
+            &#160;&#160;&#160;&#160;return "Moo";<br>
+            &#160;&#160;}<br>
+            }
+          </b>
+        </p>
+
+        <p>
+          <a href="../examples/java/abstract_class_mammal_example.txt">
+            View example code in use.
+          </a>
+        </p>
+        <hr>
+        <h3>Code Example 2</h3>
+        <p>
+          <b>
+            //File - Mammal.java<br>
+            public abstract class Mammal{<br>
+            &#160;&#160;private int age;<br>
+            <br>
+            &#160;&#160;public Mammal(int age){<br>
+            &#160;&#160;&#160;&#160;this.age = age;<br>
+            &#160;&#160;}<br>
+            <br>
+            &#160;&#160;public abstract String speak();<br>
+            <br>
+            &#160;&#160;public String breath(){<br>
+            &#160;&#160;&#160;&#160;return "Breath in, breath out";<br>
+            &#160;&#160;}<br>
+            }<br>
+            <br>
+            //File - Biped.java<br>
+            public abstract class Biped extends Mammal{<br>
+            &#160;&#160;public Biped(int age){<br>
+            &#160;&#160;&#160;&#160;super(age);<br>
+            &#160;&#160;}<br>
+            }<br>
+            <br>
+            //File - Human.java<br>
+            public class Human extends Biped{<br>
+            <br>
+            &#160;&#160;public Human(int age){<br>
+            &#160;&#160;&#160;&#160;super(age);<br>
+            &#160;&#160;}<br>
+            <br>
+            &#160;&#160;public String speak(){<br>
+            &#160;&#160;&#160;&#160;return "How do you do.";<br>
+            &#160;&#160;}<br>
+            }<br>
+            <br>
+          </b>
+        </p>
+
+        <p>
+          (Sources:<br>
+          <a href="https://www.tutorialspoint.com/java/java_abstraction.htm">
+            Tutorials Point: Java - Abstraction
+          </a><br>
+            Book: OCA Study Guide Java SE8: Chapter 5
+          <br>
+          <a href="http://www.javacoffeebreak.com/faq/faq0084.html">
+            Java Coffee Break: What is an abstract class, and when should it be used?
+          </a>)
+        </p>
+        <p><em>Updated: 29/06/2017</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="what-is-java" class="title-anchor"></div>
+      <h2 class="section-header">What is Java</h2>
 
       <div class="section-content section-text-normal">
         <p>
