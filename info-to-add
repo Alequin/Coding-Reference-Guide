@@ -177,7 +177,12 @@ java casting
   - https://stackoverflow.com/questions/23414090/what-is-the-difference-between-up-casting-and-down-casting-with-respect-to-class
   - http://www.cs.utexas.edu/~cannata/cs345/Class%20Notes/14%20Java%20Upcasting%20Downcasting.htm
 --------------------------------------------------------------------------------
+java enums
+  - enum cannot extend any class as they already extend  java.lang.Enum.
+    https://stackoverflow.com/questions/1414755/can-enums-be-subclassed-to-add-new-elements
 --------------------------------------------------------------------------------
+java 
+  - checked exceptions vs unchecked exceptions
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
