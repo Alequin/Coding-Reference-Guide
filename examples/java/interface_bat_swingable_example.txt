@@ -1,0 +1,13 @@
+public class Main{
+
+  public static void main(String[] args) {
+    Swingable bat = new Bat();
+
+    System.out.println(bat.swing());
+    System.out.println(bat.hit());
+
+    System.out.println(bat.swing());
+    System.out.println(bat.miss());
+  }
+
+}

@@ -54,28 +54,135 @@
 
       <div class="section-content section-text-normal">
         <p>
-          An interface is an abstract data type that defines a list of abstract
-          methods that class implementing classes must use. An interface is
-          defined in the same way classes are only the word class is replaced
-          with interface.
+          An interface is an abstract data type that defines a list
+          static variables and abstract methods that the implementing classes
+          must use. However, interfaces may be be left blank and used only as a
+          data type. An interface is defined in the same way classes are only
+          the word class is replaced with interface.
         </p>
 
-        <p><b>public interface MyInterface{}</b></p>
+        <p>
+          An interface may only define final static variables or public abstract
+          methods. No methods in an interface may have a body and all methods
+          must be overridden by the implementing classes, unless they are
+          abstract. In the case of abstract classes the abstract methods
+          definitions are inherited and don't have to be overriden until the
+          first concreate class. They can be overridden it if required.
+        </p>
+
+        <p>
+          Once defined an interface is linked to a class with the keyword
+          implements.
+        </p>
 
         <p>
           <em>
-            Note: the keyword abstract may also be use in the initial definition
-            but it is not required.<br>
+            Note: the keyword abstract may be use in the initial definition of
+            an interface but it is not required.<br>
             public abstract interface MyInterface{}
           </em>
         </p>
 
         <p>
+          <em>
+            All method / variable definitons in the following example are vaild
+          </em><br>
+          <b>
+            // File - Swingable.java<br>
+            public interface Swingable{<br>
+              &#160;&#160;public String MATERIAL_WOOD = "wood";<br>
+              &#160;&#160;public static final String MATERIAL_METAL = "metal";<br>
+              <br>
+              &#160;&#160;String swing();<br>
+              &#160;&#160;public String hit();<br>
+              &#160;&#160;public abstract String miss();<br>
+            }
+          </b>
+        </p>
+
+        <p>
+          <b>
+            //File - Bat.java<br>
+            public class Bat implements Swingable{<br>
+            <br>
+            &#160;&#160;public String swing(){<br>
+            &#160;&#160;&#160;&#160;return "Swinging the bat";<br>
+            &#160;&#160;}<br>
+            <br>
+            &#160;&#160;public String hit(){<br>
+            &#160;&#160;&#160;&#160;return "Made contact";<br>
+            &#160;&#160;}<br>
+            <br>
+            &#160;&#160;public String miss(){<br>
+            &#160;&#160;&#160;&#160;return "Its a miss";<br>
+            &#160;&#160;}<br>
+            }
+          </b>
+        </p>
+
+        <p>
+          <a href="../examples/java/interface_bat_swingable_example.txt">
+            View example in use
+          </a>
+        </p>
+        <hr>
+        <p>
+          Interfaces may extend other interfaces. The child interface does not
+          have to redefine the abstract methods but the must be used in the
+          first concreate / non abstract class.
+        </p>
+
+        <p>
+          <b>
+            // File - Swingable.java<br>
+            public interface Swingable{<br>
+              &#160;&#160;public String swing();<br>
+              &#160;&#160;public String hit();<br>
+              &#160;&#160;public String miss();<br>
+            }
+          </b>
+        </p>
+
+        <p>
+          <b>
+            //File - Bat.java
+            public interface Bat extends Swingable{}
+          </b>
+        </p>
+
+        <p>
+          <b>
+            //File - BaseballBat.java<br>
+            public class BaseballBat implements Bat{<br>
+            <br>
+            &#160;&#160;public String swing(){<br>
+            &#160;&#160;&#160;&#160;return "Swinging the bat";<br>
+            &#160;&#160;}<br>
+            <br>
+            &#160;&#160;public String hit(){<br>
+            &#160;&#160;&#160;&#160;return "Made contact";<br>
+            &#160;&#160;}<br>
+            <br>
+            &#160;&#160;public String miss(){<br>
+            &#160;&#160;&#160;&#160;return "Its a miss";<br>
+            &#160;&#160;}<br>
+            }
+          </b>
+        </p>
+        <p>
+          <a href="../examples/java/interface_bat_swingable_example.txt">
+            View example in use
+          </a>
+        </p>
+        <hr>
+
+        <p>
           (Sources:<br>
           <a href="">
-          </a>)
+          </a><br>
+          Book: OCA Study Guide Java SE8: Chapter 5
         </p>
-        <p><em>Updated:</em></p>
+        <p><em>Updated: 30/06/2017</em></p>
       </div>
 
     </div>
