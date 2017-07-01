@@ -117,21 +117,81 @@
           </a>
         </p>
 
+        <h3>Try - Catch - Finally</h3>
         <p>
-
+          In order to handle checked or unchecked exceptions try, catch, finally
+          blocks are used to surround sections of code which may cause errors.
+          The try surrounds the code that could throw an exception and the catch
+          block defines which exception to look for and how to manage it. The
+          finally block is optional and provide a place to write code which
+          should always run after the try catch blocks regardless of wether an
+          exception was thrown. This is useful in situation such as closing
+          databases. It can be used to esure close is called on the database
+          object even if the connection fails.
         </p>
 
         <p>
-          try catch finally statment. Mention nested try catch in finally. Mention
-          printing message
+          Try catch blocks must surround any code which throws checked exceptions
+          but unchecked exception are optional.
         </p>
 
         <p>
-          runtime vs checked exceptions
+          <b>
+            public class Main{<br>
+            <br>
+            &#160;&#160;public static void main(String[] args) {<br>
+            &#160;&#160;&#160;&#160;try{<br>
+            &#160;&#160;&#160;&#160;&#160;&#160;int i = 1 / 0;<br>
+            &#160;&#160;&#160;&#160;}catch(Exception ex){<br>
+            &#160;&#160;&#160;&#160;&#160;&#160;System.out.println(ex.getMessage());<br>
+            &#160;&#160;&#160;&#160;}finally{<br>
+            &#160;&#160;&#160;&#160;&#160;&#160;System.out.println("Finally I do something");<br>
+            &#160;&#160;&#160;&#160;}<br>
+            &#160;&#160;}<br>
+            }
+          </b>
         </p>
 
         <p>
-          Exception hieracy / common exceptions
+          The exception defined by the catch block can be any of the previouly
+          mentioned. The block will catch the named exception and all its child
+          exceptions. So if Exception is named by the catch block all exceptions
+          will be caught. Specific exception use is prefered however and to allow
+          this multiple catch blocks may be defined.
+        </p>
+
+        <p>
+          <b>
+            public class Main{<br>
+            <br>
+            &#160;&#160;public static void main(String[] args) {<br>
+            &#160;&#160;&#160;&#160;try{<br>
+            &#160;&#160;&#160;&#160;&#160;&#160;int i = 1 / 0;<br>
+            &#160;&#160;&#160;&#160;}catch(ArithmeticException ex){<br>
+            &#160;&#160;&#160;&#160;&#160;&#160;System.out.println(ex.getMessage());<br>
+            &#160;&#160;&#160;&#160;}catch(IllegalArgumentException ex){<br>
+            &#160;&#160;&#160;&#160;&#160;&#160;System.out.println(ex.getMessage());<br>
+            &#160;&#160;&#160;&#160;}finally{<br>
+            &#160;&#160;&#160;&#160;&#160;&#160;System.out.println("Finally I do something");<br>
+            &#160;&#160;&#160;&#160;}<br>
+            &#160;&#160;}<br>
+            }
+          </b>
+        </p>
+
+        <p>
+          To throw exceptions based on a personal condition the keyword throw is
+          used. In the case of checked exceptions as long as a try catch block
+          surrounds a method which ultimatly lead to the thrown exception the
+          code will compile.
+        </p>
+
+        <p>
+          <b>
+            if(true){<br>
+            &#160;&#160;throw new IllegalArgumentException("Error message");<br>
+            }
+          </b>
         </p>
 
         <p>
@@ -150,6 +210,9 @@
           </a><br>
           <a href="https://bitbucket.org/htv2013/java-exception-list/src/9e839f0cf062795a56a05679cbb03ee7954158d8/exceptions.txt?at=master&fileviewer=file-view-default">
             Hai Vu's BitBucket: Java Exception List
+          </a><br>
+          <a href="https://www.cs.cmu.edu/~pattis/15-1XX/15-200/lectures/exceptions/lecture.html">
+            Carnegie Mellon University: Exceptions in Detail
           </a>)
         </p>
         <p><em>Updated:</em></p>
