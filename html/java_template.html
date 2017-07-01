@@ -55,7 +55,8 @@
       <div class="section-content section-text-normal">
         <p>
           Exception allow code to manage uncontrollable situations and coding
-          mistakes effectivly.
+          mistakes effectivly. When an exception arises the normal flow is
+          disrupted and the program will exit abnormally.
         </p>
 
         <p>
@@ -67,19 +68,57 @@
         <p>
           <b>Error</b> is used in situations in which a program should not
           recover from. They are abnormal conditions that are not commonly
-          encountered.<br>
-          <b>Exception</b> and its subclasses are used for anticipated issues
-          which a program could recover from.<br>
-          <b>RuntimeException</b> and its subclasses are used in general
-          situations such as the array index being out of bounds.<br>
+          encountered and are beyond the programmers control.<br>
+          <b>Exception</b> (also known as checked exceptions) and its subclasses
+          (except for RuntimeException and its subclasses) are used for
+          anticipated issues which a program could recover from. These occure at
+          compile time and must be handled by the programmer.<br>
+          <b>RuntimeException</b> (also known as unchecked exceptions) and its
+          subclasses are used in general situations such as the array index
+          being out of bounds.<br>
+        </p>
+
+        <img
+          src="../examples/java/exception_basic_hierarchy.png"
+          alt="A outline of the Java exception hierarchy">
+
+        <h3>Common runtime / unchecked exceptions</h3>
+        <ul>
+            <li><b>ArrayIndexOutOfBoundsException</b>: Array index is out-of-bounds.</li>
+            <li><b>ClassCastException</b>: Invalid cast.</li>
+            <li><b>IllegalArgumentException</b>: Illegal argument used to invoke a method.</li>
+            <li><b>IndexOutOfBoundsException</b>: Some type of index is out-of-bounds.</li>
+            <li><b>NullPointerException</b>: Invalid use of a null reference.</li>
+            <li><b>NumberFormatException</b>: Invalid conversion of a string to a numeric format.</li>
+            <li><b>UnsupportedOperationException</b>: An unsupported operation was encountered.</li>
+        </ul>
+
+        <h3>Common Checked exceptions</h3>
+        <ul>
+            <li>
+              <b>IOException</b>: Thrown due to issues with reading or writting
+              files.
+            </li>
+            <li><b>ClassNotFoundException</b>: Class not found.</li>
+            <li><b>DataFormatException</b>: Class not found.</li>
+            <li><b>NoSuchMethodException</b>: Class not found.</li>
+        </ul>
+
+        <p>
+          <a href="../examples/java/exception_list.txt">List of exceptions 1 provided by <b>Hai Vu</b></a><br>
+          <a href="https://bitbucket.org/htv2013/java-exception-list/src/9e839f0cf062795a56a05679cbb03ee7954158d8/exceptions.txt?at=master&fileviewer=file-view-default">
+            View list 1 online.
+          </a>
+        </p>
+        <p>
+          <a href="../examples/java/exception_list_2.txt">List of exceptions 2 (including hieracy) provided by <b>Carnegie Mellon University</b></a><br>
+          <a href="https://www.cs.cmu.edu/~pattis/15-1XX/15-200/lectures/exceptions/lecture.html">
+            View list 2 online.
+          </a>
         </p>
 
         <p>
-          Runtime Exceptions are unchecked exceptions
-        </p>
 
-        <p>
-          throwing an exception
         </p>
 
         <p>
@@ -103,7 +142,14 @@
 
         <p>
           (Sources:<br>
-          <a href="">
+          <a href="https://www.tutorialspoint.com/java/java_exceptions.htm">
+            Tutorials Point: Java - Exceptions
+          </a><br>
+          <a href="https://www.tutorialspoint.com/java/java_builtin_exceptions.htm">
+            Tutorials Point: Built in exceptions
+          </a><br>
+          <a href="https://bitbucket.org/htv2013/java-exception-list/src/9e839f0cf062795a56a05679cbb03ee7954158d8/exceptions.txt?at=master&fileviewer=file-view-default">
+            Hai Vu's BitBucket: Java Exception List
           </a>)
         </p>
         <p><em>Updated:</em></p>
