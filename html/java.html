@@ -49,6 +49,207 @@
 
     <div class="section">
 
+      <div id="interfaces" class="title-anchor"></div>
+      <h2 class="section-header">Interfaces</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          An interface is an abstract data type that defines a list of
+          static variables and abstract methods that the implementing classes
+          must use. Interfaces may also be be left blank and used only as a
+          data type. An interface is defined in the same way classes, only
+          the keyword class is replaced with interface.
+        </p>
+
+        <p>
+          An interface may define final static variables, abstract
+          methods, default methods and static methods (default and static
+          methods are only available in Java 8). All variables and methods are
+          assumed to be public and cannot be set to any other access modifier.
+        </p>
+
+        <p>
+          Abstract methods cannot have a body and must be overridden by the
+          implementing classes.<br>
+          Default methods are only available in Java 8 and allow interfaces to
+          define methods with bodies. The methods functionality will be
+          inherited by implementing classes and can be overridden if required.
+        </p>
+
+        <p>
+          Interfaces may also define static methods (Java 8 only) which belong
+          only to the associated interface. Any implementing classes will not
+          inherit the method.
+        </p>
+
+        <p>
+          Once defined an interface is linked to a class with the keyword
+          implements.
+        </p>
+
+        <p>
+          <em>
+            Note: the keyword abstract may be use in the initial definition of
+            an interface but it is not required.<br>
+            public abstract interface MyInterface{}
+          </em>
+        </p>
+
+        <p>
+          <em>
+            All method / variable definitons in the following example are vaild
+          </em><br>
+          <b>
+            // File - Swingable.java<br>
+            public interface Swingable{<br>
+              //All variables are static and final even if not specified<br>
+              &#160;&#160;public String MATERIAL_WOOD = "wood";<br>
+              &#160;&#160;public static final String MATERIAL_METAL = "metal";<br>
+              <br>
+              &#160;&#160;String swing();<br>
+              &#160;&#160;public String hit();<br>
+              &#160;&#160;public abstract String miss();<br>
+            }
+          </b>
+        </p>
+
+        <p>
+          <b>
+            //File - Bat.java<br>
+            public class Bat implements Swingable{<br>
+            <br>
+            &#160;&#160;public String swing(){<br>
+            &#160;&#160;&#160;&#160;return "Swinging the bat";<br>
+            &#160;&#160;}<br>
+            <br>
+            &#160;&#160;public String hit(){<br>
+            &#160;&#160;&#160;&#160;return "Made contact";<br>
+            &#160;&#160;}<br>
+            <br>
+            &#160;&#160;public String miss(){<br>
+            &#160;&#160;&#160;&#160;return "Its a miss";<br>
+            &#160;&#160;}<br>
+            }
+          </b>
+        </p>
+
+        <p>
+          <a href="../examples/java/interface_bat_swingable_example.txt">
+            View example in use (all example links are the same)
+          </a>
+        </p>
+        <hr>
+
+        <p>
+          Interfaces may extend other interfaces. The child interface does not
+          have to redefine the abstract methods but they must be used in the
+          first concreate / non abstract class.
+        </p>
+
+        <p>
+          <b>
+            // File - Swingable.java<br>
+            public interface Swingable{<br>
+              &#160;&#160;public String swing();<br>
+              &#160;&#160;public String hit();<br>
+              &#160;&#160;public String miss();<br>
+            }
+          </b>
+        </p>
+
+        <p>
+          <b>
+            //File - Bat.java<br>
+            public interface Bat extends Swingable{}
+          </b>
+        </p>
+
+        <p>
+          <b>
+            //File - BaseballBat.java<br>
+            public class BaseballBat implements Bat{<br>
+            <br>
+            &#160;&#160;public String swing(){<br>
+            &#160;&#160;&#160;&#160;return "Swinging the bat";<br>
+            &#160;&#160;}<br>
+            <br>
+            &#160;&#160;public String hit(){<br>
+            &#160;&#160;&#160;&#160;return "Made contact";<br>
+            &#160;&#160;}<br>
+            <br>
+            &#160;&#160;public String miss(){<br>
+            &#160;&#160;&#160;&#160;return "Its a miss";<br>
+            &#160;&#160;}<br>
+            }
+          </b>
+        </p>
+        <p>
+          <a href="../examples/java/interface_bat_swingable_example.txt">
+            View example in use (all example links are the same)
+          </a>
+        </p>
+        <hr>
+
+        <p>
+          Below are examples of a default method and a static method used in an
+          interface (again these are only available in Java 8).
+        </p>
+
+        <p>
+          <b>
+            // File - Swingable.java<br>
+            public interface Swingable{<br>
+            <br>
+            &#160;&#160;public static String define(){<br>
+            &#160;&#160;&#160;&#160;return "Something that is swung or swings";<br>
+            &#160;&#160;}<br>
+            <br>
+            &#160;&#160;public default String swing(){<br>
+            &#160;&#160;&#160;&#160;return "Swinging now";<br>
+            &#160;&#160;}<br>
+            <br>
+            &#160;&#160;public String hit();<br>
+            &#160;&#160;public String miss();<br>
+            }
+          </b>
+        </p>
+
+        <p>
+          <b>
+            //File - BaseballBat.java<br>
+            public class BaseballBat implements Swingable{<br>
+            <br>
+            &#160;&#160;public String hit(){<br>
+            &#160;&#160;&#160;&#160;return "Made contact";<br>
+            &#160;&#160;}<br>
+            <br>
+            &#160;&#160;public String miss(){<br>
+            &#160;&#160;&#160;&#160;return "Its a miss";<br>
+            &#160;&#160;}<br>
+            }
+          </b>
+        </p>
+        <p>
+          <a href="../examples/java/interface_bat_swingable_example.txt">
+            View example in use (all example links are the same)
+          </a>
+        </p>
+
+        <p>
+          (Sources:<br>
+          <a href="">
+          </a><br>
+          Book: OCA Study Guide Java SE8: Chapter 5
+        </p>
+        <p><em>Updated: 30/06/2017</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="abstract-class" class="title-anchor"></div>
       <h2 class="section-header">Abstract Classes</h2>
 
