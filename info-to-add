@@ -184,5 +184,11 @@ java enums
 java 
   - checked exceptions vs unchecked exceptions
 --------------------------------------------------------------------------------
+uml 
+  - class diagrams
+  - identify interfaces and abstract classes
+  http://etutorials.org/Programming/UML/Chapter+6.+Class+Diagrams+Advanced+Concepts/Interfaces+and+Abstract+Classes/
+  - enums in class diagrams 
+  https://stackoverflow.com/questions/412944/uml-class-diagram-enum
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
