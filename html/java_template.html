@@ -72,7 +72,14 @@
           Abstract methods cannot have a body and must be overridden by the
           implementing classes.<br>
           Default methods are only available in Java 8 and allow interfaces to
-          define methods with bodies.
+          define methods with bodies.Implementing classes will inherit the
+          functionality of default methods but may be overridden if required.
+        </p>
+
+        <p>
+          Interfaces may also define static methods (Java 8 only) which belong
+          only to the associated interface. Any implementing classes will not
+          inherit the method.
         </p>
 
         <p>
@@ -128,10 +135,11 @@
 
         <p>
           <a href="../examples/java/interface_bat_swingable_example.txt">
-            View example in use
+            View example in use (all example links are the same)
           </a>
         </p>
         <hr>
+
         <p>
           Interfaces may extend other interfaces. The child interface does not
           have to redefine the abstract methods but they must be used in the
@@ -177,10 +185,55 @@
         </p>
         <p>
           <a href="../examples/java/interface_bat_swingable_example.txt">
-            View example in use
+            View example in use (all example links are the same)
           </a>
         </p>
         <hr>
+
+        <p>
+          Below are examples of a default method and a static method used in an
+          interface (again these are only available in Java 8).
+        </p>
+
+        <p>
+          <b>
+            // File - Swingable.java<br>
+            public interface Swingable{<br>
+            <br>
+            &#160;&#160;public static String define(){<br>
+            &#160;&#160;&#160;&#160;return "Something that is swung or swings";<br>
+            &#160;&#160;}<br>
+            <br>
+            &#160;&#160;public default String swing(){<br>
+            &#160;&#160;&#160;&#160;return "Swinging now";<br>
+            &#160;&#160;}<br>
+            <br>
+            &#160;&#160;public String hit();<br>
+            &#160;&#160;public String miss();<br>
+            }
+          </b>
+        </p>
+
+        <p>
+          <b>
+            //File - BaseballBat.java<br>
+            public class BaseballBat implements Swingable{<br>
+            <br>
+            &#160;&#160;public String hit(){<br>
+            &#160;&#160;&#160;&#160;return "Made contact";<br>
+            &#160;&#160;}<br>
+            <br>
+            &#160;&#160;public String miss(){<br>
+            &#160;&#160;&#160;&#160;return "Its a miss";<br>
+            &#160;&#160;}<br>
+            }
+          </b>
+        </p>
+        <p>
+          <a href="../examples/java/interface_bat_swingable_example.txt">
+            View example in use (all example links are the same)
+          </a>
+        </p>
 
         <p>
           (Sources:<br>
