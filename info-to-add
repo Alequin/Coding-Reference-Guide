@@ -156,14 +156,6 @@ uml class diagram helpful
   - https://creately.com/diagram-type/article/simple-guidelines-drawing-uml-class-diagrams
 --------------------------------------------------------------------------------
 java 
-  - abstract classes / interfaces
-  - overriding abstract methods
-    https://chortle.ccsu.edu/java5/Notes/chap52/ch52_3.html
-  - Override key term
-  - interfaces may only have abstract methods
-    https://stackoverflow.com/questions/34973731/are-all-methods-of-interface-abstract
---------------------------------------------------------------------------------
-java 
   imporing
   packages
     -https://docs.oracle.com/javase/tutorial/java/package/usepkgs.html
@@ -180,9 +172,6 @@ java casting
 java enums
   - enum cannot extend any class as they already extend  java.lang.Enum.
     https://stackoverflow.com/questions/1414755/can-enums-be-subclassed-to-add-new-elements
---------------------------------------------------------------------------------
-java 
-  - checked exceptions vs unchecked exceptions
 --------------------------------------------------------------------------------
 uml 
   - class diagrams
