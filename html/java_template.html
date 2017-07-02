@@ -74,8 +74,9 @@
           anticipated issues which a program could recover from. These occure at
           compile time and must be handled by the programmer.<br>
           <b>RuntimeException</b> (also known as unchecked exceptions) and its
-          subclasses are used in general situations such as the array index
-          being out of bounds.<br>
+          subclasses are used to catch programming and logic problems such as
+          dividing by zero, accessing an array index that does not exist or
+          trying to set a variable to an unusable value.<br>
         </p>
 
         <img
@@ -121,9 +122,9 @@
         <p>
           In order to handle checked or unchecked exceptions try, catch, finally
           blocks are used to surround sections of code which may cause errors.
-          The try surrounds the code that could throw an exception and the catch
+          The <b>try</b> surrounds the code that could throw an exception and the <b>catch</b>
           block defines which exception to look for and how to manage it. The
-          finally block is optional and provide a place to write code which
+          <b>finally</b> block is optional and provide a place to write code which
           should always run after the try catch blocks regardless of wether an
           exception was thrown. This is useful in situation such as closing
           databases. It can be used to esure close is called on the database
@@ -180,10 +181,8 @@
         </p>
 
         <p>
-          To throw exceptions based on a personal condition the keyword throw is
-          used. In the case of checked exceptions as long as a try catch block
-          surrounds a method which ultimatly lead to the thrown exception the
-          code will compile.
+          To throw exceptions based on a personal condition the keyword <b>throw</b> is
+          used.
         </p>
 
         <p>
@@ -195,9 +194,48 @@
         </p>
 
         <p>
-          methods which throw exceptions (need more than book).
-          extending methods which throw exceptions, cannot declare new exceptions
-          but can declare less
+          If a checked exception is thrown it must be handled in the
+          method it originates in or the method must specify that it <b>throws</b> the
+          same exception. This declaration is made with the keyword throws after
+          the methods parameters but before the opening curly bracket.
+          Any unhandled exceptions of the declared type will be passed to the
+          code which called the current method. This passing of resposibility
+          to the calling method can be chained even to the main method, which
+          would just end the program and print the exception to the terminal.
+        </p>
+
+        <h3>Exception handled within method</h3>
+        <p>
+          <b>
+            public static void exceptionMethod(){<br>
+              &#160;&#160;try{<br>
+              &#160;&#160;&#160;&#160;throw new Exception("I am an exception");<br>
+              &#160;&#160;}catch(Exception ex){<br>
+              &#160;&#160;&#160;&#160;System.out.println(ex.getMessage());<br>
+              &#160;&#160;}<br>
+            }
+          </b>
+        </p>
+
+        <h3>Method throws exception and handled outside</h3>
+        <p>
+          <b>
+            public static void initalMethod(){<br>
+            &#160;&#160;try{<br>
+            &#160;&#160;&#160;&#160;exceptionMethod();<br>
+            &#160;&#160;}catch(Exception ex){<br>
+            &#160;&#160;&#160;&#160;System.out.println(ex.getMessage());<br>
+            &#160;&#160;}<br>
+            }
+          </b>
+        </p>
+
+        <p>
+          <b>
+            public static void exceptionMethod() throws Exception{<br>
+            &#160;&#160;throw new Exception("I am an exception");<br>
+            }
+          </b>
         </p>
 
         <p>
@@ -213,9 +251,15 @@
           </a><br>
           <a href="https://www.cs.cmu.edu/~pattis/15-1XX/15-200/lectures/exceptions/lecture.html">
             Carnegie Mellon University: Exceptions in Detail
+          </a><br>
+          <a href="https://www.youtube.com/watch?v=t_Et-lx3jjw">
+            Daniel Ross youtube: Learn Java Programming - Exceptions: Throws Keyword Tutorial
+          </a><br>
+          <a href="https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html">
+            Java Tutorials: Unchecked Exceptions — The Controversy
           </a>)
         </p>
-        <p><em>Updated:</em></p>
+        <p><em>Updated: 02/07/2017</em></p>
       </div>
 
     </div>
