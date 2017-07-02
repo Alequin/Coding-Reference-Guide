@@ -49,12 +49,45 @@
 
     <div class="section">
 
-      <div class="title-anchor"></div>
-      <h2 class="section-header"></h2>
+      <div id="relative-measurements" class="title-anchor"></div>
+      <h2 class="section-header">Relative Measurements</h2>
 
       <div class="section-content section-text-normal">
         <p>
         </p>
+
+        <ul>
+          <li>
+            <b>em</b>: This measure will size content based on the elements
+            base font size (commonly 16px). So 2em is equal to twice the
+            base font size. The standard base can be altered by providing a
+            measure in pixels in a parent of the target.
+            <hr>
+            <p>
+              <b>
+                p{<br>
+                &#160;&#160;font-size: 2em;<br>
+                &#160;&#160;/*32px*/<br>
+                }
+              </b>
+            </p>
+            <hr>
+            <p>
+              <b>
+                body{<br>
+                  font-size: 60px;<br>
+                }<br>
+                <br>
+                p{<br>
+                &#160;&#160;font-size: 2em;<br>
+                &#160;&#160;/*120px*/<br>
+                }
+              </b>
+            </p>
+            <hr>
+          </li>
+        </ul>
+
         <p>
           (Sources:<br>
           <a href="">
