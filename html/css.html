@@ -50,6 +50,121 @@
 
     <div class="section">
 
+      <div id="relative-measurements" class="title-anchor"></div>
+      <h2 class="section-header">Relative Measurements</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+        </p>
+
+        <ul>
+          <li>
+            <b>em</b>: This measure will size content based on the elements
+            base font size (commonly 16px). So 2em is equal to twice the
+            base font size. The standard base can be altered by providing a
+            measure in pixels in a parent of the target.
+            <p>
+              When setting the width of an element with em it uses the elements
+              own font-size. So if the font-size of the element is set to 2em
+              while the base is 16px (resulting in a font-size of 32px) setting
+              a width of 10em will result in a width of 320px.<br>
+              (base font-size * font-size) * width = total width<br>
+              (16*2)*10 = 320.
+            </p>
+            <p>
+              <b>
+                p{<br>
+                &#160;&#160;font-size: 2em;<br>
+                &#160;&#160;width: 10em;<br>
+                &#160;&#160;/*font-size == 32px*/<br>
+                &#160;&#160;/*width == 320px*/<br>
+                }
+              </b>
+            </p>
+            <p>
+              <b>
+                body{<br>
+                &#160;&#160;font-size: 60px;<br>
+                }<br>
+                <br>
+                p{<br>
+                &#160;&#160;font-size: 2em;<br>
+                &#160;&#160;width: 10em;<br>
+                &#160;&#160;/*font-size == 120px*/<br>
+                &#160;&#160;/*width == 1200px*/<br>
+                }
+              </b>
+            </p>
+          </li>
+          <hr>
+
+          <li>
+            <b>rem</b>: This is the same as em only the base font size is taken
+            from the route html element.
+            <p>
+              Unlike em when setting the width of an element rem actually
+              the root elements font-size.
+            </p>
+            <p>
+              <b>
+                html{<br>
+                &#160;&#160;font-size: 60px;<br>
+                }<br>
+                <br>
+                p{<br>
+                &#160;&#160;width: 10rem;
+                &#160;&#160;font-size: 2em;<br>
+                &#160;&#160;/*font-size == 120px*/<br>
+                &#160;&#160;/*width == 600px*/<br>
+                }
+              </b>
+            </p>
+        </li>
+          <hr>
+
+          <li>
+            <b>Percentage</b>: All elements may be sized using percentage
+            values, which will set elements contents boxes to x% of its parent.
+            Setting width and height with percentages won't influence the
+            margin, border or padding of an element so overflow is possible and
+            should be considered.
+          </li>
+
+          <li>
+            <b>vw</b>: Sets sizes relative to view port width.
+          </li>
+
+          <li>
+            <b>vh</b>: Sets sizes relative to view port height.
+          </li>
+
+          <li>
+            <b>vmin</b>: Sets sizes relative to view port smallest side.
+          </li>
+
+          <li>
+            <b>vmax</b>: Sets sizes relative to view port largest side.
+          </li>
+        </ul>
+
+        <p>
+          (Sources:<br>
+          <a href="https://www.codecademy.com/learn/learn-responsive-design">
+            Codecademy: Learn responsive design
+          </a>)
+          <a href="https://www.w3schools.com/cssref/css_units.asp">
+            w3shools: CSS Units
+          </a>)
+        </p>
+        <p><em>Updated:</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="gradient" class="title-anchor"></div>
       <h2 class="section-header">Gradient Background Colours</h2>
 
