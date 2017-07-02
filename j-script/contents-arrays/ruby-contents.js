@@ -2,7 +2,7 @@
 CONTENTS = [
   new ContentsItem('File.open', 'File-open'),
   new ContentsItem('Directories and files', 'directories-files'),
-  new ContentsItem('Run Conole Command With Ruby', 'ruby-console-commands'),
+  new ContentsItem('Run Console Command With Ruby', 'ruby-console-commands'),
   new ContentsItem('Redirection &#38; Pipe Characters', 'pipe-chars-and-files'),
   new ContentsItem('Exception Handling', 'exception-handling'),
   new ContentsItem('File Inclusion', 'file-inclusion'),
