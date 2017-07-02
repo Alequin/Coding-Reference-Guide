@@ -211,6 +211,22 @@
       <h2 class="section-header">Directories and files</h2>
 
       <div class="section-content section-text-normal">
+
+        <p>
+          <em>
+            Note: When working with ruby scripts to manage files the script
+            works from the location it was called from in terminal not the files
+            location.
+          </em>
+        </p>
+        <p>
+          <em>
+            File.expand_path(File.dirname(__FILE__))<br>
+            Use this to get the absolute path of the ruby script file as a
+            string.
+          </em>
+        </p>
+
         <p>
           Ruby provides a class called Dir which represents the directories /
           file tree of the current computer.
@@ -335,9 +351,12 @@
           </a><br>
           <a href="https://blog.udemy.com/ruby-file-open/">
             Udemy: Opening a File in Ruby with Different Modes
+          </a><br>
+          <a href="https://www.ruby-forum.com/topic/143383">
+            Ruby Forum: How to get the directory of the current script?
           </a>)
         </p>
-        <p><em>Updated: 10/05/2017</em></p>
+        <p><em>Updated: 02/07/2017</em></p>
       </div>
 
     </div>
