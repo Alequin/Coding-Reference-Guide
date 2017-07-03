@@ -75,8 +75,14 @@
 
         <p>
           All rules with the media query will be applied as additional rules when
-          the condition is met. All media query rules will override any original
-          rules regardless of priority.
+          the condition is met. All media query styles will override any
+          originals regardless of priority.
+        </p>
+
+        <h3>Only Keyword</h3>
+        <p>
+          The keyword only is used to hide style sheets from old browsers which
+          don't support media queries.
         </p>
 
         <h3>Device Type</h3>
@@ -120,13 +126,42 @@
           <em>Note: Resolution rules use dpi or dpcm as units</em>
         </p>
 
+        <h3>Not Keyword</h3>
+        <p>
+          The keyword not may be used in queries to reverse the given rule.
+          So a rule "max-width: 480px" used with the keyword not would be
+          processed as "min-width: 480px".
+        </p>
+
+        <p>The following two queries will produce the same results...</p>
+
+        <p>
+          <b>
+            @media screen and (min-width: 500px){<br>
+            &#160;&#160;body{<br>
+            &#160;&#160;&#160;&#160;background: red;<br>
+            &#160;&#160;}<br>
+            }
+          </b>
+        </p>
+
+        <p>
+          <b>
+            @media not screen and (max-width: 500px){<br>
+            &#160;&#160;body{<br>
+            &#160;&#160;&#160;&#160;background: red;<br>
+            &#160;&#160;}<br>
+            }
+          </b>
+        </p>
+
         <h3>Multiple Rules</h3>
         <p>
           Queries may use multiple rules to decide if styles should be applied.
           The 'and' keyword is used to require the device to meet two or more
           conditions before the styles are applied. Commas may be used to create
-          queries which can be applied as long as one condition is met (like an
-          OR statment).
+          queries which can be applied as long as one condition is met (similar
+          to an OR statment).
         </p>
 
         <p>
@@ -150,12 +185,22 @@
         </p>
 
         <p>
+
+        </p>
+
+        <p>
           (Sources:<br>
           <a href="https://www.codecademy.com/courses/learn-responsive-design/lessons/media-queries/exercises/comma-separated-list?action=lesson_resume">
             Codecademy: Responsive Design
+          </a><br>
+          <a href="https://css-tricks.com/logic-in-media-queries/">
+            CSS tricks: logic in media queries
+          </a><br>
+          <a href="https://stackoverflow.com/questions/8549529/what-is-the-difference-between-screen-and-only-screen-in-media-queries">
+            Stack overflow: What is the difference between “screen” and “only screen” in media queries?
           </a>)
         </p>
-        <p><em>Updated:</em></p>
+        <p><em>Updated: 03/07/2017</em></p>
       </div>
 
     </div>
