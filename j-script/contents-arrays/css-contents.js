@@ -1,5 +1,6 @@
 
 CONTENTS = [
+  new ContentsItem('Media Queries', 'media-queries'),
   new ContentsItem('Relative Measurements', 'relative-measurements'),
   new ContentsItem('Gradient Background Colours', 'gradient'),
   new ContentsItem('Box Sizing Property', 'box-sizing'),

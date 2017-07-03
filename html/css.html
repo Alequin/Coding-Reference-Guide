@@ -50,6 +50,166 @@
 
     <div class="section">
 
+      <div id="media-queries" class="title-anchor"></div>
+      <h2 class="section-header">Media Queries</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          Media queries are used in css to detect the types and size of the
+          current screen and apply different styles.
+        </p>
+
+        <p>
+          <b>
+            @media only screen and (max-width: 480px) {<br>
+            &#160;&#160;body{<br>
+            &#160;&#160;&#160;&#160;font-size: 12px;<br>
+            &#160;&#160;}<br>
+            }
+          </b>
+        </p>
+
+        <p>
+          This rule states that for all devices of type screen with a view port
+          width of 480px or less will have a font size to 12px.
+        </p>
+
+        <p>
+          All rules with the media query will be applied as additional rules when
+          the condition is met. All media query styles will override any
+          originals regardless of priority.
+        </p>
+
+        <h3>Only Keyword</h3>
+        <p>
+          The keyword only is used to hide style sheets from old browsers which
+          don't support media queries.
+        </p>
+
+        <h3>Device Type</h3>
+        <p>
+          The type of device can be one of four options...<br>
+          <em>
+          Note: While there are others they are depreciated and should not be
+          used.
+          </em>
+        </p>
+
+        <ul>
+          <li>all</li>
+          <li>print</li>
+          <li>screen</li>
+          <li>speech</li>
+        </ul>
+
+        <h3>Rules</h3>
+        <p>
+          There are a few rules that may be applied using a media query. A decent
+          list can be viewed
+          <a href="https://www.w3schools.com/cssref/css3_pr_mediaquery.asp">
+            on w3shools section on the topic
+          </a>. Here are a few useful ones...
+        </p>
+
+        <ul>
+          <li>max-width</li>
+          <li>min-width</li>
+          <li>max-height</li>
+          <li>min-height</li>
+          <li>max-resolution</li>
+          <li>min-resolution</li>
+          <li>min-aspect-ratio</li>
+          <li>max-aspect-ratio</li>
+          <li>orientation</li>
+        </ul>
+
+        <p>
+          <em>Note: Resolution rules use dpi or dpcm as units</em>
+        </p>
+
+        <h3>Not Keyword</h3>
+        <p>
+          The keyword not may be used in queries to reverse the given rule.
+          So a rule "max-width: 480px" used with the keyword not would be
+          processed as "min-width: 480px".
+        </p>
+
+        <p>The following two queries will produce the same results...</p>
+
+        <p>
+          <b>
+            @media screen and (min-width: 500px){<br>
+            &#160;&#160;body{<br>
+            &#160;&#160;&#160;&#160;background: red;<br>
+            &#160;&#160;}<br>
+            }
+          </b>
+        </p>
+
+        <p>
+          <b>
+            @media not screen and (max-width: 500px){<br>
+            &#160;&#160;body{<br>
+            &#160;&#160;&#160;&#160;background: red;<br>
+            &#160;&#160;}<br>
+            }
+          </b>
+        </p>
+
+        <h3>Multiple Rules</h3>
+        <p>
+          Queries may use multiple rules to decide if styles should be applied.
+          The 'and' keyword is used to require the device to meet two or more
+          conditions before the styles are applied. Commas may be used to create
+          queries which can be applied as long as one condition is met (similar
+          to an OR statment).
+        </p>
+
+        <p>
+          <b>
+            @media only screen and (max-width: 320px) and (max-width: 480px) {<br>
+            &#160;&#160;body{<br>
+            &#160;&#160;&#160;&#160;font-size: 12px;<br>
+            &#160;&#160;}<br>
+            }
+          </b>
+        </p>
+
+        <p>
+          <b>
+            @media only screen and (max-width: 480px), (orientation: portrait) {<br>
+            &#160;&#160;body{<br>
+            &#160;&#160;&#160;&#160;font-size: 12px;<br>
+            &#160;&#160;}<br>
+            }
+          </b>
+        </p>
+
+        <p>
+
+        </p>
+
+        <p>
+          (Sources:<br>
+          <a href="https://www.codecademy.com/courses/learn-responsive-design/lessons/media-queries/exercises/comma-separated-list?action=lesson_resume">
+            Codecademy: Responsive Design
+          </a><br>
+          <a href="https://css-tricks.com/logic-in-media-queries/">
+            CSS tricks: logic in media queries
+          </a><br>
+          <a href="https://stackoverflow.com/questions/8549529/what-is-the-difference-between-screen-and-only-screen-in-media-queries">
+            Stack overflow: What is the difference between “screen” and “only screen” in media queries?
+          </a>)
+        </p>
+        <p><em>Updated: 03/07/2017</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="relative-measurements" class="title-anchor"></div>
       <h2 class="section-header">Relative Measurements</h2>
 
