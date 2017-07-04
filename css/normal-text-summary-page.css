@@ -38,3 +38,54 @@
     max-width: 100%;
     border-top: 2px dotted grey;
 }
+
+@media only screen and (max-width: 760px){
+
+  #main-header{
+    font-size: 75px;
+  }
+
+  #header-container{
+    height: 200px;
+  }
+
+  #header-container td{
+    font-size: 25px;
+  }
+
+  #contents-container td{
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  #contents-search-box{
+    width: 350px;
+  }
+
+  #contents-search-box, #search-button, #order-button{
+    height: 70px;
+  }
+
+  #search-button, #order-button{
+    line-height: 70px;
+  }
+
+  #contents-title{
+    min-width: 195px;
+  }
+
+  .section-header{
+    font-size: 55px;
+  }
+
+  .section-text-normal{
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .header-divider, .divider{
+      max-width: 100%;
+      border-top: 5px dotted grey;
+  }
+
+}
