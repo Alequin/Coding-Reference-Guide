@@ -49,59 +49,102 @@
 
     <div class="section">
 
-      <div id="what-is-sdlc" class="title-anchor"></div>
-      <h2 class="section-header">What is the Software Development Life Cycle</h2>
+      <div id="waterfall" class="title-anchor"></div>
+      <h2 class="section-header">Waterfall Model</h2>
 
       <div class="section-content section-text-normal">
-        <p>
-          The Software Development Life Cycle (sdlc) or software development
-          process describes the distinct work phases and methods used to plan,
-          design, develop and test software.
-        </p>
 
         <p>
-          The sdlc is a process used by those who create software to plan, develop
-          maintain, replace, alter and enhance software. Common stages of a
-          sdlc might include...
+          This model, also known as the linear-sequential life cycle model, was
+          the first process to be used. It this model each stage cascades into
+          the next and does not take place until the previous is complete.
         </p>
+
+        <img src="../examples/sdlc/waterfall.jpg" alt="">
 
         <ul>
+
           <li>
-            <b>Planning</b>: Planning (or requirement analysis) is the most
-            important stage. Input for multiple sources is used to outline the
-            basic project approach and conduct product feasibility studies.
-            Plans should also consider the quality assurance requirements and
-            identify possible risks.
+            <b>Requirement Analysis</b>: System requirements are decided on and
+            documented
           </li>
+
           <li>
-            <b>Defining</b>: Projects requirements must be clearly defined and
-            documented in a <b>software requirement specification</b> (SRS)
-            document.
+            <b>System Design</b>: The requirements are studied and the system
+            design is prepared using them as a guide. The design phase defines
+            the software architecture to be used and the hardware requirements.
           </li>
+
           <li>
-            <b>Designing</b>: Using the SRS the product architecture is defined.
-            More than one approach may be proposed and documented in a
-            <b>Designing Document Specification</b> (DDS).
+            <b>Implementation</b>: Using the design the system is developed in
+            small programs called units. Each unit us developed and tested,
+            which is known as unit testing.
           </li>
+
           <li>
-            <b>Building</b>: In this stage the product is built.
+            <b>Testing and Integration</b>: The units are integrated into a
+            system and the result is tested for faults and failures.
           </li>
+
           <li>
-            <b>Testing</b>: The product is tested for defects and bugs and
-            fixed until it reaches the desired quality. This stage is commonly
-            a subset within other stages is most modern sdlc models.
+            <b>Deployment</b>: Once testing is done the product is released.
           </li>
+
           <li>
-            <b>Deployment</b>: Once complete the product is released
+            <b>Maintenance</b>: Once released the product may be patched or
+            enhanced.
           </li>
+
+        </ul>
+
+        <h3>When to use</h3>
+
+        <ul>
+          <li>Requirements are very well documented, clear and fixed.</li>
+          <li>Product definition is stable.</li>
+          <li>Technology is understood and is not dynamic.</li>
+          <li>There are no ambiguous requirements.</li>
+          <li>
+            Ample resources with required expertise are available to support
+            the product.
+          </li>
+          <li>The project is short.</li>
+        </ul>
+
+        <h3>Advantages</h3>
+
+        <ul>
+          <li>Easy to schedule deadlines for stages</li>
+          <li>Easy to use and understand</li>
+          <li>Easy to manage</li>
+          <li>Works well for small projects with well defined requirements</li>
+          <li>Easy to arrange tasks</li>
+          <li>Easy to produce technical documentation</li>
+          <li>Easy to estimate production costs</li>
+        </ul>
+
+        <h3>Disadvantages</h3>
+
+        <ul>
+          <li>Difficult to re-engineer if results are not as expected</li>
+          <li>Little opportunity for reflection and revision</li>
+          <li>No production until the late stages of the life cycle</li>
+          <li>High risk</li>
+          <li>Poor model for complex and OOP projects</li>
+          <li>Poor model for long projects</li>
+          <li>Little opportunity to update or change requirments</li>
         </ul>
 
         <p>
           (Sources:<br>
-          <a href="https://www.tutorialspoint.com/sdlc/sdlc_overview.htm">
-          Tutorials Point: SDLC - Overview</a>)
+          <a href="https://www.tutorialspoint.com/sdlc/sdlc_waterfall_model.htm">
+            Tutorials point: SDLC - Waterfall Model
+          </a><br>
+          <a href="http://www.umsl.edu/~hugheyd/is6840/waterfall.html">
+            Universite of Missouri: The Traditional Waterfall Approach
+          </a>)
         </p>
-        <p><em>Updated: 14/07/2017</em></p>
+        <p><em>Updated:</em></p>
       </div>
 
     </div>
