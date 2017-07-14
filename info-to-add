@@ -186,10 +186,23 @@ mobile / desktop website design with media query
 --------------------------------------------------------------------------------
 git stash
 --------------------------------------------------------------------------------
+java
+  - it is possible to use private methods on instance variable of the same type
+    if you are inside the class
 --------------------------------------------------------------------------------
+java
+  - string.format
 --------------------------------------------------------------------------------
+Android
+  - applicaion class
 --------------------------------------------------------------------------------
+android 
+  - alter Date picker header colour
+  https://stackoverflow.com/questions/28738089/change-datepicker-dialog-color-for-android-5-0
 --------------------------------------------------------------------------------
+android 
+  - screen size and working out screen width in dp
+  https://material.io/guidelines/layout/units-measurements.html#units-measurements-density-independent-pixels-dp
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
