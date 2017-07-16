@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>... Summary</title>
+  <meta charset="utf-8">
+  <link href="../css/basic-layout.css" type="text/css" rel="stylesheet"/>
+  <link href="../css/summary-page-layout.css" type="text/css" rel="stylesheet"/>
+  <link id="summary-page-layout" href="../css/normal-text-summary-page.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+
+  <div id="header-container">
+
+        <h1 id="main-header">Helpful ...</h1>
+
+        <div id="contents-container">
+          <div class="header-divider divider"></div>
+          <table id="search-and-sort-table">
+            <tr>
+              <td>
+                <form name="search-form">
+                  <input id="contents-search-box" class="section-text-normal" type="text" name="search-term"/>
+                </form>
+              </td>
+              <td>
+                <p id="search-button" class="section-text-normal">
+                  <span class="vertical-align-text">Search</span>
+                </p>
+              </td>
+              <td>
+                <p id="order-button" class="section-text-normal">
+                  <span class="vertical-align-text"></span>
+                </p>
+              </td>
+            </tr>
+          </table>
+
+        </div>
+        <div class="header-divider divider"></div>
+  </div>
+
+  <div id="header-space"></div>
+
+  <div id="primary-container">
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="iterative" class="title-anchor"></div>
+      <h2 class="section-header">Iterative Model</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          In the Iterative model a small set of software requirements are
+          identified, implemented and tested. The product is then reviewed,
+          further requirements are identified, development begins again and tests
+          are repeated and extended. This process is repeated with a new version
+          of the software being produced and the end of each iteration.
+        </p>
+
+        <p>
+          The basic idea behind this model is to produce a product through
+          repeated cycles within small portions of time. It is a combination of
+          iterative design and incremental building.
+        </p>
+
+        <img src="../examples/sdlc/iterative-model.jpg" alt="">
+
+        <h3>Stages</h3>
+
+        <ul>
+          <li>Planning and Requirements</li>
+          <li>Analysis and Design</li>
+          <li>Implementation</li>
+          <li>Testing</li>
+          <li>Evaluation</li>
+          <li>Repeat</li>
+        </ul>
+
+        <h3>When to use</h3>
+
+        <ul>
+          <li>Requirements of the complete system are clearly understood</li>
+          <li>The project is large and can be broken into smaller increments</li>
+          <li>
+            At least the major requirements are understood and defined (some
+            functionalities may evolve or be decided on later)
+          </li>
+          <li>Useful when there is a to market constraint</li>
+          <li>
+            A new technology is being used and learnt by the development team
+          </li>
+          <li>
+            Specific skills are required but not available and will contracted
+            for specific iterations
+          </li>
+          <li>There are high risk features and goals may be changed</li>
+        </ul>
+
+        <h3>Advantages</h3>
+
+        <ul>
+          <li>
+            A working model of the system is available during early development.
+            This makes identifying issues early easier.
+          </li>
+          <li>Operational product is available with each increment</li>
+          <li>
+            Able to present incomplete iterations of product to customer for
+            review and feedback
+          </li>
+          <li>
+            Some functionality can be developed quickly and early in the
+            life cycle.
+          </li>
+          <li>Versioning of a system is easy</li>
+          <li>Parallel development is possible</li>
+          <li>Progress can be measured</li>
+          <li>Cheap to change minor details in scope or requirements</li>
+          <li>Testing and debugging during small iterations is easy</li>
+          <li>Easy to manage risk</li>
+        </ul>
+
+        <h3>Disadvantages</h3>
+
+        <ul>
+          <li>May require more resources</li>
+          <li>
+            While changing requirements is cheap it is not suited to large
+            changes
+          </li>
+          <li>
+            Possible design issues as not all requirements are decided on
+            at the beginning of the life cycle
+          </li>
+          <li>
+            Not suitable for small projects
+          </li>
+          <li>More Management attention is required</li>
+          <li>End of project may not be known</li>
+          <li>Project progress is dependent on analysis phase</li>
+          <li>Highly skilled resources are required for risk analysis</li>
+          <li>
+            Promotes feature creep and repeated requests for further development
+          </li>
+        </ul>
+
+        <p>
+          (Sources:<br>
+          <a href="https://www.tutorialspoint.com/sdlc/sdlc_iterative_model.htm">
+            Tutorials Point: SDLC - Iterative Model
+          </a><br>
+          <a href="http://istqbexamcertification.com/what-is-iterative-model-advantages-disadvantages-and-when-to-use-it/">
+            International Software Testing Qualifications Board: What is Iterative model- advantages, disadvantages and when to use it?
+          </a><br>
+          <a href="https://airbrake.io/blog/sdlc/iterative-model">
+            Air Brake: Iterative Model: What Is It And When Should You Use It?
+          </a>)
+        </p>
+        <p><em>Updated:16/07/2017</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" rel="javascript"></script>
+  <script src="../j-script/contents-arrays/contents-item.js" rel="javascript"></script>
+  <script src="../j-script/contents-arrays/ruby-contents.js" rel="javascript"></script>
+  <script src="../j-script/manage-contents.js" rel="javascript"></script>
+  <script src="../j-script/contents-arrays/contents-search.js" rel="javascript"></script>
+  <script src="../j-script/header.js" rel="javascript"></script>
+  <script src="../j-script/summary-layout-switcher.js" rel="javascript"></script>
+  <script src="../j-script/summary-pages-events.js" rel="javascript"></script>
+
+</body>
+
+</html>
