@@ -1,5 +1,6 @@
 
 CONTENTS = [
+  new ContentsItem('Agile Model', 'agile'),
   new ContentsItem('Spiral Model', 'spiral'),
   new ContentsItem('Iterative Model', 'iterative'),
   new ContentsItem('Waterfall Model', 'waterfall'),
