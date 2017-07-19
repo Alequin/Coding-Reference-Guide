@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>... Summary</title>
+  <title>Key Terms</title>
   <meta charset="utf-8">
   <link href="../css/basic-layout.css" type="text/css" rel="stylesheet"/>
   <link href="../css/summary-page-layout.css" type="text/css" rel="stylesheet"/>
@@ -13,7 +13,7 @@
 
   <div id="header-container">
 
-        <h1 id="main-header">Helpful ...</h1>
+        <h1 id="main-header">Key Terms / General Knowledge</h1>
 
         <div id="contents-container">
           <div class="header-divider divider"></div>
@@ -67,11 +67,452 @@
 
     <div class="divider"></div>
 
+    <div class="section">
+
+      <div id="hash" class="title-anchor"></div>
+      <h2 class="section-header">Hash</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          Hashes are a data structure which make use of key pair values. They
+          use an array to store values and generate an index using hashing
+          techniques.
+        </p>
+
+        <p>
+          Hashing converts the given key using the modulo operator and uses the
+          resultant value as an index. If two keys produce the same result,
+          which is known as a collision, the array is searched for the next
+          empty position. This is known as linear probing / open addressing.
+          Another method to overcome collisons is separate chaining, which is
+          when a linked list is created at the array index and all values that
+          have keys matching that index will be stored in the list.
+        </p>
+
+        <p>
+          (Sources:<br>
+          <a href="https://www.tutorialspoint.com/data_structures_algorithms/hash_data_structure.htm">
+            1
+          </a><br>
+          <a href="http://www.geeksforgeeks.org/hashing-set-2-separate-chaining/">
+            2
+          </a>)
+        </p>
+        <p><em>Updated:</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="array" class="title-anchor"></div>
+      <h2 class="section-header">Array</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          An array is a data structure which contains a collection of elements,
+          each identified by an index or key. The indecies of an array are
+          numbers, where the first element is 0, which signifes the elements
+          positional relation to the first element (element 1 is index 0,
+          element 2 is index 1 ect...).
+        </p>
+
+        <p>
+          The first element in the array is known as the first address or
+          foundation address and is used to find all other addresses. If objects
+          which take up 4 bytes are stored in the array (a 32 bit integer for
+          example) and the first element is at address 2000 other elements may
+          be found using 2000 + 4 * i.
+        </p>
+
+        <p>
+          Memory addresses 2000 - 2003 will store the first the first object
+          and the second object will start at memory address 2004. If the
+          index 1 is used the second element will be returned as 2000 + 4 * 1
+          will equal 2004.
+        </p>
+
+        <p>
+          (Sources:<br>
+          <a href="https://en.wikipedia.org/wiki/Array_data_structure">
+            1
+          </a>)
+        </p>
+        <p><em>Updated:</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div class="title-anchor"></div>
+      <h2 class="section-header">Boolean</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          A boolean is a binary datatype which may represent either true or
+          false where 1 represents true and 0 represents false. In most
+          languages true and false are key words. In some languages other
+          data types may be considered truthy or falsey.
+        </p>
+        <p>
+          (Sources:<br>
+          <a href="http://study.com/academy/lesson/data-types-in-programming-numbers-strings-and-others.html">
+            1
+          </a>)
+        </p>
+        <p><em>Updated:</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="floating-point" class="title-anchor"></div>
+      <h2 class="section-header">Floating Point</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          Floating point numbers are used to represent decimal numbers. A
+          floating point number is one where the decimal point may be placed
+          anywhere relative to the significant digits.
+        </p>
+
+        <p>
+          Floating point numbers work by making use of a significand and an
+          exponent value.
+        </p>
+
+        <ul>
+          <li>
+            <b>Significand</b>: This represents the digits in the number
+            (this may be negative if the floating point number is negative).
+          </li>
+          <li>
+            <b>Exponent</b>: The exponent determines the offset of the decimal
+            point in relation to the given significand (this may be negative
+            depending on the direction the decimal point should move).
+          </li>
+        </ul>
+
+        <img src="../examples/key_terms/floating_point.png" alt="">
+
+        <p>
+          Floating point number are only precise up to a specific number of
+          digits after the decimal point depending on the number of bits which
+          make it up.
+        </p>
+
+        <p>
+          A 32 bit floating point number will always be precise up to 6
+          significant digits.
+        </p>
+
+        <p>
+          A 64 bit floating point number will always be precise up to 15
+          significant digits.
+        </p>
+
+        <p>
+          (Sources:<br>
+          <a href="http://study.com/academy/lesson/data-types-in-programming-numbers-strings-and-others.html">
+            1
+          </a><br>
+          <a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">
+            2
+          </a><br>
+          <a href="https://en.wikipedia.org/wiki/Single-precision_floating-point_format#Single-precision_examples">
+            4
+          </a><br>
+          <a href="http://floating-point-gui.de/formats/fp/">
+            3
+          </a>)
+        </p>
+        <p><em>Updated:</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="integer" class="title-anchor"></div>
+      <h2 class="section-header">Integer</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          An integer is a numeric value without decimals. They may represent
+          positive or negative values.
+        </p>
+
+        <p>
+          Short integers are those which are able to represent number between
+          -2^16 and 2^16 (-65536 to 65536) or less. Long integers are those
+          which are able to represent numbers between -2^32 and 2^32
+          (-4294967296 to 4294967296) or more.
+        </p>
+
+        <p>
+          (Sources:<br>
+          <a href="https://en.wikipedia.org/wiki/Integer_(computer_science)#Short_integer">
+            1
+          </a><br>
+          <a href="http://study.com/academy/lesson/data-types-in-programming-numbers-strings-and-others.html">
+            2
+          </a>)
+        </p>
+        <p><em>Updated:</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="string" class="title-anchor"></div>
+      <h2 class="section-header">String</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          A string is a data type that represents plain text and may consists of
+          one or more characters. Strings represent alphanumeric data, meaning
+          they may contain letter or numbers but all are considered as text.
+          Strings are commonly identified with single or double quotes.
+        </p>
+        <p>
+          (Sources:<br>
+          <a href="http://study.com/academy/lesson/data-types-in-programming-numbers-strings-and-others.html">
+            1
+          </a>)
+        </p>
+        <p><em>Updated:</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="file-handling" class="title-anchor"></div>
+      <h2 class="section-header">File Handling</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          File handling is storing and reading data to allow it to persist
+          once the program has ended or input data into the program without
+          it been hardcoded.
+        </p>
+        <p>
+          (Sources:<br>
+          <a href="https://en.wikibooks.org/wiki/A-level_Computing_2009/AQA/Problem_Solving,_Programming,_Data_Representation_and_Practical_Exercise/Fundamentals_of_Programming/File_handling">
+            1
+          </a>)
+          <a href="http://www.bbc.co.uk/education/guides/zywmyrd/revision/1">
+            2
+          </a>)
+        </p>
+        <p><em>Updated:</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="predefined-functions" class="title-anchor"></div>
+      <h2 class="section-header">Predefined Functions</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          A predefined function is set set of routies included in most
+          programming languages which perform commonly required tasks.
+        </p>
+        <p>
+          (Sources:<br>
+          <a href="http://proceduralprogrammingblog.weebly.com/procedural-programming-blog/predefined-functions">
+            1
+          </a><br>
+          <a href="https://en.wikibooks.org/wiki/A-level_Computing/AQA/Paper_1/Fundamentals_of_programming/Built-in_functions">
+            2
+          </a>)
+        </p>
+        <p><em>Updated:</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="operator" class="title-anchor"></div>
+      <h2 class="section-header">Operator</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          An operator is a symbol which signifies an action between two
+          operands. Common ones include...
+        </p>
+
+        <p>+ | - | / | * | < | > | = | == </p>
+
+        <p>
+          (Sources:<br>
+          <a href="http://www.webopedia.com/TERM/O/operator.html">
+            1
+          </a>)
+        </p>
+        <p><em>Updated:</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="operand" class="title-anchor"></div>
+      <h2 class="section-header">Operand</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          An operand is the values that are acted on by operators in
+          expressions
+        </p>
+        <p>
+          (Sources:<br>
+          <a href="http://www.webopedia.com/TERM/O/operand.html">
+            1
+          </a>)
+        </p>
+        <p><em>Updated:</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="expression" class="title-anchor"></div>
+      <h2 class="section-header">Expression</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          An expression is any combination of valid symbols which results in a
+          value. They consist of at least one operand and can have one or more
+          operators.
+        </p>
+        <p>
+          (Sources:<br>
+          <a href="http://www.webopedia.com/TERM/E/expression.html">
+            1
+          </a><br>
+          <a href="https://en.wikipedia.org/wiki/Expression_(computer_science)">
+            2
+          </a>)
+        </p>
+        <p><em>Updated:</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="iteration" class="title-anchor"></div>
+      <h2 class="section-header">Iteration</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          Iteration is looping over a set of instructions numerours times
+        </p>
+        <p>
+          (Sources:<br>
+          <a href="https://prezi.com/tvoflvm-1xf_/p3-explain-sequence-selection-and-iteration-as-used-in-computing/">
+            1
+          </a>)
+        </p>
+        <p><em>Updated:</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="selection" class="title-anchor"></div>
+      <h2 class="section-header">Selection</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          Selection is when there are two possible branching paths based on a
+          given condition. More simply this is a conditional statment.
+        </p>
+        <p>
+          (Sources:<br>
+          <a href="https://prezi.com/tvoflvm-1xf_/p3-explain-sequence-selection-and-iteration-as-used-in-computing/">
+            1
+          </a><br>
+          <a href="http://www.bbc.co.uk/education/guides/zy3q7ty/revision/2">
+            2
+          </a>)
+        </p>
+        <p><em>Updated:</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="sequence" class="title-anchor"></div>
+      <h2 class="section-header">Sequence</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          A set of instructions that are in order, one after the other. It may
+          contain any number of actions but no branching may occure and
+          actions may not be skipped. The order of the instructions is also
+          important to ensure the program runs correctly.
+        </p>
+        <p>
+          (Sources:<br>
+          <a href="https://prezi.com/tvoflvm-1xf_/p3-explain-sequence-selection-and-iteration-as-used-in-computing/">
+            1
+          </a><br>
+          <a href="http://www.webopedia.com/TERM/S/sequence.html">
+            2
+          </a><br>
+          <a href="http://www.bbc.co.uk/education/guides/zsf8d2p/revision/3">
+            3
+          </a>)
+        </p>
+        <p><em>Updated:</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" rel="javascript"></script>
   <script src="../j-script/contents-arrays/contents-item.js" rel="javascript"></script>
-  <script src="../j-script/contents-arrays/ruby-contents.js" rel="javascript"></script>
+  <script src="../j-script/contents-arrays/key-terms-contents.js" rel="javascript"></script>
   <script src="../j-script/manage-contents.js" rel="javascript"></script>
   <script src="../j-script/contents-arrays/contents-search.js" rel="javascript"></script>
   <script src="../j-script/header.js" rel="javascript"></script>
