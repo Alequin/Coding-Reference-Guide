@@ -1,7 +1,7 @@
 
 CONTENTS = [
-  new ContentsItem('Hash', 'hash'),
-  new ContentsItem('Array', 'array'),
+  new ContentsItem('Hash Data Structure', 'hash'),
+  new ContentsItem('Array Data Structure', 'array'),
   new ContentsItem('Boolean', 'boolean'),
   new ContentsItem('Floating point', 'floating-point'),
   new ContentsItem('Integer', 'integer'),
