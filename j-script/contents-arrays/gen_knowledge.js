@@ -1,5 +1,6 @@
 
 CONTENTS = [
+  new ContentsItem('User Interface Design Basics', 'interface-basics'),
   new ContentsItem('Hash Data Structure', 'hash'),
   new ContentsItem('Array Data Structure', 'array'),
   new ContentsItem('Boolean', 'boolean'),
