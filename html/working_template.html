@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>... Summary</title>
+  <meta charset="utf-8">
+  <link href="../css/basic-layout.css" type="text/css" rel="stylesheet"/>
+  <link href="../css/summary-page-layout.css" type="text/css" rel="stylesheet"/>
+  <link id="summary-page-layout" href="../css/normal-text-summary-page.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+
+  <div id="header-container">
+
+        <h1 id="main-header">Helpful ...</h1>
+
+        <div id="contents-container">
+          <div class="header-divider divider"></div>
+          <table id="search-and-sort-table">
+            <tr>
+              <td>
+                <form name="search-form">
+                  <input id="contents-search-box" class="section-text-normal" type="text" name="search-term"/>
+                </form>
+              </td>
+              <td>
+                <p id="search-button" class="section-text-normal">
+                  <span class="vertical-align-text">Search</span>
+                </p>
+              </td>
+              <td>
+                <p id="order-button" class="section-text-normal">
+                  <span class="vertical-align-text"></span>
+                </p>
+              </td>
+            </tr>
+          </table>
+
+        </div>
+        <div class="header-divider divider"></div>
+  </div>
+
+  <div id="header-space"></div>
+
+  <div id="primary-container">
+
+    <div class="divider"></div>
+
+    <div class="section">
+
+      <div id="types" class="title-anchor"></div>
+      <h2 class="section-header">Data Types</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          In C# there are three basic types.
+        </p>
+
+        <ul>
+          <li>Value types</li>
+          <li>Reference types</li>
+          <li>Pointer types</li>
+        </ul>
+
+        <h3>Value Types</h3>
+
+        <p>
+          Value types directly contain the data they are given and are derived
+          from the class System.ValueType. Examples of value types are included
+          at the bottom of this section.
+        </p>
+
+        <h3>Value Types Examples</h3>
+
+        <ul>
+
+          <li><b>bool</b></li>
+          <ul>
+            <li>A true or false boolean value</li>
+            <li>default: false</li>
+          </ul>
+
+
+          <li><b>char</b></li>
+          <ul>
+            <li>A 16 bit unicode character</li>
+            <li>default: '\0'</li>
+          </ul>
+
+          <li><b>int</b></li>
+          <ul>
+            <li>A 32 bit interger</li>
+            <li>-2,147,483,648 to 2,147,483,647</li>
+            <li>default: 0</li>
+          </ul>
+
+          <li><b>decimal</b></li>
+          <ul>
+            <li>A 128 bit precise decimal value with 28-29 significant digits</li>
+            <li>(-7.9 x 1028 to 7.9 x 1028) / 10^(0 to 28)</li>
+            <li>default: 0.0M</li>
+          </ul>
+
+          <li><b>long</b></li>
+          <ul>
+            <li>A 64 bit integer</li>
+            <li>-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</li>
+            <li>default: 0L</li>
+          </ul>
+
+          <li><b>short</b></li>
+          <ul>
+            <li>A 16 bit integer</li>
+            <li>-32,768 to 32,767</li>
+            <li>default: 0</li>
+          </ul>
+
+          <li><b>sbyte</b></li>
+          <ul>
+            <li>A 8 bit integer</li>
+            <li>-128 to 127</li>
+            <li>default: 0</li>
+          </ul>
+
+          <li><b>double</b></li>
+          <ul>
+            <li>A 64 floating point number</li>
+            <li>(+/-)5.0 x 10-324 to (+/-)1.7 x 10308</li>
+            <li>default: 0.0D</li>
+          </ul>
+
+          <li><b>float</b></li>
+          <ul>
+            <li>A 32 floating point number</li>
+            <li>-3.4 x 1038 to + 3.4 x 1038</li>
+            <li>default: 0.0F</li>
+          </ul>
+
+          <li><b>ushort</b></li>
+          <ul>
+            <li>A 16 bit interger</li>
+            <li>0 to 65,535</li>
+            <li>default: 0</li>
+          </ul>
+
+          <li><b>uint</b></li>
+          <ul>
+            <li>A 32 bit interger</li>
+            <li>0 to 4,294,967,295</li>
+            <li>default: 0</li>
+          </ul>
+
+          <li><b>ulong</b></li>
+          <ul>
+            <li>A 64 bit interger</li>
+            <li>0 to 18,446,744,073,709,551,615</li>
+            <li>default: 0</li>
+          </ul>
+
+        </ul>
+
+        <p>
+          (Sources:<br>
+          <a href="https://www.tutorialspoint.com/csharp/csharp_data_types.htm">
+            Tutorials Point: C# - Data Types
+          </a>)
+        </p>
+        <p><em>Updated:</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" rel="javascript"></script>
+  <script src="../j-script/contents-arrays/contents-item.js" rel="javascript"></script>
+  <script src="../j-script/contents-arrays/ruby-contents.js" rel="javascript"></script>
+  <script src="../j-script/manage-contents.js" rel="javascript"></script>
+  <script src="../j-script/contents-arrays/contents-search.js" rel="javascript"></script>
+  <script src="../j-script/header.js" rel="javascript"></script>
+  <script src="../j-script/summary-layout-switcher.js" rel="javascript"></script>
+  <script src="../j-script/summary-pages-events.js" rel="javascript"></script>
+
+</body>
+
+</html>
