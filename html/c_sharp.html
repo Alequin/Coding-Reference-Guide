@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>... Summary</title>
+  <title>C#</title>
   <meta charset="utf-8">
   <link href="../css/basic-layout.css" type="text/css" rel="stylesheet"/>
   <link href="../css/summary-page-layout.css" type="text/css" rel="stylesheet"/>
@@ -13,7 +13,7 @@
 
   <div id="header-container">
 
-        <h1 id="main-header">Helpful ...</h1>
+        <h1 id="main-header">Helpful C#</h1>
 
         <div id="contents-container">
           <div class="header-divider divider"></div>
@@ -49,18 +49,54 @@
 
     <div class="section">
 
-      <div class="title-anchor"></div>
-      <h2 class="section-header"></h2>
+      <div id="structure" class="title-anchor"></div>
+      <h2 class="section-header">Basic Structure</h2>
 
       <div class="section-content section-text-normal">
+
         <p>
+          <b>
+            using System;<br>
+            namespace HelloWorldApplication{<br>
+            <br>
+            &#160;&#160;class HelloWorld{<br>
+             <br>
+            &#160;&#160;&#160;&#160;static void Main(string[] args){<br>
+            &#160;&#160;&#160;&#160;&#160;&#160;Console.WriteLine("Hello World");<br>
+            &#160;&#160;&#160;&#160;&#160;&#160;Console.ReadKey();<br>
+            &#160;&#160;&#160;&#160;}<br>
+            &#160;&#160;}<br>
+            }
+          </b>
         </p>
+
+        <ul>
+          <li>
+            <b>using</b>: the using keyword allows the code included in
+            the provided namespace to be used in the current file.
+          </li>
+          <li>
+            <b>namespace</b>: this is where the namespace the current file is in
+            should be defined.
+          </li>
+          <li>
+            <b>class</b>: this is the class declaration. A class contains the
+            variables and methods that define the capabilities and behaviours
+            of instances of that class.
+          </li>
+          <li>
+            <b>static void Main(string[] args)</b>: this is the definition of the main method, which is the
+            start point of all C# programs (the M in Main must be a capital).
+          </li>
+        </ul>
+
         <p>
           (Sources:<br>
-          <a href="">
+          <a href="https://www.tutorialspoint.com/csharp/csharp_program_structure.htm">
+            Tutorials Point: C# - Program Structure
           </a>)
         </p>
-        <p><em>Updated:</em></p>
+        <p><em>Updated: 26/07/2017</em></p>
       </div>
 
     </div>
@@ -71,7 +107,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" rel="javascript"></script>
   <script src="../j-script/contents-arrays/contents-item.js" rel="javascript"></script>
-  <script src="../j-script/contents-arrays/ruby-contents.js" rel="javascript"></script>
+  <script src="../j-script/contents-arrays/c-sharp-contents.js" rel="javascript"></script>
   <script src="../j-script/manage-contents.js" rel="javascript"></script>
   <script src="../j-script/contents-arrays/contents-search.js" rel="javascript"></script>
   <script src="../j-script/header.js" rel="javascript"></script>
