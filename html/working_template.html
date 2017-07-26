@@ -49,121 +49,23 @@
 
     <div class="section">
 
-      <div id="types" class="title-anchor"></div>
-      <h2 class="section-header">Data Types</h2>
+      <div class="title-anchor"></div>
+      <h2 class="section-header"></h2>
 
       <div class="section-content section-text-normal">
-        <p>
-          In C# there are three basic types.
-        </p>
-
-        <ul>
-          <li>Value types</li>
-          <li>Reference types</li>
-          <li>Pointer types</li>
-        </ul>
-
-        <h3>Value Types</h3>
+        <h3>Reference Types</h3>
 
         <p>
-          Value types directly contain the data they are given and are derived
-          from the class System.ValueType. Examples of value types are included
-          at the bottom of this section.
+          Reference types do not contain actual data but the memory address to
+          the required data. If a refence type is changed all varables that
+          hold its memory location will refer to the changed value.
         </p>
 
         <h3>Value Types Examples</h3>
-
-        <ul>
-
-          <li><b>bool</b></li>
-          <ul>
-            <li>A true or false boolean value</li>
-            <li>default: false</li>
-          </ul>
-
-
-          <li><b>char</b></li>
-          <ul>
-            <li>A 16 bit unicode character</li>
-            <li>default: '\0'</li>
-          </ul>
-
-          <li><b>int</b></li>
-          <ul>
-            <li>A 32 bit interger</li>
-            <li>-2,147,483,648 to 2,147,483,647</li>
-            <li>default: 0</li>
-          </ul>
-
-          <li><b>decimal</b></li>
-          <ul>
-            <li>A 128 bit precise decimal value with 28-29 significant digits</li>
-            <li>(-7.9 x 1028 to 7.9 x 1028) / 10^(0 to 28)</li>
-            <li>default: 0.0M</li>
-          </ul>
-
-          <li><b>long</b></li>
-          <ul>
-            <li>A 64 bit integer</li>
-            <li>-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</li>
-            <li>default: 0L</li>
-          </ul>
-
-          <li><b>short</b></li>
-          <ul>
-            <li>A 16 bit integer</li>
-            <li>-32,768 to 32,767</li>
-            <li>default: 0</li>
-          </ul>
-
-          <li><b>sbyte</b></li>
-          <ul>
-            <li>A 8 bit integer</li>
-            <li>-128 to 127</li>
-            <li>default: 0</li>
-          </ul>
-
-          <li><b>double</b></li>
-          <ul>
-            <li>A 64 floating point number</li>
-            <li>(+/-)5.0 x 10-324 to (+/-)1.7 x 10308</li>
-            <li>default: 0.0D</li>
-          </ul>
-
-          <li><b>float</b></li>
-          <ul>
-            <li>A 32 floating point number</li>
-            <li>-3.4 x 1038 to + 3.4 x 1038</li>
-            <li>default: 0.0F</li>
-          </ul>
-
-          <li><b>ushort</b></li>
-          <ul>
-            <li>A 16 bit interger</li>
-            <li>0 to 65,535</li>
-            <li>default: 0</li>
-          </ul>
-
-          <li><b>uint</b></li>
-          <ul>
-            <li>A 32 bit interger</li>
-            <li>0 to 4,294,967,295</li>
-            <li>default: 0</li>
-          </ul>
-
-          <li><b>ulong</b></li>
-          <ul>
-            <li>A 64 bit interger</li>
-            <li>0 to 18,446,744,073,709,551,615</li>
-            <li>default: 0</li>
-          </ul>
-
-        </ul>
-
+        
         <p>
           (Sources:<br>
-          <a href="https://www.tutorialspoint.com/csharp/csharp_data_types.htm">
-            Tutorials Point: C# - Data Types
+          <a href="">
           </a>)
         </p>
         <p><em>Updated:</em></p>
