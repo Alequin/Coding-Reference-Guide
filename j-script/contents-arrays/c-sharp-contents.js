@@ -1,5 +1,6 @@
 
 CONTENTS = [
+  new ContentsItem('Structure', 'struct'),
   new ContentsItem('Nullable', 'nullable'),
   new ContentsItem('Constants', 'constants'),
   new ContentsItem('Reference Types', 'reference-types'),
