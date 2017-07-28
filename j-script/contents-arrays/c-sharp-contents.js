@@ -1,5 +1,6 @@
 
 CONTENTS = [
+  new ContentsItem('Output parameters', 'output-params'),
   new ContentsItem('Structure', 'struct'),
   new ContentsItem('Nullable', 'nullable'),
   new ContentsItem('Constants', 'constants'),
