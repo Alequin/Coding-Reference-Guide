@@ -54,13 +54,99 @@
 
       <div class="section-content section-text-normal">
         <p>
+          A structure is a value data type which allows for the creation of
+          simple Objects which may hold multiple properties. They can be useful
+          as they require less memory that an object created from a class.
         </p>
+
+        <p>
+          Stucts should be defined either within the namespace or class blocks
+          but outside any method blocks. They cannot inherit functionality from
+          other structs or classes but may implement interfaces.
+        </p>
+
+        <p>Below are a few examples of how structs may be used.</p>
+
+        <hr>
+
+        <p>
+          <b>
+            struct Building{<br>
+            <br>
+            &#160;&#160;public String name;<br>
+            &#160;&#160;public uint floors;<br>
+            <br>
+            &#160;&#160;public Building(String name, uint floors){<br>
+            &#160;&#160;&#160;&#160;this.name = name;<br>
+            &#160;&#160;&#160;&#160;this.floors = floors;<br>
+            &#160;&#160;}<br>
+		        };
+          </b>
+        </p>
+
+        <p>
+          <b>
+            Building skyScraper = new Building("Gurking", 150);<br>
+            Console.WriteLine(skyScraper.name+" "+skyScraper.floors);<br>
+            //=> Gurking 150
+          </b>
+        </p>
+
+        <hr>
+
+        <p>
+          <b>
+            struct Animal{<br>
+		        &#160;&#160;public String name;<br>
+            &#160;&#160;public uint age;<br>
+            &#160;&#160;public String type;<br>
+            <br>
+            &#160;&#160;public static Animal dog(String name){<br>
+            &#160;&#160;&#160;&#160;Animal dog;<br>
+            &#160;&#160;&#160;&#160;dog.name = name;<br>
+            &#160;&#160;&#160;&#160;dog.age = 0;<br>
+            &#160;&#160;&#160;&#160;dog.type = "dog";<br>
+            &#160;&#160;&#160;&#160;return dog;<br>
+            &#160;&#160;}<br>
+            <br>
+            &#160;&#160;public void logAnimal(){<br>
+            &#160;&#160;&#160;&#160;Console.WriteLine(this.name + " " + this.age + " " + this.type);<br>
+            &#160;&#160;}<br>
+	          };
+          </b>
+        </p>
+
+        <p>
+          <b>
+            Animal cat;<br>
+            <br>
+            cat.name = "Billy";<br>
+            cat.age = 4;<br>
+            cat.type = "cat";<br>
+            Console.WriteLine(cat.name +" "+ cat.age +" "+ cat.type);<br>
+            cat.logAnimal();<br>
+            <br>
+            Animal dog = Animal.dog("Teddy");<br>
+            <br>
+            dog.logAnimal();<br>
+            //=> Billy 4 cat<br>
+            Billy 4 cat
+            Teddy 0 dog
+          </b>
+        </p>
+
+
+
         <p>
           (Sources:<br>
-          <a href="">
+          <a href="https://www.tutorialspoint.com/csharp/csharp_struct.htm">
+            Tutorials Point: C# - Structures
+          </a><br>
+          <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/using-structs">
+            Microsoft Docs: Using Structs (C# Programming Guide)
           </a>)
         </p>
-        <p><em>Updated:</em></p>
+        <p><em>Updated: 27/07/2017</em></p>
       </div>
 
     </div>
