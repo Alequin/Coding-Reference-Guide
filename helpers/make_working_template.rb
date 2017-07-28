@@ -3,3 +3,4 @@ targetFile = currentFile + "/../html//working_template.html"
 system("cp #{currentFile}/template.html #{targetFile}")
 system("git add #{targetFile}")
 system("git commit -m 'reset working template'")
+system("git log -1 --oneline")
