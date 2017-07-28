@@ -63,7 +63,13 @@
           As Structures are value data types when they are passed into methods
           any alterations made by that method will not influence the
           source data (the same way the source int value is not changed when
-          passed into and altered by a method).
+          passed into and altered by a method). However, reference types stored
+          on structs may have their own properites changed from within methods.
+        </p>
+
+        <p>
+          It is highly reccomended that values on structs should be made
+          immutable, that is to say there values should not be able change.
         </p>
 
         <p>
