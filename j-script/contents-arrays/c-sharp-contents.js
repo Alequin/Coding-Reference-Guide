@@ -1,5 +1,6 @@
 
 CONTENTS = [
+  new ContentsItem('Base Constuctors', 'base-construct'),
   new ContentsItem('Enum', 'enum'),
   new ContentsItem('Access Modifiers', 'access-modifiers'),
   new ContentsItem('Output parameters', 'output-params'),
