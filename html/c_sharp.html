@@ -49,6 +49,52 @@
 
     <div class="section">
 
+      <div id="base-construct" class="title-anchor"></div>
+      <h2 class="section-header">Base Constuctors</h2>
+
+      <div class="section-content section-text-normal">
+        <p>
+          When inheriting from a super class the super classes constructor may
+          be called from the sub classes using the keyword base.
+        </p>
+
+        <p>
+          <b>
+            public abstract class Mammal{<br>
+            <br>
+            &#160;&#160;private String voice;<br>
+            &#160;&#160;private String hair;<br>
+            <br>
+            &#160;&#160;public Mammal(String voice, String hair){<br>
+            &#160;&#160;&#160;&#160;this.voice = voice;<br>
+            &#160;&#160;&#160;&#160;this.hair = hair;<br>
+            &#160;&#160;}<br>
+            }<br>
+            <br>
+            public class Dog: Mammal{<br>
+            &#160;&#160;public Dog(String hair): base("woof", hair){}<br>
+            }
+          </b>
+        </p>
+
+        <p>
+          (Sources:<br>
+          <a href="https://stackoverflow.com/questions/21989033/call-base-class-constructor-in-derived-class">
+            Stack Overflow: Call base class constructor in derived class
+          </a><br>
+          <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/base">
+            Microsoft Docs: base (C# Reference)
+          </a>)
+        </p>
+        <p><em>Updated: 29/07/2017</em></p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+
       <div id="enum" class="title-anchor"></div>
       <h2 class="section-header">Enum</h2>
 
