@@ -54,90 +54,13 @@
 
       <div class="section-content section-text-normal">
         <p>
-          Enums are sets of constants. The values will have an associated
-          integer value (may use byte to long), which is accessed by casting
-          the enum value. This value may be set manually.
         </p>
-
-        <p>
-          If no integer is given the first enum will begin at 0 and each
-          following value will have one greater value.
-        </p>
-
-        <p>
-          <b>
-            public enum EnumTest{<br>
-            &#160;&#160;Mon, Tue, Wed, Thu, Fri, Sat, Sun<br>
-            }
-          </b>
-        </p>
-
-        <p>
-          <b>
-            Console.Write((int)Mon);<br>
-            Console.Write((int)Tue);<br>
-            Console.Write((int)Wed);<br>
-            Console.Write((int)Thu);<br>
-            //=> 0123
-          </b>
-        </p>
-
-        <p>
-          If the first enum is given a value the sequence will begin from the
-          given number.
-        </p>
-
-        <p>
-          <b>
-            public enum EnumTest{<br>
-            &#160;&#160;Mon = 4, Tue, Wed, Thu, Fri, Sat, Sun<br>
-            }
-          </b>
-        </p>
-
-        <p>
-          <b>
-            Console.Write((int)Mon);<br>
-            Console.Write((int)Tue);<br>
-            Console.Write((int)Wed);<br>
-            Console.Write((int)Thu);<br>
-            //=> 4567
-          </b>
-        </p>
-
-        <p>
-          Each time an enum is given a value the next value will 1 plus the
-          previous (unless it is specifically set).
-        </p>
-
-        <p>
-          <b>
-            public enum EnumTest{<br>
-            &#160;&#160;Mon, Tue, Wed = 4, Thu, Fri, Sat, Sun<br>
-            }
-          </b>
-        </p>
-
-        <p>
-          <b>
-            Console.Write((int)Mon);<br>
-            Console.Write((int)Tue);<br>
-            Console.Write((int)Wed);<br>
-            Console.Write((int)Thu);<br>
-            //=> 0145
-          </b>
-        </p>
-
         <p>
           (Sources:<br>
-          <a href="https://www.tutorialspoint.com/csharp/csharp_enums.htm">
-            Tutorials Point: C# - Enums
-          </a><br>
-          <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/enum">
-            Microsoft Docs: enum (C# Reference)
+          <a href="">
           </a>)
         </p>
-        <p><em>Updated: 29/07/2017</em></p>
+        <p><em>Updated:</em></p>
       </div>
 
     </div>
